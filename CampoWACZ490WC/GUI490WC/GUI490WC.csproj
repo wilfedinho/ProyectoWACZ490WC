@@ -51,17 +51,44 @@
     <Compile Include="EstadoError490WC.cs" />
     <Compile Include="EstadoIniciarSesion490WC.cs" />
     <Compile Include="EstadoMenu490WC.cs" />
+    <Compile Include="FormABMUsuario490WC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormABMUsuario490WC.Designer.cs">
+      <DependentUpon>FormABMUsuario490WC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCambiarClave490WC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCambiarClave490WC.Designer.cs">
+      <DependentUpon>FormCambiarClave490WC.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormLogin490WC.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormLogin490WC.Designer.cs">
       <DependentUpon>FormLogin490WC.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormMenu490WC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMenu490WC.Designer.cs">
+      <DependentUpon>FormMenu490WC.cs</DependentUpon>
+    </Compile>
     <Compile Include="GestorForm490WC.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormABMUsuario490WC.resx">
+      <DependentUpon>FormABMUsuario490WC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCambiarClave490WC.resx">
+      <DependentUpon>FormCambiarClave490WC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormLogin490WC.resx">
       <DependentUpon>FormLogin490WC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMenu490WC.resx">
+      <DependentUpon>FormMenu490WC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -71,6 +98,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -98,6 +126,9 @@
       <Project>{e2841d11-da0d-4a10-9b4a-3d36fd7fbce3}</Project>
       <Name>SERVICIOS490WC</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MascotaCZ2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

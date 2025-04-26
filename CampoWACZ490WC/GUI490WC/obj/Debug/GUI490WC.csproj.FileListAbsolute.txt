@@ -17,3 +17,4 @@ C:\Users\William Càrdenas\Desktop\TESIS 2025\CampoWACZ490WC\ProyectoWACZ490WC\C
 C:\Users\William Càrdenas\Desktop\TESIS 2025\CampoWACZ490WC\ProyectoWACZ490WC\CampoWACZ490WC\GUI490WC\obj\Debug\GUI490WC.csproj.Up2Date
 C:\Users\William Càrdenas\Desktop\TESIS 2025\CampoWACZ490WC\ProyectoWACZ490WC\CampoWACZ490WC\GUI490WC\obj\Debug\GUI490WC.exe
 C:\Users\William Càrdenas\Desktop\TESIS 2025\CampoWACZ490WC\ProyectoWACZ490WC\CampoWACZ490WC\GUI490WC\obj\Debug\GUI490WC.pdb
+C:\Users\William Càrdenas\Desktop\TESIS 2025\CampoWACZ490WC\ProyectoWACZ490WC\CampoWACZ490WC\GUI490WC\obj\Debug\GUI490WC.FormMenu490WC.resources
