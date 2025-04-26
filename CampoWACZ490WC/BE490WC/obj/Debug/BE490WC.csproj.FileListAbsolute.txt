@@ -1,0 +1,6 @@
+C:\Users\William Càrdenas\Desktop\TESIS 2025\CampoWACZ490WC\ProyectoWACZ490WC\CampoWACZ490WC\BE490WC\bin\Debug\BE490WC.dll
+C:\Users\William Càrdenas\Desktop\TESIS 2025\CampoWACZ490WC\ProyectoWACZ490WC\CampoWACZ490WC\BE490WC\bin\Debug\BE490WC.pdb
+C:\Users\William Càrdenas\Desktop\TESIS 2025\CampoWACZ490WC\ProyectoWACZ490WC\CampoWACZ490WC\BE490WC\obj\Debug\BE490WC.csproj.AssemblyReference.cache
+C:\Users\William Càrdenas\Desktop\TESIS 2025\CampoWACZ490WC\ProyectoWACZ490WC\CampoWACZ490WC\BE490WC\obj\Debug\BE490WC.csproj.CoreCompileInputs.cache
+C:\Users\William Càrdenas\Desktop\TESIS 2025\CampoWACZ490WC\ProyectoWACZ490WC\CampoWACZ490WC\BE490WC\obj\Debug\BE490WC.dll
+C:\Users\William Càrdenas\Desktop\TESIS 2025\CampoWACZ490WC\ProyectoWACZ490WC\CampoWACZ490WC\BE490WC\obj\Debug\BE490WC.pdb

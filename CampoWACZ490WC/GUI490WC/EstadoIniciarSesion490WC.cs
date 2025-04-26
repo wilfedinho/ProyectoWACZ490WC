@@ -9,16 +9,16 @@ namespace GUI490WC
     public class EstadoIniciarSesion490WC : Estado490WC
     {
 
-      //  FormLogin490WC login490WC;
+        FormLogin490WC login490WC;
         public override void CerrarEstado490WC()
         {
-           // login490WC?.Dispose();
+           login490WC?.Dispose();
         }
 
         public override void EjecutarEstado490WC()
         {
-          //  login490WC = new FormLogin490WC();
-           // login490WC.ShowDialog();
+           login490WC = new FormLogin490WC();
+           login490WC.ShowDialog();
         }
 
     }
