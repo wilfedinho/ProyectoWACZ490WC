@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Estado490WC.cs" />
+    <Compile Include="EstadoCerrarAplicacion490WC.cs" />
+    <Compile Include="EstadoError490WC.cs" />
+    <Compile Include="EstadoIniciarSesion490WC.cs" />
+    <Compile Include="EstadoMenu490WC.cs" />
+    <Compile Include="GestorForm490WC.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
