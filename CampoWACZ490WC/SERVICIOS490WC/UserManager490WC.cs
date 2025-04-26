@@ -304,9 +304,9 @@ namespace SERVICIOS490WC
             }
         }
 
-        public bool VerificarCambioClave490WC(string ClaveNueva490WC, string ClaveConfirmacion490WC)
+        public bool VerificarCambioClave490WC(string ClaveNueva490WC, string ClaveConfirmacion490WC, string ClaveActual490WC)
         {
-            if (Cifrador490WC.GestorCifrador490WC.EncriptarIrreversible490WC(ClaveNueva490WC) == Cifrador490WC.GestorCifrador490WC.EncriptarIrreversible490WC(ClaveConfirmacion490WC) && Cifrador490WC.GestorCifrador490WC.EncriptarIrreversible490WC(ClaveNueva490WC) != SesionManager490WC.GestorSesion490WC.Usuario490WC.Contraseña490WC)
+            if (Cifrador490WC.GestorCifrador490WC.EncriptarIrreversible490WC(ClaveNueva490WC) == Cifrador490WC.GestorCifrador490WC.EncriptarIrreversible490WC(ClaveConfirmacion490WC) && Cifrador490WC.GestorCifrador490WC.EncriptarIrreversible490WC(ClaveNueva490WC) != SesionManager490WC.GestorSesion490WC.Usuario490WC.Contraseña490WC && Cifrador490WC.GestorCifrador490WC.EncriptarIrreversible490WC(ClaveConfirmacion490WC) != SesionManager490WC.GestorSesion490WC.Usuario490WC.Contraseña490WC && Cifrador490WC.GestorCifrador490WC.EncriptarIrreversible490WC(ClaveActual490WC) == SesionManager490WC.GestorSesion490WC.Usuario490WC.Contraseña490WC)
             {
                 SesionManager490WC.GestorSesion490WC.Usuario490WC.Contraseña490WC = Cifrador490WC.GestorCifrador490WC.EncriptarIrreversible490WC(ClaveNueva490WC);
                 Modificar490WC(SesionManager490WC.GestorSesion490WC.Usuario490WC);
