@@ -103,7 +103,7 @@
             this.BT_LOGIN490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
             this.BT_LOGIN490WC.Location = new System.Drawing.Point(132, 311);
             this.BT_LOGIN490WC.Name = "BT_LOGIN490WC";
-            this.BT_LOGIN490WC.Size = new System.Drawing.Size(219, 35);
+            this.BT_LOGIN490WC.Size = new System.Drawing.Size(219, 53);
             this.BT_LOGIN490WC.TabIndex = 4;
             this.BT_LOGIN490WC.Text = "Iniciar Sesion";
             this.BT_LOGIN490WC.UseVisualStyleBackColor = false;
