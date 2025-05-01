@@ -41,6 +41,7 @@
             this.panelPrincipal = new System.Windows.Forms.Panel();
             this.LabelRolUsuario490WC = new System.Windows.Forms.Label();
             this.LabelNombreUsuarios490WC = new System.Windows.Forms.Label();
+            this.BT_IniciarSesion490WC = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMascotaCZWC490)).BeginInit();
             this.panelBotones490WC.SuspendLayout();
             this.panelSubmenuSesion490WC.SuspendLayout();
@@ -79,7 +80,7 @@
             this.BT_Salir490WC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BT_Salir490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.BT_Salir490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.BT_Salir490WC.Location = new System.Drawing.Point(0, 256);
+            this.BT_Salir490WC.Location = new System.Drawing.Point(0, 294);
             this.BT_Salir490WC.Name = "BT_Salir490WC";
             this.BT_Salir490WC.Size = new System.Drawing.Size(200, 44);
             this.BT_Salir490WC.TabIndex = 4;
@@ -90,12 +91,13 @@
             // 
             // panelSubmenuSesion490WC
             // 
+            this.panelSubmenuSesion490WC.Controls.Add(this.BT_IniciarSesion490WC);
             this.panelSubmenuSesion490WC.Controls.Add(this.BT_CerrarSesion490WC);
             this.panelSubmenuSesion490WC.Controls.Add(this.BT_CambiarClave490WC);
             this.panelSubmenuSesion490WC.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelSubmenuSesion490WC.Location = new System.Drawing.Point(0, 152);
             this.panelSubmenuSesion490WC.Name = "panelSubmenuSesion490WC";
-            this.panelSubmenuSesion490WC.Size = new System.Drawing.Size(200, 104);
+            this.panelSubmenuSesion490WC.Size = new System.Drawing.Size(200, 142);
             this.panelSubmenuSesion490WC.TabIndex = 3;
             // 
             // BT_CerrarSesion490WC
@@ -221,6 +223,22 @@
             this.LabelNombreUsuarios490WC.TabIndex = 0;
             this.LabelNombreUsuarios490WC.Text = "label1";
             // 
+            // BT_IniciarSesion490WC
+            // 
+            this.BT_IniciarSesion490WC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(27)))), ((int)(((byte)(38)))));
+            this.BT_IniciarSesion490WC.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BT_IniciarSesion490WC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BT_IniciarSesion490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.BT_IniciarSesion490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
+            this.BT_IniciarSesion490WC.Location = new System.Drawing.Point(0, 88);
+            this.BT_IniciarSesion490WC.Name = "BT_IniciarSesion490WC";
+            this.BT_IniciarSesion490WC.Size = new System.Drawing.Size(200, 44);
+            this.BT_IniciarSesion490WC.TabIndex = 4;
+            this.BT_IniciarSesion490WC.Tag = "";
+            this.BT_IniciarSesion490WC.Text = "Iniciar Sesion";
+            this.BT_IniciarSesion490WC.UseVisualStyleBackColor = false;
+            this.BT_IniciarSesion490WC.Click += new System.EventHandler(this.BT_IniciarSesion490WC_Click);
+            // 
             // FormMenu490WC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -258,5 +276,6 @@
         private System.Windows.Forms.Panel panelPrincipal;
         private System.Windows.Forms.Label LabelRolUsuario490WC;
         private System.Windows.Forms.Label LabelNombreUsuarios490WC;
+        private System.Windows.Forms.Button BT_IniciarSesion490WC;
     }
 }

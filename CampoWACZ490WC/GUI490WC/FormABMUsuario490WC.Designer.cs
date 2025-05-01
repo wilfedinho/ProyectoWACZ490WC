@@ -45,19 +45,19 @@
             this.BT_APLICAR490WC = new System.Windows.Forms.Button();
             this.BT_ACTIVAR_USUARIO490WC = new System.Windows.Forms.Button();
             this.BT_SALIR490WC = new System.Windows.Forms.Button();
-            this.TB_Usuario490WC = new System.Windows.Forms.TextBox();
             this.TB_NOMBRE490WC = new System.Windows.Forms.TextBox();
             this.TB_APELLIDO490WC = new System.Windows.Forms.TextBox();
             this.TB_DNI490WC = new System.Windows.Forms.TextBox();
             this.TB_EMAIL490WC = new System.Windows.Forms.TextBox();
             this.CB_ROL490WC = new System.Windows.Forms.ComboBox();
-            this.labelUsuarioABM490WC = new System.Windows.Forms.Label();
             this.LABEL_EMAIL_ABM_USUARIO490WC = new System.Windows.Forms.Label();
             this.LABEL_DNI_ABM_USUARIO490WC = new System.Windows.Forms.Label();
             this.LABEL_APELLIDO_ABM_USUARIO490WC = new System.Windows.Forms.Label();
             this.LABEL_NOMBRE_ABM_USUARIO490WC = new System.Windows.Forms.Label();
             this.LABEL_ROL_ABM_USUARIO490WC = new System.Windows.Forms.Label();
             this.checkBoxMostrarDesactivados490WC = new System.Windows.Forms.CheckBox();
+            this.TB_Usuario490WC = new System.Windows.Forms.TextBox();
+            this.labelUsuarioABM490WC = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuario490WC)).BeginInit();
             this.SuspendLayout();
             // 
@@ -243,17 +243,6 @@
             this.BT_SALIR490WC.UseVisualStyleBackColor = false;
             this.BT_SALIR490WC.Click += new System.EventHandler(this.BT_SALIR490WC_Click);
             // 
-            // TB_Usuario490WC
-            // 
-            this.TB_Usuario490WC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(6)))), ((int)(((byte)(13)))));
-            this.TB_Usuario490WC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TB_Usuario490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
-            this.TB_Usuario490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.TB_Usuario490WC.Location = new System.Drawing.Point(161, 272);
-            this.TB_Usuario490WC.Name = "TB_Usuario490WC";
-            this.TB_Usuario490WC.Size = new System.Drawing.Size(219, 27);
-            this.TB_Usuario490WC.TabIndex = 13;
-            // 
             // TB_NOMBRE490WC
             // 
             this.TB_NOMBRE490WC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(6)))), ((int)(((byte)(13)))));
@@ -314,17 +303,6 @@
             this.CB_ROL490WC.Name = "CB_ROL490WC";
             this.CB_ROL490WC.Size = new System.Drawing.Size(219, 27);
             this.CB_ROL490WC.TabIndex = 18;
-            // 
-            // labelUsuarioABM490WC
-            // 
-            this.labelUsuarioABM490WC.AutoSize = true;
-            this.labelUsuarioABM490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
-            this.labelUsuarioABM490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.labelUsuarioABM490WC.Location = new System.Drawing.Point(24, 272);
-            this.labelUsuarioABM490WC.Name = "labelUsuarioABM490WC";
-            this.labelUsuarioABM490WC.Size = new System.Drawing.Size(74, 20);
-            this.labelUsuarioABM490WC.TabIndex = 19;
-            this.labelUsuarioABM490WC.Text = "Usuario";
             // 
             // LABEL_EMAIL_ABM_USUARIO490WC
             // 
@@ -394,6 +372,28 @@
             this.checkBoxMostrarDesactivados490WC.UseVisualStyleBackColor = true;
             this.checkBoxMostrarDesactivados490WC.CheckedChanged += new System.EventHandler(this.checkBoxMostrarDesactivados490WC_CheckedChanged);
             // 
+            // TB_Usuario490WC
+            // 
+            this.TB_Usuario490WC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(6)))), ((int)(((byte)(13)))));
+            this.TB_Usuario490WC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TB_Usuario490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.TB_Usuario490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
+            this.TB_Usuario490WC.Location = new System.Drawing.Point(161, 272);
+            this.TB_Usuario490WC.Name = "TB_Usuario490WC";
+            this.TB_Usuario490WC.Size = new System.Drawing.Size(219, 27);
+            this.TB_Usuario490WC.TabIndex = 13;
+            // 
+            // labelUsuarioABM490WC
+            // 
+            this.labelUsuarioABM490WC.AutoSize = true;
+            this.labelUsuarioABM490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.labelUsuarioABM490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
+            this.labelUsuarioABM490WC.Location = new System.Drawing.Point(24, 272);
+            this.labelUsuarioABM490WC.Name = "labelUsuarioABM490WC";
+            this.labelUsuarioABM490WC.Size = new System.Drawing.Size(74, 20);
+            this.labelUsuarioABM490WC.TabIndex = 19;
+            this.labelUsuarioABM490WC.Text = "Usuario";
+            // 
             // FormABMUsuario490WC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -451,18 +451,18 @@
         private System.Windows.Forms.Button BT_APLICAR490WC;
         private System.Windows.Forms.Button BT_ACTIVAR_USUARIO490WC;
         private System.Windows.Forms.Button BT_SALIR490WC;
-        private System.Windows.Forms.TextBox TB_Usuario490WC;
         private System.Windows.Forms.TextBox TB_NOMBRE490WC;
         private System.Windows.Forms.TextBox TB_APELLIDO490WC;
         private System.Windows.Forms.TextBox TB_DNI490WC;
         private System.Windows.Forms.TextBox TB_EMAIL490WC;
         private System.Windows.Forms.ComboBox CB_ROL490WC;
-        private System.Windows.Forms.Label labelUsuarioABM490WC;
         private System.Windows.Forms.Label LABEL_EMAIL_ABM_USUARIO490WC;
         private System.Windows.Forms.Label LABEL_DNI_ABM_USUARIO490WC;
         private System.Windows.Forms.Label LABEL_APELLIDO_ABM_USUARIO490WC;
         private System.Windows.Forms.Label LABEL_NOMBRE_ABM_USUARIO490WC;
         private System.Windows.Forms.Label LABEL_ROL_ABM_USUARIO490WC;
         private System.Windows.Forms.CheckBox checkBoxMostrarDesactivados490WC;
+        private System.Windows.Forms.TextBox TB_Usuario490WC;
+        private System.Windows.Forms.Label labelUsuarioABM490WC;
     }
 }

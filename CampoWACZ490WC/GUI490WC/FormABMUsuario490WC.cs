@@ -69,7 +69,7 @@ namespace GUI490WC
             string nombre490WC = TB_NOMBRE490WC.Text;
             string apellido490WC = TB_APELLIDO490WC.Text;
             string dni490WC = TB_DNI490WC.Text;
-            string contraseña490WC = dni490WC + apellido490WC;
+            string contraseña490WC = Cifrador490WC.GestorCifrador490WC.EncriptarIrreversible490WC(dni490WC + apellido490WC);
             string email490WC = TB_EMAIL490WC.Text;
             string rol490WC = CB_ROL490WC.SelectedItem.ToString();
             string idioma490WC = "Español";
@@ -97,7 +97,6 @@ namespace GUI490WC
                 UserManager490WC.UserManagerSG490WC.Baja490WC(UsuarioEliminar490WC.Username490WC);
                 MostrarUsuarioPorConsulta490WC();
                 VaciarTextBox490WC(this);
-
             }
             catch { MessageBox.Show("Debe seleccionar el usuario a dar de baja!!!"); }
         }
@@ -112,13 +111,13 @@ namespace GUI490WC
             CB_ROL490WC.SelectedItem = dgvUsuario490WC.SelectedRows[0].Cells[5].Value.ToString();
             if (dgvUsuario490WC.SelectedRows[0].Cells[7].Value.ToString() == "True")
             {
+                BT_ACTIVAR_USUARIO490WC.Text = "Desactivar";
                 BT_ACTIVAR_USUARIO490WC.Name = "BT_DESACTIVAR_USUARIO490WC";
-
             }
             else
             {
+                BT_ACTIVAR_USUARIO490WC.Text = "Activar";
                 BT_ACTIVAR_USUARIO490WC.Name = "BT_ACTIVAR_USUARIO490WC";
-
             }
             if (dgvUsuario490WC.SelectedRows[0].Cells[6].Value.ToString() == "True")
             {
@@ -203,19 +202,17 @@ namespace GUI490WC
         {
             try 
             {
-               Usuario490WC UsuarioModificar490WC = UserManager490WC.UserManagerSG490WC.BuscarUsuarioPorUsername490WC(dgvUsuario490WC.SelectedRows[0].Cells[0].Value.ToString());
+               Usuario490WC UsuarioActivarDesactivar490WC = UserManager490WC.UserManagerSG490WC.BuscarUsuarioPorUsername490WC(dgvUsuario490WC.SelectedRows[0].Cells[0].Value.ToString());
 
                if (dgvUsuario490WC.SelectedRows[0].Cells[7].Value.ToString() == "True")
                {
-                  UsuarioModificar490WC.IsHabilitado490WC = false;
-                  UserManager490WC.UserManagerSG490WC.Modificar490WC(UsuarioModificar490WC);
+                  UserManager490WC.UserManagerSG490WC.DesactivarUsuario490WC(UsuarioActivarDesactivar490WC.Username490WC);
                   BT_ACTIVAR_USUARIO490WC.Text = "Desactivar";
 
                }
                else
                {
-                  UsuarioModificar490WC.IsHabilitado490WC = true;
-                  UserManager490WC.UserManagerSG490WC.Modificar490WC(UsuarioModificar490WC);
+                  UserManager490WC.UserManagerSG490WC.ActivarUsuario490WC(UsuarioActivarDesactivar490WC.Username490WC);
                   BT_ACTIVAR_USUARIO490WC.Text = "Activar";
 
                }
@@ -228,9 +225,8 @@ namespace GUI490WC
         {
             try
             {
-                Usuario490WC UsuarioModificar490WC = UserManager490WC.UserManagerSG490WC.BuscarUsuarioPorUsername490WC(dgvUsuario490WC.SelectedRows[0].Cells[0].Value.ToString());
-                UsuarioModificar490WC.IsBloqueado490WC = false;
-                UserManager490WC.UserManagerSG490WC.Modificar490WC(UsuarioModificar490WC);
+                Usuario490WC UsuarioDesbloquear490WC = UserManager490WC.UserManagerSG490WC.BuscarUsuarioPorUsername490WC(dgvUsuario490WC.SelectedRows[0].Cells[0].Value.ToString());
+                UserManager490WC.UserManagerSG490WC.DesbloquearUsuario490WC(UsuarioDesbloquear490WC);
                 BT_DESBLOQUEAR_USUARIO490WC.Enabled = false;
                 MostrarUsuarioPorConsulta490WC();
             }

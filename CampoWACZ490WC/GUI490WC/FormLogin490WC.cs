@@ -37,13 +37,13 @@ namespace GUI490WC
 
                         if (usuarioIniciarSesion490WC.Intentos490WC >= 3 && usuarioIniciarSesion490WC.Rol490WC != "Admin")
                         {
-                            usuarioIniciarSesion490WC.IsBloqueado490WC = true;
+                            UserManager490WC.UserManagerSG490WC.BloquearUsuario490WC(usuarioIniciarSesion490WC.Username490WC);
                         }
                         else
                         {
                             usuarioIniciarSesion490WC.Intentos490WC += 1;
+                            UserManager490WC.UserManagerSG490WC.Modificar490WC(usuarioIniciarSesion490WC);
                         }
-                        UserManager490WC.UserManagerSG490WC.Modificar490WC(usuarioIniciarSesion490WC);
                         MessageBox.Show($"Datos Ingresados Incorrectos!!!");
                     }
                 }

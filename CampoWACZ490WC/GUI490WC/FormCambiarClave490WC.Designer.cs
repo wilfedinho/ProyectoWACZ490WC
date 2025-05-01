@@ -44,7 +44,7 @@
             this.LabelClaveNueva490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
             this.LabelClaveNueva490WC.Location = new System.Drawing.Point(185, 126);
             this.LabelClaveNueva490WC.Name = "LabelClaveNueva490WC";
-            this.LabelClaveNueva490WC.Size = new System.Drawing.Size(108, 19);
+            this.LabelClaveNueva490WC.Size = new System.Drawing.Size(112, 20);
             this.LabelClaveNueva490WC.TabIndex = 0;
             this.LabelClaveNueva490WC.Text = "Clave Nueva";
             // 
@@ -79,7 +79,7 @@
             this.LabelClaveConfirmar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
             this.LabelClaveConfirmar.Location = new System.Drawing.Point(173, 217);
             this.LabelClaveConfirmar.Name = "LabelClaveConfirmar";
-            this.LabelClaveConfirmar.Size = new System.Drawing.Size(136, 19);
+            this.LabelClaveConfirmar.Size = new System.Drawing.Size(143, 20);
             this.LabelClaveConfirmar.TabIndex = 2;
             this.LabelClaveConfirmar.Text = "Confirmar Clave";
             // 
@@ -116,7 +116,7 @@
             this.LabelClaveActual.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
             this.LabelClaveActual.Location = new System.Drawing.Point(185, 39);
             this.LabelClaveActual.Name = "LabelClaveActual";
-            this.LabelClaveActual.Size = new System.Drawing.Size(109, 19);
+            this.LabelClaveActual.Size = new System.Drawing.Size(114, 20);
             this.LabelClaveActual.TabIndex = 5;
             this.LabelClaveActual.Text = "Clave Actual";
             // 
@@ -136,6 +136,7 @@
             this.Name = "FormCambiarClave490WC";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormCambiarClave490WC";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormCambiarClave490WC_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 

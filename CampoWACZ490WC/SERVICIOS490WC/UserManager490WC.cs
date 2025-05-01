@@ -68,7 +68,7 @@ namespace SERVICIOS490WC
             using (SqlConnection cone490WC = GestorConexion490WC.GestorCone490WC.DevolverConexion490WC())
             {
                 cone490WC.Open();
-                string query490WC = "UPDATE Usuario490WC SET Nombre490WC = @Nombre490WC, Apellido490WC = @Apellido490WC,DNI490WC = @DNI490WC, Contraseña490WC = @Contraseña490WC, Email490WC = @Email490WC , Rol490WC = @Rol490WC, IdiomaUsuario490WC = @IdiomaUsuario490WC, Intentos490WC = @Intentos490WC, IsBloqueado490WC = @IsBloqueado490WC, IsHabilitado490WC = @IsHabilitado490WC WHERE Username490WC = @Username490WC";
+                string query490WC = "UPDATE Usuario490WC SET Nombre490WC = @Nombre490WC, Apellido490WC = @Apellido490WC, DNI490WC = @DNI490WC, Contraseña490WC = @Contraseña490WC, Email490WC = @Email490WC, Rol490WC = @Rol490WC, IdiomaUsuario490WC = @IdiomaUsuario490WC, Intentos490WC = @Intentos490WC, IsBloqueado490WC = @IsBloqueado490WC, IsHabilitado490WC = @IsHabilitado490WC WHERE Username490WC = @Username490WC";
 
                 using (SqlCommand comando490WC = new SqlCommand(query490WC, cone490WC))
                 {
@@ -94,7 +94,7 @@ namespace SERVICIOS490WC
             using (SqlConnection cone490WC = GestorConexion490WC.GestorCone490WC.DevolverConexion490WC())
             {
                 cone490WC.Open();
-                string query490WC = "Update Usuario490WC SET IsBloqueado490WC = @IsBloqueado490WC Contraseña490WC = @Contraseña490WC WHERE Username490WC = @Username490WC";
+                string query490WC = "Update Usuario490WC SET IsBloqueado490WC = @IsBloqueado490WC, Contraseña490WC = @Contraseña490WC WHERE Username490WC = @Username490WC";
                 using (SqlCommand comando490WC = new SqlCommand(query490WC, cone490WC))
                 {
                     comando490WC.Parameters.AddWithValue("@IsBloqueado490WC", 0);
@@ -143,7 +143,7 @@ namespace SERVICIOS490WC
                 string query490WC = "Update Usuario490WC SET IsHabilitado490WC = @IsHabilitado490WC WHERE Username490WC = @Username490WC";
                 using (SqlCommand comando490WC = new SqlCommand(query490WC, cone490WC))
                 {
-                    comando490WC.Parameters.AddWithValue("@IsHabilitado490WC", 0);
+                    comando490WC.Parameters.AddWithValue("@IsHabilitado490WC", 1);
                     comando490WC.Parameters.AddWithValue("@Username490WC", username490WC);
 
                     comando490WC.ExecuteNonQuery();
