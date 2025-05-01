@@ -103,30 +103,35 @@ namespace GUI490WC
 
         private void dgvUsuario490WC_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            TB_Usuario490WC.Text = dgvUsuario490WC.SelectedRows[0].Cells[0].Value.ToString();
-            TB_NOMBRE490WC.Text = dgvUsuario490WC.SelectedRows[0].Cells[1].Value.ToString();
-            TB_APELLIDO490WC.Text = dgvUsuario490WC.SelectedRows[0].Cells[2].Value.ToString();
-            TB_DNI490WC.Text = dgvUsuario490WC.SelectedRows[0].Cells[3].Value.ToString();
-            TB_EMAIL490WC.Text = dgvUsuario490WC.SelectedRows[0].Cells[4].Value.ToString();
-            CB_ROL490WC.SelectedItem = dgvUsuario490WC.SelectedRows[0].Cells[5].Value.ToString();
-            if (dgvUsuario490WC.SelectedRows[0].Cells[7].Value.ToString() == "True")
+            try 
             {
-                BT_ACTIVAR_USUARIO490WC.Text = "Desactivar";
-                BT_ACTIVAR_USUARIO490WC.Name = "BT_DESACTIVAR_USUARIO490WC";
-            }
-            else
-            {
-                BT_ACTIVAR_USUARIO490WC.Text = "Activar";
-                BT_ACTIVAR_USUARIO490WC.Name = "BT_ACTIVAR_USUARIO490WC";
-            }
-            if (dgvUsuario490WC.SelectedRows[0].Cells[6].Value.ToString() == "True")
-            {
+            
+                TB_Usuario490WC.Text = dgvUsuario490WC.SelectedRows[0].Cells[0].Value.ToString();
+                TB_NOMBRE490WC.Text = dgvUsuario490WC.SelectedRows[0].Cells[1].Value.ToString();
+                TB_APELLIDO490WC.Text = dgvUsuario490WC.SelectedRows[0].Cells[2].Value.ToString();
+                TB_DNI490WC.Text = dgvUsuario490WC.SelectedRows[0].Cells[3].Value.ToString();
+                TB_EMAIL490WC.Text = dgvUsuario490WC.SelectedRows[0].Cells[4].Value.ToString();
+                CB_ROL490WC.SelectedItem = dgvUsuario490WC.SelectedRows[0].Cells[5].Value.ToString();
+              if (dgvUsuario490WC.SelectedRows[0].Cells[7].Value.ToString() == "True")
+              {
+                 BT_ACTIVAR_USUARIO490WC.Text = "Desactivar";
+                 BT_ACTIVAR_USUARIO490WC.Name = "BT_DESACTIVAR_USUARIO490WC";
+              }
+              else
+              {
+                 BT_ACTIVAR_USUARIO490WC.Text = "Activar";
+                 BT_ACTIVAR_USUARIO490WC.Name = "BT_ACTIVAR_USUARIO490WC";
+              }
+              if (dgvUsuario490WC.SelectedRows[0].Cells[6].Value.ToString() == "True")
+              {
                 BT_DESBLOQUEAR_USUARIO490WC.Enabled = true;
-            }
-            else
-            {
+              }
+              else
+              {
                 BT_DESBLOQUEAR_USUARIO490WC.Enabled = false;
+              }
             }
+            catch { }
         }
 
         private void BT_MODIFICAR_USUARIO490WC_Click(object sender, EventArgs e)
