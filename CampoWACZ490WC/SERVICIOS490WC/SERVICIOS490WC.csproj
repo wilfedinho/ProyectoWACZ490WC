@@ -46,6 +46,7 @@
     <Compile Include="SesionManager490WC.cs" />
     <Compile Include="UserManager490WC.cs" />
     <Compile Include="Usuario490WC.cs" />
+    <Compile Include="UsuarioAccesoDatos490WC.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DAL490WC\DAL490WC.csproj">
