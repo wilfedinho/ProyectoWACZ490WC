@@ -95,12 +95,13 @@ namespace SERVICIOS490WC
                 using (SqlConnection cone490WC = GestorConexion490WC.GestorCone490WC.DevolverConexion490WC())
                 {
                     cone490WC.Open();
-                    string query490WC = "Update Usuario490WC SET IsBloqueado490WC = @IsBloqueado490WC, Contraseña490WC = @Contraseña490WC WHERE Username490WC = @Username490WC";
+                    string query490WC = "Update Usuario490WC SET IsBloqueado490WC = @IsBloqueado490WC, Contraseña490WC = @Contraseña490WC, Intentos490WC = @Intentos490WC WHERE Username490WC = @Username490WC";
                     using (SqlCommand comando490WC = new SqlCommand(query490WC, cone490WC))
                     {
                         comando490WC.Parameters.AddWithValue("@IsBloqueado490WC", 0);
                         comando490WC.Parameters.AddWithValue("@Contraseña490WC", Cifrador490WC.GestorCifrador490WC.EncriptarIrreversible490WC(UsuarioDesbloquear.DNI490WC + UsuarioDesbloquear.Apellido490WC));
                         comando490WC.Parameters.AddWithValue("@Username490WC", UsuarioDesbloquear.Username490WC);
+                        comando490WC.Parameters.AddWithValue("@Intentos490WC", 0);
 
                         comando490WC.ExecuteNonQuery();
                     }
