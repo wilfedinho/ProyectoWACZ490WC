@@ -28,9 +28,9 @@ namespace GUI490WC
                     {
                         SesionManager490WC.GestorSesion490WC.Login490WC(usuarioIniciarSesion490WC);
 
-                        GestorForm490WC.gestorFormSG490WC.DefinirEstado490WC(new EstadoMenu490WC());
                         usuarioIniciarSesion490WC.Intentos490WC = 0;
                         UserManager490WC.UserManagerSG490WC.Modificar490WC(usuarioIniciarSesion490WC);
+                        GestorForm490WC.gestorFormSG490WC.DefinirEstado490WC(new EstadoMenu490WC());
                     }
                     else
                     {
