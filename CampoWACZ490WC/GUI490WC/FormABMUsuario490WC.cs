@@ -65,13 +65,15 @@ namespace GUI490WC
       
         private void BT_ALTA_USUARIO490WC_Click(object sender, EventArgs e)
         {
+            try 
+            {
             string username490WC = TB_Usuario490WC.Text;
             string nombre490WC = TB_NOMBRE490WC.Text;
             string apellido490WC = TB_APELLIDO490WC.Text;
             string dni490WC = TB_DNI490WC.Text;
             string contraseña490WC = Cifrador490WC.GestorCifrador490WC.EncriptarIrreversible490WC(dni490WC + apellido490WC);
             string email490WC = TB_EMAIL490WC.Text;
-            string rol490WC = CB_ROL490WC.SelectedItem.ToString();
+            string rol490WC = CB_ROL490WC.SelectedItem?.ToString();
             string idioma490WC = "Español";
             if (UserManager490WC.UserManagerSG490WC.VerificarDNI490WC(dni490WC) == true && UserManager490WC.UserManagerSG490WC.VerificarDNIDuplicado490WC(dni490WC) == false && UserManager490WC.UserManagerSG490WC.VerificarEmail490WC(email490WC) == true && UserManager490WC.UserManagerSG490WC.VerificarEmailDuplicado490WC(email490WC) == false && UserManager490WC.UserManagerSG490WC.VerificarUsernameDuplicado490WC(username490WC) == false)
             {
@@ -85,7 +87,13 @@ namespace GUI490WC
             {
                 MessageBox.Show("Datos Ingresados Incorrectos o Invalidos!!!");
                 VaciarTextBox490WC(this);
+            }
 
+            }
+            catch
+            {
+                MessageBox.Show("Datos Ingresados Incorrectos o Invalidos!!!");
+                VaciarTextBox490WC(this);
             }
         }
 
@@ -155,6 +163,7 @@ namespace GUI490WC
                 UsuarioModificar490WC.Nombre490WC = TB_NOMBRE490WC.Text;
                 UsuarioModificar490WC.Apellido490WC = TB_APELLIDO490WC.Text;
                 UsuarioModificar490WC.Email490WC = TB_EMAIL490WC.Text;
+                UsuarioModificar490WC.DNI490WC = TB_DNI490WC.Text;
                 UsuarioModificar490WC.Rol490WC = CB_ROL490WC.SelectedItem.ToString();
                 UserManager490WC.UserManagerSG490WC.Modificar490WC(UsuarioModificar490WC);
                 MostrarUsuarioPorConsulta490WC();
