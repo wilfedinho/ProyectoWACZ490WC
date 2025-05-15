@@ -67,10 +67,10 @@ namespace GUI490WC
         {
             try 
             {
-            string username490WC = TB_Usuario490WC.Text;
             string nombre490WC = TB_NOMBRE490WC.Text;
             string apellido490WC = TB_APELLIDO490WC.Text;
             string dni490WC = TB_DNI490WC.Text;
+            string username490WC = dni490WC + nombre490WC;
             string contraseña490WC = Cifrador490WC.GestorCifrador490WC.EncriptarIrreversible490WC(dni490WC + apellido490WC);
             string email490WC = TB_EMAIL490WC.Text;
             string rol490WC = CB_ROL490WC.SelectedItem?.ToString();
@@ -114,7 +114,7 @@ namespace GUI490WC
             try 
             {
             
-                TB_Usuario490WC.Text = dgvUsuario490WC.SelectedRows[0].Cells[0].Value.ToString();
+                
                 TB_NOMBRE490WC.Text = dgvUsuario490WC.SelectedRows[0].Cells[1].Value.ToString();
                 TB_APELLIDO490WC.Text = dgvUsuario490WC.SelectedRows[0].Cells[2].Value.ToString();
                 TB_DNI490WC.Text = dgvUsuario490WC.SelectedRows[0].Cells[3].Value.ToString();
@@ -152,7 +152,7 @@ namespace GUI490WC
             BT_ACTIVAR_USUARIO490WC.Enabled = false;
             BT_APLICAR490WC.Enabled = true;
             BT_CANCELAR490WC.Enabled = true;
-            TB_Usuario490WC.Enabled = false;
+           
         }
 
         private void BT_APLICAR490WC_Click(object sender, EventArgs e)
@@ -177,7 +177,7 @@ namespace GUI490WC
                 BT_ACTIVAR_USUARIO490WC.Enabled = true;
                 BT_APLICAR490WC.Enabled = false;
                 BT_CANCELAR490WC.Enabled = false;
-                TB_Usuario490WC.Enabled = true;
+              
             }
             catch { MessageBox.Show("Datos Ingresados Incorrectos!!!"); }
         }
@@ -190,7 +190,7 @@ namespace GUI490WC
             BT_DESBLOQUEAR_USUARIO490WC.Enabled = true;
             BT_SALIR490WC.Enabled = true;
             BT_ACTIVAR_USUARIO490WC.Enabled = true;
-            TB_Usuario490WC.Enabled = true;
+          
             BT_APLICAR490WC.Enabled = false;
             BT_CANCELAR490WC.Enabled = false;
             VaciarTextBox490WC(this);

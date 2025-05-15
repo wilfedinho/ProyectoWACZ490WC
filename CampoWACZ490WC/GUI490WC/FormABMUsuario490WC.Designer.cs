@@ -56,8 +56,6 @@
             this.LABEL_NOMBRE_ABM_USUARIO490WC = new System.Windows.Forms.Label();
             this.LABEL_ROL_ABM_USUARIO490WC = new System.Windows.Forms.Label();
             this.checkBoxMostrarDesactivados490WC = new System.Windows.Forms.CheckBox();
-            this.TB_Usuario490WC = new System.Windows.Forms.TextBox();
-            this.labelUsuarioABM490WC = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuario490WC)).BeginInit();
             this.SuspendLayout();
             // 
@@ -254,7 +252,7 @@
             this.TB_NOMBRE490WC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TB_NOMBRE490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.TB_NOMBRE490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.TB_NOMBRE490WC.Location = new System.Drawing.Point(161, 314);
+            this.TB_NOMBRE490WC.Location = new System.Drawing.Point(158, 280);
             this.TB_NOMBRE490WC.Name = "TB_NOMBRE490WC";
             this.TB_NOMBRE490WC.Size = new System.Drawing.Size(219, 27);
             this.TB_NOMBRE490WC.TabIndex = 14;
@@ -265,7 +263,7 @@
             this.TB_APELLIDO490WC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TB_APELLIDO490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.TB_APELLIDO490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.TB_APELLIDO490WC.Location = new System.Drawing.Point(161, 358);
+            this.TB_APELLIDO490WC.Location = new System.Drawing.Point(158, 324);
             this.TB_APELLIDO490WC.Name = "TB_APELLIDO490WC";
             this.TB_APELLIDO490WC.Size = new System.Drawing.Size(219, 27);
             this.TB_APELLIDO490WC.TabIndex = 15;
@@ -276,7 +274,7 @@
             this.TB_DNI490WC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TB_DNI490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.TB_DNI490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.TB_DNI490WC.Location = new System.Drawing.Point(161, 398);
+            this.TB_DNI490WC.Location = new System.Drawing.Point(158, 364);
             this.TB_DNI490WC.Name = "TB_DNI490WC";
             this.TB_DNI490WC.Size = new System.Drawing.Size(219, 27);
             this.TB_DNI490WC.TabIndex = 16;
@@ -287,7 +285,7 @@
             this.TB_EMAIL490WC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TB_EMAIL490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.TB_EMAIL490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.TB_EMAIL490WC.Location = new System.Drawing.Point(161, 443);
+            this.TB_EMAIL490WC.Location = new System.Drawing.Point(158, 409);
             this.TB_EMAIL490WC.Name = "TB_EMAIL490WC";
             this.TB_EMAIL490WC.Size = new System.Drawing.Size(219, 27);
             this.TB_EMAIL490WC.TabIndex = 17;
@@ -304,7 +302,7 @@
             "Admin",
             "Recepcionista",
             "Cajero"});
-            this.CB_ROL490WC.Location = new System.Drawing.Point(161, 487);
+            this.CB_ROL490WC.Location = new System.Drawing.Point(158, 453);
             this.CB_ROL490WC.Name = "CB_ROL490WC";
             this.CB_ROL490WC.Size = new System.Drawing.Size(219, 27);
             this.CB_ROL490WC.TabIndex = 18;
@@ -314,7 +312,7 @@
             this.LABEL_EMAIL_ABM_USUARIO490WC.AutoSize = true;
             this.LABEL_EMAIL_ABM_USUARIO490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.LABEL_EMAIL_ABM_USUARIO490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.LABEL_EMAIL_ABM_USUARIO490WC.Location = new System.Drawing.Point(24, 443);
+            this.LABEL_EMAIL_ABM_USUARIO490WC.Location = new System.Drawing.Point(21, 409);
             this.LABEL_EMAIL_ABM_USUARIO490WC.Name = "LABEL_EMAIL_ABM_USUARIO490WC";
             this.LABEL_EMAIL_ABM_USUARIO490WC.Size = new System.Drawing.Size(56, 20);
             this.LABEL_EMAIL_ABM_USUARIO490WC.TabIndex = 20;
@@ -325,7 +323,7 @@
             this.LABEL_DNI_ABM_USUARIO490WC.AutoSize = true;
             this.LABEL_DNI_ABM_USUARIO490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.LABEL_DNI_ABM_USUARIO490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.LABEL_DNI_ABM_USUARIO490WC.Location = new System.Drawing.Point(24, 398);
+            this.LABEL_DNI_ABM_USUARIO490WC.Location = new System.Drawing.Point(21, 364);
             this.LABEL_DNI_ABM_USUARIO490WC.Name = "LABEL_DNI_ABM_USUARIO490WC";
             this.LABEL_DNI_ABM_USUARIO490WC.Size = new System.Drawing.Size(40, 20);
             this.LABEL_DNI_ABM_USUARIO490WC.TabIndex = 21;
@@ -336,7 +334,7 @@
             this.LABEL_APELLIDO_ABM_USUARIO490WC.AutoSize = true;
             this.LABEL_APELLIDO_ABM_USUARIO490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.LABEL_APELLIDO_ABM_USUARIO490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.LABEL_APELLIDO_ABM_USUARIO490WC.Location = new System.Drawing.Point(24, 358);
+            this.LABEL_APELLIDO_ABM_USUARIO490WC.Location = new System.Drawing.Point(21, 324);
             this.LABEL_APELLIDO_ABM_USUARIO490WC.Name = "LABEL_APELLIDO_ABM_USUARIO490WC";
             this.LABEL_APELLIDO_ABM_USUARIO490WC.Size = new System.Drawing.Size(79, 20);
             this.LABEL_APELLIDO_ABM_USUARIO490WC.TabIndex = 22;
@@ -347,7 +345,7 @@
             this.LABEL_NOMBRE_ABM_USUARIO490WC.AutoSize = true;
             this.LABEL_NOMBRE_ABM_USUARIO490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.LABEL_NOMBRE_ABM_USUARIO490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.LABEL_NOMBRE_ABM_USUARIO490WC.Location = new System.Drawing.Point(24, 313);
+            this.LABEL_NOMBRE_ABM_USUARIO490WC.Location = new System.Drawing.Point(21, 279);
             this.LABEL_NOMBRE_ABM_USUARIO490WC.Name = "LABEL_NOMBRE_ABM_USUARIO490WC";
             this.LABEL_NOMBRE_ABM_USUARIO490WC.Size = new System.Drawing.Size(77, 20);
             this.LABEL_NOMBRE_ABM_USUARIO490WC.TabIndex = 23;
@@ -358,7 +356,7 @@
             this.LABEL_ROL_ABM_USUARIO490WC.AutoSize = true;
             this.LABEL_ROL_ABM_USUARIO490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.LABEL_ROL_ABM_USUARIO490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.LABEL_ROL_ABM_USUARIO490WC.Location = new System.Drawing.Point(24, 487);
+            this.LABEL_ROL_ABM_USUARIO490WC.Location = new System.Drawing.Point(21, 453);
             this.LABEL_ROL_ABM_USUARIO490WC.Name = "LABEL_ROL_ABM_USUARIO490WC";
             this.LABEL_ROL_ABM_USUARIO490WC.Size = new System.Drawing.Size(36, 20);
             this.LABEL_ROL_ABM_USUARIO490WC.TabIndex = 24;
@@ -377,28 +375,6 @@
             this.checkBoxMostrarDesactivados490WC.UseVisualStyleBackColor = true;
             this.checkBoxMostrarDesactivados490WC.CheckedChanged += new System.EventHandler(this.checkBoxMostrarDesactivados490WC_CheckedChanged);
             // 
-            // TB_Usuario490WC
-            // 
-            this.TB_Usuario490WC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(6)))), ((int)(((byte)(13)))));
-            this.TB_Usuario490WC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TB_Usuario490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
-            this.TB_Usuario490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.TB_Usuario490WC.Location = new System.Drawing.Point(161, 272);
-            this.TB_Usuario490WC.Name = "TB_Usuario490WC";
-            this.TB_Usuario490WC.Size = new System.Drawing.Size(219, 27);
-            this.TB_Usuario490WC.TabIndex = 13;
-            // 
-            // labelUsuarioABM490WC
-            // 
-            this.labelUsuarioABM490WC.AutoSize = true;
-            this.labelUsuarioABM490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
-            this.labelUsuarioABM490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.labelUsuarioABM490WC.Location = new System.Drawing.Point(24, 272);
-            this.labelUsuarioABM490WC.Name = "labelUsuarioABM490WC";
-            this.labelUsuarioABM490WC.Size = new System.Drawing.Size(74, 20);
-            this.labelUsuarioABM490WC.TabIndex = 19;
-            this.labelUsuarioABM490WC.Text = "Usuario";
-            // 
             // FormABMUsuario490WC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -411,13 +387,11 @@
             this.Controls.Add(this.LABEL_APELLIDO_ABM_USUARIO490WC);
             this.Controls.Add(this.LABEL_DNI_ABM_USUARIO490WC);
             this.Controls.Add(this.LABEL_EMAIL_ABM_USUARIO490WC);
-            this.Controls.Add(this.labelUsuarioABM490WC);
             this.Controls.Add(this.CB_ROL490WC);
             this.Controls.Add(this.TB_EMAIL490WC);
             this.Controls.Add(this.TB_DNI490WC);
             this.Controls.Add(this.TB_APELLIDO490WC);
             this.Controls.Add(this.TB_NOMBRE490WC);
-            this.Controls.Add(this.TB_Usuario490WC);
             this.Controls.Add(this.BT_SALIR490WC);
             this.Controls.Add(this.BT_ACTIVAR_USUARIO490WC);
             this.Controls.Add(this.BT_APLICAR490WC);
@@ -467,7 +441,5 @@
         private System.Windows.Forms.Label LABEL_NOMBRE_ABM_USUARIO490WC;
         private System.Windows.Forms.Label LABEL_ROL_ABM_USUARIO490WC;
         private System.Windows.Forms.CheckBox checkBoxMostrarDesactivados490WC;
-        private System.Windows.Forms.TextBox TB_Usuario490WC;
-        private System.Windows.Forms.Label labelUsuarioABM490WC;
     }
 }
