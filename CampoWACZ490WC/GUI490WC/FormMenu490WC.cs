@@ -125,19 +125,7 @@ namespace GUI490WC
 
         private void BT_IniciarSesion490WC_Click(object sender, EventArgs e)
         {
-            DialogResult decision = MessageBox.Show("Desea Iniciar Sesion?","",MessageBoxButtons.YesNo);
-            if(decision == DialogResult.Yes) 
-            {
-                if(SesionManager490WC.GestorSesion490WC.Usuario490WC !=null)
-                {
-                    MessageBox.Show("No se Puede Iniciar Sesion, Ya que hay una sesion iniciada!!!");
-                }
-                else 
-                {
-                    SesionManager490WC.GestorSesion490WC.Logout490WC();
-                    GestorForm490WC.gestorFormSG490WC.DefinirEstado490WC(new EstadoIniciarSesion490WC());
-                }
-            }
+            GestorForm490WC.gestorFormSG490WC.DefinirEstado490WC(new EstadoIniciarSesion490WC());
             hideSubmenu490WC();
         }
     }

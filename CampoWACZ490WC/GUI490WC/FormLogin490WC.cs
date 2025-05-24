@@ -16,44 +16,72 @@ namespace GUI490WC
         public FormLogin490WC()
         {
             InitializeComponent();
+            Habilitar();
+        }
+        public void Habilitar()
+        {
+            if (SesionManager490WC.GestorSesion490WC.Usuario490WC != null)
+            {
+                BT_VolverMenu.Visible = true;
+                BT_VolverMenu.Enabled = true;
+            }
+            else
+            {
+                BT_VolverMenu.Visible = false;
+                BT_VolverMenu.Enabled = false;
+            }
         }
         private void BT_LOGIN490WC_Click(object sender, EventArgs e)
         {
             Usuario490WC usuarioIniciarSesion490WC = UserManager490WC.UserManagerSG490WC.BuscarUsuarioPorUsername490WC(TB_Username490WC.Text);
-            if (usuarioIniciarSesion490WC != null)
+            if (SesionManager490WC.GestorSesion490WC.Usuario490WC == null)
             {
-                if (usuarioIniciarSesion490WC.IsBloqueado490WC == false && usuarioIniciarSesion490WC.IsHabilitado490WC == true)
+                if (usuarioIniciarSesion490WC != null)
                 {
-                    if (usuarioIniciarSesion490WC.Contraseña490WC == Cifrador490WC.GestorCifrador490WC.EncriptarIrreversible490WC(TB_Contrasena490WC.Text))
+                    if (usuarioIniciarSesion490WC.IsBloqueado490WC == false)
                     {
-                        SesionManager490WC.GestorSesion490WC.Login490WC(usuarioIniciarSesion490WC);
-
-                        usuarioIniciarSesion490WC.Intentos490WC = 0;
-                        UserManager490WC.UserManagerSG490WC.Modificar490WC(usuarioIniciarSesion490WC);
-                        GestorForm490WC.gestorFormSG490WC.DefinirEstado490WC(new EstadoMenu490WC());
-                    }
-                    else
-                    {
-                            usuarioIniciarSesion490WC.Intentos490WC += 1;
-                        if (usuarioIniciarSesion490WC.Intentos490WC >= 3 && usuarioIniciarSesion490WC.Rol490WC != "Admin")
+                        if (usuarioIniciarSesion490WC.IsHabilitado490WC == true)
                         {
-                            UserManager490WC.UserManagerSG490WC.BloquearUsuario490WC(usuarioIniciarSesion490WC.Username490WC);
+                            if (usuarioIniciarSesion490WC.Contraseña490WC == Cifrador490WC.GestorCifrador490WC.EncriptarIrreversible490WC(TB_Contrasena490WC.Text))
+                            {
+                              SesionManager490WC.GestorSesion490WC.Login490WC(usuarioIniciarSesion490WC);
+
+                              usuarioIniciarSesion490WC.Intentos490WC = 0;
+                              UserManager490WC.UserManagerSG490WC.Modificar490WC(usuarioIniciarSesion490WC);
+                              GestorForm490WC.gestorFormSG490WC.DefinirEstado490WC(new EstadoMenu490WC());
+                            }
+                            else
+                            {
+                                usuarioIniciarSesion490WC.Intentos490WC += 1;
+                                if (usuarioIniciarSesion490WC.Intentos490WC >= 3 && usuarioIniciarSesion490WC.Rol490WC != "Admin")
+                                {
+                                    UserManager490WC.UserManagerSG490WC.BloquearUsuario490WC(usuarioIniciarSesion490WC.Username490WC);
+                                }
+                                else
+                                {
+                                   UserManager490WC.UserManagerSG490WC.Modificar490WC(usuarioIniciarSesion490WC);
+                                }
+                                MessageBox.Show($"Datos Ingresados Incorrectos!!!");
+                            }
                         }
                         else 
                         {
-                            UserManager490WC.UserManagerSG490WC.Modificar490WC(usuarioIniciarSesion490WC);
+                            MessageBox.Show($"El Usuario {usuarioIniciarSesion490WC.Nombre490WC} está Desactivado!!!");
                         }
-                        MessageBox.Show($"Datos Ingresados Incorrectos!!!");
+                    }
+                    else
+                    {
+                        MessageBox.Show($"El Usuario {usuarioIniciarSesion490WC.Nombre490WC} está Bloqueado!!!");
                     }
                 }
                 else
                 {
-                    MessageBox.Show($"El Usuario {usuarioIniciarSesion490WC.Nombre490WC} está Bloqueado o Desactivado!!!");
+                    MessageBox.Show($"Datos Ingresados Incorrectos!!!");
                 }
             }
             else
             {
-                MessageBox.Show($"Datos Ingresados Incorrectos!!!");
+                MessageBox.Show($"No se Puede Iniciar Sesion, ya que existe una sesion activa!!!");
             }
         }
         private void FormLogin_FormClosed(object sender, FormClosedEventArgs e)
@@ -61,5 +89,9 @@ namespace GUI490WC
             GestorForm490WC.gestorFormSG490WC.DefinirEstado490WC(new EstadoCerrarAplicacion490WC());
         }
 
+        private void BT_VolverMenu_Click(object sender, EventArgs e)
+        {
+            GestorForm490WC.gestorFormSG490WC.DefinirEstado490WC(new EstadoMenu490WC());
+        }
     }
 }

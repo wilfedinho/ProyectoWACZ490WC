@@ -26,15 +26,33 @@ namespace GUI490WC
 
         private void BT_CambiarClave490WC_Click(object sender, EventArgs e)
         {
-            if (UserManager490WC.UserManagerSG490WC.VerificarCambioClave490WC(TB_ClaveNueva490WC.Text, TB_ConfirmarClave490WC.Text, TB_ClaveActual490WC.Text))
+            string tipoErrorCambioClave = UserManager490WC.UserManagerSG490WC.VerificarCambioClave490WC(TB_ClaveNueva490WC.Text, TB_ConfirmarClave490WC.Text, TB_ClaveActual490WC.Text);
+            if(tipoErrorCambioClave == "Ninguno")
             {
-                MessageBox.Show("El cambio de clave se realizo con exito!!");
+                MessageBox.Show($"Cambio de Clave Exitoso!!!");
+                LimpiarTB490WC();
+                SesionManager490WC.GestorSesion490WC.Logout490WC();
+                GestorForm490WC.gestorFormSG490WC.DefinirEstado490WC(new EstadoIniciarSesion490WC());
+            }
+            if(tipoErrorCambioClave == "ClaveConfirmacionIgualActual")
+            {
+                MessageBox.Show($"El cambio de clave no se efectuo ya que la clave de confirmacion es igual a la clave antigua");
                 LimpiarTB490WC();
             }
-            else
+            if (tipoErrorCambioClave == "ClaveNuevaIgualActual")
             {
+                MessageBox.Show($"El cambio de clave no se efectuo ya que la clave nueva es igual a la clave antigua");
                 LimpiarTB490WC();
-                MessageBox.Show("El cambio de clave ha fracasado por ingresar datos incorrectos o inconsistentes");
+            }
+            if (tipoErrorCambioClave == "ClaveNuevaDistintaClaveConfirmacion")
+            {
+                MessageBox.Show($"El cambio de clave no se efectuo ya que la clave nueva y la clave confirmacion son distintas entre si");
+                LimpiarTB490WC();
+            }
+            if (tipoErrorCambioClave == "ClaveActualDistintaOriginal")
+            {
+                MessageBox.Show($"El cambio de clave no se efectuo ya que la clave actual es distinta a la clave antigua");
+                LimpiarTB490WC();
             }
         }
         
