@@ -131,6 +131,18 @@ namespace SERVICIOS490WC
                 return false;
             }
         }
+        public bool VerificarEmailDuplicadoModificar490WC(string emailAntiguo, string emailNuevo)
+        {
+            Usuario490WC usuario = BuscarUsuarioPorEmail490WC(emailAntiguo);
+            if(usuario != null && emailAntiguo != emailNuevo)
+            {
+                return true;
+            }
+            else
+            {
+                return false; 
+            }
+        }
         public bool VerificarUsernameDuplicado490WC(string username490WC)
         {
 
@@ -144,6 +156,7 @@ namespace SERVICIOS490WC
                 return false;
             }
         }
+
 
         public string VerificarCambioClave490WC(string ClaveNueva490WC, string ClaveConfirmacion490WC, string ClaveActual490WC)
         {
