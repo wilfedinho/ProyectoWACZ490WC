@@ -32,7 +32,7 @@ namespace SERVICIOS490WC
                 {
                     cone490WC.Open();
                     string query490WC = "INSERT INTO Usuario490WC (Username490WC,Nombre490WC,Apellido490WC,DNI490WC,Contraseña490WC,Email490WC,Rol490WC,IdiomaUsuario490WC,Intentos490WC,IsBloqueado490WC,IsHabilitado490WC)" +
-                                        " VALUES (@Username490WC,@Nombre490WC,@Apellido490WC,@DNI490WC,@Contraseña490WC,@Email490WC,@Rol490WC,@IdiomaUsuario490WC,@Intentos490WC,@IsBloqueado490WC,@IsHabilitado490WC)";
+                                        " VALUES (@Username490WC,@Nombre490WC,@Apellido490WC,@DNI490WC,@Contraseña490WC,@Email490WC,@Rol490WC,@IdiomaUsuario490WC,@Intentos490WC,@IsBloqueado490WC,@IsHabilitado490WC,@HoraUltimaSesion490WC)";
                     using (SqlCommand comando490WC = new SqlCommand(query490WC, cone490WC))
                     {
                         comando490WC.Parameters.AddWithValue("@Username490WC", UsuarioAlta490WC.Username490WC);
@@ -46,6 +46,7 @@ namespace SERVICIOS490WC
                         comando490WC.Parameters.AddWithValue("@Intentos490WC", UsuarioAlta490WC.Intentos490WC);
                         comando490WC.Parameters.AddWithValue("@IsBloqueado490WC", UsuarioAlta490WC.IsBloqueado490WC);
                         comando490WC.Parameters.AddWithValue("@IsHabilitado490WC", UsuarioAlta490WC.IsHabilitado490WC);
+                        comando490WC.Parameters.AddWithValue("@HoraUltimaSesion490WC", UsuarioAlta490WC.HoraUltimaSesion490WC);
 
                         comando490WC.ExecuteNonQuery();
                     }
@@ -69,7 +70,7 @@ namespace SERVICIOS490WC
                 using (SqlConnection cone490WC = GestorConexion490WC.GestorCone490WC.DevolverConexion490WC())
                 {
                     cone490WC.Open();
-                    string query490WC = "UPDATE Usuario490WC SET Nombre490WC = @Nombre490WC, Apellido490WC = @Apellido490WC, DNI490WC = @DNI490WC, Contraseña490WC = @Contraseña490WC, Email490WC = @Email490WC, Rol490WC = @Rol490WC, IdiomaUsuario490WC = @IdiomaUsuario490WC, Intentos490WC = @Intentos490WC, IsBloqueado490WC = @IsBloqueado490WC, IsHabilitado490WC = @IsHabilitado490WC WHERE Username490WC = @Username490WC";
+                    string query490WC = "UPDATE Usuario490WC SET Nombre490WC = @Nombre490WC, Apellido490WC = @Apellido490WC, DNI490WC = @DNI490WC, Contraseña490WC = @Contraseña490WC, Email490WC = @Email490WC, Rol490WC = @Rol490WC, IdiomaUsuario490WC = @IdiomaUsuario490WC, Intentos490WC = @Intentos490WC, IsBloqueado490WC = @IsBloqueado490WC, IsHabilitado490WC = @IsHabilitado490WC, HoraUltimaSesion490WC = @HoraUltimaSesion490WC  WHERE Username490WC = @Username490WC";
 
                     using (SqlCommand comando490WC = new SqlCommand(query490WC, cone490WC))
                     {
@@ -84,7 +85,7 @@ namespace SERVICIOS490WC
                         comando490WC.Parameters.AddWithValue("@Intentos490WC", UsuarioModificado.Intentos490WC);
                         comando490WC.Parameters.AddWithValue("@IsBloqueado490WC", UsuarioModificado.IsBloqueado490WC);
                         comando490WC.Parameters.AddWithValue("@IsHabilitado490WC", UsuarioModificado.IsHabilitado490WC);
-
+                        comando490WC.Parameters.AddWithValue("@HoraUltimaSesion490WC", UsuarioModificado.HoraUltimaSesion490WC);
                         comando490WC.ExecuteNonQuery();
                     }
                 }

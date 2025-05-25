@@ -42,18 +42,19 @@ namespace GUI490WC
                     {
                         if (usuarioIniciarSesion490WC.IsHabilitado490WC == true)
                         {
+                                UserManager490WC.UserManagerSG490WC.ResetearIntentos490WC(usuarioIniciarSesion490WC);
                             if (usuarioIniciarSesion490WC.Contraseña490WC == Cifrador490WC.GestorCifrador490WC.EncriptarIrreversible490WC(TB_Contrasena490WC.Text))
                             {
-                              SesionManager490WC.GestorSesion490WC.Login490WC(usuarioIniciarSesion490WC);
-
-                              usuarioIniciarSesion490WC.Intentos490WC = 0;
-                              UserManager490WC.UserManagerSG490WC.Modificar490WC(usuarioIniciarSesion490WC);
-                              GestorForm490WC.gestorFormSG490WC.DefinirEstado490WC(new EstadoMenu490WC());
+                                SesionManager490WC.GestorSesion490WC.Login490WC(usuarioIniciarSesion490WC);
+                                usuarioIniciarSesion490WC.HoraUltimaSesion490WC = DateTime.Now;
+                                usuarioIniciarSesion490WC.Intentos490WC = 0;
+                                UserManager490WC.UserManagerSG490WC.Modificar490WC(usuarioIniciarSesion490WC);
+                                GestorForm490WC.gestorFormSG490WC.DefinirEstado490WC(new EstadoMenu490WC());
                             }
                             else
                             {
                                 usuarioIniciarSesion490WC.Intentos490WC += 1;
-                                if (usuarioIniciarSesion490WC.Intentos490WC >= 3 && usuarioIniciarSesion490WC.Rol490WC != "Admin")
+                                if (usuarioIniciarSesion490WC.Intentos490WC >= 3 && usuarioIniciarSesion490WC.Rol490WC != "AdminSistema")
                                 {
                                     UserManager490WC.UserManagerSG490WC.BloquearUsuario490WC(usuarioIniciarSesion490WC.Username490WC);
                                 }

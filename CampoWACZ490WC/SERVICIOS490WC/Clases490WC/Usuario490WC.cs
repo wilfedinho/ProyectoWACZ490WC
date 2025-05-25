@@ -19,6 +19,7 @@ namespace SERVICIOS490WC
         public bool IsBloqueado490WC { get; set; }
         public bool IsHabilitado490WC { get; set; }
         public string IdiomaUsuario490WC { get; set; }
+        public DateTime HoraUltimaSesion490WC { get; set; }
 
         public Usuario490WC(string nUsername490WC, string nNombre490WC, string nApellido490WC, string nDNI490WC, string nContraseña490WC, string nEmail490WC, string rOL490WC, string nIdioma490WC, int nIntentos490WC = 0, bool nIsBloqueado490WC = false, bool nIsHabilitado490WC = true)
         {
@@ -33,6 +34,7 @@ namespace SERVICIOS490WC
             Intentos490WC = nIntentos490WC;
             IsBloqueado490WC = nIsBloqueado490WC;
             IsHabilitado490WC = nIsHabilitado490WC;
+            HoraUltimaSesion490WC = DateTime.Now;
         }
     }
 }

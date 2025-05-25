@@ -33,14 +33,16 @@ namespace GUI490WC
             int indiceRow490WC = 0;
             foreach (Usuario490WC usuario490WC in UserManager490WC.UserManagerSG490WC.DevolverTodosLosUsuarios490WC())
             {
-
-                if (checkBoxMostrarDesactivados490WC.Checked || usuario490WC.IsHabilitado490WC == true)
+                if(usuario490WC.Username490WC != SesionManager490WC.GestorSesion490WC.Usuario490WC.Username490WC)
                 {
-                    indiceRow490WC = dgvUsuario490WC.Rows.Add(usuario490WC.Username490WC, usuario490WC.Nombre490WC, usuario490WC.Apellido490WC, usuario490WC.DNI490WC, usuario490WC.Email490WC, usuario490WC.Rol490WC, usuario490WC.IsBloqueado490WC, usuario490WC.IsHabilitado490WC);
-                }
-                if (usuario490WC.IsHabilitado490WC == false && dgvUsuario490WC.Rows.Count > 0 && checkBoxMostrarDesactivados490WC.Checked)
-                {
-                    dgvUsuario490WC.Rows[indiceRow490WC].DefaultCellStyle.BackColor = Color.LightCoral;
+                    if (checkBoxMostrarDesactivados490WC.Checked || usuario490WC.IsHabilitado490WC == true)
+                    {
+                        indiceRow490WC = dgvUsuario490WC.Rows.Add(usuario490WC.Username490WC, usuario490WC.Nombre490WC, usuario490WC.Apellido490WC, usuario490WC.DNI490WC, usuario490WC.Email490WC, usuario490WC.Rol490WC, usuario490WC.IsBloqueado490WC, usuario490WC.IsHabilitado490WC);
+                    }
+                    if (usuario490WC.IsHabilitado490WC == false && dgvUsuario490WC.Rows.Count > 0 && checkBoxMostrarDesactivados490WC.Checked)
+                    {
+                        dgvUsuario490WC.Rows[indiceRow490WC].DefaultCellStyle.BackColor = Color.LightCoral;
+                    } 
                 }
             }
         }
