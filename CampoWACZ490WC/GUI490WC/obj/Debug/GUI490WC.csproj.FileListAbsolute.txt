@@ -21,3 +21,5 @@ C:\Users\William Càrdenas\Desktop\TESIS 2025\CampoWACZ490WC\ProyectoWACZ490WC\C
 C:\Users\William Càrdenas\Desktop\TESIS 2025\CampoWACZ490WC\ProyectoWACZ490WC\CampoWACZ490WC\GUI490WC\obj\Debug\GUI490WC.FormABMUsuario490WC.resources
 C:\Users\William Càrdenas\Desktop\TESIS 2025\CampoWACZ490WC\ProyectoWACZ490WC\CampoWACZ490WC\GUI490WC\obj\Debug\GUI490WC.FormCambiarClave490WC.resources
 C:\Users\William Càrdenas\Desktop\TESIS 2025\CampoWACZ490WC\ProyectoWACZ490WC\CampoWACZ490WC\GUI490WC\obj\Debug\GUI490WC.exe.config
+C:\Users\William Càrdenas\Desktop\TESIS 2025\CampoWACZ490WC\ProyectoWACZ490WC\CampoWACZ490WC\GUI490WC\bin\Debug\SE490WC.dll
+C:\Users\William Càrdenas\Desktop\TESIS 2025\CampoWACZ490WC\ProyectoWACZ490WC\CampoWACZ490WC\GUI490WC\bin\Debug\SE490WC.pdb

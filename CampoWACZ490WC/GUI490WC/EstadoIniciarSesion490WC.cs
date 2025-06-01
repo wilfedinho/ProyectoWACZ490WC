@@ -18,7 +18,7 @@ namespace GUI490WC
         public override void EjecutarEstado490WC()
         {
            login490WC = new FormLogin490WC();
-           login490WC.ShowDialog();
+           login490WC?.ShowDialog();
         }
 
     }

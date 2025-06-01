@@ -54,6 +54,10 @@ namespace GUI490WC
                 MessageBox.Show($"El cambio de clave no se efectuo ya que la clave actual es distinta a la clave antigua");
                 LimpiarTB490WC();
             }
+            if (tipoErrorCambioClave == "Campos Vacios")
+            {
+                MessageBox.Show("El cambio de clave no se efectuo ya que se detecto que ingresaron campos vacios");
+            }
         }
         
 

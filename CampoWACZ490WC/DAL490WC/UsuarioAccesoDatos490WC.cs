@@ -31,7 +31,7 @@ namespace SERVICIOS490WC
                 using (SqlConnection cone490WC = GestorConexion490WC.GestorCone490WC.DevolverConexion490WC())
                 {
                     cone490WC.Open();
-                    string query490WC = "INSERT INTO Usuario490WC (Username490WC,Nombre490WC,Apellido490WC,DNI490WC,Contraseña490WC,Email490WC,Rol490WC,IdiomaUsuario490WC,Intentos490WC,IsBloqueado490WC,IsHabilitado490WC)" +
+                    string query490WC = "INSERT INTO Usuario490WC (Username490WC,Nombre490WC,Apellido490WC,DNI490WC,Contraseña490WC,Email490WC,Rol490WC,IdiomaUsuario490WC,Intentos490WC,IsBloqueado490WC,IsHabilitado490WC,HoraUltimaSesion490WC)" +
                                         " VALUES (@Username490WC,@Nombre490WC,@Apellido490WC,@DNI490WC,@Contraseña490WC,@Email490WC,@Rol490WC,@IdiomaUsuario490WC,@Intentos490WC,@IsBloqueado490WC,@IsHabilitado490WC,@HoraUltimaSesion490WC)";
                     using (SqlCommand comando490WC = new SqlCommand(query490WC, cone490WC))
                     {
@@ -100,7 +100,7 @@ namespace SERVICIOS490WC
                     using (SqlCommand comando490WC = new SqlCommand(query490WC, cone490WC))
                     {
                         comando490WC.Parameters.AddWithValue("@IsBloqueado490WC", 0);
-                        comando490WC.Parameters.AddWithValue("@Contraseña490WC", Cifrador490WC.GestorCifrador490WC.EncriptarIrreversible490WC(UsuarioDesbloquear.DNI490WC + UsuarioDesbloquear.Apellido490WC));
+                        comando490WC.Parameters.AddWithValue("@Contraseña490WC", UsuarioDesbloquear.Contraseña490WC);
                         comando490WC.Parameters.AddWithValue("@Username490WC", UsuarioDesbloquear.Username490WC);
                         comando490WC.Parameters.AddWithValue("@Intentos490WC", 0);
 

@@ -4,3 +4,8 @@ C:\Users\William Càrdenas\Desktop\TESIS 2025\CampoWACZ490WC\ProyectoWACZ490WC\C
 C:\Users\William Càrdenas\Desktop\TESIS 2025\CampoWACZ490WC\ProyectoWACZ490WC\CampoWACZ490WC\DAL490WC\obj\Debug\DAL490WC.csproj.CoreCompileInputs.cache
 C:\Users\William Càrdenas\Desktop\TESIS 2025\CampoWACZ490WC\ProyectoWACZ490WC\CampoWACZ490WC\DAL490WC\obj\Debug\DAL490WC.dll
 C:\Users\William Càrdenas\Desktop\TESIS 2025\CampoWACZ490WC\ProyectoWACZ490WC\CampoWACZ490WC\DAL490WC\obj\Debug\DAL490WC.pdb
+C:\Users\William Càrdenas\Desktop\TESIS 2025\CampoWACZ490WC\ProyectoWACZ490WC\CampoWACZ490WC\DAL490WC\bin\Debug\BE490WC.dll
+C:\Users\William Càrdenas\Desktop\TESIS 2025\CampoWACZ490WC\ProyectoWACZ490WC\CampoWACZ490WC\DAL490WC\bin\Debug\SE490WC.dll
+C:\Users\William Càrdenas\Desktop\TESIS 2025\CampoWACZ490WC\ProyectoWACZ490WC\CampoWACZ490WC\DAL490WC\bin\Debug\BE490WC.pdb
+C:\Users\William Càrdenas\Desktop\TESIS 2025\CampoWACZ490WC\ProyectoWACZ490WC\CampoWACZ490WC\DAL490WC\bin\Debug\SE490WC.pdb
+C:\Users\William Càrdenas\Desktop\TESIS 2025\CampoWACZ490WC\ProyectoWACZ490WC\CampoWACZ490WC\DAL490WC\obj\Debug\DAL490WC.csproj.Up2Date

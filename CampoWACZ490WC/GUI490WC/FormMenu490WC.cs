@@ -43,8 +43,12 @@ namespace GUI490WC
 
         private void FormMenu_FormClosed(object sender, FormClosedEventArgs e)
         {
-            SesionManager490WC.GestorSesion490WC.Logout490WC();
-            GestorForm490WC.gestorFormSG490WC.DefinirEstado490WC(new EstadoCerrarAplicacion490WC());
+            try
+            {
+               SesionManager490WC.GestorSesion490WC.Logout490WC();
+               GestorForm490WC.gestorFormSG490WC.DefinirEstado490WC(new EstadoCerrarAplicacion490WC());
+            }
+            catch { }
         }
         #region Diseno
 
@@ -97,36 +101,54 @@ namespace GUI490WC
 
         private void BT_Usuarios490WC_Click(object sender, EventArgs e)
         {
-            formABMUSUARIO490WC.ShowDialog();
-            hideSubmenu490WC();
-            this.Show();
+            try
+            {
+              formABMUSUARIO490WC.ShowDialog();
+              hideSubmenu490WC();
+              this?.Show();
+            } catch { }
         }
 
         private void BT_CambiarClave490WC_Click(object sender, EventArgs e)
         {
-            formCambiarClave490WC.ShowDialog();
-            hideSubmenu490WC();
-            this.Show();
+            try
+            {
+              formCambiarClave490WC.ShowDialog();
+              hideSubmenu490WC();
+              this?.Show();
+            } catch { }
         }
 
         private void BT_CerrarSesion490WC_Click(object sender, EventArgs e)
         {
-            SesionManager490WC.GestorSesion490WC.Logout490WC();
-            GestorForm490WC.gestorFormSG490WC.DefinirEstado490WC(new EstadoIniciarSesion490WC());
-            hideSubmenu490WC();
+            try
+            {
+               SesionManager490WC.GestorSesion490WC.Logout490WC();
+               GestorForm490WC.gestorFormSG490WC.DefinirEstado490WC(new EstadoIniciarSesion490WC());
+               hideSubmenu490WC();
+            }
+            catch { }
         }
 
         private void BT_Salir490WC_Click(object sender, EventArgs e)
         {
-            SesionManager490WC.GestorSesion490WC.Logout490WC();
-            GestorForm490WC.gestorFormSG490WC.DefinirEstado490WC(new EstadoCerrarAplicacion490WC());
-            hideSubmenu490WC();
+            try
+            {
+               SesionManager490WC.GestorSesion490WC.Logout490WC();
+               GestorForm490WC.gestorFormSG490WC.DefinirEstado490WC(new EstadoCerrarAplicacion490WC());
+               hideSubmenu490WC();
+            }
+            catch { }
         }
 
         private void BT_IniciarSesion490WC_Click(object sender, EventArgs e)
         {
-            GestorForm490WC.gestorFormSG490WC.DefinirEstado490WC(new EstadoIniciarSesion490WC());
-            hideSubmenu490WC();
+            try
+            {
+               GestorForm490WC.gestorFormSG490WC.DefinirEstado490WC(new EstadoIniciarSesion490WC());
+               hideSubmenu490WC();
+            }
+            catch { }
         }
     }
 }

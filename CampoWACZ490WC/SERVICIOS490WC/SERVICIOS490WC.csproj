@@ -41,17 +41,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Logica490WC\Cifrador490WC.cs" />
+    <Compile Include="Cifrador490WC.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Logica490WC\SesionManager490WC.cs" />
-    <Compile Include="Logica490WC\UserManager490WC.cs" />
-    <Compile Include="Clases490WC\Usuario490WC.cs" />
-    <Compile Include="AccesoDatos490WC\UsuarioAccesoDatos490WC.cs" />
+    <Compile Include="SesionManager490WC.cs" />
+    <Compile Include="UserManager490WC.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DAL490WC\DAL490WC.csproj">
       <Project>{c80766e9-a7b3-441a-86a3-8ff65b5882ad}</Project>
       <Name>DAL490WC</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SE490WC\SE490WC.csproj">
+      <Project>{fb9b0b3a-c570-46f7-89c6-ed0c84506f2f}</Project>
+      <Name>SE490WC</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
