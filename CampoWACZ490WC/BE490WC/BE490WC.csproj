@@ -41,6 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Beneficio490WC.cs" />
+    <Compile Include="Boleto490WC.cs" />
+    <Compile Include="BoletoIDA490WC.cs" />
+    <Compile Include="BoletoIDAVUELTA490WC.cs" />
+    <Compile Include="Cliente490WC.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

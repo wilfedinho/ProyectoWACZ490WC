@@ -57,6 +57,12 @@
     <Compile Include="FormABMUsuario490WC.Designer.cs">
       <DependentUpon>FormABMUsuario490WC.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormAplicarBeneficios490WC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAplicarBeneficios490WC.Designer.cs">
+      <DependentUpon>FormAplicarBeneficios490WC.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormCambiarClave490WC.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +86,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormABMUsuario490WC.resx">
       <DependentUpon>FormABMUsuario490WC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAplicarBeneficios490WC.resx">
+      <DependentUpon>FormAplicarBeneficios490WC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormCambiarClave490WC.resx">
       <DependentUpon>FormCambiarClave490WC.cs</DependentUpon>
@@ -133,6 +142,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\MascotaCZ2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Estrella Mario.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

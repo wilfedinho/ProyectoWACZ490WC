@@ -63,6 +63,16 @@ namespace GUI490WC.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Estrella_Mario {
+            get {
+                object obj = ResourceManager.GetObject("Estrella Mario", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap MascotaCZ2 {
             get {
                 object obj = ResourceManager.GetObject("MascotaCZ2", resourceCulture);

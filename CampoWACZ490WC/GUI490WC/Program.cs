@@ -16,7 +16,8 @@ namespace GUI490WC
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            GestorForm490WC.gestorFormSG490WC.DefinirEstado490WC(new EstadoIniciarSesion490WC());
+            Application.Run(new FormAplicarBeneficios490WC());
+            // GestorForm490WC.gestorFormSG490WC.DefinirEstado490WC(new EstadoIniciarSesion490WC());
         }
     }
 }
