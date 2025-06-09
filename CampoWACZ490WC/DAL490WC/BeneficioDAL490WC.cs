@@ -68,10 +68,10 @@ namespace DAL490WC
             using (SqlConnection cone490WC = GestorConexion490WC.GestorCone490WC.DevolverConexion490WC())
             {
                 cone490WC.Open();
-                string query490WC = "UPDATE Cliente490WC SET EstrellasCliente490WC = EstrellasCliente490WC - @CantidadEstrellas WHERE DNICliente490WC = @DNICliente490WC";
+                string query490WC = "UPDATE Cliente490WC SET EstrellasCliente490WC = EstrellasCliente490WC - @CantidadEstrellas490WC WHERE DNICliente490WC = @DNICliente490WC";
                 using (SqlCommand comando490WC = new SqlCommand(query490WC, cone490WC))
                 {
-                    comando490WC.Parameters.AddWithValue("@CantidadEstrellas", cantidadEstrellas490WC);
+                    comando490WC.Parameters.AddWithValue("@CantidadEstrellas490WC", cantidadEstrellas490WC);
                     comando490WC.Parameters.AddWithValue("@DNICliente490WC", DNICliente490WC);
                     comando490WC.ExecuteNonQuery();
                 }
