@@ -28,17 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle37 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle38 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle39 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvBeneficio490WC = new System.Windows.Forms.DataGridView();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.ColumnaCodigoBeneficio490WC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnaNombre490WC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnaCantidadBeneficioReclamado490WC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnaPrecioEstrella490WC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnImagenEstrella = new System.Windows.Forms.DataGridViewImageColumn();
             this.ColumnaDescuentoAplicar490WC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.TB_NOMBRE490WC = new System.Windows.Forms.TextBox();
             this.TB_APELLIDO490WC = new System.Windows.Forms.TextBox();
             this.TB_DNI490WC = new System.Windows.Forms.TextBox();
@@ -48,10 +48,10 @@
             this.BT_BUSCARCLIENTE490WC = new System.Windows.Forms.Button();
             this.BT_CANCELAR490WC = new System.Windows.Forms.Button();
             this.BT_CANJEARBENEFICIO490WC = new System.Windows.Forms.Button();
-            this.LISTBOXINFOCLIENTE490WC = new System.Windows.Forms.ListBox();
-            this.LISTBOXBENEFICIOSDELCLIENTE490WC = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.TBINFOCLIENTE490WC = new System.Windows.Forms.TextBox();
+            this.TBBENEFICIOCLIENTE490WC = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBeneficio490WC)).BeginInit();
             this.SuspendLayout();
             // 
@@ -79,13 +79,6 @@
             this.dgvBeneficio490WC.Size = new System.Drawing.Size(528, 341);
             this.dgvBeneficio490WC.TabIndex = 1;
             // 
-            // dataGridViewImageColumn1
-            // 
-            this.dataGridViewImageColumn1.HeaderText = "";
-            this.dataGridViewImageColumn1.Image = global::GUI490WC.Properties.Resources.Estrella_Mario;
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            this.dataGridViewImageColumn1.Width = 262;
-            // 
             // ColumnaCodigoBeneficio490WC
             // 
             this.ColumnaCodigoBeneficio490WC.HeaderText = "Column1";
@@ -95,27 +88,27 @@
             // 
             // ColumnaNombre490WC
             // 
-            dataGridViewCellStyle37.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle37.Font = new System.Drawing.Font("Microsoft Sans Serif", 23.75258F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ColumnaNombre490WC.DefaultCellStyle = dataGridViewCellStyle37;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 23.75258F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ColumnaNombre490WC.DefaultCellStyle = dataGridViewCellStyle13;
             this.ColumnaNombre490WC.HeaderText = "Nombre";
             this.ColumnaNombre490WC.Name = "ColumnaNombre490WC";
             this.ColumnaNombre490WC.ReadOnly = true;
             // 
             // ColumnaCantidadBeneficioReclamado490WC
             // 
-            dataGridViewCellStyle38.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle38.Font = new System.Drawing.Font("Microsoft Sans Serif", 23.75258F, System.Drawing.FontStyle.Bold);
-            this.ColumnaCantidadBeneficioReclamado490WC.DefaultCellStyle = dataGridViewCellStyle38;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 23.75258F, System.Drawing.FontStyle.Bold);
+            this.ColumnaCantidadBeneficioReclamado490WC.DefaultCellStyle = dataGridViewCellStyle14;
             this.ColumnaCantidadBeneficioReclamado490WC.HeaderText = "Cantidad de Reclamados";
             this.ColumnaCantidadBeneficioReclamado490WC.Name = "ColumnaCantidadBeneficioReclamado490WC";
             this.ColumnaCantidadBeneficioReclamado490WC.ReadOnly = true;
             // 
             // ColumnaPrecioEstrella490WC
             // 
-            dataGridViewCellStyle39.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle39.Font = new System.Drawing.Font("Microsoft Sans Serif", 23.75258F, System.Drawing.FontStyle.Bold);
-            this.ColumnaPrecioEstrella490WC.DefaultCellStyle = dataGridViewCellStyle39;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 23.75258F, System.Drawing.FontStyle.Bold);
+            this.ColumnaPrecioEstrella490WC.DefaultCellStyle = dataGridViewCellStyle15;
             this.ColumnaPrecioEstrella490WC.HeaderText = "Precio";
             this.ColumnaPrecioEstrella490WC.Name = "ColumnaPrecioEstrella490WC";
             this.ColumnaPrecioEstrella490WC.ReadOnly = true;
@@ -134,6 +127,13 @@
             this.ColumnaDescuentoAplicar490WC.Name = "ColumnaDescuentoAplicar490WC";
             this.ColumnaDescuentoAplicar490WC.ReadOnly = true;
             this.ColumnaDescuentoAplicar490WC.Visible = false;
+            // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.HeaderText = "";
+            this.dataGridViewImageColumn1.Image = global::GUI490WC.Properties.Resources.Estrella_Mario;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.Width = 262;
             // 
             // TB_NOMBRE490WC
             // 
@@ -240,34 +240,6 @@
             this.BT_CANJEARBENEFICIO490WC.Text = "Canjear Beneficio";
             this.BT_CANJEARBENEFICIO490WC.UseVisualStyleBackColor = false;
             // 
-            // LISTBOXINFOCLIENTE490WC
-            // 
-            this.LISTBOXINFOCLIENTE490WC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(6)))), ((int)(((byte)(13)))));
-            this.LISTBOXINFOCLIENTE490WC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.LISTBOXINFOCLIENTE490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
-            this.LISTBOXINFOCLIENTE490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.LISTBOXINFOCLIENTE490WC.FormattingEnabled = true;
-            this.LISTBOXINFOCLIENTE490WC.ItemHeight = 19;
-            this.LISTBOXINFOCLIENTE490WC.Location = new System.Drawing.Point(12, 52);
-            this.LISTBOXINFOCLIENTE490WC.Name = "LISTBOXINFOCLIENTE490WC";
-            this.LISTBOXINFOCLIENTE490WC.SelectionMode = System.Windows.Forms.SelectionMode.None;
-            this.LISTBOXINFOCLIENTE490WC.Size = new System.Drawing.Size(310, 173);
-            this.LISTBOXINFOCLIENTE490WC.TabIndex = 30;
-            // 
-            // LISTBOXBENEFICIOSDELCLIENTE490WC
-            // 
-            this.LISTBOXBENEFICIOSDELCLIENTE490WC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(6)))), ((int)(((byte)(13)))));
-            this.LISTBOXBENEFICIOSDELCLIENTE490WC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.LISTBOXBENEFICIOSDELCLIENTE490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
-            this.LISTBOXBENEFICIOSDELCLIENTE490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.LISTBOXBENEFICIOSDELCLIENTE490WC.FormattingEnabled = true;
-            this.LISTBOXBENEFICIOSDELCLIENTE490WC.ItemHeight = 19;
-            this.LISTBOXBENEFICIOSDELCLIENTE490WC.Location = new System.Drawing.Point(368, 52);
-            this.LISTBOXBENEFICIOSDELCLIENTE490WC.Name = "LISTBOXBENEFICIOSDELCLIENTE490WC";
-            this.LISTBOXBENEFICIOSDELCLIENTE490WC.SelectionMode = System.Windows.Forms.SelectionMode.None;
-            this.LISTBOXBENEFICIOSDELCLIENTE490WC.Size = new System.Drawing.Size(206, 173);
-            this.LISTBOXBENEFICIOSDELCLIENTE490WC.TabIndex = 31;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -290,16 +262,42 @@
             this.label2.TabIndex = 33;
             this.label2.Text = "Beneficios del Cliente";
             // 
+            // TBINFOCLIENTE490WC
+            // 
+            this.TBINFOCLIENTE490WC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(6)))), ((int)(((byte)(13)))));
+            this.TBINFOCLIENTE490WC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TBINFOCLIENTE490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.TBINFOCLIENTE490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
+            this.TBINFOCLIENTE490WC.Location = new System.Drawing.Point(12, 35);
+            this.TBINFOCLIENTE490WC.Multiline = true;
+            this.TBINFOCLIENTE490WC.Name = "TBINFOCLIENTE490WC";
+            this.TBINFOCLIENTE490WC.ReadOnly = true;
+            this.TBINFOCLIENTE490WC.Size = new System.Drawing.Size(310, 173);
+            this.TBINFOCLIENTE490WC.TabIndex = 34;
+            // 
+            // TBBENEFICIOCLIENTE490WC
+            // 
+            this.TBBENEFICIOCLIENTE490WC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(6)))), ((int)(((byte)(13)))));
+            this.TBBENEFICIOCLIENTE490WC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TBBENEFICIOCLIENTE490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.TBBENEFICIOCLIENTE490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
+            this.TBBENEFICIOCLIENTE490WC.Location = new System.Drawing.Point(368, 35);
+            this.TBBENEFICIOCLIENTE490WC.Multiline = true;
+            this.TBBENEFICIOCLIENTE490WC.Name = "TBBENEFICIOCLIENTE490WC";
+            this.TBBENEFICIOCLIENTE490WC.ReadOnly = true;
+            this.TBBENEFICIOCLIENTE490WC.Size = new System.Drawing.Size(206, 173);
+            this.TBBENEFICIOCLIENTE490WC.TabIndex = 35;
+            // 
             // FormAplicarBeneficios490WC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(27)))), ((int)(((byte)(38)))));
             this.ClientSize = new System.Drawing.Size(1135, 377);
+            this.Controls.Add(this.TBBENEFICIOCLIENTE490WC);
+            this.Controls.Add(this.TBINFOCLIENTE490WC);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.LISTBOXBENEFICIOSDELCLIENTE490WC);
-            this.Controls.Add(this.LISTBOXINFOCLIENTE490WC);
             this.Controls.Add(this.BT_CANJEARBENEFICIO490WC);
             this.Controls.Add(this.BT_CANCELAR490WC);
             this.Controls.Add(this.BT_BUSCARCLIENTE490WC);
@@ -337,9 +335,9 @@
         private System.Windows.Forms.Button BT_BUSCARCLIENTE490WC;
         private System.Windows.Forms.Button BT_CANCELAR490WC;
         private System.Windows.Forms.Button BT_CANJEARBENEFICIO490WC;
-        private System.Windows.Forms.ListBox LISTBOXINFOCLIENTE490WC;
-        private System.Windows.Forms.ListBox LISTBOXBENEFICIOSDELCLIENTE490WC;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox TBINFOCLIENTE490WC;
+        private System.Windows.Forms.TextBox TBBENEFICIOCLIENTE490WC;
     }
 }

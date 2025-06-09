@@ -29,17 +29,11 @@ namespace GUI490WC
             {
                 dgvBeneficio490WC.Rows.Add(beneficioMostrar490WC.CodigoBeneficio490WC, beneficioMostrar490WC.Nombre490WC, beneficioMostrar490WC.CantidadBeneficioReclamo490WC, $"{beneficioMostrar490WC.PrecioEstrella490WC}",null, beneficioMostrar490WC.DescuentoAplicar490WC);
             }
-            
-            LISTBOXINFOCLIENTE490WC.Items.Add("Nombre: William");
-            LISTBOXINFOCLIENTE490WC.Items.Add("");
-            LISTBOXINFOCLIENTE490WC.Items.Add("Apellido: Cardenas");
-            LISTBOXINFOCLIENTE490WC.Items.Add("");
-            LISTBOXINFOCLIENTE490WC.Items.Add("DNI: 96.117.490");
-           
-            
-            LISTBOXBENEFICIOSDELCLIENTE490WC.Items.Add($"1. 10%");
-            LISTBOXINFOCLIENTE490WC.Items.Add("");
-            LISTBOXBENEFICIOSDELCLIENTE490WC.Items.Add($"2. 40%");
+
+            TBINFOCLIENTE490WC.Text = $"Busque un Cliente Para Visualizar Sus Datos";
+            TBBENEFICIOCLIENTE490WC.Text = $"Busque un Cliente Para Ver Si posee Beneficios";
+            TBBENEFICIOCLIENTE490WC.Text += $"{Environment.NewLine} 1. 10%";
+            TBBENEFICIOCLIENTE490WC.Text += $"{Environment.NewLine} 2. 30%";
         }
     }
 }
