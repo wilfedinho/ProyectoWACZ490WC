@@ -29,6 +29,11 @@
         private void InitializeComponent()
         {
             this.dgvCliente490WC = new System.Windows.Forms.DataGridView();
+            this.DNI_CLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NOMBRE_CLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.APELLIDO_CLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ESTRELLAS_CLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IMAGEN_ESTRELLA = new System.Windows.Forms.DataGridViewImageColumn();
             this.LABEL_NOMBRE_ABM_USUARIO490WC = new System.Windows.Forms.Label();
             this.LABEL_APELLIDO_ABM_USUARIO490WC = new System.Windows.Forms.Label();
             this.LABEL_DNI_ABM_USUARIO490WC = new System.Windows.Forms.Label();
@@ -56,11 +61,8 @@
             this.TB_NOMBRETITULAR490WC = new System.Windows.Forms.TextBox();
             this.labelApellidoTitular490WC = new System.Windows.Forms.Label();
             this.TB_APELLIDOTITULAR490WC = new System.Windows.Forms.TextBox();
-            this.DNI_CLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NOMBRE_CLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.APELLIDO_CLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ESTRELLAS_CLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IMAGEN_ESTRELLA = new System.Windows.Forms.DataGridViewImageColumn();
+            this.TB_ESTRELLASCLIENTE490WC = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCliente490WC)).BeginInit();
             this.SuspendLayout();
             // 
@@ -86,6 +88,38 @@
             this.dgvCliente490WC.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCliente490WC.Size = new System.Drawing.Size(759, 316);
             this.dgvCliente490WC.TabIndex = 1;
+            // 
+            // DNI_CLIENTE
+            // 
+            this.DNI_CLIENTE.HeaderText = "DNI";
+            this.DNI_CLIENTE.Name = "DNI_CLIENTE";
+            this.DNI_CLIENTE.ReadOnly = true;
+            // 
+            // NOMBRE_CLIENTE
+            // 
+            this.NOMBRE_CLIENTE.HeaderText = "Nombre";
+            this.NOMBRE_CLIENTE.Name = "NOMBRE_CLIENTE";
+            this.NOMBRE_CLIENTE.ReadOnly = true;
+            // 
+            // APELLIDO_CLIENTE
+            // 
+            this.APELLIDO_CLIENTE.HeaderText = "Apellido";
+            this.APELLIDO_CLIENTE.Name = "APELLIDO_CLIENTE";
+            this.APELLIDO_CLIENTE.ReadOnly = true;
+            // 
+            // ESTRELLAS_CLIENTE
+            // 
+            this.ESTRELLAS_CLIENTE.HeaderText = "Estrellas";
+            this.ESTRELLAS_CLIENTE.Name = "ESTRELLAS_CLIENTE";
+            this.ESTRELLAS_CLIENTE.ReadOnly = true;
+            // 
+            // IMAGEN_ESTRELLA
+            // 
+            this.IMAGEN_ESTRELLA.HeaderText = "";
+            this.IMAGEN_ESTRELLA.Image = global::GUI490WC.Properties.Resources.Estrella_Mario;
+            this.IMAGEN_ESTRELLA.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.IMAGEN_ESTRELLA.Name = "IMAGEN_ESTRELLA";
+            this.IMAGEN_ESTRELLA.ReadOnly = true;
             // 
             // LABEL_NOMBRE_ABM_USUARIO490WC
             // 
@@ -406,37 +440,27 @@
             this.TB_APELLIDOTITULAR490WC.Size = new System.Drawing.Size(219, 27);
             this.TB_APELLIDOTITULAR490WC.TabIndex = 49;
             // 
-            // DNI_CLIENTE
+            // TB_ESTRELLASCLIENTE490WC
             // 
-            this.DNI_CLIENTE.HeaderText = "DNI";
-            this.DNI_CLIENTE.Name = "DNI_CLIENTE";
-            this.DNI_CLIENTE.ReadOnly = true;
+            this.TB_ESTRELLASCLIENTE490WC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(6)))), ((int)(((byte)(13)))));
+            this.TB_ESTRELLASCLIENTE490WC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TB_ESTRELLASCLIENTE490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.TB_ESTRELLASCLIENTE490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
+            this.TB_ESTRELLASCLIENTE490WC.Location = new System.Drawing.Point(783, 483);
+            this.TB_ESTRELLASCLIENTE490WC.Name = "TB_ESTRELLASCLIENTE490WC";
+            this.TB_ESTRELLASCLIENTE490WC.Size = new System.Drawing.Size(184, 27);
+            this.TB_ESTRELLASCLIENTE490WC.TabIndex = 51;
             // 
-            // NOMBRE_CLIENTE
+            // label2
             // 
-            this.NOMBRE_CLIENTE.HeaderText = "Nombre";
-            this.NOMBRE_CLIENTE.Name = "NOMBRE_CLIENTE";
-            this.NOMBRE_CLIENTE.ReadOnly = true;
-            // 
-            // APELLIDO_CLIENTE
-            // 
-            this.APELLIDO_CLIENTE.HeaderText = "Apellido";
-            this.APELLIDO_CLIENTE.Name = "APELLIDO_CLIENTE";
-            this.APELLIDO_CLIENTE.ReadOnly = true;
-            // 
-            // ESTRELLAS_CLIENTE
-            // 
-            this.ESTRELLAS_CLIENTE.HeaderText = "Estrellas";
-            this.ESTRELLAS_CLIENTE.Name = "ESTRELLAS_CLIENTE";
-            this.ESTRELLAS_CLIENTE.ReadOnly = true;
-            // 
-            // IMAGEN_ESTRELLA
-            // 
-            this.IMAGEN_ESTRELLA.HeaderText = "";
-            this.IMAGEN_ESTRELLA.Image = global::GUI490WC.Properties.Resources.Estrella_Mario;
-            this.IMAGEN_ESTRELLA.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.IMAGEN_ESTRELLA.Name = "IMAGEN_ESTRELLA";
-            this.IMAGEN_ESTRELLA.ReadOnly = true;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
+            this.label2.Location = new System.Drawing.Point(779, 460);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(148, 20);
+            this.label2.TabIndex = 52;
+            this.label2.Text = "Estrellas Cliente";
             // 
             // FormMaestroCliente490WC
             // 
@@ -444,6 +468,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(27)))), ((int)(((byte)(38)))));
             this.ClientSize = new System.Drawing.Size(983, 531);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.TB_ESTRELLASCLIENTE490WC);
             this.Controls.Add(this.labelApellidoTitular490WC);
             this.Controls.Add(this.TB_APELLIDOTITULAR490WC);
             this.Controls.Add(this.labelNombreTitular490WC);
@@ -515,5 +541,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn APELLIDO_CLIENTE;
         private System.Windows.Forms.DataGridViewTextBoxColumn ESTRELLAS_CLIENTE;
         private System.Windows.Forms.DataGridViewImageColumn IMAGEN_ESTRELLA;
+        private System.Windows.Forms.TextBox TB_ESTRELLASCLIENTE490WC;
+        private System.Windows.Forms.Label label2;
     }
 }
