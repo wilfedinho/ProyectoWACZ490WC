@@ -75,6 +75,12 @@
     <Compile Include="FormLogin490WC.Designer.cs">
       <DependentUpon>FormLogin490WC.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormMaestroBeneficio490WC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMaestroBeneficio490WC.Designer.cs">
+      <DependentUpon>FormMaestroBeneficio490WC.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormMaestroCliente490WC.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,6 +107,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormLogin490WC.resx">
       <DependentUpon>FormLogin490WC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMaestroBeneficio490WC.resx">
+      <DependentUpon>FormMaestroBeneficio490WC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMaestroCliente490WC.resx">
       <DependentUpon>FormMaestroCliente490WC.cs</DependentUpon>

@@ -17,9 +17,9 @@ namespace GUI490WC
         public FormAplicarBeneficios490WC()
         {
             InitializeComponent();
-            Mostrar();
+            Mostrar490WC();
         }
-        public void Mostrar()
+        public void Mostrar490WC()
         {
             GestorBeneficio490WC gestorBeneficio490WC = new GestorBeneficio490WC();
             dgvBeneficio490WC.RowTemplate.Height = 80;
