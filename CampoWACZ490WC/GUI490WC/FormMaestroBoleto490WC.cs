@@ -18,6 +18,7 @@ namespace GUI490WC
         {
             InitializeComponent();
             Mostrar490WC();
+            LimpiarCampos490WC();
         }
 
         public void Mostrar490WC()
@@ -28,14 +29,26 @@ namespace GUI490WC
             {
                 if (bole490WC is BoletoIDA490WC boletoIDA490WC)
                 {
-                   dgvBoleto490WC.Rows.Add(boletoIDA490WC.IDBoleto490WC, boletoIDA490WC.Origen490WC, boletoIDA490WC.Destino490WC, boletoIDA490WC.FechaPartida490WC, boletoIDA490WC.FechaLlegada490WC, null, null, boletoIDA490WC.ClaseBoleto490WC, boletoIDA490WC.EquipajePermitido490WC, boletoIDA490WC.Precio490WC);
+                   dgvBoleto490WC.Rows.Add(boletoIDA490WC.IDBoleto490WC, "IDA",boletoIDA490WC.Origen490WC, boletoIDA490WC.Destino490WC, boletoIDA490WC.FechaPartida490WC, boletoIDA490WC.FechaLlegada490WC, null, null, boletoIDA490WC.ClaseBoleto490WC, boletoIDA490WC.EquipajePermitido490WC, boletoIDA490WC.Precio490WC);
                 }
 
                 if (bole490WC is BoletoIDAVUELTA490WC boletoIDAVUELTA490WC)
                 {
-                    dgvBoleto490WC.Rows.Add(boletoIDAVUELTA490WC.IDBoleto490WC, boletoIDAVUELTA490WC.Origen490WC, boletoIDAVUELTA490WC.Destino490WC, boletoIDAVUELTA490WC.FechaPartida490WC, boletoIDAVUELTA490WC.FechaLlegada490WC, boletoIDAVUELTA490WC.FechaPartidaVUELTA490WC, boletoIDAVUELTA490WC.FechaLlegadaVUELTA490WC, boletoIDAVUELTA490WC.ClaseBoleto490WC, boletoIDAVUELTA490WC.EquipajePermitido490WC, boletoIDAVUELTA490WC.Precio490WC);
+                    dgvBoleto490WC.Rows.Add(boletoIDAVUELTA490WC.IDBoleto490WC, "IDA & VUELTA",boletoIDAVUELTA490WC.Origen490WC, boletoIDAVUELTA490WC.Destino490WC, boletoIDAVUELTA490WC.FechaPartida490WC, boletoIDAVUELTA490WC.FechaLlegada490WC, boletoIDAVUELTA490WC.FechaPartidaVUELTA490WC, boletoIDAVUELTA490WC.FechaLlegadaVUELTA490WC, boletoIDAVUELTA490WC.ClaseBoleto490WC, boletoIDAVUELTA490WC.EquipajePermitido490WC, boletoIDAVUELTA490WC.Precio490WC);
                 }
             }
+        }
+
+        public void LimpiarCampos490WC()
+        {
+            foreach (Control cl in this.Controls)
+            {
+                if (cl is TextBox tb)
+                {
+                    tb.Clear();
+                }
+            }
+            CB_CLASEBOLETO490WC.SelectedIndex = -1;
         }
 
 

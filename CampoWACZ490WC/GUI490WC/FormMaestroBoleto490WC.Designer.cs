@@ -57,6 +57,7 @@
             this.LABEL_FECHAPARTIDA_VUELTA490WC = new System.Windows.Forms.Label();
             this.LABEL_FECHALLEGADA_VUELTA490WC = new System.Windows.Forms.Label();
             this.ColumnaID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaModalidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnaOrigen = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnaDestino = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnaFechaPartidaIDA = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -79,6 +80,7 @@
             this.dgvBoleto490WC.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBoleto490WC.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnaID,
+            this.ColumnaModalidad,
             this.ColumnaOrigen,
             this.ColumnaDestino,
             this.ColumnaFechaPartidaIDA,
@@ -413,6 +415,12 @@
             this.ColumnaID.ReadOnly = true;
             this.ColumnaID.Visible = false;
             // 
+            // ColumnaModalidad
+            // 
+            this.ColumnaModalidad.HeaderText = "Modalidad";
+            this.ColumnaModalidad.Name = "ColumnaModalidad";
+            this.ColumnaModalidad.ReadOnly = true;
+            // 
             // ColumnaOrigen
             // 
             this.ColumnaOrigen.HeaderText = "Origen";
@@ -540,6 +548,7 @@
         private System.Windows.Forms.Label LABEL_FECHAPARTIDA_VUELTA490WC;
         private System.Windows.Forms.Label LABEL_FECHALLEGADA_VUELTA490WC;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaModalidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaOrigen;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaDestino;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaFechaPartidaIDA;
