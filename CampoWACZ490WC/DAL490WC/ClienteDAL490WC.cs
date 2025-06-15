@@ -76,6 +76,7 @@ namespace DAL490WC
         {
             using(SqlConnection cone490WC = GestorConexion490WC.GestorCone490WC.DevolverConexion490WC())
             {
+                BeneficioDAL490WC gestorBeneficio490WC = new BeneficioDAL490WC();
                 cone490WC.Open();
                 string query490WC = "SELECT * FROM Cliente490WC WHERE DNI490WC = @DNI490WC";
                 using (SqlCommand comando490WC = new SqlCommand(query490WC, cone490WC))
@@ -90,7 +91,8 @@ namespace DAL490WC
                                 reader["Nombre490WC"].ToString(),
                                 reader["Apellido490WC"].ToString(),
                                 reader["DatosTarjeta490WC"].ToString(),
-                                Convert.ToInt32(reader["EstrellasCliente490WC"])
+                                Convert.ToInt32(reader["EstrellasCliente490WC"]),
+                                gestorBeneficio490WC.ObtenerBeneficiosPorCliente490WC(DNI490WC)
                             );
                         }
                         else

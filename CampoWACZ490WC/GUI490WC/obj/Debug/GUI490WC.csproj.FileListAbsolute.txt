@@ -26,3 +26,4 @@ C:\Users\William Càrdenas\Desktop\TESIS 2025\CampoWACZ490WC\ProyectoWACZ490WC\C
 C:\Users\William Càrdenas\Desktop\TESIS 2025\CampoWACZ490WC\ProyectoWACZ490WC\CampoWACZ490WC\GUI490WC\obj\Debug\GUI490WC.FormAplicarBeneficios490WC.resources
 C:\Users\William Càrdenas\Desktop\TESIS 2025\CampoWACZ490WC\ProyectoWACZ490WC\CampoWACZ490WC\GUI490WC\obj\Debug\GUI490WC.FormMaestroCliente490WC.resources
 C:\Users\William Càrdenas\Desktop\TESIS 2025\CampoWACZ490WC\ProyectoWACZ490WC\CampoWACZ490WC\GUI490WC\obj\Debug\GUI490WC.FormMaestroBeneficio490WC.resources
+C:\Users\William Càrdenas\Desktop\TESIS 2025\CampoWACZ490WC\ProyectoWACZ490WC\CampoWACZ490WC\GUI490WC\obj\Debug\GUI490WC.FormMaestroBoleto490WC.resources

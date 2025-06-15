@@ -81,6 +81,12 @@
     <Compile Include="FormMaestroBeneficio490WC.Designer.cs">
       <DependentUpon>FormMaestroBeneficio490WC.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormMaestroBoleto490WC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMaestroBoleto490WC.Designer.cs">
+      <DependentUpon>FormMaestroBoleto490WC.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormMaestroCliente490WC.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +116,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormMaestroBeneficio490WC.resx">
       <DependentUpon>FormMaestroBeneficio490WC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMaestroBoleto490WC.resx">
+      <DependentUpon>FormMaestroBoleto490WC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMaestroCliente490WC.resx">
       <DependentUpon>FormMaestroCliente490WC.cs</DependentUpon>
