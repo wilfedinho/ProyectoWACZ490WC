@@ -130,6 +130,59 @@ namespace DAL490WC
             }
         }
 
+        public void AsignarBoletoCliente490WC(Boleto490WC boletoAsignar490WC, Cliente490WC clienteAsignar490WC)
+        {
+            using(SqlConnection cone490WC = GestorConexion490WC.GestorCone490WC.DevolverConexion490WC())
+            {
+                cone490WC.Open();
+                string query490WC = "UPDATE Boleto490WC SET Titular490WC = @Titular490WC WHERE ID490WC = @ID490WC";
+                using (SqlCommand comando490WC = new SqlCommand(query490WC, cone490WC))
+                {
+                    comando490WC.Parameters.AddWithValue("@ID490WC", boletoAsignar490WC.IDBoleto490WC);
+                    comando490WC.Parameters.AddWithValue("@Titular490WC", clienteAsignar490WC.DNI490WC);
+
+                    comando490WC.ExecuteNonQuery();
+                }
+            }
+        }
+
+
+        public void GenerarBoletoCompra490WC(Boleto490WC boletoGenerar490WC)
+        {
+            using (SqlConnection cone490WC = GestorConexion490WC.GestorCone490WC.DevolverConexion490WC())
+            {
+                cone490WC.Open();
+                string query490WC = "UPDATE Boleto490WC SET Titular490WC = @Titular490WC WHERE ID490WC = @ID490WC";
+                using (SqlCommand comando490WC = new SqlCommand(query490WC, cone490WC))
+                {
+                    comando490WC.Parameters.AddWithValue("@ID490WC", boletoGenerar490WC.IDBoleto490WC);
+                    comando490WC.Parameters.AddWithValue("@Titular490WC", boletoGenerar490WC.IDBoleto490WC);
+
+                    comando490WC.ExecuteNonQuery();
+                }
+            }
+        }
+
+        public void RevisarEstadoBoleto490WC() //Falta Implementar campo en la clase boleto que sea la fecha en que se genero, y verificar en base a ello si se debe "borrar" o nop
+        {
+
+        }
+
+        public void CobrarBoleto490WC(Boleto490WC BoletoCobrado490WC)
+        {
+            using (SqlConnection cone490WC = GestorConexion490WC.GestorCone490WC.DevolverConexion490WC())
+            {
+                cone490WC.Open();
+                string query490WC = "UPDATE Boleto490WC SET IsVendido490WC = 1 WHERE ID490WC = @ID490WC";
+                using (SqlCommand comando490WC = new SqlCommand(query490WC, cone490WC))
+                {
+                    comando490WC.Parameters.AddWithValue("@ID490WC", BoletoCobrado490WC.IDBoleto490WC);
+                    comando490WC.ExecuteNonQuery();
+                }
+            }
+        }
+
+
 
         #endregion
 
@@ -140,6 +193,7 @@ namespace DAL490WC
             using (SqlConnection cone490WC = GestorConexion490WC.GestorCone490WC.DevolverConexion490WC())
             {
                 List<Boleto490WC> boletos490WC = new List<Boleto490WC>();
+                List<Cliente490WC> Titulares490WC = new ClienteDAL490WC().ObtenerTodosLosCliente490WC();
                 cone490WC.Open();
                 string query490WC = "";
                 if (Modalidad490WC == "IDA")
@@ -161,7 +215,7 @@ namespace DAL490WC
                                     Convert.ToSingle(reader["PesoEquipajePermitido490WC"]),
                                     reader["ClaseBoleto490WC"].ToString(),
                                     Convert.ToSingle(reader["Precio490WC"]),
-                                    new ClienteDAL490WC().BuscarClientePorDNI490WC(reader["Titular490WC"].ToString())
+                                    Titulares490WC.Find(x => x.DNI490WC == reader["Titular490WC"].ToString())
                                 );
                                 boletos490WC.Add(boletoIDA490WC);
                             }
@@ -190,7 +244,7 @@ namespace DAL490WC
                                     Convert.ToSingle(reader["PesoEquipajePermitido490WC"]),
                                     reader["ClaseBoleto490WC"].ToString(),
                                     Convert.ToSingle(reader["Precio490WC"]),
-                                    new ClienteDAL490WC().BuscarClientePorDNI490WC(reader["Titular490WC"].ToString())
+                                   Titulares490WC.Find(x => x.DNI490WC == reader["Titular490WC"].ToString())
                                 );
                                 boletos490WC.Add(boletoIDA490WC);
                             }
@@ -206,6 +260,7 @@ namespace DAL490WC
         {
             using (SqlConnection cone490WC = GestorConexion490WC.GestorCone490WC.DevolverConexion490WC())
             {
+                List<Cliente490WC> Titulares490WC = new ClienteDAL490WC().ObtenerTodosLosCliente490WC();
                 cone490WC.Open();
                 string query490WC = "SELECT * FROM Boleto490WC WHERE ID490WC = @ID490WC";
                 using (SqlCommand comando490WC = new SqlCommand(query490WC, cone490WC))
@@ -227,7 +282,7 @@ namespace DAL490WC
                                     Convert.ToSingle(reader["PesoEquipajePermitido490WC"]),
                                     reader["ClaseBoleto490WC"].ToString(),
                                     Convert.ToSingle(reader["Precio490WC"]),
-                                    new ClienteDAL490WC().BuscarClientePorDNI490WC(reader["Titular490WC"].ToString())
+                                    Titulares490WC.Find(x => x.DNI490WC == ID490WC)
                                 );
                             }
                             else
@@ -244,7 +299,7 @@ namespace DAL490WC
                                     Convert.ToSingle(reader["PesoEquipajePermitido490WC"]),
                                     reader["ClaseBoleto490WC"].ToString(),
                                     Convert.ToSingle(reader["Precio490WC"]),
-                                    new ClienteDAL490WC().BuscarClientePorDNI490WC(reader["Titular490WC"].ToString())
+                                    Titulares490WC.Find(x => x.DNI490WC == ID490WC)
                                 );
                             }
                         }
@@ -259,6 +314,7 @@ namespace DAL490WC
             using (SqlConnection cone490WC = GestorConexion490WC.GestorCone490WC.DevolverConexion490WC())
             {
                 List<Boleto490WC> boletos490WC = new List<Boleto490WC>();
+                List<Cliente490WC> Titulares490WC = new ClienteDAL490WC().ObtenerTodosLosCliente490WC();
                 cone490WC.Open();
                 string query490WC = "SELECT * FROM Boleto490WC WHERE Titular490WC = @Titular490WC AND IsVendido490WC = 0";
                 using (SqlCommand comando490WC = new SqlCommand(query490WC, cone490WC))
@@ -280,7 +336,7 @@ namespace DAL490WC
                                    Convert.ToSingle(reader["PesoEquipajePermitido490WC"]),
                                    reader["ClaseBoleto490WC"].ToString(),
                                    Convert.ToSingle(reader["Precio490WC"]),
-                                   new ClienteDAL490WC().BuscarClientePorDNI490WC(reader["Titular490WC"].ToString())
+                                   Titulares490WC.Find(x => x.DNI490WC == cliente490WC.DNI490WC)
                                );
                                 boletos490WC.Add(boletoPagar490WC);
                             }
@@ -298,7 +354,7 @@ namespace DAL490WC
                                     Convert.ToSingle(reader["PesoEquipajePermitido490WC"]),
                                     reader["ClaseBoleto490WC"].ToString(),
                                     Convert.ToSingle(reader["Precio490WC"]),
-                                    new ClienteDAL490WC().BuscarClientePorDNI490WC(reader["Titular490WC"].ToString())
+                                    Titulares490WC.Find(x => x.DNI490WC == cliente490WC.DNI490WC)
                                 );
                                 boletos490WC.Add(boletoPagar490WC);
                             }
@@ -314,6 +370,7 @@ namespace DAL490WC
             using (SqlConnection cone490WC = GestorConexion490WC.GestorCone490WC.DevolverConexion490WC())
             {
                 List<Boleto490WC> boletos490WC = new List<Boleto490WC>();
+                List<Cliente490WC> Titulares490WC = new ClienteDAL490WC().ObtenerTodosLosCliente490WC();
                 cone490WC.Open();
                 string query490WC = "SELECT * FROM Boleto490WC WHERE Titular490WC = @Titular490WC";
                 using (SqlCommand comando490WC = new SqlCommand(query490WC, cone490WC))
@@ -335,7 +392,7 @@ namespace DAL490WC
                                    Convert.ToSingle(reader["PesoEquipajePermitido490WC"]),
                                    reader["ClaseBoleto490WC"].ToString(),
                                    Convert.ToSingle(reader["Precio490WC"]),
-                                   new ClienteDAL490WC().BuscarClientePorDNI490WC(reader["Titular490WC"].ToString())
+                                   Titulares490WC.Find(x => x.DNI490WC == cliente490WC.DNI490WC)
                                );
                                 boletos490WC.Add(boletoPagar490WC);
                             }
@@ -353,7 +410,66 @@ namespace DAL490WC
                                     Convert.ToSingle(reader["PesoEquipajePermitido490WC"]),
                                     reader["ClaseBoleto490WC"].ToString(),
                                     Convert.ToSingle(reader["Precio490WC"]),
-                                    new ClienteDAL490WC().BuscarClientePorDNI490WC(reader["Titular490WC"].ToString())
+                                    Titulares490WC.Find(x => x.DNI490WC == cliente490WC.DNI490WC)
+                                );
+                                boletos490WC.Add(boletoPagar490WC);
+                            }
+                        }
+                    }
+                }
+                return boletos490WC;
+            }
+        }
+
+        public List<Boleto490WC> ObtenerTodosLosBoletos490WC()
+        {
+            using (SqlConnection cone490WC = GestorConexion490WC.GestorCone490WC.DevolverConexion490WC())
+            {
+                List<Boleto490WC> boletos490WC = new List<Boleto490WC>();
+                List<Cliente490WC> Titulares490WC = new ClienteDAL490WC().ObtenerTodosLosCliente490WC();
+                if(cone490WC.State != System.Data.ConnectionState.Open)
+                {
+                  cone490WC.Open();
+                }
+                string query490WC = "SELECT * FROM Boleto490WC";
+                using (SqlCommand comando490WC = new SqlCommand(query490WC, cone490WC))
+                {
+                  
+                    using (SqlDataReader reader = comando490WC.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            if (reader["FechaPartidaVUELTA490WC"] == DBNull.Value || reader["FechaLlegadaVUELTA490WC"] == DBNull.Value)
+                            {
+                                Boleto490WC boletoPagar490WC = new BoletoIDA490WC(
+                                   reader["ID490WC"].ToString(),
+                                   reader["Origen490WC"].ToString(),
+                                   reader["Destino490WC"].ToString(),
+                                   Convert.ToDateTime(reader["FechaPartidaIDA490WC"]),
+                                   Convert.ToDateTime(reader["FechaLlegadaIDA490WC"]),
+                                   Convert.ToBoolean(reader["IsVendido490WC"]),
+                                   Convert.ToSingle(reader["PesoEquipajePermitido490WC"]),
+                                   reader["ClaseBoleto490WC"].ToString(),
+                                   Convert.ToSingle(reader["Precio490WC"]),
+                                   Titulares490WC.Find(x => x.DNI490WC == reader["Titular490WC"].ToString())
+                               );
+                                boletos490WC.Add(boletoPagar490WC);
+                            }
+                            else
+                            {
+                                Boleto490WC boletoPagar490WC = new BoletoIDAVUELTA490WC(
+                                    reader["ID490WC"].ToString(),
+                                    reader["Origen490WC"].ToString(),
+                                    reader["Destino490WC"].ToString(),
+                                    Convert.ToDateTime(reader["FechaPartidaIDA490WC"]),
+                                    Convert.ToDateTime(reader["FechaLlegadaIDA490WC"]),
+                                    Convert.ToDateTime(reader["FechaPartidaVUELTA490WC"]),
+                                    Convert.ToDateTime(reader["FechaLlegadaVUELTA490WC"]),
+                                    Convert.ToBoolean(reader["IsVendido490WC"]),
+                                    Convert.ToSingle(reader["PesoEquipajePermitido490WC"]),
+                                    reader["ClaseBoleto490WC"].ToString(),
+                                    Convert.ToSingle(reader["Precio490WC"]),
+                                    Titulares490WC.Find(x => x.DNI490WC == reader["Titular490WC"].ToString())
                                 );
                                 boletos490WC.Add(boletoPagar490WC);
                             }
@@ -365,6 +481,11 @@ namespace DAL490WC
         }
 
 
+
+        public List<Boleto490WC> BuscarBoletosPorFiltros() // Falta implementar la logica de filtros, que hicimos en el otro proyecto.
+        {
+            return null;
+        }
 
 
 

@@ -3,36 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\William C\u00E0rdenas\\Desktop\\TESIS 2025\\CampoWACZ490WC\\ProyectoWACZ490WC\\CampoWACZ490WC\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{18CB2207-87E5-4F1E-8B58-F70F52084651}|BLL490WC\\BLL490WC.csproj|C:\\Users\\William C\u00E0rdenas\\Desktop\\TESIS 2025\\CampoWACZ490WC\\ProyectoWACZ490WC\\CampoWACZ490WC\\bll490wc\\gestorboleto490wc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18CB2207-87E5-4F1E-8B58-F70F52084651}|BLL490WC\\BLL490WC.csproj|solutionrelative:bll490wc\\gestorboleto490wc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{C80766E9-A7B3-441A-86A3-8FF65B5882AD}|DAL490WC\\DAL490WC.csproj|c:\\users\\william c\u00E0rdenas\\desktop\\tesis 2025\\campowacz490wc\\proyectowacz490wc\\campowacz490wc\\dal490wc\\clientedal490wc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C80766E9-A7B3-441A-86A3-8FF65B5882AD}|DAL490WC\\DAL490WC.csproj|solutionrelative:dal490wc\\clientedal490wc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C80766E9-A7B3-441A-86A3-8FF65B5882AD}|DAL490WC\\DAL490WC.csproj|c:\\users\\william c\u00E0rdenas\\desktop\\tesis 2025\\campowacz490wc\\proyectowacz490wc\\campowacz490wc\\dal490wc\\boletodal490wc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C80766E9-A7B3-441A-86A3-8FF65B5882AD}|DAL490WC\\DAL490WC.csproj|c:\\users\\william c\u00E0rdenas\\desktop\\tesis 2025\\campowacz490wc\\proyectowacz490wc\\campowacz490wc\\dal490wc\\gestorconexion490wc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C80766E9-A7B3-441A-86A3-8FF65B5882AD}|DAL490WC\\DAL490WC.csproj|solutionrelative:dal490wc\\gestorconexion490wc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C80766E9-A7B3-441A-86A3-8FF65B5882AD}|DAL490WC\\DAL490WC.csproj|C:\\Users\\William C\u00E0rdenas\\Desktop\\TESIS 2025\\CampoWACZ490WC\\ProyectoWACZ490WC\\CampoWACZ490WC\\dal490wc\\boletodal490wc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C80766E9-A7B3-441A-86A3-8FF65B5882AD}|DAL490WC\\DAL490WC.csproj|solutionrelative:dal490wc\\boletodal490wc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C80766E9-A7B3-441A-86A3-8FF65B5882AD}|DAL490WC\\DAL490WC.csproj|c:\\users\\william c\u00E0rdenas\\desktop\\tesis 2025\\campowacz490wc\\proyectowacz490wc\\campowacz490wc\\dal490wc\\beneficiodal490wc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C80766E9-A7B3-441A-86A3-8FF65B5882AD}|DAL490WC\\DAL490WC.csproj|solutionrelative:dal490wc\\beneficiodal490wc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{18CB2207-87E5-4F1E-8B58-F70F52084651}|BLL490WC\\BLL490WC.csproj|c:\\users\\william c\u00E0rdenas\\desktop\\tesis 2025\\campowacz490wc\\proyectowacz490wc\\campowacz490wc\\bll490wc\\gestorboleto490wc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{18CB2207-87E5-4F1E-8B58-F70F52084651}|BLL490WC\\BLL490WC.csproj|solutionrelative:bll490wc\\gestorboleto490wc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{17406551-94B2-43D3-9D55-7009E09240A3}|GUI490WC\\GUI490WC.csproj|c:\\users\\william c\u00E0rdenas\\desktop\\tesis 2025\\campowacz490wc\\proyectowacz490wc\\campowacz490wc\\gui490wc\\formmaestroboleto490wc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{17406551-94B2-43D3-9D55-7009E09240A3}|GUI490WC\\GUI490WC.csproj|C:\\Users\\William C\u00E0rdenas\\Desktop\\TESIS 2025\\CampoWACZ490WC\\ProyectoWACZ490WC\\CampoWACZ490WC\\gui490wc\\formmaestroboleto490wc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{17406551-94B2-43D3-9D55-7009E09240A3}|GUI490WC\\GUI490WC.csproj|solutionrelative:gui490wc\\formmaestroboleto490wc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{17406551-94B2-43D3-9D55-7009E09240A3}|GUI490WC\\GUI490WC.csproj|c:\\users\\william c\u00E0rdenas\\desktop\\tesis 2025\\campowacz490wc\\proyectowacz490wc\\campowacz490wc\\gui490wc\\formmaestroboleto490wc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{17406551-94B2-43D3-9D55-7009E09240A3}|GUI490WC\\GUI490WC.csproj|C:\\Users\\William C\u00E0rdenas\\Desktop\\TESIS 2025\\CampoWACZ490WC\\ProyectoWACZ490WC\\CampoWACZ490WC\\gui490wc\\formmaestroboleto490wc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{17406551-94B2-43D3-9D55-7009E09240A3}|GUI490WC\\GUI490WC.csproj|solutionrelative:gui490wc\\formmaestroboleto490wc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{865DD08A-C4D3-4679-852F-1239493E0C7F}|BE490WC\\BE490WC.csproj|c:\\users\\william c\u00E0rdenas\\desktop\\tesis 2025\\campowacz490wc\\proyectowacz490wc\\campowacz490wc\\be490wc\\cliente490wc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{865DD08A-C4D3-4679-852F-1239493E0C7F}|BE490WC\\BE490WC.csproj|solutionrelative:be490wc\\cliente490wc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{17406551-94B2-43D3-9D55-7009E09240A3}|GUI490WC\\GUI490WC.csproj|c:\\users\\william c\u00E0rdenas\\desktop\\tesis 2025\\campowacz490wc\\proyectowacz490wc\\campowacz490wc\\gui490wc\\formabmusuario490wc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{17406551-94B2-43D3-9D55-7009E09240A3}|GUI490WC\\GUI490WC.csproj|solutionrelative:gui490wc\\formabmusuario490wc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{17406551-94B2-43D3-9D55-7009E09240A3}|GUI490WC\\GUI490WC.csproj|C:\\Users\\William C\u00E0rdenas\\Desktop\\TESIS 2025\\CampoWACZ490WC\\ProyectoWACZ490WC\\CampoWACZ490WC\\gui490wc\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -46,84 +38,59 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Cliente490WC.cs",
-              "DocumentMoniker": "C:\\Users\\William C\u00E0rdenas\\Desktop\\TESIS 2025\\CampoWACZ490WC\\ProyectoWACZ490WC\\CampoWACZ490WC\\BE490WC\\Cliente490WC.cs",
-              "RelativeDocumentMoniker": "BE490WC\\Cliente490WC.cs",
-              "ToolTip": "C:\\Users\\William C\u00E0rdenas\\Desktop\\TESIS 2025\\CampoWACZ490WC\\ProyectoWACZ490WC\\CampoWACZ490WC\\BE490WC\\Cliente490WC.cs",
-              "RelativeToolTip": "BE490WC\\Cliente490WC.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "GestorConexion490WC.cs",
+              "DocumentMoniker": "C:\\Users\\William C\u00E0rdenas\\Desktop\\TESIS 2025\\CampoWACZ490WC\\ProyectoWACZ490WC\\CampoWACZ490WC\\DAL490WC\\GestorConexion490WC.cs",
+              "RelativeDocumentMoniker": "DAL490WC\\GestorConexion490WC.cs",
+              "ToolTip": "C:\\Users\\William C\u00E0rdenas\\Desktop\\TESIS 2025\\CampoWACZ490WC\\ProyectoWACZ490WC\\CampoWACZ490WC\\DAL490WC\\GestorConexion490WC.cs",
+              "RelativeToolTip": "DAL490WC\\GestorConexion490WC.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-15T18:08:44.097Z",
+              "WhenOpened": "2025-06-15T21:16:25.609Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
+              "Title": "ClienteDAL490WC.cs",
+              "DocumentMoniker": "C:\\Users\\William C\u00E0rdenas\\Desktop\\TESIS 2025\\CampoWACZ490WC\\ProyectoWACZ490WC\\CampoWACZ490WC\\DAL490WC\\ClienteDAL490WC.cs",
+              "RelativeDocumentMoniker": "DAL490WC\\ClienteDAL490WC.cs",
+              "ToolTip": "C:\\Users\\William C\u00E0rdenas\\Desktop\\TESIS 2025\\CampoWACZ490WC\\ProyectoWACZ490WC\\CampoWACZ490WC\\DAL490WC\\ClienteDAL490WC.cs",
+              "RelativeToolTip": "DAL490WC\\ClienteDAL490WC.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAFcAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-15T21:04:43.015Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "GestorBoleto490WC.cs",
               "DocumentMoniker": "C:\\Users\\William C\u00E0rdenas\\Desktop\\TESIS 2025\\CampoWACZ490WC\\ProyectoWACZ490WC\\CampoWACZ490WC\\BLL490WC\\GestorBoleto490WC.cs",
               "RelativeDocumentMoniker": "BLL490WC\\GestorBoleto490WC.cs",
               "ToolTip": "C:\\Users\\William C\u00E0rdenas\\Desktop\\TESIS 2025\\CampoWACZ490WC\\ProyectoWACZ490WC\\CampoWACZ490WC\\BLL490WC\\GestorBoleto490WC.cs",
               "RelativeToolTip": "BLL490WC\\GestorBoleto490WC.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAKAAAAAAAAAA==",
+              "ViewState": "AgIAADoAAAAAAAAAAAAlwFkAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-15T17:51:13.763Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "BeneficioDAL490WC.cs",
-              "DocumentMoniker": "C:\\Users\\William C\u00E0rdenas\\Desktop\\TESIS 2025\\CampoWACZ490WC\\ProyectoWACZ490WC\\CampoWACZ490WC\\DAL490WC\\BeneficioDAL490WC.cs",
-              "RelativeDocumentMoniker": "DAL490WC\\BeneficioDAL490WC.cs",
-              "ToolTip": "C:\\Users\\William C\u00E0rdenas\\Desktop\\TESIS 2025\\CampoWACZ490WC\\ProyectoWACZ490WC\\CampoWACZ490WC\\DAL490WC\\BeneficioDAL490WC.cs",
-              "RelativeToolTip": "DAL490WC\\BeneficioDAL490WC.cs",
-              "ViewState": "AgIAAJUAAAAAAAAAAAAAwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-15T17:38:35.678Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ClienteDAL490WC.cs",
-              "DocumentMoniker": "C:\\Users\\William C\u00E0rdenas\\Desktop\\TESIS 2025\\CampoWACZ490WC\\ProyectoWACZ490WC\\CampoWACZ490WC\\DAL490WC\\ClienteDAL490WC.cs",
-              "RelativeDocumentMoniker": "DAL490WC\\ClienteDAL490WC.cs",
-              "ToolTip": "C:\\Users\\William C\u00E0rdenas\\Desktop\\TESIS 2025\\CampoWACZ490WC\\ProyectoWACZ490WC\\CampoWACZ490WC\\DAL490WC\\ClienteDAL490WC.cs",
-              "RelativeToolTip": "DAL490WC\\ClienteDAL490WC.cs",
-              "ViewState": "AgIAAFkAAAAAAAAAAAAgwAwAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-15T17:01:43.409Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "BoletoDAL490WC.cs",
               "DocumentMoniker": "C:\\Users\\William C\u00E0rdenas\\Desktop\\TESIS 2025\\CampoWACZ490WC\\ProyectoWACZ490WC\\CampoWACZ490WC\\DAL490WC\\BoletoDAL490WC.cs",
               "RelativeDocumentMoniker": "DAL490WC\\BoletoDAL490WC.cs",
               "ToolTip": "C:\\Users\\William C\u00E0rdenas\\Desktop\\TESIS 2025\\CampoWACZ490WC\\ProyectoWACZ490WC\\CampoWACZ490WC\\DAL490WC\\BoletoDAL490WC.cs",
               "RelativeToolTip": "DAL490WC\\BoletoDAL490WC.cs",
-              "ViewState": "AgIAAF4BAAAAAAAAAAAIwG4BAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAJsBAAAAAAAAAAAgwKcBAAA+AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-15T16:58:29.923Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "FormABMUsuario490WC.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\William C\u00E0rdenas\\Desktop\\TESIS 2025\\CampoWACZ490WC\\ProyectoWACZ490WC\\CampoWACZ490WC\\GUI490WC\\FormABMUsuario490WC.cs",
-              "RelativeDocumentMoniker": "GUI490WC\\FormABMUsuario490WC.cs",
-              "ToolTip": "C:\\Users\\William C\u00E0rdenas\\Desktop\\TESIS 2025\\CampoWACZ490WC\\ProyectoWACZ490WC\\CampoWACZ490WC\\GUI490WC\\FormABMUsuario490WC.cs [Dise\u00F1o]",
-              "RelativeToolTip": "GUI490WC\\FormABMUsuario490WC.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-15T16:08:59.475Z",
-              "EditorCaption": " [Dise\u00F1o]"
             },
             {
               "$type": "Document",
@@ -133,7 +100,7 @@
               "RelativeDocumentMoniker": "GUI490WC\\FormMaestroBoleto490WC.cs",
               "ToolTip": "C:\\Users\\William C\u00E0rdenas\\Desktop\\TESIS 2025\\CampoWACZ490WC\\ProyectoWACZ490WC\\CampoWACZ490WC\\GUI490WC\\FormMaestroBoleto490WC.cs",
               "RelativeToolTip": "GUI490WC\\FormMaestroBoleto490WC.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAWwBMAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAIwBoAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-15T16:08:03.473Z",
               "EditorCaption": ""
@@ -152,7 +119,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 6,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\William C\u00E0rdenas\\Desktop\\TESIS 2025\\CampoWACZ490WC\\ProyectoWACZ490WC\\CampoWACZ490WC\\GUI490WC\\Program.cs",
               "RelativeDocumentMoniker": "GUI490WC\\Program.cs",

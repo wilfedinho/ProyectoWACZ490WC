@@ -29,7 +29,7 @@ namespace DAL490WC
         }
         public SqlConnection DevolverConexion490WC()
         {
-            if (Conexion490WC.ConnectionString == string.Empty) Conexion490WC = new SqlConnection("Data Source =.; Initial Catalog = BD_PROYECTO_2025490WC; Integrated Security = True;");
+            Conexion490WC = new SqlConnection("Data Source =.; Initial Catalog = BD_PROYECTO_2025490WC; Integrated Security = True;");
             return Conexion490WC;
         }
 

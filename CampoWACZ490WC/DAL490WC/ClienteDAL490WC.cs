@@ -77,7 +77,10 @@ namespace DAL490WC
             using(SqlConnection cone490WC = GestorConexion490WC.GestorCone490WC.DevolverConexion490WC())
             {
                 BeneficioDAL490WC gestorBeneficio490WC = new BeneficioDAL490WC();
-                cone490WC.Open();
+                if (cone490WC.State != System.Data.ConnectionState.Open)
+                {
+                  cone490WC.Open();
+                }
                 string query490WC = "SELECT * FROM Cliente490WC WHERE DNI490WC = @DNI490WC";
                 using (SqlCommand comando490WC = new SqlCommand(query490WC, cone490WC))
                 {

@@ -56,6 +56,16 @@
             this.LABEL_FECHALLEGADA_IDA490WC = new System.Windows.Forms.Label();
             this.LABEL_FECHAPARTIDA_VUELTA490WC = new System.Windows.Forms.Label();
             this.LABEL_FECHALLEGADA_VUELTA490WC = new System.Windows.Forms.Label();
+            this.ColumnaID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaOrigen = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaDestino = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaFechaPartidaIDA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaFechaLlegadaIDA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaFechaPartidaVUELTA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaFechaLlegadaVUELTA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaClaseBoleto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaPesoEquipajePermitido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBoleto490WC)).BeginInit();
             this.SuspendLayout();
             // 
@@ -67,6 +77,17 @@
             this.dgvBoleto490WC.AllowUserToResizeRows = false;
             this.dgvBoleto490WC.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvBoleto490WC.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvBoleto490WC.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ColumnaID,
+            this.ColumnaOrigen,
+            this.ColumnaDestino,
+            this.ColumnaFechaPartidaIDA,
+            this.ColumnaFechaLlegadaIDA,
+            this.ColumnaFechaPartidaVUELTA,
+            this.ColumnaFechaLlegadaVUELTA,
+            this.ColumnaClaseBoleto,
+            this.ColumnaPesoEquipajePermitido,
+            this.ColumnaPrecio});
             this.dgvBoleto490WC.Location = new System.Drawing.Point(12, 12);
             this.dgvBoleto490WC.MultiSelect = false;
             this.dgvBoleto490WC.Name = "dgvBoleto490WC";
@@ -184,9 +205,9 @@
             this.CB_CLASEBOLETO490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
             this.CB_CLASEBOLETO490WC.FormattingEnabled = true;
             this.CB_CLASEBOLETO490WC.Items.AddRange(new object[] {
-            "Admin",
-            "Recepcionista",
-            "Cajero"});
+            "Turista",
+            "Ejecutiva",
+            "Primera Clase"});
             this.CB_CLASEBOLETO490WC.Location = new System.Drawing.Point(159, 537);
             this.CB_CLASEBOLETO490WC.Name = "CB_CLASEBOLETO490WC";
             this.CB_CLASEBOLETO490WC.Size = new System.Drawing.Size(174, 27);
@@ -385,6 +406,67 @@
             this.LABEL_FECHALLEGADA_VUELTA490WC.TabIndex = 58;
             this.LABEL_FECHALLEGADA_VUELTA490WC.Text = "Fecha Llegada VUELTA";
             // 
+            // ColumnaID
+            // 
+            this.ColumnaID.HeaderText = "Column1";
+            this.ColumnaID.Name = "ColumnaID";
+            this.ColumnaID.ReadOnly = true;
+            this.ColumnaID.Visible = false;
+            // 
+            // ColumnaOrigen
+            // 
+            this.ColumnaOrigen.HeaderText = "Origen";
+            this.ColumnaOrigen.Name = "ColumnaOrigen";
+            this.ColumnaOrigen.ReadOnly = true;
+            // 
+            // ColumnaDestino
+            // 
+            this.ColumnaDestino.HeaderText = "Destino";
+            this.ColumnaDestino.Name = "ColumnaDestino";
+            this.ColumnaDestino.ReadOnly = true;
+            // 
+            // ColumnaFechaPartidaIDA
+            // 
+            this.ColumnaFechaPartidaIDA.HeaderText = "FechaPartida IDA";
+            this.ColumnaFechaPartidaIDA.Name = "ColumnaFechaPartidaIDA";
+            this.ColumnaFechaPartidaIDA.ReadOnly = true;
+            // 
+            // ColumnaFechaLlegadaIDA
+            // 
+            this.ColumnaFechaLlegadaIDA.HeaderText = "FechaLlegada IDA";
+            this.ColumnaFechaLlegadaIDA.Name = "ColumnaFechaLlegadaIDA";
+            this.ColumnaFechaLlegadaIDA.ReadOnly = true;
+            // 
+            // ColumnaFechaPartidaVUELTA
+            // 
+            this.ColumnaFechaPartidaVUELTA.HeaderText = "FechaPartida VUELTA";
+            this.ColumnaFechaPartidaVUELTA.Name = "ColumnaFechaPartidaVUELTA";
+            this.ColumnaFechaPartidaVUELTA.ReadOnly = true;
+            // 
+            // ColumnaFechaLlegadaVUELTA
+            // 
+            this.ColumnaFechaLlegadaVUELTA.HeaderText = "FechaLlegada VUELTA";
+            this.ColumnaFechaLlegadaVUELTA.Name = "ColumnaFechaLlegadaVUELTA";
+            this.ColumnaFechaLlegadaVUELTA.ReadOnly = true;
+            // 
+            // ColumnaClaseBoleto
+            // 
+            this.ColumnaClaseBoleto.HeaderText = "Clase Boleto";
+            this.ColumnaClaseBoleto.Name = "ColumnaClaseBoleto";
+            this.ColumnaClaseBoleto.ReadOnly = true;
+            // 
+            // ColumnaPesoEquipajePermitido
+            // 
+            this.ColumnaPesoEquipajePermitido.HeaderText = "Peso Equipaje Permitido";
+            this.ColumnaPesoEquipajePermitido.Name = "ColumnaPesoEquipajePermitido";
+            this.ColumnaPesoEquipajePermitido.ReadOnly = true;
+            // 
+            // ColumnaPrecio
+            // 
+            this.ColumnaPrecio.HeaderText = "Precio";
+            this.ColumnaPrecio.Name = "ColumnaPrecio";
+            this.ColumnaPrecio.ReadOnly = true;
+            // 
             // FormMaestroBoleto490WC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -457,5 +539,15 @@
         private System.Windows.Forms.Label LABEL_FECHALLEGADA_IDA490WC;
         private System.Windows.Forms.Label LABEL_FECHAPARTIDA_VUELTA490WC;
         private System.Windows.Forms.Label LABEL_FECHALLEGADA_VUELTA490WC;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaOrigen;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaDestino;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaFechaPartidaIDA;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaFechaLlegadaIDA;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaFechaPartidaVUELTA;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaFechaLlegadaVUELTA;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaClaseBoleto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaPesoEquipajePermitido;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaPrecio;
     }
 }
