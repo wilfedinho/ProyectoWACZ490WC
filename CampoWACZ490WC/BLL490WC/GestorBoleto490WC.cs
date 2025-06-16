@@ -44,9 +44,10 @@ namespace BLL490WC
             boletoDAL490WC.GenerarBoletoCompra490WC(boletoGenerar490WC);
         }
 
-        public void RevisarEstadoBoleto490WC() //Falta Implementar campo en la clase boleto que sea la fecha en que se genero, y verificar en base a ello si se debe "borrar" o nop
+        public void LiberarBoletosVencidos490WC()
         {
-
+            BoletoDAL490WC boletoDAL490WC = new BoletoDAL490WC();
+            boletoDAL490WC.LiberarBoletosVencidos490WC();
         }
 
         public void CobrarBoleto490WC(Boleto490WC BoletoCobrado490WC)

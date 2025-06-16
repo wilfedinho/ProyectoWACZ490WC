@@ -18,8 +18,9 @@ namespace BE490WC
         public string ClaseBoleto490WC { get; set; }
         public float Precio490WC { get; set; }
         public Cliente490WC Titular490WC { get; set; }
+        public string NumeroAsiento490WC { get; set; } 
 
-        public Boleto490WC(string nIDBoleto490WC, string nOrigen490WC, string nDestino490WC, DateTime nFechaPartida490WC, DateTime nFechaLlegada490WC, bool nIsVendido490WC, float nEquipajePermitido490WC, string nClaseBoleto490WC, float nPrecio490WC, Cliente490WC nTitular490WC)
+        public Boleto490WC(string nIDBoleto490WC, string nOrigen490WC, string nDestino490WC, DateTime nFechaPartida490WC, DateTime nFechaLlegada490WC, bool nIsVendido490WC, float nEquipajePermitido490WC, string nClaseBoleto490WC, float nPrecio490WC, Cliente490WC nTitular490WC, string numeroAsiento490WC)
         {
             IDBoleto490WC = nIDBoleto490WC;
             Origen490WC = nOrigen490WC;
@@ -31,6 +32,7 @@ namespace BE490WC
             ClaseBoleto490WC = nClaseBoleto490WC;
             Precio490WC = nPrecio490WC;
             Titular490WC = nTitular490WC;
+            NumeroAsiento490WC = numeroAsiento490WC;
         }
     }
 }

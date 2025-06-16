@@ -24,7 +24,7 @@ namespace DAL490WC
                 string query490WC = "";
                 if (BoletoAgregar490WC is BoletoIDA490WC boletoIDA490WC)
                 {
-                    query490WC = "INSERT INTO Boleto490WC (ID490WC, Origen490WC, Destino490WC, FechaPartidaIDA490WC, FechaLlegadaIDA490WC, IsVendido490WC, PesoEquipajePermitido490WC, ClaseBoleto490WC, Precio490WC, Titular490WC) VALUES (@ID490WC, @Origen490WC, @Destino490WC, @FechaPartidaIDA490WC, @FechaLlegadaIDA490WC, @IsVendido490WC, @PesoEquipajePermitido490WC, @ClaseBoleto490WC, @Precio490WC, @Titular490WC)";
+                    query490WC = "INSERT INTO Boleto490WC (ID490WC, Origen490WC, Destino490WC, FechaPartidaIDA490WC, FechaLlegadaIDA490WC, IsVendido490WC, PesoEquipajePermitido490WC, ClaseBoleto490WC, Precio490WC, Titular490WC, NumeroAsiento490WC) VALUES (@ID490WC, @Origen490WC, @Destino490WC, @FechaPartidaIDA490WC, @FechaLlegadaIDA490WC, @IsVendido490WC, @PesoEquipajePermitido490WC, @ClaseBoleto490WC, @Precio490WC, @Titular490WC, @NumeroAsiento490WC)";
                     using (SqlCommand comando490WC = new SqlCommand(query490WC, cone490WC))
                     {
                         comando490WC.Parameters.AddWithValue("@ID490WC", boletoIDA490WC.IDBoleto490WC);
@@ -37,6 +37,7 @@ namespace DAL490WC
                         comando490WC.Parameters.AddWithValue("@ClaseBoleto490WC", boletoIDA490WC.ClaseBoleto490WC);
                         comando490WC.Parameters.AddWithValue("@Precio490WC", boletoIDA490WC.Precio490WC);
                         comando490WC.Parameters.AddWithValue("@Titular490WC", boletoIDA490WC.Titular490WC.DNI490WC);
+                        comando490WC.Parameters.AddWithValue("@NumeroAsiento490WC", boletoIDA490WC.NumeroAsiento490WC);
 
                         comando490WC.ExecuteNonQuery();
                     }
@@ -44,7 +45,7 @@ namespace DAL490WC
 
                 if (BoletoAgregar490WC is BoletoIDAVUELTA490WC boletoIDAVUELTA490WC)
                 {
-                    query490WC = "INSERT INTO Boleto490WC (ID490WC, Origen490WC, Destino490WC, FechaPartidaIDA490WC, FechaLlegadaIDA490WC, FechaPartidaVUELTA490WC, FechaLlegadaVUELTA490WC, IsVendido490WC, PesoEquipajePermitido490WC, ClaseBoleto490WC, Precio490WC, Titular490WC) VALUES (@ID490WC, @Origen490WC, @Destino490WC, @FechaPartidaIDA490WC, @FechaLlegadaIDA490WC, @FechaPartidaVUELTA490WC, @FechaLlegadaVUELTA490WC, @IsVendido490WC, @PesoEquipajePermitido490WC, @ClaseBoleto490WC, @Precio490WC, @Titular490WC)";
+                    query490WC = "INSERT INTO Boleto490WC (ID490WC, Origen490WC, Destino490WC, FechaPartidaIDA490WC, FechaLlegadaIDA490WC, FechaPartidaVUELTA490WC, FechaLlegadaVUELTA490WC, IsVendido490WC, PesoEquipajePermitido490WC, ClaseBoleto490WC, Precio490WC, Titular490WC, NumeroAsiento490WC) VALUES (@ID490WC, @Origen490WC, @Destino490WC, @FechaPartidaIDA490WC, @FechaLlegadaIDA490WC, @FechaPartidaVUELTA490WC, @FechaLlegadaVUELTA490WC, @IsVendido490WC, @PesoEquipajePermitido490WC, @ClaseBoleto490WC, @Precio490WC, @Titular490WC, @NumeroAsiento490WC)";
                     using (SqlCommand comando490WC = new SqlCommand(query490WC, cone490WC))
                     {
                         comando490WC.Parameters.AddWithValue("@ID490WC", boletoIDAVUELTA490WC.IDBoleto490WC);
@@ -59,6 +60,7 @@ namespace DAL490WC
                         comando490WC.Parameters.AddWithValue("@ClaseBoleto490WC", boletoIDAVUELTA490WC.ClaseBoleto490WC);
                         comando490WC.Parameters.AddWithValue("@Precio490WC", boletoIDAVUELTA490WC.Precio490WC);
                         comando490WC.Parameters.AddWithValue("@Titular490WC", boletoIDAVUELTA490WC.Titular490WC.DNI490WC);
+                        comando490WC.Parameters.AddWithValue("@NumeroAsiento490WC", boletoIDAVUELTA490WC.NumeroAsiento490WC);
 
                         comando490WC.ExecuteNonQuery();
                     }
@@ -88,7 +90,7 @@ namespace DAL490WC
                 string query490WC = "";
                 if (BoletoModificado490WC is BoletoIDA490WC boletoIDA490WC)
                 {
-                    query490WC = "UPDATE Boleto490WC SET Origen490WC = @Origen490WC, Destino490WC = @Destino490WC, FechaPartidaIDA490WC = @FechaPartidaIDA490WC, FechaLlegadaIDA490WC = @FechaLlegadaIDA490WC, IsVendido490WC = @IsVendido490WC, PesoEquipajePermitido490WC = @PesoEquipajePermitido490WC, ClaseBoleto490WC = @ClaseBoleto490WC, Precio490WC = @Precio490WC, Titular490WC = @Titular490WC WHERE ID490WC = @ID490WC";
+                    query490WC = "UPDATE Boleto490WC SET Origen490WC = @Origen490WC, Destino490WC = @Destino490WC, FechaPartidaIDA490WC = @FechaPartidaIDA490WC, FechaLlegadaIDA490WC = @FechaLlegadaIDA490WC, IsVendido490WC = @IsVendido490WC, PesoEquipajePermitido490WC = @PesoEquipajePermitido490WC, ClaseBoleto490WC = @ClaseBoleto490WC, Precio490WC = @Precio490WC, Titular490WC = @Titular490WC, NumeroAsiento490WC = @NumeroAsiento490WC WHERE ID490WC = @ID490WC";
                     using (SqlCommand comando490WC = new SqlCommand(query490WC, cone490WC))
                     {
                         comando490WC.Parameters.AddWithValue("@ID490WC", boletoIDA490WC.IDBoleto490WC);
@@ -101,6 +103,7 @@ namespace DAL490WC
                         comando490WC.Parameters.AddWithValue("@ClaseBoleto490WC", boletoIDA490WC.ClaseBoleto490WC);
                         comando490WC.Parameters.AddWithValue("@Precio490WC", boletoIDA490WC.Precio490WC);
                         comando490WC.Parameters.AddWithValue("@Titular490WC", boletoIDA490WC.Titular490WC.DNI490WC);
+                        comando490WC.Parameters.AddWithValue("@NumeroAsiento490WC", boletoIDA490WC.NumeroAsiento490WC);
 
                         comando490WC.ExecuteNonQuery();
                     }
@@ -108,7 +111,7 @@ namespace DAL490WC
 
                 if (BoletoModificado490WC is BoletoIDAVUELTA490WC boletoIDAVUELTA490WC)
                 {
-                    query490WC = "UPDATE Boleto490WC SET Origen490WC = @Origen490WC, Destino490WC = @Destino490WC, FechaPartidaIDA490WC = @FechaPartidaIDA490WC, FechaLlegadaIDA490WC = @FechaLlegadaIDA490WC, FechaPartidaVUELTA490WC = @FechaPartidaVUELTA490WC, FechaLlegadaVUELTA490WC = @FechaLlegadaVUELTA490WC, IsVendido490WC = @IsVendido490WC, PesoEquipajePermitido490WC = @PesoEquipajePermitido490WC, ClaseBoleto490WC = @ClaseBoleto490WC, Precio490WC = @Precio490WC, Titular490WC = @Titular490WC WHERE ID490WC = @ID490WC";
+                    query490WC = "UPDATE Boleto490WC SET Origen490WC = @Origen490WC, Destino490WC = @Destino490WC, FechaPartidaIDA490WC = @FechaPartidaIDA490WC, FechaLlegadaIDA490WC = @FechaLlegadaIDA490WC, FechaPartidaVUELTA490WC = @FechaPartidaVUELTA490WC, FechaLlegadaVUELTA490WC = @FechaLlegadaVUELTA490WC, IsVendido490WC = @IsVendido490WC, PesoEquipajePermitido490WC = @PesoEquipajePermitido490WC, ClaseBoleto490WC = @ClaseBoleto490WC, Precio490WC = @Precio490WC, Titular490WC = @Titular490WC, NumeroAsiento490WC = @NumeroAsiento490WC WHERE ID490WC = @ID490WC";
                     using (SqlCommand comando490WC = new SqlCommand(query490WC, cone490WC))
                     {
                         comando490WC.Parameters.AddWithValue("@ID490WC", boletoIDAVUELTA490WC.IDBoleto490WC);
@@ -123,6 +126,7 @@ namespace DAL490WC
                         comando490WC.Parameters.AddWithValue("@ClaseBoleto490WC", boletoIDAVUELTA490WC.ClaseBoleto490WC);
                         comando490WC.Parameters.AddWithValue("@Precio490WC", boletoIDAVUELTA490WC.Precio490WC);
                         comando490WC.Parameters.AddWithValue("@Titular490WC", boletoIDAVUELTA490WC.Titular490WC.DNI490WC);
+                        comando490WC.Parameters.AddWithValue("@NumeroAsiento490WC", boletoIDAVUELTA490WC.NumeroAsiento490WC);
 
                         comando490WC.ExecuteNonQuery();
                     }
@@ -135,11 +139,12 @@ namespace DAL490WC
             using(SqlConnection cone490WC = GestorConexion490WC.GestorCone490WC.DevolverConexion490WC())
             {
                 cone490WC.Open();
-                string query490WC = "UPDATE Boleto490WC SET Titular490WC = @Titular490WC WHERE ID490WC = @ID490WC";
+                string query490WC = "UPDATE Boleto490WC SET Titular490WC = @Titular490WC, FechaBoletoGenerado490WC = @FechaBoletoGenerado490WC WHERE ID490WC = @ID490WC";
                 using (SqlCommand comando490WC = new SqlCommand(query490WC, cone490WC))
                 {
                     comando490WC.Parameters.AddWithValue("@ID490WC", boletoAsignar490WC.IDBoleto490WC);
                     comando490WC.Parameters.AddWithValue("@Titular490WC", clienteAsignar490WC.DNI490WC);
+                    comando490WC.Parameters.AddWithValue("@FechaBoletoGenerado490WC", DateTime.Now);
 
                     comando490WC.ExecuteNonQuery();
                 }
@@ -152,21 +157,31 @@ namespace DAL490WC
             using (SqlConnection cone490WC = GestorConexion490WC.GestorCone490WC.DevolverConexion490WC())
             {
                 cone490WC.Open();
-                string query490WC = "UPDATE Boleto490WC SET Titular490WC = @Titular490WC WHERE ID490WC = @ID490WC";
+                string query490WC = "UPDATE Boleto490WC SET Titular490WC = @Titular490WC, FechaBoletoGenerado490WC = @FechaBoletoGenerado490WC WHERE ID490WC = @ID490WC";
                 using (SqlCommand comando490WC = new SqlCommand(query490WC, cone490WC))
                 {
                     comando490WC.Parameters.AddWithValue("@ID490WC", boletoGenerar490WC.IDBoleto490WC);
                     comando490WC.Parameters.AddWithValue("@Titular490WC", boletoGenerar490WC.IDBoleto490WC);
+                    comando490WC.Parameters.AddWithValue("@FechaBoletoGenerado490WC", DateTime.Now);
 
                     comando490WC.ExecuteNonQuery();
                 }
             }
         }
 
-        public void RevisarEstadoBoleto490WC() //Falta Implementar campo en la clase boleto que sea la fecha en que se genero, y verificar en base a ello si se debe "borrar" o nop
+        public void LiberarBoletosVencidos490WC()
         {
-
+            using (SqlConnection cone490WC = GestorConexion490WC.GestorCone490WC.DevolverConexion490WC())
+            {
+                cone490WC.Open();
+                string query490WC = "UPDATE Boleto490WC SET Titular490WC = 'Sistema', FechaBoletoGenerado490WC = NULL WHERE IsVendido490WC = 0 AND FechaBoletoGenerado490WC IS NOT NULL AND DATEADD(hour, 8, FechaBoletoGenerado490WC) <= SYSDATETIME()";
+                using (SqlCommand comando490WC = new SqlCommand(query490WC, cone490WC))
+                {
+                    comando490WC.ExecuteNonQuery();
+                }
+            }
         }
+
 
         public void CobrarBoleto490WC(Boleto490WC BoletoCobrado490WC)
         {
@@ -215,7 +230,8 @@ namespace DAL490WC
                                     Convert.ToSingle(reader["PesoEquipajePermitido490WC"]),
                                     reader["ClaseBoleto490WC"].ToString(),
                                     Convert.ToSingle(reader["Precio490WC"]),
-                                    Titulares490WC.Find(x => x.DNI490WC == reader["Titular490WC"].ToString())
+                                    Titulares490WC.Find(x => x.DNI490WC == reader["Titular490WC"].ToString()),
+                                    reader["NumeroAsiento490WC"].ToString()
                                 );
                                 boletos490WC.Add(boletoIDA490WC);
                             }
@@ -244,7 +260,8 @@ namespace DAL490WC
                                     Convert.ToSingle(reader["PesoEquipajePermitido490WC"]),
                                     reader["ClaseBoleto490WC"].ToString(),
                                     Convert.ToSingle(reader["Precio490WC"]),
-                                   Titulares490WC.Find(x => x.DNI490WC == reader["Titular490WC"].ToString())
+                                   Titulares490WC.Find(x => x.DNI490WC == reader["Titular490WC"].ToString()),
+                                   reader["NumeroAsiento490WC"].ToString()
                                 );
                                 boletos490WC.Add(boletoIDA490WC);
                             }
@@ -282,7 +299,8 @@ namespace DAL490WC
                                     Convert.ToSingle(reader["PesoEquipajePermitido490WC"]),
                                     reader["ClaseBoleto490WC"].ToString(),
                                     Convert.ToSingle(reader["Precio490WC"]),
-                                    Titulares490WC.Find(x => x.DNI490WC == ID490WC)
+                                    Titulares490WC.Find(x => x.DNI490WC == ID490WC),
+                                    reader["NumeroAsiento490WC"].ToString()
                                 );
                             }
                             else
@@ -299,7 +317,8 @@ namespace DAL490WC
                                     Convert.ToSingle(reader["PesoEquipajePermitido490WC"]),
                                     reader["ClaseBoleto490WC"].ToString(),
                                     Convert.ToSingle(reader["Precio490WC"]),
-                                    Titulares490WC.Find(x => x.DNI490WC == ID490WC)
+                                    Titulares490WC.Find(x => x.DNI490WC == ID490WC),
+                                    reader["NumeroAsiento490WC"].ToString()
                                 );
                             }
                         }
@@ -336,7 +355,8 @@ namespace DAL490WC
                                    Convert.ToSingle(reader["PesoEquipajePermitido490WC"]),
                                    reader["ClaseBoleto490WC"].ToString(),
                                    Convert.ToSingle(reader["Precio490WC"]),
-                                   Titulares490WC.Find(x => x.DNI490WC == cliente490WC.DNI490WC)
+                                   Titulares490WC.Find(x => x.DNI490WC == cliente490WC.DNI490WC),
+                                   reader["NumeroAsiento490WC"].ToString()
                                );
                                 boletos490WC.Add(boletoPagar490WC);
                             }
@@ -354,7 +374,8 @@ namespace DAL490WC
                                     Convert.ToSingle(reader["PesoEquipajePermitido490WC"]),
                                     reader["ClaseBoleto490WC"].ToString(),
                                     Convert.ToSingle(reader["Precio490WC"]),
-                                    Titulares490WC.Find(x => x.DNI490WC == cliente490WC.DNI490WC)
+                                    Titulares490WC.Find(x => x.DNI490WC == cliente490WC.DNI490WC),
+                                    reader["NumeroAsiento490WC"].ToString()
                                 );
                                 boletos490WC.Add(boletoPagar490WC);
                             }
@@ -392,7 +413,8 @@ namespace DAL490WC
                                    Convert.ToSingle(reader["PesoEquipajePermitido490WC"]),
                                    reader["ClaseBoleto490WC"].ToString(),
                                    Convert.ToSingle(reader["Precio490WC"]),
-                                   Titulares490WC.Find(x => x.DNI490WC == cliente490WC.DNI490WC)
+                                   Titulares490WC.Find(x => x.DNI490WC == cliente490WC.DNI490WC),
+                                   reader["NumeroAsiento490WC"].ToString()
                                );
                                 boletos490WC.Add(boletoPagar490WC);
                             }
@@ -410,7 +432,8 @@ namespace DAL490WC
                                     Convert.ToSingle(reader["PesoEquipajePermitido490WC"]),
                                     reader["ClaseBoleto490WC"].ToString(),
                                     Convert.ToSingle(reader["Precio490WC"]),
-                                    Titulares490WC.Find(x => x.DNI490WC == cliente490WC.DNI490WC)
+                                    Titulares490WC.Find(x => x.DNI490WC == cliente490WC.DNI490WC),
+                                    reader["NumeroAsiento490WC"].ToString()
                                 );
                                 boletos490WC.Add(boletoPagar490WC);
                             }
@@ -451,7 +474,8 @@ namespace DAL490WC
                                    Convert.ToSingle(reader["PesoEquipajePermitido490WC"]),
                                    reader["ClaseBoleto490WC"].ToString(),
                                    Convert.ToSingle(reader["Precio490WC"]),
-                                   Titulares490WC.Find(x => x.DNI490WC == reader["Titular490WC"].ToString())
+                                   Titulares490WC.Find(x => x.DNI490WC == reader["Titular490WC"].ToString()),
+                                   reader["NumeroAsiento490WC"].ToString()
                                );
                                 boletos490WC.Add(boletoPagar490WC);
                             }
@@ -469,7 +493,8 @@ namespace DAL490WC
                                     Convert.ToSingle(reader["PesoEquipajePermitido490WC"]),
                                     reader["ClaseBoleto490WC"].ToString(),
                                     Convert.ToSingle(reader["Precio490WC"]),
-                                    Titulares490WC.Find(x => x.DNI490WC == reader["Titular490WC"].ToString())
+                                    Titulares490WC.Find(x => x.DNI490WC == reader["Titular490WC"].ToString()),
+                                    reader["NumeroAsiento490WC"].ToString()
                                 );
                                 boletos490WC.Add(boletoPagar490WC);
                             }
