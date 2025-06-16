@@ -31,12 +31,12 @@ namespace GUI490WC
             {
                 if (bole490WC is BoletoIDA490WC boletoIDA490WC)
                 {
-                    dgvBoleto490WC.Rows.Add(boletoIDA490WC.IDBoleto490WC, "IDA", boletoIDA490WC.Origen490WC, boletoIDA490WC.Destino490WC, boletoIDA490WC.FechaPartida490WC.ToShortDateString(), boletoIDA490WC.FechaLlegada490WC.ToShortDateString(), null, null, boletoIDA490WC.ClaseBoleto490WC, boletoIDA490WC.EquipajePermitido490WC, boletoIDA490WC.Precio490WC);
+                    dgvBoleto490WC.Rows.Add(boletoIDA490WC.IDBoleto490WC, "IDA", boletoIDA490WC.Origen490WC, boletoIDA490WC.Destino490WC, boletoIDA490WC.FechaPartida490WC.ToShortDateString(), boletoIDA490WC.FechaLlegada490WC.ToShortDateString(), null, null, boletoIDA490WC.ClaseBoleto490WC, boletoIDA490WC.EquipajePermitido490WC, boletoIDA490WC.Precio490WC, boletoIDA490WC.NumeroAsiento490WC);
                 }
 
                 if (bole490WC is BoletoIDAVUELTA490WC boletoIDAVUELTA490WC)
                 {
-                    dgvBoleto490WC.Rows.Add(boletoIDAVUELTA490WC.IDBoleto490WC, "IDA & VUELTA", boletoIDAVUELTA490WC.Origen490WC, boletoIDAVUELTA490WC.Destino490WC, boletoIDAVUELTA490WC.FechaPartida490WC.ToShortDateString(), boletoIDAVUELTA490WC.FechaLlegada490WC.ToShortDateString(), boletoIDAVUELTA490WC.FechaPartidaVUELTA490WC.ToShortDateString(), boletoIDAVUELTA490WC.FechaLlegadaVUELTA490WC.ToShortDateString(), boletoIDAVUELTA490WC.ClaseBoleto490WC, boletoIDAVUELTA490WC.EquipajePermitido490WC, boletoIDAVUELTA490WC.Precio490WC);
+                    dgvBoleto490WC.Rows.Add(boletoIDAVUELTA490WC.IDBoleto490WC, "IDA & VUELTA", boletoIDAVUELTA490WC.Origen490WC, boletoIDAVUELTA490WC.Destino490WC, boletoIDAVUELTA490WC.FechaPartida490WC.ToShortDateString(), boletoIDAVUELTA490WC.FechaLlegada490WC.ToShortDateString(), boletoIDAVUELTA490WC.FechaPartidaVUELTA490WC.ToShortDateString(), boletoIDAVUELTA490WC.FechaLlegadaVUELTA490WC.ToShortDateString(), boletoIDAVUELTA490WC.ClaseBoleto490WC, boletoIDAVUELTA490WC.EquipajePermitido490WC, boletoIDAVUELTA490WC.Precio490WC, boletoIDAVUELTA490WC.NumeroAsiento490WC);
                 }
             }
         }
@@ -74,7 +74,9 @@ namespace GUI490WC
                 TB_DESTINO490WC.Text = dgvBoleto490WC.SelectedRows[0].Cells["ColumnaDestino"].Value.ToString();
                 TB_PESOEQUIPAJE490WC.Text = dgvBoleto490WC.SelectedRows[0].Cells["ColumnaPesoEquipajePermitido"].Value.ToString();
                 TB_PRECIO490WC.Text = dgvBoleto490WC.SelectedRows[0].Cells["ColumnaPrecio"].Value.ToString();
+                TB_ASIENTO490WC.Text = dgvBoleto490WC.SelectedRows[0].Cells["ColumnaNumeroAsiento"].Value.ToString();
                 CB_CLASEBOLETO490WC.Text = dgvBoleto490WC.SelectedRows[0].Cells["ColumnaClaseBoleto"].Value.ToString();
+
 
 
                 calendarioFECHAPARTIDA_IDA490WC.SelectionStart = Convert.ToDateTime(dgvBoleto490WC.SelectedRows[0].Cells["ColumnaFechaPartidaIDA"].Value.ToString());
@@ -138,83 +140,111 @@ namespace GUI490WC
             DateTime fechaPartidaIDA490WC = calendarioFECHAPARTIDA_IDA490WC.SelectionStart;
             DateTime fechaLlegadaIDA490WC = calendarioFECHALLEGADA_IDA490WC.SelectionStart;
             bool isVendido490WC = false;
-            if (CB_CLASEBOLETO490WC.SelectedItem != null)
+            string asiento490WC = TB_ASIENTO490WC.Text;
+            if (gestorBoleto490WC.VerificarFormatoAsiento490WC(asiento490WC))
             {
-                string claseBoleto490WC = CB_CLASEBOLETO490WC.SelectedItem.ToString();
-                if (!string.IsNullOrEmpty(origen490WC))
+                if (CB_CLASEBOLETO490WC.SelectedItem != null)
                 {
-                    if (!string.IsNullOrEmpty(destino490WC))
+                    string claseBoleto490WC = CB_CLASEBOLETO490WC.SelectedItem.ToString();
+                    if (!string.IsNullOrEmpty(origen490WC))
                     {
-
-                        if (float.TryParse(TB_PESOEQUIPAJE490WC.Text, out float PesoEquipajePermitido490WC) && PesoEquipajePermitido490WC > 0)
+                        if (!string.IsNullOrEmpty(destino490WC))
                         {
-                            if (float.TryParse(TB_PRECIO490WC.Text, out float Precio490WC) && Precio490WC > 0)
-                            {
-                                if (RBIDA490WC.Checked)
-                                {
-                                    if (fechaPartidaIDA490WC <= fechaLlegadaIDA490WC)
-                                    {
-                                        BoletoAlta490WC = new BoletoIDA490WC(id490WC, origen490WC, destino490WC, fechaPartidaIDA490WC, fechaLlegadaIDA490WC, isVendido490WC, PesoEquipajePermitido490WC, claseBoleto490WC, Precio490WC, cliente490WC);
-                                        gestorBoleto490WC.Alta490WC(BoletoAlta490WC);
-                                        Mostrar490WC();
-                                        ActivarModoModificar490WC(false);
 
+                            if (float.TryParse(TB_PESOEQUIPAJE490WC.Text, out float PesoEquipajePermitido490WC) && PesoEquipajePermitido490WC > 0)
+                            {
+                                if (float.TryParse(TB_PRECIO490WC.Text, out float Precio490WC) && Precio490WC > 0)
+                                {
+                                    if (RBIDA490WC.Checked)
+                                    {
+                                        if (fechaPartidaIDA490WC <= fechaLlegadaIDA490WC)
+                                        {
+                                            BoletoAlta490WC = new BoletoIDA490WC(id490WC, origen490WC, destino490WC, fechaPartidaIDA490WC, fechaLlegadaIDA490WC, isVendido490WC, PesoEquipajePermitido490WC, claseBoleto490WC, Precio490WC, cliente490WC, asiento490WC);
+
+                                            if (!gestorBoleto490WC.ExisteBoletoEnAsiento490WC(BoletoAlta490WC))
+                                            {
+                                                gestorBoleto490WC.Alta490WC(BoletoAlta490WC);
+                                                Mostrar490WC();
+                                                ActivarModoModificar490WC(false);
+
+                                            }
+                                            else
+                                            {
+                                                MessageBox.Show("Ya existe un Boleto cargado en el sistema con exactamente las mismas caracteristicas!!");
+                                                ActivarModoModificar490WC(false);
+                                            }
+
+                                        }
+                                        else
+                                        {
+                                            MessageBox.Show("La fecha de partida no puede ser posterior a la fecha de llegada. Por favor, verifique las fechas.");
+                                            ActivarModoModificar490WC(false);
+                                        }
                                     }
                                     else
                                     {
-                                        MessageBox.Show("La fecha de partida no puede ser posterior a la fecha de llegada. Por favor, verifique las fechas.");
-                                        ActivarModoModificar490WC(false);
+                                        DateTime fechaPartidaVUELTA490WC = calendarioFECHAPARTIDA_VUELTA490WC.SelectionStart;
+                                        DateTime fechaLlegadaVUELTA490WC = calendarioFECHALLEGADA_VUELTA490WC.SelectionStart;
+                                        if (fechaPartidaIDA490WC <= fechaLlegadaIDA490WC && fechaLlegadaIDA490WC < fechaPartidaVUELTA490WC && fechaPartidaVUELTA490WC <= fechaLlegadaVUELTA490WC)
+                                        {
+                                            BoletoAlta490WC = new BoletoIDAVUELTA490WC(id490WC, origen490WC, destino490WC, fechaPartidaIDA490WC, fechaLlegadaIDA490WC, fechaPartidaVUELTA490WC, fechaLlegadaVUELTA490WC, isVendido490WC, PesoEquipajePermitido490WC, claseBoleto490WC, Precio490WC, cliente490WC, asiento490WC);
+                                            if (!gestorBoleto490WC.ExisteBoletoEnAsiento490WC(BoletoAlta490WC))
+                                            {
+                                                gestorBoleto490WC.Alta490WC(BoletoAlta490WC);
+                                                Mostrar490WC();
+                                                ActivarModoModificar490WC(false);
+
+                                            }
+                                            else
+                                            {
+                                                MessageBox.Show("Ya existe un Boleto cargado en el sistema con exactamente las mismas caracteristicas!!");
+                                                ActivarModoModificar490WC(false);
+                                            }
+
+                                        }
+                                        else
+                                        {
+                                            MessageBox.Show("Las fechas de IDA no pueden ser posteriores a las fechas de VUELTA. Por favor, verifique las fechas.");
+                                            ActivarModoModificar490WC(false);
+                                        }
                                     }
                                 }
                                 else
                                 {
-                                    DateTime fechaPartidaVUELTA490WC = calendarioFECHAPARTIDA_VUELTA490WC.SelectionStart;
-                                    DateTime fechaLlegadaVUELTA490WC = calendarioFECHALLEGADA_VUELTA490WC.SelectionStart;
-                                    if (fechaPartidaIDA490WC <= fechaLlegadaIDA490WC && fechaLlegadaIDA490WC < fechaPartidaVUELTA490WC && fechaPartidaVUELTA490WC <= fechaLlegadaVUELTA490WC)
-                                    {
-                                        BoletoAlta490WC = new BoletoIDAVUELTA490WC(id490WC, origen490WC, destino490WC, fechaPartidaIDA490WC, fechaLlegadaIDA490WC, fechaPartidaVUELTA490WC, fechaLlegadaVUELTA490WC, isVendido490WC, PesoEquipajePermitido490WC, claseBoleto490WC, Precio490WC, cliente490WC);
-                                        gestorBoleto490WC.Alta490WC(BoletoAlta490WC);
-                                        Mostrar490WC();
-                                        ActivarModoModificar490WC(false);
-
-                                    }
-                                    else
-                                    {
-                                        MessageBox.Show("Las fechas de IDA no pueden ser posteriores a las fechas de VUELTA. Por favor, verifique las fechas.");
-                                        ActivarModoModificar490WC(false);
-                                    }
+                                    MessageBox.Show("El precio ingresado no es válido. Por favor, ingrese un número válido.");
+                                    ActivarModoModificar490WC(false);
                                 }
                             }
                             else
                             {
-                                MessageBox.Show("El precio ingresado no es válido. Por favor, ingrese un número válido.");
+                                MessageBox.Show("El peso de equipaje ingresado no es válido. Por favor, ingrese un número válido.");
                                 ActivarModoModificar490WC(false);
                             }
                         }
                         else
                         {
-                            MessageBox.Show("El peso de equipaje ingresado no es válido. Por favor, ingrese un número válido.");
+                            MessageBox.Show("El destino no puede estar vacío. Por favor, ingrese un destino válido.");
                             ActivarModoModificar490WC(false);
                         }
                     }
                     else
                     {
-                        MessageBox.Show("El destino no puede estar vacío. Por favor, ingrese un destino válido.");
+                        MessageBox.Show("El origen no puede estar vacío. Por favor, ingrese un origen válido.");
                         ActivarModoModificar490WC(false);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("El origen no puede estar vacío. Por favor, ingrese un origen válido.");
+                    MessageBox.Show("Debe seleccionar una clase de boleto. Por favor, seleccione una clase válida.");
                     ActivarModoModificar490WC(false);
                 }
+
             }
             else
             {
-                MessageBox.Show("Debe seleccionar una clase de boleto. Por favor, seleccione una clase válida.");
+                MessageBox.Show("Ingrese el numero de asiento con el formato 'A111' correcto!! ");
                 ActivarModoModificar490WC(false);
             }
-
         }
 
         private void BT_BAJA490WC_Click(object sender, EventArgs e)
@@ -238,99 +268,130 @@ namespace GUI490WC
             Cliente490WC cliente490WC = new Cliente490WC("Sistema", null, null, null, 0, null);
             string origen490WC = TB_ORIGEN490WC.Text;
             string destino490WC = TB_DESTINO490WC.Text;
+            string asiento490WC = TB_ASIENTO490WC.Text;
             DateTime fechaPartidaIDA490WC = calendarioFECHAPARTIDA_IDA490WC.SelectionStart;
             DateTime fechaLlegadaIDA490WC = calendarioFECHALLEGADA_IDA490WC.SelectionStart;
 
-            if (CB_CLASEBOLETO490WC.SelectedItem != null)
+            if (gestorBoleto490WC.VerificarFormatoAsiento490WC(asiento490WC))
             {
-                string claseBoleto490WC = CB_CLASEBOLETO490WC.SelectedItem.ToString();
-                if (!string.IsNullOrEmpty(origen490WC))
+                if (CB_CLASEBOLETO490WC.SelectedItem != null)
                 {
-                    if (!string.IsNullOrEmpty(destino490WC))
+                    string claseBoleto490WC = CB_CLASEBOLETO490WC.SelectedItem.ToString();
+                    if (!string.IsNullOrEmpty(origen490WC))
                     {
-                        if (float.TryParse(TB_PESOEQUIPAJE490WC.Text, out float PesoEquipajePermitido490WC) && PesoEquipajePermitido490WC > 0)
+                        if (!string.IsNullOrEmpty(destino490WC))
                         {
-                            if (float.TryParse(TB_PRECIO490WC.Text, out float Precio490WC) && Precio490WC > 0)
+                            if (float.TryParse(TB_PESOEQUIPAJE490WC.Text, out float PesoEquipajePermitido490WC) && PesoEquipajePermitido490WC > 0)
                             {
-                                if (RBIDA490WC.Checked)
+                                if (float.TryParse(TB_PRECIO490WC.Text, out float Precio490WC) && Precio490WC > 0)
                                 {
-                                    if (fechaPartidaIDA490WC <= fechaLlegadaIDA490WC)
+                                    if (RBIDA490WC.Checked)
                                     {
-                                        BoletoModificado490WC.Origen490WC = origen490WC;
-                                        BoletoModificado490WC.Destino490WC = destino490WC;
-                                        BoletoModificado490WC.FechaPartida490WC = fechaPartidaIDA490WC;
-                                        BoletoModificado490WC.FechaLlegada490WC = fechaLlegadaIDA490WC;
-                                        BoletoModificado490WC.EquipajePermitido490WC = PesoEquipajePermitido490WC;
-                                        BoletoModificado490WC.ClaseBoleto490WC = claseBoleto490WC;
-                                        BoletoModificado490WC.Precio490WC = Precio490WC;
-                                        BoletoModificado490WC.Titular490WC = cliente490WC;
-                                        gestorBoleto490WC.Modificar490WC(BoletoModificado490WC);
-                                        Mostrar490WC();
-                                        ActivarModoModificar490WC(false);
+                                        if (fechaPartidaIDA490WC <= fechaLlegadaIDA490WC)
+                                        {
+                                            BoletoModificado490WC.Origen490WC = origen490WC;
+                                            BoletoModificado490WC.Destino490WC = destino490WC;
+                                            BoletoModificado490WC.FechaPartida490WC = fechaPartidaIDA490WC;
+                                            BoletoModificado490WC.FechaLlegada490WC = fechaLlegadaIDA490WC;
+                                            BoletoModificado490WC.EquipajePermitido490WC = PesoEquipajePermitido490WC;
+                                            BoletoModificado490WC.ClaseBoleto490WC = claseBoleto490WC;
+                                            BoletoModificado490WC.Precio490WC = Precio490WC;
+                                            BoletoModificado490WC.Titular490WC = cliente490WC;
+                                            BoletoModificado490WC.NumeroAsiento490WC = asiento490WC;
+                                            if (!gestorBoleto490WC.ExisteBoletoEnAsientoParaModificar490WC(BoletoModificado490WC))
+                                            {
+                                                gestorBoleto490WC.Modificar490WC(BoletoModificado490WC);
+                                                Mostrar490WC();
+                                                ActivarModoModificar490WC(false);
+
+                                            }
+                                            else
+                                            {
+                                                MessageBox.Show("Ya existe un Boleto cargado en el sistema con exactamente las mismas caracteristicas!!!");
+                                                ActivarModoModificar490WC(false);
+                                            }
+                                        }
+                                        else
+                                        {
+                                            MessageBox.Show("La fecha de partida no puede ser posterior a la fecha de llegada. Por favor, verifique las fechas.");
+                                            ActivarModoModificar490WC(false);
+                                        }
                                     }
                                     else
                                     {
-                                        MessageBox.Show("La fecha de partida no puede ser posterior a la fecha de llegada. Por favor, verifique las fechas.");
-                                        ActivarModoModificar490WC(false);
+                                        DateTime fechaPartidaVUELTA490WC = calendarioFECHAPARTIDA_VUELTA490WC.SelectionStart;
+                                        DateTime fechaLlegadaVUELTA490WC = calendarioFECHALLEGADA_VUELTA490WC.SelectionStart;
+                                        if (fechaPartidaIDA490WC <= fechaLlegadaIDA490WC && fechaLlegadaIDA490WC < fechaPartidaVUELTA490WC && fechaPartidaVUELTA490WC <= fechaLlegadaVUELTA490WC)
+                                        {
+                                            BoletoModificado490WC.Origen490WC = origen490WC;
+                                            BoletoModificado490WC.Destino490WC = destino490WC;
+                                            BoletoModificado490WC.FechaPartida490WC = fechaPartidaIDA490WC;
+                                            (BoletoModificado490WC as BoletoIDAVUELTA490WC).FechaPartidaVUELTA490WC = fechaPartidaVUELTA490WC;
+                                            BoletoModificado490WC.FechaLlegada490WC = fechaLlegadaIDA490WC;
+                                            (BoletoModificado490WC as BoletoIDAVUELTA490WC).FechaLlegadaVUELTA490WC = fechaLlegadaVUELTA490WC;
+                                            BoletoModificado490WC.EquipajePermitido490WC = PesoEquipajePermitido490WC;
+                                            BoletoModificado490WC.ClaseBoleto490WC = claseBoleto490WC;
+                                            BoletoModificado490WC.Precio490WC = Precio490WC;
+                                            BoletoModificado490WC.Titular490WC = cliente490WC;
+                                            BoletoModificado490WC.NumeroAsiento490WC = asiento490WC;
+                                            if (!gestorBoleto490WC.ExisteBoletoEnAsientoParaModificar490WC(BoletoModificado490WC))
+                                            {
+                                                gestorBoleto490WC.Modificar490WC(BoletoModificado490WC);
+                                                Mostrar490WC();
+                                                ActivarModoModificar490WC(false);
+
+                                            }
+                                            else
+                                            {
+                                                MessageBox.Show("Ya existe un Boleto cargado en el sistema con exactamente las mismas caracteristicas!!!");
+                                                ActivarModoModificar490WC(false);
+                                            }
+                                        }
+                                        else
+                                        {
+                                            MessageBox.Show("Las fechas de IDA no pueden ser posteriores a las fechas de VUELTA. Por favor, verifique las fechas.");
+                                            ActivarModoModificar490WC(false);
+                                        }
                                     }
                                 }
                                 else
                                 {
-                                    DateTime fechaPartidaVUELTA490WC = calendarioFECHAPARTIDA_VUELTA490WC.SelectionStart;
-                                    DateTime fechaLlegadaVUELTA490WC = calendarioFECHALLEGADA_VUELTA490WC.SelectionStart;
-                                    if (fechaPartidaIDA490WC <= fechaLlegadaIDA490WC && fechaLlegadaIDA490WC < fechaPartidaVUELTA490WC && fechaPartidaVUELTA490WC <= fechaLlegadaVUELTA490WC)
-                                    {
-                                        BoletoModificado490WC.Origen490WC = origen490WC;
-                                        BoletoModificado490WC.Destino490WC = destino490WC;
-                                        BoletoModificado490WC.FechaPartida490WC = fechaPartidaIDA490WC;
-                                        (BoletoModificado490WC as BoletoIDAVUELTA490WC).FechaPartidaVUELTA490WC = fechaPartidaVUELTA490WC;
-                                        BoletoModificado490WC.FechaLlegada490WC = fechaLlegadaIDA490WC;
-                                        (BoletoModificado490WC as BoletoIDAVUELTA490WC).FechaLlegadaVUELTA490WC = fechaLlegadaVUELTA490WC;
-                                        BoletoModificado490WC.EquipajePermitido490WC = PesoEquipajePermitido490WC;
-                                        BoletoModificado490WC.ClaseBoleto490WC = claseBoleto490WC;
-                                        BoletoModificado490WC.Precio490WC = Precio490WC;
-                                        BoletoModificado490WC.Titular490WC = cliente490WC;
-                                        gestorBoleto490WC.Modificar490WC(BoletoModificado490WC);
-                                        Mostrar490WC();
-                                        ActivarModoModificar490WC(false);
-                                    }
-                                    else
-                                    {
-                                        MessageBox.Show("Las fechas de IDA no pueden ser posteriores a las fechas de VUELTA. Por favor, verifique las fechas.");
-                                        ActivarModoModificar490WC(false);
-                                    }
+                                    MessageBox.Show("El precio ingresado no es válido. Por favor, ingrese un número válido.");
+                                    ActivarModoModificar490WC(false);
                                 }
                             }
                             else
                             {
-                                MessageBox.Show("El precio ingresado no es válido. Por favor, ingrese un número válido.");
+                                MessageBox.Show("El peso de equipaje ingresado no es válido. Por favor, ingrese un número válido.");
                                 ActivarModoModificar490WC(false);
                             }
+
                         }
                         else
                         {
-                            MessageBox.Show("El peso de equipaje ingresado no es válido. Por favor, ingrese un número válido.");
+                            MessageBox.Show("El destino no puede estar vacío. Por favor, ingrese un destino válido.");
                             ActivarModoModificar490WC(false);
                         }
-
                     }
                     else
                     {
-                        MessageBox.Show("El destino no puede estar vacío. Por favor, ingrese un destino válido.");
+                        MessageBox.Show("El origen no puede estar vacío. Por favor, ingrese un origen válido.");
                         ActivarModoModificar490WC(false);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("El origen no puede estar vacío. Por favor, ingrese un origen válido.");
+                    MessageBox.Show("Debe seleccionar una clase de boleto. Por favor, seleccione una clase válida.");
                     ActivarModoModificar490WC(false);
                 }
+
             }
             else
             {
-                MessageBox.Show("Debe seleccionar una clase de boleto. Por favor, seleccione una clase válida.");
+                MessageBox.Show("Ingrese el numero de asiento con el formato 'A111' correcto!! ");
                 ActivarModoModificar490WC(false);
             }
+
         }
 
         private void BT_CANCELAR490WC_Click(object sender, EventArgs e)

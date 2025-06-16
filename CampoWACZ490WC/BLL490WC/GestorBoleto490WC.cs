@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace BLL490WC
@@ -56,9 +57,39 @@ namespace BLL490WC
             gestorBoletoDAL490WC.CobrarBoleto490WC(BoletoCobrado490WC);
         }
 
+        public bool ExisteBoletoEnAsiento490WC(Boleto490WC boletoVerificarExistencia490WC)
+        {
+            BoletoDAL490WC gestorBoleto490WC = new BoletoDAL490WC();
+            return gestorBoleto490WC.ExisteBoletoEnAsiento490WC(boletoVerificarExistencia490WC);
+        }
+
+        public bool ExisteBoletoEnAsientoParaModificar490WC(Boleto490WC boletoVerificarExistencia490WC)
+        {
+            BoletoDAL490WC gestorBoleto490WC = new BoletoDAL490WC();
+            return gestorBoleto490WC.ExisteBoletoEnAsientoParaModificar490WC(boletoVerificarExistencia490WC);
+        }
+
+        #endregion
+
+        #region Verificar Formatos
+
+        public bool VerificarFormatoAsiento490WC(string FormatoAsiento490WC)
+        {
+            Regex rgxFormatoAsiento = new Regex("^[A-Z]{1}[0-9]{3}$");
+            if (rgxFormatoAsiento.IsMatch(FormatoAsiento490WC))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+        }
 
 
         #endregion
+
 
         #region Busqueda Boleto
 

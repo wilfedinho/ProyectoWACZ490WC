@@ -181,6 +181,69 @@ namespace DAL490WC
                 }
             }
         }
+        public bool ExisteBoletoEnAsiento490WC(Boleto490WC boletoVerificarExistencia490WC)
+        {
+            using (SqlConnection con = GestorConexion490WC.GestorCone490WC.DevolverConexion490WC())
+            {
+                con.Open();
+                string query = "SELECT COUNT(*) FROM Boleto490WC WHERE Origen490WC = @Origen AND Destino490WC = @Destino AND FechaPartidaIDA490WC = @FechaPartidaIDA AND FechaLlegadaIDA490WC = @FechaLlegadaIDA AND (@FechaPartidaVuelta IS NULL OR FechaPartidaVUELTA490WC = @FechaPartidaVuelta) AND (@FechaLlegadaVuelta IS NULL OR FechaLlegadaVUELTA490WC = @FechaLlegadaVuelta) AND NumeroAsiento490WC = @NumeroAsiento";
+
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("@Origen", boletoVerificarExistencia490WC.Origen490WC);
+                    cmd.Parameters.AddWithValue("@Destino", boletoVerificarExistencia490WC.Destino490WC);
+                    cmd.Parameters.AddWithValue("@FechaPartidaIDA", boletoVerificarExistencia490WC.FechaPartida490WC.ToShortDateString());
+                    cmd.Parameters.AddWithValue("@FechaLlegadaIDA", boletoVerificarExistencia490WC.FechaLlegada490WC.ToShortDateString());
+                    if (boletoVerificarExistencia490WC is BoletoIDAVUELTA490WC bole490WC)
+                    {
+                        cmd.Parameters.AddWithValue("@FechaPartidaVuelta", bole490WC.FechaPartidaVUELTA490WC.ToShortDateString());
+                        cmd.Parameters.AddWithValue("@FechaLlegadaVuelta", bole490WC.FechaLlegadaVUELTA490WC.ToShortDateString());
+                    }
+                    else
+                    {
+                        cmd.Parameters.AddWithValue("@FechaPartidaVuelta", DBNull.Value);
+                        cmd.Parameters.AddWithValue("@FechaLlegadaVuelta", DBNull.Value);
+                    }
+                    cmd.Parameters.AddWithValue("@NumeroAsiento", boletoVerificarExistencia490WC.NumeroAsiento490WC);
+                    int count = (int)cmd.ExecuteScalar();
+                    return count > 0;
+                }
+            }
+        }
+
+        public bool ExisteBoletoEnAsientoParaModificar490WC(Boleto490WC boletoVerificarExistencia490WC)
+        {
+            using (SqlConnection con = GestorConexion490WC.GestorCone490WC.DevolverConexion490WC())
+            {
+                con.Open();
+                string query = "SELECT COUNT(*) FROM Boleto490WC WHERE Origen490WC = @Origen AND Destino490WC = @Destino AND FechaPartidaIDA490WC = @FechaPartidaIDA AND FechaLlegadaIDA490WC = @FechaLlegadaIDA AND (@FechaPartidaVuelta IS NULL OR FechaPartidaVUELTA490WC = @FechaPartidaVuelta) AND (@FechaLlegadaVuelta IS NULL OR FechaLlegadaVUELTA490WC = @FechaLlegadaVuelta) AND NumeroAsiento490WC = @NumeroAsiento AND ID490WC != @IdBoleto";
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("@Origen", boletoVerificarExistencia490WC.Origen490WC);
+                    cmd.Parameters.AddWithValue("@Destino", boletoVerificarExistencia490WC.Destino490WC);
+                    cmd.Parameters.AddWithValue("@FechaPartidaIDA", boletoVerificarExistencia490WC.FechaPartida490WC);
+                    cmd.Parameters.AddWithValue("@FechaLlegadaIDA", boletoVerificarExistencia490WC.FechaLlegada490WC);
+
+                    if (boletoVerificarExistencia490WC is BoletoIDAVUELTA490WC bole490WC)
+                    {
+                        cmd.Parameters.AddWithValue("@FechaPartidaVuelta", bole490WC.FechaPartidaVUELTA490WC);
+                        cmd.Parameters.AddWithValue("@FechaLlegadaVuelta", bole490WC.FechaLlegadaVUELTA490WC);
+                    }
+                    else
+                    {
+                        cmd.Parameters.AddWithValue("@FechaPartidaVuelta", DBNull.Value);
+                        cmd.Parameters.AddWithValue("@FechaLlegadaVuelta", DBNull.Value);
+                    }
+
+                    cmd.Parameters.AddWithValue("@NumeroAsiento", boletoVerificarExistencia490WC.NumeroAsiento490WC);
+                    cmd.Parameters.AddWithValue("@IdBoleto", boletoVerificarExistencia490WC.IDBoleto490WC); 
+
+                    int count = (int)cmd.ExecuteScalar();
+                    return count > 0;
+                }
+            }
+        }
+
 
 
         public void CobrarBoleto490WC(Boleto490WC BoletoCobrado490WC)

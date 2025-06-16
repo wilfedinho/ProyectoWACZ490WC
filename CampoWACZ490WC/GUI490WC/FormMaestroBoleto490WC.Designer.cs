@@ -29,17 +29,6 @@
         private void InitializeComponent()
         {
             this.dgvBoleto490WC = new System.Windows.Forms.DataGridView();
-            this.ColumnaID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnaModalidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnaOrigen = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnaDestino = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnaFechaPartidaIDA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnaFechaLlegadaIDA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnaFechaPartidaVUELTA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnaFechaLlegadaVUELTA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnaClaseBoleto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnaPesoEquipajePermitido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnaPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LABEL_ORIGEN490WC = new System.Windows.Forms.Label();
             this.TB_ORIGEN490WC = new System.Windows.Forms.TextBox();
             this.LABEL_DESTINO490WC = new System.Windows.Forms.Label();
@@ -67,6 +56,20 @@
             this.LABEL_FECHALLEGADA_IDA490WC = new System.Windows.Forms.Label();
             this.LABEL_FECHAPARTIDA_VUELTA490WC = new System.Windows.Forms.Label();
             this.LABEL_FECHALLEGADA_VUELTA490WC = new System.Windows.Forms.Label();
+            this.LABEL_ASIENTO490WC = new System.Windows.Forms.Label();
+            this.TB_ASIENTO490WC = new System.Windows.Forms.TextBox();
+            this.ColumnaID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaModalidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaOrigen = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaDestino = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaFechaPartidaIDA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaFechaLlegadaIDA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaFechaPartidaVUELTA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaFechaLlegadaVUELTA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaClaseBoleto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaPesoEquipajePermitido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaNumeroAsiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBoleto490WC)).BeginInit();
             this.SuspendLayout();
             // 
@@ -89,7 +92,8 @@
             this.ColumnaFechaLlegadaVUELTA,
             this.ColumnaClaseBoleto,
             this.ColumnaPesoEquipajePermitido,
-            this.ColumnaPrecio});
+            this.ColumnaPrecio,
+            this.ColumnaNumeroAsiento});
             this.dgvBoleto490WC.Location = new System.Drawing.Point(12, 12);
             this.dgvBoleto490WC.MultiSelect = false;
             this.dgvBoleto490WC.Name = "dgvBoleto490WC";
@@ -99,79 +103,12 @@
             this.dgvBoleto490WC.Size = new System.Drawing.Size(1104, 312);
             this.dgvBoleto490WC.TabIndex = 1;
             // 
-            // ColumnaID
-            // 
-            this.ColumnaID.HeaderText = "Column1";
-            this.ColumnaID.Name = "ColumnaID";
-            this.ColumnaID.ReadOnly = true;
-            this.ColumnaID.Visible = false;
-            // 
-            // ColumnaModalidad
-            // 
-            this.ColumnaModalidad.HeaderText = "Modalidad";
-            this.ColumnaModalidad.Name = "ColumnaModalidad";
-            this.ColumnaModalidad.ReadOnly = true;
-            // 
-            // ColumnaOrigen
-            // 
-            this.ColumnaOrigen.HeaderText = "Origen";
-            this.ColumnaOrigen.Name = "ColumnaOrigen";
-            this.ColumnaOrigen.ReadOnly = true;
-            // 
-            // ColumnaDestino
-            // 
-            this.ColumnaDestino.HeaderText = "Destino";
-            this.ColumnaDestino.Name = "ColumnaDestino";
-            this.ColumnaDestino.ReadOnly = true;
-            // 
-            // ColumnaFechaPartidaIDA
-            // 
-            this.ColumnaFechaPartidaIDA.HeaderText = "FechaPartida IDA";
-            this.ColumnaFechaPartidaIDA.Name = "ColumnaFechaPartidaIDA";
-            this.ColumnaFechaPartidaIDA.ReadOnly = true;
-            // 
-            // ColumnaFechaLlegadaIDA
-            // 
-            this.ColumnaFechaLlegadaIDA.HeaderText = "FechaLlegada IDA";
-            this.ColumnaFechaLlegadaIDA.Name = "ColumnaFechaLlegadaIDA";
-            this.ColumnaFechaLlegadaIDA.ReadOnly = true;
-            // 
-            // ColumnaFechaPartidaVUELTA
-            // 
-            this.ColumnaFechaPartidaVUELTA.HeaderText = "FechaPartida VUELTA";
-            this.ColumnaFechaPartidaVUELTA.Name = "ColumnaFechaPartidaVUELTA";
-            this.ColumnaFechaPartidaVUELTA.ReadOnly = true;
-            // 
-            // ColumnaFechaLlegadaVUELTA
-            // 
-            this.ColumnaFechaLlegadaVUELTA.HeaderText = "FechaLlegada VUELTA";
-            this.ColumnaFechaLlegadaVUELTA.Name = "ColumnaFechaLlegadaVUELTA";
-            this.ColumnaFechaLlegadaVUELTA.ReadOnly = true;
-            // 
-            // ColumnaClaseBoleto
-            // 
-            this.ColumnaClaseBoleto.HeaderText = "Clase Boleto";
-            this.ColumnaClaseBoleto.Name = "ColumnaClaseBoleto";
-            this.ColumnaClaseBoleto.ReadOnly = true;
-            // 
-            // ColumnaPesoEquipajePermitido
-            // 
-            this.ColumnaPesoEquipajePermitido.HeaderText = "Peso Equipaje Permitido";
-            this.ColumnaPesoEquipajePermitido.Name = "ColumnaPesoEquipajePermitido";
-            this.ColumnaPesoEquipajePermitido.ReadOnly = true;
-            // 
-            // ColumnaPrecio
-            // 
-            this.ColumnaPrecio.HeaderText = "Precio";
-            this.ColumnaPrecio.Name = "ColumnaPrecio";
-            this.ColumnaPrecio.ReadOnly = true;
-            // 
             // LABEL_ORIGEN490WC
             // 
             this.LABEL_ORIGEN490WC.AutoSize = true;
             this.LABEL_ORIGEN490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.LABEL_ORIGEN490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.LABEL_ORIGEN490WC.Location = new System.Drawing.Point(22, 366);
+            this.LABEL_ORIGEN490WC.Location = new System.Drawing.Point(19, 345);
             this.LABEL_ORIGEN490WC.Name = "LABEL_ORIGEN490WC";
             this.LABEL_ORIGEN490WC.Size = new System.Drawing.Size(65, 20);
             this.LABEL_ORIGEN490WC.TabIndex = 25;
@@ -183,7 +120,7 @@
             this.TB_ORIGEN490WC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TB_ORIGEN490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.TB_ORIGEN490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.TB_ORIGEN490WC.Location = new System.Drawing.Point(159, 367);
+            this.TB_ORIGEN490WC.Location = new System.Drawing.Point(156, 346);
             this.TB_ORIGEN490WC.Name = "TB_ORIGEN490WC";
             this.TB_ORIGEN490WC.Size = new System.Drawing.Size(174, 27);
             this.TB_ORIGEN490WC.TabIndex = 24;
@@ -193,7 +130,7 @@
             this.LABEL_DESTINO490WC.AutoSize = true;
             this.LABEL_DESTINO490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.LABEL_DESTINO490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.LABEL_DESTINO490WC.Location = new System.Drawing.Point(22, 410);
+            this.LABEL_DESTINO490WC.Location = new System.Drawing.Point(19, 389);
             this.LABEL_DESTINO490WC.Name = "LABEL_DESTINO490WC";
             this.LABEL_DESTINO490WC.Size = new System.Drawing.Size(74, 20);
             this.LABEL_DESTINO490WC.TabIndex = 27;
@@ -205,7 +142,7 @@
             this.TB_DESTINO490WC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TB_DESTINO490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.TB_DESTINO490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.TB_DESTINO490WC.Location = new System.Drawing.Point(159, 411);
+            this.TB_DESTINO490WC.Location = new System.Drawing.Point(156, 390);
             this.TB_DESTINO490WC.Name = "TB_DESTINO490WC";
             this.TB_DESTINO490WC.Size = new System.Drawing.Size(174, 27);
             this.TB_DESTINO490WC.TabIndex = 26;
@@ -215,7 +152,7 @@
             this.LABEL_PESOEQUIPAJE490WC.AutoSize = true;
             this.LABEL_PESOEQUIPAJE490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.LABEL_PESOEQUIPAJE490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.LABEL_PESOEQUIPAJE490WC.Location = new System.Drawing.Point(22, 452);
+            this.LABEL_PESOEQUIPAJE490WC.Location = new System.Drawing.Point(19, 431);
             this.LABEL_PESOEQUIPAJE490WC.Name = "LABEL_PESOEQUIPAJE490WC";
             this.LABEL_PESOEQUIPAJE490WC.Size = new System.Drawing.Size(130, 20);
             this.LABEL_PESOEQUIPAJE490WC.TabIndex = 29;
@@ -227,7 +164,7 @@
             this.TB_PESOEQUIPAJE490WC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TB_PESOEQUIPAJE490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.TB_PESOEQUIPAJE490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.TB_PESOEQUIPAJE490WC.Location = new System.Drawing.Point(159, 453);
+            this.TB_PESOEQUIPAJE490WC.Location = new System.Drawing.Point(156, 432);
             this.TB_PESOEQUIPAJE490WC.Name = "TB_PESOEQUIPAJE490WC";
             this.TB_PESOEQUIPAJE490WC.Size = new System.Drawing.Size(174, 27);
             this.TB_PESOEQUIPAJE490WC.TabIndex = 28;
@@ -237,7 +174,7 @@
             this.LABEL_PRECIO490WC.AutoSize = true;
             this.LABEL_PRECIO490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.LABEL_PRECIO490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.LABEL_PRECIO490WC.Location = new System.Drawing.Point(22, 496);
+            this.LABEL_PRECIO490WC.Location = new System.Drawing.Point(19, 475);
             this.LABEL_PRECIO490WC.Name = "LABEL_PRECIO490WC";
             this.LABEL_PRECIO490WC.Size = new System.Drawing.Size(64, 20);
             this.LABEL_PRECIO490WC.TabIndex = 31;
@@ -249,7 +186,7 @@
             this.TB_PRECIO490WC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TB_PRECIO490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.TB_PRECIO490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.TB_PRECIO490WC.Location = new System.Drawing.Point(159, 497);
+            this.TB_PRECIO490WC.Location = new System.Drawing.Point(156, 476);
             this.TB_PRECIO490WC.Name = "TB_PRECIO490WC";
             this.TB_PRECIO490WC.Size = new System.Drawing.Size(174, 27);
             this.TB_PRECIO490WC.TabIndex = 30;
@@ -259,7 +196,7 @@
             this.LABEL_CLASEBOLETO490WC.AutoSize = true;
             this.LABEL_CLASEBOLETO490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.LABEL_CLASEBOLETO490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.LABEL_CLASEBOLETO490WC.Location = new System.Drawing.Point(22, 540);
+            this.LABEL_CLASEBOLETO490WC.Location = new System.Drawing.Point(19, 519);
             this.LABEL_CLASEBOLETO490WC.Name = "LABEL_CLASEBOLETO490WC";
             this.LABEL_CLASEBOLETO490WC.Size = new System.Drawing.Size(117, 20);
             this.LABEL_CLASEBOLETO490WC.TabIndex = 33;
@@ -277,7 +214,7 @@
             "Turista",
             "Ejecutiva",
             "Primera Clase"});
-            this.CB_CLASEBOLETO490WC.Location = new System.Drawing.Point(159, 537);
+            this.CB_CLASEBOLETO490WC.Location = new System.Drawing.Point(156, 516);
             this.CB_CLASEBOLETO490WC.Name = "CB_CLASEBOLETO490WC";
             this.CB_CLASEBOLETO490WC.Size = new System.Drawing.Size(174, 27);
             this.CB_CLASEBOLETO490WC.TabIndex = 34;
@@ -368,28 +305,28 @@
             // 
             // calendarioFECHAPARTIDA_IDA490WC
             // 
-            this.calendarioFECHAPARTIDA_IDA490WC.Location = new System.Drawing.Point(353, 402);
+            this.calendarioFECHAPARTIDA_IDA490WC.Location = new System.Drawing.Point(356, 422);
             this.calendarioFECHAPARTIDA_IDA490WC.MaxSelectionCount = 1;
             this.calendarioFECHAPARTIDA_IDA490WC.Name = "calendarioFECHAPARTIDA_IDA490WC";
             this.calendarioFECHAPARTIDA_IDA490WC.TabIndex = 48;
             // 
             // calendarioFECHALLEGADA_IDA490WC
             // 
-            this.calendarioFECHALLEGADA_IDA490WC.Location = new System.Drawing.Point(598, 402);
+            this.calendarioFECHALLEGADA_IDA490WC.Location = new System.Drawing.Point(601, 422);
             this.calendarioFECHALLEGADA_IDA490WC.MaxSelectionCount = 1;
             this.calendarioFECHALLEGADA_IDA490WC.Name = "calendarioFECHALLEGADA_IDA490WC";
             this.calendarioFECHALLEGADA_IDA490WC.TabIndex = 49;
             // 
             // calendarioFECHALLEGADA_VUELTA490WC
             // 
-            this.calendarioFECHALLEGADA_VUELTA490WC.Location = new System.Drawing.Point(1088, 402);
+            this.calendarioFECHALLEGADA_VUELTA490WC.Location = new System.Drawing.Point(1091, 422);
             this.calendarioFECHALLEGADA_VUELTA490WC.MaxSelectionCount = 1;
             this.calendarioFECHALLEGADA_VUELTA490WC.Name = "calendarioFECHALLEGADA_VUELTA490WC";
             this.calendarioFECHALLEGADA_VUELTA490WC.TabIndex = 50;
             // 
             // calendarioFECHAPARTIDA_VUELTA490WC
             // 
-            this.calendarioFECHAPARTIDA_VUELTA490WC.Location = new System.Drawing.Point(843, 402);
+            this.calendarioFECHAPARTIDA_VUELTA490WC.Location = new System.Drawing.Point(846, 422);
             this.calendarioFECHAPARTIDA_VUELTA490WC.MaxSelectionCount = 1;
             this.calendarioFECHAPARTIDA_VUELTA490WC.Name = "calendarioFECHAPARTIDA_VUELTA490WC";
             this.calendarioFECHAPARTIDA_VUELTA490WC.TabIndex = 51;
@@ -399,7 +336,7 @@
             this.LABEL_MODALIDAD490WC.AutoSize = true;
             this.LABEL_MODALIDAD490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.LABEL_MODALIDAD490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.LABEL_MODALIDAD490WC.Location = new System.Drawing.Point(22, 337);
+            this.LABEL_MODALIDAD490WC.Location = new System.Drawing.Point(367, 342);
             this.LABEL_MODALIDAD490WC.Name = "LABEL_MODALIDAD490WC";
             this.LABEL_MODALIDAD490WC.Size = new System.Drawing.Size(99, 20);
             this.LABEL_MODALIDAD490WC.TabIndex = 52;
@@ -411,7 +348,7 @@
             this.RBIDA490WC.Checked = true;
             this.RBIDA490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.RBIDA490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.RBIDA490WC.Location = new System.Drawing.Point(159, 337);
+            this.RBIDA490WC.Location = new System.Drawing.Point(491, 342);
             this.RBIDA490WC.Name = "RBIDA490WC";
             this.RBIDA490WC.Size = new System.Drawing.Size(57, 24);
             this.RBIDA490WC.TabIndex = 53;
@@ -425,7 +362,7 @@
             this.RBIDAVUELTA490WC.AutoSize = true;
             this.RBIDAVUELTA490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.RBIDAVUELTA490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.RBIDAVUELTA490WC.Location = new System.Drawing.Point(233, 337);
+            this.RBIDAVUELTA490WC.Location = new System.Drawing.Point(569, 342);
             this.RBIDAVUELTA490WC.Name = "RBIDAVUELTA490WC";
             this.RBIDAVUELTA490WC.Size = new System.Drawing.Size(133, 24);
             this.RBIDAVUELTA490WC.TabIndex = 54;
@@ -437,7 +374,7 @@
             this.LABEL_FECHAPARTIDA_IDA490WC.AutoSize = true;
             this.LABEL_FECHAPARTIDA_IDA490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.LABEL_FECHAPARTIDA_IDA490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.LABEL_FECHAPARTIDA_IDA490WC.Location = new System.Drawing.Point(384, 366);
+            this.LABEL_FECHAPARTIDA_IDA490WC.Location = new System.Drawing.Point(387, 386);
             this.LABEL_FECHAPARTIDA_IDA490WC.Name = "LABEL_FECHAPARTIDA_IDA490WC";
             this.LABEL_FECHAPARTIDA_IDA490WC.Size = new System.Drawing.Size(161, 20);
             this.LABEL_FECHAPARTIDA_IDA490WC.TabIndex = 55;
@@ -448,7 +385,7 @@
             this.LABEL_FECHALLEGADA_IDA490WC.AutoSize = true;
             this.LABEL_FECHALLEGADA_IDA490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.LABEL_FECHALLEGADA_IDA490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.LABEL_FECHALLEGADA_IDA490WC.Location = new System.Drawing.Point(631, 366);
+            this.LABEL_FECHALLEGADA_IDA490WC.Location = new System.Drawing.Point(634, 386);
             this.LABEL_FECHALLEGADA_IDA490WC.Name = "LABEL_FECHALLEGADA_IDA490WC";
             this.LABEL_FECHALLEGADA_IDA490WC.Size = new System.Drawing.Size(166, 20);
             this.LABEL_FECHALLEGADA_IDA490WC.TabIndex = 56;
@@ -459,7 +396,7 @@
             this.LABEL_FECHAPARTIDA_VUELTA490WC.AutoSize = true;
             this.LABEL_FECHAPARTIDA_VUELTA490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.LABEL_FECHAPARTIDA_VUELTA490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.LABEL_FECHAPARTIDA_VUELTA490WC.Location = new System.Drawing.Point(860, 366);
+            this.LABEL_FECHAPARTIDA_VUELTA490WC.Location = new System.Drawing.Point(863, 386);
             this.LABEL_FECHAPARTIDA_VUELTA490WC.Name = "LABEL_FECHAPARTIDA_VUELTA490WC";
             this.LABEL_FECHAPARTIDA_VUELTA490WC.Size = new System.Drawing.Size(196, 20);
             this.LABEL_FECHAPARTIDA_VUELTA490WC.TabIndex = 57;
@@ -470,18 +407,115 @@
             this.LABEL_FECHALLEGADA_VUELTA490WC.AutoSize = true;
             this.LABEL_FECHALLEGADA_VUELTA490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.LABEL_FECHALLEGADA_VUELTA490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.LABEL_FECHALLEGADA_VUELTA490WC.Location = new System.Drawing.Point(1107, 366);
+            this.LABEL_FECHALLEGADA_VUELTA490WC.Location = new System.Drawing.Point(1110, 386);
             this.LABEL_FECHALLEGADA_VUELTA490WC.Name = "LABEL_FECHALLEGADA_VUELTA490WC";
             this.LABEL_FECHALLEGADA_VUELTA490WC.Size = new System.Drawing.Size(201, 20);
             this.LABEL_FECHALLEGADA_VUELTA490WC.TabIndex = 58;
             this.LABEL_FECHALLEGADA_VUELTA490WC.Text = "Fecha Llegada VUELTA";
+            // 
+            // LABEL_ASIENTO490WC
+            // 
+            this.LABEL_ASIENTO490WC.AutoSize = true;
+            this.LABEL_ASIENTO490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.LABEL_ASIENTO490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
+            this.LABEL_ASIENTO490WC.Location = new System.Drawing.Point(19, 554);
+            this.LABEL_ASIENTO490WC.Name = "LABEL_ASIENTO490WC";
+            this.LABEL_ASIENTO490WC.Size = new System.Drawing.Size(74, 20);
+            this.LABEL_ASIENTO490WC.TabIndex = 60;
+            this.LABEL_ASIENTO490WC.Text = "Asiento";
+            // 
+            // TB_ASIENTO490WC
+            // 
+            this.TB_ASIENTO490WC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(6)))), ((int)(((byte)(13)))));
+            this.TB_ASIENTO490WC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TB_ASIENTO490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.TB_ASIENTO490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
+            this.TB_ASIENTO490WC.Location = new System.Drawing.Point(156, 555);
+            this.TB_ASIENTO490WC.Name = "TB_ASIENTO490WC";
+            this.TB_ASIENTO490WC.Size = new System.Drawing.Size(174, 27);
+            this.TB_ASIENTO490WC.TabIndex = 59;
+            // 
+            // ColumnaID
+            // 
+            this.ColumnaID.HeaderText = "Column1";
+            this.ColumnaID.Name = "ColumnaID";
+            this.ColumnaID.ReadOnly = true;
+            this.ColumnaID.Visible = false;
+            // 
+            // ColumnaModalidad
+            // 
+            this.ColumnaModalidad.HeaderText = "Modalidad";
+            this.ColumnaModalidad.Name = "ColumnaModalidad";
+            this.ColumnaModalidad.ReadOnly = true;
+            // 
+            // ColumnaOrigen
+            // 
+            this.ColumnaOrigen.HeaderText = "Origen";
+            this.ColumnaOrigen.Name = "ColumnaOrigen";
+            this.ColumnaOrigen.ReadOnly = true;
+            // 
+            // ColumnaDestino
+            // 
+            this.ColumnaDestino.HeaderText = "Destino";
+            this.ColumnaDestino.Name = "ColumnaDestino";
+            this.ColumnaDestino.ReadOnly = true;
+            // 
+            // ColumnaFechaPartidaIDA
+            // 
+            this.ColumnaFechaPartidaIDA.HeaderText = "FechaPartida IDA";
+            this.ColumnaFechaPartidaIDA.Name = "ColumnaFechaPartidaIDA";
+            this.ColumnaFechaPartidaIDA.ReadOnly = true;
+            // 
+            // ColumnaFechaLlegadaIDA
+            // 
+            this.ColumnaFechaLlegadaIDA.HeaderText = "FechaLlegada IDA";
+            this.ColumnaFechaLlegadaIDA.Name = "ColumnaFechaLlegadaIDA";
+            this.ColumnaFechaLlegadaIDA.ReadOnly = true;
+            // 
+            // ColumnaFechaPartidaVUELTA
+            // 
+            this.ColumnaFechaPartidaVUELTA.HeaderText = "FechaPartida VUELTA";
+            this.ColumnaFechaPartidaVUELTA.Name = "ColumnaFechaPartidaVUELTA";
+            this.ColumnaFechaPartidaVUELTA.ReadOnly = true;
+            // 
+            // ColumnaFechaLlegadaVUELTA
+            // 
+            this.ColumnaFechaLlegadaVUELTA.HeaderText = "FechaLlegada VUELTA";
+            this.ColumnaFechaLlegadaVUELTA.Name = "ColumnaFechaLlegadaVUELTA";
+            this.ColumnaFechaLlegadaVUELTA.ReadOnly = true;
+            // 
+            // ColumnaClaseBoleto
+            // 
+            this.ColumnaClaseBoleto.HeaderText = "Clase Boleto";
+            this.ColumnaClaseBoleto.Name = "ColumnaClaseBoleto";
+            this.ColumnaClaseBoleto.ReadOnly = true;
+            // 
+            // ColumnaPesoEquipajePermitido
+            // 
+            this.ColumnaPesoEquipajePermitido.HeaderText = "Peso Equipaje Permitido";
+            this.ColumnaPesoEquipajePermitido.Name = "ColumnaPesoEquipajePermitido";
+            this.ColumnaPesoEquipajePermitido.ReadOnly = true;
+            // 
+            // ColumnaPrecio
+            // 
+            this.ColumnaPrecio.HeaderText = "Precio";
+            this.ColumnaPrecio.Name = "ColumnaPrecio";
+            this.ColumnaPrecio.ReadOnly = true;
+            // 
+            // ColumnaNumeroAsiento
+            // 
+            this.ColumnaNumeroAsiento.HeaderText = "Numero Asiento";
+            this.ColumnaNumeroAsiento.Name = "ColumnaNumeroAsiento";
+            this.ColumnaNumeroAsiento.ReadOnly = true;
             // 
             // FormMaestroBoleto490WC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(27)))), ((int)(((byte)(38)))));
-            this.ClientSize = new System.Drawing.Size(1330, 575);
+            this.ClientSize = new System.Drawing.Size(1330, 602);
+            this.Controls.Add(this.LABEL_ASIENTO490WC);
+            this.Controls.Add(this.TB_ASIENTO490WC);
             this.Controls.Add(this.LABEL_FECHALLEGADA_VUELTA490WC);
             this.Controls.Add(this.LABEL_FECHAPARTIDA_VUELTA490WC);
             this.Controls.Add(this.LABEL_FECHALLEGADA_IDA490WC);
@@ -548,6 +582,8 @@
         private System.Windows.Forms.Label LABEL_FECHALLEGADA_IDA490WC;
         private System.Windows.Forms.Label LABEL_FECHAPARTIDA_VUELTA490WC;
         private System.Windows.Forms.Label LABEL_FECHALLEGADA_VUELTA490WC;
+        private System.Windows.Forms.Label LABEL_ASIENTO490WC;
+        private System.Windows.Forms.TextBox TB_ASIENTO490WC;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaID;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaModalidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaOrigen;
@@ -559,5 +595,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaClaseBoleto;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaPesoEquipajePermitido;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaPrecio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaNumeroAsiento;
     }
 }
