@@ -111,7 +111,7 @@ namespace DAL490WC
                     query490WC = "UPDATE Boleto490WC SET Origen490WC = @Origen490WC, Destino490WC = @Destino490WC, FechaPartidaIDA490WC = @FechaPartidaIDA490WC, FechaLlegadaIDA490WC = @FechaLlegadaIDA490WC, FechaPartidaVUELTA490WC = @FechaPartidaVUELTA490WC, FechaLlegadaVUELTA490WC = @FechaLlegadaVUELTA490WC, IsVendido490WC = @IsVendido490WC, PesoEquipajePermitido490WC = @PesoEquipajePermitido490WC, ClaseBoleto490WC = @ClaseBoleto490WC, Precio490WC = @Precio490WC, Titular490WC = @Titular490WC WHERE ID490WC = @ID490WC";
                     using (SqlCommand comando490WC = new SqlCommand(query490WC, cone490WC))
                     {
-                        comando490WC.Parameters.AddWithValue("@IDBoleto490WC", boletoIDAVUELTA490WC.IDBoleto490WC);
+                        comando490WC.Parameters.AddWithValue("@ID490WC", boletoIDAVUELTA490WC.IDBoleto490WC);
                         comando490WC.Parameters.AddWithValue("@Origen490WC", boletoIDAVUELTA490WC.Origen490WC);
                         comando490WC.Parameters.AddWithValue("@Destino490WC", boletoIDAVUELTA490WC.Destino490WC);
                         comando490WC.Parameters.AddWithValue("@FechaPartidaIDA490WC", boletoIDAVUELTA490WC.FechaPartida490WC);

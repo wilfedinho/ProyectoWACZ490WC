@@ -49,7 +49,6 @@ namespace GUI490WC
 
         public void ActivarModoModificar490WC(bool IsActivo)
         {
-            GestorBeneficio490WC gestorBeneficio490WC = new GestorBeneficio490WC();
             if (IsActivo == true)
             {
                 BT_SALIR490WC.Enabled = false;
