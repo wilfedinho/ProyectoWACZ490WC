@@ -33,6 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -117,6 +118,12 @@
     <Compile Include="FormMenu490WC.Designer.cs">
       <DependentUpon>FormMenu490WC.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormRegistrarCliente490WC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRegistrarCliente490WC.Designer.cs">
+      <DependentUpon>FormRegistrarCliente490WC.cs</DependentUpon>
+    </Compile>
     <Compile Include="GestorForm490WC.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -152,6 +159,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormMenu490WC.resx">
       <DependentUpon>FormMenu490WC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRegistrarCliente490WC.resx">
+      <DependentUpon>FormRegistrarCliente490WC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
