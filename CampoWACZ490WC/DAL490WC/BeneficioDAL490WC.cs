@@ -63,12 +63,27 @@ namespace DAL490WC
             }
         }
 
+        public void AgregarBeneficioACliente490WC(string DNICliente490WC, int CodigoBeneficio490WC)
+        {
+            using (SqlConnection cone490WC = GestorConexion490WC.GestorCone490WC.DevolverConexion490WC())
+            {
+                cone490WC.Open();
+                string query490WC = "INSERT INTO Cliente_Beneficio490WC (DNI490WC, CodigoBeneficio490WC) VALUES (@DNICliente490WC, @CodigoBeneficio490WC)";
+                using (SqlCommand comando490WC = new SqlCommand(query490WC, cone490WC))
+                {
+                    comando490WC.Parameters.AddWithValue("@DNICliente490WC", DNICliente490WC);
+                    comando490WC.Parameters.AddWithValue("@CodigoBeneficio490WC", CodigoBeneficio490WC);
+                    comando490WC.ExecuteNonQuery();
+                }
+            }
+        }
+
         public void ReducirSaldoEstrellas490WC(string DNICliente490WC, int cantidadEstrellas490WC)
         {
             using (SqlConnection cone490WC = GestorConexion490WC.GestorCone490WC.DevolverConexion490WC())
             {
                 cone490WC.Open();
-                string query490WC = "UPDATE Cliente490WC SET EstrellasCliente490WC = EstrellasCliente490WC - @CantidadEstrellas490WC WHERE DNICliente490WC = @DNICliente490WC";
+                string query490WC = "UPDATE Cliente490WC SET EstrellasCliente490WC = EstrellasCliente490WC - @CantidadEstrellas490WC WHERE DNI490WC = @DNICliente490WC";
                 using (SqlCommand comando490WC = new SqlCommand(query490WC, cone490WC))
                 {
                     comando490WC.Parameters.AddWithValue("@CantidadEstrellas490WC", cantidadEstrellas490WC);

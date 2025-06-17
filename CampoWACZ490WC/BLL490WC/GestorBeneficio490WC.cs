@@ -41,7 +41,11 @@ namespace BLL490WC
             beneficioDAL490WC.AplicarBeneficio490WC(IDBoleto490WC, DescuentoAplicar490WC);
         }
 
-
+        public void AgregarBeneficioACliente490WC(string DNICliente490WC, int CodigoBeneficio490WC)
+        {
+           BeneficioDAL490WC gestorBeneficio490WC = new BeneficioDAL490WC();
+           gestorBeneficio490WC.AgregarBeneficioACliente490WC(DNICliente490WC, CodigoBeneficio490WC);
+        }
 
         public Beneficio490WC ObtenerBeneficioPorCodigo490WC(int CodigoBeneficio490WC)
         {
