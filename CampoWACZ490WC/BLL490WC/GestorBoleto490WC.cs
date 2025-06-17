@@ -121,11 +121,19 @@ namespace BLL490WC
             BoletoDAL490WC gestorBoletoDAL490WC = new BoletoDAL490WC();
             return gestorBoletoDAL490WC.ObtenerTodosLosBoletos490WC();
         }
-        public List<Boleto490WC> BuscarBoletosPorFiltros() // Falta implementar la logica de filtros, que hicimos en el otro proyecto.
+        public List<Boleto490WC> ObtenerBoletosFiltrados490WC(string origen490WC = "", string destino490WC = "", string claseBoleto490WC = "", float? precioDesde490WC = null, float? precioHasta490WC = null, float? pesoPermitido490WC = null, DateTime? fechaPartida490WC = null, DateTime? fechaLlegada490WC = null, DateTime? fechaPartidaVUELTA490WC = null, DateTime? fechaLlegadaVUELTA490WC = null)
         {
-            return null;
+            BoletoDAL490WC gestorBoleto490WC = new BoletoDAL490WC();
+            return gestorBoleto490WC.ObtenerBoletosFiltrados490WC(origen490WC, destino490WC, claseBoleto490WC, precioDesde490WC, precioHasta490WC, pesoPermitido490WC, fechaPartida490WC, fechaLlegada490WC, fechaPartidaVUELTA490WC, fechaLlegadaVUELTA490WC);
         }
-        #endregion
 
-    }
+        public Boleto490WC ObtenerBoletoConBeneficio490WC(string ID490WC)
+        {
+            BoletoDAL490WC boletoDAL490WC = new BoletoDAL490WC();
+            return boletoDAL490WC.ObtenerBoletoConBeneficio490WC(ID490WC);
+        }
+
+            #endregion
+
+        }
 }

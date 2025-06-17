@@ -14,7 +14,7 @@ namespace GUI490WC
 {
     public partial class FormAplicarBeneficios490WC : Form
     {
-        Cliente490WC ClienteCargado490WC;
+        public Cliente490WC ClienteCargado490WC;
         public FormAplicarBeneficios490WC()
         {
             InitializeComponent();

@@ -46,6 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ControlModalidadIDA490WC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlModalidadIDA490WC.Designer.cs">
+      <DependentUpon>ControlModalidadIDA490WC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlModalidadVUELTA490WC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlModalidadVUELTA490WC.Designer.cs">
+      <DependentUpon>ControlModalidadVUELTA490WC.cs</DependentUpon>
+    </Compile>
     <Compile Include="Estado490WC.cs" />
     <Compile Include="EstadoCerrarAplicacion490WC.cs" />
     <Compile Include="EstadoError490WC.cs" />
@@ -68,6 +80,12 @@
     </Compile>
     <Compile Include="FormCambiarClave490WC.Designer.cs">
       <DependentUpon>FormCambiarClave490WC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormGenerarBoleto490WC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGenerarBoleto490WC.Designer.cs">
+      <DependentUpon>FormGenerarBoleto490WC.cs</DependentUpon>
     </Compile>
     <Compile Include="FormLogin490WC.cs">
       <SubType>Form</SubType>
@@ -102,6 +120,12 @@
     <Compile Include="GestorForm490WC.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ControlModalidadIDA490WC.resx">
+      <DependentUpon>ControlModalidadIDA490WC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlModalidadVUELTA490WC.resx">
+      <DependentUpon>ControlModalidadVUELTA490WC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormABMUsuario490WC.resx">
       <DependentUpon>FormABMUsuario490WC.cs</DependentUpon>
     </EmbeddedResource>
@@ -110,6 +134,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormCambiarClave490WC.resx">
       <DependentUpon>FormCambiarClave490WC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormGenerarBoleto490WC.resx">
+      <DependentUpon>FormGenerarBoleto490WC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormLogin490WC.resx">
       <DependentUpon>FormLogin490WC.cs</DependentUpon>
