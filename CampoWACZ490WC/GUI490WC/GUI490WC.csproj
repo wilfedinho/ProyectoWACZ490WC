@@ -82,11 +82,23 @@
     <Compile Include="FormCambiarClave490WC.Designer.cs">
       <DependentUpon>FormCambiarClave490WC.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormCobrarFactura490WC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCobrarFactura490WC.Designer.cs">
+      <DependentUpon>FormCobrarFactura490WC.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormGenerarBoleto490WC.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormGenerarBoleto490WC.Designer.cs">
       <DependentUpon>FormGenerarBoleto490WC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormGenerarFactura490WC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGenerarFactura490WC.Designer.cs">
+      <DependentUpon>FormGenerarFactura490WC.cs</DependentUpon>
     </Compile>
     <Compile Include="FormLogin490WC.cs">
       <SubType>Form</SubType>
@@ -142,8 +154,14 @@
     <EmbeddedResource Include="FormCambiarClave490WC.resx">
       <DependentUpon>FormCambiarClave490WC.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormCobrarFactura490WC.resx">
+      <DependentUpon>FormCobrarFactura490WC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormGenerarBoleto490WC.resx">
       <DependentUpon>FormGenerarBoleto490WC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormGenerarFactura490WC.resx">
+      <DependentUpon>FormGenerarFactura490WC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormLogin490WC.resx">
       <DependentUpon>FormLogin490WC.cs</DependentUpon>

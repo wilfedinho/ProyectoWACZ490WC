@@ -167,7 +167,6 @@ namespace GUI490WC
             {
                 TBINFOCLIENTE490WC.Text = $"Ingrese el DNI, Nombre y Apellido para visualizar los datos del cliente";
             }
-
         }
 
         private void BT_BUSCARCLIENTE490WC_Click(object sender, EventArgs e)

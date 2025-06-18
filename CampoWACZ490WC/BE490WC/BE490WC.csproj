@@ -46,6 +46,7 @@
     <Compile Include="BoletoIDA490WC.cs" />
     <Compile Include="BoletoIDAVUELTA490WC.cs" />
     <Compile Include="Cliente490WC.cs" />
+    <Compile Include="Factura490WC.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
