@@ -286,7 +286,6 @@ namespace DAL490WC
                         cmdPermiso.ExecuteNonQuery();
                     }
 
-                    // 2. Actualizar las relaciones si el permiso estaba como compuesto
                     string updateRelacionCompuestoQuery = "UPDATE RelacionPermiso490WC SET permisoCompuestoNombre490WC = @nuevoNombre WHERE permisoCompuestoNombre490WC = @nombreActual";
 
                     using (SqlCommand cmdCompuesto = new SqlCommand(updateRelacionCompuestoQuery, conexion490WC))
@@ -296,7 +295,6 @@ namespace DAL490WC
                         cmdCompuesto.ExecuteNonQuery();
                     }
 
-                    // 3. Actualizar las relaciones si el permiso estaba como incluido
                     string updateRelacionIncluidoQuery = "UPDATE RelacionPermiso490WC SET permisoIncluidoNombre490WC = @nuevoNombre WHERE permisoIncluidoNombre490WC = @nombreActual";
 
                     using (SqlCommand cmdIncluido = new SqlCommand(updateRelacionIncluidoQuery, conexion490WC))
@@ -304,6 +302,15 @@ namespace DAL490WC
                         cmdIncluido.Parameters.AddWithValue("@nuevoNombre", nuevoNombrePermiso490WC);
                         cmdIncluido.Parameters.AddWithValue("@nombreActual", nombrePermiso490WC);
                         cmdIncluido.ExecuteNonQuery();
+                    }
+
+                    string updateRolUsuarioQuery = "UPDATE Usuario490WC SET Rol490WC = @nuevoNombre WHERE Rol490WC = @nombreActual";
+
+                    using (SqlCommand cmdRol = new SqlCommand(updateRolUsuarioQuery, conexion490WC))
+                    {
+                        cmdRol.Parameters.AddWithValue("@nuevoNombre", nuevoNombrePermiso490WC);
+                        cmdRol.Parameters.AddWithValue("@nombreActual", nombrePermiso490WC);
+                        cmdRol.ExecuteNonQuery();
                     }
                 }
 
