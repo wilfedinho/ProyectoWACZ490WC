@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DAL490WC
 {
-    public class FacturaDAL
+    public class FacturaDAL490WC
     {
         public void Alta490WC(Factura490WC FacturaAlta490WC)
         {

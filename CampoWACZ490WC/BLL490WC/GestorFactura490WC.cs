@@ -13,12 +13,12 @@ namespace BLL490WC
     {
         public void Alta490WC(Factura490WC FacturaAlta490WC)
         {
-            FacturaDAL gestorFactura490WC = new FacturaDAL();
+            FacturaDAL490WC gestorFactura490WC = new FacturaDAL490WC();
             gestorFactura490WC.Alta490WC(FacturaAlta490WC);
         }
         public List<Factura490WC> ObtenerTodasLasFacturas490WC()
         {
-            FacturaDAL gestorFactura490WC = new FacturaDAL();
+            FacturaDAL490WC gestorFactura490WC = new FacturaDAL490WC();
             return gestorFactura490WC.ObtenerTodasLasFacturas490WC();
         }
     }

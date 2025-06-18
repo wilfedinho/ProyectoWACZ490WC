@@ -44,8 +44,9 @@
     <Compile Include="BeneficioDAL490WC.cs" />
     <Compile Include="BoletoDAL490WC.cs" />
     <Compile Include="ClienteDAL490WC.cs" />
-    <Compile Include="FacturaDAL.cs" />
+    <Compile Include="FacturaDAL490WC.cs" />
     <Compile Include="GestorConexion490WC.cs" />
+    <Compile Include="PermisoDAL490WC.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UsuarioAccesoDatos490WC.cs" />
   </ItemGroup>
