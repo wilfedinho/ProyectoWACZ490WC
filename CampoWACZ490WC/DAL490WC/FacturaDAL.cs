@@ -68,9 +68,9 @@ namespace DAL490WC
                                 nombreCliente: reader["Nombre490WC"].ToString(),
                                 apellidoCliente: reader["Apellido490WC"].ToString(),
                                 dniCliente: reader["DNI490WC"].ToString(),
-                                fechaEmision: Convert.ToDateTime(reader["FechaEmision490WC"]),
-                                horaEmision: TimeSpan.Parse(reader["HoraEmision490WC"].ToString()),
-                                numeroBoleto: Convert.ToInt32(reader["NumeroBoleto490WC"]),
+                                fechaEmision: reader["FechaEmision490WC"].ToString(),
+                                horaEmision: reader["HoraEmision490WC"].ToString(),
+                                numeroBoleto: reader["NumeroBoleto490WC"].ToString(),
                                 subtotal: Convert.ToSingle(reader["Subtotal490WC"]),
                                 total: Convert.ToSingle(reader["Total490WC"]),
                                 beneficioAplicado490WC: beneficioAplicado

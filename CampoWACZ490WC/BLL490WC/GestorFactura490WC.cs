@@ -16,9 +16,6 @@ namespace BLL490WC
             FacturaDAL gestorFactura490WC = new FacturaDAL();
             gestorFactura490WC.Alta490WC(FacturaAlta490WC);
         }
-
-
-
         public List<Factura490WC> ObtenerTodasLasFacturas490WC()
         {
             FacturaDAL gestorFactura490WC = new FacturaDAL();

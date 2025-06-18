@@ -82,6 +82,8 @@ namespace GUI490WC
         private void BT_COBRARFACTURA490WC_Click(object sender, EventArgs e)
         {
             
+            if (clienteCobrar490WC != null || boletoCobrar490WC != null)
+            {
             GestorBoleto490WC gestorBoleto490WC = new GestorBoleto490WC();
             foreach (Boleto490WC bole490WC in gestorBoleto490WC.ObtenerBoletosPorCliente490WC(clienteCobrar490WC))
             {
@@ -93,6 +95,12 @@ namespace GUI490WC
             }
             FormCobrarFactura490WC formCobrarFactura490WC = new FormCobrarFactura490WC(clienteCobrar490WC, boletoCobrar490WC);
             formCobrarFactura490WC.ShowDialog();
+
+            }
+            else
+            {
+               MessageBox.Show("Debe seleccionar un cliente y un boleto para cobrar la factura.");
+            }
         }
     }
 }

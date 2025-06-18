@@ -13,12 +13,12 @@ namespace BE490WC
         public string Apellido490WC { get; set; }
         public string BeneficioAplicado490WC { get; set; } 
         public string DNIC490WC { get; set; }
-        public DateTime FechaEmision490WC { get; set; }
-        public TimeSpan HoraEmision490WC { get; set; }
-        public int NumeroBoleto490WC { get; set; }
+        public string FechaEmision490WC { get; set; }
+        public string HoraEmision490WC { get; set; }
+        public string NumeroBoleto490WC { get; set; }
         public float Subtotal490WC { get; set; }
         public float Total490WC { get; set; }
-        public Factura490WC(int numeroFactura, string nombreCliente, string apellidoCliente, string dniCliente, DateTime fechaEmision, TimeSpan horaEmision, int numeroBoleto, float subtotal, float total, string beneficioAplicado490WC = null)
+        public Factura490WC(int numeroFactura, string nombreCliente, string apellidoCliente, string dniCliente, string fechaEmision, string horaEmision, string numeroBoleto, float subtotal, float total, string beneficioAplicado490WC = null)
         {
             NumeroFactura490WC = numeroFactura;
             Nombre490WC = nombreCliente;

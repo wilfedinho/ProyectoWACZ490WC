@@ -85,6 +85,7 @@
             this.BT_REALIZARPAGO490WC.TabIndex = 59;
             this.BT_REALIZARPAGO490WC.Text = "Realizar Pago";
             this.BT_REALIZARPAGO490WC.UseVisualStyleBackColor = false;
+            this.BT_REALIZARPAGO490WC.Click += new System.EventHandler(this.BT_REALIZARPAGO490WC_Click);
             // 
             // labelApellidoTitular490WC
             // 
