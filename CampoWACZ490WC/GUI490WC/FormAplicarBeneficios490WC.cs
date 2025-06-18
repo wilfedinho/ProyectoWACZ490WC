@@ -122,9 +122,9 @@ namespace GUI490WC
             Beneficio490WC beneficioAplicar490WC = gestorBeneficio490WC.ObtenerBeneficioPorCodigo490WC(Convert.ToInt32(dgvBeneficio490WC.SelectedRows[0].Cells["ColumnaCodigoBeneficio490WC"].Value.ToString()));
             if (ClienteCargado490WC.EstrellasCliente490WC >= beneficioAplicar490WC.PrecioEstrella490WC)
             {
-                gestorCliente490WC.ModificarEstrellasCliente490WC(ClienteCargado490WC.DNI490WC, beneficioAplicar490WC.PrecioEstrella490WC);
                 if (ClienteCargado490WC.BeneficiosCliente490WC.Find(x => x.CodigoBeneficio490WC == beneficioAplicar490WC.CodigoBeneficio490WC) == null)
                 {
+                    gestorCliente490WC.ModificarEstrellasCliente490WC(ClienteCargado490WC.DNI490WC, beneficioAplicar490WC.PrecioEstrella490WC);
                     beneficioAplicar490WC.CantidadBeneficioReclamo490WC += 1;
                     gestorBeneficio490WC.Modificacion490WC(beneficioAplicar490WC);
                     gestorBeneficio490WC.AgregarBeneficioACliente490WC(ClienteCargado490WC.DNI490WC, beneficioAplicar490WC.CodigoBeneficio490WC);
