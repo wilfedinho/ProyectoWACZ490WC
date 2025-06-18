@@ -29,6 +29,8 @@ namespace GUI490WC
             HabilitarControl490WC();
             CargarCliente490WC(null);
             formAplicarBeneficios490WC = new FormAplicarBeneficios490WC();
+            controlIDA490WC.Mostrar490WC();
+            controlVUELTA490WC.Mostrar490WC();
         }
 
         private void InicializarControles490WC()
@@ -242,8 +244,11 @@ namespace GUI490WC
                     gestorBeneficio490WC.EliminarBeneficioDeCliente490WC(ClienteCargado490WC.DNI490WC, beneficioAplicar490WC.CodigoBeneficio490WC);
                     ClienteCargado490WC = gestorCliente490WC.BuscarClientePorDNI490WC(ClienteCargado490WC.DNI490WC);
                     LlenarDatosCliente490WC(ClienteCargado490WC.DNI490WC);
+                        BT_CANCELAR490WC.Enabled = false;
                     controlIDA490WC.Enabled = false;
                     controlVUELTA490WC.Enabled = false;
+                    RB_IDA490WC.Enabled = false;
+                    RB_IDAVUELTA490WC.Enabled = false;
                 }
                 else
                 {
@@ -272,6 +277,12 @@ namespace GUI490WC
                 {
                     gestorBoleto490WC.AsignarBoletoCliente490WC(boletoCargado490WC, ClienteCargado490WC);
                     MessageBox.Show("El boleto fue generado Correctamente!!, tiene 8 horas para realizar el pago");
+                    LimpiarCampos490WC();
+                    BT_CANCELAR490WC.Enabled = true;
+                    controlIDA490WC.Enabled = true;
+                    controlVUELTA490WC.Enabled = true;
+                    RB_IDA490WC.Enabled = true;
+                    RB_IDAVUELTA490WC.Enabled = true;
                     this.Close();
                 }
                 else
@@ -279,6 +290,11 @@ namespace GUI490WC
                     gestorBoleto490WC.GenerarBoletoCompra490WC(boletoCargado490WC);
                     MessageBox.Show($"El boleto fue generado Correctamente!!, tiene 8 horas para realizar el pago. {Environment.NewLine} Indique al Cajero el siguiente codigo: {boletoCargado490WC.IDBoleto490WC} para que se le asigne el boleto generado cuando sea registrado");
                     LimpiarCampos490WC();
+                    BT_CANCELAR490WC.Enabled = true;
+                    controlIDA490WC.Enabled = true;
+                    controlVUELTA490WC.Enabled = true;
+                    RB_IDA490WC.Enabled = true;
+                    RB_IDAVUELTA490WC.Enabled = true;
                     this.Close();
                 }
 
@@ -293,6 +309,16 @@ namespace GUI490WC
 
         private void FormGenerarBoleto490WC_FormClosed(object sender, FormClosedEventArgs e)
         {
+            if (RB_IDA490WC.Checked)
+            {
+                RB_IDAVUELTA490WC.Checked = true;
+            }
+            else
+            {
+                RB_IDA490WC.Checked = true;
+            }
+            boletoCargado490WC = null;
+            ClienteCargado490WC = null;
             LimpiarCampos490WC();
             this.Close();
         }
