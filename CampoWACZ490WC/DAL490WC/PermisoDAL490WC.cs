@@ -269,6 +269,85 @@ namespace DAL490WC
             }
         }
 
+        public bool ModificarPermiso490WC(string nombrePermiso490WC, string nuevoNombrePermiso490WC)
+        {
+            try
+            {
+                using (SqlConnection conexion490WC = GestorConexion490WC.GestorCone490WC.DevolverConexion490WC())
+                {
+                    conexion490WC.Open();
+
+                    string updatePermisoQuery = "UPDATE Permiso490WC SET nombrePermiso490WC = @nuevoNombre WHERE nombrePermiso490WC = @nombreActual";
+
+                    using (SqlCommand cmdPermiso = new SqlCommand(updatePermisoQuery, conexion490WC))
+                    {
+                        cmdPermiso.Parameters.AddWithValue("@nuevoNombre", nuevoNombrePermiso490WC);
+                        cmdPermiso.Parameters.AddWithValue("@nombreActual", nombrePermiso490WC);
+                        cmdPermiso.ExecuteNonQuery();
+                    }
+
+                    // 2. Actualizar las relaciones si el permiso estaba como compuesto
+                    string updateRelacionCompuestoQuery = "UPDATE RelacionPermiso490WC SET permisoCompuestoNombre490WC = @nuevoNombre WHERE permisoCompuestoNombre490WC = @nombreActual";
+
+                    using (SqlCommand cmdCompuesto = new SqlCommand(updateRelacionCompuestoQuery, conexion490WC))
+                    {
+                        cmdCompuesto.Parameters.AddWithValue("@nuevoNombre", nuevoNombrePermiso490WC);
+                        cmdCompuesto.Parameters.AddWithValue("@nombreActual", nombrePermiso490WC);
+                        cmdCompuesto.ExecuteNonQuery();
+                    }
+
+                    // 3. Actualizar las relaciones si el permiso estaba como incluido
+                    string updateRelacionIncluidoQuery = "UPDATE RelacionPermiso490WC SET permisoIncluidoNombre490WC = @nuevoNombre WHERE permisoIncluidoNombre490WC = @nombreActual";
+
+                    using (SqlCommand cmdIncluido = new SqlCommand(updateRelacionIncluidoQuery, conexion490WC))
+                    {
+                        cmdIncluido.Parameters.AddWithValue("@nuevoNombre", nuevoNombrePermiso490WC);
+                        cmdIncluido.Parameters.AddWithValue("@nombreActual", nombrePermiso490WC);
+                        cmdIncluido.ExecuteNonQuery();
+                    }
+                }
+
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public bool esRol490WC(string nombrePermiso490WC)
+        {
+            try
+            {
+                using (SqlConnection conexion490WC = GestorConexion490WC.GestorCone490WC.DevolverConexion490WC())
+                {
+                    conexion490WC.Open();
+
+                    string query = "SELECT esRolPermiso490WC FROM Permiso490WC WHERE nombrePermiso490WC = @nombre";
+
+                    using (SqlCommand cmd = new SqlCommand(query, conexion490WC))
+                    {
+                        cmd.Parameters.AddWithValue("@nombre", nombrePermiso490WC);
+
+                        object resultado = cmd.ExecuteScalar();
+
+                        if (resultado != null && resultado.ToString() == "True")
+                        {
+                            return true;
+                        }
+                    }
+                }
+
+                return false;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+
+
 
 
 
