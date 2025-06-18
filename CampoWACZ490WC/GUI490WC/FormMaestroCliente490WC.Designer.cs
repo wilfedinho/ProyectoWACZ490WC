@@ -499,7 +499,9 @@
             this.Controls.Add(this.TB_NOMBRE490WC);
             this.Controls.Add(this.dgvCliente490WC);
             this.Name = "FormMaestroCliente490WC";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormMaestroCliente490WC";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormMaestroCliente490WC_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCliente490WC)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

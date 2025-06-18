@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvBeneficio490WC = new System.Windows.Forms.DataGridView();
             this.ColumnaCodigoBeneficio490WC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnaNombre490WC = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -88,27 +88,27 @@
             // 
             // ColumnaNombre490WC
             // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 23.75258F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ColumnaNombre490WC.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 23.75258F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ColumnaNombre490WC.DefaultCellStyle = dataGridViewCellStyle1;
             this.ColumnaNombre490WC.HeaderText = "Nombre";
             this.ColumnaNombre490WC.Name = "ColumnaNombre490WC";
             this.ColumnaNombre490WC.ReadOnly = true;
             // 
             // ColumnaCantidadBeneficioReclamado490WC
             // 
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 23.75258F, System.Drawing.FontStyle.Bold);
-            this.ColumnaCantidadBeneficioReclamado490WC.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 23.75258F, System.Drawing.FontStyle.Bold);
+            this.ColumnaCantidadBeneficioReclamado490WC.DefaultCellStyle = dataGridViewCellStyle2;
             this.ColumnaCantidadBeneficioReclamado490WC.HeaderText = "Cantidad de Reclamados";
             this.ColumnaCantidadBeneficioReclamado490WC.Name = "ColumnaCantidadBeneficioReclamado490WC";
             this.ColumnaCantidadBeneficioReclamado490WC.ReadOnly = true;
             // 
             // ColumnaPrecioEstrella490WC
             // 
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 23.75258F, System.Drawing.FontStyle.Bold);
-            this.ColumnaPrecioEstrella490WC.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 23.75258F, System.Drawing.FontStyle.Bold);
+            this.ColumnaPrecioEstrella490WC.DefaultCellStyle = dataGridViewCellStyle3;
             this.ColumnaPrecioEstrella490WC.HeaderText = "Precio";
             this.ColumnaPrecioEstrella490WC.Name = "ColumnaPrecioEstrella490WC";
             this.ColumnaPrecioEstrella490WC.ReadOnly = true;
@@ -312,6 +312,7 @@
             this.Controls.Add(this.TB_NOMBRE490WC);
             this.Controls.Add(this.dgvBeneficio490WC);
             this.Name = "FormAplicarBeneficios490WC";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormAplicarBeneficios490WC";
             ((System.ComponentModel.ISupportInitialize)(this.dgvBeneficio490WC)).EndInit();
             this.ResumeLayout(false);

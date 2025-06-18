@@ -225,7 +225,14 @@ namespace GUI490WC
 
         private void BT_SALIR490WC_Click(object sender, EventArgs e)
         {
+            ActivarModoModificar490WC(false);
+            this.Close();
+        }
 
+        private void FormMaestroBeneficio490WC_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            ActivarModoModificar490WC(false);
+            this.Close();
         }
     }
 }

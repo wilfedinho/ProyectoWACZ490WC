@@ -35,8 +35,6 @@
             this.TB_DNI490WC = new System.Windows.Forms.TextBox();
             this.BT_REGISTRARCLIENTE490WC = new System.Windows.Forms.Button();
             this.dgvBoleto490WC = new System.Windows.Forms.DataGridView();
-            this.BT_COBRARFACTURA490WC = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.ColumnaID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnaOrigen = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnaDestino = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,6 +47,8 @@
             this.ColumnaPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnaNumeroAsiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnaBeneficio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BT_COBRARFACTURA490WC = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBoleto490WC)).BeginInit();
             this.SuspendLayout();
             // 
@@ -156,31 +156,6 @@
             this.dgvBoleto490WC.Size = new System.Drawing.Size(1166, 221);
             this.dgvBoleto490WC.TabIndex = 55;
             // 
-            // BT_COBRARFACTURA490WC
-            // 
-            this.BT_COBRARFACTURA490WC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(6)))), ((int)(((byte)(13)))));
-            this.BT_COBRARFACTURA490WC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BT_COBRARFACTURA490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
-            this.BT_COBRARFACTURA490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.BT_COBRARFACTURA490WC.Location = new System.Drawing.Point(594, 332);
-            this.BT_COBRARFACTURA490WC.Name = "BT_COBRARFACTURA490WC";
-            this.BT_COBRARFACTURA490WC.Size = new System.Drawing.Size(178, 40);
-            this.BT_COBRARFACTURA490WC.TabIndex = 56;
-            this.BT_COBRARFACTURA490WC.Text = "Cobrar ";
-            this.BT_COBRARFACTURA490WC.UseVisualStyleBackColor = false;
-            this.BT_COBRARFACTURA490WC.Click += new System.EventHandler(this.BT_COBRARFACTURA490WC_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.label1.Location = new System.Drawing.Point(461, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(165, 20);
-            this.label1.TabIndex = 57;
-            this.label1.Text = "Boletos Por Pagar";
-            // 
             // ColumnaID
             // 
             this.ColumnaID.HeaderText = "Column1";
@@ -254,6 +229,31 @@
             this.ColumnaBeneficio.Name = "ColumnaBeneficio";
             this.ColumnaBeneficio.ReadOnly = true;
             // 
+            // BT_COBRARFACTURA490WC
+            // 
+            this.BT_COBRARFACTURA490WC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(6)))), ((int)(((byte)(13)))));
+            this.BT_COBRARFACTURA490WC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BT_COBRARFACTURA490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.BT_COBRARFACTURA490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
+            this.BT_COBRARFACTURA490WC.Location = new System.Drawing.Point(594, 332);
+            this.BT_COBRARFACTURA490WC.Name = "BT_COBRARFACTURA490WC";
+            this.BT_COBRARFACTURA490WC.Size = new System.Drawing.Size(178, 40);
+            this.BT_COBRARFACTURA490WC.TabIndex = 56;
+            this.BT_COBRARFACTURA490WC.Text = "Cobrar ";
+            this.BT_COBRARFACTURA490WC.UseVisualStyleBackColor = false;
+            this.BT_COBRARFACTURA490WC.Click += new System.EventHandler(this.BT_COBRARFACTURA490WC_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
+            this.label1.Location = new System.Drawing.Point(461, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(165, 20);
+            this.label1.TabIndex = 57;
+            this.label1.Text = "Boletos Por Pagar";
+            // 
             // FormGenerarFactura490WC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -270,7 +270,9 @@
             this.Controls.Add(this.LABEL_DNI490WC);
             this.Controls.Add(this.TB_DNI490WC);
             this.Name = "FormGenerarFactura490WC";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormGenerarFactura490WC";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormGenerarFactura490WC_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.dgvBoleto490WC)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

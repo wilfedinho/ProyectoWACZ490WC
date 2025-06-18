@@ -271,7 +271,9 @@
             this.Controls.Add(this.RB_IDA490WC);
             this.Controls.Add(this.LABEL_MODALIDAD490WC);
             this.Name = "FormGenerarBoleto490WC";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormGenerarBoleto490WC";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormGenerarBoleto490WC_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 

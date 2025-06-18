@@ -85,6 +85,7 @@ namespace GUI490WC
                                                                 gestorBoleto490WC.AsignarBoletoCliente490WC(boletoAsignar490WC,clienteAlta490WC);
                                                                 MessageBox.Show($"Boleto cuyo ID es: {boletoAsignar490WC.IDBoleto490WC} fue asignado correctamente al cliente con el DNI: {clienteAlta490WC.DNI490WC}!!");
                                                                 LimpiarCampos490WC();
+                                                                this.Close();
                                                             }
                                                             else
                                                             {

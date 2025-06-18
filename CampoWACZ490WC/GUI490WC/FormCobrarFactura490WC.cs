@@ -18,6 +18,7 @@ namespace GUI490WC
         Cliente490WC clienteCargado490WC;
         Boleto490WC boletoCargado490WC;
         float totalFactura490WC;
+        public bool pagoAceptado490WC = false;
         public FormCobrarFactura490WC(Cliente490WC clienteCobrar490WC, Boleto490WC BoletoCobrar490WC)
         {
             InitializeComponent();
@@ -89,13 +90,28 @@ namespace GUI490WC
             GestorCliente490WC gestorCliente490WC = new GestorCliente490WC();
             GestorPagos490WC gestorPagos490WC = new GestorPagos490WC();
             GestorFactura490WC gestorFactura490WC = new GestorFactura490WC();
+            
             if (!checkBoxOTROMETODOPAGO490WC.Checked)
             {
                 if (gestorPagos490WC.ValidarPago490WC(clienteCargado490WC.DatosTarjeta490WC, totalFactura490WC))
                 {
-                  Factura490WC facturaAlta490WC = new Factura490WC(gestorFactura490WC.ObtenerTodasLasFacturas490WC().Count + 1, clienteCargado490WC.Nombre490WC, clienteCargado490WC.Apellido490WC, clienteCargado490WC.DNI490WC, DateTime.Now.ToShortDateString(), DateTime.Now.ToShortTimeString(), boletoCargado490WC.IDBoleto490WC, boletoCargado490WC.Precio490WC, totalFactura490WC);
-                  gestorFactura490WC.Alta490WC(facturaAlta490WC);
-                    MessageBox.Show("Pago realizado con exito!!");
+                    if (boletoCargado490WC.BeneficioAplicado490WC == null)
+                    {
+                        Factura490WC facturaAlta490WC = new Factura490WC(gestorFactura490WC.ObtenerTodasLasFacturas490WC().Count + 1, clienteCargado490WC.Nombre490WC, clienteCargado490WC.Apellido490WC, clienteCargado490WC.DNI490WC, DateTime.Now.ToShortDateString(), DateTime.Now.ToShortTimeString(), boletoCargado490WC.IDBoleto490WC, boletoCargado490WC.Precio490WC, totalFactura490WC);
+                        gestorFactura490WC.Alta490WC(facturaAlta490WC);
+                        MessageBox.Show("Pago realizado con exito!!");
+                        pagoAceptado490WC = true;
+                        this.Close();
+                    }
+                    else
+                    {
+                        Factura490WC facturaAlta490WC = new Factura490WC(gestorFactura490WC.ObtenerTodasLasFacturas490WC().Count + 1, clienteCargado490WC.Nombre490WC, clienteCargado490WC.Apellido490WC, clienteCargado490WC.DNI490WC, DateTime.Now.ToShortDateString(), DateTime.Now.ToShortTimeString(), boletoCargado490WC.IDBoleto490WC, boletoCargado490WC.Precio490WC, totalFactura490WC,boletoCargado490WC.BeneficioAplicado490WC);
+                        gestorFactura490WC.Alta490WC(facturaAlta490WC);
+                        MessageBox.Show("Pago realizado con exito!!");
+                        pagoAceptado490WC = true;
+                        this.Close();
+                    }
+                    
                 }
                 else
                 {
@@ -131,7 +147,8 @@ namespace GUI490WC
                                             Factura490WC facturaAlta490WC = new Factura490WC(gestorFactura490WC.ObtenerTodasLasFacturas490WC().Count + 1,clienteCargado490WC.Nombre490WC,clienteCargado490WC.Apellido490WC,clienteCargado490WC.DNI490WC, DateTime.Now.ToShortDateString(), DateTime.Now.ToShortTimeString(), boletoCargado490WC.IDBoleto490WC,boletoCargado490WC.Precio490WC,totalFactura490WC);
                                             gestorFactura490WC.Alta490WC(facturaAlta490WC); 
                                             MessageBox.Show("Pago realizado con exito!!");
-
+                                            pagoAceptado490WC = true;
+                                            this.Close();
                                         }
                                         else
                                         {
@@ -170,9 +187,9 @@ namespace GUI490WC
             }
         }
 
+        private void FormCobrarFactura490WC_FormClosed(object sender, FormClosedEventArgs e)
+        {
 
-
-
-
+        }
     }
 }

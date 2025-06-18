@@ -295,7 +295,9 @@
             this.Controls.Add(this.LABEL_VISTAPREVIAFACTURA490WC);
             this.Controls.Add(this.TBVISTAPREVIAFACTURA490WC);
             this.Name = "FormCobrarFactura490WC";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormCobrarFactura490WC";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormCobrarFactura490WC_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 

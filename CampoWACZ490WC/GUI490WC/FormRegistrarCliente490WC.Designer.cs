@@ -330,6 +330,7 @@
             this.Controls.Add(this.TB_APELLIDO490WC);
             this.Controls.Add(this.TB_NOMBRE490WC);
             this.Name = "FormRegistrarCliente490WC";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormRegistrarCliente490WC";
             this.ResumeLayout(false);
             this.PerformLayout();

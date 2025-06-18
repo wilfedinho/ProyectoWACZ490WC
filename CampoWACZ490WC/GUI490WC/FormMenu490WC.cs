@@ -15,12 +15,22 @@ namespace GUI490WC
     {
         FormABMUsuario490WC formABMUSUARIO490WC;
         FormCambiarClave490WC formCambiarClave490WC;
+        FormMaestroCliente490WC formMaestroCliente490WC;
+        FormMaestroBoleto490WC formMaestroBoleto490WC;
+        FormMaestroBeneficio490WC formMaestroBeneficio490WC;
+        FormGenerarBoleto490WC formGenerarBoleto490WC;
+        FormGenerarFactura490WC formGenerarFactura490WC;
 
         public FormMenu490WC()
         {
             InitializeComponent();
             formABMUSUARIO490WC = new FormABMUsuario490WC(this);
             formCambiarClave490WC = new FormCambiarClave490WC();
+            formMaestroCliente490WC = new FormMaestroCliente490WC();
+            formMaestroBoleto490WC = new FormMaestroBoleto490WC();
+            formMaestroBeneficio490WC = new FormMaestroBeneficio490WC();
+            formGenerarBoleto490WC = new FormGenerarBoleto490WC();
+            formGenerarFactura490WC = new FormGenerarFactura490WC();
 
             LabelNombreUsuarios490WC.AutoSize = false;
             LabelNombreUsuarios490WC.MaximumSize = new Size(panelPrincipal.Width, 0);
@@ -56,6 +66,11 @@ namespace GUI490WC
         {
             panelAdministrarSubmenu490WC.Visible = false;
             panelSubmenuSesion490WC.Visible = false;
+            panelSubmenuMaestros490WC.Visible = false;
+            panelSubmenuCompra490WC.Visible = false;
+            panelSubmenuModificacionBoleto490WC.Visible = false;
+            panelSubmenuReportes490WC.Visible = false;
+            panelSubmenuAyuda490WC.Visible = false;
         }
 
         private void hideSubmenu490WC()
@@ -67,6 +82,26 @@ namespace GUI490WC
             if (panelSubmenuSesion490WC.Visible == true)
             {
                 panelSubmenuSesion490WC.Visible = false;
+            }
+            if (panelSubmenuMaestros490WC.Visible == true)
+            {
+                panelSubmenuMaestros490WC.Visible = false;
+            }
+            if (panelSubmenuCompra490WC.Visible == true)
+            {
+                panelSubmenuCompra490WC.Visible = false;
+            }
+            if (panelSubmenuModificacionBoleto490WC.Visible == true)
+            {
+                panelSubmenuModificacionBoleto490WC.Visible = false;
+            }
+            if (panelSubmenuReportes490WC.Visible == true)
+            {
+                panelSubmenuReportes490WC.Visible = false;
+            }
+            if (panelSubmenuAyuda490WC.Visible == true)
+            {
+                panelSubmenuAyuda490WC.Visible = false;
             }
         }
         private void showSubmenu490WC(Panel subMenu490WC)
@@ -130,16 +165,7 @@ namespace GUI490WC
             catch { }
         }
 
-        private void BT_Salir490WC_Click(object sender, EventArgs e)
-        {
-            try
-            {
-               SesionManager490WC.GestorSesion490WC.Logout490WC();
-               GestorForm490WC.gestorFormSG490WC.DefinirEstado490WC(new EstadoCerrarAplicacion490WC());
-               hideSubmenu490WC();
-            }
-            catch { }
-        }
+
 
         private void BT_IniciarSesion490WC_Click(object sender, EventArgs e)
         {
@@ -147,6 +173,149 @@ namespace GUI490WC
             {
                GestorForm490WC.gestorFormSG490WC.DefinirEstado490WC(new EstadoIniciarSesion490WC());
                hideSubmenu490WC();
+            }
+            catch { }
+        }
+
+        private void BT_Salir490WC_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                SesionManager490WC.GestorSesion490WC.Logout490WC();
+                GestorForm490WC.gestorFormSG490WC.DefinirEstado490WC(new EstadoCerrarAplicacion490WC());
+                hideSubmenu490WC();
+            }
+            catch { }
+        }
+
+        private void BT_GestionPermisos490WC_Click(object sender, EventArgs e)
+        {
+            hideSubmenu490WC();
+            //Agregar Formulario de permisos
+        }
+
+        private void BT_BackUp490WC_Click(object sender, EventArgs e)
+        {
+            hideSubmenu490WC();
+        }
+
+        private void BT_Restore490WC_Click(object sender, EventArgs e)
+        {
+            hideSubmenu490WC();
+        }
+
+        private void BT_Bitacora490WC_Click(object sender, EventArgs e)
+        {
+            hideSubmenu490WC();
+        }
+
+        private void BT_DigitoVerificador490WC_Click(object sender, EventArgs e)
+        {
+            hideSubmenu490WC();
+        }
+
+        private void BT_CambiarIdioma490WC_Click(object sender, EventArgs e)
+        {
+            //Agregar Formulario de cambio de idioma
+            hideSubmenu490WC();
+        }
+
+        private void BT_Maestros490WC_Click(object sender, EventArgs e)
+        {
+            showSubmenu490WC(panelSubmenuMaestros490WC);
+        }
+
+        private void BT_MaestroBoleto490WC_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                formMaestroBoleto490WC.ShowDialog();
+                hideSubmenu490WC();
+                this?.Show();
+            }
+            catch { }
+        }
+
+        private void BT_MaestroCliente490WC_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                formMaestroCliente490WC.ShowDialog();
+                hideSubmenu490WC();
+                this?.Show();
+            }
+            catch { }
+        }
+
+        private void BT_Compra490WC_Click(object sender, EventArgs e)
+        {
+            showSubmenu490WC(panelSubmenuCompra490WC);
+        }
+
+        private void BT_CompraBoleteria490WC_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                formGenerarBoleto490WC.ShowDialog();
+                hideSubmenu490WC();
+                this?.Show();
+            }
+            catch { }
+        }
+
+        private void BT_CompraFacturacion_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                formGenerarFactura490WC.ShowDialog();
+                hideSubmenu490WC();
+                this?.Show();
+            }
+            catch { }
+        }
+
+        private void BT_Reportes490WC_Click(object sender, EventArgs e)
+        {
+            showSubmenu490WC(panelSubmenuReportes490WC);
+        }
+
+        private void BT_ReporteFacturas490WC_Click(object sender, EventArgs e)
+        {
+            //Agregar Formulario para Recrear la factura solicitada
+         
+             hideSubmenu490WC();
+               
+        }
+
+        private void BT_Reporte2490WC_Click(object sender, EventArgs e)
+        {
+            hideSubmenu490WC();
+        }
+
+        private void BT_Reporte3490WC_Click(object sender, EventArgs e)
+        {
+            hideSubmenu490WC();
+        }
+
+        private void BT_Ayuda490WC_Click(object sender, EventArgs e)
+        {
+            //showSubmenu490WC(panelSubmenuAyuda490WC);
+            hideSubmenu490WC();
+        }
+
+        private void BT_ModificacionBoleto490WC_Click(object sender, EventArgs e)
+        {
+            //showSubmenu490WC(panelSubmenuCompra490WC);
+            hideSubmenu490WC();
+        }
+
+        private void BT_MaestroBeneficio490WC_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                formMaestroBeneficio490WC.ShowDialog();
+                hideSubmenu490WC();
+                this?.Show();
             }
             catch { }
         }

@@ -139,7 +139,8 @@ namespace DAL490WC
             using (SqlConnection cone490WC = GestorConexion490WC.GestorCone490WC.DevolverConexion490WC())
             {
                 cone490WC.Open();
-                string query490WC = "UPDATE Boleto490WC SET Titular490WC = @Titular490WC, FechaBoletoGenerado490WC = @FechaBoletoGenerado490WC WHERE ID490WC = @ID490WC AND Titular490WC = @ID490WC";
+                string query490WC = "UPDATE Boleto490WC SET Titular490WC = @Titular490WC, FechaBoletoGenerado490WC = @FechaBoletoGenerado490WC WHERE ID490WC = @ID490WC AND (Titular490WC = @ID490WC OR Titular490WC = 'Sistema')";
+
                 using (SqlCommand comando490WC = new SqlCommand(query490WC, cone490WC))
                 {
                     comando490WC.Parameters.AddWithValue("@ID490WC", boletoAsignar490WC.IDBoleto490WC);
@@ -174,7 +175,7 @@ namespace DAL490WC
             using (SqlConnection cone490WC = GestorConexion490WC.GestorCone490WC.DevolverConexion490WC())
             {
                 cone490WC.Open();
-                string query490WC = "UPDATE Boleto490WC SET Titular490WC = 'Sistema', FechaBoletoGenerado490WC = NULL WHERE IsVendido490WC = 0 AND FechaBoletoGenerado490WC IS NOT NULL AND DATEADD(hour, 8, FechaBoletoGenerado490WC) <= SYSDATETIME()";
+                string query490WC = "UPDATE Boleto490WC SET Titular490WC = 'Sistema', FechaBoletoGenerado490WC = NULL, BeneficioAplicado490WC = NULL WHERE IsVendido490WC = 0 AND FechaBoletoGenerado490WC IS NOT NULL AND DATEADD(hour, 8, FechaBoletoGenerado490WC) <= SYSDATETIME()";
                 using (SqlCommand comando490WC = new SqlCommand(query490WC, cone490WC))
                 {
                     comando490WC.ExecuteNonQuery();

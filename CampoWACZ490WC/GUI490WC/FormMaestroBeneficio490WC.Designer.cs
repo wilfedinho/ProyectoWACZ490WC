@@ -35,6 +35,12 @@
             this.BT_BAJA490WC = new System.Windows.Forms.Button();
             this.BT_ALTA490WC = new System.Windows.Forms.Button();
             this.dgvBeneficio490WC = new System.Windows.Forms.DataGridView();
+            this.ColumnaCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaCantidadReclamado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaDescuentoAplicar = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaImagen = new System.Windows.Forms.DataGridViewImageColumn();
             this.LABEL_NOMBRE_ABM_USUARIO490WC = new System.Windows.Forms.Label();
             this.TB_NOMBRE490WC = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -43,12 +49,6 @@
             this.TB_VECESRECLAMADO490WC = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.TB_DESCUENTOAPLICAR490WC = new System.Windows.Forms.TextBox();
-            this.ColumnaCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnaNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnaCantidadReclamado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnaDescuentoAplicar = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnaPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnaImagen = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBeneficio490WC)).BeginInit();
             this.SuspendLayout();
             // 
@@ -160,6 +160,45 @@
             this.dgvBeneficio490WC.Size = new System.Drawing.Size(923, 259);
             this.dgvBeneficio490WC.TabIndex = 42;
             // 
+            // ColumnaCodigo
+            // 
+            this.ColumnaCodigo.HeaderText = "Column1";
+            this.ColumnaCodigo.Name = "ColumnaCodigo";
+            this.ColumnaCodigo.ReadOnly = true;
+            this.ColumnaCodigo.Visible = false;
+            // 
+            // ColumnaNombre
+            // 
+            this.ColumnaNombre.HeaderText = "Nombre";
+            this.ColumnaNombre.Name = "ColumnaNombre";
+            this.ColumnaNombre.ReadOnly = true;
+            // 
+            // ColumnaCantidadReclamado
+            // 
+            this.ColumnaCantidadReclamado.HeaderText = "Veces Reclamado";
+            this.ColumnaCantidadReclamado.Name = "ColumnaCantidadReclamado";
+            this.ColumnaCantidadReclamado.ReadOnly = true;
+            // 
+            // ColumnaDescuentoAplicar
+            // 
+            this.ColumnaDescuentoAplicar.HeaderText = "Porcentaje de Descuento";
+            this.ColumnaDescuentoAplicar.Name = "ColumnaDescuentoAplicar";
+            this.ColumnaDescuentoAplicar.ReadOnly = true;
+            // 
+            // ColumnaPrecio
+            // 
+            this.ColumnaPrecio.HeaderText = "Precio";
+            this.ColumnaPrecio.Name = "ColumnaPrecio";
+            this.ColumnaPrecio.ReadOnly = true;
+            // 
+            // ColumnaImagen
+            // 
+            this.ColumnaImagen.HeaderText = "";
+            this.ColumnaImagen.Image = global::GUI490WC.Properties.Resources.Estrella_Mario;
+            this.ColumnaImagen.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.ColumnaImagen.Name = "ColumnaImagen";
+            this.ColumnaImagen.ReadOnly = true;
+            // 
             // LABEL_NOMBRE_ABM_USUARIO490WC
             // 
             this.LABEL_NOMBRE_ABM_USUARIO490WC.AutoSize = true;
@@ -248,45 +287,6 @@
             this.TB_DESCUENTOAPLICAR490WC.Size = new System.Drawing.Size(175, 27);
             this.TB_DESCUENTOAPLICAR490WC.TabIndex = 49;
             // 
-            // ColumnaCodigo
-            // 
-            this.ColumnaCodigo.HeaderText = "Column1";
-            this.ColumnaCodigo.Name = "ColumnaCodigo";
-            this.ColumnaCodigo.ReadOnly = true;
-            this.ColumnaCodigo.Visible = false;
-            // 
-            // ColumnaNombre
-            // 
-            this.ColumnaNombre.HeaderText = "Nombre";
-            this.ColumnaNombre.Name = "ColumnaNombre";
-            this.ColumnaNombre.ReadOnly = true;
-            // 
-            // ColumnaCantidadReclamado
-            // 
-            this.ColumnaCantidadReclamado.HeaderText = "Veces Reclamado";
-            this.ColumnaCantidadReclamado.Name = "ColumnaCantidadReclamado";
-            this.ColumnaCantidadReclamado.ReadOnly = true;
-            // 
-            // ColumnaDescuentoAplicar
-            // 
-            this.ColumnaDescuentoAplicar.HeaderText = "Porcentaje de Descuento";
-            this.ColumnaDescuentoAplicar.Name = "ColumnaDescuentoAplicar";
-            this.ColumnaDescuentoAplicar.ReadOnly = true;
-            // 
-            // ColumnaPrecio
-            // 
-            this.ColumnaPrecio.HeaderText = "Precio";
-            this.ColumnaPrecio.Name = "ColumnaPrecio";
-            this.ColumnaPrecio.ReadOnly = true;
-            // 
-            // ColumnaImagen
-            // 
-            this.ColumnaImagen.HeaderText = "";
-            this.ColumnaImagen.Image = global::GUI490WC.Properties.Resources.Estrella_Mario;
-            this.ColumnaImagen.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.ColumnaImagen.Name = "ColumnaImagen";
-            this.ColumnaImagen.ReadOnly = true;
-            // 
             // FormMaestroBeneficio490WC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -309,7 +309,9 @@
             this.Controls.Add(this.BT_BAJA490WC);
             this.Controls.Add(this.BT_ALTA490WC);
             this.Name = "FormMaestroBeneficio490WC";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormMaestroBeneficio490WC";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormMaestroBeneficio490WC_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.dgvBeneficio490WC)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

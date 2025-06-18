@@ -402,12 +402,19 @@ namespace GUI490WC
 
         private void BT_SALIR490WC_Click(object sender, EventArgs e)
         {
-
+            ActivarModoModificar490WC(false);
+            this.Close();
         }
 
         private void RBIDA490WC_CheckedChanged(object sender, EventArgs e)
         {
             HabilitarCalendarios490WC();
+        }
+
+        private void FormMaestroBoleto490WC_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            ActivarModoModificar490WC(false);
+            this.Close();
         }
     }
 }

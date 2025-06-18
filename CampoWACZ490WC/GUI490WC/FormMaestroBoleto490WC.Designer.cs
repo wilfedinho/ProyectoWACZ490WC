@@ -29,6 +29,18 @@
         private void InitializeComponent()
         {
             this.dgvBoleto490WC = new System.Windows.Forms.DataGridView();
+            this.ColumnaID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaModalidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaOrigen = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaDestino = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaFechaPartidaIDA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaFechaLlegadaIDA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaFechaPartidaVUELTA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaFechaLlegadaVUELTA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaClaseBoleto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaPesoEquipajePermitido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaNumeroAsiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LABEL_ORIGEN490WC = new System.Windows.Forms.Label();
             this.TB_ORIGEN490WC = new System.Windows.Forms.TextBox();
             this.LABEL_DESTINO490WC = new System.Windows.Forms.Label();
@@ -58,18 +70,6 @@
             this.LABEL_FECHALLEGADA_VUELTA490WC = new System.Windows.Forms.Label();
             this.LABEL_ASIENTO490WC = new System.Windows.Forms.Label();
             this.TB_ASIENTO490WC = new System.Windows.Forms.TextBox();
-            this.ColumnaID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnaModalidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnaOrigen = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnaDestino = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnaFechaPartidaIDA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnaFechaLlegadaIDA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnaFechaPartidaVUELTA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnaFechaLlegadaVUELTA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnaClaseBoleto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnaPesoEquipajePermitido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnaPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnaNumeroAsiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBoleto490WC)).BeginInit();
             this.SuspendLayout();
             // 
@@ -102,6 +102,79 @@
             this.dgvBoleto490WC.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvBoleto490WC.Size = new System.Drawing.Size(1104, 312);
             this.dgvBoleto490WC.TabIndex = 1;
+            // 
+            // ColumnaID
+            // 
+            this.ColumnaID.HeaderText = "Column1";
+            this.ColumnaID.Name = "ColumnaID";
+            this.ColumnaID.ReadOnly = true;
+            this.ColumnaID.Visible = false;
+            // 
+            // ColumnaModalidad
+            // 
+            this.ColumnaModalidad.HeaderText = "Modalidad";
+            this.ColumnaModalidad.Name = "ColumnaModalidad";
+            this.ColumnaModalidad.ReadOnly = true;
+            // 
+            // ColumnaOrigen
+            // 
+            this.ColumnaOrigen.HeaderText = "Origen";
+            this.ColumnaOrigen.Name = "ColumnaOrigen";
+            this.ColumnaOrigen.ReadOnly = true;
+            // 
+            // ColumnaDestino
+            // 
+            this.ColumnaDestino.HeaderText = "Destino";
+            this.ColumnaDestino.Name = "ColumnaDestino";
+            this.ColumnaDestino.ReadOnly = true;
+            // 
+            // ColumnaFechaPartidaIDA
+            // 
+            this.ColumnaFechaPartidaIDA.HeaderText = "FechaPartida IDA";
+            this.ColumnaFechaPartidaIDA.Name = "ColumnaFechaPartidaIDA";
+            this.ColumnaFechaPartidaIDA.ReadOnly = true;
+            // 
+            // ColumnaFechaLlegadaIDA
+            // 
+            this.ColumnaFechaLlegadaIDA.HeaderText = "FechaLlegada IDA";
+            this.ColumnaFechaLlegadaIDA.Name = "ColumnaFechaLlegadaIDA";
+            this.ColumnaFechaLlegadaIDA.ReadOnly = true;
+            // 
+            // ColumnaFechaPartidaVUELTA
+            // 
+            this.ColumnaFechaPartidaVUELTA.HeaderText = "FechaPartida VUELTA";
+            this.ColumnaFechaPartidaVUELTA.Name = "ColumnaFechaPartidaVUELTA";
+            this.ColumnaFechaPartidaVUELTA.ReadOnly = true;
+            // 
+            // ColumnaFechaLlegadaVUELTA
+            // 
+            this.ColumnaFechaLlegadaVUELTA.HeaderText = "FechaLlegada VUELTA";
+            this.ColumnaFechaLlegadaVUELTA.Name = "ColumnaFechaLlegadaVUELTA";
+            this.ColumnaFechaLlegadaVUELTA.ReadOnly = true;
+            // 
+            // ColumnaClaseBoleto
+            // 
+            this.ColumnaClaseBoleto.HeaderText = "Clase Boleto";
+            this.ColumnaClaseBoleto.Name = "ColumnaClaseBoleto";
+            this.ColumnaClaseBoleto.ReadOnly = true;
+            // 
+            // ColumnaPesoEquipajePermitido
+            // 
+            this.ColumnaPesoEquipajePermitido.HeaderText = "Peso Equipaje Permitido";
+            this.ColumnaPesoEquipajePermitido.Name = "ColumnaPesoEquipajePermitido";
+            this.ColumnaPesoEquipajePermitido.ReadOnly = true;
+            // 
+            // ColumnaPrecio
+            // 
+            this.ColumnaPrecio.HeaderText = "Precio";
+            this.ColumnaPrecio.Name = "ColumnaPrecio";
+            this.ColumnaPrecio.ReadOnly = true;
+            // 
+            // ColumnaNumeroAsiento
+            // 
+            this.ColumnaNumeroAsiento.HeaderText = "Numero Asiento";
+            this.ColumnaNumeroAsiento.Name = "ColumnaNumeroAsiento";
+            this.ColumnaNumeroAsiento.ReadOnly = true;
             // 
             // LABEL_ORIGEN490WC
             // 
@@ -435,79 +508,6 @@
             this.TB_ASIENTO490WC.Size = new System.Drawing.Size(174, 27);
             this.TB_ASIENTO490WC.TabIndex = 59;
             // 
-            // ColumnaID
-            // 
-            this.ColumnaID.HeaderText = "Column1";
-            this.ColumnaID.Name = "ColumnaID";
-            this.ColumnaID.ReadOnly = true;
-            this.ColumnaID.Visible = false;
-            // 
-            // ColumnaModalidad
-            // 
-            this.ColumnaModalidad.HeaderText = "Modalidad";
-            this.ColumnaModalidad.Name = "ColumnaModalidad";
-            this.ColumnaModalidad.ReadOnly = true;
-            // 
-            // ColumnaOrigen
-            // 
-            this.ColumnaOrigen.HeaderText = "Origen";
-            this.ColumnaOrigen.Name = "ColumnaOrigen";
-            this.ColumnaOrigen.ReadOnly = true;
-            // 
-            // ColumnaDestino
-            // 
-            this.ColumnaDestino.HeaderText = "Destino";
-            this.ColumnaDestino.Name = "ColumnaDestino";
-            this.ColumnaDestino.ReadOnly = true;
-            // 
-            // ColumnaFechaPartidaIDA
-            // 
-            this.ColumnaFechaPartidaIDA.HeaderText = "FechaPartida IDA";
-            this.ColumnaFechaPartidaIDA.Name = "ColumnaFechaPartidaIDA";
-            this.ColumnaFechaPartidaIDA.ReadOnly = true;
-            // 
-            // ColumnaFechaLlegadaIDA
-            // 
-            this.ColumnaFechaLlegadaIDA.HeaderText = "FechaLlegada IDA";
-            this.ColumnaFechaLlegadaIDA.Name = "ColumnaFechaLlegadaIDA";
-            this.ColumnaFechaLlegadaIDA.ReadOnly = true;
-            // 
-            // ColumnaFechaPartidaVUELTA
-            // 
-            this.ColumnaFechaPartidaVUELTA.HeaderText = "FechaPartida VUELTA";
-            this.ColumnaFechaPartidaVUELTA.Name = "ColumnaFechaPartidaVUELTA";
-            this.ColumnaFechaPartidaVUELTA.ReadOnly = true;
-            // 
-            // ColumnaFechaLlegadaVUELTA
-            // 
-            this.ColumnaFechaLlegadaVUELTA.HeaderText = "FechaLlegada VUELTA";
-            this.ColumnaFechaLlegadaVUELTA.Name = "ColumnaFechaLlegadaVUELTA";
-            this.ColumnaFechaLlegadaVUELTA.ReadOnly = true;
-            // 
-            // ColumnaClaseBoleto
-            // 
-            this.ColumnaClaseBoleto.HeaderText = "Clase Boleto";
-            this.ColumnaClaseBoleto.Name = "ColumnaClaseBoleto";
-            this.ColumnaClaseBoleto.ReadOnly = true;
-            // 
-            // ColumnaPesoEquipajePermitido
-            // 
-            this.ColumnaPesoEquipajePermitido.HeaderText = "Peso Equipaje Permitido";
-            this.ColumnaPesoEquipajePermitido.Name = "ColumnaPesoEquipajePermitido";
-            this.ColumnaPesoEquipajePermitido.ReadOnly = true;
-            // 
-            // ColumnaPrecio
-            // 
-            this.ColumnaPrecio.HeaderText = "Precio";
-            this.ColumnaPrecio.Name = "ColumnaPrecio";
-            this.ColumnaPrecio.ReadOnly = true;
-            // 
-            // ColumnaNumeroAsiento
-            // 
-            this.ColumnaNumeroAsiento.HeaderText = "Numero Asiento";
-            this.ColumnaNumeroAsiento.Name = "ColumnaNumeroAsiento";
-            this.ColumnaNumeroAsiento.ReadOnly = true;
-            // 
             // FormMaestroBoleto490WC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -545,7 +545,9 @@
             this.Controls.Add(this.TB_ORIGEN490WC);
             this.Controls.Add(this.dgvBoleto490WC);
             this.Name = "FormMaestroBoleto490WC";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormMaestroBoleto490WC";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormMaestroBoleto490WC_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.dgvBoleto490WC)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

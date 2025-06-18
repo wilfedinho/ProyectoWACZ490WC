@@ -20,6 +20,7 @@ namespace GUI490WC
         {
             InitializeComponent();
             Mostrar490WC();
+            ActivarModoModificar490WC(false);
         }
         public void Mostrar490WC()
         {
@@ -337,7 +338,14 @@ namespace GUI490WC
 
         private void BT_SALIR490WC_Click(object sender, EventArgs e)
         {
+            ActivarModoModificar490WC(false);
+            this.Close();
+        }
 
+        private void FormMaestroCliente490WC_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            ActivarModoModificar490WC(false);
+            this.Close();
         }
     }
 }
