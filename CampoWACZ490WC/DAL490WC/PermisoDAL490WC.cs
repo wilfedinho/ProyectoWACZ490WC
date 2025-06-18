@@ -346,9 +346,223 @@ namespace DAL490WC
             }
         }
 
+        public bool permisoExiste490WC(string nombrePermiso490WC)
+        {
+            try
+            {
+                using (SqlConnection conexion490WC = GestorConexion490WC.GestorCone490WC.DevolverConexion490WC())
+                {
+                    conexion490WC.Open();
 
+                    string query = "SELECT COUNT(*) FROM Permiso490WC WHERE nombrePermiso490WC = @nombre";
 
+                    using (SqlCommand cmd = new SqlCommand(query, conexion490WC))
+                    {
+                        cmd.Parameters.AddWithValue("@nombre", nombrePermiso490WC);
+                        int cantidad = Convert.ToInt32(cmd.ExecuteScalar());
+                        return cantidad > 0;
+                    }
+                }
+            }
+            catch
+            {
+                return false;
+            }
+        }
 
+        public List<Permiso490WC> ObtenerPermisos490WC()
+        {
+            List<Permiso490WC> ListaPermisos490WC = new List<Permiso490WC>();
+
+            try
+            {
+                using (SqlConnection conexion490WC = GestorConexion490WC.GestorCone490WC.DevolverConexion490WC())
+                {
+                    conexion490WC.Open();
+
+                    string query = "SELECT nombrePermiso490WC, tipoPermiso490WC FROM Permiso490WC";
+
+                    using (SqlCommand cmd = new SqlCommand(query, conexion490WC))
+                    using (SqlDataReader lector = cmd.ExecuteReader())
+                    {
+                        while (lector.Read())
+                        {
+                            string nombre = lector["nombrePermiso490WC"].ToString();
+                            string tipo = lector["tipoPermiso490WC"].ToString();
+                            
+
+                            if(tipo == "Compuesto")
+                            {
+                                Permiso490WC permiso490WC = new PermisoCompuesto490WC(nombre);
+                                ListaPermisos490WC.Add(permiso490WC);
+                            }
+                            else
+                            {
+                                Permiso490WC permiso490WC = permiso490WC = new PermisoSimple490WC(nombre);
+                                ListaPermisos490WC.Add(permiso490WC);
+                            }
+
+                            
+                        }
+                    }
+                }
+
+                return ListaPermisos490WC;
+            }
+            catch
+            {
+                ListaPermisos490WC.Clear();
+                return ListaPermisos490WC;
+            }
+        }
+
+        public List<Permiso490WC> ObtenerPermisosSimples490WC()
+        {
+            List<Permiso490WC> ListaPermisos490WC = new List<Permiso490WC>();
+
+            try
+            {
+                using (SqlConnection conexion490WC = GestorConexion490WC.GestorCone490WC.DevolverConexion490WC())
+                {
+                    conexion490WC.Open();
+
+                    string query = "SELECT nombrePermiso490WC FROM Permiso490WC WHERE tipoPermiso490WC = 'Simple'";
+
+                    using (SqlCommand cmd = new SqlCommand(query, conexion490WC))
+                    using (SqlDataReader lector = cmd.ExecuteReader())
+                    {
+                        while (lector.Read())
+                        {
+                            string nombre = lector["nombrePermiso490WC"].ToString();
+                            Permiso490WC permiso490WC = new PermisoSimple490WC(nombre);
+                            ListaPermisos490WC.Add(permiso490WC);
+                        }
+                    }
+                }
+
+                return ListaPermisos490WC;
+            }
+            catch
+            {
+                ListaPermisos490WC.Clear();
+                return ListaPermisos490WC;
+            }
+        }
+
+        public List<Permiso490WC> ObtenerPermisosCompuestos490WC()
+        {
+            List<Permiso490WC> ListaPermisos490WC = new List<Permiso490WC>();
+
+            try
+            {
+                using (SqlConnection conexion490WC = GestorConexion490WC.GestorCone490WC.DevolverConexion490WC())
+                {
+                    conexion490WC.Open();
+
+                    string query = "SELECT nombrePermiso490WC FROM Permiso490WC WHERE tipoPermiso490WC = 'Compuesto'";
+
+                    using (SqlCommand cmd = new SqlCommand(query, conexion490WC))
+                    using (SqlDataReader lector = cmd.ExecuteReader())
+                    {
+                        while (lector.Read())
+                        {
+                            string nombre = lector["nombrePermiso490WC"].ToString();
+                            Permiso490WC permiso490WC = new PermisoCompuesto490WC(nombre);
+                            ListaPermisos490WC.Add(permiso490WC);
+                        }
+                    }
+                }
+
+                return ListaPermisos490WC;
+            }
+            catch
+            {
+                ListaPermisos490WC.Clear();
+                return ListaPermisos490WC;
+            }
+        }
+
+        public List<Permiso490WC> ObtenerRoles490WC()
+        {
+            List<Permiso490WC> ListaPermisos490WC = new List<Permiso490WC>();
+
+            try
+            {
+                using (SqlConnection conexion490WC = GestorConexion490WC.GestorCone490WC.DevolverConexion490WC())
+                {
+                    conexion490WC.Open();
+
+                    string query = "SELECT nombrePermiso490WC, tipoPermiso490WC FROM Permiso490WC WHERE esRolPermiso490WC = 'True'";
+
+                    using (SqlCommand cmd = new SqlCommand(query, conexion490WC))
+                    using (SqlDataReader lector = cmd.ExecuteReader())
+                    {
+                        while (lector.Read())
+                        {
+                            string nombre = lector["nombrePermiso490WC"].ToString();
+                            string tipo = lector["tipoPermiso490WC"].ToString();
+
+                            if (tipo == "Compuesto")
+                            {
+                                Permiso490WC permiso490WC = new PermisoCompuesto490WC(nombre);
+                                ListaPermisos490WC.Add(permiso490WC);
+                            }
+                        }
+                    }
+                }
+
+                return ListaPermisos490WC;
+            }
+            catch
+            {
+                ListaPermisos490WC.Clear();
+                return ListaPermisos490WC;
+            }
+        }
+
+        public List<Permiso490WC> ObtenerTodoSinRoles490WC()
+        {
+            List<Permiso490WC> ListaPermisos490WC = new List<Permiso490WC>();
+
+            try
+            {
+                using (SqlConnection conexion490WC = GestorConexion490WC.GestorCone490WC.DevolverConexion490WC())
+                {
+                    conexion490WC.Open();
+
+                    string query = "SELECT nombrePermiso490WC, tipoPermiso490WC FROM Permiso490WC WHERE esRolPermiso490WC = 'False'";
+
+                    using (SqlCommand cmd = new SqlCommand(query, conexion490WC))
+                    using (SqlDataReader lector = cmd.ExecuteReader())
+                    {
+                        while (lector.Read())
+                        {
+                            string nombre = lector["nombrePermiso490WC"].ToString();
+                            string tipo = lector["tipoPermiso490WC"].ToString();
+
+                            if (tipo == "Compuesto")
+                            {
+                                Permiso490WC permiso490WC = new PermisoCompuesto490WC(nombre);
+                                ListaPermisos490WC.Add(permiso490WC);
+                            }
+                            else
+                            {
+                                Permiso490WC permiso490WC = new PermisoSimple490WC(nombre);
+                                ListaPermisos490WC.Add(permiso490WC);
+                            }
+                            
+                        }
+                    }
+                }
+
+                return ListaPermisos490WC;
+            }
+            catch
+            {
+                ListaPermisos490WC.Clear();
+                return ListaPermisos490WC;
+            }
+        }
 
 
 
