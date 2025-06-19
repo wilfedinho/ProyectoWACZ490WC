@@ -41,6 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GestorBeneficio490WC.cs" />
+    <Compile Include="GestorBoleto490WC.cs" />
+    <Compile Include="GestorCliente490WC.cs" />
+    <Compile Include="GestorFactura490WC.cs" />
+    <Compile Include="GestorPagos490WC.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

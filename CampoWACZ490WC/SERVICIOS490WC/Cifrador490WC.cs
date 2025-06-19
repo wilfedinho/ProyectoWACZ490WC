@@ -24,15 +24,30 @@ namespace SERVICIOS490WC
         }
         private readonly byte[] key490WC;
         private readonly byte[] iv490WC;
+
+        private const string KeyPath490WC = "key490WC.bin";
+        private const string IVPath490WC = "iv490WC.bin";
         private Cifrador490WC()
         {
-            using (Aes aesAlg490WC = Aes.Create())
+            if (File.Exists(KeyPath490WC) && File.Exists(IVPath490WC))
             {
+            
+                key490WC = File.ReadAllBytes(KeyPath490WC);
+                iv490WC = File.ReadAllBytes(IVPath490WC);
+            }
+            else
+            {
+             
+                using (Aes aesAlg490WC = Aes.Create())
+                {
+                    aesAlg490WC.GenerateKey();
+                    aesAlg490WC.GenerateIV();
+                    key490WC = aesAlg490WC.Key;
+                    iv490WC = aesAlg490WC.IV;
 
-                aesAlg490WC.GenerateKey();
-                aesAlg490WC.GenerateIV();
-                key490WC = aesAlg490WC.Key;
-                iv490WC = aesAlg490WC.IV;
+                    File.WriteAllBytes(KeyPath490WC, key490WC);
+                    File.WriteAllBytes(IVPath490WC, iv490WC);
+                }
             }
         }
         public string EncriptarIrreversible490WC(string textoEncriptar490WC)
@@ -76,7 +91,7 @@ namespace SERVICIOS490WC
             }
         }
 
-        public string DesencriptarReversible490WC(string textoEncriptar)
+        public string DesencriptarReversible490WC(string textoDesencriptar490WC)
         {
             using (Aes aesAlg490WC = Aes.Create())
             {
@@ -85,7 +100,7 @@ namespace SERVICIOS490WC
 
                 ICryptoTransform decryptor490WC = aesAlg490WC.CreateDecryptor(aesAlg490WC.Key, aesAlg490WC.IV);
 
-                using (MemoryStream msDecrypt490WC = new MemoryStream(Convert.FromBase64String(textoEncriptar)))
+                using (MemoryStream msDecrypt490WC = new MemoryStream(Convert.FromBase64String(textoDesencriptar490WC)))
                 {
                     using (CryptoStream csDecrypt490WC = new CryptoStream(msDecrypt490WC, decryptor490WC, CryptoStreamMode.Read))
                     using (StreamReader srDecrypt490WC = new StreamReader(csDecrypt490WC))

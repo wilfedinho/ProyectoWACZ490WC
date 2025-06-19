@@ -33,6 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,6 +47,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ControlModalidadIDA490WC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlModalidadIDA490WC.Designer.cs">
+      <DependentUpon>ControlModalidadIDA490WC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlModalidadVUELTA490WC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlModalidadVUELTA490WC.Designer.cs">
+      <DependentUpon>ControlModalidadVUELTA490WC.cs</DependentUpon>
+    </Compile>
     <Compile Include="Estado490WC.cs" />
     <Compile Include="EstadoCerrarAplicacion490WC.cs" />
     <Compile Include="EstadoError490WC.cs" />
@@ -57,11 +70,35 @@
     <Compile Include="FormABMUsuario490WC.Designer.cs">
       <DependentUpon>FormABMUsuario490WC.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormAplicarBeneficios490WC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAplicarBeneficios490WC.Designer.cs">
+      <DependentUpon>FormAplicarBeneficios490WC.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormCambiarClave490WC.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormCambiarClave490WC.Designer.cs">
       <DependentUpon>FormCambiarClave490WC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCobrarFactura490WC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCobrarFactura490WC.Designer.cs">
+      <DependentUpon>FormCobrarFactura490WC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormGenerarBoleto490WC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGenerarBoleto490WC.Designer.cs">
+      <DependentUpon>FormGenerarBoleto490WC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormGenerarFactura490WC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGenerarFactura490WC.Designer.cs">
+      <DependentUpon>FormGenerarFactura490WC.cs</DependentUpon>
     </Compile>
     <Compile Include="FormLogin490WC.cs">
       <SubType>Form</SubType>
@@ -69,26 +106,89 @@
     <Compile Include="FormLogin490WC.Designer.cs">
       <DependentUpon>FormLogin490WC.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormMaestroBeneficio490WC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMaestroBeneficio490WC.Designer.cs">
+      <DependentUpon>FormMaestroBeneficio490WC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMaestroBoleto490WC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMaestroBoleto490WC.Designer.cs">
+      <DependentUpon>FormMaestroBoleto490WC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMaestroCliente490WC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMaestroCliente490WC.Designer.cs">
+      <DependentUpon>FormMaestroCliente490WC.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormMenu490WC.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormMenu490WC.Designer.cs">
       <DependentUpon>FormMenu490WC.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormPermisos490WC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPermisos490WC.Designer.cs">
+      <DependentUpon>FormPermisos490WC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRegistrarCliente490WC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRegistrarCliente490WC.Designer.cs">
+      <DependentUpon>FormRegistrarCliente490WC.cs</DependentUpon>
+    </Compile>
     <Compile Include="GestorForm490WC.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ControlModalidadIDA490WC.resx">
+      <DependentUpon>ControlModalidadIDA490WC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlModalidadVUELTA490WC.resx">
+      <DependentUpon>ControlModalidadVUELTA490WC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormABMUsuario490WC.resx">
       <DependentUpon>FormABMUsuario490WC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAplicarBeneficios490WC.resx">
+      <DependentUpon>FormAplicarBeneficios490WC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormCambiarClave490WC.resx">
       <DependentUpon>FormCambiarClave490WC.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormCobrarFactura490WC.resx">
+      <DependentUpon>FormCobrarFactura490WC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormGenerarBoleto490WC.resx">
+      <DependentUpon>FormGenerarBoleto490WC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormGenerarFactura490WC.resx">
+      <DependentUpon>FormGenerarFactura490WC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormLogin490WC.resx">
       <DependentUpon>FormLogin490WC.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormMaestroBeneficio490WC.resx">
+      <DependentUpon>FormMaestroBeneficio490WC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMaestroBoleto490WC.resx">
+      <DependentUpon>FormMaestroBoleto490WC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMaestroCliente490WC.resx">
+      <DependentUpon>FormMaestroCliente490WC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormMenu490WC.resx">
       <DependentUpon>FormMenu490WC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPermisos490WC.resx">
+      <DependentUpon>FormPermisos490WC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRegistrarCliente490WC.resx">
+      <DependentUpon>FormRegistrarCliente490WC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -133,6 +233,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\MascotaCZ2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Estrella Mario.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

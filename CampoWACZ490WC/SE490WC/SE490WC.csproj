@@ -41,6 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Permiso490WC.cs" />
+    <Compile Include="PermisoCompuesto490WC.cs" />
+    <Compile Include="PermisoSimple490WC.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Usuario490WC.cs" />
   </ItemGroup>

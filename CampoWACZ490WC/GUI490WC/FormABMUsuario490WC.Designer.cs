@@ -298,10 +298,6 @@
             this.CB_ROL490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.CB_ROL490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
             this.CB_ROL490WC.FormattingEnabled = true;
-            this.CB_ROL490WC.Items.AddRange(new object[] {
-            "Admin",
-            "Recepcionista",
-            "Cajero"});
             this.CB_ROL490WC.Location = new System.Drawing.Point(158, 453);
             this.CB_ROL490WC.Name = "CB_ROL490WC";
             this.CB_ROL490WC.Size = new System.Drawing.Size(219, 27);
