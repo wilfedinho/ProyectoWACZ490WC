@@ -20,6 +20,7 @@ namespace GUI490WC
         FormMaestroBeneficio490WC formMaestroBeneficio490WC;
         FormGenerarBoleto490WC formGenerarBoleto490WC;
         FormGenerarFactura490WC formGenerarFactura490WC;
+        FormPermisos490WC formPermisos490WC;
 
         public FormMenu490WC()
         {
@@ -31,6 +32,7 @@ namespace GUI490WC
             formMaestroBeneficio490WC = new FormMaestroBeneficio490WC();
             formGenerarBoleto490WC = new FormGenerarBoleto490WC();
             formGenerarFactura490WC = new FormGenerarFactura490WC();
+            formPermisos490WC = new FormPermisos490WC();
 
             LabelNombreUsuarios490WC.AutoSize = false;
             LabelNombreUsuarios490WC.MaximumSize = new Size(panelPrincipal.Width, 0);
@@ -48,7 +50,10 @@ namespace GUI490WC
             LabelNombreUsuarios490WC.Height = LabelNombreUsuarios490WC.PreferredHeight;
             LabelRolUsuario490WC.Height = LabelRolUsuario490WC.PreferredHeight;
 
+            VerificarAccesibilidadDeTodosLosControles490WC();
+
             Diseno490WC();
+
         }
 
         private void FormMenu_FormClosed(object sender, FormClosedEventArgs e)
@@ -190,8 +195,15 @@ namespace GUI490WC
 
         private void BT_GestionPermisos490WC_Click(object sender, EventArgs e)
         {
-            hideSubmenu490WC();
-            //Agregar Formulario de permisos
+            try
+            {
+                formPermisos490WC.ShowDialog();
+                hideSubmenu490WC();
+                this?.Show();
+            }
+            catch { }
+          
+           
         }
 
         private void BT_BackUp490WC_Click(object sender, EventArgs e)
@@ -319,5 +331,37 @@ namespace GUI490WC
             }
             catch { }
         }
+
+        #region Logica de Permisos Para Habilitar Accesos
+        public void VerificarAccesibilidadDeTodosLosControles490WC()
+        {
+            PermisoBLL490WC GestorPermiso490WC = new PermisoBLL490WC();
+            VerificarAccesibilidadRecursivo490WC(Controls, GestorPermiso490WC);
+        }
+
+        public void VerificarAccesibilidadRecursivo490WC(Control.ControlCollection controles490WC, PermisoBLL490WC GestorPermiso490WC)
+        {
+            foreach (Control c490WC in controles490WC)
+            {
+                VerificarAccesibilidad(c490WC, GestorPermiso490WC);
+
+
+                if (c490WC.HasChildren)
+                {
+                    VerificarAccesibilidadRecursivo490WC(c490WC.Controls, GestorPermiso490WC);
+                }
+            }
+
+        }
+
+        public void VerificarAccesibilidad(Control control490WC, PermisoBLL490WC GestorPermiso490WC, bool estadoSecundario490WC = true)
+        {
+
+            control490WC.Visible = GestorPermiso490WC.ConfigurarControl490WC(control490WC.Tag?.ToString(), estadoSecundario490WC);
+
+
+        }
+        #endregion
+
     }
 }

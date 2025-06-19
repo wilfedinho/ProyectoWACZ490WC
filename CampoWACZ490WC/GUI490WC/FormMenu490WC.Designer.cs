@@ -123,7 +123,7 @@
             this.BT_Salir490WC.Name = "BT_Salir490WC";
             this.BT_Salir490WC.Size = new System.Drawing.Size(183, 44);
             this.BT_Salir490WC.TabIndex = 14;
-            this.BT_Salir490WC.Tag = "Acceder a Administracion";
+            this.BT_Salir490WC.Tag = "Acceder a Salir del Sistema";
             this.BT_Salir490WC.Text = "Salir";
             this.BT_Salir490WC.UseVisualStyleBackColor = false;
             this.BT_Salir490WC.Click += new System.EventHandler(this.BT_Salir490WC_Click_1);
@@ -147,7 +147,7 @@
             this.BT_Ayuda490WC.Name = "BT_Ayuda490WC";
             this.BT_Ayuda490WC.Size = new System.Drawing.Size(183, 44);
             this.BT_Ayuda490WC.TabIndex = 12;
-            this.BT_Ayuda490WC.Tag = "Acceder a Administracion";
+            this.BT_Ayuda490WC.Tag = "Acceder a Ayuda";
             this.BT_Ayuda490WC.Text = "Ayuda";
             this.BT_Ayuda490WC.UseVisualStyleBackColor = false;
             this.BT_Ayuda490WC.Click += new System.EventHandler(this.BT_Ayuda490WC_Click);
@@ -174,7 +174,7 @@
             this.BT_Reporte3490WC.Name = "BT_Reporte3490WC";
             this.BT_Reporte3490WC.Size = new System.Drawing.Size(183, 44);
             this.BT_Reporte3490WC.TabIndex = 4;
-            this.BT_Reporte3490WC.Tag = "Acceder a Gestion De Usuarios";
+            this.BT_Reporte3490WC.Tag = "Acceder a Reporte 3";
             this.BT_Reporte3490WC.Text = "Reporte 3";
             this.BT_Reporte3490WC.UseVisualStyleBackColor = false;
             this.BT_Reporte3490WC.Click += new System.EventHandler(this.BT_Reporte3490WC_Click);
@@ -190,7 +190,7 @@
             this.BT_Reporte2490WC.Name = "BT_Reporte2490WC";
             this.BT_Reporte2490WC.Size = new System.Drawing.Size(183, 44);
             this.BT_Reporte2490WC.TabIndex = 3;
-            this.BT_Reporte2490WC.Tag = "Acceder a Gestion De Usuarios";
+            this.BT_Reporte2490WC.Tag = "Acceder a Reporte 2";
             this.BT_Reporte2490WC.Text = "Reporte 2";
             this.BT_Reporte2490WC.UseVisualStyleBackColor = false;
             this.BT_Reporte2490WC.Click += new System.EventHandler(this.BT_Reporte2490WC_Click);
@@ -206,7 +206,7 @@
             this.BT_ReporteFacturas490WC.Name = "BT_ReporteFacturas490WC";
             this.BT_ReporteFacturas490WC.Size = new System.Drawing.Size(183, 44);
             this.BT_ReporteFacturas490WC.TabIndex = 2;
-            this.BT_ReporteFacturas490WC.Tag = "Acceder a Gestion De Usuarios";
+            this.BT_ReporteFacturas490WC.Tag = "Acceder a Facturas";
             this.BT_ReporteFacturas490WC.Text = "Facturas";
             this.BT_ReporteFacturas490WC.UseVisualStyleBackColor = false;
             this.BT_ReporteFacturas490WC.Click += new System.EventHandler(this.BT_ReporteFacturas490WC_Click);
@@ -222,7 +222,7 @@
             this.BT_Reportes490WC.Name = "BT_Reportes490WC";
             this.BT_Reportes490WC.Size = new System.Drawing.Size(183, 44);
             this.BT_Reportes490WC.TabIndex = 10;
-            this.BT_Reportes490WC.Tag = "Acceder a Administracion";
+            this.BT_Reportes490WC.Tag = "Acceder a Reportes";
             this.BT_Reportes490WC.Text = "Reportes";
             this.BT_Reportes490WC.UseVisualStyleBackColor = false;
             this.BT_Reportes490WC.Click += new System.EventHandler(this.BT_Reportes490WC_Click);
@@ -246,7 +246,7 @@
             this.BT_ModificacionBoleto490WC.Name = "BT_ModificacionBoleto490WC";
             this.BT_ModificacionBoleto490WC.Size = new System.Drawing.Size(183, 58);
             this.BT_ModificacionBoleto490WC.TabIndex = 8;
-            this.BT_ModificacionBoleto490WC.Tag = "Acceder a Administracion";
+            this.BT_ModificacionBoleto490WC.Tag = "Acceder a Modificacion Boleto";
             this.BT_ModificacionBoleto490WC.Text = "Modificacion Boleto";
             this.BT_ModificacionBoleto490WC.UseVisualStyleBackColor = false;
             this.BT_ModificacionBoleto490WC.Click += new System.EventHandler(this.BT_ModificacionBoleto490WC_Click);
@@ -272,7 +272,7 @@
             this.BT_CompraFacturacion.Name = "BT_CompraFacturacion";
             this.BT_CompraFacturacion.Size = new System.Drawing.Size(183, 44);
             this.BT_CompraFacturacion.TabIndex = 3;
-            this.BT_CompraFacturacion.Tag = "Acceder a Gestion De Usuarios";
+            this.BT_CompraFacturacion.Tag = "Acceder a Facturacion";
             this.BT_CompraFacturacion.Text = "Facturacion";
             this.BT_CompraFacturacion.UseVisualStyleBackColor = false;
             this.BT_CompraFacturacion.Click += new System.EventHandler(this.BT_CompraFacturacion_Click);
@@ -288,7 +288,7 @@
             this.BT_CompraBoleteria490WC.Name = "BT_CompraBoleteria490WC";
             this.BT_CompraBoleteria490WC.Size = new System.Drawing.Size(183, 44);
             this.BT_CompraBoleteria490WC.TabIndex = 2;
-            this.BT_CompraBoleteria490WC.Tag = "Acceder a Gestion De Usuarios";
+            this.BT_CompraBoleteria490WC.Tag = "Acceder a Boleteria";
             this.BT_CompraBoleteria490WC.Text = "Boleteria";
             this.BT_CompraBoleteria490WC.UseVisualStyleBackColor = false;
             this.BT_CompraBoleteria490WC.Click += new System.EventHandler(this.BT_CompraBoleteria490WC_Click);
@@ -304,7 +304,7 @@
             this.BT_Compra490WC.Name = "BT_Compra490WC";
             this.BT_Compra490WC.Size = new System.Drawing.Size(183, 44);
             this.BT_Compra490WC.TabIndex = 6;
-            this.BT_Compra490WC.Tag = "Acceder a Administracion";
+            this.BT_Compra490WC.Tag = "Acceder a Compra";
             this.BT_Compra490WC.Text = "Compra";
             this.BT_Compra490WC.UseVisualStyleBackColor = false;
             this.BT_Compra490WC.Click += new System.EventHandler(this.BT_Compra490WC_Click);
@@ -331,7 +331,7 @@
             this.BT_MaestroBeneficio490WC.Name = "BT_MaestroBeneficio490WC";
             this.BT_MaestroBeneficio490WC.Size = new System.Drawing.Size(183, 44);
             this.BT_MaestroBeneficio490WC.TabIndex = 4;
-            this.BT_MaestroBeneficio490WC.Tag = "Acceder a Gestion De Usuarios";
+            this.BT_MaestroBeneficio490WC.Tag = "";
             this.BT_MaestroBeneficio490WC.Text = "Beneficios";
             this.BT_MaestroBeneficio490WC.UseVisualStyleBackColor = false;
             this.BT_MaestroBeneficio490WC.Click += new System.EventHandler(this.BT_MaestroBeneficio490WC_Click);
@@ -347,7 +347,7 @@
             this.BT_MaestroCliente490WC.Name = "BT_MaestroCliente490WC";
             this.BT_MaestroCliente490WC.Size = new System.Drawing.Size(183, 44);
             this.BT_MaestroCliente490WC.TabIndex = 3;
-            this.BT_MaestroCliente490WC.Tag = "Acceder a Gestion De Usuarios";
+            this.BT_MaestroCliente490WC.Tag = "";
             this.BT_MaestroCliente490WC.Text = "Clientes";
             this.BT_MaestroCliente490WC.UseVisualStyleBackColor = false;
             this.BT_MaestroCliente490WC.Click += new System.EventHandler(this.BT_MaestroCliente490WC_Click);
@@ -363,7 +363,7 @@
             this.BT_MaestroBoleto490WC.Name = "BT_MaestroBoleto490WC";
             this.BT_MaestroBoleto490WC.Size = new System.Drawing.Size(183, 44);
             this.BT_MaestroBoleto490WC.TabIndex = 2;
-            this.BT_MaestroBoleto490WC.Tag = "Acceder a Gestion De Usuarios";
+            this.BT_MaestroBoleto490WC.Tag = "";
             this.BT_MaestroBoleto490WC.Text = "Boletos";
             this.BT_MaestroBoleto490WC.UseVisualStyleBackColor = false;
             this.BT_MaestroBoleto490WC.Click += new System.EventHandler(this.BT_MaestroBoleto490WC_Click);
@@ -379,7 +379,7 @@
             this.BT_Maestros490WC.Name = "BT_Maestros490WC";
             this.BT_Maestros490WC.Size = new System.Drawing.Size(183, 44);
             this.BT_Maestros490WC.TabIndex = 4;
-            this.BT_Maestros490WC.Tag = "Acceder a Administracion";
+            this.BT_Maestros490WC.Tag = "Acceder a Maestros";
             this.BT_Maestros490WC.Text = "Maestros";
             this.BT_Maestros490WC.UseVisualStyleBackColor = false;
             this.BT_Maestros490WC.Click += new System.EventHandler(this.BT_Maestros490WC_Click);
@@ -407,7 +407,7 @@
             this.BT_CambiarIdioma490WC.Name = "BT_CambiarIdioma490WC";
             this.BT_CambiarIdioma490WC.Size = new System.Drawing.Size(183, 44);
             this.BT_CambiarIdioma490WC.TabIndex = 5;
-            this.BT_CambiarIdioma490WC.Tag = "";
+            this.BT_CambiarIdioma490WC.Tag = "Acceder a Cambiar Idioma";
             this.BT_CambiarIdioma490WC.Text = "Cambiar Idioma";
             this.BT_CambiarIdioma490WC.UseVisualStyleBackColor = false;
             this.BT_CambiarIdioma490WC.Click += new System.EventHandler(this.BT_CambiarIdioma490WC_Click);
@@ -423,7 +423,7 @@
             this.BT_IniciarSesion490WC.Name = "BT_IniciarSesion490WC";
             this.BT_IniciarSesion490WC.Size = new System.Drawing.Size(183, 44);
             this.BT_IniciarSesion490WC.TabIndex = 4;
-            this.BT_IniciarSesion490WC.Tag = "";
+            this.BT_IniciarSesion490WC.Tag = "Acceder a Relogin";
             this.BT_IniciarSesion490WC.Text = "Iniciar Sesion";
             this.BT_IniciarSesion490WC.UseVisualStyleBackColor = false;
             this.BT_IniciarSesion490WC.Click += new System.EventHandler(this.BT_IniciarSesion490WC_Click);
@@ -501,7 +501,7 @@
             this.BT_DigitoVerificador490WC.Name = "BT_DigitoVerificador490WC";
             this.BT_DigitoVerificador490WC.Size = new System.Drawing.Size(183, 44);
             this.BT_DigitoVerificador490WC.TabIndex = 7;
-            this.BT_DigitoVerificador490WC.Tag = "Acceder a Gestion De Usuarios";
+            this.BT_DigitoVerificador490WC.Tag = "Acceder Digito Verificador";
             this.BT_DigitoVerificador490WC.Text = "Digito Verificador";
             this.BT_DigitoVerificador490WC.UseVisualStyleBackColor = false;
             this.BT_DigitoVerificador490WC.Click += new System.EventHandler(this.BT_DigitoVerificador490WC_Click);
@@ -517,7 +517,7 @@
             this.BT_Bitacora490WC.Name = "BT_Bitacora490WC";
             this.BT_Bitacora490WC.Size = new System.Drawing.Size(183, 44);
             this.BT_Bitacora490WC.TabIndex = 6;
-            this.BT_Bitacora490WC.Tag = "Acceder a Gestion De Usuarios";
+            this.BT_Bitacora490WC.Tag = "Acceder a Bitacora";
             this.BT_Bitacora490WC.Text = "Bitacora";
             this.BT_Bitacora490WC.UseVisualStyleBackColor = false;
             this.BT_Bitacora490WC.Click += new System.EventHandler(this.BT_Bitacora490WC_Click);
@@ -533,7 +533,7 @@
             this.BT_Restore490WC.Name = "BT_Restore490WC";
             this.BT_Restore490WC.Size = new System.Drawing.Size(183, 44);
             this.BT_Restore490WC.TabIndex = 5;
-            this.BT_Restore490WC.Tag = "Acceder a Gestion De Usuarios";
+            this.BT_Restore490WC.Tag = "Acceder a Restauracion";
             this.BT_Restore490WC.Text = "Restore";
             this.BT_Restore490WC.UseVisualStyleBackColor = false;
             this.BT_Restore490WC.Click += new System.EventHandler(this.BT_Restore490WC_Click);
@@ -549,7 +549,7 @@
             this.BT_BackUp490WC.Name = "BT_BackUp490WC";
             this.BT_BackUp490WC.Size = new System.Drawing.Size(183, 44);
             this.BT_BackUp490WC.TabIndex = 4;
-            this.BT_BackUp490WC.Tag = "Acceder a Gestion De Usuarios";
+            this.BT_BackUp490WC.Tag = "Acceder a Respaldo";
             this.BT_BackUp490WC.Text = "Back Up";
             this.BT_BackUp490WC.UseVisualStyleBackColor = false;
             this.BT_BackUp490WC.Click += new System.EventHandler(this.BT_BackUp490WC_Click);
@@ -565,7 +565,7 @@
             this.BT_GestionPermisos490WC.Name = "BT_GestionPermisos490WC";
             this.BT_GestionPermisos490WC.Size = new System.Drawing.Size(183, 44);
             this.BT_GestionPermisos490WC.TabIndex = 3;
-            this.BT_GestionPermisos490WC.Tag = "Acceder a Gestion De Usuarios";
+            this.BT_GestionPermisos490WC.Tag = "Acceder a Gestion de Permisos";
             this.BT_GestionPermisos490WC.Text = "Gestion Permisos";
             this.BT_GestionPermisos490WC.UseVisualStyleBackColor = false;
             this.BT_GestionPermisos490WC.Click += new System.EventHandler(this.BT_GestionPermisos490WC_Click);

@@ -144,5 +144,20 @@ namespace SERVICIOS490WC
         {
             return PermisoDAL490WC.GestorPermisoORM490WC.LeerPermisoCompuesto490WC(nombreRol490WC);
         }
+        public bool ConfigurarControl490WC(string tag490WC, bool estadoSecundario490WC)
+        {
+
+            if (!estadoSecundario490WC)
+            {
+                return false;
+            }
+
+            if (tag490WC == null || SesionManager490WC.GestorSesion490WC.Usuario490WC.Rol490WC == "AdminSistema" || tag490WC == "")
+            {
+
+                return true;
+            }
+            return SesionManager490WC.GestorSesion490WC.SesionTienePermisos490WC(tag490WC);
+        }
     }
 }
