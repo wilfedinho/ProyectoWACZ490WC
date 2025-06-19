@@ -335,11 +335,11 @@ namespace GUI490WC
         #region Logica de Permisos Para Habilitar Accesos
         public void VerificarAccesibilidadDeTodosLosControles490WC()
         {
-            PermisoBLL490WC GestorPermiso490WC = new PermisoBLL490WC();
+            GestorPermiso490WC GestorPermiso490WC = new GestorPermiso490WC();
             VerificarAccesibilidadRecursivo490WC(Controls, GestorPermiso490WC);
         }
 
-        public void VerificarAccesibilidadRecursivo490WC(Control.ControlCollection controles490WC, PermisoBLL490WC GestorPermiso490WC)
+        public void VerificarAccesibilidadRecursivo490WC(Control.ControlCollection controles490WC, GestorPermiso490WC GestorPermiso490WC)
         {
             foreach (Control c490WC in controles490WC)
             {
@@ -354,7 +354,7 @@ namespace GUI490WC
 
         }
 
-        public void VerificarAccesibilidad(Control control490WC, PermisoBLL490WC GestorPermiso490WC, bool estadoSecundario490WC = true)
+        public void VerificarAccesibilidad(Control control490WC, GestorPermiso490WC GestorPermiso490WC, bool estadoSecundario490WC = true)
         {
 
             control490WC.Visible = GestorPermiso490WC.ConfigurarControl490WC(control490WC.Tag?.ToString(), estadoSecundario490WC);

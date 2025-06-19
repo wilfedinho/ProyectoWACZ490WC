@@ -33,7 +33,7 @@ namespace GUI490WC
         public void CargarPermisos490WC()
         {
             listaPermisos490WC.Items.Clear();
-            PermisoBLL490WC GestorPermiso490WC = new PermisoBLL490WC();
+            GestorPermiso490WC GestorPermiso490WC = new GestorPermiso490WC();
             var permisos490WC = GestorPermiso490WC.ObtenerTodoSinRoles490WC();
             listaPermisos490WC.Items.AddRange(permisos490WC.Select(p => p.obtenerPermisoNombre490WC()).Where(nombre => nombre != adminRolNombre490WC).ToArray());
         }
@@ -42,7 +42,7 @@ namespace GUI490WC
         public void CargarArbol490WC()
         {
             vistaPermisosArbol.Nodes.Clear();
-            PermisoBLL490WC GestorPermiso490WC = new PermisoBLL490WC();
+            GestorPermiso490WC GestorPermiso490WC = new GestorPermiso490WC();
             var permisosRaiz490WC = GestorPermiso490WC.ObtenerPermisosArbol490WC();
             foreach (var permiso490WC in permisosRaiz490WC)
             {
@@ -70,7 +70,7 @@ namespace GUI490WC
         public void CargarFamilias490WC()
         {
             CB_Familias.Items.Clear();
-            PermisoBLL490WC GestorPermiso490WC = new PermisoBLL490WC();
+            GestorPermiso490WC GestorPermiso490WC = new GestorPermiso490WC();
             var permisosCompuestos490WC = GestorPermiso490WC.ObtenerPermisosCompuestos490WC();
             CB_Familias.Items.AddRange(permisosCompuestos490WC.Select(p => p.obtenerPermisoNombre490WC()).Where(nombre => nombre != "AdminSistema").ToArray());
         }
@@ -94,7 +94,7 @@ namespace GUI490WC
                 {
                     LimpiarTodasSeleccionesPermisos490WC();
                     
-                        PermisoBLL490WC GestorPermiso490WC = new PermisoBLL490WC();
+                        GestorPermiso490WC GestorPermiso490WC = new GestorPermiso490WC();
                         List<Permiso490WC> permisosRaices490WC = GestorPermiso490WC.ObtenerPermisosArbol490WC();
                         Permiso490WC seleccionado490WC = permisosRaices490WC.Find(x => x.obtenerPermisoNombre490WC() == CB_Familias.SelectedItem.ToString());
                         if (seleccionado490WC is PermisoCompuesto490WC permisoCompuesto490WC)
@@ -138,7 +138,7 @@ namespace GUI490WC
         public void CrearPermisoCompuesto490WC(string nombrePermiso490WC, bool esRol490WC)
         {
             List<string> items490WC = GenerarLista490WC();
-            PermisoBLL490WC GestorPermiso490WC = new PermisoBLL490WC();
+            GestorPermiso490WC GestorPermiso490WC = new GestorPermiso490WC();
             if (GestorPermiso490WC.AgregarPermisoCompuesto490WC(nombrePermiso490WC, items490WC, true) == false)
             {
                 MessageBox.Show("Ha ocurrido un error por culpa de permisos Duplicados!!!");
@@ -175,7 +175,7 @@ namespace GUI490WC
                 DialogResult resultado490WC = MessageBox.Show(cuestion490WC, "", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (resultado490WC == DialogResult.Yes)
                 {
-                    PermisoBLL490WC GestorPermiso490WC = new PermisoBLL490WC();
+                    GestorPermiso490WC GestorPermiso490WC = new GestorPermiso490WC();
                     if (GestorPermiso490WC.BorrarPermiso490WC(CB_Familias.SelectedItem.ToString()) == true)
                     {
                             MessageBox.Show($"Se ha borrado con exito");
@@ -211,7 +211,7 @@ namespace GUI490WC
                 string nuevoNombre490WC = Interaction.InputBox("Ingrese El Nuevo Nombre: ");
                 if (!(nuevoNombre490WC == null || string.IsNullOrEmpty(nuevoNombre490WC) || string.IsNullOrWhiteSpace(nuevoNombre490WC)))
                 {
-                    PermisoBLL490WC GestorPermiso490WC = new PermisoBLL490WC();
+                    GestorPermiso490WC GestorPermiso490WC = new GestorPermiso490WC();
                     GestorPermiso490WC.ModificarPermiso490WC(CB_Familias.SelectedItem.ToString(), nuevoNombre490WC);
                     RecargarTodasLasVistas490WC();
                 }
@@ -266,7 +266,7 @@ namespace GUI490WC
                     if (items490WC.Contains(CB_Familias.Text))
                     {
                     }
-                    PermisoBLL490WC GestorPermiso490WC = new PermisoBLL490WC();
+                    GestorPermiso490WC GestorPermiso490WC = new GestorPermiso490WC();
                     if (GestorPermiso490WC.ModificarPermisoCompuesto490WC(CB_Familias.Text, items490WC))
                     {
                     

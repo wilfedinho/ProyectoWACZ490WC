@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SERVICIOS490WC
 {
-    public class PermisoBLL490WC
+    public class GestorPermiso490WC
     {
         public void AsignarRolSesion490WC(string nuevoRol490WC)
         {

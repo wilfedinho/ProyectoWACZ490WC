@@ -140,17 +140,25 @@
             // 
             // listaPermisos490WC
             // 
+            this.listaPermisos490WC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(24)))), ((int)(((byte)(31)))));
+            this.listaPermisos490WC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.listaPermisos490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.listaPermisos490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
             this.listaPermisos490WC.FormattingEnabled = true;
             this.listaPermisos490WC.Location = new System.Drawing.Point(357, 68);
             this.listaPermisos490WC.Name = "listaPermisos490WC";
-            this.listaPermisos490WC.Size = new System.Drawing.Size(234, 304);
+            this.listaPermisos490WC.Size = new System.Drawing.Size(322, 420);
             this.listaPermisos490WC.TabIndex = 26;
             // 
             // vistaPermisosArbol
             // 
-            this.vistaPermisosArbol.Location = new System.Drawing.Point(749, 68);
+            this.vistaPermisosArbol.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(24)))), ((int)(((byte)(31)))));
+            this.vistaPermisosArbol.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.vistaPermisosArbol.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.vistaPermisosArbol.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
+            this.vistaPermisosArbol.Location = new System.Drawing.Point(744, 68);
             this.vistaPermisosArbol.Name = "vistaPermisosArbol";
-            this.vistaPermisosArbol.Size = new System.Drawing.Size(234, 308);
+            this.vistaPermisosArbol.Size = new System.Drawing.Size(280, 420);
             this.vistaPermisosArbol.TabIndex = 27;
             // 
             // LABEL_NOMBRE_ABM_USUARIO490WC
