@@ -581,7 +581,7 @@
             this.BT_Usuarios490WC.Name = "BT_Usuarios490WC";
             this.BT_Usuarios490WC.Size = new System.Drawing.Size(183, 44);
             this.BT_Usuarios490WC.TabIndex = 2;
-            this.BT_Usuarios490WC.Tag = "Acceder a Gestion De Usuarios";
+            this.BT_Usuarios490WC.Tag = "Acceder a Gestion de Usuarios";
             this.BT_Usuarios490WC.Text = "Usuarios";
             this.BT_Usuarios490WC.UseVisualStyleBackColor = false;
             this.BT_Usuarios490WC.Click += new System.EventHandler(this.BT_Usuarios490WC_Click);

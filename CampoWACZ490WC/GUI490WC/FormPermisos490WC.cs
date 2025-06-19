@@ -87,14 +87,13 @@ namespace GUI490WC
             {
                 if (CB_Familias.SelectedItem.ToString() == SesionManager490WC.GestorSesion490WC.Usuario490WC.Rol490WC)
                 {
-                    MessageBox.Show("labelErrorRolSesion.Text");
+                    MessageBox.Show("No se puede elegir el mismo Rol que posee la sesion actual!!");
                     CB_Familias.SelectedIndex = -1;
                 }
                 else
                 {
                     LimpiarTodasSeleccionesPermisos490WC();
-                    if (CB_Familias.SelectedItem != null)
-                    {
+                    
                         PermisoBLL490WC GestorPermiso490WC = new PermisoBLL490WC();
                         List<Permiso490WC> permisosRaices490WC = GestorPermiso490WC.ObtenerPermisosArbol490WC();
                         Permiso490WC seleccionado490WC = permisosRaices490WC.Find(x => x.obtenerPermisoNombre490WC() == CB_Familias.SelectedItem.ToString());
@@ -102,7 +101,7 @@ namespace GUI490WC
                         {
                             ChequearPermisosEnLista490WC(permisoCompuesto490WC);
                         }
-                    }
+                    
                 }
             }
         }
@@ -142,11 +141,11 @@ namespace GUI490WC
             PermisoBLL490WC GestorPermiso490WC = new PermisoBLL490WC();
             if (GestorPermiso490WC.AgregarPermisoCompuesto490WC(nombrePermiso490WC, items490WC, true) == false)
             {
-                MessageBox.Show("labelErrorPermisoDuplicado.Text");
+                MessageBox.Show("Ha ocurrido un error por culpa de permisos Duplicados!!!");
             }
             else
             {
-                MessageBox.Show("labelPermisoCreado.Text");
+                MessageBox.Show("El Permiso ha sido creado con exito!!!");
             }
         }
 
@@ -163,24 +162,35 @@ namespace GUI490WC
         }
         private void BT_ElimiarSeleccionado_Click(object sender, EventArgs e)
         {
+            if (CB_Familias.SelectedItem != null)
+            {
+
             if (CB_Familias.SelectedItem.ToString() == adminRolNombre490WC)
             {
-                MessageBox.Show("labelNoSePuedeSeleccionarElRolAdmin.Text");
+                MessageBox.Show("No se puede seleccionar el Rol de Admin!!!");
             }
             else
             {
-                string cuestion490WC = "labelDeseaBorrarLaFamilia.Text";
-                cuestion490WC = cuestion490WC.Replace("{CB_Familias.SelectedItem.ToString()}", CB_Familias.SelectedItem.ToString());
+                string cuestion490WC = $"Desea Borrar la Familia de Permisos: {CB_Familias.SelectedItem.ToString()}?";
                 DialogResult resultado490WC = MessageBox.Show(cuestion490WC, "", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (resultado490WC == DialogResult.Yes)
                 {
                     PermisoBLL490WC GestorPermiso490WC = new PermisoBLL490WC();
                     if (GestorPermiso490WC.BorrarPermiso490WC(CB_Familias.SelectedItem.ToString()) == true)
                     {
-                        
+                            MessageBox.Show($"Se ha borrado con exito");
+                    }
+                    else
+                    {
+                            MessageBox.Show("No se puede Borrar una Familia de permisos, ya que existen usuarios referenciados a esa familia");
                     }
                     RecargarTodasLasVistas490WC();
                 }
+            }
+            }
+            else
+            {
+                MessageBox.Show($"Debe elegir antes una familia de permisos para borrarla o no!!");
             }
         }
 
@@ -189,33 +199,39 @@ namespace GUI490WC
 
         private void BT_ModificarNombre_Click(object sender, EventArgs e)
         {
+            if (CB_Familias.SelectedItem != null)
+            {
+
             if (CB_Familias.SelectedItem.ToString() == adminRolNombre490WC)
             {
-                MessageBox.Show("labelNoSePuedeSeleccionarElRolAdmin.Text");
+                MessageBox.Show("No se puede seleccionar el Rol de Admin!!!");
             }
             else
             {
-                string nuevoNombre490WC = Interaction.InputBox("labelIngreseElNuevoNombre.Text");
+                string nuevoNombre490WC = Interaction.InputBox("Ingrese El Nuevo Nombre: ");
                 if (!(nuevoNombre490WC == null || string.IsNullOrEmpty(nuevoNombre490WC) || string.IsNullOrWhiteSpace(nuevoNombre490WC)))
                 {
                     PermisoBLL490WC GestorPermiso490WC = new PermisoBLL490WC();
                     GestorPermiso490WC.ModificarPermiso490WC(CB_Familias.SelectedItem.ToString(), nuevoNombre490WC);
                     RecargarTodasLasVistas490WC();
-               
                 }
-
-
             }
+            }
+            else
+            {
+                MessageBox.Show($"Debe elegir antes una familia de permisos para modificar su nombre!!");
+            }
+
         }
 
         private void BT_CrearRol_Click(object sender, EventArgs e)
         {
-            if (TB_NuevoNombre.Text == "" || TB_NuevoNombre.Text == null)
+            if (string.IsNullOrEmpty(TB_NuevoNombre.Text))
             {
+                MessageBox.Show("El nombre del nuevo rol no puede estar vacío.");
             }
             else
             {
-             
                 CrearPermisoCompuesto490WC(TB_NuevoNombre.Text, true);
                 RecargarTodasLasVistas490WC();
             }
@@ -224,12 +240,12 @@ namespace GUI490WC
 
         private void BT_CrearGrupoDePermisos_Click(object sender, EventArgs e)
         {
-            if (TB_NuevoNombre.Text == "" || TB_NuevoNombre.Text == null)
+            if (string.IsNullOrEmpty(TB_NuevoNombre.Text))
             {
+                MessageBox.Show("El nombre de la nueva familia de permisos no puede estar vacío.");
             }
             else
             {
-         
                 CrearPermisoCompuesto490WC(TB_NuevoNombre.Text, false);
                 RecargarTodasLasVistas490WC();
             }
@@ -239,10 +255,11 @@ namespace GUI490WC
         {
             if (CB_Familias.Text == "")
             {
+
             }
             else
             {
-                DialogResult resultado490WC = MessageBox.Show("", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult resultado490WC = MessageBox.Show("Esta Seguro Que Desea guardar los cambios?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (resultado490WC == DialogResult.Yes)
                 {
                     List<string> items490WC = GenerarLista490WC();
