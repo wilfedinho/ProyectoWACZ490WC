@@ -147,7 +147,7 @@
             this.listaPermisos490WC.FormattingEnabled = true;
             this.listaPermisos490WC.Location = new System.Drawing.Point(357, 68);
             this.listaPermisos490WC.Name = "listaPermisos490WC";
-            this.listaPermisos490WC.Size = new System.Drawing.Size(322, 420);
+            this.listaPermisos490WC.Size = new System.Drawing.Size(342, 420);
             this.listaPermisos490WC.TabIndex = 26;
             // 
             // vistaPermisosArbol
@@ -156,9 +156,9 @@
             this.vistaPermisosArbol.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.vistaPermisosArbol.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.vistaPermisosArbol.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.vistaPermisosArbol.Location = new System.Drawing.Point(744, 68);
+            this.vistaPermisosArbol.Location = new System.Drawing.Point(718, 68);
             this.vistaPermisosArbol.Name = "vistaPermisosArbol";
-            this.vistaPermisosArbol.Size = new System.Drawing.Size(280, 420);
+            this.vistaPermisosArbol.Size = new System.Drawing.Size(306, 420);
             this.vistaPermisosArbol.TabIndex = 27;
             // 
             // LABEL_NOMBRE_ABM_USUARIO490WC
@@ -168,9 +168,9 @@
             this.LABEL_NOMBRE_ABM_USUARIO490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
             this.LABEL_NOMBRE_ABM_USUARIO490WC.Location = new System.Drawing.Point(40, 30);
             this.LABEL_NOMBRE_ABM_USUARIO490WC.Name = "LABEL_NOMBRE_ABM_USUARIO490WC";
-            this.LABEL_NOMBRE_ABM_USUARIO490WC.Size = new System.Drawing.Size(77, 20);
+            this.LABEL_NOMBRE_ABM_USUARIO490WC.Size = new System.Drawing.Size(137, 20);
             this.LABEL_NOMBRE_ABM_USUARIO490WC.TabIndex = 28;
-            this.LABEL_NOMBRE_ABM_USUARIO490WC.Text = "Nombre";
+            this.LABEL_NOMBRE_ABM_USUARIO490WC.Text = "Roles y Grupos";
             // 
             // label1
             // 
@@ -179,31 +179,31 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
             this.label1.Location = new System.Drawing.Point(40, 249);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(77, 20);
+            this.label1.Size = new System.Drawing.Size(135, 20);
             this.label1.TabIndex = 29;
-            this.label1.Text = "Nombre";
+            this.label1.Text = "Nuevo Nombre";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.label2.Location = new System.Drawing.Point(430, 30);
+            this.label2.Location = new System.Drawing.Point(353, 30);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(77, 20);
+            this.label2.Size = new System.Drawing.Size(185, 20);
             this.label2.TabIndex = 30;
-            this.label2.Text = "Nombre";
+            this.label2.Text = "Permisos Asignados";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.label3.Location = new System.Drawing.Point(833, 30);
+            this.label3.Location = new System.Drawing.Point(714, 30);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(77, 20);
+            this.label3.Size = new System.Drawing.Size(310, 20);
             this.label3.TabIndex = 31;
-            this.label3.Text = "Nombre";
+            this.label3.Text = "Vista Permisos En Estructura Arbol";
             // 
             // FormPermisos490WC
             // 
