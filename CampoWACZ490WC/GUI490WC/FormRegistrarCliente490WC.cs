@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -39,15 +40,8 @@ namespace GUI490WC
             string nombre490WC = TB_NOMBRE490WC.Text;
             string apellido490WC = TB_APELLIDO490WC.Text;
             string dni490WC = TB_DNI490WC.Text;
-            string datosTarjeta490WC = "";
-            if (RB_CREDITO490WC.Checked)
-            {
-                datosTarjeta490WC = $"{RB_CREDITO490WC.Text},{TB_NUMEROTARJETA490WC.Text},{TB_NOMBRETITULAR490WC.Text},{TB_APELLIDOTITULAR490WC.Text},{TB_FECHAEMISION490WC.Text},{TB_FECHAVENCIMIENTO490WC.Text},{TB_CODIGOSEGURIDAD490WC.Text}";
-            }
-            else
-            {
-                datosTarjeta490WC = $"{RB_DEBITO490WC.Text},{TB_NUMEROTARJETA490WC.Text},{TB_NOMBRETITULAR490WC.Text},{TB_APELLIDOTITULAR490WC.Text},{TB_FECHAEMISION490WC.Text},{TB_FECHAVENCIMIENTO490WC.Text},{TB_CODIGOSEGURIDAD490WC.Text}";
-            }
+            string direccion490WC = TB_DIRECCION490WC.Text;
+            string idBoleto490WC = TB_CodigoBoleto490WC.Text;
 
             int estrellasCliente490WC = 0;
             if (gestorCliente490WC.BuscarClientePorDNI490WC(TB_DNI490WC.Text) == null)
@@ -58,87 +52,49 @@ namespace GUI490WC
                     {
                         if (gestorCliente490WC.VerificarFormatoDNI490WC(dni490WC))
                         {
-                            if (gestorCliente490WC.VerificarFormatoNumeroTarjeta490WC(TB_NUMEROTARJETA490WC.Text))
+                            Boleto490WC boletoAsignar490WC = gestorBoleto490WC.ObtenerBoletoPorID490WC(idBoleto490WC);
+                            if (boletoAsignar490WC != null)
                             {
-                                if (!string.IsNullOrEmpty(TB_NOMBRETITULAR490WC.Text))
+                                if (boletoAsignar490WC.Titular490WC == null)
                                 {
-                                    if (!string.IsNullOrEmpty(TB_APELLIDOTITULAR490WC.Text))
+                                    List<string> celulares = listboxCelularesCliente490WC.Items.Cast<string>().ToList();
+                                    List<string> emails = listboxEmailsCliente490WC.Items.Cast<string>().ToList();
+                                    if (celulares.Count > 0)
                                     {
-                                        if (gestorCliente490WC.VerificarFormatoFechaTarjeta490WC(TB_FECHAEMISION490WC.Text))
+                                        if (emails.Count > 0)
                                         {
-                                            if (gestorCliente490WC.VerificarFormatoFechaTarjeta490WC(TB_FECHAVENCIMIENTO490WC.Text))
-                                            {
-                                                if (gestorCliente490WC.VerificarFormatoCVVTarjeta490WC(TB_CODIGOSEGURIDAD490WC.Text))
-                                                {
-                                                    //Cliente490WC clienteAlta490WC = new Cliente490WC(dni490WC, nombre490WC, apellido490WC, Cifrador490WC.GestorCifrador490WC.EncriptarReversible490WC(datosTarjeta490WC), estrellasCliente490WC);
-                                                    //gestorCliente490WC.Alta490WC(clienteAlta490WC);
-                                                    LimpiarCampos490WC();
-                                                    DialogResult asignarBoleto = MessageBox.Show("Cliente registrado correctamente!!\n¿Desea asignar un boleto a este cliente?", "", MessageBoxButtons.YesNo);
-                                                    if (asignarBoleto == DialogResult.Yes)
-                                                    {
-                                                        string idBoleto490WC = Interaction.InputBox("Ingrese el ID del boleto generado, que desea asignarle: ");
-                                                        Boleto490WC boletoAsignar490WC = gestorBoleto490WC.ObtenerBoletoPorID490WC(idBoleto490WC);
-                                                        if (boletoAsignar490WC != null)
-                                                        {
-                                                            if (boletoAsignar490WC.Titular490WC == null)
-                                                            {
-                                                               // gestorBoleto490WC.AsignarBoletoCliente490WC(boletoAsignar490WC,clienteAlta490WC);
-                                                                //MessageBox.Show($"Boleto cuyo ID es: {boletoAsignar490WC.IDBoleto490WC} fue asignado correctamente al cliente con el DNI: {clienteAlta490WC.DNI490WC}!!");
-                                                                LimpiarCampos490WC();
-                                                                this.Close();
-                                                            }
-                                                            else
-                                                            {
-                                                                MessageBox.Show("El boleto ya tiene un cliente asignado!!");
-                                                                LimpiarCampos490WC();
-                                                            }
-                                                        }
-                                                        else 
-                                                        { 
-                                                            MessageBox.Show("No existe un boleto con ese ID!!");
-                                                            LimpiarCampos490WC();
-                                                        }
-                                                    }
-                                                    else
-                                                    {
-                                                        LimpiarCampos490WC();
-                                                    }
-                                                }
-                                                else
-                                                {
-                                                    MessageBox.Show("Ingrese un codigo de seguridad valido!!");
-                                                    LimpiarCampos490WC();
-                                                }
-                                            }
-                                            else
-                                            {
-                                                MessageBox.Show("Ingrese una fecha de vencimiento valida!!");
-                                                LimpiarCampos490WC();
-                                            }
+                                            Cliente490WC clienteAlta490WC = new Cliente490WC(dni490WC, nombre490WC, apellido490WC, estrellasCliente490WC, emails, celulares, Cifrador490WC.GestorCifrador490WC.EncriptarReversible490WC(direccion490WC), true);
+                                            gestorCliente490WC.Alta490WC(clienteAlta490WC);
+                                            gestorBoleto490WC.AsignarBoletoCliente490WC(boletoAsignar490WC, clienteAlta490WC);
+                                            MessageBox.Show($"Boleto cuyo Codigo Boleto es: {boletoAsignar490WC.IDBoleto490WC} fue asignado correctamente al cliente con el DNI: {clienteAlta490WC.DNI490WC}!!");
+                                            LimpiarCampos490WC();
+                                            this.Close();
                                         }
                                         else
                                         {
-                                            MessageBox.Show("Ingrese una fecha de emision valida!!");
-                                            LimpiarCampos490WC();
+                                            MessageBox.Show("Para registrar el cliente, minimo debe tener un email para ser registrado");
                                         }
                                     }
                                     else
                                     {
-                                        MessageBox.Show("Ingrese un apellido de titular valido!!");
-                                        LimpiarCampos490WC();
+                                        MessageBox.Show("Para registrar el cliente, minimo debe tener un celular para ser registrado");
                                     }
+                                    
                                 }
                                 else
                                 {
-                                    MessageBox.Show("Ingrese un nombre de titular valido!!");
+                                    MessageBox.Show("El boleto ya tiene un cliente asignado!!");
                                     LimpiarCampos490WC();
                                 }
                             }
                             else
                             {
-                                MessageBox.Show("Ingrese un numero de tarjeta valido!!");
+                                MessageBox.Show("No existe un boleto con ese ID!!");
                                 LimpiarCampos490WC();
                             }
+
+
+
                         }
                         else
                         {
@@ -163,6 +119,88 @@ namespace GUI490WC
             {
                 MessageBox.Show("Ya existe un cliente con ese DNI!!");
                 LimpiarCampos490WC();
+            }
+        }
+
+        private void BT_AGREGARCELULAR490WC_Click(object sender, EventArgs e)
+        {
+            string celular490WC = TB_CELULAR490WC.Text;
+            GestorCliente490WC gestorCliente490WC = new GestorCliente490WC();
+            if (!string.IsNullOrEmpty(celular490WC))
+            {
+                if (!listboxCelularesCliente490WC.Items.Contains(celular490WC))
+                {
+                    if (gestorCliente490WC.VerificarCelular490WC(celular490WC))
+                    {
+                        listboxCelularesCliente490WC.Items.Add(celular490WC);
+                        TB_CELULAR490WC.Clear();
+                    }
+                    else
+                    {
+                        MessageBox.Show("El celular ingresado no posee el formato 1122223333");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No puedes agregar un celular duplicado!!");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Debe ingresar un celular!!!");
+            }
+        }
+
+        private void BT_ELIMINARCELULAR490WC_Click(object sender, EventArgs e)
+        {
+            if (listboxCelularesCliente490WC.SelectedIndex != -1)
+            {
+                listboxCelularesCliente490WC.Items.RemoveAt(listboxCelularesCliente490WC.SelectedIndex);
+            }
+            else
+            {
+                MessageBox.Show("Debes seleccionar un celular para eliminarlo");
+            }
+        }
+
+        private void BT_AGREGAREMAIL490WC_Click(object sender, EventArgs e)
+        {
+            string email490WC = TB_EMAIL490WC.Text;
+            GestorCliente490WC gestorCliente490WC = new GestorCliente490WC();
+            if (!string.IsNullOrEmpty(email490WC))
+            {
+                if (!listboxEmailsCliente490WC.Items.Contains(email490WC))
+                {
+                    if (gestorCliente490WC.VerificarEmail490WC(email490WC))
+                    {
+                        listboxEmailsCliente490WC.Items.Add(email490WC);
+                        TB_EMAIL490WC.Clear();
+                    }
+                    else
+                    {
+                        MessageBox.Show("El email ingresado no posee el formato correcto");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No puedes agregar un email duplicado!!");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Debe ingresar un email!!!");
+            }
+        }
+
+        private void BT_ELIMINAREMAIL490WC_Click(object sender, EventArgs e)
+        {
+            if (listboxEmailsCliente490WC.SelectedIndex != 1)
+            {
+                listboxEmailsCliente490WC.Items.RemoveAt(listboxEmailsCliente490WC.SelectedIndex);
+            }
+            else
+            {
+                MessageBox.Show("Debes seleccionar un email para eliminarlo");
             }
         }
     }

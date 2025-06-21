@@ -132,7 +132,7 @@ namespace GUI490WC
         private void BT_ALTA490WC_Click(object sender, EventArgs e)
         {
             Boleto490WC BoletoAlta490WC;
-            //Cliente490WC cliente490WC = new Cliente490WC("Sistema", null, null, null, 0, null);
+            Cliente490WC cliente490WC = new Cliente490WC("Sistema", null, null,0, null, null, null, true);
             GestorBoleto490WC gestorBoleto490WC = new GestorBoleto490WC();
             string id490WC = (gestorBoleto490WC.ObtenerTodosLosBoletos490WC().Count + 1).ToString();
             string origen490WC = TB_ORIGEN490WC.Text;
@@ -159,9 +159,9 @@ namespace GUI490WC
                                     {
                                         if (fechaPartidaIDA490WC <= fechaLlegadaIDA490WC)
                                         {
-                                            //BoletoAlta490WC = new BoletoIDA490WC(id490WC, origen490WC, destino490WC, fechaPartidaIDA490WC, fechaLlegadaIDA490WC, isVendido490WC, PesoEquipajePermitido490WC, claseBoleto490WC, Precio490WC, cliente490WC, asiento490WC);
+                                            BoletoAlta490WC = new BoletoIDA490WC(id490WC, origen490WC, destino490WC, fechaPartidaIDA490WC, fechaLlegadaIDA490WC, isVendido490WC, PesoEquipajePermitido490WC, claseBoleto490WC, Precio490WC, cliente490WC, asiento490WC);
 
-                                          /*  if (!gestorBoleto490WC.ExisteBoletoEnAsiento490WC(BoletoAlta490WC))
+                                            if (!gestorBoleto490WC.ExisteBoletoEnAsiento490WC(BoletoAlta490WC))
                                             {
                                                 gestorBoleto490WC.Alta490WC(BoletoAlta490WC);
                                                 Mostrar490WC();
@@ -173,7 +173,7 @@ namespace GUI490WC
                                                 MessageBox.Show("Ya existe un Boleto cargado en el sistema con exactamente las mismas caracteristicas!!");
                                                 ActivarModoModificar490WC(false);
                                             }
-                                          */
+                                          
                                         }
                                         else
                                         {
@@ -187,7 +187,7 @@ namespace GUI490WC
                                         DateTime fechaLlegadaVUELTA490WC = calendarioFECHALLEGADA_VUELTA490WC.SelectionStart;
                                         if (fechaPartidaIDA490WC <= fechaLlegadaIDA490WC && fechaLlegadaIDA490WC < fechaPartidaVUELTA490WC && fechaPartidaVUELTA490WC <= fechaLlegadaVUELTA490WC)
                                         {
-                                           /* BoletoAlta490WC = new BoletoIDAVUELTA490WC(id490WC, origen490WC, destino490WC, fechaPartidaIDA490WC, fechaLlegadaIDA490WC, fechaPartidaVUELTA490WC, fechaLlegadaVUELTA490WC, isVendido490WC, PesoEquipajePermitido490WC, claseBoleto490WC, Precio490WC, cliente490WC, asiento490WC);
+                                            BoletoAlta490WC = new BoletoIDAVUELTA490WC(id490WC, origen490WC, destino490WC, fechaPartidaIDA490WC, fechaLlegadaIDA490WC, fechaPartidaVUELTA490WC, fechaLlegadaVUELTA490WC, isVendido490WC, PesoEquipajePermitido490WC, claseBoleto490WC, Precio490WC, cliente490WC, asiento490WC);
                                             if (!gestorBoleto490WC.ExisteBoletoEnAsiento490WC(BoletoAlta490WC))
                                             {
                                                 gestorBoleto490WC.Alta490WC(BoletoAlta490WC);
@@ -200,7 +200,7 @@ namespace GUI490WC
                                                 MessageBox.Show("Ya existe un Boleto cargado en el sistema con exactamente las mismas caracteristicas!!");
                                                 ActivarModoModificar490WC(false);
                                             }
-                                           */
+                                           
                                         }
                                         else
                                         {
@@ -265,7 +265,7 @@ namespace GUI490WC
         {
             GestorBoleto490WC gestorBoleto490WC = new GestorBoleto490WC();
             Boleto490WC BoletoModificado490WC = gestorBoleto490WC.ObtenerBoletoPorID490WC(dgvBoleto490WC.SelectedRows[0].Cells["ColumnaID"].Value.ToString());
-          //  Cliente490WC cliente490WC = new Cliente490WC("Sistema", null, null, null, 0, null);
+            Cliente490WC cliente490WC = new Cliente490WC("Sistema", null, null, 0, null, null, null, true);
             string origen490WC = TB_ORIGEN490WC.Text;
             string destino490WC = TB_DESTINO490WC.Text;
             string asiento490WC = TB_ASIENTO490WC.Text;
@@ -296,7 +296,7 @@ namespace GUI490WC
                                             BoletoModificado490WC.EquipajePermitido490WC = PesoEquipajePermitido490WC;
                                             BoletoModificado490WC.ClaseBoleto490WC = claseBoleto490WC;
                                             BoletoModificado490WC.Precio490WC = Precio490WC;
-                                          //  BoletoModificado490WC.Titular490WC = cliente490WC;
+                                            BoletoModificado490WC.Titular490WC = cliente490WC;
                                             BoletoModificado490WC.NumeroAsiento490WC = asiento490WC;
                                             if (!gestorBoleto490WC.ExisteBoletoEnAsientoParaModificar490WC(BoletoModificado490WC))
                                             {
@@ -332,7 +332,7 @@ namespace GUI490WC
                                             BoletoModificado490WC.EquipajePermitido490WC = PesoEquipajePermitido490WC;
                                             BoletoModificado490WC.ClaseBoleto490WC = claseBoleto490WC;
                                             BoletoModificado490WC.Precio490WC = Precio490WC;
-                                          //  BoletoModificado490WC.Titular490WC = cliente490WC;
+                                            BoletoModificado490WC.Titular490WC = cliente490WC;
                                             BoletoModificado490WC.NumeroAsiento490WC = asiento490WC;
                                             if (!gestorBoleto490WC.ExisteBoletoEnAsientoParaModificar490WC(BoletoModificado490WC))
                                             {

@@ -67,17 +67,16 @@ namespace GUI490WC
             }
             else
             {
+                MessageBox.Show("Cliente No Encontrado, Pase A registrarlo");
                 TBINFOCLIENTE490WC.Text = $"Cliente no encontrado. Verifique el DNI ingresado.";
+                formRegistrarCliente490WC = new FormRegistrarCliente490WC();
+                formRegistrarCliente490WC.ShowDialog();
                 CargarCliente490WC(null);
                 TB_DNI490WC.Clear();
             }
         }
 
-        private void BT_REGISTRARCLIENTE490WC_Click(object sender, EventArgs e)
-        {
-            formRegistrarCliente490WC = new FormRegistrarCliente490WC();
-            formRegistrarCliente490WC.ShowDialog();
-        }
+        
 
         private void BT_COBRARFACTURA490WC_Click(object sender, EventArgs e)
         {
