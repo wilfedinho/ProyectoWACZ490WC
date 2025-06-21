@@ -53,48 +53,54 @@ namespace GUI490WC
                         if (gestorCliente490WC.VerificarFormatoDNI490WC(dni490WC))
                         {
                             Boleto490WC boletoAsignar490WC = gestorBoleto490WC.ObtenerBoletoPorID490WC(idBoleto490WC);
-                            if (boletoAsignar490WC != null)
+                            Cliente490WC clienteDuplicado490WC = gestorCliente490WC.BuscarClientePorDNI490WC(dni490WC);
+                            if (clienteDuplicado490WC == null)
                             {
-                                if (boletoAsignar490WC.Titular490WC == null)
+                                if (boletoAsignar490WC != null)
                                 {
-                                    List<string> celulares = listboxCelularesCliente490WC.Items.Cast<string>().ToList();
-                                    List<string> emails = listboxEmailsCliente490WC.Items.Cast<string>().ToList();
-                                    if (celulares.Count > 0)
+                                    if (boletoAsignar490WC.Titular490WC == null)
                                     {
-                                        if (emails.Count > 0)
+                                        List<string> celulares = listboxCelularesCliente490WC.Items.Cast<string>().ToList();
+                                        List<string> emails = listboxEmailsCliente490WC.Items.Cast<string>().ToList();
+                                        if (celulares.Count > 0)
                                         {
-                                            Cliente490WC clienteAlta490WC = new Cliente490WC(dni490WC, nombre490WC, apellido490WC, estrellasCliente490WC, emails, celulares, Cifrador490WC.GestorCifrador490WC.EncriptarReversible490WC(direccion490WC), true);
-                                            gestorCliente490WC.Alta490WC(clienteAlta490WC);
-                                            gestorBoleto490WC.AsignarBoletoCliente490WC(boletoAsignar490WC, clienteAlta490WC);
-                                            MessageBox.Show($"Boleto cuyo Codigo Boleto es: {boletoAsignar490WC.IDBoleto490WC} fue asignado correctamente al cliente con el DNI: {clienteAlta490WC.DNI490WC}!!");
-                                            LimpiarCampos490WC();
-                                            this.Close();
+                                            if (emails.Count > 0)
+                                            {
+                                                Cliente490WC clienteAlta490WC = new Cliente490WC(dni490WC, nombre490WC, apellido490WC, estrellasCliente490WC, emails, celulares, Cifrador490WC.GestorCifrador490WC.EncriptarReversible490WC(direccion490WC), true);
+                                                gestorCliente490WC.Alta490WC(clienteAlta490WC);
+                                                gestorBoleto490WC.AsignarBoletoCliente490WC(boletoAsignar490WC, clienteAlta490WC);
+                                                MessageBox.Show($"Boleto cuyo Codigo Boleto es: {boletoAsignar490WC.IDBoleto490WC} fue asignado correctamente al cliente con el DNI: {clienteAlta490WC.DNI490WC}!!");
+                                                LimpiarCampos490WC();
+                                                this.Close();
+                                            }
+                                            else
+                                            {
+                                                MessageBox.Show("Para registrar el cliente, minimo debe tener un email para ser registrado");
+                                            }
                                         }
                                         else
                                         {
-                                            MessageBox.Show("Para registrar el cliente, minimo debe tener un email para ser registrado");
+                                            MessageBox.Show("Para registrar el cliente, minimo debe tener un celular para ser registrado");
                                         }
+
                                     }
                                     else
                                     {
-                                        MessageBox.Show("Para registrar el cliente, minimo debe tener un celular para ser registrado");
+                                        MessageBox.Show("El boleto ya tiene un cliente asignado!!");
+
                                     }
-                                    
                                 }
                                 else
                                 {
-                                    MessageBox.Show("El boleto ya tiene un cliente asignado!!");
-                                    LimpiarCampos490WC();
+                                    MessageBox.Show("No existe un boleto con ese ID!!");
+
                                 }
+
                             }
                             else
                             {
-                                MessageBox.Show("No existe un boleto con ese ID!!");
-                                LimpiarCampos490WC();
+                                MessageBox.Show("El DNI Ingresado Ya pertenece a un cliente registrado en el sistema!!!");
                             }
-
-
-
                         }
                         else
                         {
