@@ -76,57 +76,67 @@ namespace GUI490WC
 
         private void BT_ALTA490WC_Click(object sender, EventArgs e)
         {
+            GestorBeneficio490WC gestorBeneficio490WC = new GestorBeneficio490WC();
             if (!string.IsNullOrEmpty(TB_NOMBRE490WC.Text)) // agregar lógica para ver si no se repite nombre del beneficio
             {
-                if (int.TryParse(TB_PRECIO490WC.Text, out int precioEstrella490WC))
+                if (!gestorBeneficio490WC.ExisteNombreBeneficioAlta490WC(TB_NOMBRE490WC.Text))
                 {
-                    if (int.TryParse(TB_VECESRECLAMADO490WC.Text, out int cantidadReclamo490WC))
+                    if (int.TryParse(TB_PRECIO490WC.Text, out int precioEstrella490WC))
                     {
-                        string texto = TB_DESCUENTOAPLICAR490WC.Text.Replace('.', ',');
-                        CultureInfo cultura = new CultureInfo("es-AR");
-
-                        if (decimal.TryParse(texto, NumberStyles.Number, cultura, out decimal descuentoAplicar490WC))
+                        if (int.TryParse(TB_VECESRECLAMADO490WC.Text, out int cantidadReclamo490WC))
                         {
-                            if (descuentoAplicar490WC >= 0.00m && descuentoAplicar490WC <= 1.00m)
+                            string texto = TB_DESCUENTOAPLICAR490WC.Text.Replace('.', ',');
+                            CultureInfo cultura = new CultureInfo("es-AR");
+
+                            if (decimal.TryParse(texto, NumberStyles.Number, cultura, out decimal descuentoAplicar490WC))
                             {
-                                int decimales = BitConverter.GetBytes(decimal.GetBits(descuentoAplicar490WC)[3])[2];
-                                if (decimales <= 2)
+                                if (descuentoAplicar490WC >= 0.00m && descuentoAplicar490WC <= 1.00m)
                                 {
-                                    GestorBeneficio490WC gestorBeneficio490WC = new GestorBeneficio490WC();
-                                    string nombre490WC = TB_NOMBRE490WC.Text;
-                                    int idBeneficio490WC = gestorBeneficio490WC.ObtenerTodosLosBeneficios490WC().Count + 1;
-                                    Beneficio490WC beneficioAlta490WC = new Beneficio490WC(idBeneficio490WC, nombre490WC, precioEstrella490WC, cantidadReclamo490WC, float.Parse(descuentoAplicar490WC.ToString()));
-                                    gestorBeneficio490WC.Alta490WC(beneficioAlta490WC);
-                                    Mostrar490WC();
-                                    LimpiarCampos490WC();
+                                    int decimales = BitConverter.GetBytes(decimal.GetBits(descuentoAplicar490WC)[3])[2];
+                                    if (decimales <= 2)
+                                    {
+
+                                        string nombre490WC = TB_NOMBRE490WC.Text;
+                                        int idBeneficio490WC = gestorBeneficio490WC.ObtenerTodosLosBeneficios490WC().Count + 1;
+                                        Beneficio490WC beneficioAlta490WC = new Beneficio490WC(idBeneficio490WC, nombre490WC, precioEstrella490WC, cantidadReclamo490WC, float.Parse(descuentoAplicar490WC.ToString()));
+                                        gestorBeneficio490WC.Alta490WC(beneficioAlta490WC);
+                                        Mostrar490WC();
+                                        LimpiarCampos490WC();
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("Solo se permiten hasta 2 decimales para el descuento.");
+                                        LimpiarCampos490WC();
+                                    }
                                 }
                                 else
                                 {
-                                    MessageBox.Show("Solo se permiten hasta 2 decimales para el descuento.");
+                                    MessageBox.Show("El descuento debe estar entre 0,00 y 1,00.");
                                     LimpiarCampos490WC();
                                 }
                             }
                             else
                             {
-                                MessageBox.Show("El descuento debe estar entre 0,00 y 1,00.");
+                                MessageBox.Show("Ingrese un valor decimal válido (por ejemplo: 0,25 o 0.25).");
                                 LimpiarCampos490WC();
                             }
                         }
                         else
                         {
-                            MessageBox.Show("Ingrese un valor decimal válido (por ejemplo: 0,25 o 0.25).");
+                            MessageBox.Show("Ingrese un valor numérico entero para la cantidad de veces que fue reclamado el beneficio.");
                             LimpiarCampos490WC();
                         }
                     }
                     else
                     {
-                        MessageBox.Show("Ingrese un valor numérico entero para la cantidad de veces que fue reclamado el beneficio.");
+                        MessageBox.Show("Ingrese un valor numérico entero para el precio que tendrá el beneficio.");
                         LimpiarCampos490WC();
                     }
+
                 }
                 else
                 {
-                    MessageBox.Show("Ingrese un valor numérico entero para el precio que tendrá el beneficio.");
+                    MessageBox.Show("El nombre ingresado es repetido, ingrese otro nombre!!!");
                     LimpiarCampos490WC();
                 }
             }
@@ -142,8 +152,15 @@ namespace GUI490WC
         private void BT_BAJA490WC_Click(object sender, EventArgs e)
         {
             GestorBeneficio490WC gestorBeneficio490WC = new GestorBeneficio490WC();
-            gestorBeneficio490WC.Baja490WC(Convert.ToInt32(dgvBeneficio490WC.SelectedRows[0].Cells["ColumnaCodigo"].Value.ToString()));
-            Mostrar490WC();
+            if (gestorBeneficio490WC.Baja490WC(Convert.ToInt32(dgvBeneficio490WC.SelectedRows[0].Cells["ColumnaCodigo"].Value.ToString())) == true)
+            {
+                Mostrar490WC();
+            }
+            else
+            {
+                MessageBox.Show("No se puede eliminar el beneficio seleccionado, ya que el mismo lo posee actualmente un cliente!!!");
+            }
+
         }
 
         private void BT_MODIFICAR490WC_Click(object sender, EventArgs e)
@@ -153,60 +170,71 @@ namespace GUI490WC
 
         private void BT_APLICAR490WC_Click(object sender, EventArgs e)
         {
+            GestorBeneficio490WC gestorBeneficio490WC = new GestorBeneficio490WC();
+            int codigoBeneficio490WC = int.Parse(dgvBeneficio490WC.SelectedRows[0].Cells["ColumnaCodigo"].Value.ToString());
             if (!string.IsNullOrEmpty(TB_NOMBRE490WC.Text)) // agregar lógica para ver si no se repite nombre del beneficio
             {
-                if (int.TryParse(TB_PRECIO490WC.Text, out int precioEstrella490WC))
+                if (!gestorBeneficio490WC.ExisteNombreBeneficioModificar490WC(TB_NOMBRE490WC.Text, codigoBeneficio490WC))
                 {
-                    if (int.TryParse(TB_VECESRECLAMADO490WC.Text, out int cantidadReclamo490WC))
+                    if (int.TryParse(TB_PRECIO490WC.Text, out int precioEstrella490WC))
                     {
-                        string texto = TB_DESCUENTOAPLICAR490WC.Text.Replace('.', ',');
-                        CultureInfo cultura = new CultureInfo("es-AR");
-
-                        if (decimal.TryParse(texto, NumberStyles.Number, cultura, out decimal descuentoAplicar490WC))
+                        if (int.TryParse(TB_VECESRECLAMADO490WC.Text, out int cantidadReclamo490WC))
                         {
-                            if (descuentoAplicar490WC >= 0.00m && descuentoAplicar490WC <= 1.00m)
+                            string texto = TB_DESCUENTOAPLICAR490WC.Text.Replace('.', ',');
+                            CultureInfo cultura = new CultureInfo("es-AR");
+
+                            if (decimal.TryParse(texto, NumberStyles.Number, cultura, out decimal descuentoAplicar490WC))
                             {
-                                int decimales = BitConverter.GetBytes(decimal.GetBits(descuentoAplicar490WC)[3])[2];
-                                if (decimales <= 2)
+                                if (descuentoAplicar490WC >= 0.00m && descuentoAplicar490WC <= 1.00m)
                                 {
-                                    GestorBeneficio490WC gestorBeneficio490WC = new GestorBeneficio490WC();
-                                    string nombre490WC = TB_NOMBRE490WC.Text;
-                                    Beneficio490WC beneficioModificado490WC = gestorBeneficio490WC.ObtenerBeneficioPorCodigo490WC(int.Parse(dgvBeneficio490WC.SelectedRows[0].Cells["ColumnaCodigo"].Value.ToString()));
-                                    beneficioModificado490WC.Nombre490WC = nombre490WC;
-                                    beneficioModificado490WC.PrecioEstrella490WC = precioEstrella490WC;
-                                    beneficioModificado490WC.CantidadBeneficioReclamo490WC = cantidadReclamo490WC;
-                                    beneficioModificado490WC.DescuentoAplicar490WC = float.Parse(descuentoAplicar490WC.ToString());
-                                    gestorBeneficio490WC.Modificacion490WC(beneficioModificado490WC);
-                                    Mostrar490WC();
-                                    ActivarModoModificar490WC(false);
+                                    int decimales = BitConverter.GetBytes(decimal.GetBits(descuentoAplicar490WC)[3])[2];
+                                    if (decimales <= 2)
+                                    {
+
+                                        string nombre490WC = TB_NOMBRE490WC.Text;
+                                        Beneficio490WC beneficioModificado490WC = gestorBeneficio490WC.ObtenerBeneficioPorCodigo490WC(codigoBeneficio490WC);
+                                        beneficioModificado490WC.Nombre490WC = nombre490WC;
+                                        beneficioModificado490WC.PrecioEstrella490WC = precioEstrella490WC;
+                                        beneficioModificado490WC.CantidadBeneficioReclamo490WC = cantidadReclamo490WC;
+                                        beneficioModificado490WC.DescuentoAplicar490WC = float.Parse(descuentoAplicar490WC.ToString());
+                                        gestorBeneficio490WC.Modificacion490WC(beneficioModificado490WC);
+                                        Mostrar490WC();
+                                        ActivarModoModificar490WC(false);
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("Solo se permiten hasta 2 decimales para el descuento.");
+                                        ActivarModoModificar490WC(false);
+                                    }
                                 }
                                 else
                                 {
-                                    MessageBox.Show("Solo se permiten hasta 2 decimales para el descuento.");
+                                    MessageBox.Show("El descuento debe estar entre 0,00 y 1,00.");
                                     ActivarModoModificar490WC(false);
                                 }
                             }
                             else
                             {
-                                MessageBox.Show("El descuento debe estar entre 0,00 y 1,00.");
+                                MessageBox.Show("Ingrese un valor decimal válido (por ejemplo: 0,25 o 0.25).");
                                 ActivarModoModificar490WC(false);
                             }
                         }
                         else
                         {
-                            MessageBox.Show("Ingrese un valor decimal válido (por ejemplo: 0,25 o 0.25).");
+                            MessageBox.Show("Ingrese un valor numérico entero para la cantidad de veces que fue reclamado el beneficio.");
                             ActivarModoModificar490WC(false);
                         }
                     }
                     else
                     {
-                        MessageBox.Show("Ingrese un valor numérico entero para la cantidad de veces que fue reclamado el beneficio.");
+                        MessageBox.Show("Ingrese un valor numérico entero para el precio que tendrá el beneficio.");
                         ActivarModoModificar490WC(false);
                     }
+
                 }
                 else
                 {
-                    MessageBox.Show("Ingrese un valor numérico entero para el precio que tendrá el beneficio.");
+                    MessageBox.Show("El nombre ingresado se encuentra repetido!!!");
                     ActivarModoModificar490WC(false);
                 }
             }

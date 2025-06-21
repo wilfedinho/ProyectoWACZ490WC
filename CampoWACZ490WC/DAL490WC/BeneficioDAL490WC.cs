@@ -31,19 +31,51 @@ namespace DAL490WC
             }
         }
 
-        public void Baja490WC(int ID490WC)
+        /* public void Baja490WC(int ID490WC)
+         {
+             using (SqlConnection cone490WC = GestorConexion490WC.GestorCone490WC.DevolverConexion490WC())
+             {
+                 cone490WC.Open();
+                 string query490WC = "DELETE FROM Beneficio490WC WHERE CodigoBeneficio490WC = @ID";
+                 using (SqlCommand comando490WC = new SqlCommand(query490WC, cone490WC))
+                 {
+                     comando490WC.Parameters.AddWithValue("@ID", ID490WC);
+                     comando490WC.ExecuteNonQuery();
+                 }
+             }
+         }*/
+
+        public bool Baja490WC(int ID490WC)
         {
             using (SqlConnection cone490WC = GestorConexion490WC.GestorCone490WC.DevolverConexion490WC())
             {
                 cone490WC.Open();
-                string query490WC = "DELETE FROM Beneficio490WC WHERE CodigoBeneficio490WC = @ID";
-                using (SqlCommand comando490WC = new SqlCommand(query490WC, cone490WC))
+
+                string queryVerificacion490WC = "SELECT COUNT(*) FROM Cliente_Beneficio490WC WHERE CodigoBeneficio490WC = @ID";
+                using (SqlCommand cmdVerificacion490WC = new SqlCommand(queryVerificacion490WC, cone490WC))
                 {
-                    comando490WC.Parameters.AddWithValue("@ID", ID490WC);
-                    comando490WC.ExecuteNonQuery();
+                    cmdVerificacion490WC.Parameters.AddWithValue("@ID", ID490WC);
+                    int cantidadRelacionada = (int)cmdVerificacion490WC.ExecuteScalar();
+
+                    if (cantidadRelacionada > 0)
+                    {
+                  
+                        return false;
+                    }
                 }
+
+           
+                string queryEliminar490WC = "DELETE FROM Beneficio490WC WHERE CodigoBeneficio490WC = @ID";
+                using (SqlCommand cmdEliminar490WC = new SqlCommand(queryEliminar490WC, cone490WC))
+                {
+                    cmdEliminar490WC.Parameters.AddWithValue("@ID", ID490WC);
+                    cmdEliminar490WC.ExecuteNonQuery();
+                }
+
+                return true;
             }
         }
+
 
         public void Modificacion490WC(Beneficio490WC BeneficioModificado490WC)
         {
@@ -123,6 +155,38 @@ namespace DAL490WC
                 }
             }
 
+        }
+
+        public bool ExisteNombreBeneficioAlta490WC(string nombreBeneficio490WC)
+        {
+            using (SqlConnection cone490WC = GestorConexion490WC.GestorCone490WC.DevolverConexion490WC())
+            {
+                cone490WC.Open();
+                string query490WC = "SELECT COUNT(*) FROM Beneficio490WC WHERE Nombre490WC = @Nombre";
+                using (SqlCommand comando490WC = new SqlCommand(query490WC, cone490WC))
+                {
+                    comando490WC.Parameters.AddWithValue("@Nombre", nombreBeneficio490WC);
+                    int cantidad = (int)comando490WC.ExecuteScalar();
+                    return cantidad > 0;
+                }
+            }
+        }
+
+        public bool ExisteNombreBeneficioModificar490WC(string nombreBeneficio490WC, int idActual490WC)
+        {
+            using (SqlConnection cone490WC = GestorConexion490WC.GestorCone490WC.DevolverConexion490WC())
+            {
+                cone490WC.Open();
+                string query490WC = "SELECT COUNT(*) FROM Beneficio490WC WHERE Nombre490WC = @Nombre AND CodigoBeneficio490WC <> @ID";
+
+                using (SqlCommand comando490WC = new SqlCommand(query490WC, cone490WC))
+                {
+                    comando490WC.Parameters.AddWithValue("@Nombre", nombreBeneficio490WC);
+                    comando490WC.Parameters.AddWithValue("@ID", idActual490WC);
+                    int cantidad = (int)comando490WC.ExecuteScalar();
+                    return cantidad > 0;
+                }
+            }
         }
 
 

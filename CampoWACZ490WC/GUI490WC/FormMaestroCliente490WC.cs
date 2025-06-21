@@ -21,6 +21,7 @@ namespace GUI490WC
             InitializeComponent();
             Mostrar490WC();
             ActivarModoModificar490WC(false);
+            BT_Activar490WC.Enabled = false;
         }
         public void Mostrar490WC()
         {
@@ -28,13 +29,16 @@ namespace GUI490WC
             GestorCliente490WC gestorCliente490WC = new GestorCliente490WC();
             dgvCliente490WC.RowTemplate.Height = 90;
             dgvCliente490WC.Columns["IMAGEN_ESTRELLA"].Width = 90;
+            int indiceRow490WC = 0;
             foreach (Cliente490WC clienteMostrar490WC in gestorCliente490WC.ObtenerTodosLosCliente490WC())
             {
-                if (clienteMostrar490WC.Activo490WC == true)
+                indiceRow490WC = dgvCliente490WC.Rows.Add(clienteMostrar490WC.DNI490WC, clienteMostrar490WC.Nombre490WC, clienteMostrar490WC.Apellido490WC, clienteMostrar490WC.EstrellasCliente490WC, null);
+                if (clienteMostrar490WC.Activo490WC == false && dgvCliente490WC.Rows.Count > 0)
                 {
-                    dgvCliente490WC.Rows.Add(clienteMostrar490WC.DNI490WC, clienteMostrar490WC.Nombre490WC, clienteMostrar490WC.Apellido490WC, clienteMostrar490WC.EstrellasCliente490WC, null);
+                    dgvCliente490WC.Rows[indiceRow490WC].DefaultCellStyle.BackColor = Color.LightCoral;
                 }
             }
+           
         }
         public void LimpiarCampos490WC()
         {
@@ -370,6 +374,27 @@ namespace GUI490WC
             {
                 MessageBox.Show("Debes seleccionar un email para eliminarlo");
             }
+        }
+
+        private void dgvCliente490WC_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            GestorCliente490WC gestorCliente490WC = new GestorCliente490WC();
+            Cliente490WC clienteSeleccionado490WC = gestorCliente490WC.BuscarClientePorDNI490WC(dgvCliente490WC.SelectedRows[0].Cells["DNI_CLIENTE"].Value.ToString());
+            if (clienteSeleccionado490WC.Activo490WC == false)
+            {
+                BT_Activar490WC.Enabled = true;
+            }
+            else
+            {
+                BT_Activar490WC.Enabled=false;
+            }
+        }
+
+        private void BT_Activar490WC_Click(object sender, EventArgs e)
+        {
+            GestorCliente490WC gestorCliente490WC = new GestorCliente490WC();
+            gestorCliente490WC.ActivarCliente490WC(dgvCliente490WC.SelectedRows[0].Cells["DNI_CLIENTE"].Value.ToString());
+            Mostrar490WC();
         }
     }
 }

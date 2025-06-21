@@ -24,6 +24,13 @@ namespace BLL490WC
             ClienteDAL490WC clienteDAL490WC = new ClienteDAL490WC();
             clienteDAL490WC.Baja490WC(dni);
         }
+
+        public void ActivarCliente490WC(string DNI490WC)
+        {
+            ClienteDAL490WC clienteDAL490WC = new ClienteDAL490WC();
+            clienteDAL490WC.ActivarCliente490WC(DNI490WC);
+        }
+
         public void Modificar490WC(Cliente490WC clienteModificado490WC)
         {
             ClienteDAL490WC clienteDAL490WC = new ClienteDAL490WC();

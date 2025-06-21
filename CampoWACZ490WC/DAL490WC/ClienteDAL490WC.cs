@@ -49,6 +49,22 @@ namespace DAL490WC
             }
         }
 
+        public void ActivarCliente490WC(string DNI490WC)
+        {
+            using (SqlConnection cone490WC = GestorConexion490WC.GestorCone490WC.DevolverConexion490WC())
+            {
+                cone490WC.Open();
+
+                string query490WC = "UPDATE Cliente490WC SET Activo490WC = @Activo490WC WHERE DNI490WC = @DNI490WC";
+                using (SqlCommand comando490WC = new SqlCommand(query490WC, cone490WC))
+                {
+                    comando490WC.Parameters.AddWithValue("@DNI490WC", DNI490WC);
+                    comando490WC.Parameters.AddWithValue("@Activo490WC", 1);
+                    comando490WC.ExecuteNonQuery();
+                }
+            }
+        }
+
         public void Modificar490WC(Cliente490WC ClienteModificado490WC)
         {
             using(SqlConnection cone490WC = GestorConexion490WC.GestorCone490WC.DevolverConexion490WC())

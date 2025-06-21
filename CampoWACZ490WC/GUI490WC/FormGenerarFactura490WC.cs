@@ -62,8 +62,19 @@ namespace GUI490WC
             clienteCobrar490WC = gestorCliente490WC.BuscarClientePorDNI490WC(TB_DNI490WC.Text);
             if (clienteCobrar490WC != null)
             {
+                if (clienteCobrar490WC.Activo490WC == true)
+                {
                 CargarCliente490WC(clienteCobrar490WC);
                 TB_DNI490WC.Clear();
+
+                }
+                else
+                {
+                    MessageBox.Show("El cliente buscado se encuentra desactivado!!!");
+                    TBINFOCLIENTE490WC.Text = $"Cliente no encontrado. Verifique el DNI ingresado.";
+                    CargarCliente490WC(null);
+                    TB_DNI490WC.Clear();
+                }
             }
             else
             {
@@ -81,7 +92,7 @@ namespace GUI490WC
         private void BT_COBRARFACTURA490WC_Click(object sender, EventArgs e)
         {
 
-            if (clienteCobrar490WC != null || boletoCobrar490WC != null)
+            if (clienteCobrar490WC != null && boletoCobrar490WC != null)
             {
                 GestorBoleto490WC gestorBoleto490WC = new GestorBoleto490WC();
                 foreach (Boleto490WC bole490WC in gestorBoleto490WC.ObtenerBoletosPorCliente490WC(clienteCobrar490WC))

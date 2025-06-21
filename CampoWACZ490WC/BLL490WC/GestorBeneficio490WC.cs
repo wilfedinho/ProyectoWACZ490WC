@@ -17,10 +17,10 @@ namespace BLL490WC
             beneficioDAL490WC.Alta490WC(BeneficioAlta490WC);
         }
 
-        public void Baja490WC(int ID490WC)
+        public bool Baja490WC(int ID490WC)
         {
             BeneficioDAL490WC beneficioDAL490WC = new BeneficioDAL490WC();
-            beneficioDAL490WC.Baja490WC(ID490WC);
+             return beneficioDAL490WC.Baja490WC(ID490WC);
         }
 
         public void Modificacion490WC(Beneficio490WC BeneficioModificado490WC)
@@ -51,6 +51,19 @@ namespace BLL490WC
             BeneficioDAL490WC gestorBeneficio490WC = new BeneficioDAL490WC();
             gestorBeneficio490WC.EliminarBeneficioDeCliente490WC(DNICliente490WC, CodigoBeneficio490WC);
         }
+
+        public bool ExisteNombreBeneficioAlta490WC(string nombreBeneficio490WC)
+        {
+            BeneficioDAL490WC gestorBeneficio490WC = new BeneficioDAL490WC();
+            return gestorBeneficio490WC.ExisteNombreBeneficioAlta490WC(nombreBeneficio490WC);
+        }
+
+        public bool ExisteNombreBeneficioModificar490WC(string nombreBeneficio490WC, int idActual490WC)
+        {
+            BeneficioDAL490WC gestorBeneficio490WC = new BeneficioDAL490WC();
+            return gestorBeneficio490WC.ExisteNombreBeneficioModificar490WC(nombreBeneficio490WC, idActual490WC);
+        }
+
 
         public Beneficio490WC ObtenerBeneficioPorCodigo490WC(int CodigoBeneficio490WC)
         {

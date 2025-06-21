@@ -185,6 +185,9 @@ namespace GUI490WC
             ClienteCargado490WC = gestorCliente490WC.BuscarClientePorDNI490WC(DNICliente490WC);
             if (ClienteCargado490WC != null)
             {
+                if (ClienteCargado490WC.Activo490WC == true)
+                {
+
                 CargarCliente490WC(ClienteCargado490WC);
                 if (ClienteCargado490WC.BeneficiosCliente490WC.Count > 0)
                 {
@@ -196,6 +199,17 @@ namespace GUI490WC
                 TB_DNI490WC.Clear();
                 HabilitarBeneficio490WC();
                 LlenarInfoBoleto490WC();
+                }
+                else
+                {
+                    MessageBox.Show("El cliente buscado se encuentra desactivado!!!");
+                    ClienteCargado490WC = null;
+                    CargarCliente490WC(null);
+                    CB_BENEFICIOSCLIENTE490WC.Items.Clear();
+                    TB_DNI490WC.Clear();
+                    HabilitarBeneficio490WC();
+                    LlenarInfoBoleto490WC();
+                }
             }
             else
             {

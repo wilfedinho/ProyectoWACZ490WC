@@ -29,6 +29,7 @@ namespace GUI490WC
         }
         public void Mostrar490WC()
         {
+            dgvBeneficio490WC.Rows.Clear();
             GestorBeneficio490WC gestorBeneficio490WC = new GestorBeneficio490WC();
             dgvBeneficio490WC.RowTemplate.Height = 80;
             dgvBeneficio490WC.Columns["ColumnImagenEstrella"].Width = 90;
@@ -91,6 +92,9 @@ namespace GUI490WC
             Cliente490WC clienteCargar490WC = gestorCliente490WC.BuscarClientePorDNI490WC(TB_DNI490WC.Text);
             if (clienteCargar490WC != null)
             {
+                if (clienteCargar490WC.Activo490WC == true)
+                {
+
                 if (clienteCargar490WC.Nombre490WC == TB_NOMBRE490WC.Text && clienteCargar490WC.Apellido490WC == TB_APELLIDO490WC.Text)
                 {
                     ClienteCargado490WC = clienteCargar490WC;
@@ -100,6 +104,14 @@ namespace GUI490WC
                 else
                 {
                     MessageBox.Show("Los datos del cliente no coinciden. Por favor, verifique el DNI, Nombre y Apellido.");
+                    LimpiarCampos490WC();
+                    ClienteCargado490WC = null;
+                    CargarCliente490WC(null);
+                }
+                }
+                else
+                {
+                    MessageBox.Show("El cliente buscado se encuentra desactivado!!!");
                     LimpiarCampos490WC();
                     ClienteCargado490WC = null;
                     CargarCliente490WC(null);
