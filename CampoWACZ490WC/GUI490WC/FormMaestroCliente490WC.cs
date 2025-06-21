@@ -30,15 +30,16 @@ namespace GUI490WC
             dgvCliente490WC.Columns["IMAGEN_ESTRELLA"].Width = 90;
             foreach (Cliente490WC clienteMostrar490WC in gestorCliente490WC.ObtenerTodosLosCliente490WC())
             {
-                if ()
+                if (clienteMostrar490WC.Activo490WC == true)
                 {
-
+                    dgvCliente490WC.Rows.Add(clienteMostrar490WC.DNI490WC, clienteMostrar490WC.Nombre490WC, clienteMostrar490WC.Apellido490WC, clienteMostrar490WC.EstrellasCliente490WC, null);
                 }
-                dgvCliente490WC.Rows.Add(clienteMostrar490WC.DNI490WC, clienteMostrar490WC.Nombre490WC, clienteMostrar490WC.Apellido490WC, clienteMostrar490WC.EstrellasCliente490WC, null);
             }
         }
         public void LimpiarCampos490WC()
         {
+            listboxCelularesCliente490WC.Items.Clear();
+            listboxEmailsCliente490WC.Items.Clear();
             foreach (Control cl in this.Controls)
             {
                 if (cl is TextBox tb)
@@ -62,10 +63,18 @@ namespace GUI490WC
                 TB_NOMBRE490WC.Text = clienteModificar490WC.Nombre490WC;
                 TB_APELLIDO490WC.Text = clienteModificar490WC.Apellido490WC;
                 TB_DNI490WC.Text = clienteModificar490WC.DNI490WC;
-            
-            
+                TB_DIRECCION490WC.Text = Cifrador490WC.GestorCifrador490WC.DesencriptarReversible490WC(clienteModificar490WC.Direccion490WC);
+
                 TB_ESTRELLASCLIENTE490WC.Text = clienteModificar490WC.EstrellasCliente490WC.ToString();
                 TB_DNI490WC.Enabled = false;
+                foreach (string celular490WC in clienteModificar490WC.Celulares490WC)
+                {
+                    listboxCelularesCliente490WC.Items.Add(celular490WC);
+                }
+                foreach (string email490WC in clienteModificar490WC.Emails490WC)
+                {
+                    listboxEmailsCliente490WC.Items.Add(email490WC);
+                }
             }
             else
             {
@@ -86,65 +95,43 @@ namespace GUI490WC
             string nombre490WC = TB_NOMBRE490WC.Text;
             string apellido490WC = TB_APELLIDO490WC.Text;
             string dni490WC = TB_DNI490WC.Text;
-            string datosTarjeta490WC = "";
-            if (RB_CREDITO490WC.Checked)
-            {
-                datosTarjeta490WC = $"{RB_CREDITO490WC.Text},{TB_EMAIL490WC.Text},{TB_TITULAR490WC.Text},{TB_APELLIDOTITULAR490WC.Text},{TB_FECHAEMISION490WC.Text},{TB_CELULAR490WC.Text},{TB_CODIGOSEGURIDAD490WC.Text}";
-            }
-            else
-            {
-                datosTarjeta490WC = $"{RB_DEBITO490WC.Text},{TB_EMAIL490WC.Text},{TB_TITULAR490WC.Text},{TB_APELLIDOTITULAR490WC.Text},{TB_FECHAEMISION490WC.Text},{TB_CELULAR490WC.Text},{TB_CODIGOSEGURIDAD490WC.Text}";
-            }
+            string direccion490WC = TB_DIRECCION490WC.Text;
 
-
-            if (int.TryParse(TB_ESTRELLASCLIENTE490WC.Text, out int estrellasCliente490WC))
+            if (!string.IsNullOrEmpty(direccion490WC))
             {
 
-                if (gestorCliente490WC.BuscarClientePorDNI490WC(TB_DNI490WC.Text) == null)
+                if (int.TryParse(TB_ESTRELLASCLIENTE490WC.Text, out int estrellasCliente490WC))
                 {
-                    if (!string.IsNullOrEmpty(nombre490WC))
+                    if (gestorCliente490WC.BuscarClientePorDNI490WC(TB_DNI490WC.Text) == null)
                     {
-                        if (!string.IsNullOrEmpty(apellido490WC))
+                        if (!string.IsNullOrEmpty(nombre490WC))
                         {
-                            if (gestorCliente490WC.VerificarFormatoDNI490WC(dni490WC))
+                            if (!string.IsNullOrEmpty(apellido490WC))
                             {
-                                if (gestorCliente490WC.VerificarFormatoNumeroTarjeta490WC(TB_EMAIL490WC.Text))
+                                if (gestorCliente490WC.VerificarFormatoDNI490WC(dni490WC))
                                 {
-                                    if (!string.IsNullOrEmpty(TB_TITULAR490WC.Text))
+                                    if (!string.IsNullOrEmpty(TB_DIRECCION490WC.Text))
                                     {
-                                        if (!string.IsNullOrEmpty(TB_APELLIDOTITULAR490WC.Text))
+                                        List<string> celulares = listboxCelularesCliente490WC.Items.Cast<string>().ToList();
+                                        List<string> emails = listboxEmailsCliente490WC.Items.Cast<string>().ToList();
+                                        if (celulares.Count > 0)
                                         {
-                                            if (gestorCliente490WC.VerificarFormatoFechaTarjeta490WC(TB_FECHAEMISION490WC.Text))
+                                            if (emails.Count > 0)
                                             {
-                                                if (gestorCliente490WC.VerificarFormatoFechaTarjeta490WC(TB_CELULAR490WC.Text))
-                                                {
-                                                    if (gestorCliente490WC.VerificarFormatoCVVTarjeta490WC(TB_CODIGOSEGURIDAD490WC.Text))
-                                                    {
-                                                        //Cliente490WC clienteAlta490WC = new Cliente490WC(dni490WC, nombre490WC, apellido490WC, , estrellasCliente490WC);
-                                                        //gestorCliente490WC.Alta490WC(clienteAlta490WC);
-                                                        LimpiarCampos490WC();
-                                                    }
-                                                    else
-                                                    {
-                                                        MessageBox.Show("Ingrese un codigo de seguridad valido!!");
-                                                        LimpiarCampos490WC();
-                                                    }
-                                                }
-                                                else
-                                                {
-                                                    MessageBox.Show("Ingrese una fecha de vencimiento valida!!");
-                                                    LimpiarCampos490WC();
-                                                }
+                                                Cliente490WC clienteAlta490WC = new Cliente490WC(dni490WC, nombre490WC, apellido490WC, estrellasCliente490WC, emails, celulares,Cifrador490WC.GestorCifrador490WC.EncriptarReversible490WC(direccion490WC), true);
+                                                gestorCliente490WC.Alta490WC(clienteAlta490WC);
+                                                Mostrar490WC();
+                                                LimpiarCampos490WC();
                                             }
                                             else
                                             {
-                                                MessageBox.Show("Ingrese una fecha de emision valida!!");
+                                                MessageBox.Show("El cliente debe tener registrado al menos un Email!!!");
                                                 LimpiarCampos490WC();
                                             }
                                         }
                                         else
                                         {
-                                            MessageBox.Show("Ingrese un apellido de titular valido!!");
+                                            MessageBox.Show("El cliente debe tener registrado al menos un Celular!!!");
                                             LimpiarCampos490WC();
                                         }
                                     }
@@ -156,41 +143,38 @@ namespace GUI490WC
                                 }
                                 else
                                 {
-                                    MessageBox.Show("Ingrese un numero de tarjeta valido!!");
+                                    MessageBox.Show("Ingrese un DNI valido");
                                     LimpiarCampos490WC();
                                 }
                             }
                             else
                             {
-                                MessageBox.Show("Ingrese un DNI valido");
+                                MessageBox.Show("Debe ingresar un apellido!!");
                                 LimpiarCampos490WC();
                             }
                         }
                         else
                         {
-                            MessageBox.Show("Debe ingresar un apellido!!");
+                            MessageBox.Show("Debe ingresar un nombre!!!");
                             LimpiarCampos490WC();
                         }
                     }
                     else
                     {
-                        MessageBox.Show("Debe ingresar un nombre!!!");
+                        MessageBox.Show("Ya existe un cliente con ese DNI!!");
                         LimpiarCampos490WC();
                     }
-
                 }
                 else
                 {
-                    MessageBox.Show("Ya existe un cliente con ese DNI!!");
+                    MessageBox.Show("Ingrese un numero de estrellas valido!!");
                     LimpiarCampos490WC();
                 }
             }
             else
             {
-                MessageBox.Show("Ingrese un numero de estrellas valido!!");
-                LimpiarCampos490WC();
+                MessageBox.Show("Debe ingresar una direccion");
             }
-
         }
 
         private void BT_BAJA_USUARIO490WC_Click(object sender, EventArgs e)
@@ -218,82 +202,49 @@ namespace GUI490WC
                 Cliente490WC clienteModificar = gestorCliente490WC.BuscarClientePorDNI490WC(dgvCliente490WC.SelectedRows[0].Cells["DNI_CLIENTE"].Value.ToString());
                 string nombre490WC = TB_NOMBRE490WC.Text;
                 string apellido490WC = TB_APELLIDO490WC.Text;
-                string datosTarjeta490WC = "";
-
-                if (RB_CREDITO490WC.Checked)
-                {
-                    datosTarjeta490WC = $"{RB_CREDITO490WC.Text},{TB_EMAIL490WC.Text},{TB_TITULAR490WC.Text},{TB_APELLIDOTITULAR490WC.Text},{TB_FECHAEMISION490WC.Text},{TB_CELULAR490WC.Text},{TB_CODIGOSEGURIDAD490WC.Text}";
-                }
-                else
-                {
-                    datosTarjeta490WC = $"{RB_DEBITO490WC.Text},{TB_EMAIL490WC.Text},{TB_TITULAR490WC.Text},{TB_APELLIDOTITULAR490WC.Text},{TB_FECHAEMISION490WC.Text},{TB_CELULAR490WC.Text},{TB_CODIGOSEGURIDAD490WC.Text}";
-                }
-
+                string direccion490WC = TB_DIRECCION490WC.Text;
                 if (int.TryParse(TB_ESTRELLASCLIENTE490WC.Text, out int estrellasCliente490WC))
                 {
                     if (!string.IsNullOrEmpty(nombre490WC))
                     {
                         if (!string.IsNullOrEmpty(apellido490WC))
                         {
-                            if (gestorCliente490WC.VerificarFormatoNumeroTarjeta490WC(TB_EMAIL490WC.Text))
+                            if (!string.IsNullOrEmpty(TB_DIRECCION490WC.Text))
                             {
-                                if (!string.IsNullOrEmpty(TB_TITULAR490WC.Text))
+                                List<string> celulares = listboxCelularesCliente490WC.Items.Cast<string>().ToList();
+                                List<string> emails = listboxEmailsCliente490WC.Items.Cast<string>().ToList();
+                                if (celulares.Count > 0)
                                 {
-                                    if (!string.IsNullOrEmpty(TB_APELLIDOTITULAR490WC.Text))
+                                    if (emails.Count > 0)
                                     {
-                                        if (gestorCliente490WC.VerificarFormatoFechaTarjeta490WC(TB_FECHAEMISION490WC.Text)) 
-                                        {
-                                            if (gestorCliente490WC.VerificarFormatoFechaTarjeta490WC(TB_CELULAR490WC.Text)) 
-                                            {
-                                                if (gestorCliente490WC.VerificarFormatoCVVTarjeta490WC(TB_CODIGOSEGURIDAD490WC.Text)) 
-                                                {
-                                                    clienteModificar.Nombre490WC = nombre490WC;
-                                                    clienteModificar.Apellido490WC = apellido490WC;
-                                                  
-                                                    clienteModificar.EstrellasCliente490WC = estrellasCliente490WC;
-                                                    gestorCliente490WC.Modificar490WC(clienteModificar);
-                                                    Mostrar490WC();
-                                                    LimpiarCampos490WC();
-                                                    ActivarModoModificar490WC(false);
-                                                }
-                                                else
-                                                {
-                                                    MessageBox.Show("Ingrese un codigo de seguridad valido!!");
-                                                    LimpiarCampos490WC();
-                                                    ActivarModoModificar490WC(false);
-                                                }
-                                            }
-                                            else
-                                            {
-                                                MessageBox.Show("Ingrese una fecha de vencimiento valida!!");
-                                                LimpiarCampos490WC();
-                                                ActivarModoModificar490WC(false);
-                                            }
-                                        }
-                                        else
-                                        {
-                                            MessageBox.Show("Ingrese una fecha de emision valida!!");
-                                            LimpiarCampos490WC();
-                                            ActivarModoModificar490WC(false);
-                                        }
+                                        clienteModificar.Nombre490WC = nombre490WC;
+                                        clienteModificar.Apellido490WC = apellido490WC;
+                                        clienteModificar.EstrellasCliente490WC = estrellasCliente490WC;
+                                        clienteModificar.Celulares490WC = celulares;
+                                        clienteModificar.Emails490WC = emails;
+                                        clienteModificar.Direccion490WC = Cifrador490WC.GestorCifrador490WC.EncriptarReversible490WC(direccion490WC);
+                                        gestorCliente490WC.Modificar490WC(clienteModificar);
+                                        Mostrar490WC();
+                                        LimpiarCampos490WC();
+                                        ActivarModoModificar490WC(false);
                                     }
                                     else
                                     {
-                                        MessageBox.Show("Ingrese un apellido de titular valido!!");
+                                        MessageBox.Show("El cliente debe tener registrado al menos un Email!!!");
                                         LimpiarCampos490WC();
                                         ActivarModoModificar490WC(false);
                                     }
                                 }
                                 else
                                 {
-                                    MessageBox.Show("Ingrese un nombre de titular valido!!");
+                                    MessageBox.Show("El cliente debe tener registrado al menos un Celular!!!");
                                     LimpiarCampos490WC();
                                     ActivarModoModificar490WC(false);
                                 }
                             }
                             else
                             {
-                                MessageBox.Show("Ingrese un numero de tarjeta valido!!");
+                                MessageBox.Show("Ingrese un nombre de titular valido!!");
                                 LimpiarCampos490WC();
                                 ActivarModoModificar490WC(false);
                             }
@@ -337,6 +288,88 @@ namespace GUI490WC
         {
             ActivarModoModificar490WC(false);
             this.Close();
+        }
+
+        private void BT_AGREGARCELULAR490WC_Click(object sender, EventArgs e)
+        {
+            string celular490WC = TB_CELULAR490WC.Text;
+            GestorCliente490WC gestorCliente490WC = new GestorCliente490WC();
+            if (!string.IsNullOrEmpty(celular490WC))
+            {
+                if (!listboxCelularesCliente490WC.Items.Contains(celular490WC))
+                {
+                    if (gestorCliente490WC.VerificarCelular490WC(celular490WC))
+                    {
+                        listboxCelularesCliente490WC.Items.Add(celular490WC);
+                        TB_CELULAR490WC.Clear();
+                    }
+                    else
+                    {
+                        MessageBox.Show("El celular ingresado no posee el formato 1122223333");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No puedes agregar un celular duplicado!!");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Debe ingresar un celular!!!");
+            }
+        }
+
+        private void BT_ELIMINARCELULAR490WC_Click(object sender, EventArgs e)
+        {
+            if (listboxCelularesCliente490WC.SelectedIndex != -1)
+            {
+                listboxCelularesCliente490WC.Items.RemoveAt(listboxCelularesCliente490WC.SelectedIndex);
+            }
+            else
+            {
+                MessageBox.Show("Debes seleccionar un celular para eliminarlo");
+            }
+        }
+
+        private void BT_AGREGAREMAIL490WC_Click(object sender, EventArgs e)
+        {
+            string email490WC = TB_EMAIL490WC.Text;
+            GestorCliente490WC gestorCliente490WC = new GestorCliente490WC();
+            if (!string.IsNullOrEmpty(email490WC))
+            {
+                if (!listboxEmailsCliente490WC.Items.Contains(email490WC))
+                {
+                    if (gestorCliente490WC.VerificarEmail490WC(email490WC))
+                    {
+                        listboxEmailsCliente490WC.Items.Add(email490WC);
+                        TB_EMAIL490WC.Clear();
+                    }
+                    else
+                    {
+                        MessageBox.Show("El email ingresado no posee el formato correcto");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No puedes agregar un email duplicado!!");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Debe ingresar un email!!!");
+            }
+        }
+
+        private void BT_ELIMINAREMAIL490WC_Click(object sender, EventArgs e)
+        {
+            if (listboxEmailsCliente490WC.SelectedIndex != 1)
+            {
+                listboxEmailsCliente490WC.Items.RemoveAt(listboxEmailsCliente490WC.SelectedIndex);
+            }
+            else
+            {
+                MessageBox.Show("Debes seleccionar un email para eliminarlo");
+            }
         }
     }
 }

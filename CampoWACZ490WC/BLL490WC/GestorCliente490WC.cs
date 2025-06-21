@@ -81,11 +81,39 @@ namespace BLL490WC
             }
         }
 
+        public bool VerificarCelular490WC(string Celular490WC)
+        {
+            Regex rgx490WC = new Regex("^[0-9]{10}$");
+            if (rgx490WC.IsMatch(Celular490WC))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool VerificarEmail490WC(string email490WC)
+        {
+            Regex rgx490WC = new Regex(@"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,}$");
+            if (rgx490WC.IsMatch(email490WC))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         public void ModificarEstrellasCliente490WC(string DNI490WC, int EstrellasReducir490WC)
         {
             ClienteDAL490WC clienteDAL490WC = new ClienteDAL490WC();
             clienteDAL490WC.ModificarEstrellasCliente490WC(DNI490WC, EstrellasReducir490WC);
         }
+
+       
 
         public Cliente490WC BuscarClientePorDNI490WC(string DNI490WC)
         {

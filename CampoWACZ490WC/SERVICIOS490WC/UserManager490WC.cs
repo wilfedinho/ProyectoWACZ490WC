@@ -129,7 +129,6 @@ namespace SERVICIOS490WC
             {
                 return false;
             }
-
         }
         public bool VerificarDNIDuplicado490WC(string DNI490WC)
         {

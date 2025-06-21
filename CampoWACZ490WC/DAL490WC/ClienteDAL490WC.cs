@@ -66,6 +66,8 @@ namespace DAL490WC
                     comando490WC.ExecuteNonQuery();
                 }
             }
+            ReemplazarCelularesCliente490WC(ClienteModificado490WC.DNI490WC,ClienteModificado490WC.Celulares490WC);
+            ReemplazarEmailsCliente490WC(ClienteModificado490WC.DNI490WC,ClienteModificado490WC.Emails490WC);
         }
 
         public void ModificarEstrellasCliente490WC(string DNI490WC, int EstrellasReducir490WC)
@@ -134,7 +136,7 @@ namespace DAL490WC
                     {
                         if (reader.Read())
                         {
-                            // Solo buscamos celulares y emails si el cliente existe
+                            
                             List<string> celularesCliente490WC = ObtenerCelularesPorCliente490WC(DNI490WC);
                             List<string> emailsCliente490WC = ObtenerEmailsPorCliente490WC(DNI490WC);
                             BeneficioDAL490WC gestorBeneficio490WC = new BeneficioDAL490WC();
@@ -156,7 +158,7 @@ namespace DAL490WC
                 }
             }
 
-            return null; // fuera del using por legibilidad
+            return null; 
         }
 
 
