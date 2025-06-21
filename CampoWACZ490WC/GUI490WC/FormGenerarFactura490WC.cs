@@ -64,9 +64,8 @@ namespace GUI490WC
             {
                 if (clienteCobrar490WC.Activo490WC == true)
                 {
-                CargarCliente490WC(clienteCobrar490WC);
-                TB_DNI490WC.Clear();
-
+                    CargarCliente490WC(clienteCobrar490WC);
+                    TB_DNI490WC.Clear();
                 }
                 else
                 {
@@ -87,14 +86,13 @@ namespace GUI490WC
             }
         }
 
-        
+
 
         private void BT_COBRARFACTURA490WC_Click(object sender, EventArgs e)
         {
-
-            if (clienteCobrar490WC != null && boletoCobrar490WC != null)
+            GestorBoleto490WC gestorBoleto490WC = new GestorBoleto490WC();
+            if (clienteCobrar490WC != null)
             {
-                GestorBoleto490WC gestorBoleto490WC = new GestorBoleto490WC();
                 foreach (Boleto490WC bole490WC in gestorBoleto490WC.ObtenerBoletosPorCliente490WC(clienteCobrar490WC))
                 {
                     if (bole490WC.IDBoleto490WC == dgvBoleto490WC.SelectedRows[0].Cells["ColumnaID"].Value.ToString())
@@ -103,27 +101,35 @@ namespace GUI490WC
 
                     }
                 }
-
-                FormCobrarFactura490WC formCobrarFactura490WC = new FormCobrarFactura490WC(clienteCobrar490WC, boletoCobrar490WC);
-                formCobrarFactura490WC.ShowDialog();
-                if (formCobrarFactura490WC.pagoAceptado490WC)
+                if (boletoCobrar490WC != null)
                 {
-                    gestorBoleto490WC.CobrarBoleto490WC(boletoCobrar490WC);
-                    MessageBox.Show("Factura Generada");
-                    CargarCliente490WC(null);
+                    FormCobrarFactura490WC formCobrarFactura490WC = new FormCobrarFactura490WC(clienteCobrar490WC, boletoCobrar490WC);
+                    formCobrarFactura490WC.ShowDialog();
+                    if (formCobrarFactura490WC.pagoAceptado490WC)
+                    {
+                        gestorBoleto490WC.CobrarBoleto490WC(boletoCobrar490WC);
+                        MessageBox.Show("Factura Generada");
+                        CargarCliente490WC(null);
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se pudo generar la factura");
+                        CargarCliente490WC(null);
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("No se pudo generar la factura");
+                    MessageBox.Show("Debe seleccionar un boleto para cobrar la factura.");
                     CargarCliente490WC(null);
                 }
 
             }
             else
             {
-                MessageBox.Show("Debe seleccionar un cliente y un boleto para cobrar la factura.");
+                MessageBox.Show("Debe buscar un cliente para cobrar la factura");
                 CargarCliente490WC(null);
             }
+
         }
 
         private void FormGenerarFactura490WC_FormClosed(object sender, FormClosedEventArgs e)
