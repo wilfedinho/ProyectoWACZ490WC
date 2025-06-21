@@ -92,7 +92,7 @@ namespace GUI490WC
                                 }
                                 else
                                 {
-                                    MessageBox.Show("No existe un boleto con ese ID!!");
+                                    MessageBox.Show("No existe un boleto con ese CodigoBoleto!!");
 
                                 }
 

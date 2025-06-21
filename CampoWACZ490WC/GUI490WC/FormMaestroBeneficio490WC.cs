@@ -77,7 +77,7 @@ namespace GUI490WC
         private void BT_ALTA490WC_Click(object sender, EventArgs e)
         {
             GestorBeneficio490WC gestorBeneficio490WC = new GestorBeneficio490WC();
-            if (!string.IsNullOrEmpty(TB_NOMBRE490WC.Text)) // agregar lógica para ver si no se repite nombre del beneficio
+            if (!string.IsNullOrEmpty(TB_NOMBRE490WC.Text)) 
             {
                 if (!gestorBeneficio490WC.ExisteNombreBeneficioAlta490WC(TB_NOMBRE490WC.Text))
                 {
@@ -148,6 +148,8 @@ namespace GUI490WC
 
 
         }
+
+
 
         private void BT_BAJA490WC_Click(object sender, EventArgs e)
         {

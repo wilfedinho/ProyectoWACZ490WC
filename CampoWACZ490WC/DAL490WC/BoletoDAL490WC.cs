@@ -351,6 +351,7 @@ namespace DAL490WC
                     {
                         if (reader.Read())
                         {
+                            string dni490WC = reader["Titular490WC"].ToString();
                             if (reader["FechaPartidaVUELTA490WC"] == DBNull.Value || reader["FechaLlegadaVUELTA490WC"] == DBNull.Value)
                             {
                                 return new BoletoIDA490WC(
@@ -363,7 +364,7 @@ namespace DAL490WC
                                     Convert.ToSingle(reader["PesoEquipajePermitido490WC"]),
                                     reader["ClaseBoleto490WC"].ToString(),
                                     Convert.ToSingle(reader["Precio490WC"]),
-                                    Titulares490WC.Find(x => x.DNI490WC == ID490WC),
+                                    Titulares490WC.Find(x => x.DNI490WC == dni490WC),
                                     reader["NumeroAsiento490WC"].ToString()
                                 );
                             }
@@ -381,7 +382,7 @@ namespace DAL490WC
                                     Convert.ToSingle(reader["PesoEquipajePermitido490WC"]),
                                     reader["ClaseBoleto490WC"].ToString(),
                                     Convert.ToSingle(reader["Precio490WC"]),
-                                    Titulares490WC.Find(x => x.DNI490WC == ID490WC),
+                                    Titulares490WC.Find(x => x.DNI490WC == dni490WC),
                                     reader["NumeroAsiento490WC"].ToString()
                                 );
                             }
