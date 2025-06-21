@@ -30,6 +30,10 @@ namespace GUI490WC
             dgvCliente490WC.Columns["IMAGEN_ESTRELLA"].Width = 90;
             foreach (Cliente490WC clienteMostrar490WC in gestorCliente490WC.ObtenerTodosLosCliente490WC())
             {
+                if ()
+                {
+
+                }
                 dgvCliente490WC.Rows.Add(clienteMostrar490WC.DNI490WC, clienteMostrar490WC.Nombre490WC, clienteMostrar490WC.Apellido490WC, clienteMostrar490WC.EstrellasCliente490WC, null);
             }
         }
@@ -58,21 +62,8 @@ namespace GUI490WC
                 TB_NOMBRE490WC.Text = clienteModificar490WC.Nombre490WC;
                 TB_APELLIDO490WC.Text = clienteModificar490WC.Apellido490WC;
                 TB_DNI490WC.Text = clienteModificar490WC.DNI490WC;
-                string[] datosTarjeta490WC = Cifrador490WC.GestorCifrador490WC.DesencriptarReversible490WC(clienteModificar490WC.DatosTarjeta490WC).Split(',');
-                if (datosTarjeta490WC[0] == "Credito")
-                {
-                    RB_CREDITO490WC.Checked = true;
-                }
-                else
-                {
-                    RB_CREDITO490WC.Checked = false;
-                }
-                TB_NUMEROTARJETA490WC.Text = datosTarjeta490WC[1];
-                TB_NOMBRETITULAR490WC.Text = datosTarjeta490WC[2];
-                TB_APELLIDOTITULAR490WC.Text = datosTarjeta490WC[3];
-                TB_FECHAEMISION490WC.Text = datosTarjeta490WC[4];
-                TB_FECHAVENCIMIENTO490WC.Text = datosTarjeta490WC[5];
-                TB_CODIGOSEGURIDAD490WC.Text = datosTarjeta490WC[6];
+            
+            
                 TB_ESTRELLASCLIENTE490WC.Text = clienteModificar490WC.EstrellasCliente490WC.ToString();
                 TB_DNI490WC.Enabled = false;
             }
@@ -98,11 +89,11 @@ namespace GUI490WC
             string datosTarjeta490WC = "";
             if (RB_CREDITO490WC.Checked)
             {
-                datosTarjeta490WC = $"{RB_CREDITO490WC.Text},{TB_NUMEROTARJETA490WC.Text},{TB_NOMBRETITULAR490WC.Text},{TB_APELLIDOTITULAR490WC.Text},{TB_FECHAEMISION490WC.Text},{TB_FECHAVENCIMIENTO490WC.Text},{TB_CODIGOSEGURIDAD490WC.Text}";
+                datosTarjeta490WC = $"{RB_CREDITO490WC.Text},{TB_EMAIL490WC.Text},{TB_TITULAR490WC.Text},{TB_APELLIDOTITULAR490WC.Text},{TB_FECHAEMISION490WC.Text},{TB_CELULAR490WC.Text},{TB_CODIGOSEGURIDAD490WC.Text}";
             }
             else
             {
-                datosTarjeta490WC = $"{RB_DEBITO490WC.Text},{TB_NUMEROTARJETA490WC.Text},{TB_NOMBRETITULAR490WC.Text},{TB_APELLIDOTITULAR490WC.Text},{TB_FECHAEMISION490WC.Text},{TB_FECHAVENCIMIENTO490WC.Text},{TB_CODIGOSEGURIDAD490WC.Text}";
+                datosTarjeta490WC = $"{RB_DEBITO490WC.Text},{TB_EMAIL490WC.Text},{TB_TITULAR490WC.Text},{TB_APELLIDOTITULAR490WC.Text},{TB_FECHAEMISION490WC.Text},{TB_CELULAR490WC.Text},{TB_CODIGOSEGURIDAD490WC.Text}";
             }
 
 
@@ -117,20 +108,20 @@ namespace GUI490WC
                         {
                             if (gestorCliente490WC.VerificarFormatoDNI490WC(dni490WC))
                             {
-                                if (gestorCliente490WC.VerificarFormatoNumeroTarjeta490WC(TB_NUMEROTARJETA490WC.Text))
+                                if (gestorCliente490WC.VerificarFormatoNumeroTarjeta490WC(TB_EMAIL490WC.Text))
                                 {
-                                    if (!string.IsNullOrEmpty(TB_NOMBRETITULAR490WC.Text))
+                                    if (!string.IsNullOrEmpty(TB_TITULAR490WC.Text))
                                     {
                                         if (!string.IsNullOrEmpty(TB_APELLIDOTITULAR490WC.Text))
                                         {
                                             if (gestorCliente490WC.VerificarFormatoFechaTarjeta490WC(TB_FECHAEMISION490WC.Text))
                                             {
-                                                if (gestorCliente490WC.VerificarFormatoFechaTarjeta490WC(TB_FECHAVENCIMIENTO490WC.Text))
+                                                if (gestorCliente490WC.VerificarFormatoFechaTarjeta490WC(TB_CELULAR490WC.Text))
                                                 {
                                                     if (gestorCliente490WC.VerificarFormatoCVVTarjeta490WC(TB_CODIGOSEGURIDAD490WC.Text))
                                                     {
-                                                        Cliente490WC clienteAlta490WC = new Cliente490WC(dni490WC, nombre490WC, apellido490WC, Cifrador490WC.GestorCifrador490WC.EncriptarReversible490WC(datosTarjeta490WC), estrellasCliente490WC);
-                                                        gestorCliente490WC.Alta490WC(clienteAlta490WC);
+                                                        //Cliente490WC clienteAlta490WC = new Cliente490WC(dni490WC, nombre490WC, apellido490WC, , estrellasCliente490WC);
+                                                        //gestorCliente490WC.Alta490WC(clienteAlta490WC);
                                                         LimpiarCampos490WC();
                                                     }
                                                     else
@@ -231,11 +222,11 @@ namespace GUI490WC
 
                 if (RB_CREDITO490WC.Checked)
                 {
-                    datosTarjeta490WC = $"{RB_CREDITO490WC.Text},{TB_NUMEROTARJETA490WC.Text},{TB_NOMBRETITULAR490WC.Text},{TB_APELLIDOTITULAR490WC.Text},{TB_FECHAEMISION490WC.Text},{TB_FECHAVENCIMIENTO490WC.Text},{TB_CODIGOSEGURIDAD490WC.Text}";
+                    datosTarjeta490WC = $"{RB_CREDITO490WC.Text},{TB_EMAIL490WC.Text},{TB_TITULAR490WC.Text},{TB_APELLIDOTITULAR490WC.Text},{TB_FECHAEMISION490WC.Text},{TB_CELULAR490WC.Text},{TB_CODIGOSEGURIDAD490WC.Text}";
                 }
                 else
                 {
-                    datosTarjeta490WC = $"{RB_DEBITO490WC.Text},{TB_NUMEROTARJETA490WC.Text},{TB_NOMBRETITULAR490WC.Text},{TB_APELLIDOTITULAR490WC.Text},{TB_FECHAEMISION490WC.Text},{TB_FECHAVENCIMIENTO490WC.Text},{TB_CODIGOSEGURIDAD490WC.Text}";
+                    datosTarjeta490WC = $"{RB_DEBITO490WC.Text},{TB_EMAIL490WC.Text},{TB_TITULAR490WC.Text},{TB_APELLIDOTITULAR490WC.Text},{TB_FECHAEMISION490WC.Text},{TB_CELULAR490WC.Text},{TB_CODIGOSEGURIDAD490WC.Text}";
                 }
 
                 if (int.TryParse(TB_ESTRELLASCLIENTE490WC.Text, out int estrellasCliente490WC))
@@ -244,21 +235,21 @@ namespace GUI490WC
                     {
                         if (!string.IsNullOrEmpty(apellido490WC))
                         {
-                            if (gestorCliente490WC.VerificarFormatoNumeroTarjeta490WC(TB_NUMEROTARJETA490WC.Text))
+                            if (gestorCliente490WC.VerificarFormatoNumeroTarjeta490WC(TB_EMAIL490WC.Text))
                             {
-                                if (!string.IsNullOrEmpty(TB_NOMBRETITULAR490WC.Text))
+                                if (!string.IsNullOrEmpty(TB_TITULAR490WC.Text))
                                 {
                                     if (!string.IsNullOrEmpty(TB_APELLIDOTITULAR490WC.Text))
                                     {
                                         if (gestorCliente490WC.VerificarFormatoFechaTarjeta490WC(TB_FECHAEMISION490WC.Text)) 
                                         {
-                                            if (gestorCliente490WC.VerificarFormatoFechaTarjeta490WC(TB_FECHAVENCIMIENTO490WC.Text)) 
+                                            if (gestorCliente490WC.VerificarFormatoFechaTarjeta490WC(TB_CELULAR490WC.Text)) 
                                             {
                                                 if (gestorCliente490WC.VerificarFormatoCVVTarjeta490WC(TB_CODIGOSEGURIDAD490WC.Text)) 
                                                 {
                                                     clienteModificar.Nombre490WC = nombre490WC;
                                                     clienteModificar.Apellido490WC = apellido490WC;
-                                                    clienteModificar.DatosTarjeta490WC = Cifrador490WC.GestorCifrador490WC.EncriptarReversible490WC(datosTarjeta490WC);
+                                                  
                                                     clienteModificar.EstrellasCliente490WC = estrellasCliente490WC;
                                                     gestorCliente490WC.Modificar490WC(clienteModificar);
                                                     Mostrar490WC();

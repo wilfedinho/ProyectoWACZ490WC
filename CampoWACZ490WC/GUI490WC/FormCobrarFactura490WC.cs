@@ -86,7 +86,7 @@ namespace GUI490WC
         }
 
         private void BT_REALIZARPAGO490WC_Click(object sender, EventArgs e)
-        {
+        {/*
             GestorCliente490WC gestorCliente490WC = new GestorCliente490WC();
             GestorPagos490WC gestorPagos490WC = new GestorPagos490WC();
             GestorFactura490WC gestorFactura490WC = new GestorFactura490WC();
@@ -185,6 +185,7 @@ namespace GUI490WC
                     MessageBox.Show("Ingrese un numero de tarjeta valido!!");
                 }
             }
+            */
         }
 
         private void FormCobrarFactura490WC_FormClosed(object sender, FormClosedEventArgs e)

@@ -70,8 +70,8 @@ namespace GUI490WC
                                             {
                                                 if (gestorCliente490WC.VerificarFormatoCVVTarjeta490WC(TB_CODIGOSEGURIDAD490WC.Text))
                                                 {
-                                                    Cliente490WC clienteAlta490WC = new Cliente490WC(dni490WC, nombre490WC, apellido490WC, Cifrador490WC.GestorCifrador490WC.EncriptarReversible490WC(datosTarjeta490WC), estrellasCliente490WC);
-                                                    gestorCliente490WC.Alta490WC(clienteAlta490WC);
+                                                    //Cliente490WC clienteAlta490WC = new Cliente490WC(dni490WC, nombre490WC, apellido490WC, Cifrador490WC.GestorCifrador490WC.EncriptarReversible490WC(datosTarjeta490WC), estrellasCliente490WC);
+                                                    //gestorCliente490WC.Alta490WC(clienteAlta490WC);
                                                     LimpiarCampos490WC();
                                                     DialogResult asignarBoleto = MessageBox.Show("Cliente registrado correctamente!!\n¿Desea asignar un boleto a este cliente?", "", MessageBoxButtons.YesNo);
                                                     if (asignarBoleto == DialogResult.Yes)
@@ -82,8 +82,8 @@ namespace GUI490WC
                                                         {
                                                             if (boletoAsignar490WC.Titular490WC == null)
                                                             {
-                                                                gestorBoleto490WC.AsignarBoletoCliente490WC(boletoAsignar490WC,clienteAlta490WC);
-                                                                MessageBox.Show($"Boleto cuyo ID es: {boletoAsignar490WC.IDBoleto490WC} fue asignado correctamente al cliente con el DNI: {clienteAlta490WC.DNI490WC}!!");
+                                                               // gestorBoleto490WC.AsignarBoletoCliente490WC(boletoAsignar490WC,clienteAlta490WC);
+                                                                //MessageBox.Show($"Boleto cuyo ID es: {boletoAsignar490WC.IDBoleto490WC} fue asignado correctamente al cliente con el DNI: {clienteAlta490WC.DNI490WC}!!");
                                                                 LimpiarCampos490WC();
                                                                 this.Close();
                                                             }

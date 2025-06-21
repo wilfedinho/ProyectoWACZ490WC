@@ -49,16 +49,16 @@
             this.label1 = new System.Windows.Forms.Label();
             this.RB_CREDITO490WC = new System.Windows.Forms.RadioButton();
             this.RB_DEBITO490WC = new System.Windows.Forms.RadioButton();
-            this.labelNumeroTarjeta490WC = new System.Windows.Forms.Label();
-            this.TB_NUMEROTARJETA490WC = new System.Windows.Forms.TextBox();
+            this.labelEmail490WC = new System.Windows.Forms.Label();
+            this.TB_EMAIL490WC = new System.Windows.Forms.TextBox();
             this.labelFechaEmision490WC = new System.Windows.Forms.Label();
             this.TB_FECHAEMISION490WC = new System.Windows.Forms.TextBox();
-            this.labelFechaVencimiento490WC = new System.Windows.Forms.Label();
-            this.TB_FECHAVENCIMIENTO490WC = new System.Windows.Forms.TextBox();
+            this.labelCelular490WC = new System.Windows.Forms.Label();
+            this.TB_CELULAR490WC = new System.Windows.Forms.TextBox();
             this.labelCodigoSeguridad490WC = new System.Windows.Forms.Label();
             this.TB_CODIGOSEGURIDAD490WC = new System.Windows.Forms.TextBox();
-            this.labelNombreTitular490WC = new System.Windows.Forms.Label();
-            this.TB_NOMBRETITULAR490WC = new System.Windows.Forms.TextBox();
+            this.labelDireccion490WC = new System.Windows.Forms.Label();
+            this.TB_TITULAR490WC = new System.Windows.Forms.TextBox();
             this.labelApellidoTitular490WC = new System.Windows.Forms.Label();
             this.TB_APELLIDOTITULAR490WC = new System.Windows.Forms.TextBox();
             this.TB_ESTRELLASCLIENTE490WC = new System.Windows.Forms.TextBox();
@@ -308,27 +308,27 @@
             this.RB_DEBITO490WC.Text = "Debito";
             this.RB_DEBITO490WC.UseVisualStyleBackColor = true;
             // 
-            // labelNumeroTarjeta490WC
+            // labelEmail490WC
             // 
-            this.labelNumeroTarjeta490WC.AutoSize = true;
-            this.labelNumeroTarjeta490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
-            this.labelNumeroTarjeta490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.labelNumeroTarjeta490WC.Location = new System.Drawing.Point(262, 340);
-            this.labelNumeroTarjeta490WC.Name = "labelNumeroTarjeta490WC";
-            this.labelNumeroTarjeta490WC.Size = new System.Drawing.Size(166, 20);
-            this.labelNumeroTarjeta490WC.TabIndex = 40;
-            this.labelNumeroTarjeta490WC.Text = "Numero de Tarjeta";
+            this.labelEmail490WC.AutoSize = true;
+            this.labelEmail490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.labelEmail490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
+            this.labelEmail490WC.Location = new System.Drawing.Point(262, 340);
+            this.labelEmail490WC.Name = "labelEmail490WC";
+            this.labelEmail490WC.Size = new System.Drawing.Size(56, 20);
+            this.labelEmail490WC.TabIndex = 40;
+            this.labelEmail490WC.Text = "Email";
             // 
-            // TB_NUMEROTARJETA490WC
+            // TB_EMAIL490WC
             // 
-            this.TB_NUMEROTARJETA490WC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(6)))), ((int)(((byte)(13)))));
-            this.TB_NUMEROTARJETA490WC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TB_NUMEROTARJETA490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
-            this.TB_NUMEROTARJETA490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.TB_NUMEROTARJETA490WC.Location = new System.Drawing.Point(266, 363);
-            this.TB_NUMEROTARJETA490WC.Name = "TB_NUMEROTARJETA490WC";
-            this.TB_NUMEROTARJETA490WC.Size = new System.Drawing.Size(219, 27);
-            this.TB_NUMEROTARJETA490WC.TabIndex = 39;
+            this.TB_EMAIL490WC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(6)))), ((int)(((byte)(13)))));
+            this.TB_EMAIL490WC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TB_EMAIL490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.TB_EMAIL490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
+            this.TB_EMAIL490WC.Location = new System.Drawing.Point(266, 363);
+            this.TB_EMAIL490WC.Name = "TB_EMAIL490WC";
+            this.TB_EMAIL490WC.Size = new System.Drawing.Size(219, 27);
+            this.TB_EMAIL490WC.TabIndex = 39;
             // 
             // labelFechaEmision490WC
             // 
@@ -352,27 +352,27 @@
             this.TB_FECHAEMISION490WC.Size = new System.Drawing.Size(219, 27);
             this.TB_FECHAEMISION490WC.TabIndex = 41;
             // 
-            // labelFechaVencimiento490WC
+            // labelCelular490WC
             // 
-            this.labelFechaVencimiento490WC.AutoSize = true;
-            this.labelFechaVencimiento490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
-            this.labelFechaVencimiento490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.labelFechaVencimiento490WC.Location = new System.Drawing.Point(262, 401);
-            this.labelFechaVencimiento490WC.Name = "labelFechaVencimiento490WC";
-            this.labelFechaVencimiento490WC.Size = new System.Drawing.Size(170, 20);
-            this.labelFechaVencimiento490WC.TabIndex = 44;
-            this.labelFechaVencimiento490WC.Text = "Fecha Vencimiento";
+            this.labelCelular490WC.AutoSize = true;
+            this.labelCelular490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.labelCelular490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
+            this.labelCelular490WC.Location = new System.Drawing.Point(262, 401);
+            this.labelCelular490WC.Name = "labelCelular490WC";
+            this.labelCelular490WC.Size = new System.Drawing.Size(68, 20);
+            this.labelCelular490WC.TabIndex = 44;
+            this.labelCelular490WC.Text = "Celular";
             // 
-            // TB_FECHAVENCIMIENTO490WC
+            // TB_CELULAR490WC
             // 
-            this.TB_FECHAVENCIMIENTO490WC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(6)))), ((int)(((byte)(13)))));
-            this.TB_FECHAVENCIMIENTO490WC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TB_FECHAVENCIMIENTO490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
-            this.TB_FECHAVENCIMIENTO490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.TB_FECHAVENCIMIENTO490WC.Location = new System.Drawing.Point(266, 424);
-            this.TB_FECHAVENCIMIENTO490WC.Name = "TB_FECHAVENCIMIENTO490WC";
-            this.TB_FECHAVENCIMIENTO490WC.Size = new System.Drawing.Size(219, 27);
-            this.TB_FECHAVENCIMIENTO490WC.TabIndex = 43;
+            this.TB_CELULAR490WC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(6)))), ((int)(((byte)(13)))));
+            this.TB_CELULAR490WC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TB_CELULAR490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.TB_CELULAR490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
+            this.TB_CELULAR490WC.Location = new System.Drawing.Point(266, 424);
+            this.TB_CELULAR490WC.Name = "TB_CELULAR490WC";
+            this.TB_CELULAR490WC.Size = new System.Drawing.Size(219, 27);
+            this.TB_CELULAR490WC.TabIndex = 43;
             // 
             // labelCodigoSeguridad490WC
             // 
@@ -396,27 +396,27 @@
             this.TB_CODIGOSEGURIDAD490WC.Size = new System.Drawing.Size(219, 27);
             this.TB_CODIGOSEGURIDAD490WC.TabIndex = 45;
             // 
-            // labelNombreTitular490WC
+            // labelDireccion490WC
             // 
-            this.labelNombreTitular490WC.AutoSize = true;
-            this.labelNombreTitular490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
-            this.labelNombreTitular490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.labelNombreTitular490WC.Location = new System.Drawing.Point(262, 460);
-            this.labelNombreTitular490WC.Name = "labelNombreTitular490WC";
-            this.labelNombreTitular490WC.Size = new System.Drawing.Size(137, 20);
-            this.labelNombreTitular490WC.TabIndex = 48;
-            this.labelNombreTitular490WC.Text = "Nombre Titular";
+            this.labelDireccion490WC.AutoSize = true;
+            this.labelDireccion490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.labelDireccion490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
+            this.labelDireccion490WC.Location = new System.Drawing.Point(262, 460);
+            this.labelDireccion490WC.Name = "labelDireccion490WC";
+            this.labelDireccion490WC.Size = new System.Drawing.Size(89, 20);
+            this.labelDireccion490WC.TabIndex = 48;
+            this.labelDireccion490WC.Text = "Direccion";
             // 
-            // TB_NOMBRETITULAR490WC
+            // TB_TITULAR490WC
             // 
-            this.TB_NOMBRETITULAR490WC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(6)))), ((int)(((byte)(13)))));
-            this.TB_NOMBRETITULAR490WC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TB_NOMBRETITULAR490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
-            this.TB_NOMBRETITULAR490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.TB_NOMBRETITULAR490WC.Location = new System.Drawing.Point(266, 483);
-            this.TB_NOMBRETITULAR490WC.Name = "TB_NOMBRETITULAR490WC";
-            this.TB_NOMBRETITULAR490WC.Size = new System.Drawing.Size(219, 27);
-            this.TB_NOMBRETITULAR490WC.TabIndex = 47;
+            this.TB_TITULAR490WC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(6)))), ((int)(((byte)(13)))));
+            this.TB_TITULAR490WC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TB_TITULAR490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.TB_TITULAR490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
+            this.TB_TITULAR490WC.Location = new System.Drawing.Point(266, 483);
+            this.TB_TITULAR490WC.Name = "TB_TITULAR490WC";
+            this.TB_TITULAR490WC.Size = new System.Drawing.Size(219, 27);
+            this.TB_TITULAR490WC.TabIndex = 47;
             // 
             // labelApellidoTitular490WC
             // 
@@ -472,16 +472,16 @@
             this.Controls.Add(this.TB_ESTRELLASCLIENTE490WC);
             this.Controls.Add(this.labelApellidoTitular490WC);
             this.Controls.Add(this.TB_APELLIDOTITULAR490WC);
-            this.Controls.Add(this.labelNombreTitular490WC);
-            this.Controls.Add(this.TB_NOMBRETITULAR490WC);
+            this.Controls.Add(this.labelDireccion490WC);
+            this.Controls.Add(this.TB_TITULAR490WC);
             this.Controls.Add(this.labelCodigoSeguridad490WC);
             this.Controls.Add(this.TB_CODIGOSEGURIDAD490WC);
-            this.Controls.Add(this.labelFechaVencimiento490WC);
-            this.Controls.Add(this.TB_FECHAVENCIMIENTO490WC);
+            this.Controls.Add(this.labelCelular490WC);
+            this.Controls.Add(this.TB_CELULAR490WC);
             this.Controls.Add(this.labelFechaEmision490WC);
             this.Controls.Add(this.TB_FECHAEMISION490WC);
-            this.Controls.Add(this.labelNumeroTarjeta490WC);
-            this.Controls.Add(this.TB_NUMEROTARJETA490WC);
+            this.Controls.Add(this.labelEmail490WC);
+            this.Controls.Add(this.TB_EMAIL490WC);
             this.Controls.Add(this.RB_DEBITO490WC);
             this.Controls.Add(this.RB_CREDITO490WC);
             this.Controls.Add(this.label1);
@@ -526,16 +526,16 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.RadioButton RB_CREDITO490WC;
         private System.Windows.Forms.RadioButton RB_DEBITO490WC;
-        private System.Windows.Forms.Label labelNumeroTarjeta490WC;
-        private System.Windows.Forms.TextBox TB_NUMEROTARJETA490WC;
+        private System.Windows.Forms.Label labelEmail490WC;
+        private System.Windows.Forms.TextBox TB_EMAIL490WC;
         private System.Windows.Forms.Label labelFechaEmision490WC;
         private System.Windows.Forms.TextBox TB_FECHAEMISION490WC;
-        private System.Windows.Forms.Label labelFechaVencimiento490WC;
-        private System.Windows.Forms.TextBox TB_FECHAVENCIMIENTO490WC;
+        private System.Windows.Forms.Label labelCelular490WC;
+        private System.Windows.Forms.TextBox TB_CELULAR490WC;
         private System.Windows.Forms.Label labelCodigoSeguridad490WC;
         private System.Windows.Forms.TextBox TB_CODIGOSEGURIDAD490WC;
-        private System.Windows.Forms.Label labelNombreTitular490WC;
-        private System.Windows.Forms.TextBox TB_NOMBRETITULAR490WC;
+        private System.Windows.Forms.Label labelDireccion490WC;
+        private System.Windows.Forms.TextBox TB_TITULAR490WC;
         private System.Windows.Forms.Label labelApellidoTitular490WC;
         private System.Windows.Forms.TextBox TB_APELLIDOTITULAR490WC;
         private System.Windows.Forms.DataGridViewTextBoxColumn DNI_CLIENTE;
