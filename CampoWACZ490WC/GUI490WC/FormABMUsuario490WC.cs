@@ -29,12 +29,13 @@ namespace GUI490WC
         public void RellenarCombobox490WC()
         {
             CB_ROL490WC.Items.Clear();
-            GestorPermiso490WC GestorPermiso490WC = new GestorPermiso490WC();
+          /*  GestorPermiso490WC GestorPermiso490WC = new GestorPermiso490WC();
             foreach (var rol490WC in GestorPermiso490WC.ObtenerRoles490WC())
             {
                 CB_ROL490WC.Items.Add(rol490WC.obtenerPermisoNombre490WC());
 
             }
+          */
         }
 
         public void MostrarUsuarioPorConsulta490WC()

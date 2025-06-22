@@ -423,7 +423,7 @@
             this.BT_IniciarSesion490WC.Name = "BT_IniciarSesion490WC";
             this.BT_IniciarSesion490WC.Size = new System.Drawing.Size(183, 44);
             this.BT_IniciarSesion490WC.TabIndex = 4;
-            this.BT_IniciarSesion490WC.Tag = "Acceder a Relogin";
+            this.BT_IniciarSesion490WC.Tag = "Acceder a Iniciar Sesion";
             this.BT_IniciarSesion490WC.Text = "Iniciar Sesion";
             this.BT_IniciarSesion490WC.UseVisualStyleBackColor = false;
             this.BT_IniciarSesion490WC.Click += new System.EventHandler(this.BT_IniciarSesion490WC_Click);

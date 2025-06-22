@@ -161,7 +161,7 @@ namespace DAL490WC
                     using (SqlCommand comando490WC = new SqlCommand(query490WC, conexion490WC))
                     {
                         comando490WC.Parameters.AddWithValue("@nombre", permisoNuevo490WC.obtenerPermisoNombre490WC());
-                        comando490WC.Parameters.AddWithValue("@tipo", permisoNuevo490WC.esCompuesto490WC() ? "Compuesto" : "Simple");
+                        comando490WC.Parameters.AddWithValue("@tipo", permisoNuevo490WC is PermisoCompuesto490WC ? "Compuesto" : "Simple");
                         comando490WC.Parameters.AddWithValue("@esRol", esRol490WC ? "True" : "False");
 
                         comando490WC.ExecuteNonQuery();

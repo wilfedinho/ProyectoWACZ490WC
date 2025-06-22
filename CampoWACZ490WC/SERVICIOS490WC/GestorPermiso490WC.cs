@@ -12,7 +12,9 @@ namespace SERVICIOS490WC
     {
         public void AsignarRolSesion490WC(string nuevoRol490WC)
         {
-            SesionManager490WC.GestorSesion490WC.Usuario490WC.Rol490WC = nuevoRol490WC;
+           // SesionManager490WC.GestorSesion490WC.Usuario490WC.Rol490WC = nuevoRol490WC;
+           // SesionManager490WC.GestorSesion490WC.permisosDeLaSesion490WC = ObtenerPermisoCompuesto490WC(SesionManager490WC.GestorSesion490WC.Usuario490WC.Rol490WC);
+            SesionManager490WC.GestorSesion490WC.Usuario490WC.Rol490WC = "AdminSistema";
             SesionManager490WC.GestorSesion490WC.permisosDeLaSesion490WC = ObtenerPermisoCompuesto490WC(SesionManager490WC.GestorSesion490WC.Usuario490WC.Rol490WC);
         }
 
@@ -133,7 +135,7 @@ namespace SERVICIOS490WC
 
             foreach (var permiso490WC in raiz490WC.PermisosIncluidos490WC())
             {
-                if (permiso490WC.obtenerPermisoNombre490WC() == nombrePermiso490WC || (permiso490WC.esCompuesto490WC() && BuscarPermiso490WC(nombrePermiso490WC, (PermisoCompuesto490WC)permiso490WC)))
+                if (permiso490WC.obtenerPermisoNombre490WC() == nombrePermiso490WC || (permiso490WC is PermisoCompuesto490WC && BuscarPermiso490WC(nombrePermiso490WC, (PermisoCompuesto490WC)permiso490WC)))
                 {
                     return true;
                 }

@@ -15,7 +15,7 @@ namespace GUI490WC
 {
     public partial class FormPermisos490WC : Form
     {
-        string adminRolNombre490WC = "AdminSistema";
+       // string adminRolNombre490WC = "AdminSistema";
 
         public FormPermisos490WC()
         {
@@ -25,23 +25,25 @@ namespace GUI490WC
         #region Carga del Formulario
         private void RecargarTodasLasVistas490WC()
         {
-            CB_Familias.SelectedIndex = -1;
+           /* CB_Familias.SelectedIndex = -1;
             CargarPermisos490WC();
             CargarArbol490WC();
             CargarFamilias490WC();
+           */
         }
         public void CargarPermisos490WC()
         {
-            listaPermisos490WC.Items.Clear();
+           /* listaPermisos490WC.Items.Clear();
             GestorPermiso490WC GestorPermiso490WC = new GestorPermiso490WC();
             var permisos490WC = GestorPermiso490WC.ObtenerTodoSinRoles490WC();
             listaPermisos490WC.Items.AddRange(permisos490WC.Select(p => p.obtenerPermisoNombre490WC()).Where(nombre => nombre != adminRolNombre490WC).ToArray());
+           */
         }
 
 
         public void CargarArbol490WC()
         {
-            vistaPermisosArbol.Nodes.Clear();
+           /* vistaPermisosArbol.Nodes.Clear();
             GestorPermiso490WC GestorPermiso490WC = new GestorPermiso490WC();
             var permisosRaiz490WC = GestorPermiso490WC.ObtenerPermisosArbol490WC();
             foreach (var permiso490WC in permisosRaiz490WC)
@@ -53,11 +55,12 @@ namespace GUI490WC
                     CargarArbolRecursivo490WC((PermisoCompuesto490WC)permisoCompuesto490WC, nodo490WC);
                 }
             }
+           */
         }
 
         public void CargarArbolRecursivo490WC(PermisoCompuesto490WC permisoActual490WC, TreeNode nodoPadre490WC)
         {
-            foreach (var permiso490WC in permisoActual490WC.PermisosIncluidos490WC())
+           /* foreach (var permiso490WC in permisoActual490WC.PermisosIncluidos490WC())
             {
                 var nodoInterno490WC = new TreeNode(permiso490WC.obtenerPermisoNombre490WC());
                 nodoPadre490WC.Nodes.Add(nodoInterno490WC);
@@ -66,13 +69,15 @@ namespace GUI490WC
                     CargarArbolRecursivo490WC(permisoCompuesto490WC, nodoInterno490WC);
                 }
             }
+           */
         }
         public void CargarFamilias490WC()
         {
-            CB_Familias.Items.Clear();
+            /*CB_Familias.Items.Clear();
             GestorPermiso490WC GestorPermiso490WC = new GestorPermiso490WC();
             var permisosCompuestos490WC = GestorPermiso490WC.ObtenerPermisosCompuestos490WC();
             CB_Familias.Items.AddRange(permisosCompuestos490WC.Select(p => p.obtenerPermisoNombre490WC()).Where(nombre => nombre != "AdminSistema").ToArray());
+            */
         }
 
 
@@ -83,7 +88,7 @@ namespace GUI490WC
 
         private void CB_Familias_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (CB_Familias.SelectedItem != null)
+            /*if (CB_Familias.SelectedItem != null)
             {
                 if (CB_Familias.SelectedItem.ToString() == SesionManager490WC.GestorSesion490WC.Usuario490WC.Rol490WC)
                 {
@@ -104,10 +109,11 @@ namespace GUI490WC
                     
                 }
             }
+            */
         }
         public void ChequearPermisosEnLista490WC(PermisoCompuesto490WC Raiz490WC)
         {
-            foreach (Permiso490WC p490WC in Raiz490WC.PermisosIncluidos490WC())
+          /*  foreach (Permiso490WC p490WC in Raiz490WC.PermisosIncluidos490WC())
             {
                 int indice490WC = listaPermisos490WC.Items.IndexOf(p490WC.obtenerPermisoNombre490WC());
                 if (indice490WC != -1)
@@ -119,16 +125,17 @@ namespace GUI490WC
                     ChequearPermisosEnLista490WC(permisoCompuesto490WC);
                 }
             }
-
+          */
         }
 
 
         public void LimpiarTodasSeleccionesPermisos490WC()
         {
-            for (int i490WC = 0; i490WC < listaPermisos490WC.Items.Count; i490WC++)
+           /* for (int i490WC = 0; i490WC < listaPermisos490WC.Items.Count; i490WC++)
             {
                 listaPermisos490WC.SetItemChecked(i490WC, false);
             }
+           */
         }
         #endregion
 
@@ -137,7 +144,7 @@ namespace GUI490WC
 
         public void CrearPermisoCompuesto490WC(string nombrePermiso490WC, bool esRol490WC)
         {
-            List<string> items490WC = GenerarLista490WC();
+            /*List<string> items490WC = GenerarLista490WC();
             GestorPermiso490WC GestorPermiso490WC = new GestorPermiso490WC();
             if (GestorPermiso490WC.AgregarPermisoCompuesto490WC(nombrePermiso490WC, items490WC, true) == false)
             {
@@ -147,22 +154,24 @@ namespace GUI490WC
             {
                 MessageBox.Show("El Permiso ha sido creado con exito!!!");
             }
+            */
         }
 
 
         public List<string> GenerarLista490WC()
         {
-            List<string> items490WC = new List<string>();
-            foreach (var CI490WC in listaPermisos490WC.CheckedItems)
-            {
-                items490WC.Add(CI490WC.ToString());
-            }
-            return items490WC;
-
+            /* List<string> items490WC = new List<string>();
+             foreach (var CI490WC in listaPermisos490WC.CheckedItems)
+             {
+                 items490WC.Add(CI490WC.ToString());
+             }
+             return items490WC;
+            */
+            return null;
         }
         private void BT_ElimiarSeleccionado_Click(object sender, EventArgs e)
         {
-            if (CB_Familias.SelectedItem != null)
+           /* if (CB_Familias.SelectedItem != null)
             {
 
             if (CB_Familias.SelectedItem.ToString() == adminRolNombre490WC)
@@ -192,6 +201,7 @@ namespace GUI490WC
             {
                 MessageBox.Show($"Debe elegir antes una familia de permisos para borrarla o no!!");
             }
+           */
         }
 
 
@@ -199,7 +209,7 @@ namespace GUI490WC
 
         private void BT_ModificarNombre_Click(object sender, EventArgs e)
         {
-            if (CB_Familias.SelectedItem != null)
+           /* if (CB_Familias.SelectedItem != null)
             {
 
             if (CB_Familias.SelectedItem.ToString() == adminRolNombre490WC)
@@ -221,12 +231,12 @@ namespace GUI490WC
             {
                 MessageBox.Show($"Debe elegir antes una familia de permisos para modificar su nombre!!");
             }
-
+           */
         }
 
         private void BT_CrearRol_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(TB_NuevoNombre.Text))
+           /* if (string.IsNullOrEmpty(TB_NuevoNombre.Text))
             {
                 MessageBox.Show("El nombre del nuevo rol no puede estar vacío.");
             }
@@ -236,11 +246,12 @@ namespace GUI490WC
                 RecargarTodasLasVistas490WC();
             }
             TB_NuevoNombre.Clear();
+           */
         }
 
         private void BT_CrearGrupoDePermisos_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(TB_NuevoNombre.Text))
+           /* if (string.IsNullOrEmpty(TB_NuevoNombre.Text))
             {
                 MessageBox.Show("El nombre de la nueva familia de permisos no puede estar vacío.");
             }
@@ -249,11 +260,12 @@ namespace GUI490WC
                 CrearPermisoCompuesto490WC(TB_NuevoNombre.Text, false);
                 RecargarTodasLasVistas490WC();
             }
+           */
         }
 
         private void BT_GuardarCambios_Click(object sender, EventArgs e)
         {
-            if (CB_Familias.Text == "")
+           /* if (CB_Familias.Text == "")
             {
 
             }
@@ -275,6 +287,7 @@ namespace GUI490WC
                 }
 
             }
+           */
         }
 
     }

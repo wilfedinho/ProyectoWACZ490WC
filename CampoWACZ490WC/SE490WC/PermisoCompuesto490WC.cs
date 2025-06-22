@@ -24,11 +24,6 @@ namespace SE490WC
             this.permisos490WC.Remove(nPermiso490WC);
         }
 
-        public override bool esCompuesto490WC()
-        {
-            return true;
-        }
-
         public Permiso490WC BuscarPermiso490WC(Permiso490WC raiz490WC, Permiso490WC permiso490WC)
         {
             if (raiz490WC == permiso490WC)
@@ -37,7 +32,7 @@ namespace SE490WC
             }
             else
             {
-                if (raiz490WC.esCompuesto490WC())
+                if (raiz490WC is PermisoCompuesto490WC)
                 {
 
                     foreach (Permiso490WC permi490WC in (raiz490WC as PermisoCompuesto490WC).permisos490WC)
@@ -62,7 +57,7 @@ namespace SE490WC
             }
             else
             {
-                if (raiz490WC.esCompuesto490WC())
+                if (raiz490WC is PermisoCompuesto490WC)
                 {
                     foreach (Permiso490WC permi490WC in (raiz490WC as PermisoCompuesto490WC).permisos490WC)
                     {
