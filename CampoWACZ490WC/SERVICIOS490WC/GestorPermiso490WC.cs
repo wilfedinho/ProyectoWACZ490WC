@@ -18,11 +18,18 @@ namespace SERVICIOS490WC
             SesionManager490WC.GestorSesion490WC.Usuario490WC.Rol490WC = "AdminSistema";
             //SesionManager490WC.GestorSesion490WC.permisosDeLaSesion490WC = ObtenerPermisoCompuesto490WC(SesionManager490WC.GestorSesion490WC.Usuario490WC.Rol490WC);
             List<PermisoCompuesto490WC> familias490WC = LeerFamiliasConEstructuraRecursiva490WC();
+            Permiso490WC permiso490WC = LeerPermisoCompuesto490WC("Sesion");
         }
         public List<PermisoCompuesto490WC> LeerFamiliasConEstructuraRecursiva490WC()
         {
             PermisoDAL490WC gestorPermiso490WC = new PermisoDAL490WC();
             return gestorPermiso490WC.LeerFamiliasConEstructuraRecursiva490WC();
+        }
+
+        public PermisoCompuesto490WC LeerPermisoCompuesto490WC(string nombreFamiliaRaiz490WC)
+        {
+            PermisoDAL490WC gestorPermiso490WC = new PermisoDAL490WC();
+            return gestorPermiso490WC.LeerPermisoCompuesto490WC(nombreFamiliaRaiz490WC);
         }
 
 

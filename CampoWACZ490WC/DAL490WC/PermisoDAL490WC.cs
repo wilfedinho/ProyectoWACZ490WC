@@ -161,68 +161,150 @@ namespace DAL490WC
            }
         */
 
-        public PermisoCompuesto490WC LeerPermisoCompuesto490WC(string PermisoLeer490WC)
+        public PermisoCompuesto490WC LeerPermisoCompuesto490WC(string nombreFamiliaRaiz490WC)
         {
-            PermisoCompuesto490WC PermisoLeidoGlobal490WC;
-            List<Permiso490WC> listaPermiso490WC = new List<Permiso490WC>();
-            List<Permiso490WC> permisosCompuestos490WC = new List<Permiso490WC>();
+            Dictionary<string, PermisoCompuesto490WC> familiasDiccionario = new Dictionary<string, PermisoCompuesto490WC>();
+            Dictionary<string, PermisoSimple490WC> permisosSimplesDiccionario = new Dictionary<string, PermisoSimple490WC>();
 
-            try
+            using (SqlConnection conexion = GestorConexion490WC.GestorCone490WC.DevolverConexion490WC())
             {
-                using (SqlConnection conexion490WC = GestorConexion490WC.GestorCone490WC.DevolverConexion490WC())
+                conexion.Open();
+
+                // 1. Cargar todos los permisos simples
+                string querySimples = "SELECT nombre490WC FROM PermisoSimple490WC";
+                using (SqlCommand cmd = new SqlCommand(querySimples, conexion))
+                using (SqlDataReader lector = cmd.ExecuteReader())
                 {
-                    conexion490WC.Open();
-                    string queryPermisos490WC = "SELECT nombrePermiso490WC, tipoPermiso490WC FROM Permiso490WC";
-                    using (SqlCommand comandoPermiso490WC = new SqlCommand(queryPermisos490WC, conexion490WC))
-                    using (SqlDataReader lectorPermiso490WC = comandoPermiso490WC.ExecuteReader())
+                    while (lector.Read())
                     {
-                        while (lectorPermiso490WC.Read())
-                        {
-                            string nombre = lectorPermiso490WC["nombrePermiso490WC"].ToString();
-                            string tipo = lectorPermiso490WC["tipoPermiso490WC"].ToString();
-
-                            if (tipo == "Compuesto")
-                            {
-                                PermisoCompuesto490WC compuesto = new PermisoCompuesto490WC(nombre);
-                                permisosCompuestos490WC.Add(compuesto);
-                                listaPermiso490WC.Add(compuesto);
-                            }
-                            else
-                            {
-                                PermisoSimple490WC simple = new PermisoSimple490WC(nombre);
-                                listaPermiso490WC.Add(simple);
-                            }
-                        }
+                        string nombre = lector["nombre490WC"].ToString();
+                        permisosSimplesDiccionario[nombre] = new PermisoSimple490WC(nombre);
                     }
-                    string queryRelaciones490WC = "SELECT permisoCompuestoNombre490WC, permisoIncluidoNombre490WC FROM RelacionPermiso490WC";
-                    using (SqlCommand comandoRelacion490WC = new SqlCommand(queryRelaciones490WC, conexion490WC))
-                    using (SqlDataReader lectorRelacion490WC = comandoRelacion490WC.ExecuteReader())
+                }
+
+                // 2. Cargar todas las familias
+                string queryFamilias = "SELECT nombre490WC FROM Familia490WC";
+                using (SqlCommand cmd = new SqlCommand(queryFamilias, conexion))
+                using (SqlDataReader lector = cmd.ExecuteReader())
+                {
+                    while (lector.Read())
                     {
-                        while (lectorRelacion490WC.Read())
+                        string nombre = lector["nombre490WC"].ToString();
+                        familiasDiccionario[nombre] = new PermisoCompuesto490WC(nombre);
+                    }
+                }
+
+                // 3. Cargar relaciones PermisoSimple - Familia
+                string queryRelPS = "SELECT nombreFamilia490WC, nombrePermisoSimple490WC FROM PermisoSimple_Familia490WC";
+                using (SqlCommand cmd = new SqlCommand(queryRelPS, conexion))
+                using (SqlDataReader lector = cmd.ExecuteReader())
+                {
+                    while (lector.Read())
+                    {
+                        string nombreFamilia = lector["nombreFamilia490WC"].ToString();
+                        string nombrePermiso = lector["nombrePermisoSimple490WC"].ToString();
+
+                        if (familiasDiccionario.TryGetValue(nombreFamilia, out var familia) &&
+                            permisosSimplesDiccionario.TryGetValue(nombrePermiso, out var permisoSimple))
                         {
-                            string compuesto = lectorRelacion490WC["permisoCompuestoNombre490WC"].ToString();
-                            string incluido = lectorRelacion490WC["permisoIncluidoNombre490WC"].ToString();
-
-                            PermisoCompuesto490WC compuestoLeido = (PermisoCompuesto490WC)permisosCompuestos490WC
-                                .Find(x => x.obtenerPermisoNombre490WC() == compuesto);
-                            Permiso490WC incluidoLeido = listaPermiso490WC
-                                .Find(x => x.obtenerPermisoNombre490WC() == incluido);
-
-                            compuestoLeido?.Agregar490WC(incluidoLeido);
+                            familia.Agregar490WC(permisoSimple);
                         }
                     }
                 }
 
-                PermisoLeidoGlobal490WC = (PermisoCompuesto490WC)permisosCompuestos490WC.Find(x => x.obtenerPermisoNombre490WC() == PermisoLeer490WC);
+                // 4. Cargar relaciones Familia - Familia
+                string queryRelFF = "SELECT NombreFamiliaIncluye490WC, NombreFamiliaIncluida490WC FROM Familia_Familia490WC";
+                using (SqlCommand cmd = new SqlCommand(queryRelFF, conexion))
+                using (SqlDataReader lector = cmd.ExecuteReader())
+                {
+                    while (lector.Read())
+                    {
+                        string nombrePadre = lector["NombreFamiliaIncluye490WC"].ToString();
+                        string nombreHija = lector["NombreFamiliaIncluida490WC"].ToString();
 
-                return PermisoLeidoGlobal490WC;
+                        if (familiasDiccionario.TryGetValue(nombrePadre, out var padre) &&
+                            familiasDiccionario.TryGetValue(nombreHija, out var hija))
+                        {
+                            padre.Agregar490WC(hija);
+                        }
+                    }
+                }
             }
-            catch
+
+            // 5. Retornar la familia solicitada (con jerarquía armada)
+            if (familiasDiccionario.TryGetValue(nombreFamiliaRaiz490WC, out var familiaRaiz))
             {
-                permisosCompuestos490WC.Clear();
-                return null;
+                return familiaRaiz;
             }
+
+            return null;
         }
+
+
+
+        /*   public PermisoCompuesto490WC LeerPermisoCompuesto490WC(string PermisoLeer490WC)
+           {
+               PermisoCompuesto490WC PermisoLeidoGlobal490WC;
+               List<Permiso490WC> listaPermiso490WC = new List<Permiso490WC>();
+               List<Permiso490WC> permisosCompuestos490WC = new List<Permiso490WC>();
+
+               try
+               {
+                   using (SqlConnection conexion490WC = GestorConexion490WC.GestorCone490WC.DevolverConexion490WC())
+                   {
+                       conexion490WC.Open();
+                       string queryPermisos490WC = "SELECT nombrePermiso490WC, tipoPermiso490WC FROM Permiso490WC";
+                       using (SqlCommand comandoPermiso490WC = new SqlCommand(queryPermisos490WC, conexion490WC))
+                       using (SqlDataReader lectorPermiso490WC = comandoPermiso490WC.ExecuteReader())
+                       {
+                           while (lectorPermiso490WC.Read())
+                           {
+                               string nombre = lectorPermiso490WC["nombrePermiso490WC"].ToString();
+                               string tipo = lectorPermiso490WC["tipoPermiso490WC"].ToString();
+
+                               if (tipo == "Compuesto")
+                               {
+                                   PermisoCompuesto490WC compuesto = new PermisoCompuesto490WC(nombre);
+                                   permisosCompuestos490WC.Add(compuesto);
+                                   listaPermiso490WC.Add(compuesto);
+                               }
+                               else
+                               {
+                                   PermisoSimple490WC simple = new PermisoSimple490WC(nombre);
+                                   listaPermiso490WC.Add(simple);
+                               }
+                           }
+                       }
+                       string queryRelaciones490WC = "SELECT permisoCompuestoNombre490WC, permisoIncluidoNombre490WC FROM RelacionPermiso490WC";
+                       using (SqlCommand comandoRelacion490WC = new SqlCommand(queryRelaciones490WC, conexion490WC))
+                       using (SqlDataReader lectorRelacion490WC = comandoRelacion490WC.ExecuteReader())
+                       {
+                           while (lectorRelacion490WC.Read())
+                           {
+                               string compuesto = lectorRelacion490WC["permisoCompuestoNombre490WC"].ToString();
+                               string incluido = lectorRelacion490WC["permisoIncluidoNombre490WC"].ToString();
+
+                               PermisoCompuesto490WC compuestoLeido = (PermisoCompuesto490WC)permisosCompuestos490WC
+                                   .Find(x => x.obtenerPermisoNombre490WC() == compuesto);
+                               Permiso490WC incluidoLeido = listaPermiso490WC
+                                   .Find(x => x.obtenerPermisoNombre490WC() == incluido);
+
+                               compuestoLeido?.Agregar490WC(incluidoLeido);
+                           }
+                       }
+                   }
+
+                   PermisoLeidoGlobal490WC = (PermisoCompuesto490WC)permisosCompuestos490WC.Find(x => x.obtenerPermisoNombre490WC() == PermisoLeer490WC);
+
+                   return PermisoLeidoGlobal490WC;
+               }
+               catch
+               {
+                   permisosCompuestos490WC.Clear();
+                   return null;
+               }
+           }
+        */
 
         public bool InsertarPermiso490WC(Permiso490WC permisoNuevo490WC, bool esRol490WC)
         {
