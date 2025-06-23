@@ -99,18 +99,19 @@ namespace DAL490WC
         }
 
 
-     
 
-        public PermisoCompuesto490WC LeerPermisoCompuesto490WC(string nombreFamiliaRaiz490WC)
+
+        public PermisoCompuesto490WC LeerPermisoCompuesto490WC(string nombreCompuesto490WC)
         {
             Dictionary<string, PermisoCompuesto490WC> familiasDiccionario = new Dictionary<string, PermisoCompuesto490WC>();
             Dictionary<string, PermisoSimple490WC> permisosSimplesDiccionario = new Dictionary<string, PermisoSimple490WC>();
+            PermisoCompuesto490WC perfilTemporal = null;
 
             using (SqlConnection conexion = GestorConexion490WC.GestorCone490WC.DevolverConexion490WC())
             {
                 conexion.Open();
 
-                
+                // 1. Cargar todos los permisos simples
                 string querySimples = "SELECT Nombre490WC FROM PermisoSimple490WC";
                 using (SqlCommand cmd = new SqlCommand(querySimples, conexion))
                 using (SqlDataReader lector = cmd.ExecuteReader())
@@ -122,7 +123,7 @@ namespace DAL490WC
                     }
                 }
 
-                
+                // 2. Cargar todas las familias
                 string queryFamilias = "SELECT Nombre490WC FROM Familia490WC";
                 using (SqlCommand cmd = new SqlCommand(queryFamilias, conexion))
                 using (SqlDataReader lector = cmd.ExecuteReader())
@@ -134,7 +135,7 @@ namespace DAL490WC
                     }
                 }
 
-                
+                // 3. Cargar relaciones PermisoSimple - Familia
                 string queryRelPS = "SELECT NombreFamilia490WC, NombrePermisoSimple490WC FROM PermisoSimple_Familia490WC";
                 using (SqlCommand cmd = new SqlCommand(queryRelPS, conexion))
                 using (SqlDataReader lector = cmd.ExecuteReader())
@@ -152,7 +153,7 @@ namespace DAL490WC
                     }
                 }
 
-                
+                // 4. Cargar relaciones Familia - Familia
                 string queryRelFF = "SELECT NombreFamiliaIncluye490WC, NombreFamiliaIncluida490WC FROM Familia_Familia490WC";
                 using (SqlCommand cmd = new SqlCommand(queryRelFF, conexion))
                 using (SqlDataReader lector = cmd.ExecuteReader())
@@ -169,10 +170,61 @@ namespace DAL490WC
                         }
                     }
                 }
+
+                // 5. Verificar si es un Perfil
+                string queryPerfil = "SELECT COUNT(*) FROM Perfil490WC WHERE Nombre490WC = @nombre";
+                using (SqlCommand cmd = new SqlCommand(queryPerfil, conexion))
+                {
+                    cmd.Parameters.AddWithValue("@nombre", nombreCompuesto490WC);
+                    int esPerfil = (int)cmd.ExecuteScalar();
+
+                    if (esPerfil > 0)
+                    {
+                        perfilTemporal = new PermisoCompuesto490WC(nombreCompuesto490WC);
+
+                        // 5.a Agregar permisos simples al perfil
+                        string querySimplesPerfil = "SELECT NombrePermisoSimple490WC FROM PermisoSimple_Perfil490WC WHERE NombrePerfil490WC = @nombre";
+                        using (SqlCommand cmdSimples = new SqlCommand(querySimplesPerfil, conexion))
+                        {
+                            cmdSimples.Parameters.AddWithValue("@nombre", nombreCompuesto490WC);
+                            using (SqlDataReader lector = cmdSimples.ExecuteReader())
+                            {
+                                while (lector.Read())
+                                {
+                                    string nombrePermiso = lector["NombrePermisoSimple490WC"].ToString();
+                                    if (permisosSimplesDiccionario.TryGetValue(nombrePermiso, out var permisoSimple))
+                                    {
+                                        perfilTemporal.Agregar490WC(permisoSimple);
+                                    }
+                                }
+                            }
+                        }
+
+                        // 5.b Agregar familias al perfil
+                        string queryFamiliasPerfil = "SELECT NombreFamilia490WC FROM Perfil_Familia490WC WHERE NombrePerfil490WC = @nombre";
+                        using (SqlCommand cmdFamilias = new SqlCommand(queryFamiliasPerfil, conexion))
+                        {
+                            cmdFamilias.Parameters.AddWithValue("@nombre", nombreCompuesto490WC);
+                            using (SqlDataReader lector = cmdFamilias.ExecuteReader())
+                            {
+                                while (lector.Read())
+                                {
+                                    string nombreFamilia = lector["NombreFamilia490WC"].ToString();
+                                    if (familiasDiccionario.TryGetValue(nombreFamilia, out var familia))
+                                    {
+                                        perfilTemporal.Agregar490WC(familia);
+                                    }
+                                }
+                            }
+                        }
+
+                        return perfilTemporal;
+                    }
+                }
             }
 
-            
-            if (familiasDiccionario.TryGetValue(nombreFamiliaRaiz490WC, out var familiaRaiz))
+            // Si no es un perfil, devolver la familia si existe
+            if (familiasDiccionario.TryGetValue(nombreCompuesto490WC, out var familiaRaiz))
             {
                 return familiaRaiz;
             }
@@ -182,7 +234,8 @@ namespace DAL490WC
 
 
 
-  
+
+
 
         public bool InsertarPermiso490WC(Permiso490WC permisoNuevo490WC)
         {
