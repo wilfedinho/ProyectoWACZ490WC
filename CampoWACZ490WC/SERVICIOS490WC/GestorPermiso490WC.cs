@@ -155,6 +155,55 @@ namespace SERVICIOS490WC
             return gestorPermiso490WC.ObtenerRoles490WC();
         }
 
+        public List<string> ObtenerNombresDePermisos490WC(PermisoCompuesto490WC permisoRaiz)
+        {
+            HashSet<string> nombres = new HashSet<string>();
+            RecorrerPermisosRecursivo490WC(permisoRaiz, nombres);
+            return nombres.ToList();
+        }
+        
+
+        private void RecorrerPermisosRecursivo490WC(PermisoCompuesto490WC permiso, HashSet<string> acumulador)
+        {
+            foreach (var hijo in permiso.PermisosIncluidos490WC())
+            {
+                if (hijo is PermisoSimple490WC simple)
+                {
+                    acumulador.Add(simple.obtenerPermisoNombre490WC());
+                }
+                else if (hijo is PermisoCompuesto490WC compuesto)
+                {
+                    acumulador.Add(compuesto.obtenerPermisoNombre490WC());
+                    RecorrerPermisosRecursivo490WC(compuesto, acumulador);
+                }
+            }
+        }
+
+        public bool ExistePermisoEnEstructura490WC(PermisoCompuesto490WC estructura, string nombreABuscar)
+        {
+            if (estructura.obtenerPermisoNombre490WC() == nombreABuscar)
+                return true;
+
+            foreach (var hijo in estructura.PermisosIncluidos490WC())
+            {
+                if (hijo.obtenerPermisoNombre490WC() == nombreABuscar)
+                    return true;
+
+                if (hijo is PermisoCompuesto490WC hijoCompuesto)
+                {
+                    if (ExistePermisoEnEstructura490WC(hijoCompuesto, nombreABuscar))
+                        return true;
+                }
+            }
+
+            return false;
+        }
+
+
+        
+
+
+
         public bool ConfigurarControl490WC(string tag490WC, bool estadoSecundario490WC)
         {
 

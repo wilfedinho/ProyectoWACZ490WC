@@ -48,7 +48,7 @@
               "RelativeDocumentMoniker": "GUI490WC\\FormPermisos490WC.cs",
               "ToolTip": "C:\\Users\\William C\u00E0rdenas\\Desktop\\TESIS 2025\\CampoWACZ490WC\\ProyectoWACZ490WC\\CampoWACZ490WC\\GUI490WC\\FormPermisos490WC.cs",
               "RelativeToolTip": "GUI490WC\\FormPermisos490WC.cs",
-              "ViewState": "AgIAACMBAAAAAAAAAAAvwDwBAAAyAAAAAAAAAA==",
+              "ViewState": "AgIAAJcAAAAAAAAAAAAEwJcAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-23T20:41:25.16Z",
               "EditorCaption": ""
@@ -61,7 +61,7 @@
               "RelativeDocumentMoniker": "SERVICIOS490WC\\GestorPermiso490WC.cs",
               "ToolTip": "C:\\Users\\William C\u00E0rdenas\\Desktop\\TESIS 2025\\CampoWACZ490WC\\ProyectoWACZ490WC\\CampoWACZ490WC\\SERVICIOS490WC\\GestorPermiso490WC.cs",
               "RelativeToolTip": "SERVICIOS490WC\\GestorPermiso490WC.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAHAAAAAAAAAA==",
+              "ViewState": "AgIAALUAAAAAAAAAAAA2wMoAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-22T20:28:43.922Z",
               "EditorCaption": ""
@@ -74,9 +74,10 @@
               "RelativeDocumentMoniker": "DAL490WC\\PermisoDAL490WC.cs",
               "ToolTip": "C:\\Users\\William C\u00E0rdenas\\Desktop\\TESIS 2025\\CampoWACZ490WC\\ProyectoWACZ490WC\\CampoWACZ490WC\\DAL490WC\\PermisoDAL490WC.cs",
               "RelativeToolTip": "DAL490WC\\PermisoDAL490WC.cs",
-              "ViewState": "AgIAAMYBAAAAAAAAAAAgwM0BAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAAMcDAAAAAAAAAAAEwNkDAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-22T20:31:38.084Z"
+              "WhenOpened": "2025-06-22T20:31:38.084Z",
+              "EditorCaption": ""
             }
           ]
         }
