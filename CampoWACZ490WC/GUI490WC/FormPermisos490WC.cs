@@ -32,6 +32,7 @@ namespace GUI490WC
             CargarTodosLosPerfilesEnArbol490WC();
             LlenarFamilias490WC();
             LlenarPermisosSimples490WC();
+            HabilitarCB490WC();
         }
 
         public void CargarComboBoxRol490WC()
@@ -550,7 +551,7 @@ namespace GUI490WC
 
         private void BT_GUARDARCAMBIOS490WC_Click(object sender, EventArgs e)
         {
-            ActivarModificacion490WC(true);
+            ActivarModificacion490WC(false);
             LlenarFamilias490WC();
             LlenarPermisosSimples490WC();
         }
@@ -558,6 +559,28 @@ namespace GUI490WC
         private void RB_SIMPLE490WC_CheckedChanged(object sender, EventArgs e)
         {
             HabilitarCarga490WC();
+        }
+        public void HabilitarCB490WC()
+        {
+            if (RB_CBFAMILIA490WC.Checked)
+            {
+                CB_FAMILIA490WC.Enabled = true;
+                CB_ROL490WC.Enabled = false;
+            }
+            else
+            {
+                CB_FAMILIA490WC.Enabled = false;
+                CB_ROL490WC.Enabled = true;
+            }
+        }
+        private void CB_ROL490WC_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void RB_CBFAMILIA490WC_CheckedChanged(object sender, EventArgs e)
+        {
+            HabilitarCB490WC();
         }
     }
 }

@@ -56,6 +56,10 @@
             this.LABEL_FAMILIAS490WC = new System.Windows.Forms.Label();
             this.LABEL_FAMILIA490WC = new System.Windows.Forms.Label();
             this.LABEL_ROL490WC = new System.Windows.Forms.Label();
+            this.GP_HabilitarCB490WC = new System.Windows.Forms.GroupBox();
+            this.RB_CBFAMILIA490WC = new System.Windows.Forms.RadioButton();
+            this.RB_CBROLES490WC = new System.Windows.Forms.RadioButton();
+            this.GP_HabilitarCB490WC.SuspendLayout();
             this.SuspendLayout();
             // 
             // listboxPermisoSimple490WC
@@ -199,7 +203,7 @@
             this.BT_CrearRol490WC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BT_CrearRol490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.BT_CrearRol490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.BT_CrearRol490WC.Location = new System.Drawing.Point(351, 78);
+            this.BT_CrearRol490WC.Location = new System.Drawing.Point(400, 78);
             this.BT_CrearRol490WC.Name = "BT_CrearRol490WC";
             this.BT_CrearRol490WC.Size = new System.Drawing.Size(219, 47);
             this.BT_CrearRol490WC.TabIndex = 79;
@@ -213,7 +217,7 @@
             this.TB_ROL490WC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TB_ROL490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.TB_ROL490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.TB_ROL490WC.Location = new System.Drawing.Point(351, 45);
+            this.TB_ROL490WC.Location = new System.Drawing.Point(400, 45);
             this.TB_ROL490WC.Name = "TB_ROL490WC";
             this.TB_ROL490WC.Size = new System.Drawing.Size(219, 27);
             this.TB_ROL490WC.TabIndex = 80;
@@ -230,6 +234,7 @@
             this.CB_ROL490WC.Name = "CB_ROL490WC";
             this.CB_ROL490WC.Size = new System.Drawing.Size(292, 27);
             this.CB_ROL490WC.TabIndex = 81;
+            this.CB_ROL490WC.SelectedIndexChanged += new System.EventHandler(this.CB_ROL490WC_SelectedIndexChanged);
             // 
             // LABEL_ROLES490WC
             // 
@@ -248,7 +253,7 @@
             this.TB_FAMILIA490WC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TB_FAMILIA490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.TB_FAMILIA490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.TB_FAMILIA490WC.Location = new System.Drawing.Point(351, 166);
+            this.TB_FAMILIA490WC.Location = new System.Drawing.Point(400, 166);
             this.TB_FAMILIA490WC.Name = "TB_FAMILIA490WC";
             this.TB_FAMILIA490WC.Size = new System.Drawing.Size(219, 27);
             this.TB_FAMILIA490WC.TabIndex = 84;
@@ -259,7 +264,7 @@
             this.BT_CrearFamilia490WC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BT_CrearFamilia490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.BT_CrearFamilia490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.BT_CrearFamilia490WC.Location = new System.Drawing.Point(351, 199);
+            this.BT_CrearFamilia490WC.Location = new System.Drawing.Point(400, 199);
             this.BT_CrearFamilia490WC.Name = "BT_CrearFamilia490WC";
             this.BT_CrearFamilia490WC.Size = new System.Drawing.Size(219, 47);
             this.BT_CrearFamilia490WC.TabIndex = 83;
@@ -380,7 +385,7 @@
             this.LABEL_FAMILIA490WC.AutoSize = true;
             this.LABEL_FAMILIA490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.LABEL_FAMILIA490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.LABEL_FAMILIA490WC.Location = new System.Drawing.Point(424, 143);
+            this.LABEL_FAMILIA490WC.Location = new System.Drawing.Point(473, 143);
             this.LABEL_FAMILIA490WC.Name = "LABEL_FAMILIA490WC";
             this.LABEL_FAMILIA490WC.Size = new System.Drawing.Size(70, 20);
             this.LABEL_FAMILIA490WC.TabIndex = 94;
@@ -391,11 +396,43 @@
             this.LABEL_ROL490WC.AutoSize = true;
             this.LABEL_ROL490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.LABEL_ROL490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.LABEL_ROL490WC.Location = new System.Drawing.Point(444, 22);
+            this.LABEL_ROL490WC.Location = new System.Drawing.Point(493, 22);
             this.LABEL_ROL490WC.Name = "LABEL_ROL490WC";
             this.LABEL_ROL490WC.Size = new System.Drawing.Size(36, 20);
             this.LABEL_ROL490WC.TabIndex = 95;
             this.LABEL_ROL490WC.Text = "Rol";
+            // 
+            // GP_HabilitarCB490WC
+            // 
+            this.GP_HabilitarCB490WC.Controls.Add(this.RB_CBFAMILIA490WC);
+            this.GP_HabilitarCB490WC.Controls.Add(this.RB_CBROLES490WC);
+            this.GP_HabilitarCB490WC.Location = new System.Drawing.Point(342, 36);
+            this.GP_HabilitarCB490WC.Name = "GP_HabilitarCB490WC";
+            this.GP_HabilitarCB490WC.Size = new System.Drawing.Size(28, 101);
+            this.GP_HabilitarCB490WC.TabIndex = 96;
+            this.GP_HabilitarCB490WC.TabStop = false;
+            // 
+            // RB_CBFAMILIA490WC
+            // 
+            this.RB_CBFAMILIA490WC.AutoSize = true;
+            this.RB_CBFAMILIA490WC.Checked = true;
+            this.RB_CBFAMILIA490WC.Location = new System.Drawing.Point(7, 14);
+            this.RB_CBFAMILIA490WC.Name = "RB_CBFAMILIA490WC";
+            this.RB_CBFAMILIA490WC.Size = new System.Drawing.Size(14, 13);
+            this.RB_CBFAMILIA490WC.TabIndex = 0;
+            this.RB_CBFAMILIA490WC.TabStop = true;
+            this.RB_CBFAMILIA490WC.UseVisualStyleBackColor = true;
+            this.RB_CBFAMILIA490WC.CheckedChanged += new System.EventHandler(this.RB_CBFAMILIA490WC_CheckedChanged);
+            // 
+            // RB_CBROLES490WC
+            // 
+            this.RB_CBROLES490WC.AutoSize = true;
+            this.RB_CBROLES490WC.Location = new System.Drawing.Point(7, 81);
+            this.RB_CBROLES490WC.Name = "RB_CBROLES490WC";
+            this.RB_CBROLES490WC.Size = new System.Drawing.Size(14, 13);
+            this.RB_CBROLES490WC.TabIndex = 97;
+            this.RB_CBROLES490WC.TabStop = true;
+            this.RB_CBROLES490WC.UseVisualStyleBackColor = true;
             // 
             // FormPermisos490WC
             // 
@@ -403,6 +440,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(27)))), ((int)(((byte)(38)))));
             this.ClientSize = new System.Drawing.Size(1232, 593);
+            this.Controls.Add(this.GP_HabilitarCB490WC);
             this.Controls.Add(this.LABEL_ROL490WC);
             this.Controls.Add(this.LABEL_FAMILIA490WC);
             this.Controls.Add(this.LABEL_FAMILIAS490WC);
@@ -435,6 +473,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormPermisos490WC";
             this.Load += new System.EventHandler(this.FormPermisos490WC_Load);
+            this.GP_HabilitarCB490WC.ResumeLayout(false);
+            this.GP_HabilitarCB490WC.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -470,5 +510,8 @@
         private System.Windows.Forms.Label LABEL_FAMILIAS490WC;
         private System.Windows.Forms.Label LABEL_FAMILIA490WC;
         private System.Windows.Forms.Label LABEL_ROL490WC;
+        private System.Windows.Forms.GroupBox GP_HabilitarCB490WC;
+        private System.Windows.Forms.RadioButton RB_CBROLES490WC;
+        private System.Windows.Forms.RadioButton RB_CBFAMILIA490WC;
     }
 }
