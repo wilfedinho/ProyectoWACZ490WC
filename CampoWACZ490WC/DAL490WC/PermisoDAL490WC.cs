@@ -233,11 +233,7 @@ namespace DAL490WC
         }
 
 
-
-
-
-
-        public bool InsertarPermiso490WC(Permiso490WC permisoNuevo490WC)
+        public bool InsertarFamilia490WC(PermisoCompuesto490WC familiaNueva)
         {
             try
             {
@@ -245,53 +241,37 @@ namespace DAL490WC
                 {
                     conexion.Open();
 
-                    if (permisoNuevo490WC is PermisoSimple490WC)
+                    // 1. Insertar en Familia490WC
+                    string insertFamilia = "INSERT INTO Familia490WC (Nombre490WC) VALUES (@nombre)";
+                    using (SqlCommand cmd = new SqlCommand(insertFamilia, conexion))
                     {
-                        string insertSimple = "INSERT INTO PermisoSimple490WC (Nombre490WC) VALUES (@nombre)";
-                        using (SqlCommand cmd = new SqlCommand(insertSimple, conexion))
-                        {
-                            cmd.Parameters.AddWithValue("@nombre", permisoNuevo490WC.obtenerPermisoNombre490WC());
-                            cmd.ExecuteNonQuery();
-                        }
+                        cmd.Parameters.AddWithValue("@nombre", familiaNueva.obtenerPermisoNombre490WC());
+                        cmd.ExecuteNonQuery();
                     }
-                    else if (permisoNuevo490WC is PermisoCompuesto490WC permisoCompuesto)
+
+                    // 2. Insertar relaciones con hijos
+                    foreach (var hijo in familiaNueva.PermisosIncluidos490WC())
                     {
-                        // Verificar si es un rol (está también en Perfil490WC)
-                        bool esRol = PerfilExiste490WC(permisoCompuesto.obtenerPermisoNombre490WC());
-
-                        if (esRol)
+                        if (hijo is PermisoSimple490WC simple)
                         {
-                            // Insertar en PermisoCompuesto como ROL
-                            string insertRol = "INSERT INTO Permiso490WC (nombrePermiso490WC, tipoPermiso490WC, esRolPermiso490WC) " +
-                                               "VALUES (@nombre, 'Compuesto', 'True')";
-                            using (SqlCommand cmd = new SqlCommand(insertRol, conexion))
+                            string insertRelacion = "INSERT INTO PermisoSimple_Familia490WC (NombreFamilia490WC, NombrePermisoSimple490WC) VALUES (@familia, @simple)";
+                            using (SqlCommand cmd = new SqlCommand(insertRelacion, conexion))
                             {
-                                cmd.Parameters.AddWithValue("@nombre", permisoCompuesto.obtenerPermisoNombre490WC());
-                                cmd.ExecuteNonQuery();
-                            }
-
-                            // Insertar en Perfil490WC
-                            string insertPerfil = "INSERT INTO Perfil490WC (Nombre490WC) VALUES (@nombre)";
-                            using (SqlCommand cmdPerfil = new SqlCommand(insertPerfil, conexion))
-                            {
-                                cmdPerfil.Parameters.AddWithValue("@nombre", permisoCompuesto.obtenerPermisoNombre490WC());
-                                cmdPerfil.ExecuteNonQuery();
-                            }
-                        }
-                        else
-                        {
-                            // Insertar como Familia
-                            string insertFamilia = "INSERT INTO Familia490WC (Nombre490WC) VALUES (@nombre)";
-                            using (SqlCommand cmd = new SqlCommand(insertFamilia, conexion))
-                            {
-                                cmd.Parameters.AddWithValue("@nombre", permisoCompuesto.obtenerPermisoNombre490WC());
+                                cmd.Parameters.AddWithValue("@familia", familiaNueva.obtenerPermisoNombre490WC());
+                                cmd.Parameters.AddWithValue("@simple", simple.obtenerPermisoNombre490WC());
                                 cmd.ExecuteNonQuery();
                             }
                         }
-                    }
-                    else
-                    {
-                        return false;
+                        else if (hijo is PermisoCompuesto490WC subfamilia)
+                        {
+                            string insertRelacion = "INSERT INTO Familia_Familia490WC (NombreFamiliaIncluye490WC, NombreFamiliaIncluida490WC) VALUES (@padre, @hija)";
+                            using (SqlCommand cmd = new SqlCommand(insertRelacion, conexion))
+                            {
+                                cmd.Parameters.AddWithValue("@padre", familiaNueva.obtenerPermisoNombre490WC());
+                                cmd.Parameters.AddWithValue("@hija", subfamilia.obtenerPermisoNombre490WC());
+                                cmd.ExecuteNonQuery();
+                            }
+                        }
                     }
                 }
 
@@ -304,8 +284,56 @@ namespace DAL490WC
         }
 
 
+        public bool InsertarRol490WC(PermisoCompuesto490WC nuevoRol)
+        {
+            try
+            {
+                using (SqlConnection conexion = GestorConexion490WC.GestorCone490WC.DevolverConexion490WC())
+                {
+                    conexion.Open();
 
-     
+                    // 1. Insertar en Perfil490WC
+                    string insertPerfil = "INSERT INTO Perfil490WC (Nombre490WC) VALUES (@nombre)";
+                    using (SqlCommand cmd = new SqlCommand(insertPerfil, conexion))
+                    {
+                        cmd.Parameters.AddWithValue("@nombre", nuevoRol.obtenerPermisoNombre490WC());
+                        cmd.ExecuteNonQuery();
+                    }
+
+                    // 2. Insertar relaciones con hijos
+                    foreach (var hijo in nuevoRol.PermisosIncluidos490WC())
+                    {
+                        if (hijo is PermisoSimple490WC simple)
+                        {
+                            string insertRelacion = "INSERT INTO PermisoSimple_Perfil490WC (NombrePerfil490WC, NombrePermisoSimple490WC) VALUES (@perfil, @simple)";
+                            using (SqlCommand cmd = new SqlCommand(insertRelacion, conexion))
+                            {
+                                cmd.Parameters.AddWithValue("@perfil", nuevoRol.obtenerPermisoNombre490WC());
+                                cmd.Parameters.AddWithValue("@simple", simple.obtenerPermisoNombre490WC());
+                                cmd.ExecuteNonQuery();
+                            }
+                        }
+                        else if (hijo is PermisoCompuesto490WC familia)
+                        {
+                            string insertRelacion = "INSERT INTO Perfil_Familia490WC (NombrePerfil490WC, NombreFamilia490WC) VALUES (@perfil, @familia)";
+                            using (SqlCommand cmd = new SqlCommand(insertRelacion, conexion))
+                            {
+                                cmd.Parameters.AddWithValue("@perfil", nuevoRol.obtenerPermisoNombre490WC());
+                                cmd.Parameters.AddWithValue("@familia", familia.obtenerPermisoNombre490WC());
+                                cmd.ExecuteNonQuery();
+                            }
+                        }
+                    }
+                }
+
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
 
         public bool InsertarRelacion490WC(string nombrePermisoCompuesto490WC, string nombreIncluido490WC)
         {

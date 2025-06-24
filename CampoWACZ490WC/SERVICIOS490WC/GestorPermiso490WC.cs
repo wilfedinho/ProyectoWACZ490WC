@@ -32,10 +32,16 @@ namespace SERVICIOS490WC
             return gestorPermiso490WC.LeerPermisoCompuesto490WC(nombreFamiliaRaiz490WC);
         }
 
-        public bool InsertarPermiso490WC(Permiso490WC permisoNuevo490WC)
+        public bool InsertarFamilia490WC(PermisoCompuesto490WC familiaNueva)
         {
             PermisoDAL490WC gestorPermiso490WC = new PermisoDAL490WC();
-            return gestorPermiso490WC.InsertarPermiso490WC(permisoNuevo490WC);
+            return gestorPermiso490WC.InsertarFamilia490WC(familiaNueva);
+        }
+
+        public bool InsertarRol490WC(PermisoCompuesto490WC nuevoRol)
+        {
+            PermisoDAL490WC gestorPermiso490WC = new PermisoDAL490WC();
+            return gestorPermiso490WC.InsertarRol490WC(nuevoRol);
         }
 
         public bool InsertarRelacion490WC(string nombrePermisoCompuesto490WC, string nombreIncluido490WC)
