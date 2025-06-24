@@ -154,64 +154,72 @@ namespace GUI490WC
         {
             string nombreRol490WC = TB_ROL490WC.Text;
             GestorPermiso490WC gestorPermiso490WC = new GestorPermiso490WC();
-            if (!gestorPermiso490WC.PerfilExiste490WC(nombreRol490WC))
+            if (!string.IsNullOrEmpty(nombreRol490WC) && !string.IsNullOrWhiteSpace(nombreRol490WC))
             {
-                if (RB_SIMPLE490WC.Checked)
+                if (!gestorPermiso490WC.PerfilExiste490WC(nombreRol490WC))
                 {
-                    if (listboxPermisoSimple490WC.SelectedIndex > -1)
+                    if (RB_SIMPLE490WC.Checked)
                     {
-                        Permiso490WC rolCrear490WC = new PermisoCompuesto490WC(nombreRol490WC);
-                        Permiso490WC permisoHijo = gestorPermiso490WC.ObtenerPermisosSimples490WC().Find(x => x.obtenerPermisoNombre490WC() == listboxPermisoSimple490WC.SelectedItem.ToString());
-                        rolCrear490WC.Agregar490WC(permisoHijo);
-                        if (gestorPermiso490WC.InsertarRol490WC((PermisoCompuesto490WC)rolCrear490WC))
+                        if (listboxPermisoSimple490WC.SelectedIndex > -1)
                         {
-                            CargarComboBoxRol490WC();
-                            CargarComboboxFamilia490WC();
-                            CargarTodasLasFamiliasEnArbol490WC();
-                            CargarTodosLosPerfilesEnArbol490WC();
-                            TB_ROL490WC.Clear();
-                            MessageBox.Show("Creacion del Rol Exitosa!!!");
+                            Permiso490WC rolCrear490WC = new PermisoCompuesto490WC(nombreRol490WC);
+                            Permiso490WC permisoHijo = gestorPermiso490WC.ObtenerPermisosSimples490WC().Find(x => x.obtenerPermisoNombre490WC() == listboxPermisoSimple490WC.SelectedItem.ToString());
+                            rolCrear490WC.Agregar490WC(permisoHijo);
+                            if (gestorPermiso490WC.InsertarRol490WC((PermisoCompuesto490WC)rolCrear490WC))
+                            {
+                                CargarComboBoxRol490WC();
+                                CargarComboboxFamilia490WC();
+                                CargarTodasLasFamiliasEnArbol490WC();
+                                CargarTodosLosPerfilesEnArbol490WC();
+                                TB_ROL490WC.Clear();
+                                MessageBox.Show("Creacion del Rol Exitosa!!!");
+                            }
+                            else
+                            {
+                                MessageBox.Show("Creacion del Rol Fracasada!!!");
+                            }
                         }
                         else
                         {
-                            MessageBox.Show("Creacion del Rol Fracasada!!!");
+                            MessageBox.Show("No se Puede Crear un Rol Vacio!!!");
                         }
                     }
                     else
                     {
-                        MessageBox.Show("No se Puede Crear un Rol Vacio!!!");
+                        if (listboxFamilia490WC.SelectedIndex > -1)
+                        {
+                            Permiso490WC rolCrear490WC = new PermisoCompuesto490WC(nombreRol490WC);
+                            Permiso490WC permisoHijo = gestorPermiso490WC.LeerPermisoCompuesto490WC(listboxFamilia490WC.SelectedItem.ToString());
+                            rolCrear490WC.Agregar490WC(permisoHijo);
+                            if (gestorPermiso490WC.InsertarRol490WC((PermisoCompuesto490WC)rolCrear490WC))
+                            {
+                                CargarComboBoxRol490WC();
+                                CargarComboboxFamilia490WC();
+                                CargarTodasLasFamiliasEnArbol490WC();
+                                CargarTodosLosPerfilesEnArbol490WC();
+                                TB_ROL490WC.Clear();
+                                MessageBox.Show("Creacion del Rol Exitosa!!!");
+                            }
+                            else
+                            {
+                                MessageBox.Show("Creacion del Rol Fracasada!!!");
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("No se puede Crear un Rol Vacio!!!");
+                        }
                     }
                 }
                 else
                 {
-                    if (listboxFamilia490WC.SelectedIndex > -1)
-                    {
-                        Permiso490WC rolCrear490WC = new PermisoCompuesto490WC(nombreRol490WC);
-                        Permiso490WC permisoHijo = gestorPermiso490WC.LeerPermisoCompuesto490WC(listboxFamilia490WC.SelectedItem.ToString());
-                        rolCrear490WC.Agregar490WC(permisoHijo);
-                        if (gestorPermiso490WC.InsertarRol490WC((PermisoCompuesto490WC)rolCrear490WC))
-                        {
-                            CargarComboBoxRol490WC();
-                            CargarComboboxFamilia490WC();
-                            CargarTodasLasFamiliasEnArbol490WC();
-                            CargarTodosLosPerfilesEnArbol490WC();
-                            TB_ROL490WC.Clear();
-                            MessageBox.Show("Creacion del Rol Exitosa!!!");
-                        }
-                        else
-                        {
-                            MessageBox.Show("Creacion del Rol Fracasada!!!");
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show("No se puede Crear un Rol Vacio!!!");
-                    }
+                    MessageBox.Show("El nombre ingresado para un nuevo Rol ya se encuentra en uso!!!");
                 }
+
             }
             else
             {
-                MessageBox.Show("El nombre ingresado para un nuevo Rol ya se encuentra en uso!!!");
+                MessageBox.Show("Debe Ingresar un Nombre para Crear un Nuevo Rol!!!");
             }
         }
 
@@ -219,70 +227,94 @@ namespace GUI490WC
         {
             string nombreFamiliaCrear490WC = TB_FAMILIA490WC.Text;
             GestorPermiso490WC gestorPermiso490WC = new GestorPermiso490WC();
-            if (!gestorPermiso490WC.FamiliaExiste490WC(nombreFamiliaCrear490WC))
+            if (!string.IsNullOrEmpty(nombreFamiliaCrear490WC) && !string.IsNullOrWhiteSpace(nombreFamiliaCrear490WC))
             {
-                if (RB_SIMPLE490WC.Checked)
+                if (!gestorPermiso490WC.FamiliaExiste490WC(nombreFamiliaCrear490WC))
                 {
-                    if (listboxPermisoSimple490WC.SelectedIndex > -1)
+                    if (RB_SIMPLE490WC.Checked)
                     {
-                        Permiso490WC FamiliaCrear490WC = new PermisoCompuesto490WC(nombreFamiliaCrear490WC);
-                        Permiso490WC permisoHijo = gestorPermiso490WC.ObtenerPermisosSimples490WC().Find(x => x.obtenerPermisoNombre490WC() == listboxPermisoSimple490WC.SelectedItem.ToString());
-                        FamiliaCrear490WC.Agregar490WC(permisoHijo);
-                        if (gestorPermiso490WC.InsertarFamilia490WC((PermisoCompuesto490WC)FamiliaCrear490WC))
+                        if (listboxPermisoSimple490WC.SelectedIndex > -1)
                         {
-                            CargarComboBoxRol490WC();
-                            CargarComboboxFamilia490WC();
-                            CargarTodasLasFamiliasEnArbol490WC();
-                            CargarTodosLosPerfilesEnArbol490WC();
-                            TB_ROL490WC.Clear();
-                            MessageBox.Show("Creacion de la Familia Exitosa!!!");
+                            Permiso490WC FamiliaCrear490WC = new PermisoCompuesto490WC(nombreFamiliaCrear490WC);
+                            Permiso490WC permisoHijo = gestorPermiso490WC.ObtenerPermisosSimples490WC().Find(x => x.obtenerPermisoNombre490WC() == listboxPermisoSimple490WC.SelectedItem.ToString());
+                            FamiliaCrear490WC.Agregar490WC(permisoHijo);
+                            if (gestorPermiso490WC.InsertarFamilia490WC((PermisoCompuesto490WC)FamiliaCrear490WC))
+                            {
+                                CargarComboBoxRol490WC();
+                                CargarComboboxFamilia490WC();
+                                CargarTodasLasFamiliasEnArbol490WC();
+                                CargarTodosLosPerfilesEnArbol490WC();
+                                TB_ROL490WC.Clear();
+                                MessageBox.Show("Creacion de la Familia Exitosa!!!");
+                            }
+                            else
+                            {
+                                MessageBox.Show("Creacion de la Familia Fracasada!!!");
+                            }
                         }
                         else
                         {
-                            MessageBox.Show("Creacion de la Familia Fracasada!!!");
+                            MessageBox.Show("No se Puede Crear una Familia Vacia!!!");
                         }
                     }
                     else
                     {
-                        MessageBox.Show("No se Puede Crear una Familia Vacia!!!");
+                        if (listboxFamilia490WC.SelectedIndex > -1)
+                        {
+                            Permiso490WC FamiliaCrear490WC = new PermisoCompuesto490WC(nombreFamiliaCrear490WC);
+                            Permiso490WC permisoHijo = gestorPermiso490WC.LeerPermisoCompuesto490WC(listboxFamilia490WC.SelectedItem.ToString());
+                            FamiliaCrear490WC.Agregar490WC(permisoHijo);
+                            if (gestorPermiso490WC.InsertarFamilia490WC((PermisoCompuesto490WC)FamiliaCrear490WC))
+                            {
+                                CargarComboBoxRol490WC();
+                                CargarComboboxFamilia490WC();
+                                CargarTodasLasFamiliasEnArbol490WC();
+                                CargarTodosLosPerfilesEnArbol490WC();
+                                TB_ROL490WC.Clear();
+                                MessageBox.Show("Creacion de la Familia Exitosa!!!");
+                            }
+                            else
+                            {
+                                MessageBox.Show("Creacion de la Familia Fracasada!!!");
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("No se puede Crear una Familia Vacia!!!");
+                        }
                     }
                 }
                 else
                 {
-                    if (listboxFamilia490WC.SelectedIndex > -1)
-                    {
-                        Permiso490WC FamiliaCrear490WC = new PermisoCompuesto490WC(nombreFamiliaCrear490WC);
-                        Permiso490WC permisoHijo = gestorPermiso490WC.LeerPermisoCompuesto490WC(listboxFamilia490WC.SelectedItem.ToString());
-                        FamiliaCrear490WC.Agregar490WC(permisoHijo);
-                        if (gestorPermiso490WC.InsertarFamilia490WC((PermisoCompuesto490WC)FamiliaCrear490WC))
-                        {
-                            CargarComboBoxRol490WC();
-                            CargarComboboxFamilia490WC();
-                            CargarTodasLasFamiliasEnArbol490WC();
-                            CargarTodosLosPerfilesEnArbol490WC();
-                            TB_ROL490WC.Clear();
-                            MessageBox.Show("Creacion de la Familia Exitosa!!!");
-                        }
-                        else
-                        {
-                            MessageBox.Show("Creacion de la Familia Fracasada!!!");
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show("No se puede Crear una Familia Vacia!!!");
-                    }
+                    MessageBox.Show("El nombre ingresado para la nueva Familia ya se encuentra en uso!!!");
                 }
+
             }
             else
             {
-                MessageBox.Show("El nombre ingresado para la nueva Familia ya se encuentra en uso!!!");
+                MessageBox.Show("Debe Ingresar un Nombre para Crear una Nueva Familia!!!");
             }
         }
 
         private void BT_Modificar490WC_Click(object sender, EventArgs e)
         {
             if (CB_ROL490WC.SelectedIndex > -1)
+            {
+                EjecutarModificacion490WC("Rol");
+            }
+            else if (CB_FAMILIA490WC.SelectedIndex > -1)
+            {
+                EjecutarModificacion490WC("Familia");
+            }
+        }
+
+        public void EjecutarModificacion490WC(string queModificar490WC)
+        {
+            if (queModificar490WC == "Rol")
+            {
+
+            }
+            else if (queModificar490WC == "Familia")
             {
 
             }

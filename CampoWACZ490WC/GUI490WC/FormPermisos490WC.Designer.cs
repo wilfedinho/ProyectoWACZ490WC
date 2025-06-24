@@ -31,7 +31,7 @@
             this.listboxPermisoSimple490WC = new System.Windows.Forms.ListBox();
             this.listboxFamilia490WC = new System.Windows.Forms.ListBox();
             this.LABEL_PERMISOSSIMPLES490WC = new System.Windows.Forms.Label();
-            this.LABEL_FAMILIAS490WC = new System.Windows.Forms.Label();
+            this.LABEL_FAMILIASPARACARGAR490WC = new System.Windows.Forms.Label();
             this.treeViewPreviaModificacion490WC = new System.Windows.Forms.TreeView();
             this.LABEL_VISTAPREVIAPERMISO490WC = new System.Windows.Forms.Label();
             this.BT_ASIGNAR490WC = new System.Windows.Forms.Button();
@@ -42,7 +42,7 @@
             this.BT_CrearRol490WC = new System.Windows.Forms.Button();
             this.TB_ROL490WC = new System.Windows.Forms.TextBox();
             this.CB_ROL490WC = new System.Windows.Forms.ComboBox();
-            this.LABEL_ROL = new System.Windows.Forms.Label();
+            this.LABEL_ROLES490WC = new System.Windows.Forms.Label();
             this.TB_FAMILIA490WC = new System.Windows.Forms.TextBox();
             this.BT_CrearFamilia490WC = new System.Windows.Forms.Button();
             this.BT_Modificar490WC = new System.Windows.Forms.Button();
@@ -53,7 +53,9 @@
             this.LABEL_VISTAPREVIAROLES490WC = new System.Windows.Forms.Label();
             this.treeViewRoles490WC = new System.Windows.Forms.TreeView();
             this.CB_FAMILIA490WC = new System.Windows.Forms.ComboBox();
+            this.LABEL_FAMILIAS490WC = new System.Windows.Forms.Label();
             this.LABEL_FAMILIA490WC = new System.Windows.Forms.Label();
+            this.LABEL_ROL490WC = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // listboxPermisoSimple490WC
@@ -93,16 +95,16 @@
             this.LABEL_PERMISOSSIMPLES490WC.TabIndex = 70;
             this.LABEL_PERMISOSSIMPLES490WC.Text = "Permisos Simples Para Cargar";
             // 
-            // LABEL_FAMILIAS490WC
+            // LABEL_FAMILIASPARACARGAR490WC
             // 
-            this.LABEL_FAMILIAS490WC.AutoSize = true;
-            this.LABEL_FAMILIAS490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
-            this.LABEL_FAMILIAS490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.LABEL_FAMILIAS490WC.Location = new System.Drawing.Point(384, 260);
-            this.LABEL_FAMILIAS490WC.Name = "LABEL_FAMILIAS490WC";
-            this.LABEL_FAMILIAS490WC.Size = new System.Drawing.Size(186, 20);
-            this.LABEL_FAMILIAS490WC.TabIndex = 71;
-            this.LABEL_FAMILIAS490WC.Text = "Familias Para Cargar";
+            this.LABEL_FAMILIASPARACARGAR490WC.AutoSize = true;
+            this.LABEL_FAMILIASPARACARGAR490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.LABEL_FAMILIASPARACARGAR490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
+            this.LABEL_FAMILIASPARACARGAR490WC.Location = new System.Drawing.Point(384, 260);
+            this.LABEL_FAMILIASPARACARGAR490WC.Name = "LABEL_FAMILIASPARACARGAR490WC";
+            this.LABEL_FAMILIASPARACARGAR490WC.Size = new System.Drawing.Size(186, 20);
+            this.LABEL_FAMILIASPARACARGAR490WC.TabIndex = 71;
+            this.LABEL_FAMILIASPARACARGAR490WC.Text = "Familias Para Cargar";
             // 
             // treeViewPreviaModificacion490WC
             // 
@@ -197,7 +199,7 @@
             this.BT_CrearRol490WC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BT_CrearRol490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.BT_CrearRol490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.BT_CrearRol490WC.Location = new System.Drawing.Point(351, 46);
+            this.BT_CrearRol490WC.Location = new System.Drawing.Point(351, 78);
             this.BT_CrearRol490WC.Name = "BT_CrearRol490WC";
             this.BT_CrearRol490WC.Size = new System.Drawing.Size(219, 47);
             this.BT_CrearRol490WC.TabIndex = 79;
@@ -211,7 +213,7 @@
             this.TB_ROL490WC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TB_ROL490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.TB_ROL490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.TB_ROL490WC.Location = new System.Drawing.Point(351, 13);
+            this.TB_ROL490WC.Location = new System.Drawing.Point(351, 45);
             this.TB_ROL490WC.Name = "TB_ROL490WC";
             this.TB_ROL490WC.Size = new System.Drawing.Size(219, 27);
             this.TB_ROL490WC.TabIndex = 80;
@@ -229,16 +231,16 @@
             this.CB_ROL490WC.Size = new System.Drawing.Size(292, 27);
             this.CB_ROL490WC.TabIndex = 81;
             // 
-            // LABEL_ROL
+            // LABEL_ROLES490WC
             // 
-            this.LABEL_ROL.AutoSize = true;
-            this.LABEL_ROL.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
-            this.LABEL_ROL.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.LABEL_ROL.Location = new System.Drawing.Point(143, 78);
-            this.LABEL_ROL.Name = "LABEL_ROL";
-            this.LABEL_ROL.Size = new System.Drawing.Size(56, 20);
-            this.LABEL_ROL.TabIndex = 82;
-            this.LABEL_ROL.Text = "Roles";
+            this.LABEL_ROLES490WC.AutoSize = true;
+            this.LABEL_ROLES490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.LABEL_ROLES490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
+            this.LABEL_ROLES490WC.Location = new System.Drawing.Point(143, 78);
+            this.LABEL_ROLES490WC.Name = "LABEL_ROLES490WC";
+            this.LABEL_ROLES490WC.Size = new System.Drawing.Size(56, 20);
+            this.LABEL_ROLES490WC.TabIndex = 82;
+            this.LABEL_ROLES490WC.Text = "Roles";
             // 
             // TB_FAMILIA490WC
             // 
@@ -246,7 +248,7 @@
             this.TB_FAMILIA490WC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TB_FAMILIA490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.TB_FAMILIA490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.TB_FAMILIA490WC.Location = new System.Drawing.Point(351, 111);
+            this.TB_FAMILIA490WC.Location = new System.Drawing.Point(351, 166);
             this.TB_FAMILIA490WC.Name = "TB_FAMILIA490WC";
             this.TB_FAMILIA490WC.Size = new System.Drawing.Size(219, 27);
             this.TB_FAMILIA490WC.TabIndex = 84;
@@ -257,7 +259,7 @@
             this.BT_CrearFamilia490WC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BT_CrearFamilia490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.BT_CrearFamilia490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.BT_CrearFamilia490WC.Location = new System.Drawing.Point(351, 144);
+            this.BT_CrearFamilia490WC.Location = new System.Drawing.Point(351, 199);
             this.BT_CrearFamilia490WC.Name = "BT_CrearFamilia490WC";
             this.BT_CrearFamilia490WC.Size = new System.Drawing.Size(219, 47);
             this.BT_CrearFamilia490WC.TabIndex = 83;
@@ -271,7 +273,7 @@
             this.BT_Modificar490WC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BT_Modificar490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.BT_Modificar490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.BT_Modificar490WC.Location = new System.Drawing.Point(28, 144);
+            this.BT_Modificar490WC.Location = new System.Drawing.Point(28, 146);
             this.BT_Modificar490WC.Name = "BT_Modificar490WC";
             this.BT_Modificar490WC.Size = new System.Drawing.Size(292, 47);
             this.BT_Modificar490WC.TabIndex = 85;
@@ -299,7 +301,7 @@
             this.BT_ELIMINAR490WC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BT_ELIMINAR490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.BT_ELIMINAR490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.BT_ELIMINAR490WC.Location = new System.Drawing.Point(28, 197);
+            this.BT_ELIMINAR490WC.Location = new System.Drawing.Point(28, 199);
             this.BT_ELIMINAR490WC.Name = "BT_ELIMINAR490WC";
             this.BT_ELIMINAR490WC.Size = new System.Drawing.Size(292, 47);
             this.BT_ELIMINAR490WC.TabIndex = 87;
@@ -362,16 +364,38 @@
             this.CB_FAMILIA490WC.Size = new System.Drawing.Size(292, 27);
             this.CB_FAMILIA490WC.TabIndex = 92;
             // 
+            // LABEL_FAMILIAS490WC
+            // 
+            this.LABEL_FAMILIAS490WC.AutoSize = true;
+            this.LABEL_FAMILIAS490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.LABEL_FAMILIAS490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
+            this.LABEL_FAMILIAS490WC.Location = new System.Drawing.Point(129, 9);
+            this.LABEL_FAMILIAS490WC.Name = "LABEL_FAMILIAS490WC";
+            this.LABEL_FAMILIAS490WC.Size = new System.Drawing.Size(80, 20);
+            this.LABEL_FAMILIAS490WC.TabIndex = 93;
+            this.LABEL_FAMILIAS490WC.Text = "Familias";
+            // 
             // LABEL_FAMILIA490WC
             // 
             this.LABEL_FAMILIA490WC.AutoSize = true;
             this.LABEL_FAMILIA490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.LABEL_FAMILIA490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.LABEL_FAMILIA490WC.Location = new System.Drawing.Point(129, 9);
+            this.LABEL_FAMILIA490WC.Location = new System.Drawing.Point(424, 143);
             this.LABEL_FAMILIA490WC.Name = "LABEL_FAMILIA490WC";
-            this.LABEL_FAMILIA490WC.Size = new System.Drawing.Size(80, 20);
-            this.LABEL_FAMILIA490WC.TabIndex = 93;
-            this.LABEL_FAMILIA490WC.Text = "Familias";
+            this.LABEL_FAMILIA490WC.Size = new System.Drawing.Size(70, 20);
+            this.LABEL_FAMILIA490WC.TabIndex = 94;
+            this.LABEL_FAMILIA490WC.Text = "Familia";
+            // 
+            // LABEL_ROL490WC
+            // 
+            this.LABEL_ROL490WC.AutoSize = true;
+            this.LABEL_ROL490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.LABEL_ROL490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
+            this.LABEL_ROL490WC.Location = new System.Drawing.Point(444, 22);
+            this.LABEL_ROL490WC.Name = "LABEL_ROL490WC";
+            this.LABEL_ROL490WC.Size = new System.Drawing.Size(36, 20);
+            this.LABEL_ROL490WC.TabIndex = 95;
+            this.LABEL_ROL490WC.Text = "Rol";
             // 
             // FormPermisos490WC
             // 
@@ -379,7 +403,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(27)))), ((int)(((byte)(38)))));
             this.ClientSize = new System.Drawing.Size(1232, 593);
+            this.Controls.Add(this.LABEL_ROL490WC);
             this.Controls.Add(this.LABEL_FAMILIA490WC);
+            this.Controls.Add(this.LABEL_FAMILIAS490WC);
             this.Controls.Add(this.CB_FAMILIA490WC);
             this.Controls.Add(this.LABEL_VISTAPREVIAROLES490WC);
             this.Controls.Add(this.treeViewRoles490WC);
@@ -390,7 +416,7 @@
             this.Controls.Add(this.BT_Modificar490WC);
             this.Controls.Add(this.TB_FAMILIA490WC);
             this.Controls.Add(this.BT_CrearFamilia490WC);
-            this.Controls.Add(this.LABEL_ROL);
+            this.Controls.Add(this.LABEL_ROLES490WC);
             this.Controls.Add(this.CB_ROL490WC);
             this.Controls.Add(this.TB_ROL490WC);
             this.Controls.Add(this.BT_CrearRol490WC);
@@ -401,7 +427,7 @@
             this.Controls.Add(this.BT_ASIGNAR490WC);
             this.Controls.Add(this.LABEL_VISTAPREVIAPERMISO490WC);
             this.Controls.Add(this.treeViewPreviaModificacion490WC);
-            this.Controls.Add(this.LABEL_FAMILIAS490WC);
+            this.Controls.Add(this.LABEL_FAMILIASPARACARGAR490WC);
             this.Controls.Add(this.LABEL_PERMISOSSIMPLES490WC);
             this.Controls.Add(this.listboxFamilia490WC);
             this.Controls.Add(this.listboxPermisoSimple490WC);
@@ -419,7 +445,7 @@
         private System.Windows.Forms.ListBox listboxPermisoSimple490WC;
         private System.Windows.Forms.ListBox listboxFamilia490WC;
         private System.Windows.Forms.Label LABEL_PERMISOSSIMPLES490WC;
-        private System.Windows.Forms.Label LABEL_FAMILIAS490WC;
+        private System.Windows.Forms.Label LABEL_FAMILIASPARACARGAR490WC;
         private System.Windows.Forms.TreeView treeViewPreviaModificacion490WC;
         private System.Windows.Forms.Label LABEL_VISTAPREVIAPERMISO490WC;
         private System.Windows.Forms.Button BT_ASIGNAR490WC;
@@ -430,7 +456,7 @@
         private System.Windows.Forms.Button BT_CrearRol490WC;
         private System.Windows.Forms.TextBox TB_ROL490WC;
         private System.Windows.Forms.ComboBox CB_ROL490WC;
-        private System.Windows.Forms.Label LABEL_ROL;
+        private System.Windows.Forms.Label LABEL_ROLES490WC;
         private System.Windows.Forms.TextBox TB_FAMILIA490WC;
         private System.Windows.Forms.Button BT_CrearFamilia490WC;
         private System.Windows.Forms.Button BT_Modificar490WC;
@@ -441,6 +467,8 @@
         private System.Windows.Forms.Label LABEL_VISTAPREVIAROLES490WC;
         private System.Windows.Forms.TreeView treeViewRoles490WC;
         private System.Windows.Forms.ComboBox CB_FAMILIA490WC;
+        private System.Windows.Forms.Label LABEL_FAMILIAS490WC;
         private System.Windows.Forms.Label LABEL_FAMILIA490WC;
+        private System.Windows.Forms.Label LABEL_ROL490WC;
     }
 }
