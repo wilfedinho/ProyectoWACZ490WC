@@ -332,8 +332,6 @@ namespace GUI490WC
                 BT_GUARDARCAMBIOS490WC.Enabled = true;
                 CB_FAMILIA490WC.Enabled = false;
                 CB_ROL490WC.Enabled = false;
-                treeViewFamilias490WC.Enabled = false;
-                treeViewRoles490WC.Enabled = false;
                 BT_CrearFamilia490WC.Enabled = false;
                 BT_CrearRol490WC.Enabled = false;
                 TB_FAMILIA490WC.Enabled = false;
@@ -348,8 +346,6 @@ namespace GUI490WC
                 BT_GUARDARCAMBIOS490WC.Enabled = false;
                 CB_FAMILIA490WC.Enabled = true;
                 CB_ROL490WC.Enabled = true;
-                treeViewFamilias490WC.Enabled = true;
-                treeViewRoles490WC.Enabled = true;
                 BT_CrearFamilia490WC.Enabled = true;
                 BT_CrearRol490WC.Enabled = true;
                 TB_FAMILIA490WC.Enabled = true;
@@ -375,6 +371,32 @@ namespace GUI490WC
                 }
             }
         }
+        /* public void CargarFamiliasParaModificacion490WC()
+         {
+             GestorPermiso490WC gestorPermisos490WC = new GestorPermiso490WC();
+             listboxFamilia490WC.Items.Clear();
+
+             if (elementoSeleccionado490WC is PermisoCompuesto490WC compuestoSeleccionado)
+             {
+                 foreach (PermisoCompuesto490WC familiaCandidata in gestorPermisos490WC.LeerFamiliasConEstructuraRecursiva490WC())
+                 {
+                     string nombreCandidata = familiaCandidata.obtenerPermisoNombre490WC();
+
+                     // Evitar agregarse a sí misma
+                     if (nombreCandidata == compuestoSeleccionado.obtenerPermisoNombre490WC())
+                         continue;
+
+                     // Verificar si ya existe en la estructura del seleccionado
+                     bool yaExiste = gestorPermisos490WC.ExistePermisoEnEstructura490WC(compuestoSeleccionado, nombreCandidata);
+
+                     if (!yaExiste)
+                     {
+                         listboxFamilia490WC.Items.Add(nombreCandidata);
+                     }
+                 }
+             }
+         }*/
+
         public void CargarFamiliasParaModificacion490WC()
         {
             GestorPermiso490WC gestorPermisos490WC = new GestorPermiso490WC();
@@ -382,6 +404,12 @@ namespace GUI490WC
 
             if (elementoSeleccionado490WC is PermisoCompuesto490WC compuestoSeleccionado)
             {
+                // Obtener todos los nombres de la estructura del perfil/familia seleccionada
+                var nombresEnSeleccionado = new HashSet<string>(
+                    gestorPermisos490WC.ObtenerNombresDePermisos490WC(compuestoSeleccionado)
+                );
+
+                // Evaluar cada familia candidata
                 foreach (PermisoCompuesto490WC familiaCandidata in gestorPermisos490WC.LeerFamiliasConEstructuraRecursiva490WC())
                 {
                     string nombreCandidata = familiaCandidata.obtenerPermisoNombre490WC();
@@ -390,16 +418,21 @@ namespace GUI490WC
                     if (nombreCandidata == compuestoSeleccionado.obtenerPermisoNombre490WC())
                         continue;
 
-                    // Verificar si ya existe en la estructura del seleccionado
-                    bool yaExiste = gestorPermisos490WC.ExistePermisoEnEstructura490WC(compuestoSeleccionado, nombreCandidata);
+                    // Obtener todos los nombres de la estructura de la familia candidata
+                    var nombresDeLaCandidata = gestorPermisos490WC.ObtenerNombresDePermisos490WC(familiaCandidata);
 
-                    if (!yaExiste)
+                    // Si alguno de los nombres de la familia candidata ya está en el perfil/familia seleccionada => no se agrega
+                    bool haySolapamiento = nombresDeLaCandidata.Any(nombre => nombresEnSeleccionado.Contains(nombre));
+
+                    if (!haySolapamiento)
                     {
                         listboxFamilia490WC.Items.Add(nombreCandidata);
                     }
                 }
             }
         }
+
+
 
 
 
@@ -420,7 +453,7 @@ namespace GUI490WC
             {
                 treeViewPreviaModificacion490WC.Nodes.Clear();
                 GestorPermiso490WC gestorPermiso490WC = new GestorPermiso490WC();
-                elementoSeleccionado490WC = gestorPermiso490WC.LeerPermisoCompuesto490WC(CB_FAMILIA490WC.SelectedItem.ToString());
+                elementoSeleccionado490WC = gestorPermiso490WC.LeerFamiliasConEstructuraRecursiva490WC().Find(x => x.obtenerPermisoNombre490WC() == CB_FAMILIA490WC.SelectedItem.ToString());
                 var nodo490WC = new TreeNode(elementoSeleccionado490WC.obtenerPermisoNombre490WC());
                 treeViewPreviaModificacion490WC.Nodes.Add(nodo490WC);
                 CargarArbolRevursivo490WC(elementoSeleccionado490WC, nodo490WC);
@@ -551,6 +584,9 @@ namespace GUI490WC
 
         private void BT_GUARDARCAMBIOS490WC_Click(object sender, EventArgs e)
         {
+            treeViewPreviaModificacion490WC.Nodes.Clear();
+            CB_FAMILIA490WC.SelectedIndex = -1;
+            CB_ROL490WC.SelectedIndex = -1;
             ActivarModificacion490WC(false);
             LlenarFamilias490WC();
             LlenarPermisosSimples490WC();
@@ -566,11 +602,13 @@ namespace GUI490WC
             {
                 CB_FAMILIA490WC.Enabled = true;
                 CB_ROL490WC.Enabled = false;
+                CB_ROL490WC.SelectedIndex = -1;
             }
             else
             {
                 CB_FAMILIA490WC.Enabled = false;
                 CB_ROL490WC.Enabled = true;
+                CB_FAMILIA490WC.SelectedIndex = -1;
             }
         }
         private void CB_ROL490WC_SelectedIndexChanged(object sender, EventArgs e)
