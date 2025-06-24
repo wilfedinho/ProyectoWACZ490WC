@@ -338,6 +338,8 @@ namespace GUI490WC
                 TB_ROL490WC.Enabled = false;
                 BT_Modificar490WC.Enabled = false;
                 BT_ELIMINAR490WC.Enabled = false;
+                RB_CBFAMILIA490WC.Enabled= false;
+                RB_CBROLES490WC.Enabled = false;
             }
             else
             {
@@ -352,6 +354,8 @@ namespace GUI490WC
                 TB_ROL490WC.Enabled = true;
                 BT_Modificar490WC.Enabled = true;
                 BT_ELIMINAR490WC.Enabled = true;
+                RB_CBFAMILIA490WC.Enabled = true;
+                RB_CBROLES490WC.Enabled = true;
             }
         }
 
@@ -590,6 +594,7 @@ namespace GUI490WC
             ActivarModificacion490WC(false);
             LlenarFamilias490WC();
             LlenarPermisosSimples490WC();
+            HabilitarCB490WC();
         }
 
         private void RB_SIMPLE490WC_CheckedChanged(object sender, EventArgs e)
