@@ -868,8 +868,58 @@ namespace DAL490WC
             }
         }
 
+        public bool RolEstaAsignado490WC(string nombreRol490WC)
+        {
+            using (SqlConnection conexion = GestorConexion490WC.GestorCone490WC.DevolverConexion490WC())
+            {
+                conexion.Open();
 
-     
+                string query = "SELECT COUNT(*) FROM Usuario490WC WHERE Rol490WC = @rol";
+
+                using (SqlCommand cmd = new SqlCommand(query, conexion))
+                {
+                    cmd.Parameters.AddWithValue("@rol", nombreRol490WC);
+                    int cantidad = (int)cmd.ExecuteScalar();
+                    return cantidad > 0;
+                }
+            }
+        }
+
+        public bool FamiliaEstaAsignadaAPerfil490WC(string nombreFamilia490WC)
+        {
+            using (SqlConnection conexion = GestorConexion490WC.GestorCone490WC.DevolverConexion490WC())
+            {
+                conexion.Open();
+
+                string query = "SELECT COUNT(*) FROM Perfil_Familia490WC WHERE NombreFamilia490WC = @familia";
+
+                using (SqlCommand cmd = new SqlCommand(query, conexion))
+                {
+                    cmd.Parameters.AddWithValue("@familia", nombreFamilia490WC);
+                    int cantidad = (int)cmd.ExecuteScalar();
+                    return cantidad > 0;
+                }
+            }
+        }
+
+        public bool FamiliaEstaAnidadaEnOtra490WC(string nombreFamilia490WC)
+        {
+            using (SqlConnection conexion = GestorConexion490WC.GestorCone490WC.DevolverConexion490WC())
+            {
+                conexion.Open();
+
+                string query = "SELECT COUNT(*) FROM Familia_Familia490WC WHERE NombreFamiliaIncluida490WC = @familia";
+
+                using (SqlCommand cmd = new SqlCommand(query, conexion))
+                {
+                    cmd.Parameters.AddWithValue("@familia", nombreFamilia490WC);
+                    int cantidad = (int)cmd.ExecuteScalar();
+                    return cantidad > 0;
+                }
+            }
+        }
+
+
         public List<Permiso490WC> ObtenerPermisos490WC()
         {
             List<Permiso490WC> permisosTotales = new List<Permiso490WC>();

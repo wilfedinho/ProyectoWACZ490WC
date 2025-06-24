@@ -86,6 +86,9 @@ namespace SERVICIOS490WC
             return gestorPermiso490WC.EliminarRelacionPerfil_Familia(nombrePerfil, nombreFamilia);
         }
 
+
+
+
         public bool FamiliaExiste490WC(string nombreFamilia)
         {
             PermisoDAL490WC gestorPermiso490WC = new PermisoDAL490WC();
@@ -103,6 +106,25 @@ namespace SERVICIOS490WC
             PermisoDAL490WC gestorPermiso490WC = new PermisoDAL490WC();
             return gestorPermiso490WC.ObtenerPermisos490WC();
         }
+
+        public bool RolEstaAsignado490WC(string nombreRol490WC)
+        {
+            PermisoDAL490WC gestorPermiso490WC = new PermisoDAL490WC();
+            return gestorPermiso490WC.RolEstaAsignado490WC(nombreRol490WC);
+        }
+
+        public bool FamiliaEstaAsignadaAPerfil490WC(string nombreFamilia490WC)
+        {
+            PermisoDAL490WC gestorPermiso490WC = new PermisoDAL490WC();
+            return gestorPermiso490WC.FamiliaEstaAsignadaAPerfil490WC(nombreFamilia490WC);
+        }
+
+        public bool FamiliaEstaAnidadaEnOtra490WC(string nombreFamilia490WC)
+        {
+            PermisoDAL490WC gestorPermiso490WC = new PermisoDAL490WC();
+            return gestorPermiso490WC.FamiliaEstaAnidadaEnOtra490WC(nombreFamilia490WC);
+        }
+
 
         public List<Permiso490WC> ObtenerPermisosSimples490WC()
         {

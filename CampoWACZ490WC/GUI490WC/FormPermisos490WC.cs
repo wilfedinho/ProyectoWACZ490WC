@@ -18,7 +18,7 @@ namespace GUI490WC
     {
         string adminRolNombre490WC = "AdminSistema";
 
-
+        Permiso490WC elementoSeleccionado490WC;
 
         public FormPermisos490WC()
         {
@@ -129,6 +129,15 @@ namespace GUI490WC
                 nodoPadre490WC.Nodes.Add(nodoAgregar490WC);
             }
         }
+
+        public void HabilitarAcciones490WC(bool Activar490WC)
+        {
+            if (Activar490WC)
+            {
+
+            }
+        }
+
         private void FormPermisos490WC_Load(object sender, EventArgs e)
         {
 
@@ -154,7 +163,52 @@ namespace GUI490WC
 
         private void BT_ELIMINAR490WC_Click(object sender, EventArgs e)
         {
-
+            GestorPermiso490WC gestorPermiso490WC = new GestorPermiso490WC();
+            if (CB_PermisoCompuesto490WC.SelectedIndex > -1)
+            {
+                string nombreElementoSeleccionado490WC = CB_PermisoCompuesto490WC.SelectedItem.ToString();
+                if (!gestorPermiso490WC.RolEstaAsignado490WC(nombreElementoSeleccionado490WC))
+                {
+                    if (!gestorPermiso490WC.FamiliaEstaAsignadaAPerfil490WC(nombreElementoSeleccionado490WC))
+                    {
+                        if (!gestorPermiso490WC.FamiliaEstaAnidadaEnOtra490WC(nombreElementoSeleccionado490WC))
+                        {
+                            if (gestorPermiso490WC.BorrarPermiso490WC(nombreElementoSeleccionado490WC))
+                            {
+                                MessageBox.Show("Eliminacion Exitosa!!!");
+                                CargarComboBox490WC();
+                                CargarTodasLasFamiliasEnArbol490WC();
+                                CargarTodosLosPerfilesEnArbol490WC();
+                                CB_PermisoCompuesto490WC.SelectedIndex = -1;
+                            }
+                            else
+                            {
+                                MessageBox.Show("Eliminacion Fracasada!!!");
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("No puede eliminar una Familia que esta asignada a otra Familia(s)!!!");
+                            CB_PermisoCompuesto490WC.SelectedIndex = -1;
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("No puede eliminar una Familia que esta asignada a Rol(es)!!!");
+                        CB_PermisoCompuesto490WC.SelectedIndex = -1;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No puede eliminar un Rol que esta asignado a usuario(s)!!");
+                    CB_PermisoCompuesto490WC.SelectedIndex = -1;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Para eliminar Un Rol o Familia Debe Seleccionarlo!!!");
+                CB_PermisoCompuesto490WC.SelectedIndex = -1;
+            }
         }
 
         private void BT_ASIGNAR490WC_Click(object sender, EventArgs e)
