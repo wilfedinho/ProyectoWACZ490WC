@@ -459,150 +459,104 @@ namespace DAL490WC
 
 
 
-        public bool BorrarPermiso490WC(string NombrePermiso490WC)
+        public bool BorrarFamilia490WC(string nombreFamilia)
         {
             try
             {
-                // 1. Verificar si el permiso está asignado como Rol a algún usuario
-                Usuario490WC usuarioConRol = UsuarioAccesoDatos490WC.UsuarioAccesoDatosSG490WC.DevolverTodosLosUsuarios490WC().Find(x => x.Rol490WC == NombrePermiso490WC);
-
-                if (usuarioConRol != null)
-                {
-                    return false; // No se puede borrar si está asignado
-                }
-
                 using (SqlConnection conexion = GestorConexion490WC.GestorCone490WC.DevolverConexion490WC())
                 {
                     conexion.Open();
 
-                    // 2. Verificar si es Permiso Simple
-                    string queryEsSimple = "SELECT COUNT(*) FROM PermisoSimple490WC WHERE Nombre490WC = @nombre";
-                    using (SqlCommand cmdVerificarSimple = new SqlCommand(queryEsSimple, conexion))
+                    // Eliminar relaciones Familia-Familia
+                    string deleteRelFF = "DELETE FROM Familia_Familia490WC WHERE NombreFamiliaIncluye490WC = @nombre OR NombreFamiliaIncluida490WC = @nombre";
+                    using (SqlCommand cmdDelFF = new SqlCommand(deleteRelFF, conexion))
                     {
-                        cmdVerificarSimple.Parameters.AddWithValue("@nombre", NombrePermiso490WC);
-                        int countSimple = (int)cmdVerificarSimple.ExecuteScalar();
-
-                        if (countSimple > 0)
-                        {
-                            // 2.a Eliminar relaciones PermisoSimple-Familia
-                            string deleteRel = "DELETE FROM PermisoSimple_Familia490WC WHERE NombrePermisoSimple490WC = @nombre";
-                            using (SqlCommand cmdDelRel = new SqlCommand(deleteRel, conexion))
-                            {
-                                cmdDelRel.Parameters.AddWithValue("@nombre", NombrePermiso490WC);
-                                cmdDelRel.ExecuteNonQuery();
-                            }
-
-                            // 2.b Eliminar relaciones con perfiles si las hay
-                            string deletePerfilRel = "DELETE FROM PermisoSimple_Perfil490WC WHERE NombrePermisoSimple490WC = @nombre";
-                            using (SqlCommand cmdDelPerfil = new SqlCommand(deletePerfilRel, conexion))
-                            {
-                                cmdDelPerfil.Parameters.AddWithValue("@nombre", NombrePermiso490WC);
-                                cmdDelPerfil.ExecuteNonQuery();
-                            }
-
-                            // 2.c Eliminar el permiso simple
-                            string deleteSimple = "DELETE FROM PermisoSimple490WC WHERE Nombre490WC = @nombre";
-                            using (SqlCommand cmdDel = new SqlCommand(deleteSimple, conexion))
-                            {
-                                cmdDel.Parameters.AddWithValue("@nombre", NombrePermiso490WC);
-                                cmdDel.ExecuteNonQuery();
-                            }
-
-                            return true;
-                        }
+                        cmdDelFF.Parameters.AddWithValue("@nombre", nombreFamilia);
+                        cmdDelFF.ExecuteNonQuery();
                     }
 
-                    // 3. Verificar si es una Familia
-                    string queryEsFamilia = "SELECT COUNT(*) FROM Familia490WC WHERE Nombre490WC = @nombre";
-                    using (SqlCommand cmdVerificarFamilia = new SqlCommand(queryEsFamilia, conexion))
+                    // Eliminar relaciones Familia - PermisoSimple
+                    string deleteRelPS = "DELETE FROM PermisoSimple_Familia490WC WHERE NombreFamilia490WC = @nombre";
+                    using (SqlCommand cmdDelPS = new SqlCommand(deleteRelPS, conexion))
                     {
-                        cmdVerificarFamilia.Parameters.AddWithValue("@nombre", NombrePermiso490WC);
-                        int countFamilia = (int)cmdVerificarFamilia.ExecuteScalar();
-
-                        if (countFamilia > 0)
-                        {
-                            // 3.a Eliminar relaciones Familia-Familia
-                            string deleteRelFF = "DELETE FROM Familia_Familia490WC WHERE NombreFamiliaIncluye490WC = @nombre OR NombreFamiliaIncluida490WC = @nombre";
-                            using (SqlCommand cmdDelFF = new SqlCommand(deleteRelFF, conexion))
-                            {
-                                cmdDelFF.Parameters.AddWithValue("@nombre", NombrePermiso490WC);
-                                cmdDelFF.ExecuteNonQuery();
-                            }
-
-                            // 3.b Eliminar relaciones Familia - PermisoSimple
-                            string deleteRelPS = "DELETE FROM PermisoSimple_Familia490WC WHERE NombreFamilia490WC = @nombre";
-                            using (SqlCommand cmdDelPS = new SqlCommand(deleteRelPS, conexion))
-                            {
-                                cmdDelPS.Parameters.AddWithValue("@nombre", NombrePermiso490WC);
-                                cmdDelPS.ExecuteNonQuery();
-                            }
-
-                            // 3.c Eliminar relaciones con perfiles si las hay
-                            string deletePerfilRel = "DELETE FROM Perfil_Familia490WC WHERE NombreFamilia490WC = @nombre";
-                            using (SqlCommand cmdDelPerfil = new SqlCommand(deletePerfilRel, conexion))
-                            {
-                                cmdDelPerfil.Parameters.AddWithValue("@nombre", NombrePermiso490WC);
-                                cmdDelPerfil.ExecuteNonQuery();
-                            }
-
-                            // 3.d Eliminar la familia
-                            string deleteFamilia = "DELETE FROM Familia490WC WHERE Nombre490WC = @nombre";
-                            using (SqlCommand cmdDel = new SqlCommand(deleteFamilia, conexion))
-                            {
-                                cmdDel.Parameters.AddWithValue("@nombre", NombrePermiso490WC);
-                                cmdDel.ExecuteNonQuery();
-                            }
-
-                            return true;
-                        }
+                        cmdDelPS.Parameters.AddWithValue("@nombre", nombreFamilia);
+                        cmdDelPS.ExecuteNonQuery();
                     }
 
-                    // 4. Verificar si es un Perfil (Rol)
-                    string queryEsPerfil = "SELECT COUNT(*) FROM Perfil490WC WHERE Nombre490WC = @nombre";
-                    using (SqlCommand cmdVerificarPerfil = new SqlCommand(queryEsPerfil, conexion))
+                    // Eliminar relaciones con perfiles
+                    string deletePerfilRel = "DELETE FROM Perfil_Familia490WC WHERE NombreFamilia490WC = @nombre";
+                    using (SqlCommand cmdDelPerfil = new SqlCommand(deletePerfilRel, conexion))
                     {
-                        cmdVerificarPerfil.Parameters.AddWithValue("@nombre", NombrePermiso490WC);
-                        int countPerfil = (int)cmdVerificarPerfil.ExecuteScalar();
+                        cmdDelPerfil.Parameters.AddWithValue("@nombre", nombreFamilia);
+                        cmdDelPerfil.ExecuteNonQuery();
+                    }
 
-                        if (countPerfil > 0)
-                        {
-                            // 4.a Eliminar relaciones Perfil - PermisoSimple
-                            string deleteRelPS = "DELETE FROM PermisoSimple_Perfil490WC WHERE NombrePerfil490WC = @nombre";
-                            using (SqlCommand cmdDelPS = new SqlCommand(deleteRelPS, conexion))
-                            {
-                                cmdDelPS.Parameters.AddWithValue("@nombre", NombrePermiso490WC);
-                                cmdDelPS.ExecuteNonQuery();
-                            }
-
-                            // 4.b Eliminar relaciones Perfil - Familia
-                            string deleteRelFam = "DELETE FROM Perfil_Familia490WC WHERE NombrePerfil490WC = @nombre";
-                            using (SqlCommand cmdDelFam = new SqlCommand(deleteRelFam, conexion))
-                            {
-                                cmdDelFam.Parameters.AddWithValue("@nombre", NombrePermiso490WC);
-                                cmdDelFam.ExecuteNonQuery();
-                            }
-
-                            // 4.c Eliminar el perfil
-                            string deletePerfil = "DELETE FROM Perfil490WC WHERE Nombre490WC = @nombre";
-                            using (SqlCommand cmdDel = new SqlCommand(deletePerfil, conexion))
-                            {
-                                cmdDel.Parameters.AddWithValue("@nombre", NombrePermiso490WC);
-                                cmdDel.ExecuteNonQuery();
-                            }
-
-                            return true;
-                        }
+                    // Eliminar la familia
+                    string deleteFamilia = "DELETE FROM Familia490WC WHERE Nombre490WC = @nombre";
+                    using (SqlCommand cmdDel = new SqlCommand(deleteFamilia, conexion))
+                    {
+                        cmdDel.Parameters.AddWithValue("@nombre", nombreFamilia);
+                        cmdDel.ExecuteNonQuery();
                     }
                 }
 
-                // No se encontró como simple, familia ni rol
-                return false;
+                return true;
             }
             catch
             {
                 return false;
             }
         }
+
+        public bool BorrarRol490WC(string nombreRol)
+        {
+            try
+            {
+                using (SqlConnection conexion = GestorConexion490WC.GestorCone490WC.DevolverConexion490WC())
+                {
+                    conexion.Open();
+
+                    Usuario490WC usuarioConRol = UsuarioAccesoDatos490WC.UsuarioAccesoDatosSG490WC.DevolverTodosLosUsuarios490WC().Find(x => x.Rol490WC == nombreRol);
+
+                    if (usuarioConRol != null)
+                    {
+                        return false; // No se puede borrar si está asignado
+                    }
+
+
+                    // Eliminar relaciones Rol - PermisoSimple
+                    string deleteRelPS = "DELETE FROM PermisoSimple_Perfil490WC WHERE NombrePerfil490WC = @nombre";
+                    using (SqlCommand cmdDelPS = new SqlCommand(deleteRelPS, conexion))
+                    {
+                        cmdDelPS.Parameters.AddWithValue("@nombre", nombreRol);
+                        cmdDelPS.ExecuteNonQuery();
+                    }
+
+                    // Eliminar relaciones Rol - Familia
+                    string deleteRelFam = "DELETE FROM Perfil_Familia490WC WHERE NombrePerfil490WC = @nombre";
+                    using (SqlCommand cmdDelFam = new SqlCommand(deleteRelFam, conexion))
+                    {
+                        cmdDelFam.Parameters.AddWithValue("@nombre", nombreRol);
+                        cmdDelFam.ExecuteNonQuery();
+                    }
+
+                    // Eliminar el rol
+                    string deletePerfil = "DELETE FROM Perfil490WC WHERE Nombre490WC = @nombre";
+                    using (SqlCommand cmdDel = new SqlCommand(deletePerfil, conexion))
+                    {
+                        cmdDel.Parameters.AddWithValue("@nombre", nombreRol);
+                        cmdDel.ExecuteNonQuery();
+                    }
+                }
+
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
 
 
         public bool AlgunaFamiliaQuedariaVaciaAlEliminarElemento(string nombreElemento)
