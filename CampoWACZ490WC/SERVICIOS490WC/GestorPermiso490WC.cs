@@ -13,11 +13,16 @@ namespace SERVICIOS490WC
     {
         public void AsignarRolSesion490WC(string nuevoRol490WC)
         {
-           // SesionManager490WC.GestorSesion490WC.Usuario490WC.Rol490WC = nuevoRol490WC;
-           // SesionManager490WC.GestorSesion490WC.permisosDeLaSesion490WC = ObtenerPermisoCompuesto490WC(SesionManager490WC.GestorSesion490WC.Usuario490WC.Rol490WC);
-            SesionManager490WC.GestorSesion490WC.Usuario490WC.Rol490WC = "AdminSistema";
-            //SesionManager490WC.GestorSesion490WC.permisosDeLaSesion490WC = ObtenerPermisoCompuesto490WC(SesionManager490WC.GestorSesion490WC.Usuario490WC.Rol490WC);
-            Permiso490WC rol = LeerRolConEstructura490WC("CHIN");
+            if (nuevoRol490WC == "AdminSistema")
+            {
+                SesionManager490WC.GestorSesion490WC.Usuario490WC.Rol490WC = "AdminSistema";
+                SesionManager490WC.GestorSesion490WC.permisosDeLaSesion490WC = null;
+            }
+            else
+            {
+                SesionManager490WC.GestorSesion490WC.Usuario490WC.Rol490WC = nuevoRol490WC;
+                SesionManager490WC.GestorSesion490WC.permisosDeLaSesion490WC = LeerRolConEstructura490WC(SesionManager490WC.GestorSesion490WC.Usuario490WC.Rol490WC);
+            }
         }
         public List<PermisoCompuesto490WC> LeerFamiliasConEstructuraRecursiva490WC()
         {
@@ -83,7 +88,7 @@ namespace SERVICIOS490WC
         public bool FamiliaQuedariaVaciaTrasEliminarElemento(string nombreFamilia, string nombreElemento)
         {
             PermisoDAL490WC gestorPermiso490WC = new PermisoDAL490WC();
-            return gestorPermiso490WC.FamiliaQuedariaVaciaTrasEliminarElemento(nombreFamilia,nombreElemento);
+            return gestorPermiso490WC.FamiliaQuedariaVaciaTrasEliminarElemento(nombreFamilia, nombreElemento);
         }
 
         public bool PerfilQuedariaVacioAlEliminarElemento(string nombreElemento)
@@ -124,7 +129,7 @@ namespace SERVICIOS490WC
         public bool EliminarRelacionPermisoSimple_Perfil(string nombrePerfil, string nombrePermisoSimple)
         {
             PermisoDAL490WC gestorPermiso490WC = new PermisoDAL490WC();
-            return gestorPermiso490WC.EliminarRelacionPermisoSimple_Perfil(nombrePerfil,nombrePermisoSimple);
+            return gestorPermiso490WC.EliminarRelacionPermisoSimple_Perfil(nombrePerfil, nombrePermisoSimple);
         }
 
         public bool EliminarRelacionPermisoSimple_Familia(string nombreFamilia, string nombrePermisoSimple)
@@ -209,7 +214,7 @@ namespace SERVICIOS490WC
             RecorrerPermisosRecursivo490WC(permisoRaiz, nombres);
             return nombres.ToList();
         }
-        
+
 
         private void RecorrerPermisosRecursivo490WC(PermisoCompuesto490WC permiso, HashSet<string> acumulador)
         {
@@ -248,7 +253,7 @@ namespace SERVICIOS490WC
         }
 
 
-        
+
 
 
 

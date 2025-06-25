@@ -35,7 +35,7 @@ namespace GUI490WC
             HabilitarCB490WC();
         }
 
-        public void CargarComboBoxRol490WC()
+        /*public void CargarComboBoxRol490WC()
         {
             CB_ROL490WC.Items.Clear();
             GestorPermiso490WC gestorPermiso490WC = new GestorPermiso490WC();
@@ -47,9 +47,108 @@ namespace GUI490WC
                 }
             }
 
+        }*/
+        public void CargarComboBoxRol490WC()
+        {
+            CB_ROL490WC.Items.Clear();
+            GestorPermiso490WC gestorPermiso = new GestorPermiso490WC();
+
+            string nombreRolSesion = SesionManager490WC.GestorSesion490WC.Usuario490WC.Rol490WC;
+
+            // Si es el rol especial, permite ver todos los roles menos sí mismo
+            if (nombreRolSesion == "AdminSistema")
+            {
+                foreach (Permiso490WC rol in gestorPermiso.ObtenerRoles490WC())
+                {
+                    if (rol.obtenerPermisoNombre490WC() != "AdminSistema")
+                    {
+                        CB_ROL490WC.Items.Add(rol.obtenerPermisoNombre490WC());
+                    }
+                }
+                return;
+            }
+
+            // Obtener estructura completa de familias del rol actual
+            var familiasDelRolActual = new HashSet<string>(
+                ObtenerNombresDeFamiliasEnEstructura(SesionManager490WC.GestorSesion490WC.permisosDeLaSesion490WC)
+            );
+
+            // Recorrer todos los roles y descartar aquellos que contienen alguna familia del rol actual
+            foreach (PermisoCompuesto490WC rolVacio490WC in gestorPermiso.ObtenerRoles490WC())
+            {
+                PermisoCompuesto490WC otroRol = gestorPermiso.LeerRolConEstructura490WC(rolVacio490WC.obtenerPermisoNombre490WC());
+                
+
+                
+                string nombreOtroRol = otroRol.obtenerPermisoNombre490WC();
+
+                if (nombreOtroRol == nombreRolSesion)
+                    continue;
+
+                var familiasDelOtroRol = new HashSet<string>(
+                    ObtenerNombresDeFamiliasEnEstructura(otroRol)
+                );
+
+                bool haySolapamiento = familiasDelOtroRol.Any(f => familiasDelRolActual.Contains(f));
+                if (!haySolapamiento)
+                {
+                    CB_ROL490WC.Items.Add(nombreOtroRol);
+                }
+            }
+        }
+
+        public List<string> ObtenerNombresDeFamiliasEnEstructura(PermisoCompuesto490WC estructura)
+        {
+            List<string> nombresFamilias = new List<string>();
+            RecorrerFamilias(estructura, nombresFamilias);
+            return nombresFamilias;
+        }
+
+        private void RecorrerFamilias(PermisoCompuesto490WC nodo, List<string> acumulador)
+        {
+            if (!acumulador.Contains(nodo.obtenerPermisoNombre490WC()))
+                acumulador.Add(nodo.obtenerPermisoNombre490WC());
+
+            foreach (var hijo in nodo.PermisosIncluidos490WC())
+            {
+                if (hijo is PermisoCompuesto490WC familia)
+                {
+                    RecorrerFamilias(familia, acumulador);
+                }
+            }
         }
 
         public void CargarComboboxFamilia490WC()
+        {
+            CB_FAMILIA490WC.Items.Clear();
+            GestorPermiso490WC gestorPermiso = new GestorPermiso490WC();
+
+            // Si el usuario tiene el rol especial, carga todo sin restricciones
+            if (SesionManager490WC.GestorSesion490WC.Usuario490WC.Rol490WC == "AdminSistema")
+            {
+                foreach (PermisoCompuesto490WC familia in gestorPermiso.ObtenerPermisosCompuestos490WC())
+                {
+                    CB_FAMILIA490WC.Items.Add(familia.obtenerPermisoNombre490WC());
+                }
+                return;
+            }
+
+            // En caso contrario, se filtran las familias que pertenecen al rol actual
+            var familiasDelRolActual = new HashSet<string>(
+                ObtenerNombresDeFamiliasEnEstructura(SesionManager490WC.GestorSesion490WC.permisosDeLaSesion490WC)
+            );
+
+            foreach (PermisoCompuesto490WC familia in gestorPermiso.ObtenerPermisosCompuestos490WC())
+            {
+                if (!familiasDelRolActual.Contains(familia.obtenerPermisoNombre490WC()))
+                {
+                    CB_FAMILIA490WC.Items.Add(familia.obtenerPermisoNombre490WC());
+                }
+            }
+        }
+
+
+        /*public void CargarComboboxFamilia490WC()
         {
             CB_FAMILIA490WC.Items.Clear();
             GestorPermiso490WC gestorPermiso490WC = new GestorPermiso490WC();
@@ -57,7 +156,7 @@ namespace GUI490WC
             {
                 CB_FAMILIA490WC.Items.Add(permi490WC.obtenerPermisoNombre490WC());
             }
-        }
+        }*/
 
         public void LlenarPermisosSimples490WC()
         {
@@ -1320,6 +1419,8 @@ namespace GUI490WC
             treeViewPreviaModificacion490WC.Nodes.Clear();
             CB_FAMILIA490WC.SelectedIndex = -1;
             CB_ROL490WC.SelectedIndex = -1;
+            CargarComboboxFamilia490WC();
+            CargarComboBoxRol490WC();
             ActivarModificacion490WC(false);
             LlenarFamilias490WC();
             LlenarPermisosSimples490WC();
