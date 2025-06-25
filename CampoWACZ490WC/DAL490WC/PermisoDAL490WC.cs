@@ -760,7 +760,7 @@ namespace DAL490WC
                 }
 
                 // Obtener todos los perfiles que tienen asignado el elemento como permiso simple
-                string queryPermisoSimple = "SELECT NombrePerfil490WC FROM Perfil_PermisoSimple490WC WHERE NombrePermisoSimple490WC = @nombre";
+                string queryPermisoSimple = "SELECT NombrePerfil490WC FROM PermisoSimple_Perfil490WC WHERE NombrePermisoSimple490WC = @nombre";
                 using (SqlCommand cmd = new SqlCommand(queryPermisoSimple, conexion))
                 {
                     cmd.Parameters.AddWithValue("@nombre", nombreElemento);
@@ -789,7 +789,7 @@ namespace DAL490WC
                     }
 
                     // ¿Tiene otros permisos simples distintos del elemento?
-                    string queryOtrosSimples = "SELECT COUNT(*) FROM Perfil_PermisoSimple490WC WHERE NombrePerfil490WC = @perfil AND NombrePermisoSimple490WC <> @elemento";
+                    string queryOtrosSimples = "SELECT COUNT(*) FROM PermisoSimple_Perfil490WC WHERE NombrePerfil490WC = @perfil AND NombrePermisoSimple490WC <> @elemento";
                     using (SqlCommand cmd = new SqlCommand(queryOtrosSimples, conexion))
                     {
                         cmd.Parameters.AddWithValue("@perfil", perfil);
@@ -816,7 +816,7 @@ namespace DAL490WC
                 {
                     conexion.Open();
 
-                    string query = "DELETE FROM Perfil_PermisoSimple490WC WHERE nombrePerfil490WC = @perfil AND nombrePermisoSimple490WC = @permiso";
+                    string query = "DELETE FROM PermisoSimple_Perfil490WC WHERE NombrePerfil490WC = @perfil AND NombrePermisoSimple490WC = @permiso";
 
                     using (SqlCommand cmd = new SqlCommand(query, conexion))
                     {
