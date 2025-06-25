@@ -314,6 +314,7 @@
             this.Name = "FormAplicarBeneficios490WC";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormAplicarBeneficios490WC";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormAplicarBeneficios490WC_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.dgvBeneficio490WC)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -160,5 +160,12 @@ namespace GUI490WC
             ClienteCargado490WC = null;
             CargarCliente490WC(null);
         }
+
+        private void FormAplicarBeneficios490WC_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            //ClienteCargado490WC = null;
+            BT_CANJEARBENEFICIO490WC.Enabled = false;
+            CargarCliente490WC(null);
+        }
     }
 }

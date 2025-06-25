@@ -188,17 +188,21 @@ namespace GUI490WC
                 if (ClienteCargado490WC.Activo490WC == true)
                 {
 
-                CargarCliente490WC(ClienteCargado490WC);
-                if (ClienteCargado490WC.BeneficiosCliente490WC.Count > 0)
-                {
-                    foreach (Beneficio490WC bene490WC in ClienteCargado490WC.BeneficiosCliente490WC)
+                    CargarCliente490WC(ClienteCargado490WC);
+                    if (ClienteCargado490WC.BeneficiosCliente490WC.Count > 0)
                     {
-                        CB_BENEFICIOSCLIENTE490WC.Items.Add(bene490WC.Nombre490WC);
+                        foreach (Beneficio490WC bene490WC in ClienteCargado490WC.BeneficiosCliente490WC)
+                        {
+                            if (!CB_BENEFICIOSCLIENTE490WC.Items.Contains(bene490WC.Nombre490WC))
+                            {
+                                CB_BENEFICIOSCLIENTE490WC.Items.Add(bene490WC.Nombre490WC);
+
+                            }
+                        }
                     }
-                }
-                TB_DNI490WC.Clear();
-                HabilitarBeneficio490WC();
-                LlenarInfoBoleto490WC();
+                    TB_DNI490WC.Clear();
+                    HabilitarBeneficio490WC();
+                    LlenarInfoBoleto490WC();
                 }
                 else
                 {
@@ -246,33 +250,33 @@ namespace GUI490WC
             {
                 MessageBox.Show("Debe seleccionar un boleto para aplicar un beneficio.");
             }
-            else 
+            else
             {
-            if (CB_BENEFICIOSCLIENTE490WC.SelectedItem != null)
-            {
-                Beneficio490WC beneficioAplicar490WC = ClienteCargado490WC.BeneficiosCliente490WC.Find(x => x.Nombre490WC == CB_BENEFICIOSCLIENTE490WC.SelectedItem.ToString());
-                if (beneficioAplicar490WC != null)
+                if (CB_BENEFICIOSCLIENTE490WC.SelectedItem != null)
                 {
-                    gestorBeneficio490WC.AplicarBeneficio490WC(boletoCargado490WC.IDBoleto490WC, beneficioAplicar490WC.DescuentoAplicar490WC, beneficioAplicar490WC.Nombre490WC);
-                    boletoCargado490WC = gestorBoleto490WC.ObtenerBoletoConBeneficio490WC(boletoCargado490WC.IDBoleto490WC);
-                    gestorBeneficio490WC.EliminarBeneficioDeCliente490WC(ClienteCargado490WC.DNI490WC, beneficioAplicar490WC.CodigoBeneficio490WC);
-                    ClienteCargado490WC = gestorCliente490WC.BuscarClientePorDNI490WC(ClienteCargado490WC.DNI490WC);
-                    LlenarDatosCliente490WC(ClienteCargado490WC.DNI490WC);
+                    Beneficio490WC beneficioAplicar490WC = ClienteCargado490WC.BeneficiosCliente490WC.Find(x => x.Nombre490WC == CB_BENEFICIOSCLIENTE490WC.SelectedItem.ToString());
+                    if (beneficioAplicar490WC != null)
+                    {
+                        gestorBeneficio490WC.AplicarBeneficio490WC(boletoCargado490WC.IDBoleto490WC, beneficioAplicar490WC.DescuentoAplicar490WC, beneficioAplicar490WC.Nombre490WC);
+                        boletoCargado490WC = gestorBoleto490WC.ObtenerBoletoConBeneficio490WC(boletoCargado490WC.IDBoleto490WC);
+                        gestorBeneficio490WC.EliminarBeneficioDeCliente490WC(ClienteCargado490WC.DNI490WC, beneficioAplicar490WC.CodigoBeneficio490WC);
+                        ClienteCargado490WC = gestorCliente490WC.BuscarClientePorDNI490WC(ClienteCargado490WC.DNI490WC);
+                        LlenarDatosCliente490WC(ClienteCargado490WC.DNI490WC);
                         BT_CANCELAR490WC.Enabled = false;
-                    controlIDA490WC.Enabled = false;
-                    controlVUELTA490WC.Enabled = false;
-                    RB_IDA490WC.Enabled = false;
-                    RB_IDAVUELTA490WC.Enabled = false;
+                        controlIDA490WC.Enabled = false;
+                        controlVUELTA490WC.Enabled = false;
+                        RB_IDA490WC.Enabled = false;
+                        RB_IDAVUELTA490WC.Enabled = false;
+                    }
+                    else
+                    {
+                        MessageBox.Show("El beneficio seleccionado no pertenece al cliente");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("El beneficio seleccionado no pertenece al cliente");
+                    MessageBox.Show("Por favor, seleccione un beneficio para aplicar.");
                 }
-            }
-            else
-            {
-                MessageBox.Show("Por favor, seleccione un beneficio para aplicar.");
-            }
 
             }
         }
