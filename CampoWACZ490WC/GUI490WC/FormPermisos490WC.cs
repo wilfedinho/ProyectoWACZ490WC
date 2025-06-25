@@ -81,7 +81,7 @@ namespace GUI490WC
 
         public void HabilitarCarga490WC()
         {
-            
+
             if (RB_SIMPLE490WC.Checked)
             {
                 listboxPermisoSimple490WC.Enabled = true;
@@ -128,6 +128,7 @@ namespace GUI490WC
                 foreach (Permiso490WC permi490WC in permisoPadreCompuesto490WC.PermisosIncluidos490WC())
                 {
                     var nodoAgregar490WC = new TreeNode(permi490WC.obtenerPermisoNombre490WC());
+                    //nodoAgregar490WC.Tag = "Familia";
                     nodoPadre490WC.Nodes.Add(nodoAgregar490WC);
                     if (permi490WC is PermisoCompuesto490WC)
                     {
@@ -138,6 +139,7 @@ namespace GUI490WC
             else
             {
                 var nodoAgregar490WC = new TreeNode(permisoPadre490WC.obtenerPermisoNombre490WC());
+                nodoAgregar490WC.Tag = "Simple";
                 nodoPadre490WC.Nodes.Add(nodoAgregar490WC);
             }
         }
@@ -338,7 +340,7 @@ namespace GUI490WC
                 TB_ROL490WC.Enabled = false;
                 BT_Modificar490WC.Enabled = false;
                 BT_ELIMINAR490WC.Enabled = false;
-                RB_CBFAMILIA490WC.Enabled= false;
+                RB_CBFAMILIA490WC.Enabled = false;
                 RB_CBROLES490WC.Enabled = false;
             }
             else
@@ -375,31 +377,7 @@ namespace GUI490WC
                 }
             }
         }
-        /* public void CargarFamiliasParaModificacion490WC()
-         {
-             GestorPermiso490WC gestorPermisos490WC = new GestorPermiso490WC();
-             listboxFamilia490WC.Items.Clear();
 
-             if (elementoSeleccionado490WC is PermisoCompuesto490WC compuestoSeleccionado)
-             {
-                 foreach (PermisoCompuesto490WC familiaCandidata in gestorPermisos490WC.LeerFamiliasConEstructuraRecursiva490WC())
-                 {
-                     string nombreCandidata = familiaCandidata.obtenerPermisoNombre490WC();
-
-                     // Evitar agregarse a sí misma
-                     if (nombreCandidata == compuestoSeleccionado.obtenerPermisoNombre490WC())
-                         continue;
-
-                     // Verificar si ya existe en la estructura del seleccionado
-                     bool yaExiste = gestorPermisos490WC.ExistePermisoEnEstructura490WC(compuestoSeleccionado, nombreCandidata);
-
-                     if (!yaExiste)
-                     {
-                         listboxFamilia490WC.Items.Add(nombreCandidata);
-                     }
-                 }
-             }
-         }*/
 
         public void CargarFamiliasParaModificacion490WC()
         {
@@ -436,9 +414,69 @@ namespace GUI490WC
             }
         }
 
+        public void CargarArbolPrevioModificar490WC(string queModificamos490WC)
+        {
+            
+            if (queModificamos490WC == "Rol")
+            {
+                treeViewPreviaModificacion490WC.Nodes.Clear();
+                GestorPermiso490WC gestorPermiso490WC = new GestorPermiso490WC();
+                elementoSeleccionado490WC = gestorPermiso490WC.LeerPermisoCompuesto490WC(CB_ROL490WC.SelectedItem.ToString());
+                var nodo490WC = new TreeNode(elementoSeleccionado490WC.obtenerPermisoNombre490WC());
+                nodo490WC.Tag = "Rol";
+                treeViewPreviaModificacion490WC.Nodes.Add(nodo490WC);
+                CargarArbolRecursivoParaModificar490WC(elementoSeleccionado490WC, nodo490WC);
+            }
+            else if (queModificamos490WC == "Familia")
+            {
+                treeViewPreviaModificacion490WC.Nodes.Clear();
+                GestorPermiso490WC gestorPermiso490WC = new GestorPermiso490WC();
+                elementoSeleccionado490WC = gestorPermiso490WC.LeerFamiliasConEstructuraRecursiva490WC().Find(x => x.obtenerPermisoNombre490WC() == CB_FAMILIA490WC.SelectedItem.ToString());
+                var nodo490WC = new TreeNode(elementoSeleccionado490WC.obtenerPermisoNombre490WC());
+                nodo490WC.Tag = "Familia";
+                treeViewPreviaModificacion490WC.Nodes.Add(nodo490WC);
+                CargarArbolRecursivoParaModificar490WC(elementoSeleccionado490WC, nodo490WC);
+            }
+        }
 
-
-
+        public void CargarArbolRecursivoParaModificar490WC(Permiso490WC permisoPadre490WC, TreeNode nodoPadre490WC)
+        {
+    
+            if (permisoPadre490WC is PermisoCompuesto490WC permisoPadreCompuesto490WC)
+            {
+                foreach (Permiso490WC permi490WC in permisoPadreCompuesto490WC.PermisosIncluidos490WC())
+                {
+                    if (permi490WC is PermisoCompuesto490WC)
+                    {
+                        var nodoAgregar490WC = new TreeNode(permi490WC.obtenerPermisoNombre490WC());
+                        nodoAgregar490WC.Tag = "Familia";
+                        nodoPadre490WC.Nodes.Add(nodoAgregar490WC);
+                        if (permi490WC is PermisoCompuesto490WC)
+                        {
+                            //CargarArbolRevursivo490WC(permi490WC, nodoAgregar490WC);
+                            CargarArbolRecursivoParaModificar490WC(permi490WC, nodoAgregar490WC);
+                        }
+                    }
+                    else
+                    {
+                        var nodoAgregar490WC = new TreeNode(permi490WC.obtenerPermisoNombre490WC());
+                        nodoAgregar490WC.Tag = "Simple";
+                        nodoPadre490WC.Nodes.Add(nodoAgregar490WC);
+                    }
+                    /*if (permi490WC is PermisoCompuesto490WC)
+                    {
+                        //CargarArbolRevursivo490WC(permi490WC, nodoAgregar490WC);
+                        CargarArbolRecursivoParaModificar490WC(permi490WC, nodoAgregar490WC);
+                    }*/
+                }
+            }
+            else
+            {
+                var nodoAgregar490WC = new TreeNode(permisoPadre490WC.obtenerPermisoNombre490WC());
+                nodoAgregar490WC.Tag = "Simple";
+                nodoPadre490WC.Nodes.Add(nodoAgregar490WC);
+            }
+        }
 
 
 
@@ -467,12 +505,13 @@ namespace GUI490WC
         {
             if (queModificar490WC == "Rol")
             {
-                PrepararArbolVistaPreviaModificar490WC("Rol");
-
+                //PrepararArbolVistaPreviaModificar490WC("Rol");
+                CargarArbolPrevioModificar490WC("Rol");
             }
             else if (queModificar490WC == "Familia")
             {
-                PrepararArbolVistaPreviaModificar490WC("Familia");
+                //PrepararArbolVistaPreviaModificar490WC("Familia");
+                CargarArbolPrevioModificar490WC("Familia");
             }
         }
 
@@ -578,12 +617,222 @@ namespace GUI490WC
         }
         private void BT_ASIGNAR490WC_Click(object sender, EventArgs e)
         {
+            GestorPermiso490WC gestorPermiso490WC = new GestorPermiso490WC();
+            if (RB_CBFAMILIA490WC.Checked)
+            {
+                if (treeViewPreviaModificacion490WC.SelectedNode != null)
+                {
+                    if (RB_SIMPLE490WC.Checked)
+                    {
+                        Permiso490WC permisoSimpleAsignar490WC = new PermisoSimple490WC(listboxPermisoSimple490WC.SelectedItem.ToString());
+                        
+                        if (treeViewPreviaModificacion490WC.SelectedNode.Tag.ToString() == "Familia")
+                        {
+                            string nombreFamiliaSeleccionado490WC = treeViewPreviaModificacion490WC.SelectedNode.Text;
+                            Permiso490WC PermisoDelNivelSeleccionado490WC = gestorPermiso490WC.LeerFamiliasConEstructuraRecursiva490WC().Find(x => x.obtenerPermisoNombre490WC() == nombreFamiliaSeleccionado490WC);
+                            if (PermisoDelNivelSeleccionado490WC != null)
+                            {
+                                if ((PermisoDelNivelSeleccionado490WC as PermisoCompuesto490WC).VerificarPermisoIncluido490WC(PermisoDelNivelSeleccionado490WC, permisoSimpleAsignar490WC.obtenerPermisoNombre490WC()) == false)
+                                {
+                                    if (gestorPermiso490WC.InsertarRelacionDesdeFamilia490WC(PermisoDelNivelSeleccionado490WC.obtenerPermisoNombre490WC(), permisoSimpleAsignar490WC.obtenerPermisoNombre490WC()))
+                                    {
+                                        elementoSeleccionado490WC = gestorPermiso490WC.LeerFamiliasConEstructuraRecursiva490WC().Find(x => x.obtenerPermisoNombre490WC() == elementoSeleccionado490WC.obtenerPermisoNombre490WC());
+                                        CargarTodasLasFamiliasEnArbol490WC();
+                                        CargarTodosLosPerfilesEnArbol490WC();
+                                        if (CB_ROL490WC.SelectedIndex > -1)
+                                        {
+                                            EjecutarModificacion490WC("Rol");
+                                            if (elementoSeleccionado490WC != null)
+                                            {
+                                                ActivarModificacion490WC(true);
+                                                CargarPermisosSimplesParaModificacion490WC();
+                                                CargarFamiliasParaModificacion490WC();
+                                            }
+                                        }
+                                        else if (CB_FAMILIA490WC.SelectedIndex > -1)
+                                        {
+                                            EjecutarModificacion490WC("Familia");
+                                            if (elementoSeleccionado490WC != null)
+                                            {
+                                                ActivarModificacion490WC(true);
+                                                CargarPermisosSimplesParaModificacion490WC();
+                                                CargarFamiliasParaModificacion490WC();
+                                            }
+                                        }
+                                        else
+                                        {
+                                            MessageBox.Show("Debe seleccionar una Familia o Rol para modificarlo");
+                                        }
+                                    }
+                                    MessageBox.Show("Funciona");
+                                }
+                                else
+                                {
+                                    MessageBox.Show("No funciona");
+                                }
+                            }
+                        }
+                        else if (treeViewPreviaModificacion490WC.SelectedNode.Tag.ToString() == "Simple")
+                        {
+                            MessageBox.Show("No se le puede asignar nada a un permiso simple!!!");
+                        }
+                    } //Modificar una Familia asignandole otra Familia
+                    else
+                    {
+                        Permiso490WC FamiliaAsignar490WC = gestorPermiso490WC.LeerFamiliasConEstructuraRecursiva490WC().Find(x => x.obtenerPermisoNombre490WC() == listboxFamilia490WC.SelectedItem.ToString());
+                        
+                        if (treeViewPreviaModificacion490WC.SelectedNode.Tag.ToString() == "Familia")
+                        {
+                            string nombreFamiliaSeleccionado490WC = treeViewPreviaModificacion490WC.SelectedNode.Text;
+                            Permiso490WC PermisoDelNivelSeleccionado490WC = gestorPermiso490WC.LeerFamiliasConEstructuraRecursiva490WC().Find(x => x.obtenerPermisoNombre490WC() == nombreFamiliaSeleccionado490WC);
+                            if (PermisoDelNivelSeleccionado490WC != null)
+                            {
+                                if ((PermisoDelNivelSeleccionado490WC as PermisoCompuesto490WC).VerificarPermisoIncluido490WC(PermisoDelNivelSeleccionado490WC, FamiliaAsignar490WC.obtenerPermisoNombre490WC()) == false)
+                                {
+                                    if (gestorPermiso490WC.InsertarRelacionDesdeFamilia490WC(PermisoDelNivelSeleccionado490WC.obtenerPermisoNombre490WC(), FamiliaAsignar490WC.obtenerPermisoNombre490WC()))
+                                    {
+                                        elementoSeleccionado490WC = gestorPermiso490WC.LeerFamiliasConEstructuraRecursiva490WC().Find(x => x.obtenerPermisoNombre490WC() == elementoSeleccionado490WC.obtenerPermisoNombre490WC());
+                                        CargarTodasLasFamiliasEnArbol490WC();
+                                        CargarTodosLosPerfilesEnArbol490WC();
+                                        if (CB_ROL490WC.SelectedIndex > -1)
+                                        {
+                                            EjecutarModificacion490WC("Rol");
+                                            if (elementoSeleccionado490WC != null)
+                                            {
+                                                ActivarModificacion490WC(true);
+                                                CargarPermisosSimplesParaModificacion490WC();
+                                                CargarFamiliasParaModificacion490WC();
+                                            }
+                                        }
+                                        else if (CB_FAMILIA490WC.SelectedIndex > -1)
+                                        {
+                                            EjecutarModificacion490WC("Familia");
+                                            if (elementoSeleccionado490WC != null)
+                                            {
+                                                ActivarModificacion490WC(true);
+                                                CargarPermisosSimplesParaModificacion490WC();
+                                                CargarFamiliasParaModificacion490WC();
+                                            }
+                                        }
+                                        else
+                                        {
+                                            MessageBox.Show("Debe seleccionar una Familia o Rol para modificarlo");
+                                        }
+                                    }
+                                    MessageBox.Show("Funciona");
+                                }
+                                else
+                                {
+                                    MessageBox.Show("No funciona");
+                                }
+                            }
+                        }
+                        else if (treeViewPreviaModificacion490WC.SelectedNode.Tag.ToString() == "Simple")
+                        {
+                            MessageBox.Show("No se le puede Asignar nada a un permiso simple!!!");
+                        }
+                    }
+                }
+                else
+                {
+                    
+                }
+            }
+            else //Modificar un Rol
+            {
+                if (treeViewPreviaModificacion490WC.SelectedNode != null)
+                {
+                    if (RB_SIMPLE490WC.Checked)
+                    {
+                        Permiso490WC permisoSimpleAsignar490WC = new PermisoSimple490WC(listboxPermisoSimple490WC.SelectedItem.ToString());
+                        if (treeViewPreviaModificacion490WC.SelectedNode.Tag.ToString() == "Perfil")
+                        {
+                            string nombrePerfilSeleccionado490WC = treeViewPreviaModificacion490WC.SelectedNode.Text;
+                            Permiso490WC PermisoDelNivelSeleccionado490WC = gestorPermiso490WC.LeerRolConEstructura490WC(nombrePerfilSeleccionado490WC);
+                            if (PermisoDelNivelSeleccionado490WC != null)
+                            {
+                                if ((PermisoDelNivelSeleccionado490WC as PermisoCompuesto490WC).VerificarPermisoIncluido490WC(PermisoDelNivelSeleccionado490WC, permisoSimpleAsignar490WC.obtenerPermisoNombre490WC()) == false)
+                                {
+
+
+                                    MessageBox.Show("Funciona");
+                                }
+                                else
+                                {
+                                    MessageBox.Show("No funciona");
+                                }
+                            }
+                        }
+                        else if (treeViewPreviaModificacion490WC.SelectedNode.Tag.ToString() == "Familia")
+                        {
+
+                        }
+                        else if (treeViewPreviaModificacion490WC.SelectedNode.Tag.ToString() == "Simple")
+                        {
+
+                        }
+                    }
+                    else
+                    {
+                            Permiso490WC FamiliaAsignar490WC = gestorPermiso490WC.LeerFamiliasConEstructuraRecursiva490WC().Find(x => x.obtenerPermisoNombre490WC() == listboxFamilia490WC.SelectedItem.ToString());
+                        if (treeViewPreviaModificacion490WC.SelectedNode.Tag.ToString() == "Perfil")
+                        {
+                            string nombrePerfilSeleccionado490WC = treeViewPreviaModificacion490WC.SelectedNode.Text;
+                            Permiso490WC PermisoDelNivelSeleccionado490WC = gestorPermiso490WC.LeerRolConEstructura490WC(nombrePerfilSeleccionado490WC);
+                            if (PermisoDelNivelSeleccionado490WC != null)
+                            {
+                                if ((PermisoDelNivelSeleccionado490WC as PermisoCompuesto490WC).VerificarPermisoIncluido490WC(PermisoDelNivelSeleccionado490WC, FamiliaAsignar490WC.obtenerPermisoNombre490WC()) == false)
+                                {
+
+
+                                    MessageBox.Show("Funciona");
+                                }
+                                else
+                                {
+                                    MessageBox.Show("No funciona");
+                                }
+                            }
+                        }
+                        else if (treeViewPreviaModificacion490WC.SelectedNode.Tag.ToString() == "Familia")
+                        {
+
+                        }
+                        else if (treeViewPreviaModificacion490WC.SelectedNode.Tag.ToString() == "Simple")
+                        {
+
+                        }
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Debes seleccionar El nodo al que quieres asignar!!!");
+                }
+            }
+            
 
         }
 
         private void BT_DESASIGNAR490WC_Click(object sender, EventArgs e)
         {
+            if (treeViewPreviaModificacion490WC.SelectedNode != null)
+            {
+                if (treeViewPreviaModificacion490WC.SelectedNode.Tag.ToString() == "Perfil")
+                {
 
+                }
+                else if (treeViewPreviaModificacion490WC.SelectedNode.Tag.ToString() == "Familia")
+                {
+
+                }
+                else if (treeViewPreviaModificacion490WC.SelectedNode.Tag.ToString() == "Simple")
+                {
+
+                }
+            }
+            else
+            {
+                MessageBox.Show("Debes seleccionar El nodo al que quieres asignar!!!");
+            }
         }
 
         private void BT_GUARDARCAMBIOS490WC_Click(object sender, EventArgs e)
