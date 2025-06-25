@@ -19,6 +19,7 @@ namespace GUI490WC
         {
             InitializeComponent();
             Mostrar490WC();
+
             CargarCliente490WC(null);
         }
         public void LimpiarCampos490WC()

@@ -28,7 +28,6 @@ namespace GUI490WC
             InicializarControles490WC();
             HabilitarControl490WC();
             CargarCliente490WC(null);
-            formAplicarBeneficios490WC = new FormAplicarBeneficios490WC();
             controlIDA490WC.Mostrar490WC();
             controlVUELTA490WC.Mostrar490WC();
         }
@@ -189,6 +188,7 @@ namespace GUI490WC
                 {
 
                     CargarCliente490WC(ClienteCargado490WC);
+                    CB_BENEFICIOSCLIENTE490WC.Items.Clear();
                     if (ClienteCargado490WC.BeneficiosCliente490WC.Count > 0)
                     {
                         foreach (Beneficio490WC bene490WC in ClienteCargado490WC.BeneficiosCliente490WC)
@@ -229,6 +229,7 @@ namespace GUI490WC
 
         private void BT_CANJEARBENEFICIO490WC_Click(object sender, EventArgs e)
         {
+            formAplicarBeneficios490WC = new FormAplicarBeneficios490WC();
             formAplicarBeneficios490WC.ShowDialog();
             ClienteCargado490WC = formAplicarBeneficios490WC.ClienteCargado490WC;
             if (ClienteCargado490WC != null)
