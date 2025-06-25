@@ -143,6 +143,7 @@ namespace GUI490WC
         {
             try
             {
+                formABMUSUARIO490WC.RellenarCombobox490WC();
               formABMUSUARIO490WC.ShowDialog();
               hideSubmenu490WC();
               this?.Show();

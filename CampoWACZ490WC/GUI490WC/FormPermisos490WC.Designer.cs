@@ -472,6 +472,7 @@
             this.Name = "FormPermisos490WC";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormPermisos490WC";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormPermisos490WC_FormClosed);
             this.Load += new System.EventHandler(this.FormPermisos490WC_Load);
             this.GP_HabilitarCB490WC.ResumeLayout(false);
             this.GP_HabilitarCB490WC.PerformLayout();

@@ -1354,5 +1354,16 @@ namespace GUI490WC
         {
             HabilitarCB490WC();
         }
+
+        private void FormPermisos490WC_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            treeViewPreviaModificacion490WC.Nodes.Clear();
+            CB_FAMILIA490WC.SelectedIndex = -1;
+            CB_ROL490WC.SelectedIndex = -1;
+            ActivarModificacion490WC(false);
+            LlenarFamilias490WC();
+            LlenarPermisosSimples490WC();
+            HabilitarCB490WC();
+        }
     }
 }
