@@ -331,7 +331,7 @@
             this.BT_MaestroBeneficio490WC.Name = "BT_MaestroBeneficio490WC";
             this.BT_MaestroBeneficio490WC.Size = new System.Drawing.Size(183, 44);
             this.BT_MaestroBeneficio490WC.TabIndex = 4;
-            this.BT_MaestroBeneficio490WC.Tag = "";
+            this.BT_MaestroBeneficio490WC.Tag = "Acceder a Beneficios";
             this.BT_MaestroBeneficio490WC.Text = "Beneficios";
             this.BT_MaestroBeneficio490WC.UseVisualStyleBackColor = false;
             this.BT_MaestroBeneficio490WC.Click += new System.EventHandler(this.BT_MaestroBeneficio490WC_Click);
@@ -347,7 +347,7 @@
             this.BT_MaestroCliente490WC.Name = "BT_MaestroCliente490WC";
             this.BT_MaestroCliente490WC.Size = new System.Drawing.Size(183, 44);
             this.BT_MaestroCliente490WC.TabIndex = 3;
-            this.BT_MaestroCliente490WC.Tag = "";
+            this.BT_MaestroCliente490WC.Tag = "Acceder a Clientes";
             this.BT_MaestroCliente490WC.Text = "Clientes";
             this.BT_MaestroCliente490WC.UseVisualStyleBackColor = false;
             this.BT_MaestroCliente490WC.Click += new System.EventHandler(this.BT_MaestroCliente490WC_Click);
@@ -363,7 +363,7 @@
             this.BT_MaestroBoleto490WC.Name = "BT_MaestroBoleto490WC";
             this.BT_MaestroBoleto490WC.Size = new System.Drawing.Size(183, 44);
             this.BT_MaestroBoleto490WC.TabIndex = 2;
-            this.BT_MaestroBoleto490WC.Tag = "";
+            this.BT_MaestroBoleto490WC.Tag = "Acceder a Boletos";
             this.BT_MaestroBoleto490WC.Text = "Boletos";
             this.BT_MaestroBoleto490WC.UseVisualStyleBackColor = false;
             this.BT_MaestroBoleto490WC.Click += new System.EventHandler(this.BT_MaestroBoleto490WC_Click);
