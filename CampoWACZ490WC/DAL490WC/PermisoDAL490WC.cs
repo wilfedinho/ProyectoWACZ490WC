@@ -738,6 +738,51 @@ namespace DAL490WC
             }
         }
 
+        public bool FamiliaQuedariaVaciaTrasEliminarElemento(string nombreFamilia, string nombreElemento)
+        {
+            using (SqlConnection conexion = GestorConexion490WC.GestorCone490WC.DevolverConexion490WC())
+            {
+                conexion.Open();
+
+                // Verificar si la familia tiene otros permisos simples diferentes al que se quiere eliminar
+                string querySimples = @"
+            SELECT COUNT(*) 
+            FROM PermisoSimple_Familia490WC 
+            WHERE NombreFamilia490WC = @familia 
+              AND NombrePermisoSimple490WC <> @elemento";
+
+                using (SqlCommand cmd = new SqlCommand(querySimples, conexion))
+                {
+                    cmd.Parameters.AddWithValue("@familia", nombreFamilia);
+                    cmd.Parameters.AddWithValue("@elemento", nombreElemento);
+
+                    int countSimples = (int)cmd.ExecuteScalar();
+                    if (countSimples > 0)
+                        return false; // La familia seguiría teniendo al menos un permiso simple
+                }
+
+                // Verificar si la familia tiene otras familias hijas distintas de la que se quiere eliminar
+                string queryFamilias = @"
+            SELECT COUNT(*) 
+            FROM Familia_Familia490WC 
+            WHERE NombreFamiliaIncluye490WC = @familia 
+              AND NombreFamiliaIncluida490WC <> @elemento";
+
+                using (SqlCommand cmd = new SqlCommand(queryFamilias, conexion))
+                {
+                    cmd.Parameters.AddWithValue("@familia", nombreFamilia);
+                    cmd.Parameters.AddWithValue("@elemento", nombreElemento);
+
+                    int countFamilias = (int)cmd.ExecuteScalar();
+                    if (countFamilias > 0)
+                        return false; // Tiene otras subfamilias
+                }
+
+                // Si no tiene ni otros permisos simples ni otras familias, quedaría vacía
+                return true;
+            }
+        }
+
 
         public bool PerfilQuedariaVacioAlEliminarElemento(string nombreElemento)
         {
@@ -806,7 +851,52 @@ namespace DAL490WC
             }
         }
 
-    
+        public bool PerfilQuedariaVacioTrasEliminarElemento(string nombrePerfil, string nombreElemento)
+        {
+            using (SqlConnection conexion = GestorConexion490WC.GestorCone490WC.DevolverConexion490WC())
+            {
+                conexion.Open();
+
+                // Verificar si el perfil tiene otras familias distintas al elemento a eliminar
+                string queryFamilias = @"
+            SELECT COUNT(*) 
+            FROM Perfil_Familia490WC 
+            WHERE NombrePerfil490WC = @perfil 
+              AND NombreFamilia490WC <> @elemento";
+
+                using (SqlCommand cmd = new SqlCommand(queryFamilias, conexion))
+                {
+                    cmd.Parameters.AddWithValue("@perfil", nombrePerfil);
+                    cmd.Parameters.AddWithValue("@elemento", nombreElemento);
+
+                    int countFamilias = (int)cmd.ExecuteScalar();
+                    if (countFamilias > 0)
+                        return false; // El perfil seguiría teniendo otras familias
+                }
+
+                // Verificar si el perfil tiene otros permisos simples distintos al elemento a eliminar
+                string querySimples = @"
+            SELECT COUNT(*) 
+            FROM PermisoSimple_Perfil490WC 
+            WHERE NombrePerfil490WC = @perfil 
+              AND NombrePermisoSimple490WC <> @elemento";
+
+                using (SqlCommand cmd = new SqlCommand(querySimples, conexion))
+                {
+                    cmd.Parameters.AddWithValue("@perfil", nombrePerfil);
+                    cmd.Parameters.AddWithValue("@elemento", nombreElemento);
+
+                    int countSimples = (int)cmd.ExecuteScalar();
+                    if (countSimples > 0)
+                        return false; // El perfil seguiría teniendo otros permisos simples
+                }
+
+                // Si no tiene ni permisos simples ni familias => quedaría vacío
+                return true;
+            }
+        }
+
+
 
         public bool EliminarRelacionPermisoSimple_Perfil(string nombrePerfil, string nombrePermisoSimple)
         {
@@ -841,7 +931,7 @@ namespace DAL490WC
                 {
                     conexion.Open();
 
-                    string query = "DELETE FROM PermisoSimple_Familia490WC WHERE nombreFamilia490WC = @familia AND nombrePermisoSimple490WC = @permiso";
+                    string query = "DELETE FROM PermisoSimple_Familia490WC WHERE NombreFamilia490WC = @familia AND NombrePermisoSimple490WC = @permiso";
 
                     using (SqlCommand cmd = new SqlCommand(query, conexion))
                     {

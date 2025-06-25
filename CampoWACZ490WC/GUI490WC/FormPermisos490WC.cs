@@ -1001,6 +1001,8 @@ namespace GUI490WC
                         Permiso490WC FamiliaPadreDesasignar490WC = gestorPermiso490WC.BuscarPadreDirecto490WC((PermisoCompuesto490WC)elementoSeleccionado490WC,FamiliaDesasignar490WC.obtenerPermisoNombre490WC());
                         if (FamiliaPadreDesasignar490WC != null)
                         {
+                            if (gestorPermiso490WC.FamiliaQuedariaVaciaTrasEliminarElemento(FamiliaPadreDesasignar490WC.obtenerPermisoNombre490WC(), FamiliaDesasignar490WC.obtenerPermisoNombre490WC()) == false)
+                            {
                         if (gestorPermiso490WC.EliminarRelacionFamilia_Familia(FamiliaPadreDesasignar490WC.obtenerPermisoNombre490WC(), FamiliaDesasignar490WC.obtenerPermisoNombre490WC()))
                         {
                             elementoSeleccionado490WC = gestorPermiso490WC.LeerFamiliasConEstructuraRecursiva490WC().Find(x => x.obtenerPermisoNombre490WC() == elementoSeleccionado490WC.obtenerPermisoNombre490WC());
@@ -1036,6 +1038,12 @@ namespace GUI490WC
                             MessageBox.Show("No se pudo ejecutar la desasignacion!!");
                         }
 
+                            }
+                            else
+                            {
+                                MessageBox.Show("No lo puedes Desasignar ya que la Familia quedaria vacia!!!");
+                            }
+
                         }
                         else
                         {
@@ -1048,6 +1056,8 @@ namespace GUI490WC
                     {
                         Permiso490WC permisoSimpleDesasignar490WC = gestorPermiso490WC.ObtenerPermisosSimples490WC().Find(x => x.obtenerPermisoNombre490WC() == treeViewPreviaModificacion490WC.SelectedNode.Text);
                         Permiso490WC PermisoPadreDesasignar490WC = gestorPermiso490WC.BuscarPadreDirecto490WC((PermisoCompuesto490WC)elementoSeleccionado490WC,permisoSimpleDesasignar490WC.obtenerPermisoNombre490WC());
+                        if (gestorPermiso490WC.FamiliaQuedariaVaciaTrasEliminarElemento(PermisoPadreDesasignar490WC.obtenerPermisoNombre490WC(),permisoSimpleDesasignar490WC.obtenerPermisoNombre490WC()) == false)
+                        {
                         if (gestorPermiso490WC.EliminarRelacionPermisoSimple_Familia(PermisoPadreDesasignar490WC.obtenerPermisoNombre490WC(), permisoSimpleDesasignar490WC.obtenerPermisoNombre490WC()))
                         {
                             elementoSeleccionado490WC = gestorPermiso490WC.LeerFamiliasConEstructuraRecursiva490WC().Find(x => x.obtenerPermisoNombre490WC() == elementoSeleccionado490WC.obtenerPermisoNombre490WC());
@@ -1083,6 +1093,12 @@ namespace GUI490WC
                             MessageBox.Show("No se pudo ejecutar la desasignacion!!");
                         }
 
+                        }
+                        else
+                        {
+                            MessageBox.Show("No puedes Desasignar este Permiso Ya Que Quedaria vacia la familia que estas modificando!!!");
+                        }
+
 
                     }
                 }
@@ -1096,8 +1112,10 @@ namespace GUI490WC
                     {
                         Permiso490WC FamiliaDesasignar490WC = gestorPermiso490WC.LeerFamiliasConEstructuraRecursiva490WC().Find(x => x.obtenerPermisoNombre490WC() == treeViewPreviaModificacion490WC.SelectedNode.Text);
                         Permiso490WC PermisoPadreDesasignar490WC = gestorPermiso490WC.BuscarPadreDirecto490WC((PermisoCompuesto490WC)elementoSeleccionado490WC,FamiliaDesasignar490WC.obtenerPermisoNombre490WC());
-                        if (PermisoPadreDesasignar490WC != null)
+                        if (PermisoPadreDesasignar490WC != null || PermisoPadreDesasignar490WC.obtenerPermisoNombre490WC() != elementoSeleccionado490WC.obtenerPermisoNombre490WC())
                         {
+                            if (gestorPermiso490WC.PerfilQuedariaVacioTrasEliminarElemento(PermisoPadreDesasignar490WC.obtenerPermisoNombre490WC(),FamiliaDesasignar490WC.obtenerPermisoNombre490WC()) == false)
+                            {
                         if (gestorPermiso490WC.EliminarRelacionPerfil_Familia(PermisoPadreDesasignar490WC.obtenerPermisoNombre490WC(), FamiliaDesasignar490WC.obtenerPermisoNombre490WC()))
                         {
                             elementoSeleccionado490WC = gestorPermiso490WC.LeerRolConEstructura490WC(elementoSeleccionado490WC.obtenerPermisoNombre490WC());
@@ -1133,10 +1151,57 @@ namespace GUI490WC
                             MessageBox.Show("No se pudo ejecutar la desasignacion!!");
                         }
 
+                            }
+                            else
+                            {
+                                MessageBox.Show("No puedes Desasignar la Familia ya que quedaria vacio el Perfil que estas Modificando!!!");
+                            }
+
                         }
                         else
                         {
-                            MessageBox.Show("No puedes desasignar el Rol que estas modificando!!!");
+                            if (gestorPermiso490WC.PerfilQuedariaVacioTrasEliminarElemento(elementoSeleccionado490WC.obtenerPermisoNombre490WC(), FamiliaDesasignar490WC.obtenerPermisoNombre490WC()) == false)
+                            {
+                            if (gestorPermiso490WC.EliminarRelacionPerfil_Familia(elementoSeleccionado490WC.obtenerPermisoNombre490WC(), FamiliaDesasignar490WC.obtenerPermisoNombre490WC()))
+                            {
+                                elementoSeleccionado490WC = gestorPermiso490WC.LeerRolConEstructura490WC(elementoSeleccionado490WC.obtenerPermisoNombre490WC());
+                                CargarTodasLasFamiliasEnArbol490WC();
+                                CargarTodosLosPerfilesEnArbol490WC();
+                                if (CB_ROL490WC.SelectedIndex > -1)
+                                {
+                                    EjecutarModificacion490WC("Rol");
+                                    if (elementoSeleccionado490WC != null)
+                                    {
+                                        ActivarModificacion490WC(true);
+                                        CargarPermisosSimplesParaModificacion490WC();
+                                        CargarFamiliasParaModificacion490WC();
+                                    }
+                                }
+                                else if (CB_FAMILIA490WC.SelectedIndex > -1)
+                                {
+                                    EjecutarModificacion490WC("Familia");
+                                    if (elementoSeleccionado490WC != null)
+                                    {
+                                        ActivarModificacion490WC(true);
+                                        CargarPermisosSimplesParaModificacion490WC();
+                                        CargarFamiliasParaModificacion490WC();
+                                    }
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Debe seleccionar una Familia o Rol para modificarlo");
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("No se pudo ejecutar la desasignacion!!");
+                            }
+
+                            }
+                            else
+                            {
+                                MessageBox.Show("No puedes Desasignar esta familia ya que quedaria vacio el Rol!!");
+                            }
                         }
 
                     }
@@ -1144,9 +1209,13 @@ namespace GUI490WC
                     {
                         Permiso490WC permisoSimpleDesasignar490WC = gestorPermiso490WC.ObtenerPermisosSimples490WC().Find(x => x.obtenerPermisoNombre490WC() == treeViewPreviaModificacion490WC.SelectedNode.Text);
                         Permiso490WC PermisoPadreDesasignar490WC = gestorPermiso490WC.BuscarPadreDirecto490WC((PermisoCompuesto490WC)elementoSeleccionado490WC,permisoSimpleDesasignar490WC.obtenerPermisoNombre490WC());
-                        if (gestorPermiso490WC.EliminarRelacionPermisoSimple_Perfil(elementoSeleccionado490WC.obtenerPermisoNombre490WC(), permisoSimpleDesasignar490WC.obtenerPermisoNombre490WC()))
+                        if (PermisoPadreDesasignar490WC != null)
                         {
-                            elementoSeleccionado490WC = gestorPermiso490WC.LeerFamiliasConEstructuraRecursiva490WC().Find(x => x.obtenerPermisoNombre490WC() == elementoSeleccionado490WC.obtenerPermisoNombre490WC());
+                            if (gestorPermiso490WC.PerfilQuedariaVacioTrasEliminarElemento(PermisoPadreDesasignar490WC.obtenerPermisoNombre490WC(),permisoSimpleDesasignar490WC.obtenerPermisoNombre490WC()) == false)
+                            {
+                        if (gestorPermiso490WC.EliminarRelacionPermisoSimple_Perfil(PermisoPadreDesasignar490WC.obtenerPermisoNombre490WC(), permisoSimpleDesasignar490WC.obtenerPermisoNombre490WC()))
+                        {
+                            elementoSeleccionado490WC = gestorPermiso490WC.LeerRolConEstructura490WC(elementoSeleccionado490WC.obtenerPermisoNombre490WC());
                             CargarTodasLasFamiliasEnArbol490WC();
                             CargarTodosLosPerfilesEnArbol490WC();
                             if (CB_ROL490WC.SelectedIndex > -1)
@@ -1177,6 +1246,59 @@ namespace GUI490WC
                         else
                         {
                             MessageBox.Show("No se pudo ejecutar la desasignacion!!");
+                        }
+
+                            }
+                            else
+                            {
+                                MessageBox.Show("No puedes Desasignar el permiso Ya que la familia quedaria vacia!!!");
+                            }
+
+                        }
+                        else
+                        {
+                            if (gestorPermiso490WC.PerfilQuedariaVacioTrasEliminarElemento(elementoSeleccionado490WC.obtenerPermisoNombre490WC(),permisoSimpleDesasignar490WC.obtenerPermisoNombre490WC()) == false)
+                            {
+                            if (gestorPermiso490WC.EliminarRelacionPermisoSimple_Perfil(elementoSeleccionado490WC.obtenerPermisoNombre490WC(), permisoSimpleDesasignar490WC.obtenerPermisoNombre490WC()))
+                            {
+                                elementoSeleccionado490WC = gestorPermiso490WC.LeerRolConEstructura490WC(elementoSeleccionado490WC.obtenerPermisoNombre490WC());
+                                CargarTodasLasFamiliasEnArbol490WC();
+                                CargarTodosLosPerfilesEnArbol490WC();
+                                if (CB_ROL490WC.SelectedIndex > -1)
+                                {
+                                    EjecutarModificacion490WC("Rol");
+                                    if (elementoSeleccionado490WC != null)
+                                    {
+                                        ActivarModificacion490WC(true);
+                                        CargarPermisosSimplesParaModificacion490WC();
+                                        CargarFamiliasParaModificacion490WC();
+                                    }
+                                }
+                                else if (CB_FAMILIA490WC.SelectedIndex > -1)
+                                {
+                                    EjecutarModificacion490WC("Familia");
+                                    if (elementoSeleccionado490WC != null)
+                                    {
+                                        ActivarModificacion490WC(true);
+                                        CargarPermisosSimplesParaModificacion490WC();
+                                        CargarFamiliasParaModificacion490WC();
+                                    }
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Debe seleccionar una Familia o Rol para modificarlo");
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("No se pudo ejecutar la desasignacion!!");
+                            }
+
+                            }
+                            else
+                            {
+                                MessageBox.Show("No puedes Desasignar el permiso simple seleccionado Porque Quedaria Vacio el Rol!!");
+                            }
                         }
 
                     }

@@ -17,7 +17,7 @@ namespace SERVICIOS490WC
            // SesionManager490WC.GestorSesion490WC.permisosDeLaSesion490WC = ObtenerPermisoCompuesto490WC(SesionManager490WC.GestorSesion490WC.Usuario490WC.Rol490WC);
             SesionManager490WC.GestorSesion490WC.Usuario490WC.Rol490WC = "AdminSistema";
             //SesionManager490WC.GestorSesion490WC.permisosDeLaSesion490WC = ObtenerPermisoCompuesto490WC(SesionManager490WC.GestorSesion490WC.Usuario490WC.Rol490WC);
-       
+            Permiso490WC rol = LeerRolConEstructura490WC("CHIN");
         }
         public List<PermisoCompuesto490WC> LeerFamiliasConEstructuraRecursiva490WC()
         {
@@ -80,13 +80,24 @@ namespace SERVICIOS490WC
             return gestorPermiso490WC.AlgunaFamiliaQuedariaVaciaAlEliminarElemento(nombreElemento);
         }
 
-        
+        public bool FamiliaQuedariaVaciaTrasEliminarElemento(string nombreFamilia, string nombreElemento)
+        {
+            PermisoDAL490WC gestorPermiso490WC = new PermisoDAL490WC();
+            return gestorPermiso490WC.FamiliaQuedariaVaciaTrasEliminarElemento(nombreFamilia,nombreElemento);
+        }
 
         public bool PerfilQuedariaVacioAlEliminarElemento(string nombreElemento)
         {
             PermisoDAL490WC gestorPermiso490WC = new PermisoDAL490WC();
             return gestorPermiso490WC.PerfilQuedariaVacioAlEliminarElemento(nombreElemento);
         }
+
+        public bool PerfilQuedariaVacioTrasEliminarElemento(string nombrePerfil, string nombreElemento)
+        {
+            PermisoDAL490WC gestorPermiso490WC = new PermisoDAL490WC();
+            return gestorPermiso490WC.PerfilQuedariaVacioTrasEliminarElemento(nombrePerfil, nombreElemento);
+        }
+
 
         public PermisoCompuesto490WC BuscarPadreDirecto490WC(PermisoCompuesto490WC raiz, string nombreBuscado)
         {
