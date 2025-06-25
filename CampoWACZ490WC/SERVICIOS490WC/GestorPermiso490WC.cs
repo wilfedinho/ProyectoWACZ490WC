@@ -80,11 +80,35 @@ namespace SERVICIOS490WC
             return gestorPermiso490WC.AlgunaFamiliaQuedariaVaciaAlEliminarElemento(nombreElemento);
         }
 
+        
+
         public bool PerfilQuedariaVacioAlEliminarElemento(string nombreElemento)
         {
             PermisoDAL490WC gestorPermiso490WC = new PermisoDAL490WC();
             return gestorPermiso490WC.PerfilQuedariaVacioAlEliminarElemento(nombreElemento);
         }
+
+        public PermisoCompuesto490WC BuscarPadreDirecto490WC(PermisoCompuesto490WC raiz, string nombreBuscado)
+        {
+            foreach (var hijo in raiz.PermisosIncluidos490WC())
+            {
+                if (hijo.obtenerPermisoNombre490WC() == nombreBuscado)
+                {
+                    return raiz; // Este nodo es el padre directo
+                }
+
+                if (hijo is PermisoCompuesto490WC hijoCompuesto)
+                {
+                    var padreEncontrado = BuscarPadreDirecto490WC(hijoCompuesto, nombreBuscado);
+                    if (padreEncontrado != null)
+                        return padreEncontrado;
+                }
+            }
+
+            return null; // No se encontró el padre en esta rama
+        }
+
+
 
         public bool EliminarRelacionPermisoSimple_Perfil(string nombrePerfil, string nombrePermisoSimple)
         {
