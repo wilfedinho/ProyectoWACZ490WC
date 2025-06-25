@@ -96,45 +96,7 @@ namespace DAL490WC
 
         #region Busquedas Cliente
 
-        /*public Cliente490WC BuscarClientePorDNI490WC(string DNI490WC)
-        {
-            List<string> celularesCliente490WC = ObtenerCelularesPorCliente490WC(DNI490WC);
-            List<string> emailsCliente490WC = ObtenerEmailsPorCliente490WC(DNI490WC);
-            using(SqlConnection cone490WC = GestorConexion490WC.GestorCone490WC.DevolverConexion490WC())
-            {
-                BeneficioDAL490WC gestorBeneficio490WC = new BeneficioDAL490WC();
-                if (cone490WC.State != System.Data.ConnectionState.Open)
-                {
-                  cone490WC.Open();
-                }
-                string query490WC = "SELECT * FROM Cliente490WC WHERE DNI490WC = @DNI490WC";
-                using (SqlCommand comando490WC = new SqlCommand(query490WC, cone490WC))
-                {
-                    comando490WC.Parameters.AddWithValue("@DNI490WC", DNI490WC);
-                    using (SqlDataReader reader = comando490WC.ExecuteReader())
-                    {
-                        if (reader.Read())
-                        {
-                            return new Cliente490WC(
-                                reader["DNI490WC"].ToString(),
-                                reader["Nombre490WC"].ToString(),
-                                reader["Apellido490WC"].ToString(),
-                                Convert.ToInt32(reader["EstrellasCliente490WC"]),
-                                emailsCliente490WC,
-                                celularesCliente490WC,
-                                reader["Direccion490WC"].ToString(),
-                                Convert.ToBoolean(reader["Activo490WC"]),
-                                gestorBeneficio490WC.ObtenerBeneficiosPorCliente490WC(DNI490WC)
-                            );
-                        }
-                        else
-                        {
-                            return null;
-                        }
-                    }
-                }
-            }
-        }*/
+        
 
         public Cliente490WC BuscarClientePorDNI490WC(string DNI490WC)
         {
@@ -178,39 +140,7 @@ namespace DAL490WC
         }
 
 
-        /*  public List<Cliente490WC> ObtenerTodosLosCliente490WC()
-          {
-              List<Cliente490WC> listaClientes490WC = new List<Cliente490WC>();
-              using(SqlConnection cone490WC = GestorConexion490WC.GestorCone490WC.DevolverConexion490WC())
-              {
-                  cone490WC.Open();
-                  string query490WC = "SELECT * FROM Cliente490WC";
-                  using (SqlCommand comando490WC = new SqlCommand(query490WC, cone490WC))
-                  {
-                      BeneficioDAL490WC gestorBeneficio490WC = new BeneficioDAL490WC();
-                      using (SqlDataReader reader = comando490WC.ExecuteReader())
-                      {
-                          while (reader.Read())
-                          {
-                              List<string> celularesCliente490WC = ObtenerCelularesPorCliente490WC(reader["DNI490WC"].ToString());
-                              List<string> emailsCliente490WC = ObtenerEmailsPorCliente490WC(reader["DNI490WC"].ToString());
-                              listaClientes490WC.Add(new Cliente490WC(
-                                  reader["DNI490WC"].ToString(),
-                                  reader["Nombre490WC"].ToString(),
-                                  reader["Apellido490WC"].ToString(),
-                                  Convert.ToInt32(reader["EstrellasCliente490WC"]),
-                                  emailsCliente490WC,
-                                  celularesCliente490WC,
-                                  reader["Direccion490WC"].ToString(),
-                                  Convert.ToBoolean(reader["Activo490WC"]),
-                                  gestorBeneficio490WC.ObtenerBeneficiosPorCliente490WC(reader["DNI490WC"].ToString())
-                              ));
-                          }
-                      }
-                  }
-              }
-              return listaClientes490WC;
-          }*/
+        
 
         public List<Cliente490WC> ObtenerTodosLosCliente490WC()
         {

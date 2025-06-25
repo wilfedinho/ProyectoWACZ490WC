@@ -20,7 +20,7 @@ namespace BLL490WC
             datosPago490WC = Cifrador490WC.GestorCifrador490WC.DesencriptarReversible490WC(datosPago490WC);
             string[] datos490WC = datosPago490WC.Split(',');
 
-            //SIMULACION DE LA COMUNICACION CON LA ENTIDAD BANCARIA, lo que puede modificar el estado pagoAceptado490WC
+            
 
             if (pagoAceptado490WC)
             {

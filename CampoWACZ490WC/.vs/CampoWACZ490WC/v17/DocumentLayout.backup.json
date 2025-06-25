@@ -3,31 +3,19 @@
   "WorkspaceRootPath": "C:\\Users\\William C\u00E0rdenas\\Desktop\\TESIS 2025\\CampoWACZ490WC\\ProyectoWACZ490WC\\CampoWACZ490WC\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{17406551-94B2-43D3-9D55-7009E09240A3}|GUI490WC\\GUI490WC.csproj|c:\\users\\william c\u00E0rdenas\\desktop\\tesis 2025\\campowacz490wc\\proyectowacz490wc\\campowacz490wc\\gui490wc\\formmenu490wc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{17406551-94B2-43D3-9D55-7009E09240A3}|GUI490WC\\GUI490WC.csproj|solutionrelative:gui490wc\\formmenu490wc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{17406551-94B2-43D3-9D55-7009E09240A3}|GUI490WC\\GUI490WC.csproj|c:\\users\\william c\u00E0rdenas\\desktop\\tesis 2025\\campowacz490wc\\proyectowacz490wc\\campowacz490wc\\gui490wc\\formpermisos490wc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{17406551-94B2-43D3-9D55-7009E09240A3}|GUI490WC\\GUI490WC.csproj|solutionrelative:gui490wc\\formpermisos490wc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{17406551-94B2-43D3-9D55-7009E09240A3}|GUI490WC\\GUI490WC.csproj|C:\\Users\\William C\u00E0rdenas\\Desktop\\TESIS 2025\\CampoWACZ490WC\\ProyectoWACZ490WC\\CampoWACZ490WC\\gui490wc\\formpermisos490wc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{17406551-94B2-43D3-9D55-7009E09240A3}|GUI490WC\\GUI490WC.csproj|solutionrelative:gui490wc\\formpermisos490wc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E2841D11-DA0D-4A10-9B4A-3D36FD7FBCE3}|SERVICIOS490WC\\SERVICIOS490WC.csproj|C:\\Users\\William C\u00E0rdenas\\Desktop\\TESIS 2025\\CampoWACZ490WC\\ProyectoWACZ490WC\\CampoWACZ490WC\\servicios490wc\\gestorpermiso490wc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E2841D11-DA0D-4A10-9B4A-3D36FD7FBCE3}|SERVICIOS490WC\\SERVICIOS490WC.csproj|c:\\users\\william c\u00E0rdenas\\desktop\\tesis 2025\\campowacz490wc\\proyectowacz490wc\\campowacz490wc\\servicios490wc\\gestorpermiso490wc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E2841D11-DA0D-4A10-9B4A-3D36FD7FBCE3}|SERVICIOS490WC\\SERVICIOS490WC.csproj|solutionrelative:servicios490wc\\gestorpermiso490wc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C80766E9-A7B3-441A-86A3-8FF65B5882AD}|DAL490WC\\DAL490WC.csproj|C:\\Users\\William C\u00E0rdenas\\Desktop\\TESIS 2025\\CampoWACZ490WC\\ProyectoWACZ490WC\\CampoWACZ490WC\\dal490wc\\permisodal490wc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C80766E9-A7B3-441A-86A3-8FF65B5882AD}|DAL490WC\\DAL490WC.csproj|solutionrelative:dal490wc\\permisodal490wc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E2841D11-DA0D-4A10-9B4A-3D36FD7FBCE3}|SERVICIOS490WC\\SERVICIOS490WC.csproj|c:\\users\\william c\u00E0rdenas\\desktop\\tesis 2025\\campowacz490wc\\proyectowacz490wc\\campowacz490wc\\servicios490wc\\sesionmanager490wc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E2841D11-DA0D-4A10-9B4A-3D36FD7FBCE3}|SERVICIOS490WC\\SERVICIOS490WC.csproj|solutionrelative:servicios490wc\\sesionmanager490wc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{17406551-94B2-43D3-9D55-7009E09240A3}|GUI490WC\\GUI490WC.csproj|C:\\Users\\William C\u00E0rdenas\\Desktop\\TESIS 2025\\CampoWACZ490WC\\ProyectoWACZ490WC\\CampoWACZ490WC\\gui490wc\\formlogin490wc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{17406551-94B2-43D3-9D55-7009E09240A3}|GUI490WC\\GUI490WC.csproj|c:\\users\\william c\u00E0rdenas\\desktop\\tesis 2025\\campowacz490wc\\proyectowacz490wc\\campowacz490wc\\gui490wc\\formlogin490wc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{17406551-94B2-43D3-9D55-7009E09240A3}|GUI490WC\\GUI490WC.csproj|solutionrelative:gui490wc\\formlogin490wc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{17406551-94B2-43D3-9D55-7009E09240A3}|GUI490WC\\GUI490WC.csproj|C:\\Users\\William C\u00E0rdenas\\Desktop\\TESIS 2025\\CampoWACZ490WC\\ProyectoWACZ490WC\\CampoWACZ490WC\\gui490wc\\formlogin490wc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{17406551-94B2-43D3-9D55-7009E09240A3}|GUI490WC\\GUI490WC.csproj|c:\\users\\william c\u00E0rdenas\\desktop\\tesis 2025\\campowacz490wc\\proyectowacz490wc\\campowacz490wc\\gui490wc\\formlogin490wc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{17406551-94B2-43D3-9D55-7009E09240A3}|GUI490WC\\GUI490WC.csproj|solutionrelative:gui490wc\\formlogin490wc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
@@ -43,85 +31,53 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "FormMenu490WC.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\William C\u00E0rdenas\\Desktop\\TESIS 2025\\CampoWACZ490WC\\ProyectoWACZ490WC\\CampoWACZ490WC\\GUI490WC\\FormMenu490WC.cs",
-              "RelativeDocumentMoniker": "GUI490WC\\FormMenu490WC.cs",
-              "ToolTip": "C:\\Users\\William C\u00E0rdenas\\Desktop\\TESIS 2025\\CampoWACZ490WC\\ProyectoWACZ490WC\\CampoWACZ490WC\\GUI490WC\\FormMenu490WC.cs [Dise\u00F1o]*",
-              "RelativeToolTip": "GUI490WC\\FormMenu490WC.cs [Dise\u00F1o]*",
+              "Title": "GestorPermiso490WC.cs",
+              "DocumentMoniker": "C:\\Users\\William C\u00E0rdenas\\Desktop\\TESIS 2025\\CampoWACZ490WC\\ProyectoWACZ490WC\\CampoWACZ490WC\\SERVICIOS490WC\\GestorPermiso490WC.cs",
+              "RelativeDocumentMoniker": "SERVICIOS490WC\\GestorPermiso490WC.cs",
+              "ToolTip": "C:\\Users\\William C\u00E0rdenas\\Desktop\\TESIS 2025\\CampoWACZ490WC\\ProyectoWACZ490WC\\CampoWACZ490WC\\SERVICIOS490WC\\GestorPermiso490WC.cs",
+              "RelativeToolTip": "SERVICIOS490WC\\GestorPermiso490WC.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-25T15:28:11.528Z",
-              "EditorCaption": " [Dise\u00F1o]"
+              "WhenOpened": "2025-06-25T18:06:58.122Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 1,
+              "Title": "SesionManager490WC.cs",
+              "DocumentMoniker": "C:\\Users\\William C\u00E0rdenas\\Desktop\\TESIS 2025\\CampoWACZ490WC\\ProyectoWACZ490WC\\CampoWACZ490WC\\SERVICIOS490WC\\SesionManager490WC.cs",
+              "RelativeDocumentMoniker": "SERVICIOS490WC\\SesionManager490WC.cs",
+              "ToolTip": "C:\\Users\\William C\u00E0rdenas\\Desktop\\TESIS 2025\\CampoWACZ490WC\\ProyectoWACZ490WC\\CampoWACZ490WC\\SERVICIOS490WC\\SesionManager490WC.cs",
+              "RelativeToolTip": "SERVICIOS490WC\\SesionManager490WC.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-25T18:06:35.247Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "FormLogin490WC.cs",
               "DocumentMoniker": "C:\\Users\\William C\u00E0rdenas\\Desktop\\TESIS 2025\\CampoWACZ490WC\\ProyectoWACZ490WC\\CampoWACZ490WC\\GUI490WC\\FormLogin490WC.cs",
               "RelativeDocumentMoniker": "GUI490WC\\FormLogin490WC.cs",
               "ToolTip": "C:\\Users\\William C\u00E0rdenas\\Desktop\\TESIS 2025\\CampoWACZ490WC\\ProyectoWACZ490WC\\CampoWACZ490WC\\GUI490WC\\FormLogin490WC.cs",
               "RelativeToolTip": "GUI490WC\\FormLogin490WC.cs",
-              "ViewState": "AgIAACYAAAAAAAAAAAAvwCMAAAB2AAAAAAAAAA==",
+              "ViewState": "AgIAABMAAAAAAAAAAAAewDQAAABIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-25T14:40:39.815Z"
+              "WhenOpened": "2025-06-25T18:03:53.715Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 3,
               "Title": "FormLogin490WC.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\William C\u00E0rdenas\\Desktop\\TESIS 2025\\CampoWACZ490WC\\ProyectoWACZ490WC\\CampoWACZ490WC\\GUI490WC\\FormLogin490WC.cs",
               "RelativeDocumentMoniker": "GUI490WC\\FormLogin490WC.cs",
               "ToolTip": "C:\\Users\\William C\u00E0rdenas\\Desktop\\TESIS 2025\\CampoWACZ490WC\\ProyectoWACZ490WC\\CampoWACZ490WC\\GUI490WC\\FormLogin490WC.cs [Dise\u00F1o]",
               "RelativeToolTip": "GUI490WC\\FormLogin490WC.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-25T14:40:35.998Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "GestorPermiso490WC.cs",
-              "DocumentMoniker": "C:\\Users\\William C\u00E0rdenas\\Desktop\\TESIS 2025\\CampoWACZ490WC\\ProyectoWACZ490WC\\CampoWACZ490WC\\SERVICIOS490WC\\GestorPermiso490WC.cs",
-              "RelativeDocumentMoniker": "SERVICIOS490WC\\GestorPermiso490WC.cs",
-              "ToolTip": "C:\\Users\\William C\u00E0rdenas\\Desktop\\TESIS 2025\\CampoWACZ490WC\\ProyectoWACZ490WC\\CampoWACZ490WC\\SERVICIOS490WC\\GestorPermiso490WC.cs",
-              "RelativeToolTip": "SERVICIOS490WC\\GestorPermiso490WC.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAgwBcAAABGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-25T14:40:02.412Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "PermisoDAL490WC.cs",
-              "DocumentMoniker": "C:\\Users\\William C\u00E0rdenas\\Desktop\\TESIS 2025\\CampoWACZ490WC\\ProyectoWACZ490WC\\CampoWACZ490WC\\DAL490WC\\PermisoDAL490WC.cs",
-              "RelativeDocumentMoniker": "DAL490WC\\PermisoDAL490WC.cs",
-              "ToolTip": "C:\\Users\\William C\u00E0rdenas\\Desktop\\TESIS 2025\\CampoWACZ490WC\\ProyectoWACZ490WC\\CampoWACZ490WC\\DAL490WC\\PermisoDAL490WC.cs",
-              "RelativeToolTip": "DAL490WC\\PermisoDAL490WC.cs",
-              "ViewState": "AgIAAGAAAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-25T14:37:54.423Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "FormPermisos490WC.cs",
-              "DocumentMoniker": "C:\\Users\\William C\u00E0rdenas\\Desktop\\TESIS 2025\\CampoWACZ490WC\\ProyectoWACZ490WC\\CampoWACZ490WC\\GUI490WC\\FormPermisos490WC.cs",
-              "RelativeDocumentMoniker": "GUI490WC\\FormPermisos490WC.cs",
-              "ToolTip": "C:\\Users\\William C\u00E0rdenas\\Desktop\\TESIS 2025\\CampoWACZ490WC\\ProyectoWACZ490WC\\CampoWACZ490WC\\GUI490WC\\FormPermisos490WC.cs",
-              "RelativeToolTip": "GUI490WC\\FormPermisos490WC.cs",
-              "ViewState": "AgIAAHMFAAAAAAAAAAApwI4FAAAlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-25T14:31:59.791Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "FormPermisos490WC.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\William C\u00E0rdenas\\Desktop\\TESIS 2025\\CampoWACZ490WC\\ProyectoWACZ490WC\\CampoWACZ490WC\\GUI490WC\\FormPermisos490WC.cs",
-              "RelativeDocumentMoniker": "GUI490WC\\FormPermisos490WC.cs",
-              "ToolTip": "C:\\Users\\William C\u00E0rdenas\\Desktop\\TESIS 2025\\CampoWACZ490WC\\ProyectoWACZ490WC\\CampoWACZ490WC\\GUI490WC\\FormPermisos490WC.cs [Dise\u00F1o]",
-              "RelativeToolTip": "GUI490WC\\FormPermisos490WC.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-25T14:31:57.879Z"
+              "WhenOpened": "2025-06-25T18:03:49.143Z",
+              "EditorCaption": " [Dise\u00F1o]"
             }
           ]
         }

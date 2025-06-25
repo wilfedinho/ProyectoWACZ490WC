@@ -11,21 +11,8 @@ namespace DAL490WC
 {
     public class PermisoDAL490WC
     {
-        private static PermisoDAL490WC Instancia490WC;
-        public static PermisoDAL490WC GestorPermisoORM490WC
-        {
-            get
-            {
-                if (Instancia490WC == null)
-                {
-                    Instancia490WC = new PermisoDAL490WC();
-                }
-                return Instancia490WC;
-            }
-        }
-        //Para No Marearnos la forma para refactorizar es la siguiente:
-        //Funcion NO comentada de arriba es la reemplazante de la comentada que tiene abajo William Cardenas 22-6-25
-
+        
+      
         public List<PermisoCompuesto490WC> LeerFamiliasConEstructuraRecursiva490WC()
         {
             Dictionary<string, PermisoCompuesto490WC> familiasDiccionario = new Dictionary<string,PermisoCompuesto490WC>();
@@ -108,7 +95,7 @@ namespace DAL490WC
             {
                 conexion.Open();
 
-                // 1. Verificar si es un Perfil
+                
                 string queryPerfil = "SELECT COUNT(*) FROM Perfil490WC WHERE Nombre490WC = @nombre";
                 using (SqlCommand cmd = new SqlCommand(queryPerfil, conexion))
                 {
@@ -116,10 +103,10 @@ namespace DAL490WC
                     int esPerfil = (int)cmd.ExecuteScalar();
 
                     if (esPerfil == 0)
-                        return null; // No es un perfil, no continuar
+                        return null; 
                 }
 
-                // 2. Cargar todos los permisos simples
+                
                 string querySimples = "SELECT Nombre490WC FROM PermisoSimple490WC";
                 using (SqlCommand cmd = new SqlCommand(querySimples, conexion))
                 using (SqlDataReader lector = cmd.ExecuteReader())
@@ -131,7 +118,7 @@ namespace DAL490WC
                     }
                 }
 
-                // 3. Cargar todas las familias
+                
                 string queryFamilias = "SELECT Nombre490WC FROM Familia490WC";
                 using (SqlCommand cmd = new SqlCommand(queryFamilias, conexion))
                 using (SqlDataReader lector = cmd.ExecuteReader())
@@ -143,7 +130,7 @@ namespace DAL490WC
                     }
                 }
 
-                // 4. Cargar relaciones PermisoSimple - Familia
+               
                 string queryRelPS = "SELECT NombreFamilia490WC, NombrePermisoSimple490WC FROM PermisoSimple_Familia490WC";
                 using (SqlCommand cmd = new SqlCommand(queryRelPS, conexion))
                 using (SqlDataReader lector = cmd.ExecuteReader())
@@ -161,7 +148,7 @@ namespace DAL490WC
                     }
                 }
 
-                // 5. Cargar relaciones Familia - Familia
+                
                 string queryRelFF = "SELECT NombreFamiliaIncluye490WC, NombreFamiliaIncluida490WC FROM Familia_Familia490WC";
                 using (SqlCommand cmd = new SqlCommand(queryRelFF, conexion))
                 using (SqlDataReader lector = cmd.ExecuteReader())
@@ -179,10 +166,10 @@ namespace DAL490WC
                     }
                 }
 
-                // 6. Armar el objeto del Perfil con toda su estructura
+                
                 perfilTemporal = new PermisoCompuesto490WC(nombrePerfil);
 
-                // 6.a Agregar permisos simples del perfil
+               
                 string querySimplesPerfil = "SELECT NombrePermisoSimple490WC FROM PermisoSimple_Perfil490WC WHERE NombrePerfil490WC = @nombre";
                 using (SqlCommand cmd = new SqlCommand(querySimplesPerfil, conexion))
                 {
@@ -200,7 +187,7 @@ namespace DAL490WC
                     }
                 }
 
-                // 6.b Agregar familias al perfil
+               
                 string queryFamiliasPerfil = "SELECT NombreFamilia490WC FROM Perfil_Familia490WC WHERE NombrePerfil490WC = @nombre";
                 using (SqlCommand cmd = new SqlCommand(queryFamiliasPerfil, conexion))
                 {
@@ -234,7 +221,7 @@ namespace DAL490WC
             {
                 conexion.Open();
 
-                // 1. Cargar todos los permisos simples
+                
                 string querySimples = "SELECT Nombre490WC FROM PermisoSimple490WC";
                 using (SqlCommand cmd = new SqlCommand(querySimples, conexion))
                 using (SqlDataReader lector = cmd.ExecuteReader())
@@ -246,7 +233,7 @@ namespace DAL490WC
                     }
                 }
 
-                // 2. Cargar todas las familias
+                
                 string queryFamilias = "SELECT Nombre490WC FROM Familia490WC";
                 using (SqlCommand cmd = new SqlCommand(queryFamilias, conexion))
                 using (SqlDataReader lector = cmd.ExecuteReader())
@@ -258,7 +245,7 @@ namespace DAL490WC
                     }
                 }
 
-                // 3. Cargar relaciones PermisoSimple - Familia
+                
                 string queryRelPS = "SELECT NombreFamilia490WC, NombrePermisoSimple490WC FROM PermisoSimple_Familia490WC";
                 using (SqlCommand cmd = new SqlCommand(queryRelPS, conexion))
                 using (SqlDataReader lector = cmd.ExecuteReader())
@@ -276,7 +263,7 @@ namespace DAL490WC
                     }
                 }
 
-                // 4. Cargar relaciones Familia - Familia
+                
                 string queryRelFF = "SELECT NombreFamiliaIncluye490WC, NombreFamiliaIncluida490WC FROM Familia_Familia490WC";
                 using (SqlCommand cmd = new SqlCommand(queryRelFF, conexion))
                 using (SqlDataReader lector = cmd.ExecuteReader())
@@ -294,7 +281,7 @@ namespace DAL490WC
                     }
                 }
 
-                // 5. Verificar si es un Perfil
+                
                 string queryPerfil = "SELECT COUNT(*) FROM Perfil490WC WHERE Nombre490WC = @nombre";
                 using (SqlCommand cmd = new SqlCommand(queryPerfil, conexion))
                 {
@@ -305,7 +292,7 @@ namespace DAL490WC
                     {
                         perfilTemporal = new PermisoCompuesto490WC(nombreCompuesto490WC);
 
-                        // 5.a Agregar permisos simples al perfil
+                        
                         string querySimplesPerfil = "SELECT NombrePermisoSimple490WC FROM PermisoSimple_Perfil490WC WHERE NombrePerfil490WC = @nombre";
                         using (SqlCommand cmdSimples = new SqlCommand(querySimplesPerfil, conexion))
                         {
@@ -323,7 +310,7 @@ namespace DAL490WC
                             }
                         }
 
-                        // 5.b Agregar familias al perfil
+                        
                         string queryFamiliasPerfil = "SELECT NombreFamilia490WC FROM Perfil_Familia490WC WHERE NombrePerfil490WC = @nombre";
                         using (SqlCommand cmdFamilias = new SqlCommand(queryFamiliasPerfil, conexion))
                         {
@@ -346,7 +333,7 @@ namespace DAL490WC
                 }
             }
 
-            // Si no es un perfil, devolver la familia si existe
+           
             if (familiasDiccionario.TryGetValue(nombreCompuesto490WC, out var familiaRaiz))
             {
                 return familiaRaiz;
@@ -364,7 +351,7 @@ namespace DAL490WC
                 {
                     conexion.Open();
 
-                    // 1. Insertar en Familia490WC
+                    
                     string insertFamilia = "INSERT INTO Familia490WC (Nombre490WC) VALUES (@nombre)";
                     using (SqlCommand cmd = new SqlCommand(insertFamilia, conexion))
                     {
@@ -372,7 +359,7 @@ namespace DAL490WC
                         cmd.ExecuteNonQuery();
                     }
 
-                    // 2. Insertar relaciones con hijos
+                    
                     foreach (var hijo in familiaNueva.PermisosIncluidos490WC())
                     {
                         if (hijo is PermisoSimple490WC simple)
@@ -415,7 +402,7 @@ namespace DAL490WC
                 {
                     conexion.Open();
 
-                    // 1. Insertar en Perfil490WC
+                    
                     string insertPerfil = "INSERT INTO Perfil490WC (Nombre490WC) VALUES (@nombre)";
                     using (SqlCommand cmd = new SqlCommand(insertPerfil, conexion))
                     {
@@ -423,7 +410,7 @@ namespace DAL490WC
                         cmd.ExecuteNonQuery();
                     }
 
-                    // 2. Insertar relaciones con hijos
+                    
                     foreach (var hijo in nuevoRol.PermisosIncluidos490WC())
                     {
                         if (hijo is PermisoSimple490WC simple)
@@ -466,7 +453,7 @@ namespace DAL490WC
                 {
                     conexion.Open();
 
-                    // ¿Es permiso simple?
+                    
                     string querySimple = "SELECT COUNT(*) FROM PermisoSimple490WC WHERE Nombre490WC = @nombreIncluido";
                     using (SqlCommand cmd = new SqlCommand(querySimple, conexion))
                     {
@@ -484,7 +471,7 @@ namespace DAL490WC
                         }
                     }
 
-                    // ¿Es familia?
+                    
                     string queryFamilia = "SELECT COUNT(*) FROM Familia490WC WHERE Nombre490WC = @nombreIncluido";
                     using (SqlCommand cmd = new SqlCommand(queryFamilia, conexion))
                     {
@@ -520,7 +507,7 @@ namespace DAL490WC
                 {
                     conexion.Open();
 
-                    // ¿Es permiso simple?
+                    
                     string querySimple = "SELECT COUNT(*) FROM PermisoSimple490WC WHERE Nombre490WC = @nombreIncluido";
                     using (SqlCommand cmd = new SqlCommand(querySimple, conexion))
                     {
@@ -538,7 +525,7 @@ namespace DAL490WC
                         }
                     }
 
-                    // ¿Es familia?
+                    
                     string queryFamilia = "SELECT COUNT(*) FROM Familia490WC WHERE Nombre490WC = @nombreIncluido";
                     using (SqlCommand cmd = new SqlCommand(queryFamilia, conexion))
                     {
@@ -576,7 +563,7 @@ namespace DAL490WC
                 {
                     conexion.Open();
 
-                    // Eliminar relaciones Familia-Familia
+                    
                     string deleteRelFF = "DELETE FROM Familia_Familia490WC WHERE NombreFamiliaIncluye490WC = @nombre OR NombreFamiliaIncluida490WC = @nombre";
                     using (SqlCommand cmdDelFF = new SqlCommand(deleteRelFF, conexion))
                     {
@@ -584,7 +571,7 @@ namespace DAL490WC
                         cmdDelFF.ExecuteNonQuery();
                     }
 
-                    // Eliminar relaciones Familia - PermisoSimple
+                   
                     string deleteRelPS = "DELETE FROM PermisoSimple_Familia490WC WHERE NombreFamilia490WC = @nombre";
                     using (SqlCommand cmdDelPS = new SqlCommand(deleteRelPS, conexion))
                     {
@@ -592,7 +579,7 @@ namespace DAL490WC
                         cmdDelPS.ExecuteNonQuery();
                     }
 
-                    // Eliminar relaciones con perfiles
+                    
                     string deletePerfilRel = "DELETE FROM Perfil_Familia490WC WHERE NombreFamilia490WC = @nombre";
                     using (SqlCommand cmdDelPerfil = new SqlCommand(deletePerfilRel, conexion))
                     {
@@ -600,7 +587,7 @@ namespace DAL490WC
                         cmdDelPerfil.ExecuteNonQuery();
                     }
 
-                    // Eliminar la familia
+                   
                     string deleteFamilia = "DELETE FROM Familia490WC WHERE Nombre490WC = @nombre";
                     using (SqlCommand cmdDel = new SqlCommand(deleteFamilia, conexion))
                     {
@@ -629,11 +616,11 @@ namespace DAL490WC
 
                     if (usuarioConRol != null)
                     {
-                        return false; // No se puede borrar si está asignado
+                        return false; 
                     }
 
 
-                    // Eliminar relaciones Rol - PermisoSimple
+                    
                     string deleteRelPS = "DELETE FROM PermisoSimple_Perfil490WC WHERE NombrePerfil490WC = @nombre";
                     using (SqlCommand cmdDelPS = new SqlCommand(deleteRelPS, conexion))
                     {
@@ -641,7 +628,7 @@ namespace DAL490WC
                         cmdDelPS.ExecuteNonQuery();
                     }
 
-                    // Eliminar relaciones Rol - Familia
+                   
                     string deleteRelFam = "DELETE FROM Perfil_Familia490WC WHERE NombrePerfil490WC = @nombre";
                     using (SqlCommand cmdDelFam = new SqlCommand(deleteRelFam, conexion))
                     {
@@ -649,7 +636,7 @@ namespace DAL490WC
                         cmdDelFam.ExecuteNonQuery();
                     }
 
-                    // Eliminar el rol
+                    
                     string deletePerfil = "DELETE FROM Perfil490WC WHERE Nombre490WC = @nombre";
                     using (SqlCommand cmdDel = new SqlCommand(deletePerfil, conexion))
                     {
@@ -668,75 +655,7 @@ namespace DAL490WC
 
 
 
-        public bool AlgunaFamiliaQuedariaVaciaAlEliminarElemento(string nombreElemento)
-        {
-            using (SqlConnection conexion = GestorConexion490WC.GestorCone490WC.DevolverConexion490WC())
-            {
-                conexion.Open();
-
-                // Obtener todas las familias que incluyen al elemento
-                List<string> familiasPadre = new List<string>();
-
-                // 1. Familias que tienen al permiso simple
-                string query1 = "SELECT NombreFamilia490WC FROM PermisoSimple_Familia490WC WHERE NombrePermisoSimple490WC = @nombre";
-                using (SqlCommand cmd = new SqlCommand(query1, conexion))
-                {
-                    cmd.Parameters.AddWithValue("@nombre", nombreElemento);
-                    using (SqlDataReader lector = cmd.ExecuteReader())
-                    {
-                        while (lector.Read())
-                            familiasPadre.Add(lector["NombreFamilia490WC"].ToString());
-                    }
-                }
-
-                // 2. Familias que tienen a otra familia como hija
-                string query2 = "SELECT NombreFamiliaIncluye490WC FROM Familia_Familia490WC WHERE NombreFamiliaIncluida490WC = @nombre";
-                using (SqlCommand cmd = new SqlCommand(query2, conexion))
-                {
-                    cmd.Parameters.AddWithValue("@nombre", nombreElemento);
-                    using (SqlDataReader lector = cmd.ExecuteReader())
-                    {
-                        while (lector.Read())
-                        {
-                            string nombre = lector["NombreFamiliaIncluye490WC"].ToString();
-                            if (!familiasPadre.Contains(nombre))
-                                familiasPadre.Add(nombre);
-                        }
-                    }
-                }
-
-                // Ahora por cada familia padre, verificar si quedaría vacía al eliminar el elemento
-                foreach (string familia in familiasPadre)
-                {
-                    // Verificar si tiene más permisos simples distintos del que se quiere eliminar
-                    string querySimples = "SELECT COUNT(*) FROM PermisoSimple_Familia490WC WHERE NombreFamilia490WC = @familia AND NombrePermisoSimple490WC <> @elemento";
-
-                    using (SqlCommand cmd = new SqlCommand(querySimples, conexion))
-                    {
-                        cmd.Parameters.AddWithValue("@familia", familia);
-                        cmd.Parameters.AddWithValue("@elemento", nombreElemento);
-                        int countSimples = (int)cmd.ExecuteScalar();
-                        if (countSimples > 0) continue; // No queda vacía
-                    }
-
-                    // Verificar si tiene más familias hijas distintas de la que se quiere eliminar
-                    string queryFamilias = @"SELECT COUNT(*) FROM Familia_Familia490WC WHERE NombreFamiliaIncluye490WC = @familia AND NombreFamiliaIncluida490WC <> @elemento";
-
-                    using (SqlCommand cmd = new SqlCommand(queryFamilias, conexion))
-                    {
-                        cmd.Parameters.AddWithValue("@familia", familia);
-                        cmd.Parameters.AddWithValue("@elemento", nombreElemento);
-                        int countFamilias = (int)cmd.ExecuteScalar();
-                        if (countFamilias > 0) continue; // No queda vacía
-                    }
-
-                    // Si no tiene ni permisos simples ni otras familias hijas -> quedaría vacía
-                    return true;
-                }
-
-                return false;
-            }
-        }
+        
 
         public bool FamiliaQuedariaVaciaTrasEliminarElemento(string nombreFamilia, string nombreElemento)
         {
@@ -744,12 +663,8 @@ namespace DAL490WC
             {
                 conexion.Open();
 
-                // Verificar si la familia tiene otros permisos simples diferentes al que se quiere eliminar
-                string querySimples = @"
-            SELECT COUNT(*) 
-            FROM PermisoSimple_Familia490WC 
-            WHERE NombreFamilia490WC = @familia 
-              AND NombrePermisoSimple490WC <> @elemento";
+                
+                string querySimples = "SELECT COUNT(*) FROM PermisoSimple_Familia490WC WHERE NombreFamilia490WC = @familia AND NombrePermisoSimple490WC <> @elemento";
 
                 using (SqlCommand cmd = new SqlCommand(querySimples, conexion))
                 {
@@ -758,15 +673,11 @@ namespace DAL490WC
 
                     int countSimples = (int)cmd.ExecuteScalar();
                     if (countSimples > 0)
-                        return false; // La familia seguiría teniendo al menos un permiso simple
+                        return false; 
                 }
 
-                // Verificar si la familia tiene otras familias hijas distintas de la que se quiere eliminar
-                string queryFamilias = @"
-            SELECT COUNT(*) 
-            FROM Familia_Familia490WC 
-            WHERE NombreFamiliaIncluye490WC = @familia 
-              AND NombreFamiliaIncluida490WC <> @elemento";
+               
+                string queryFamilias = "SELECT COUNT(*) FROM Familia_Familia490WC WHERE NombreFamiliaIncluye490WC = @familia AND NombreFamiliaIncluida490WC <> @elemento";
 
                 using (SqlCommand cmd = new SqlCommand(queryFamilias, conexion))
                 {
@@ -775,81 +686,14 @@ namespace DAL490WC
 
                     int countFamilias = (int)cmd.ExecuteScalar();
                     if (countFamilias > 0)
-                        return false; // Tiene otras subfamilias
+                        return false; 
                 }
 
-                // Si no tiene ni otros permisos simples ni otras familias, quedaría vacía
+                
                 return true;
             }
         }
 
-
-        public bool PerfilQuedariaVacioAlEliminarElemento(string nombreElemento)
-        {
-            using (SqlConnection conexion = GestorConexion490WC.GestorCone490WC.DevolverConexion490WC())
-            {
-                conexion.Open();
-
-                // Obtener todos los perfiles que tienen asignado el elemento como familia
-                List<string> perfiles = new List<string>();
-
-                string queryFamilia = "SELECT NombrePerfil490WC FROM Perfil_Familia490WC WHERE NombreFamilia490WC = @nombre";
-                using (SqlCommand cmd = new SqlCommand(queryFamilia, conexion))
-                {
-                    cmd.Parameters.AddWithValue("@nombre", nombreElemento);
-                    using (SqlDataReader lector = cmd.ExecuteReader())
-                    {
-                        while (lector.Read())
-                            perfiles.Add(lector["NombrePerfil490WC"].ToString());
-                    }
-                }
-
-                // Obtener todos los perfiles que tienen asignado el elemento como permiso simple
-                string queryPermisoSimple = "SELECT NombrePerfil490WC FROM PermisoSimple_Perfil490WC WHERE NombrePermisoSimple490WC = @nombre";
-                using (SqlCommand cmd = new SqlCommand(queryPermisoSimple, conexion))
-                {
-                    cmd.Parameters.AddWithValue("@nombre", nombreElemento);
-                    using (SqlDataReader lector = cmd.ExecuteReader())
-                    {
-                        while (lector.Read())
-                        {
-                            string perfil = lector["NombrePerfil490WC"].ToString();
-                            if (!perfiles.Contains(perfil))
-                                perfiles.Add(perfil);
-                        }
-                    }
-                }
-
-                // Ahora verificamos para cada perfil si quedaría vacío
-                foreach (string perfil in perfiles)
-                {
-                    // ¿Tiene otras familias distintas del elemento?
-                    string queryOtrasFamilias = "SELECT COUNT(*) FROM Perfil_Familia490WC WHERE NombrePerfil490WC = @perfil AND NombreFamilia490WC <> @elemento";
-                    using (SqlCommand cmd = new SqlCommand(queryOtrasFamilias, conexion))
-                    {
-                        cmd.Parameters.AddWithValue("@perfil", perfil);
-                        cmd.Parameters.AddWithValue("@elemento", nombreElemento);
-                        int otrasFamilias = (int)cmd.ExecuteScalar();
-                        if (otrasFamilias > 0) continue;
-                    }
-
-                    // ¿Tiene otros permisos simples distintos del elemento?
-                    string queryOtrosSimples = "SELECT COUNT(*) FROM PermisoSimple_Perfil490WC WHERE NombrePerfil490WC = @perfil AND NombrePermisoSimple490WC <> @elemento";
-                    using (SqlCommand cmd = new SqlCommand(queryOtrosSimples, conexion))
-                    {
-                        cmd.Parameters.AddWithValue("@perfil", perfil);
-                        cmd.Parameters.AddWithValue("@elemento", nombreElemento);
-                        int otrosSimples = (int)cmd.ExecuteScalar();
-                        if (otrosSimples > 0) continue;
-                    }
-
-                    // Si no tiene nada más → quedaría vacío
-                    return true;
-                }
-
-                return false;
-            }
-        }
 
         public bool PerfilQuedariaVacioTrasEliminarElemento(string nombrePerfil, string nombreElemento)
         {
@@ -857,12 +701,8 @@ namespace DAL490WC
             {
                 conexion.Open();
 
-                // Verificar si el perfil tiene otras familias distintas al elemento a eliminar
-                string queryFamilias = @"
-            SELECT COUNT(*) 
-            FROM Perfil_Familia490WC 
-            WHERE NombrePerfil490WC = @perfil 
-              AND NombreFamilia490WC <> @elemento";
+                
+                string queryFamilias = "SELECT COUNT(*) FROM Perfil_Familia490WC WHERE NombrePerfil490WC = @perfil AND NombreFamilia490WC <> @elemento";
 
                 using (SqlCommand cmd = new SqlCommand(queryFamilias, conexion))
                 {
@@ -871,15 +711,11 @@ namespace DAL490WC
 
                     int countFamilias = (int)cmd.ExecuteScalar();
                     if (countFamilias > 0)
-                        return false; // El perfil seguiría teniendo otras familias
+                        return false; 
                 }
 
-                // Verificar si el perfil tiene otros permisos simples distintos al elemento a eliminar
-                string querySimples = @"
-            SELECT COUNT(*) 
-            FROM PermisoSimple_Perfil490WC 
-            WHERE NombrePerfil490WC = @perfil 
-              AND NombrePermisoSimple490WC <> @elemento";
+               
+                string querySimples = "SELECT COUNT(*) FROM PermisoSimple_Perfil490WC WHERE NombrePerfil490WC = @perfil AND NombrePermisoSimple490WC <> @elemento";
 
                 using (SqlCommand cmd = new SqlCommand(querySimples, conexion))
                 {
@@ -888,10 +724,10 @@ namespace DAL490WC
 
                     int countSimples = (int)cmd.ExecuteScalar();
                     if (countSimples > 0)
-                        return false; // El perfil seguiría teniendo otros permisos simples
+                        return false; 
                 }
 
-                // Si no tiene ni permisos simples ni familias => quedaría vacío
+               
                 return true;
             }
         }
@@ -1101,48 +937,7 @@ namespace DAL490WC
         }
 
 
-        public List<Permiso490WC> ObtenerPermisos490WC()
-        {
-            List<Permiso490WC> permisosTotales = new List<Permiso490WC>();
-
-            try
-            {
-                using (SqlConnection conexion = GestorConexion490WC.GestorCone490WC.DevolverConexion490WC())
-                {
-                    conexion.Open();
-
-                    
-                    string querySimples = "SELECT Nombre490WC FROM PermisoSimple490WC";
-                    using (SqlCommand cmdSimples = new SqlCommand(querySimples, conexion))
-                    using (SqlDataReader lector = cmdSimples.ExecuteReader())
-                    {
-                        while (lector.Read())
-                        {
-                            string nombre = lector["Nombre490WC"].ToString();
-                            permisosTotales.Add(new PermisoSimple490WC(nombre));
-                        }
-                    }
-
-                    // 2. Leer familias
-                    string queryFamilias = "SELECT Nombre490WC FROM Familia490WC";
-                    using (SqlCommand cmdFamilias = new SqlCommand(queryFamilias, conexion))
-                    using (SqlDataReader lector = cmdFamilias.ExecuteReader())
-                    {
-                        while (lector.Read())
-                        {
-                            string nombre = lector["Nombre490WC"].ToString();
-                            permisosTotales.Add(new PermisoCompuesto490WC(nombre));
-                        }
-                    }
-                }
-            }
-            catch
-            {
-                permisosTotales.Clear(); 
-            }
-
-            return permisosTotales;
-        }
+        
 
 
      
@@ -1156,7 +951,7 @@ namespace DAL490WC
                 {
                     conexion490WC.Open();
 
-                    // Leer de la tabla actual según el DER aprobado
+                   
                     string query = "SELECT Nombre490WC FROM PermisoSimple490WC";
 
                     using (SqlCommand cmd = new SqlCommand(query, conexion490WC))

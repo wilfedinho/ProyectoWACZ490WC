@@ -31,19 +31,7 @@ namespace DAL490WC
             }
         }
 
-        /* public void Baja490WC(int ID490WC)
-         {
-             using (SqlConnection cone490WC = GestorConexion490WC.GestorCone490WC.DevolverConexion490WC())
-             {
-                 cone490WC.Open();
-                 string query490WC = "DELETE FROM Beneficio490WC WHERE CodigoBeneficio490WC = @ID";
-                 using (SqlCommand comando490WC = new SqlCommand(query490WC, cone490WC))
-                 {
-                     comando490WC.Parameters.AddWithValue("@ID", ID490WC);
-                     comando490WC.ExecuteNonQuery();
-                 }
-             }
-         }*/
+        
 
         public bool Baja490WC(int ID490WC)
         {

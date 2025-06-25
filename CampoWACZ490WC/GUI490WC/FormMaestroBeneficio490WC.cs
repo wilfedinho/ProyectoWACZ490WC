@@ -174,7 +174,7 @@ namespace GUI490WC
         {
             GestorBeneficio490WC gestorBeneficio490WC = new GestorBeneficio490WC();
             int codigoBeneficio490WC = int.Parse(dgvBeneficio490WC.SelectedRows[0].Cells["ColumnaCodigo"].Value.ToString());
-            if (!string.IsNullOrEmpty(TB_NOMBRE490WC.Text)) // agregar lógica para ver si no se repite nombre del beneficio
+            if (!string.IsNullOrEmpty(TB_NOMBRE490WC.Text)) 
             {
                 if (!gestorBeneficio490WC.ExisteNombreBeneficioModificar490WC(TB_NOMBRE490WC.Text, codigoBeneficio490WC))
                 {

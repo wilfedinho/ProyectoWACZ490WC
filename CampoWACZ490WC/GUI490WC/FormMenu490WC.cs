@@ -229,7 +229,7 @@ namespace GUI490WC
 
         private void BT_CambiarIdioma490WC_Click(object sender, EventArgs e)
         {
-            //Agregar Formulario de cambio de idioma
+            
             hideSubmenu490WC();
         }
 
@@ -294,7 +294,7 @@ namespace GUI490WC
 
         private void BT_ReporteFacturas490WC_Click(object sender, EventArgs e)
         {
-            //Agregar Formulario para Recrear la factura solicitada
+            
          
              hideSubmenu490WC();
                
@@ -312,13 +312,13 @@ namespace GUI490WC
 
         private void BT_Ayuda490WC_Click(object sender, EventArgs e)
         {
-            //showSubmenu490WC(panelSubmenuAyuda490WC);
+            
             hideSubmenu490WC();
         }
 
         private void BT_ModificacionBoleto490WC_Click(object sender, EventArgs e)
         {
-            //showSubmenu490WC(panelSubmenuCompra490WC);
+            
             hideSubmenu490WC();
         }
 

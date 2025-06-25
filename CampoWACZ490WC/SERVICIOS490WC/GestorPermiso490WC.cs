@@ -79,11 +79,7 @@ namespace SERVICIOS490WC
             return gestorPermiso490WC.BorrarFamilia490WC(nombreFamilia);
         }
 
-        public bool AlgunaFamiliaQuedariaVaciaAlEliminarElemento(string nombreElemento)
-        {
-            PermisoDAL490WC gestorPermiso490WC = new PermisoDAL490WC();
-            return gestorPermiso490WC.AlgunaFamiliaQuedariaVaciaAlEliminarElemento(nombreElemento);
-        }
+        
 
         public bool FamiliaQuedariaVaciaTrasEliminarElemento(string nombreFamilia, string nombreElemento)
         {
@@ -91,11 +87,7 @@ namespace SERVICIOS490WC
             return gestorPermiso490WC.FamiliaQuedariaVaciaTrasEliminarElemento(nombreFamilia, nombreElemento);
         }
 
-        public bool PerfilQuedariaVacioAlEliminarElemento(string nombreElemento)
-        {
-            PermisoDAL490WC gestorPermiso490WC = new PermisoDAL490WC();
-            return gestorPermiso490WC.PerfilQuedariaVacioAlEliminarElemento(nombreElemento);
-        }
+       
 
         public bool PerfilQuedariaVacioTrasEliminarElemento(string nombrePerfil, string nombreElemento)
         {
@@ -110,7 +102,7 @@ namespace SERVICIOS490WC
             {
                 if (hijo.obtenerPermisoNombre490WC() == nombreBuscado)
                 {
-                    return raiz; // Este nodo es el padre directo
+                    return raiz; 
                 }
 
                 if (hijo is PermisoCompuesto490WC hijoCompuesto)
@@ -121,7 +113,7 @@ namespace SERVICIOS490WC
                 }
             }
 
-            return null; // No se encontró el padre en esta rama
+            return null; 
         }
 
 
@@ -165,11 +157,7 @@ namespace SERVICIOS490WC
             return gestorPermiso490WC.PerfilExiste490WC(nombrePerfil);
         }
 
-        public List<Permiso490WC> ObtenerPermisos490WC()
-        {
-            PermisoDAL490WC gestorPermiso490WC = new PermisoDAL490WC();
-            return gestorPermiso490WC.ObtenerPermisos490WC();
-        }
+        
 
         public bool RolEstaAsignado490WC(string nombreRol490WC)
         {
