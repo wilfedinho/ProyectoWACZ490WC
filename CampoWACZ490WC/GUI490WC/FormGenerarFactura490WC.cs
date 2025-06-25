@@ -21,7 +21,7 @@ namespace GUI490WC
         {
             InitializeComponent();
             CargarCliente490WC(null);
-
+            BT_COBRARFACTURA490WC.Enabled = false;
         }
         public void CargarCliente490WC(Cliente490WC clienteBuscado490WC)
         {
@@ -53,7 +53,14 @@ namespace GUI490WC
                 clienteCobrar490WC = null;
                 TBINFOCLIENTE490WC.Text = $"Ingrese el DNI, Nombre y Apellido para visualizar los datos del cliente";
             }
-
+            if (dgvBoleto490WC.Rows.Count > 0)
+            {
+                BT_COBRARFACTURA490WC.Enabled = true;
+            }
+            else
+            {
+                BT_COBRARFACTURA490WC.Enabled = false;
+            }
         }
 
         private void BT_BUSCARCLIENTE490WC_Click(object sender, EventArgs e)
@@ -66,6 +73,7 @@ namespace GUI490WC
                 {
                     CargarCliente490WC(clienteCobrar490WC);
                     TB_DNI490WC.Clear();
+                    
                 }
                 else
                 {
@@ -110,17 +118,20 @@ namespace GUI490WC
                         gestorBoleto490WC.CobrarBoleto490WC(boletoCobrar490WC);
                         MessageBox.Show("Factura Generada");
                         CargarCliente490WC(null);
+                        boletoCobrar490WC = null;
                     }
                     else
                     {
                         MessageBox.Show("No se pudo generar la factura");
                         CargarCliente490WC(null);
+                        boletoCobrar490WC = null;
                     }
                 }
                 else
                 {
                     MessageBox.Show("Debe seleccionar un boleto para cobrar la factura.");
                     CargarCliente490WC(null);
+                    boletoCobrar490WC = null;
                 }
 
             }
@@ -128,6 +139,7 @@ namespace GUI490WC
             {
                 MessageBox.Show("Debe buscar un cliente para cobrar la factura");
                 CargarCliente490WC(null);
+                boletoCobrar490WC = null;
             }
 
         }
@@ -135,6 +147,8 @@ namespace GUI490WC
         private void FormGenerarFactura490WC_FormClosed(object sender, FormClosedEventArgs e)
         {
             CargarCliente490WC(null);
+            boletoCobrar490WC = null;
+            BT_COBRARFACTURA490WC.Enabled = false;
         }
     }
 }
