@@ -622,7 +622,8 @@ namespace DAL490WC
             {
                 cone490WC.Open();
 
-                string query = "SELECT * FROM Boleto490WC WHERE 1=1";
+                // string query = "SELECT * FROM Boleto490WC WHERE 1=1";
+                string query = "SELECT * FROM Boleto490WC WHERE FechaBoletoGenerado490WC IS NULL";
 
                 if (!string.IsNullOrEmpty(origen490WC))
                     query += " AND Origen490WC = @Origen";
