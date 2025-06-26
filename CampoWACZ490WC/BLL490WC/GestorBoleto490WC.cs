@@ -38,6 +38,11 @@ namespace BLL490WC
             boletoDAL490WC.AsignarBoletoCliente490WC(boletoAsignar490WC, clienteAsignar490WC);
         }
 
+        public void AsignarBoletoClienteRegistrar490WC(Boleto490WC boletoAsignar490WC, Cliente490WC clienteAsignar490WC)
+        {
+            BoletoDAL490WC boletoDAL490WC = new BoletoDAL490WC();
+            boletoDAL490WC.AsignarBoletoClienteRegistrar490WC(boletoAsignar490WC,clienteAsignar490WC);
+        }
 
         public void GenerarBoletoCompra490WC(Boleto490WC boletoGenerar490WC)
         {

@@ -172,7 +172,7 @@ namespace DAL490WC
             using (SqlConnection cone490WC = GestorConexion490WC.GestorCone490WC.DevolverConexion490WC())
             {
                 cone490WC.Open();
-                string query490WC = "UPDATE Boleto490WC SET Titular490WC = @Titular490WC, FechaBoletoGenerado490WC = @FechaBoletoGenerado490WC WHERE ID490WC = @ID490WC AND FechaBoletoGenerado490WC IS NOT NULL AND (Titular490WC = @ID490WC OR Titular490WC = 'Sistema')";
+                string query490WC = "UPDATE Boleto490WC SET Titular490WC = @Titular490WC, FechaBoletoGenerado490WC = @FechaBoletoGenerado490WC WHERE ID490WC = @ID490WC AND FechaBoletoGenerado490WC IS  NULL AND (Titular490WC = @ID490WC OR Titular490WC = 'Sistema' OR Titular490WC = @Titular490WC)";
 
                 using (SqlCommand comando490WC = new SqlCommand(query490WC, cone490WC))
                 {
@@ -185,6 +185,23 @@ namespace DAL490WC
             }
         }
 
+        public void AsignarBoletoClienteRegistrar490WC(Boleto490WC boletoAsignar490WC, Cliente490WC clienteAsignar490WC)
+        {
+            using (SqlConnection cone490WC = GestorConexion490WC.GestorCone490WC.DevolverConexion490WC())
+            {
+                cone490WC.Open();
+                string query490WC = "UPDATE Boleto490WC SET Titular490WC = @Titular490WC, FechaBoletoGenerado490WC = @FechaBoletoGenerado490WC WHERE ID490WC = @ID490WC AND FechaBoletoGenerado490WC IS NOT NULL AND (Titular490WC = @ID490WC OR Titular490WC = 'Sistema' OR Titular490WC = @Titular490WC)";
+
+                using (SqlCommand comando490WC = new SqlCommand(query490WC, cone490WC))
+                {
+                    comando490WC.Parameters.AddWithValue("@ID490WC", boletoAsignar490WC.IDBoleto490WC);
+                    comando490WC.Parameters.AddWithValue("@Titular490WC", clienteAsignar490WC.DNI490WC);
+                    comando490WC.Parameters.AddWithValue("@FechaBoletoGenerado490WC", DateTime.Now);
+
+                    comando490WC.ExecuteNonQuery();
+                }
+            }
+        }
 
         public void GenerarBoletoCompra490WC(Boleto490WC boletoGenerar490WC)
         {

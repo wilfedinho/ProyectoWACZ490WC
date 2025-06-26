@@ -72,7 +72,7 @@ namespace GUI490WC
                                                     {
                                                         Cliente490WC clienteAlta490WC = new Cliente490WC(dni490WC, nombre490WC, apellido490WC, estrellasCliente490WC, emails, celulares, Cifrador490WC.GestorCifrador490WC.EncriptarReversible490WC(direccion490WC), true);
                                                         gestorCliente490WC.Alta490WC(clienteAlta490WC);
-                                                        gestorBoleto490WC.AsignarBoletoCliente490WC(boletoAsignar490WC, clienteAlta490WC);
+                                                        gestorBoleto490WC.AsignarBoletoClienteRegistrar490WC(boletoAsignar490WC, clienteAlta490WC);
                                                         MessageBox.Show($"Boleto cuyo Codigo Boleto es: {boletoAsignar490WC.IDBoleto490WC} fue asignado correctamente al cliente con el DNI: {clienteAlta490WC.DNI490WC}!!");
                                                         LimpiarCampos490WC();
                                                         this.Close();
