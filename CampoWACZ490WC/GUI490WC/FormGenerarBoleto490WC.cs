@@ -268,6 +268,7 @@ namespace GUI490WC
                         controlVUELTA490WC.Enabled = false;
                         RB_IDA490WC.Enabled = false;
                         RB_IDAVUELTA490WC.Enabled = false;
+                        BT_GENERARBOLETO490WC.PerformClick();
                     }
                     else
                     {
