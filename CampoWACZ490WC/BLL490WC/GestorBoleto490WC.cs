@@ -57,6 +57,11 @@ namespace BLL490WC
             gestorBoletoDAL490WC.CobrarBoleto490WC(BoletoCobrado490WC);
         }
 
+        public bool ExisteBoletoAsignar490WC(int idBoleto)
+        {
+            BoletoDAL490WC gestorBoleto490WC = new BoletoDAL490WC();
+            return gestorBoleto490WC.ExisteBoletoAsignar490WC(idBoleto);
+        }
         public bool ExisteBoletoEnAsiento490WC(Boleto490WC boletoVerificarExistencia490WC)
         {
             BoletoDAL490WC gestorBoleto490WC = new BoletoDAL490WC();
