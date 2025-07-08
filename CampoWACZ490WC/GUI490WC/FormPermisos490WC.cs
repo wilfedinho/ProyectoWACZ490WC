@@ -1056,11 +1056,12 @@ namespace GUI490WC
             {
                 if (RB_CBFAMILIA490WC.Checked)
                 {
+                    PermisoCompuesto490WC familiaModificar490WC = gestorPermiso490WC.LeerFamiliasConEstructuraRecursiva490WC().Find(x => x.obtenerPermisoNombre490WC() == CB_FAMILIA490WC.SelectedItem.ToString());
                     if (treeViewPreviaModificacion490WC.SelectedNode.Tag.ToString() == "Rol")
                     {
                         MessageBox.Show("No se puede Desasignar un Rol!!!");
                     }
-                    else if (treeViewPreviaModificacion490WC.SelectedNode.Tag.ToString() == "Familia")
+                    else if (treeViewPreviaModificacion490WC.SelectedNode.Tag.ToString() == "Familia" && familiaModificar490WC.PermisosIncluidos490WC().Find(x => x.obtenerPermisoNombre490WC() == treeViewPreviaModificacion490WC.SelectedNode.Text) != null)
                     {
                         Permiso490WC FamiliaDesasignar490WC = gestorPermiso490WC.LeerFamiliasConEstructuraRecursiva490WC().Find(x => x.obtenerPermisoNombre490WC() == treeViewPreviaModificacion490WC.SelectedNode.Text);
                         Permiso490WC FamiliaPadreDesasignar490WC = gestorPermiso490WC.BuscarPadreDirecto490WC((PermisoCompuesto490WC)elementoSeleccionado490WC, FamiliaDesasignar490WC.obtenerPermisoNombre490WC());
@@ -1117,7 +1118,7 @@ namespace GUI490WC
 
 
                     }
-                    else if (treeViewPreviaModificacion490WC.SelectedNode.Tag.ToString() == "Simple")
+                    else if (treeViewPreviaModificacion490WC.SelectedNode.Tag.ToString() == "Simple" && familiaModificar490WC.PermisosIncluidos490WC().Find(x => x.obtenerPermisoNombre490WC() == treeViewPreviaModificacion490WC.SelectedNode.Text) != null)
                     {
                         Permiso490WC permisoSimpleDesasignar490WC = gestorPermiso490WC.ObtenerPermisosSimples490WC().Find(x => x.obtenerPermisoNombre490WC() == treeViewPreviaModificacion490WC.SelectedNode.Text);
                         Permiso490WC PermisoPadreDesasignar490WC = gestorPermiso490WC.BuscarPadreDirecto490WC((PermisoCompuesto490WC)elementoSeleccionado490WC, permisoSimpleDesasignar490WC.obtenerPermisoNombre490WC());
@@ -1166,14 +1167,24 @@ namespace GUI490WC
 
 
                     }
+                    else if (treeViewPreviaModificacion490WC.SelectedNode.Tag.ToString() == "Familia" && familiaModificar490WC.obtenerPermisoNombre490WC() == treeViewPreviaModificacion490WC.SelectedNode.Text)
+                    {
+                        MessageBox.Show("No puedes Desasignar la Familia que estas Modificando!!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("No puedes Modificar una Subfamilia!!!");
+                    }
+                    
                 }
                 else
                 {
+                    PermisoCompuesto490WC rolModificar490WC = gestorPermiso490WC.LeerRolConEstructura490WC(CB_ROL490WC.SelectedItem.ToString());
                     if (treeViewPreviaModificacion490WC.SelectedNode.Tag.ToString() == "Rol")
                     {
                         MessageBox.Show("No se puede Desasignar el Rol que estas modificando!!!");
                     }
-                    else if (treeViewPreviaModificacion490WC.SelectedNode.Tag.ToString() == "Familia")
+                    else if (treeViewPreviaModificacion490WC.SelectedNode.Tag.ToString() == "Familia" && rolModificar490WC.PermisosIncluidos490WC().Find(x => x.obtenerPermisoNombre490WC() == treeViewPreviaModificacion490WC.SelectedNode.Text) != null)
                     {
                         Permiso490WC FamiliaDesasignar490WC = gestorPermiso490WC.LeerFamiliasConEstructuraRecursiva490WC().Find(x => x.obtenerPermisoNombre490WC() == treeViewPreviaModificacion490WC.SelectedNode.Text);
                         Permiso490WC PermisoPadreDesasignar490WC = gestorPermiso490WC.BuscarPadreDirecto490WC((PermisoCompuesto490WC)elementoSeleccionado490WC, FamiliaDesasignar490WC.obtenerPermisoNombre490WC());
@@ -1270,7 +1281,7 @@ namespace GUI490WC
                         }
 
                     }
-                    else if (treeViewPreviaModificacion490WC.SelectedNode.Tag.ToString() == "Simple")
+                    else if (treeViewPreviaModificacion490WC.SelectedNode.Tag.ToString() == "Simple" && rolModificar490WC.PermisosIncluidos490WC().Find(x => x.obtenerPermisoNombre490WC() == treeViewPreviaModificacion490WC.SelectedNode.Text) != null)
                     {
                         Permiso490WC permisoSimpleDesasignar490WC = gestorPermiso490WC.ObtenerPermisosSimples490WC().Find(x => x.obtenerPermisoNombre490WC() == treeViewPreviaModificacion490WC.SelectedNode.Text);
                         Permiso490WC PermisoPadreDesasignar490WC = gestorPermiso490WC.BuscarPadreDirecto490WC((PermisoCompuesto490WC)elementoSeleccionado490WC, permisoSimpleDesasignar490WC.obtenerPermisoNombre490WC());
@@ -1367,7 +1378,12 @@ namespace GUI490WC
                         }
 
                     }
+                    else
+                    {
+                        MessageBox.Show("No puedes Modificar una Subfamilia!!!");
+                    }
                 }
+                
 
             }
             else
