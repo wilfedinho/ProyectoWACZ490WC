@@ -129,55 +129,64 @@ namespace GUI490WC
                                             }
                                             else
                                             {
-                                                MessageBox.Show("El cliente debe tener registrado al menos un Email!!!");
+                                                string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("ClienteDebeTenerEmail");
+                                                MessageBox.Show(mensajeError);
                                                 LimpiarCampos490WC();
                                             }
                                         }
                                         else
                                         {
-                                            MessageBox.Show("El cliente debe tener registrado al menos un Celular!!!");
+                                            string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("ClienteDebeTenerCelular");
+                                            MessageBox.Show(mensajeError);
                                             LimpiarCampos490WC();
                                         }
                                     }
                                     else
                                     {
-                                        MessageBox.Show("Ingrese un nombre de titular valido!!");
+                                        string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("MensajeNombreTitularInvalido490WC");
+                                        MessageBox.Show(mensajeError);
                                         LimpiarCampos490WC();
                                     }
                                 }
                                 else
                                 {
-                                    MessageBox.Show("Ingrese un DNI valido");
+                                    string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("MensajeErrorDNIInvalido490WC");
+                                    MessageBox.Show(mensajeError);
                                     LimpiarCampos490WC();
                                 }
                             }
                             else
                             {
-                                MessageBox.Show("Debe ingresar un apellido!!");
+                                string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("ApellidoVacio");
+                                MessageBox.Show(mensajeError);
                                 LimpiarCampos490WC();
                             }
                         }
                         else
                         {
-                            MessageBox.Show("Debe ingresar un nombre!!!");
+                            string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("NombreVacio");
+                            MessageBox.Show(mensajeError);
                             LimpiarCampos490WC();
                         }
                     }
                     else
                     {
-                        MessageBox.Show("Ya existe un cliente con ese DNI!!");
+                        string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("ClienteConDNIExistente490WC");
+                        MessageBox.Show(mensajeError);
                         LimpiarCampos490WC();
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Ingrese un numero de estrellas valido!!");
+                    string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("IngreseNumeroEstrellasValido490WC");
+                    MessageBox.Show(mensajeError);
                     LimpiarCampos490WC();
                 }
             }
             else
             {
-                MessageBox.Show("Debe ingresar una direccion");
+                string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("DebeIngresarDireccion490WC");
+                MessageBox.Show(mensajeError);
             }
         }
 
@@ -234,42 +243,49 @@ namespace GUI490WC
                                     }
                                     else
                                     {
-                                        MessageBox.Show("El cliente debe tener registrado al menos un Email!!!");
+
+                                        string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("ClienteDebeTenerEmail");
+                                        MessageBox.Show(mensajeError);
                                         LimpiarCampos490WC();
                                         ActivarModoModificar490WC(false);
                                     }
                                 }
                                 else
                                 {
-                                    MessageBox.Show("El cliente debe tener registrado al menos un Celular!!!");
+                                    string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("ClienteDebeTenerCelular");
+                                    MessageBox.Show(mensajeError);
                                     LimpiarCampos490WC();
                                     ActivarModoModificar490WC(false);
                                 }
                             }
                             else
                             {
-                                MessageBox.Show("Ingrese un nombre de titular valido!!");
+                                string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("DebeIngresarDireccion");
+                                MessageBox.Show(mensajeError);
                                 LimpiarCampos490WC();
                                 ActivarModoModificar490WC(false);
                             }
                         }
                         else
                         {
-                            MessageBox.Show("Debe ingresar un apellido!!");
+                            string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("ApellidoVacio");
+                            MessageBox.Show(mensajeError);
                             LimpiarCampos490WC();
                             ActivarModoModificar490WC(false);
                         }
                     }
                     else
                     {
-                        MessageBox.Show("Debe ingresar un nombre!!!");
+                        string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("NombreVacio");
+                        MessageBox.Show(mensajeError);
                         LimpiarCampos490WC();
                         ActivarModoModificar490WC(false);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Ingrese un numero de estrellas valido!!");
+                    string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("IngreseNumeroEstrellasValido490WC");
+                    MessageBox.Show(mensajeError);
                     LimpiarCampos490WC();
                     ActivarModoModificar490WC(false);
                 }
@@ -309,17 +325,20 @@ namespace GUI490WC
                     }
                     else
                     {
-                        MessageBox.Show("El celular ingresado no posee el formato 1122223333");
+                        string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("CelularFormatoInvalido490WC");
+                        MessageBox.Show(mensajeError);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("No puedes agregar un celular duplicado!!");
+                    string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("NoPuedesAgregarCelularDuplicado490WC");
+                    MessageBox.Show(mensajeError);
                 }
             }
             else
             {
-                MessageBox.Show("Debe ingresar un celular!!!");
+                string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("DebeIngresarCelular490WC");
+                MessageBox.Show(mensajeError);
             }
         }
 
@@ -331,7 +350,8 @@ namespace GUI490WC
             }
             else
             {
-                MessageBox.Show("Debes seleccionar un celular para eliminarlo");
+                string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("DebesSeleccionarCelularParaEliminarlo490WC");
+                MessageBox.Show(mensajeError);
             }
         }
 
@@ -350,17 +370,20 @@ namespace GUI490WC
                     }
                     else
                     {
-                        MessageBox.Show("El email ingresado no posee el formato correcto");
+                        string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("EmailFormatoInvalido490WC");
+                        MessageBox.Show(mensajeError);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("No puedes agregar un email duplicado!!");
+                    string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("NoPuedesAgregarEmailDuplicado490WC");
+                    MessageBox.Show(mensajeError);
                 }
             }
             else
             {
-                MessageBox.Show("Debe ingresar un email!!!");
+                string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("DebeIngresarEmail490WC");
+                MessageBox.Show(mensajeError);
             }
         }
 
@@ -372,7 +395,8 @@ namespace GUI490WC
             }
             else
             {
-                MessageBox.Show("Debes seleccionar un email para eliminarlo");
+                string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("DebesSeleccionarEmailParaEliminarlo490WC");
+                MessageBox.Show(mensajeError);
             }
         }
 
@@ -399,7 +423,34 @@ namespace GUI490WC
 
         public void ActualizarLenguaje490WC()
         {
-            
+            RecorrerControles490WC(this);
+            //Personalizar para Traducir el TextBox de vista previa factura
+        }
+
+        public void RecorrerControles490WC(Control control490WC)
+        {
+            foreach (Control c490WC in control490WC.Controls)
+            {
+                if ((c490WC is TextBox tb490WC) == false)
+                {
+
+                    c490WC.Text = Traductor490WC.TraductorSG490WC.Traducir490WC(c490WC.Name);
+
+
+                    if (c490WC.HasChildren)
+                    {
+                        RecorrerControles490WC(c490WC);
+                    }
+                    if (c490WC is DataGridView dgv490WC)
+                    {
+                        foreach (DataGridViewColumn columna490WC in dgv490WC.Columns)
+                        {
+                            columna490WC.HeaderText = Traductor490WC.TraductorSG490WC.Traducir490WC(columna490WC.Name);
+                        }
+                    }
+
+                }
+            }
         }
     }
 }

@@ -49,12 +49,12 @@
             this.labelDireccion490WC = new System.Windows.Forms.Label();
             this.TB_DIRECCION490WC = new System.Windows.Forms.TextBox();
             this.TB_ESTRELLASCLIENTE490WC = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.LABEL_ESTRELLASCLIENTE490WC = new System.Windows.Forms.Label();
             this.listboxCelularesCliente490WC = new System.Windows.Forms.ListBox();
             this.BT_ELIMINARCELULAR490WC = new System.Windows.Forms.Button();
             this.BT_AGREGARCELULAR490WC = new System.Windows.Forms.Button();
             this.labelCelularCliente490WC = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.LABEL_EMAILSDELCLIENTE490WC = new System.Windows.Forms.Label();
             this.BT_ELIMINAREMAIL490WC = new System.Windows.Forms.Button();
             this.BT_AGREGAREMAIL490WC = new System.Windows.Forms.Button();
             this.listboxEmailsCliente490WC = new System.Windows.Forms.ListBox();
@@ -303,16 +303,16 @@
             this.TB_ESTRELLASCLIENTE490WC.Size = new System.Drawing.Size(184, 27);
             this.TB_ESTRELLASCLIENTE490WC.TabIndex = 51;
             // 
-            // label2
+            // LABEL_ESTRELLASCLIENTE490WC
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.label2.Location = new System.Drawing.Point(222, 421);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(148, 20);
-            this.label2.TabIndex = 52;
-            this.label2.Text = "Estrellas Cliente";
+            this.LABEL_ESTRELLASCLIENTE490WC.AutoSize = true;
+            this.LABEL_ESTRELLASCLIENTE490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.LABEL_ESTRELLASCLIENTE490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
+            this.LABEL_ESTRELLASCLIENTE490WC.Location = new System.Drawing.Point(222, 421);
+            this.LABEL_ESTRELLASCLIENTE490WC.Name = "LABEL_ESTRELLASCLIENTE490WC";
+            this.LABEL_ESTRELLASCLIENTE490WC.Size = new System.Drawing.Size(148, 20);
+            this.LABEL_ESTRELLASCLIENTE490WC.TabIndex = 52;
+            this.LABEL_ESTRELLASCLIENTE490WC.Text = "Estrellas Cliente";
             // 
             // listboxCelularesCliente490WC
             // 
@@ -366,16 +366,16 @@
             this.labelCelularCliente490WC.TabIndex = 56;
             this.labelCelularCliente490WC.Text = "Celulares Del Cliente";
             // 
-            // label1
+            // LABEL_EMAILSDELCLIENTE490WC
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.label1.Location = new System.Drawing.Point(747, 331);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(167, 20);
-            this.label1.TabIndex = 60;
-            this.label1.Text = "Emails  Del Cliente";
+            this.LABEL_EMAILSDELCLIENTE490WC.AutoSize = true;
+            this.LABEL_EMAILSDELCLIENTE490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.LABEL_EMAILSDELCLIENTE490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
+            this.LABEL_EMAILSDELCLIENTE490WC.Location = new System.Drawing.Point(747, 331);
+            this.LABEL_EMAILSDELCLIENTE490WC.Name = "LABEL_EMAILSDELCLIENTE490WC";
+            this.LABEL_EMAILSDELCLIENTE490WC.Size = new System.Drawing.Size(167, 20);
+            this.LABEL_EMAILSDELCLIENTE490WC.TabIndex = 60;
+            this.LABEL_EMAILSDELCLIENTE490WC.Text = "Emails  Del Cliente";
             // 
             // BT_ELIMINAREMAIL490WC
             // 
@@ -463,7 +463,7 @@
             this.Controls.Add(this.BT_Activar490WC);
             this.Controls.Add(this.TB_EMAIL490WC);
             this.Controls.Add(this.TB_CELULAR490WC);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.LABEL_EMAILSDELCLIENTE490WC);
             this.Controls.Add(this.BT_ELIMINAREMAIL490WC);
             this.Controls.Add(this.BT_AGREGAREMAIL490WC);
             this.Controls.Add(this.listboxEmailsCliente490WC);
@@ -471,7 +471,7 @@
             this.Controls.Add(this.BT_ELIMINARCELULAR490WC);
             this.Controls.Add(this.BT_AGREGARCELULAR490WC);
             this.Controls.Add(this.listboxCelularesCliente490WC);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.LABEL_ESTRELLASCLIENTE490WC);
             this.Controls.Add(this.TB_ESTRELLASCLIENTE490WC);
             this.Controls.Add(this.labelDireccion490WC);
             this.Controls.Add(this.TB_DIRECCION490WC);
@@ -521,12 +521,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ESTRELLAS_CLIENTE;
         private System.Windows.Forms.DataGridViewImageColumn IMAGEN_ESTRELLA;
         private System.Windows.Forms.TextBox TB_ESTRELLASCLIENTE490WC;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label LABEL_ESTRELLASCLIENTE490WC;
         private System.Windows.Forms.ListBox listboxCelularesCliente490WC;
         private System.Windows.Forms.Button BT_ELIMINARCELULAR490WC;
         private System.Windows.Forms.Button BT_AGREGARCELULAR490WC;
         private System.Windows.Forms.Label labelCelularCliente490WC;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label LABEL_EMAILSDELCLIENTE490WC;
         private System.Windows.Forms.Button BT_ELIMINAREMAIL490WC;
         private System.Windows.Forms.Button BT_AGREGAREMAIL490WC;
         private System.Windows.Forms.ListBox listboxEmailsCliente490WC;

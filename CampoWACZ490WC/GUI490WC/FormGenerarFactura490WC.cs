@@ -27,7 +27,46 @@ namespace GUI490WC
 
         public void ActualizarLenguaje490WC()
         {
-            
+            RecorrerControles490WC(this);
+            //Personalizar para Traducir el TextBox de vista previa factura
+        }
+
+        public void RecorrerControles490WC(Control control490WC)
+        {
+            foreach (Control c490WC in control490WC.Controls)
+            {
+                if ((c490WC is TextBox tb490WC) == false)
+                {
+
+                    c490WC.Text = Traductor490WC.TraductorSG490WC.Traducir490WC(c490WC.Name);
+
+
+                    if (c490WC.HasChildren)
+                    {
+                        RecorrerControles490WC(c490WC);
+                    }
+                    if (c490WC is DataGridView dgv490WC)
+                    {
+                        foreach (DataGridViewColumn columna490WC in dgv490WC.Columns)
+                        {
+                            columna490WC.HeaderText = Traductor490WC.TraductorSG490WC.Traducir490WC(columna490WC.Name);
+                        }
+                    }
+
+                }
+                else if (c490WC.Name == "TBINFOCLIENTEGENERARFACTURA490WC")
+                {
+                    TBINFOCLIENTE490WC.Text += "DNI: {clienteBuscado490WC.DNI490WC} {Environment.NewLine} Nombre: {clienteBuscado490WC.Nombre490WC} {Environment.NewLine} Apellido: {clienteBuscado490WC.Apellido490WC} {Environment.NewLine}";
+                    c490WC.Text = Traductor490WC.TraductorSG490WC.Traducir490WC(c490WC.Name);
+                    string a = c490WC.Text;
+                    a = a.Replace("{clienteBuscado490WC.DNI490WC} {Environment.NewLine}",$"{clienteCobrar490WC.DNI490WC} {Environment.NewLine}");
+                    a = a.Replace("{clienteBuscado490WC.Apellido490WC} {Environment.NewLine}", $"{clienteCobrar490WC.Apellido490WC} {Environment.NewLine}");
+                }
+                else if (c490WC.Name == "TBINFOCLIENTEVACIOGENERARFACTURA490WC")
+                {
+                    c490WC.Text = Traductor490WC.TraductorSG490WC.Traducir490WC(c490WC.Name);
+                }
+            }
         }
 
         public void CargarCliente490WC(Cliente490WC clienteBuscado490WC)
@@ -37,9 +76,9 @@ namespace GUI490WC
             dgvBoleto490WC.Rows.Clear();
             if (clienteBuscado490WC != null)
             {
-                TBINFOCLIENTE490WC.Text += $"DNI: {clienteBuscado490WC.DNI490WC} {Environment.NewLine}";
-                TBINFOCLIENTE490WC.Text += $"Nombre: {clienteBuscado490WC.Nombre490WC} {Environment.NewLine}";
-                TBINFOCLIENTE490WC.Text += $"Apellido: {clienteBuscado490WC.Apellido490WC} {Environment.NewLine}";
+                //TBINFOCLIENTE490WC.Text += $"DNI: {clienteBuscado490WC.DNI490WC} {Environment.NewLine}";
+                //TBINFOCLIENTE490WC.Text += $"Nombre: {clienteBuscado490WC.Nombre490WC} {Environment.NewLine}";
+                //TBINFOCLIENTE490WC.Text += $"Apellido: {clienteBuscado490WC.Apellido490WC} {Environment.NewLine}";
                 foreach (Boleto490WC boletoCliente490WC in gestorBoleto490WC.ObtenerBoletosPorCliente490WC(clienteBuscado490WC))
                 {
                     if (boletoCliente490WC.IsVendido490WC == false)
@@ -54,11 +93,13 @@ namespace GUI490WC
                         }
                     }
                 }
+                TBINFOCLIENTE490WC.Name = "TBINFOCLIENTEGENERARFACTURA490WC";
             }
             else
             {
                 clienteCobrar490WC = null;
-                TBINFOCLIENTE490WC.Text = $"Ingrese el DNI, Nombre y Apellido para visualizar los datos del cliente";
+                //TBINFOCLIENTE490WC.Text = $"Ingrese el DNI, Nombre y Apellido para visualizar los datos del cliente";
+                TBINFOCLIENTE490WC.Name = "TBINFOCLIENTEVACIOGENERARFACTURA490WC";
             }
             if (dgvBoleto490WC.Rows.Count > 0)
             {
@@ -84,16 +125,18 @@ namespace GUI490WC
                 }
                 else
                 {
-                    MessageBox.Show("El cliente buscado se encuentra desactivado!!!");
-                    TBINFOCLIENTE490WC.Text = $"Cliente no encontrado. Verifique el DNI ingresado.";
+                    string mensajeDesactivado = Traductor490WC.TraductorSG490WC.Traducir490WC("ClienteDesactivado490WC");
+                    MessageBox.Show(mensajeDesactivado);
+                    //TBINFOCLIENTE490WC.Text = $"Cliente no encontrado. Verifique el DNI ingresado.";
                     CargarCliente490WC(null);
                     TB_DNI490WC.Clear();
                 }
             }
             else
             {
-                MessageBox.Show("Cliente No Encontrado, Pase A registrarlo");
-                TBINFOCLIENTE490WC.Text = $"Cliente no encontrado. Verifique el DNI ingresado.";
+                string mensajeClienteRegistrar = Traductor490WC.TraductorSG490WC.Traducir490WC("ClienteRegistrar");
+                MessageBox.Show(mensajeClienteRegistrar);
+                //TBINFOCLIENTE490WC.Text = $"Cliente no encontrado. Verifique el DNI ingresado.";
                 formRegistrarCliente490WC = new FormRegistrarCliente490WC();
                 formRegistrarCliente490WC.ShowDialog();
                 CargarCliente490WC(null);
@@ -123,20 +166,23 @@ namespace GUI490WC
                     if (formCobrarFactura490WC.pagoAceptado490WC)
                     {
                         gestorBoleto490WC.CobrarBoleto490WC(boletoCobrar490WC);
-                        MessageBox.Show("Factura Generada");
+                        string mensajeFacturaGenerada = Traductor490WC.TraductorSG490WC.Traducir490WC("FacturaGenerada490WC");
+                        MessageBox.Show(mensajeFacturaGenerada);
                         CargarCliente490WC(null);
                         boletoCobrar490WC = null;
                     }
                     else
                     {
-                        MessageBox.Show("No se pudo generar la factura");
+                        string mensajeFacturaNoGenerada = Traductor490WC.TraductorSG490WC.Traducir490WC("FacturaNoGenerada490WC");
+                        MessageBox.Show(mensajeFacturaNoGenerada);
                         CargarCliente490WC(null);
                         boletoCobrar490WC = null;
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Debe seleccionar un boleto para cobrar la factura.");
+                    string mensajeSeleccionarBoleto = Traductor490WC.TraductorSG490WC.Traducir490WC("DebeSeleccionarBoletoFactura490WC");
+                    MessageBox.Show(mensajeSeleccionarBoleto);
                     CargarCliente490WC(null);
                     boletoCobrar490WC = null;
                 }
@@ -144,7 +190,8 @@ namespace GUI490WC
             }
             else
             {
-                MessageBox.Show("Debe buscar un cliente para cobrar la factura");
+                string mensajeBuscarCliente = Traductor490WC.TraductorSG490WC.Traducir490WC("DebeBuscarClienteParaCobrarFactura490WC");
+                MessageBox.Show(mensajeBuscarCliente);
                 CargarCliente490WC(null);
                 boletoCobrar490WC = null;
             }

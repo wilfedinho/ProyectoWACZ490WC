@@ -20,7 +20,33 @@ namespace GUI490WC
 
         public void ActualizarLenguaje490WC()
         {
-            
+            RecorrerControles490WC(this);
+        }
+
+        public void RecorrerControles490WC(Control control490WC)
+        {
+            foreach (Control c490WC in control490WC.Controls)
+            {
+                if ((c490WC is TextBox tb490WC) == false)
+                {
+
+                    c490WC.Text = Traductor490WC.TraductorSG490WC.Traducir490WC(c490WC.Name);
+
+
+                    if (c490WC.HasChildren)
+                    {
+                        RecorrerControles490WC(c490WC);
+                    }
+                    if (c490WC is DataGridView dgv490WC)
+                    {
+                        foreach (DataGridViewColumn columna490WC in dgv490WC.Columns)
+                        {
+                            columna490WC.HeaderText = Traductor490WC.TraductorSG490WC.Traducir490WC(columna490WC.Name);
+                        }
+                    }
+
+                }
+            }
         }
 
         public void LimpiarTB490WC() 
@@ -35,34 +61,40 @@ namespace GUI490WC
             string tipoErrorCambioClave = UserManager490WC.UserManagerSG490WC.VerificarCambioClave490WC(TB_ClaveNueva490WC.Text, TB_ConfirmarClave490WC.Text, TB_ClaveActual490WC.Text);
             if(tipoErrorCambioClave == "Ninguno")
             {
-                MessageBox.Show($"Cambio de Clave Exitoso!!!");
+                string mensajeCambioClave = Traductor490WC.TraductorSG490WC.Traducir490WC("MensajeCambioClaveExitoso490WC");
+                MessageBox.Show(mensajeCambioClave);
                 LimpiarTB490WC();
                 SesionManager490WC.GestorSesion490WC.Logout490WC();
                 GestorForm490WC.gestorFormSG490WC.DefinirEstado490WC(new EstadoIniciarSesion490WC());
             }
             if(tipoErrorCambioClave == "ClaveConfirmacionIgualActual")
             {
-                MessageBox.Show($"El cambio de clave no se efectuo ya que la clave de confirmacion es igual a la clave antigua");
+                string mensajeErrorClaveConfirmacionIgualActual = Traductor490WC.TraductorSG490WC.Traducir490WC("MensajeErrorClaveConfirmacionIgualActual490WC");
+                MessageBox.Show(mensajeErrorClaveConfirmacionIgualActual);
                 LimpiarTB490WC();
             }
             if (tipoErrorCambioClave == "ClaveNuevaIgualActual")
             {
-                MessageBox.Show($"El cambio de clave no se efectuo ya que la clave nueva es igual a la clave antigua");
+                string mensajeErrorClaveNuevaIgualActual = Traductor490WC.TraductorSG490WC.Traducir490WC("MensajeErrorClaveNuevaIgualActual490WC"); 
+                MessageBox.Show(mensajeErrorClaveNuevaIgualActual);
                 LimpiarTB490WC();
             }
             if (tipoErrorCambioClave == "ClaveNuevaDistintaClaveConfirmacion")
             {
-                MessageBox.Show($"El cambio de clave no se efectuo ya que la clave nueva y la clave confirmacion son distintas entre si");
+                string mensajeErrorClaveNuevaDistintaClaveConfirmacion = Traductor490WC.TraductorSG490WC.Traducir490WC("MensajeErrorClaveNuevaDistintaClaveConfirmacion490WC");
+                MessageBox.Show(mensajeErrorClaveNuevaDistintaClaveConfirmacion);
                 LimpiarTB490WC();
             }
             if (tipoErrorCambioClave == "ClaveActualDistintaOriginal")
             {
-                MessageBox.Show($"El cambio de clave no se efectuo ya que la clave actual es distinta a la clave antigua");
+                string mensajeErrorClaveActualDistintaOriginal = Traductor490WC.TraductorSG490WC.Traducir490WC("MensajeErrorClaveActualDistintaOriginal490WC");
+                MessageBox.Show(mensajeErrorClaveActualDistintaOriginal);
                 LimpiarTB490WC();
             }
             if (tipoErrorCambioClave == "Campos Vacios")
             {
-                MessageBox.Show("El cambio de clave no se efectuo ya que se detecto que ingresaron campos vacios");
+                string mensajeErrorCamposVacios = Traductor490WC.TraductorSG490WC.Traducir490WC("MensajeErrorCamposVacios490WC");
+                MessageBox.Show(mensajeErrorCamposVacios);
             }
         }
         

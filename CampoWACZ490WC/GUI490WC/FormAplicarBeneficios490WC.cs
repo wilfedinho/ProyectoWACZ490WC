@@ -62,10 +62,13 @@ namespace GUI490WC
             GestorBeneficio490WC gestorBeneficio490WC = new GestorBeneficio490WC();
             if (clienteBuscado490WC != null)
             {
-                TBINFOCLIENTE490WC.Text += $"DNI: {clienteBuscado490WC.DNI490WC} {Environment.NewLine}";
+                TBINFOCLIENTE490WC.Name = "TBINFOCLIENTE490WC";
+                TBBENEFICIOCLIENTE490WC.Name = "TBBENEFICIOCLIENTE490WC";
+                /*TBINFOCLIENTE490WC.Text += $"DNI: {clienteBuscado490WC.DNI490WC} {Environment.NewLine}";
                 TBINFOCLIENTE490WC.Text += $"Nombre: {clienteBuscado490WC.Nombre490WC} {Environment.NewLine}";
                 TBINFOCLIENTE490WC.Text += $"Apellido: {clienteBuscado490WC.Apellido490WC} {Environment.NewLine}";
                 TBINFOCLIENTE490WC.Text += $"Estrellas del Cliente: {clienteBuscado490WC.EstrellasCliente490WC} {Environment.NewLine}";
+                */
                 int contadorBeneficio490WC = 1;
                 if (clienteBuscado490WC.BeneficiosCliente490WC.Count > 0)
                 {
@@ -77,13 +80,18 @@ namespace GUI490WC
                 }
                 else
                 {
-                    TBBENEFICIOCLIENTE490WC.Text = "El cliente no tiene beneficios aplicados.";
+                    //TBBENEFICIOCLIENTE490WC.Text = "El cliente no tiene beneficios aplicados.";
+                    TBBENEFICIOCLIENTE490WC.Name = "TBBENEFICIOCLIENTECOUNT0";
                 }
+                ActualizarLenguaje490WC();
             }
             else
             {
-                TBINFOCLIENTE490WC.Text = $"Ingrese el DNI, Nombre y Apellido para visualizar los datos del cliente";
-                TBBENEFICIOCLIENTE490WC.Text = $"Ingrese el DNI, Nombre y Apellido para visualizar los beneficios del cliente";
+                TBINFOCLIENTE490WC.Name = "TBINFOCLIENTEVACIO490WC";
+                //TBINFOCLIENTE490WC.Text = $"Ingrese el DNI, Nombre y Apellido para visualizar los datos del cliente";
+                TBBENEFICIOCLIENTE490WC.Name = "TBBENEFICIOCLIENTEVACIO490WC";
+                //TBBENEFICIOCLIENTE490WC.Text = $"Ingrese el DNI, Nombre y Apellido para visualizar los beneficios del cliente";
+                ActualizarLenguaje490WC();
             }
             HabilitarCanjeBeneficio490WC();
         }
@@ -97,23 +105,25 @@ namespace GUI490WC
                 if (clienteCargar490WC.Activo490WC == true)
                 {
 
-                if (clienteCargar490WC.Nombre490WC == TB_NOMBRE490WC.Text && clienteCargar490WC.Apellido490WC == TB_APELLIDO490WC.Text)
-                {
-                    ClienteCargado490WC = clienteCargar490WC;
-                    CargarCliente490WC(clienteCargar490WC);
-                    LimpiarCampos490WC();
+                    if (clienteCargar490WC.Nombre490WC == TB_NOMBRE490WC.Text && clienteCargar490WC.Apellido490WC == TB_APELLIDO490WC.Text)
+                    {
+                        ClienteCargado490WC = clienteCargar490WC;
+                        CargarCliente490WC(clienteCargar490WC);
+                        LimpiarCampos490WC();
+                    }
+                    else
+                    {
+                        string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("ErrorDatosClienteNoCoinciden490WC");
+                        MessageBox.Show(mensajeError);
+                        LimpiarCampos490WC();
+                        ClienteCargado490WC = null;
+                        CargarCliente490WC(null);
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Los datos del cliente no coinciden. Por favor, verifique el DNI, Nombre y Apellido.");
-                    LimpiarCampos490WC();
-                    ClienteCargado490WC = null;
-                    CargarCliente490WC(null);
-                }
-                }
-                else
-                {
-                    MessageBox.Show("El cliente buscado se encuentra desactivado!!!");
+                    string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("ClienteDesactivado490WC"); 
+                    MessageBox.Show(mensajeError);
                     LimpiarCampos490WC();
                     ClienteCargado490WC = null;
                     CargarCliente490WC(null);
@@ -121,7 +131,8 @@ namespace GUI490WC
             }
             else
             {
-                MessageBox.Show("Cliente no encontrado. Por favor, verifique el DNI.");
+                string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("ClienteNoEncontrado490WC");
+                MessageBox.Show(mensajeError);
                 LimpiarCampos490WC();
                 ClienteCargado490WC = null;
                 CargarCliente490WC(null);
@@ -148,12 +159,14 @@ namespace GUI490WC
                 }
                 else
                 {
-                    MessageBox.Show("El cliente ya tiene este beneficio.");
+                    string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("ClienteYaTieneBeneficio490WC");    
+                    MessageBox.Show(mensajeError);
                 }
             }
             else
             {
-                MessageBox.Show("El cliente no tiene suficientes estrellas para canjear este beneficio.", "Error");
+                string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("ClienteNoTieneEstrellasSuficientes490WC"); 
+                MessageBox.Show(mensajeError);
             }
         }
 
@@ -172,7 +185,58 @@ namespace GUI490WC
 
         public void ActualizarLenguaje490WC()
         {
-            
+            RecorrerControles490WC(this);
+            //Personalizar Recorrer Controles Para Traducir los TextBox de info cliente y beneficio cliente
+        }
+
+        public void RecorrerControles490WC(Control control490WC)
+        {
+            foreach (Control c490WC in control490WC.Controls)
+            {
+                if ((c490WC is TextBox tb490WC) == false)
+                {
+
+                    c490WC.Text = Traductor490WC.TraductorSG490WC.Traducir490WC(c490WC.Name);
+
+
+                    if (c490WC.HasChildren)
+                    {
+                        RecorrerControles490WC(c490WC);
+                    }
+                    if (c490WC is DataGridView dgv490WC)
+                    {
+                        foreach (DataGridViewColumn columna490WC in dgv490WC.Columns)
+                        {
+                            columna490WC.HeaderText = Traductor490WC.TraductorSG490WC.Traducir490WC(columna490WC.Name);
+                        }
+                    }
+                }
+                else if (c490WC.Name == "TBINFOCLIENTE490WC")
+                {
+                    if (ClienteCargado490WC != null)
+                    {
+                        c490WC.Text = Traductor490WC.TraductorSG490WC.Traducir490WC(c490WC.Name);
+                        string a = c490WC.Text;
+                        a = a.Replace("{clienteBuscado490WC.DNI490WC} {Environment.NewLine} ", $"{ClienteCargado490WC.DNI490WC} {Environment.NewLine}");
+                        a = a.Replace("{clienteBuscado490WC.Nombre490WC} {Environment.NewLine}", $"{ClienteCargado490WC.Nombre490WC} {Environment.NewLine}");
+                        a = a.Replace("{clienteBuscado490WC.Apellido490WC} {Environment.NewLine}", $"Apellido: {ClienteCargado490WC.Apellido490WC} {Environment.NewLine}");
+                        a = a.Replace("{clienteBuscado490WC.EstrellasCliente490WC} {Environment.NewLine}", $"{ClienteCargado490WC.EstrellasCliente490WC} {Environment.NewLine}");
+                        c490WC.Text = a;
+                    }
+                }
+                else if (c490WC.Name == "TBINFOCLIENTEVACIO490WC")
+                {
+                    c490WC.Text = Traductor490WC.TraductorSG490WC.Traducir490WC(c490WC.Name);
+                }
+                else if (c490WC.Name == "TBBENEFICIOCLIENTEVACIO490WC")
+                {
+                    c490WC.Text = Traductor490WC.TraductorSG490WC.Traducir490WC(c490WC.Name);
+                }
+                else if (c490WC.Name == "TBBENEFICIOCLIENTECOUNT0")
+                {
+                    c490WC.Text = Traductor490WC.TraductorSG490WC.Traducir490WC(c490WC.Name);
+                }
+            }
         }
     }
 }

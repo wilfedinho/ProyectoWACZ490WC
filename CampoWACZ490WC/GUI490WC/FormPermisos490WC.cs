@@ -33,6 +33,7 @@ namespace GUI490WC
             LlenarFamilias490WC();
             LlenarPermisosSimples490WC();
             HabilitarCB490WC();
+            //ActualizarLenguaje490WC();
         }
 
 
@@ -1451,7 +1452,34 @@ namespace GUI490WC
 
         public void ActualizarLenguaje490WC()
         {
+            RecorrerControles490WC(this);
             
+        }
+
+        public void RecorrerControles490WC(Control control490WC)
+        {
+            foreach (Control c490WC in control490WC.Controls)
+            {
+                if ((c490WC is TextBox tb490WC) == false)
+                {
+
+                    c490WC.Text = Traductor490WC.TraductorSG490WC.Traducir490WC(c490WC.Name);
+
+
+                    if (c490WC.HasChildren)
+                    {
+                        RecorrerControles490WC(c490WC);
+                    }
+                    if (c490WC is DataGridView dgv490WC)
+                    {
+                        foreach (DataGridViewColumn columna490WC in dgv490WC.Columns)
+                        {
+                            columna490WC.HeaderText = Traductor490WC.TraductorSG490WC.Traducir490WC(columna490WC.Name);
+                        }
+                    }
+
+                }
+            }
         }
     }
 }

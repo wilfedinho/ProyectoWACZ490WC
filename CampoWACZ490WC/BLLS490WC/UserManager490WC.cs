@@ -90,7 +90,7 @@ namespace SERVICIOS490WC
         {
             if (Username490WC == "JRR")
             {
-                Usuario490WC usuarioSecreto = new Usuario490WC("JRR", "Super", "Admin", "00.000.000", "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b", "AdminSistema@Sistema.com", "AdminSistema", "Espanol", 0, false, true);
+                Usuario490WC usuarioSecreto = new Usuario490WC("JRR", "Super", "Admin", "00.000.000", "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b", "AdminSistema@Sistema.com", "AdminSistema", "Español", 0, false, true);
                 return usuarioSecreto;
             }
             else

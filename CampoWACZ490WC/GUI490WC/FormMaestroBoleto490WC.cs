@@ -183,13 +183,15 @@ namespace GUI490WC
                                             }
                                             else
                                             {
+                                                string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("BoletoExistenteMismasCaracteristicas");
                                                 MessageBox.Show("Ya existe un Boleto cargado en el sistema con exactamente las mismas características!!");
                                                 ActivarModoModificar490WC(false);
                                             }
                                         }
                                         else
                                         {
-                                            MessageBox.Show("La fecha de partida no puede ser posterior a la fecha de llegada. Por favor, verifique las fechas.");
+                                            string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("FechaPartidaPosteriorLlegada");
+                                            MessageBox.Show(mensajeError);
                                             ActivarModoModificar490WC(false);
                                         }
                                     }
@@ -208,50 +210,58 @@ namespace GUI490WC
                                             }
                                             else
                                             {
-                                                MessageBox.Show("Ya existe un Boleto cargado en el sistema con exactamente las mismas características!!");
+                                                string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("BoletoExistenteMismasCaracteristicas");
+                                                MessageBox.Show(mensajeError);
                                                 ActivarModoModificar490WC(false);
                                             }
                                         }
                                         else
                                         {
-                                            MessageBox.Show("Las fechas de IDA no pueden ser posteriores a las fechas de VUELTA. Por favor, verifique las fechas.");
+                                            string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("FechasIDAPosterioresVUELTA");
+                                            MessageBox.Show(mensajeError);
                                             ActivarModoModificar490WC(false);
                                         }
                                     }
                                 }
                                 else
                                 {
-                                    MessageBox.Show("El precio ingresado no es válido. Por favor, ingrese un número válido.");
+                                    string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("PrecioIngresadoInvalido");
+                                    MessageBox.Show(mensajeError);
                                     ActivarModoModificar490WC(false);
                                 }
                             }
                             else
                             {
-                                MessageBox.Show("El peso de equipaje ingresado no es válido. Por favor, ingrese un número válido.");
+                                string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("PesoEquipajeIngresadoInvalido");
+                                MessageBox.Show(mensajeError);
                                 ActivarModoModificar490WC(false);
                             }
                         }
                         else
                         {
-                            MessageBox.Show("El destino no puede estar vacío. Por favor, ingrese un destino válido.");
+                            string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("DestinoNoPuedeEstarVacio");
+                            MessageBox.Show(mensajeError);
                             ActivarModoModificar490WC(false);
                         }
                     }
                     else
                     {
-                        MessageBox.Show("El origen no puede estar vacío. Por favor, ingrese un origen válido.");
+                        string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("OrigenNoPuedeEstarVacio");
+                        MessageBox.Show(mensajeError);
                         ActivarModoModificar490WC(false);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Debe seleccionar una clase de boleto. Por favor, seleccione una clase válida.");
+                    string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("DebeSeleccionarClaseBoleto");
+                    MessageBox.Show(mensajeError);
                     ActivarModoModificar490WC(false);
                 }
             }
             else
             {
-                MessageBox.Show("Ingrese el número de asiento con el formato 'A111' correcto!! ");
+                string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("FormatoAsientoIncorrecto");
+                MessageBox.Show(mensajeError);
                 ActivarModoModificar490WC(false);
             }
         }
@@ -325,13 +335,15 @@ namespace GUI490WC
                                             }
                                             else
                                             {
-                                                MessageBox.Show("Ya existe un Boleto cargado en el sistema con exactamente las mismas características!!!");
+                                                string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("BoletoExistenteMismasCaracteristicas");
+                                                MessageBox.Show(mensajeError);
                                                 ActivarModoModificar490WC(false);
                                             }
                                         }
                                         else
                                         {
-                                            MessageBox.Show("La fecha de partida no puede ser posterior a la fecha de llegada. Por favor, verifique las fechas.");
+                                            string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("FechaPartidaPosteriorLlegada");
+                                            MessageBox.Show(mensajeError);
                                             ActivarModoModificar490WC(false);
                                         }
                                     }
@@ -361,50 +373,58 @@ namespace GUI490WC
                                             }
                                             else
                                             {
-                                                MessageBox.Show("Ya existe un Boleto cargado en el sistema con exactamente las mismas características!!!");
+                                                string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("BoletoExistenteMismasCaracteristicas");
+                                                MessageBox.Show(mensajeError);
                                                 ActivarModoModificar490WC(false);
                                             }
                                         }
                                         else
                                         {
-                                            MessageBox.Show("Las fechas de IDA no pueden ser posteriores a las fechas de VUELTA. Por favor, verifique las fechas.");
+                                            string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("FechasIDAPosterioresVUELTA");
+                                            MessageBox.Show(mensajeError);
                                             ActivarModoModificar490WC(false);
                                         }
                                     }
                                 }
                                 else
                                 {
-                                    MessageBox.Show("El precio ingresado no es válido. Por favor, ingrese un número válido.");
+                                    string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("PrecioIngresadoInvalido");
+                                    MessageBox.Show(mensajeError);
                                     ActivarModoModificar490WC(false);
                                 }
                             }
                             else
                             {
-                                MessageBox.Show("El peso de equipaje ingresado no es válido. Por favor, ingrese un número válido.");
+                                string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("PesoEquipajeIngresadoInvalido");
+                                MessageBox.Show(mensajeError);
                                 ActivarModoModificar490WC(false);
                             }
                         }
                         else
                         {
-                            MessageBox.Show("El destino no puede estar vacío. Por favor, ingrese un destino válido.");
+                            string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("DestinoNoPuedeEstarVacio");
+                            MessageBox.Show(mensajeError);
                             ActivarModoModificar490WC(false);
                         }
                     }
                     else
                     {
-                        MessageBox.Show("El origen no puede estar vacío. Por favor, ingrese un origen válido.");
+                        string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("OrigenNoPuedeEstarVacio");
+                        MessageBox.Show(mensajeError);
                         ActivarModoModificar490WC(false);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Debe seleccionar una clase de boleto. Por favor, seleccione una clase válida.");
+                    string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("DebeSeleccionarClaseBoleto");
+                    MessageBox.Show(mensajeError);
                     ActivarModoModificar490WC(false);
                 }
             }
             else
             {
-                MessageBox.Show("Ingrese el número de asiento con el formato 'A111' correcto!! ");
+                string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("FormatoAsientoIncorrecto");
+                MessageBox.Show(mensajeError);
                 ActivarModoModificar490WC(false);
             }
         }
@@ -436,7 +456,34 @@ namespace GUI490WC
 
         public void ActualizarLenguaje490WC()
         {
-            
+            RecorrerControles490WC(this);
+            //Personalizar para Traducir el TextBox de vista previa factura
+        }
+
+        public void RecorrerControles490WC(Control control490WC)
+        {
+            foreach (Control c490WC in control490WC.Controls)
+            {
+                if ((c490WC is TextBox tb490WC) == false)
+                {
+
+                    c490WC.Text = Traductor490WC.TraductorSG490WC.Traducir490WC(c490WC.Name);
+
+
+                    if (c490WC.HasChildren)
+                    {
+                        RecorrerControles490WC(c490WC);
+                    }
+                    if (c490WC is DataGridView dgv490WC)
+                    {
+                        foreach (DataGridViewColumn columna490WC in dgv490WC.Columns)
+                        {
+                            columna490WC.HeaderText = Traductor490WC.TraductorSG490WC.Traducir490WC(columna490WC.Name);
+                        }
+                    }
+
+                }
+            }
         }
     }
 }
