@@ -50,7 +50,7 @@ namespace GUI490WC
             VerificarAccesibilidadDeTodosLosControles490WC();
 
             Diseno490WC();
-
+            
         }
 
         public void SuscribirFormularios490WC()
@@ -379,7 +379,7 @@ namespace GUI490WC
                 if (c490WC.Name == LabelNombreUsuarios490WC.Name)
                 {
                     string a = LabelNombreUsuarios490WC.Text;
-                    a = a.Replace("{SesionManager.GestorSesion.Usuario490WC.Nombre490WC}", $"{SesionManager490WC.GestorSesion490WC.Usuario490WC.Nombre490WC}");
+                    a = a.Replace("{SesionManager.GestorSesion.UsuarioSesion.Nombre}", $"{SesionManager490WC.GestorSesion490WC.Usuario490WC.Nombre490WC}");
                     LabelNombreUsuarios490WC.Text = a;
                     LabelNombreUsuarios490WC.Height = LabelNombreUsuarios490WC.PreferredHeight;
 
@@ -388,7 +388,7 @@ namespace GUI490WC
                 if (c490WC.Name == LabelRolUsuario490WC.Name)
                 {
                     string b490WC = LabelRolUsuario490WC.Text;
-                    b490WC = b490WC.Replace("{SesionManager.GestorSesion.Usuario490WC.Rol490WC}", $"{SesionManager490WC.GestorSesion490WC.Usuario490WC.Rol490WC}");
+                    b490WC = b490WC.Replace("{SesionManager.GestorSesion.UsuarioSesion.Rol}", $"{SesionManager490WC.GestorSesion490WC.Usuario490WC.Rol490WC}");
                     LabelRolUsuario490WC.Text = b490WC;
                     LabelRolUsuario490WC.Height = LabelRolUsuario490WC.PreferredHeight;
                 }

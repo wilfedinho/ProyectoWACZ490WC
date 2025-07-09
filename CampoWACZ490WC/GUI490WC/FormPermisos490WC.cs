@@ -33,7 +33,7 @@ namespace GUI490WC
             LlenarFamilias490WC();
             LlenarPermisosSimples490WC();
             HabilitarCB490WC();
-            //ActualizarLenguaje490WC();
+            ActualizarLenguaje490WC();
         }
 
 
@@ -252,16 +252,19 @@ namespace GUI490WC
                                 CargarTodasLasFamiliasEnArbol490WC();
                                 CargarTodosLosPerfilesEnArbol490WC();
                                 TB_ROL490WC.Clear();
-                                MessageBox.Show("Creacion del Rol Exitosa!!!");
+                                string mensajeOperacion = Traductor490WC.TraductorSG490WC.Traducir490WC("CreacionRol");
+                                MessageBox.Show(mensajeOperacion);
                             }
                             else
                             {
-                                MessageBox.Show("Creacion del Rol Fracasada!!!");
+                                string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("CreacionRolFracasada");
+                                MessageBox.Show(mensajeError);
                             }
                         }
                         else
                         {
-                            MessageBox.Show("No se Puede Crear un Rol Vacio!!!");
+                            string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("CreacionRolVacio");
+                            MessageBox.Show(mensajeError);
                         }
                     }
                     else
@@ -278,28 +281,33 @@ namespace GUI490WC
                                 CargarTodasLasFamiliasEnArbol490WC();
                                 CargarTodosLosPerfilesEnArbol490WC();
                                 TB_ROL490WC.Clear();
-                                MessageBox.Show("Creacion del Rol Exitosa!!!");
+                                string mensajeOperacion = Traductor490WC.TraductorSG490WC.Traducir490WC("CreacionRol");
+                                MessageBox.Show(mensajeOperacion);
                             }
                             else
                             {
-                                MessageBox.Show("Creacion del Rol Fracasada!!!");
+                                string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("CreacionRolFracasada");
+                                MessageBox.Show(mensajeError);
                             }
                         }
                         else
                         {
-                            MessageBox.Show("No se puede Crear un Rol Vacio!!!");
+                            string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("CreacionRolVacio");
+                            MessageBox.Show(mensajeError);
                         }
                     }
                 }
                 else
                 {
-                    MessageBox.Show("El nombre ingresado para un nuevo Rol ya se encuentra en uso!!!");
+                    string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("NombreRolDUPLICADO");
+                    MessageBox.Show(mensajeError);
                 }
 
             }
             else
             {
-                MessageBox.Show("Debe Ingresar un Nombre para Crear un Nuevo Rol!!!");
+                string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("NombreRolVacio");
+                MessageBox.Show(mensajeError);
             }
         }
 
@@ -326,16 +334,19 @@ namespace GUI490WC
                                 CargarTodosLosPerfilesEnArbol490WC();
                                 LlenarFamilias490WC();
                                 TB_FAMILIA490WC.Clear();
-                                MessageBox.Show("Creacion de la Familia Exitosa!!!");
+                                string mensajeOperacion = Traductor490WC.TraductorSG490WC.Traducir490WC("CreacionFamiliaExitosa");
+                                MessageBox.Show(mensajeOperacion);
                             }
                             else
                             {
-                                MessageBox.Show("Creacion de la Familia Fracasada!!!");
+                                string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("CreacionFamiliaFracasada");
+                                MessageBox.Show(mensajeError);
                             }
                         }
                         else
                         {
-                            MessageBox.Show("No se Puede Crear una Familia Vacia!!!");
+                            string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("CreacionFamiliaVacia");
+                            MessageBox.Show(mensajeError);
                         }
                     }
                     else
@@ -353,28 +364,33 @@ namespace GUI490WC
                                 CargarTodosLosPerfilesEnArbol490WC();
                                 LlenarFamilias490WC();
                                 TB_FAMILIA490WC.Clear();
-                                MessageBox.Show("Creacion de la Familia Exitosa!!!");
+                                string mensajeOperacion = Traductor490WC.TraductorSG490WC.Traducir490WC("CreacionFamiliaExitosa");
+                                MessageBox.Show(mensajeOperacion);
                             }
                             else
                             {
-                                MessageBox.Show("Creacion de la Familia Fracasada!!!");
+                                string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("CreacionFamiliaFracasada");
+                                MessageBox.Show(mensajeError);
                             }
                         }
                         else
                         {
-                            MessageBox.Show("No se puede Crear una Familia Vacia!!!");
+                            string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("CreacionFamiliaVacia");
+                            MessageBox.Show(mensajeError);
                         }
                     }
                 }
                 else
                 {
-                    MessageBox.Show("El nombre ingresado para la nueva Familia ya se encuentra en uso!!!");
+                    string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("NombreFamiliaDUPLICADO");
+                    MessageBox.Show(mensajeError);
                 }
 
             }
             else
             {
-                MessageBox.Show("Debe Ingresar un Nombre para Crear una Nueva Familia!!!");
+                string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("NombreFamiliaVacia");
+                MessageBox.Show(mensajeError);
             }
         }
 
@@ -402,7 +418,8 @@ namespace GUI490WC
             }
             else
             {
-                MessageBox.Show("Debe seleccionar una Familia o Rol para modificarlo");
+                string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("ErrorElegirFamiliaRol");
+                MessageBox.Show(mensajeError);
             }
         }
         public void ActivarModificacion490WC(bool Activo490WC)
@@ -583,7 +600,8 @@ namespace GUI490WC
             }
             else
             {
-                MessageBox.Show("Debes Elegir un Rol o Familia Para Eliminarlos!!");
+                string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("ErrorElegirFamiliaRolEliminar");
+                MessageBox.Show(mensajeError);
             }
         }
 
@@ -599,7 +617,8 @@ namespace GUI490WC
                     {
                         if (gestorPermiso490WC.BorrarRol490WC(nombreElementoSeleccionado490WC))
                         {
-                            MessageBox.Show("Eliminacion Exitosa!!!");
+                            string mensajeOperacion = Traductor490WC.TraductorSG490WC.Traducir490WC("EliminacionExitosa");
+                            MessageBox.Show(mensajeOperacion);
                             CargarComboBoxRol490WC();
                             CargarComboboxFamilia490WC();
                             CargarTodasLasFamiliasEnArbol490WC();
@@ -609,19 +628,22 @@ namespace GUI490WC
                         }
                         else
                         {
-                            MessageBox.Show("Eliminacion Fracasada!!!");
+                            string mensajeOperacion = Traductor490WC.TraductorSG490WC.Traducir490WC("EliminacionFracasada");
+                            MessageBox.Show(mensajeOperacion);
                             CB_ROL490WC.SelectedIndex = -1;
                         }
                     }
                     else
                     {
-                        MessageBox.Show("No puede eliminar un Rol que esta asignado a usuario(s)!!");
+                        string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("ErrorEliminarRolAsignadoUsuario");
+                        MessageBox.Show(mensajeError);
                         CB_ROL490WC.SelectedIndex = -1;
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Para eliminar Un Rol o Familia Debe Seleccionarlo!!!");
+                    string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("ErrorElegirFamiliaRolEliminar");
+                    MessageBox.Show(mensajeError);
                     CB_ROL490WC.SelectedIndex = -1;
                 }
             }
@@ -638,7 +660,8 @@ namespace GUI490WC
                         {
                             if (gestorPermiso490WC.BorrarFamilia490WC(nombreElementoSeleccionado490WC))
                             {
-                                MessageBox.Show("Eliminacion Exitosa!!!");
+                                string mensajeOperacion = Traductor490WC.TraductorSG490WC.Traducir490WC("EliminacionExitosa");
+                                MessageBox.Show(mensajeOperacion);
                                 CargarComboBoxRol490WC();
                                 CargarComboboxFamilia490WC();
                                 CargarTodasLasFamiliasEnArbol490WC();
@@ -648,25 +671,29 @@ namespace GUI490WC
                             }
                             else
                             {
-                                MessageBox.Show("Eliminacion Fracasada!!!");
+                                string mensajeOperacion = Traductor490WC.TraductorSG490WC.Traducir490WC("EliminacionFracasada");
+                                MessageBox.Show(mensajeOperacion);
                                 CB_FAMILIA490WC.SelectedIndex = -1;
                             }
                         }
                         else
                         {
-                            MessageBox.Show("No puede eliminar una Familia que esta asignada a otra Familia(s)!!!");
+                            string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("ErrorEliminarFamiliaAsignadaFamilia");
+                            MessageBox.Show(mensajeError);
                             CB_FAMILIA490WC.SelectedIndex = -1;
                         }
                     }
                     else
                     {
-                        MessageBox.Show("No puede eliminar una Familia que esta asignada a Rol(es)!!!");
+                        string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("ErrorEliminarFamiliaAsignadaUsuario");
+                        MessageBox.Show(mensajeError);
                         CB_FAMILIA490WC.SelectedIndex = -1;
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Para eliminar Un Rol o Familia Debe Seleccionarlo!!!");
+                    string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("ErrorElegirFamiliaRolEliminar");
+                    MessageBox.Show(mensajeError);
                     CB_FAMILIA490WC.SelectedIndex = -1;
                 }
             }
@@ -720,30 +747,34 @@ namespace GUI490WC
                                             }
                                             else
                                             {
-                                                MessageBox.Show("Debe seleccionar una Familia o Rol para modificarlo");
+                                                string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("ErrorSeleccionarFamiliaRolModificar");
+                                                MessageBox.Show(mensajeError);
                                             }
                                         }
-                                        MessageBox.Show("Funciona");
+                                        
                                     }
                                     else
                                     {
-                                        MessageBox.Show("No funciona");
+                                        
                                     }
                                 }
                             }
                             else if (treeViewPreviaModificacion490WC.SelectedNode.Tag.ToString() == "Simple")
                             {
-                                MessageBox.Show("No se le puede asignar nada a un permiso simple!!!");
+                                string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("ErrorAgregarAlgoAPermisoSimple");
+                                MessageBox.Show(mensajeError);
                             }
                             else
                             {
-                                MessageBox.Show("No puedes Modificar una Subfamilia!!");
+                                string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("ErrorModificarSubfamilia");
+                                MessageBox.Show(mensajeError);
                             }
 
                         }
                         else
                         {
-                            MessageBox.Show("Debes seleccionar un permiso simple para asignarlo!!!");
+                            string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("ErrorSeleccionarPermisoSimple");
+                            MessageBox.Show(mensajeError);
                         }
 
                     }
@@ -788,30 +819,34 @@ namespace GUI490WC
                                             }
                                             else
                                             {
-                                                MessageBox.Show("Debe seleccionar una Familia o Rol para modificarlo");
+                                                string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("ErrorSeleccionarFamiliaRolModificar");
+                                                MessageBox.Show(mensajeError);
                                             }
                                         }
-                                        MessageBox.Show("Funciona");
+                                        
                                     }
                                     else
                                     {
-                                        MessageBox.Show("No funciona");
+                                        
                                     }
                                 }
                             }
                             else if (treeViewPreviaModificacion490WC.SelectedNode.Tag.ToString() == "Simple")
                             {
-                                MessageBox.Show("No se le puede Asignar nada a un permiso simple!!!");
+                                string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("ErrorAgregarAlgoAPermisoSimple");
+                                MessageBox.Show(mensajeError);
                             }
                             else
                             {
-                                MessageBox.Show("No puedes Modificar una Subfamilia");
+                                string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("ErrorModificarSubfamilia");
+                                MessageBox.Show(mensajeError);
                             }
 
                         }
                         else
                         {
-                            MessageBox.Show("Debes seleccionar una familia para asignarla!!!");
+                            string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("ErrorSeleccionarFamilia");
+                            MessageBox.Show(mensajeError);
                         }
                     }
                 }
@@ -864,73 +899,35 @@ namespace GUI490WC
                                             }
                                             else
                                             {
-                                                MessageBox.Show("Debe seleccionar una Familia o Rol para modificarlo");
+                                                string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("ErrorSeleccionarFamiliaRolModificar");
+                                                MessageBox.Show(mensajeError);
                                             }
-                                            MessageBox.Show("Funciona");
+                                          
                                         }
                                     }
                                     else
                                     {
-                                        MessageBox.Show("No funciona");
+                                      
                                     }
                                 }
                             }
                             else if (treeViewPreviaModificacion490WC.SelectedNode.Tag.ToString() == "Familia")
                             {
-                                //string nombreFamiliaSeleccionado490WC = treeViewPreviaModificacion490WC.SelectedNode.Text;
-                                //Permiso490WC PermisoDelNivelSeleccionado490WC = gestorPermiso490WC.LeerFamiliasConEstructuraRecursiva490WC().Find(x => x.obtenerPermisoNombre490WC() == nombreFamiliaSeleccionado490WC);
-                                //if (PermisoDelNivelSeleccionado490WC != null)
-                                //{
-                                //    if ((PermisoDelNivelSeleccionado490WC as PermisoCompuesto490WC).VerificarPermisoIncluido490WC(PermisoDelNivelSeleccionado490WC, permisoSimpleAsignar490WC.obtenerPermisoNombre490WC()) == false)
-                                //    {
-                                //        if (gestorPermiso490WC.InsertarRelacionDesdeFamilia490WC(PermisoDelNivelSeleccionado490WC.obtenerPermisoNombre490WC(), permisoSimpleAsignar490WC.obtenerPermisoNombre490WC()))
-                                //        {
-                                //            elementoSeleccionado490WC = gestorPermiso490WC.LeerRolConEstructura490WC(elementoSeleccionado490WC.obtenerPermisoNombre490WC());
-                                //            CargarTodasLasFamiliasEnArbol490WC();
-                                //            CargarTodosLosPerfilesEnArbol490WC();
-                                //            if (CB_ROL490WC.SelectedIndex > -1)
-                                //            {
-                                //                EjecutarModificacion490WC("Rol");
-                                //                if (elementoSeleccionado490WC != null)
-                                //                {
-                                //                    ActivarModificacion490WC(true);
-                                //                    CargarPermisosSimplesParaModificacion490WC();
-                                //                    CargarFamiliasParaModificacion490WC();
-                                //                }
-                                //            }
-                                //            else if (CB_FAMILIA490WC.SelectedIndex > -1)
-                                //            {
-                                //                EjecutarModificacion490WC("Familia");
-                                //                if (elementoSeleccionado490WC != null)
-                                //                {
-                                //                    ActivarModificacion490WC(true);
-                                //                    CargarPermisosSimplesParaModificacion490WC();
-                                //                    CargarFamiliasParaModificacion490WC();
-                                //                }
-                                //            }
-                                //            else
-                                //            {
-                                //                MessageBox.Show("Debe seleccionar una Familia o Rol para modificarlo");
-                                //            }
-                                //        }
-                                //        MessageBox.Show("Funciona");
-                                //    }
-                                //    else
-                                //    {
-                                //        MessageBox.Show("No funciona");
-                                //    }
-                                //}
-                                MessageBox.Show("No puedes Modificar una Subfamilia!!");
+
+                                string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("ErrorModificarSubfamilia");
+                                MessageBox.Show(mensajeError);
                             }
                             else if (treeViewPreviaModificacion490WC.SelectedNode.Tag.ToString() == "Simple")
                             {
-                                MessageBox.Show("No se le puede agregar nada a un permiso simple!!!");
+                                string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("ErrorAgregarAlgoAPermisoSimple");
+                                MessageBox.Show(mensajeError);
                             }
 
                         }
                         else
                         {
-                            MessageBox.Show("Debes seleccionar un permiso simple para asignar!!");
+                            string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("ErrorSeleccionarPermisoSimple");
+                            MessageBox.Show(mensajeError);
                         }
                     }
                     else
@@ -973,7 +970,8 @@ namespace GUI490WC
                                             }
                                             else
                                             {
-                                                MessageBox.Show("Debe seleccionar una Familia o Rol para modificarlo");
+                                                string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("ErrorSeleccionarFamiliaRolModificar");
+                                                MessageBox.Show(mensajeError);
                                             }
 
                                         }
@@ -986,64 +984,29 @@ namespace GUI490WC
                             }
                             else if (treeViewPreviaModificacion490WC.SelectedNode.Tag.ToString() == "Familia")
                             {
-                                //string nombreFamiliaSeleccionado490WC = treeViewPreviaModificacion490WC.SelectedNode.Text;
-                                //Permiso490WC PermisoDelNivelSeleccionado490WC = gestorPermiso490WC.LeerFamiliasConEstructuraRecursiva490WC().Find(x => x.obtenerPermisoNombre490WC() == nombreFamiliaSeleccionado490WC);
-                                //if ((PermisoDelNivelSeleccionado490WC as PermisoCompuesto490WC).VerificarPermisoIncluido490WC(PermisoDelNivelSeleccionado490WC, FamiliaAsignar490WC.obtenerPermisoNombre490WC()) == false)
-                                //{
-                                //    if (gestorPermiso490WC.InsertarRelacionDesdeFamilia490WC(PermisoDelNivelSeleccionado490WC.obtenerPermisoNombre490WC(), FamiliaAsignar490WC.obtenerPermisoNombre490WC()))
-                                //    {
-                                //        elementoSeleccionado490WC = gestorPermiso490WC.LeerFamiliasConEstructuraRecursiva490WC().Find(x => x.obtenerPermisoNombre490WC() == elementoSeleccionado490WC.obtenerPermisoNombre490WC());
-                                //        CargarTodasLasFamiliasEnArbol490WC();
-                                //        CargarTodosLosPerfilesEnArbol490WC();
-                                //        if (CB_ROL490WC.SelectedIndex > -1)
-                                //        {
-                                //            EjecutarModificacion490WC("Rol");
-                                //            if (elementoSeleccionado490WC != null)
-                                //            {
-                                //                ActivarModificacion490WC(true);
-                                //                CargarPermisosSimplesParaModificacion490WC();
-                                //                CargarFamiliasParaModificacion490WC();
-                                //            }
-                                //        }
-                                //        else if (CB_FAMILIA490WC.SelectedIndex > -1)
-                                //        {
-                                //            EjecutarModificacion490WC("Familia");
-                                //            if (elementoSeleccionado490WC != null)
-                                //            {
-                                //                ActivarModificacion490WC(true);
-                                //                CargarPermisosSimplesParaModificacion490WC();
-                                //                CargarFamiliasParaModificacion490WC();
-                                //            }
-                                //        }
-                                //        else
-                                //        {
-                                //            MessageBox.Show("Debe seleccionar una Familia o Rol para modificarlo");
-                                //        }
-                                //    }
-                                //    MessageBox.Show("Funciona");
-                                //}
-                                //else
-                                //{
-                                //    MessageBox.Show("No funciona");
-                                //}
-                                MessageBox.Show("No puedes Modificar una Subfamilia");
+
+                                string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("ErrorModificarSubfamilia");
+                                MessageBox.Show(mensajeError);
                             }
 
                             else if (treeViewPreviaModificacion490WC.SelectedNode.Tag.ToString() == "Simple")
                             {
-                                MessageBox.Show("No se le puede asignar nada a un permiso simple!!!");
+                                string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("ErrorAgregarAlgoAPermisoSimple");
+                                MessageBox.Show(mensajeError);
                             }
 
                         }
                         else
                         {
-                            MessageBox.Show("Debes seleccionar una familia para asignar!!!");
+                            string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("ErrorSeleccionarFamilia");
+                            MessageBox.Show(mensajeError);
                         }
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Debes seleccionar El nodo al que quieres asignar!!!");
+                    string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("ErrorSeleccionarNodo");
+                    MessageBox.Show(mensajeError);
                 }
             }
 
@@ -1060,7 +1023,8 @@ namespace GUI490WC
                     PermisoCompuesto490WC familiaModificar490WC = gestorPermiso490WC.LeerFamiliasConEstructuraRecursiva490WC().Find(x => x.obtenerPermisoNombre490WC() == CB_FAMILIA490WC.SelectedItem.ToString());
                     if (treeViewPreviaModificacion490WC.SelectedNode.Tag.ToString() == "Rol")
                     {
-                        MessageBox.Show("No se puede Desasignar un Rol!!!");
+                        string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("ErrorDesasignarRol");
+                        MessageBox.Show(mensajeError);
                     }
                     else if (treeViewPreviaModificacion490WC.SelectedNode.Tag.ToString() == "Familia" && familiaModificar490WC.PermisosIncluidos490WC().Find(x => x.obtenerPermisoNombre490WC() == treeViewPreviaModificacion490WC.SelectedNode.Text) != null)
                     {
@@ -1097,24 +1061,28 @@ namespace GUI490WC
                                     }
                                     else
                                     {
-                                        MessageBox.Show("Debe seleccionar una Familia o Rol para modificarlo");
+                                        string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("ErrorSeleccionarFamiliaRolModificar");
+                                        MessageBox.Show(mensajeError);
                                     }
                                 }
                                 else
                                 {
-                                    MessageBox.Show("No se pudo ejecutar la desasignacion!!");
+                                    string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("ErrorEjecutarDesasignacion");
+                                    MessageBox.Show(mensajeError);
                                 }
 
                             }
                             else
                             {
-                                MessageBox.Show("No lo puedes Desasignar ya que la Familia quedaria vacia!!!");
+                                string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("ErrorFamiliaQuedariaVacia");
+                                MessageBox.Show(mensajeError);
                             }
 
                         }
                         else
                         {
-                            MessageBox.Show("No puedes desasignar la familia que estas modificando!!");
+                            string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("ErrorDesasignarFamiliaModificando");
+                            MessageBox.Show(mensajeError);
                         }
 
 
@@ -1152,29 +1120,35 @@ namespace GUI490WC
                                 }
                                 else
                                 {
-                                    MessageBox.Show("Debe seleccionar una Familia o Rol para modificarlo");
+
+                                    string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("ErrorSeleccionarFamiliaRolModificar");
+                                    MessageBox.Show(mensajeError);
                                 }
                             }
                             else
                             {
-                                MessageBox.Show("No se pudo ejecutar la desasignacion!!");
+                                string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("ErrorEjecutarDesasignacion");
+                                MessageBox.Show(mensajeError);
                             }
 
                         }
                         else
                         {
-                            MessageBox.Show("No puedes Desasignar este Permiso Ya Que Quedaria vacia la familia que estas modificando!!!");
+                            string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("ErrorFamiliaQuedariaVacia");
+                            MessageBox.Show(mensajeError);
                         }
 
 
                     }
                     else if (treeViewPreviaModificacion490WC.SelectedNode.Tag.ToString() == "Familia" && familiaModificar490WC.obtenerPermisoNombre490WC() == treeViewPreviaModificacion490WC.SelectedNode.Text)
                     {
-                        MessageBox.Show("No puedes Desasignar la Familia que estas Modificando!!");
+                        string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("ErrorDesasignarFamiliaModificando");
+                        MessageBox.Show(mensajeError);
                     }
                     else
                     {
-                        MessageBox.Show("No puedes Modificar una Subfamilia!!!");
+                        string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("ErrorModificarSubfamilia");
+                        MessageBox.Show(mensajeError);
                     }
                     
                 }
@@ -1183,7 +1157,8 @@ namespace GUI490WC
                     PermisoCompuesto490WC rolModificar490WC = gestorPermiso490WC.LeerRolConEstructura490WC(CB_ROL490WC.SelectedItem.ToString());
                     if (treeViewPreviaModificacion490WC.SelectedNode.Tag.ToString() == "Rol")
                     {
-                        MessageBox.Show("No se puede Desasignar el Rol que estas modificando!!!");
+                        string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("ErrorDesasignarRol");
+                        MessageBox.Show(mensajeError);
                     }
                     else if (treeViewPreviaModificacion490WC.SelectedNode.Tag.ToString() == "Familia" && rolModificar490WC.PermisosIncluidos490WC().Find(x => x.obtenerPermisoNombre490WC() == treeViewPreviaModificacion490WC.SelectedNode.Text) != null)
                     {
@@ -1220,18 +1195,21 @@ namespace GUI490WC
                                     }
                                     else
                                     {
-                                        MessageBox.Show("Debe seleccionar una Familia o Rol para modificarlo");
+                                        string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("ErrorSeleccionarFamiliaRolModificar");
+                                        MessageBox.Show(mensajeError);
                                     }
                                 }
                                 else
                                 {
-                                    MessageBox.Show("No se pudo ejecutar la desasignacion!!");
+                                    string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("ErrorEjecutarDesasignacion");
+                                    MessageBox.Show(mensajeError);
                                 }
 
                             }
                             else
                             {
-                                MessageBox.Show("No puedes Desasignar la Familia ya que quedaria vacio el Perfil que estas Modificando!!!");
+                                string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("ErrorRolQuedariaVacio");
+                                MessageBox.Show(mensajeError);
                             }
 
                         }
@@ -1266,18 +1244,21 @@ namespace GUI490WC
                                     }
                                     else
                                     {
-                                        MessageBox.Show("Debe seleccionar una Familia o Rol para modificarlo");
+                                        string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("ErrorSeleccionarFamiliaRolModificar");
+                                        MessageBox.Show(mensajeError);
                                     }
                                 }
                                 else
                                 {
-                                    MessageBox.Show("No se pudo ejecutar la desasignacion!!");
+                                    string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("ErrorEjecutarDesasignacion");
+                                    MessageBox.Show(mensajeError);
                                 }
 
                             }
                             else
                             {
-                                MessageBox.Show("No puedes Desasignar esta familia ya que quedaria vacio el Rol!!");
+                                string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("ErrorRolQuedariaVacio");
+                                MessageBox.Show(mensajeError);
                             }
                         }
 
@@ -1317,18 +1298,21 @@ namespace GUI490WC
                                     }
                                     else
                                     {
-                                        MessageBox.Show("Debe seleccionar una Familia o Rol para modificarlo");
+                                        string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("ErrorSeleccionarFamiliaRolModificar");
+                                        MessageBox.Show(mensajeError);
                                     }
                                 }
                                 else
                                 {
-                                    MessageBox.Show("No se pudo ejecutar la desasignacion!!");
+                                    string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("ErrorEjecutarDesasignacion");
+                                    MessageBox.Show(mensajeError);
                                 }
 
                             }
                             else
                             {
-                                MessageBox.Show("No puedes Desasignar el permiso Ya que la familia quedaria vacia!!!");
+                                string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("ErrorRolQuedariaVacio");
+                                MessageBox.Show(mensajeError);
                             }
 
                         }
@@ -1363,25 +1347,29 @@ namespace GUI490WC
                                     }
                                     else
                                     {
-                                        MessageBox.Show("Debe seleccionar una Familia o Rol para modificarlo");
+                                        string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("ErrorSeleccionarFamiliaRolModificar");
+                                        MessageBox.Show(mensajeError);
                                     }
                                 }
                                 else
                                 {
-                                    MessageBox.Show("No se pudo ejecutar la desasignacion!!");
+                                    string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("ErrorEjecutarDesasignacion");
+                                    MessageBox.Show(mensajeError);
                                 }
 
                             }
                             else
                             {
-                                MessageBox.Show("No puedes Desasignar el permiso simple seleccionado Porque Quedaria Vacio el Rol!!");
+                                string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("ErrorRolQuedariaVacio");
+                                MessageBox.Show(mensajeError);
                             }
                         }
 
                     }
                     else
                     {
-                        MessageBox.Show("No puedes Modificar una Subfamilia!!!");
+                        string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("ErrorModificarSubfamilia");
+                        MessageBox.Show(mensajeError);
                     }
                 }
                 
@@ -1389,7 +1377,8 @@ namespace GUI490WC
             }
             else
             {
-                MessageBox.Show("Seleccione un Permiso o Familia para Desasignar!!");
+                string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("ErrorSeleccionarSimpleFamiliaDesasignar");
+                MessageBox.Show(mensajeError);
             }
 
         }
