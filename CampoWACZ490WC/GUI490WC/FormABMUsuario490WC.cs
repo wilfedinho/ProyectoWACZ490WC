@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace GUI490WC
 {
-    public partial class FormABMUsuario490WC : Form
+    public partial class FormABMUsuario490WC : Form, iObserverLenguaje490WC
     {
 
         FormMenu490WC menu490WC;
@@ -353,5 +353,9 @@ namespace GUI490WC
             catch { MessageBox.Show("Debe seleccionar un Usuario para desbloquearlo"); }
         }
 
+        public void ActualizarLenguaje490WC()
+        {
+           
+        }
     }
 }

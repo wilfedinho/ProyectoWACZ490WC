@@ -15,7 +15,7 @@ using System.Windows.Forms;
 
 namespace GUI490WC
 {
-    public partial class FormRegistrarCliente490WC : Form
+    public partial class FormRegistrarCliente490WC : Form, iObserverLenguaje490WC
     {
         public FormRegistrarCliente490WC()
         {
@@ -223,6 +223,11 @@ namespace GUI490WC
             {
                 MessageBox.Show("Debes seleccionar un email para eliminarlo");
             }
+        }
+
+        public void ActualizarLenguaje490WC()
+        {
+           
         }
     }
 }

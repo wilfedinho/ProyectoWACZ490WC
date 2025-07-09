@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace GUI490WC
 {
-    public partial class FormCobrarFactura490WC : Form
+    public partial class FormCobrarFactura490WC : Form, iObserverLenguaje490WC
     {
         Cliente490WC clienteCargado490WC;
         Boleto490WC boletoCargado490WC;
@@ -128,6 +128,11 @@ namespace GUI490WC
         private void FormCobrarFactura490WC_FormClosed(object sender, FormClosedEventArgs e)
         {
 
+        }
+
+        public void ActualizarLenguaje490WC()
+        {
+            
         }
     }
 }

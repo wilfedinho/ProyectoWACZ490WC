@@ -14,7 +14,7 @@ using System.Windows.Forms;
 
 namespace GUI490WC
 {
-    public partial class FormMaestroCliente490WC : Form
+    public partial class FormMaestroCliente490WC : Form , iObserverLenguaje490WC
     {
         public FormMaestroCliente490WC()
         {
@@ -395,6 +395,11 @@ namespace GUI490WC
             GestorCliente490WC gestorCliente490WC = new GestorCliente490WC();
             gestorCliente490WC.ActivarCliente490WC(dgvCliente490WC.SelectedRows[0].Cells["DNI_CLIENTE"].Value.ToString());
             Mostrar490WC();
+        }
+
+        public void ActualizarLenguaje490WC()
+        {
+            
         }
     }
 }

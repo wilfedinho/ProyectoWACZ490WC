@@ -1,5 +1,6 @@
 ﻿using BE490WC;
 using BLL490WC;
+using SERVICIOS490WC;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,7 +13,7 @@ using System.Windows.Forms;
 
 namespace GUI490WC
 {
-    public partial class FormAplicarBeneficios490WC : Form
+    public partial class FormAplicarBeneficios490WC : Form, iObserverLenguaje490WC
     {
         public Cliente490WC ClienteCargado490WC;
         public FormAplicarBeneficios490WC()
@@ -167,6 +168,11 @@ namespace GUI490WC
             //ClienteCargado490WC = null;
             BT_CANJEARBENEFICIO490WC.Enabled = false;
             CargarCliente490WC(null);
+        }
+
+        public void ActualizarLenguaje490WC()
+        {
+            
         }
     }
 }

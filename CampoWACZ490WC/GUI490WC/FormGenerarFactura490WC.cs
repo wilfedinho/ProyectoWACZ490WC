@@ -1,5 +1,6 @@
 ﻿using BE490WC;
 using BLL490WC;
+using SERVICIOS490WC;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,7 +13,7 @@ using System.Windows.Forms;
 
 namespace GUI490WC
 {
-    public partial class FormGenerarFactura490WC : Form
+    public partial class FormGenerarFactura490WC : Form, iObserverLenguaje490WC
     {
         FormRegistrarCliente490WC formRegistrarCliente490WC;
         Cliente490WC clienteCobrar490WC;
@@ -23,6 +24,12 @@ namespace GUI490WC
             CargarCliente490WC(null);
             BT_COBRARFACTURA490WC.Enabled = false;
         }
+
+        public void ActualizarLenguaje490WC()
+        {
+            
+        }
+
         public void CargarCliente490WC(Cliente490WC clienteBuscado490WC)
         {
             GestorBoleto490WC gestorBoleto490WC = new GestorBoleto490WC();

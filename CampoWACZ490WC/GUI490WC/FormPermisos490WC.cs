@@ -15,7 +15,7 @@ using System.Windows.Forms;
 
 namespace GUI490WC
 {
-    public partial class FormPermisos490WC : Form
+    public partial class FormPermisos490WC : Form, iObserverLenguaje490WC
     {
 
 
@@ -1447,6 +1447,11 @@ namespace GUI490WC
             LlenarFamilias490WC();
             LlenarPermisosSimples490WC();
             HabilitarCB490WC();
+        }
+
+        public void ActualizarLenguaje490WC()
+        {
+            
         }
     }
 }

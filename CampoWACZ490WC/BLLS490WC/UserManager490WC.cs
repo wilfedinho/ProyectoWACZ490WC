@@ -71,6 +71,13 @@ namespace SERVICIOS490WC
                 } 
             }
         }
+
+        public void CambiarIdioma490WC(string nuevoIdioma490WC)
+        {
+            SesionManager490WC.GestorSesion490WC.Usuario490WC.IdiomaUsuario490WC = nuevoIdioma490WC;
+            SesionManager490WC.GestorSesion490WC.aplicarLenguaje490WC(nuevoIdioma490WC);
+        }
+
         #endregion
 
         #region Busquedas De Usuarios 490WC

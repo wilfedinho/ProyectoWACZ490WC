@@ -9,10 +9,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SERVICIOS490WC;
 
 namespace GUI490WC
 {
-    public partial class ControlModalidadVUELTA490WC : UserControl
+    public partial class ControlModalidadVUELTA490WC : UserControl, iObserverLenguaje490WC
     {
         public Boleto490WC boleto490WCSeleccionado490WC = null;
         public Action NotificarSeleccion490WC { get; set; }
@@ -180,6 +181,11 @@ namespace GUI490WC
             GestorBoleto490WC gestorBoleto490WC = new GestorBoleto490WC();
             boleto490WCSeleccionado490WC = gestorBoleto490WC.ObtenerBoletoPorID490WC(dgvBoleto490WC.SelectedRows[0].Cells["ColumnaID"].Value.ToString());
             NotificarSeleccion490WC?.Invoke();
+        }
+
+        public void ActualizarLenguaje490WC()
+        {
+            
         }
     }
 }

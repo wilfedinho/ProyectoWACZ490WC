@@ -1,5 +1,6 @@
 ﻿using BE490WC;
 using BLL490WC;
+using SERVICIOS490WC;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,7 +14,7 @@ using System.Windows.Forms;
 
 namespace GUI490WC
 {
-    public partial class FormGenerarBoleto490WC : Form
+    public partial class FormGenerarBoleto490WC : Form, iObserverLenguaje490WC
     {
         private ControlModalidadIDA490WC controlIDA490WC;
         private ControlModalidadVUELTA490WC controlVUELTA490WC;
@@ -341,6 +342,11 @@ namespace GUI490WC
             ClienteCargado490WC = null;
             LimpiarCampos490WC();
             this.Close();
+        }
+
+        public void ActualizarLenguaje490WC()
+        {
+            
         }
     }
 }

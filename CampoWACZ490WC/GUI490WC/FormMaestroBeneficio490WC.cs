@@ -15,7 +15,7 @@ using System.Windows.Forms;
 
 namespace GUI490WC
 {
-    public partial class FormMaestroBeneficio490WC : Form
+    public partial class FormMaestroBeneficio490WC : Form , iObserverLenguaje490WC
     {
         public FormMaestroBeneficio490WC()
         {
@@ -263,6 +263,11 @@ namespace GUI490WC
         {
             ActivarModoModificar490WC(false);
             this.Close();
+        }
+
+        public void ActualizarLenguaje490WC()
+        {
+            
         }
     }
 }

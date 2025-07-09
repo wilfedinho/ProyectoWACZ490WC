@@ -11,12 +11,18 @@ using System.Windows.Forms;
 
 namespace GUI490WC
 {
-    public partial class FormCambiarClave490WC : Form
+    public partial class FormCambiarClave490WC : Form, iObserverLenguaje490WC
     {
         public FormCambiarClave490WC()
         {
               InitializeComponent();
         }
+
+        public void ActualizarLenguaje490WC()
+        {
+            
+        }
+
         public void LimpiarTB490WC() 
         {
             TB_ClaveActual490WC.Clear();

@@ -82,6 +82,12 @@
     <Compile Include="FormCambiarClave490WC.Designer.cs">
       <DependentUpon>FormCambiarClave490WC.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormCambiarIdioma490WC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCambiarIdioma490WC.Designer.cs">
+      <DependentUpon>FormCambiarIdioma490WC.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormCobrarFactura490WC.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -159,6 +165,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormCambiarClave490WC.resx">
       <DependentUpon>FormCambiarClave490WC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCambiarIdioma490WC.resx">
+      <DependentUpon>FormCambiarIdioma490WC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormCobrarFactura490WC.resx">
       <DependentUpon>FormCobrarFactura490WC.cs</DependentUpon>

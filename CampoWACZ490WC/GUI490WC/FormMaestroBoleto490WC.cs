@@ -1,5 +1,6 @@
 ﻿using BE490WC;
 using BLL490WC;
+using SERVICIOS490WC;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,7 +15,7 @@ using System.Windows.Forms;
 
 namespace GUI490WC
 {
-    public partial class FormMaestroBoleto490WC : Form
+    public partial class FormMaestroBoleto490WC : Form, iObserverLenguaje490WC
     {
         public FormMaestroBoleto490WC()
         {
@@ -431,6 +432,11 @@ namespace GUI490WC
             ActivarModoModificar490WC(false);
             Mostrar490WC();
             this.Close();
+        }
+
+        public void ActualizarLenguaje490WC()
+        {
+            
         }
     }
 }
