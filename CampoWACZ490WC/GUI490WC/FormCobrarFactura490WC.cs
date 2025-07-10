@@ -33,26 +33,18 @@ namespace GUI490WC
         {
             GestorFactura490WC gestorFactura490WC = new GestorFactura490WC();
             TBVISTAPREVIAFACTURA490WC.Clear();
-            //TBVISTAPREVIAFACTURA490WC.Text += $"Numero Factura: {gestorFactura490WC.ObtenerTodasLasFacturas490WC().Count + 1} {Environment.NewLine}";
-            //TBVISTAPREVIAFACTURA490WC.Text += $"Nombre: {clienteCargado490WC.Nombre490WC} {Environment.NewLine}";
-            //TBVISTAPREVIAFACTURA490WC.Text += $"Apellido:  {clienteCargado490WC.Apellido490WC} {Environment.NewLine}";
+            
             if (boletoCargado490WC.BeneficioAplicado490WC != null)
             {
-                //TBVISTAPREVIAFACTURA490WC.Text += $"Beneficio Aplicado: {boletoCargado490WC.BeneficioAplicado490WC} {Environment.NewLine}";
+                
                 TBVISTAPREVIAFACTURA490WC.Name = "TBVISTAPREVIAFACTURA490WC";
             }
             else
             {
-                //TBVISTAPREVIAFACTURA490WC.Text += $"Beneficio Aplicado: No se aplico ningun beneficio {Environment.NewLine}";
+                
                 TBVISTAPREVIAFACTURA490WC.Name = "TBVISTAPREVIAFACTURASINBENEFICIO490WC";
             }
-            //TBVISTAPREVIAFACTURA490WC.Text += $"DNI: {clienteCargado490WC.DNI490WC} {Environment.NewLine}";
-            //TBVISTAPREVIAFACTURA490WC.Text += $"Fecha Emision: {DateTime.Now.ToShortDateString()} {Environment.NewLine}";
-            //TBVISTAPREVIAFACTURA490WC.Text += $"Hora Emision: {DateTime.Now.ToShortTimeString()} {Environment.NewLine}";
-            //TBVISTAPREVIAFACTURA490WC.Text += $"Numero Boleto: {boletoCargado490WC.IDBoleto490WC} {Environment.NewLine}";
-            //TBVISTAPREVIAFACTURA490WC.Text += $"Subtotal: {boletoCargado490WC.Precio490WC} {Environment.NewLine}";
-            //totalFactura490WC = boletoCargado490WC.Precio490WC * 1.60f;
-            //TBVISTAPREVIAFACTURA490WC.Text += $"Total: {totalFactura490WC} {Environment.NewLine}";
+            
 
         }
 
@@ -161,7 +153,7 @@ namespace GUI490WC
         public void ActualizarLenguaje490WC()
         {
             RecorrerControles490WC(this);
-            //Personalizar para Traducir el TextBox de vista previa factura
+            
         }
 
         public void RecorrerControles490WC(Control control490WC)

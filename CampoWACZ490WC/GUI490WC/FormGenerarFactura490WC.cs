@@ -28,7 +28,7 @@ namespace GUI490WC
         public void ActualizarLenguaje490WC()
         {
             RecorrerControles490WC(this);
-            //Personalizar para Traducir el TextBox de vista previa factura
+            
         }
 
         public void RecorrerControles490WC(Control control490WC)
@@ -78,9 +78,7 @@ namespace GUI490WC
             dgvBoleto490WC.Rows.Clear();
             if (clienteBuscado490WC != null)
             {
-                //TBINFOCLIENTE490WC.Text += $"DNI: {clienteBuscado490WC.DNI490WC} {Environment.NewLine}";
-                //TBINFOCLIENTE490WC.Text += $"Nombre: {clienteBuscado490WC.Nombre490WC} {Environment.NewLine}";
-                //TBINFOCLIENTE490WC.Text += $"Apellido: {clienteBuscado490WC.Apellido490WC} {Environment.NewLine}";
+                
                 foreach (Boleto490WC boletoCliente490WC in gestorBoleto490WC.ObtenerBoletosPorCliente490WC(clienteBuscado490WC))
                 {
                     if (boletoCliente490WC.IsVendido490WC == false)
@@ -100,7 +98,7 @@ namespace GUI490WC
             else
             {
                 clienteCobrar490WC = null;
-                //TBINFOCLIENTE490WC.Text = $"Ingrese el DNI, Nombre y Apellido para visualizar los datos del cliente";
+               
                 TBINFOCLIENTE490WC.Name = "TBINFOCLIENTEVACIOGENERARFACTURA490WC";
             }
             if (dgvBoleto490WC.Rows.Count > 0)
@@ -129,7 +127,7 @@ namespace GUI490WC
                 {
                     string mensajeDesactivado = Traductor490WC.TraductorSG490WC.Traducir490WC("ClienteDesactivado490WC");
                     MessageBox.Show(mensajeDesactivado);
-                    //TBINFOCLIENTE490WC.Text = $"Cliente no encontrado. Verifique el DNI ingresado.";
+                    
                     CargarCliente490WC(null);
                     TB_DNI490WC.Clear();
                 }
@@ -138,7 +136,7 @@ namespace GUI490WC
             {
                 string mensajeClienteRegistrar = Traductor490WC.TraductorSG490WC.Traducir490WC("ClienteRegistrar");
                 MessageBox.Show(mensajeClienteRegistrar);
-                //TBINFOCLIENTE490WC.Text = $"Cliente no encontrado. Verifique el DNI ingresado.";
+                
                 formRegistrarCliente490WC = new FormRegistrarCliente490WC();
                 formRegistrarCliente490WC.ShowDialog();
                 CargarCliente490WC(null);

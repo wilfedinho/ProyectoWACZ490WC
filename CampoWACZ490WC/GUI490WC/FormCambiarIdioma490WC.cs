@@ -18,9 +18,7 @@ namespace GUI490WC
             InitializeComponent();
             LlenarComboBox490WC();
             ActualizarLenguaje490WC();
-            //string a490WC = labelIdiomaActual.Text;
-            //a490WC = a490WC.Replace("{SesionManager.GestorSesion.UsuarioSesion.IdiomaUsuario}", $"{SesionManager490WC.GestorSesion490WC.Usuario490WC.IdiomaUsuario490WC}");
-            //labelIdiomaActual.Text = a490WC;
+            
         }
 
 

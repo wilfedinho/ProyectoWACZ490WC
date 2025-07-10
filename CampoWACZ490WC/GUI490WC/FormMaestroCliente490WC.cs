@@ -424,7 +424,7 @@ namespace GUI490WC
         public void ActualizarLenguaje490WC()
         {
             RecorrerControles490WC(this);
-            //Personalizar para Traducir el TextBox de vista previa factura
+            
         }
 
         public void RecorrerControles490WC(Control control490WC)

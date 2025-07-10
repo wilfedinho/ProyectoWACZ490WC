@@ -90,32 +90,29 @@ namespace GUI490WC
                 if (ClienteCargado490WC != null)
                 {
                     TBINFOBOLETOGENERAR490WC.Name = "TBINFOBOLETOGENERAR490WC";
-                    //TBINFOBOLETOGENERAR490WC.Text += $"DNI Cliente: {ClienteCargado490WC.DNI490WC} {Environment.NewLine}";
-                    //TBINFOBOLETOGENERAR490WC.Text += $"Nombre: {ClienteCargado490WC.Nombre490WC} Apellido: {ClienteCargado490WC.Apellido490WC} {Environment.NewLine}";
-                    //TBINFOBOLETOGENERAR490WC.Text += $"ID Boleto: {boletoCargado490WC.IDBoleto490WC} {Environment.NewLine}";
+                    
                     if (boletoCargado490WC.BeneficioAplicado490WC == "")
                     {
-                        //TBINFOBOLETOGENERAR490WC.Text += $"Beneficio Aplicado: Ninguno";
+                        
                         TBINFOBOLETOGENERAR490WC.Name = "TBINFOBOLETOGENERARSINBENEFICIO490WC";
                     }
                     else
                     {
-                        //TBINFOBOLETOGENERAR490WC.Text += $"Beneficio Aplicado: {boletoCargado490WC.BeneficioAplicado490WC}";
+                        
                     }
                     
                     ActualizarLenguaje490WC();
                 }
                 else
                 {
-                    //TBINFOBOLETOGENERAR490WC.Text += $"No se encuentra cargado ningun cliente {Environment.NewLine}";
-                    //TBINFOBOLETOGENERAR490WC.Text += $"ID Boleto: {boletoCargado490WC.IDBoleto490WC} {Environment.NewLine}";
+                   
                     if (boletoCargado490WC.BeneficioAplicado490WC == "")
                     {
-                        //TBINFOBOLETOGENERAR490WC.Text += $"Beneficio Aplicado: Ninguno";
+                       
                     }
                     else
                     {
-                        //TBINFOBOLETOGENERAR490WC.Text += $"Beneficio Aplicado: {boletoCargado490WC.BeneficioAplicado490WC}";
+                        
                     }
                     TBINFOBOLETOGENERAR490WC.Name = "TBINFOBOLETOGENERARSINCLIENTE490WC";
                     ActualizarLenguaje490WC();
@@ -175,15 +172,12 @@ namespace GUI490WC
             TBINFOCLIENTE490WC.Clear();
             if (clienteBuscado490WC != null)
             {
-                //TBINFOCLIENTE490WC.Text += $"DNI: {clienteBuscado490WC.DNI490WC} {Environment.NewLine}";
-                //TBINFOCLIENTE490WC.Text += $"Nombre: {clienteBuscado490WC.Nombre490WC} {Environment.NewLine}";
-                //TBINFOCLIENTE490WC.Text += $"Apellido: {clienteBuscado490WC.Apellido490WC} {Environment.NewLine}";
-                //TBINFOCLIENTE490WC.Text += $"Estrellas del Cliente: {clienteBuscado490WC.EstrellasCliente490WC} {Environment.NewLine}";
+                
                 TBINFOCLIENTE490WC.Name = "TBINFOCLIENTE490WC";
             }
             else
             {
-                //TBINFOCLIENTE490WC.Text = $"Ingrese el DNI, Nombre y Apellido para visualizar los datos del cliente";
+                
                 TBINFOCLIENTE490WC.Name = "TBINFOCLIENTEVACIO490WC";
             }
             ActualizarLenguaje490WC();

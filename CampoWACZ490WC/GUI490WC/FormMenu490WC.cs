@@ -42,8 +42,7 @@ namespace GUI490WC
 
             Traductor490WC.TraductorSG490WC.Notificar490WC();
 
-            // LabelNombreUsuarios490WC.Text = $"Bienvenido {SesionManager490WC.GestorSesion490WC.Usuario490WC.Nombre490WC} {SesionManager490WC.GestorSesion490WC.Usuario490WC.Apellido490WC} a Fertech!!! \n\n\n";
-            //LabelRolUsuario490WC.Text = $"Puedo ver que Posees un Rol {SesionManager490WC.GestorSesion490WC.Usuario490WC.Rol490WC}, Así que podrás acceder a estas funciones!!";
+            
 
             LabelNombreUsuarios490WC.Height = LabelNombreUsuarios490WC.PreferredHeight;
             LabelRolUsuario490WC.Height = LabelRolUsuario490WC.PreferredHeight;

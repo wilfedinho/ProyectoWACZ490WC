@@ -64,11 +64,7 @@ namespace GUI490WC
             {
                 TBINFOCLIENTE490WC.Name = "TBINFOCLIENTE490WC";
                 TBBENEFICIOCLIENTE490WC.Name = "TBBENEFICIOCLIENTE490WC";
-                /*TBINFOCLIENTE490WC.Text += $"DNI: {clienteBuscado490WC.DNI490WC} {Environment.NewLine}";
-                TBINFOCLIENTE490WC.Text += $"Nombre: {clienteBuscado490WC.Nombre490WC} {Environment.NewLine}";
-                TBINFOCLIENTE490WC.Text += $"Apellido: {clienteBuscado490WC.Apellido490WC} {Environment.NewLine}";
-                TBINFOCLIENTE490WC.Text += $"Estrellas del Cliente: {clienteBuscado490WC.EstrellasCliente490WC} {Environment.NewLine}";
-                */
+                
                 int contadorBeneficio490WC = 1;
                 if (clienteBuscado490WC.BeneficiosCliente490WC.Count > 0)
                 {
@@ -80,7 +76,7 @@ namespace GUI490WC
                 }
                 else
                 {
-                    //TBBENEFICIOCLIENTE490WC.Text = "El cliente no tiene beneficios aplicados.";
+                    
                     TBBENEFICIOCLIENTE490WC.Name = "TBBENEFICIOCLIENTECOUNT0";
                 }
                 ActualizarLenguaje490WC();
@@ -88,9 +84,9 @@ namespace GUI490WC
             else
             {
                 TBINFOCLIENTE490WC.Name = "TBINFOCLIENTEVACIO490WC";
-                //TBINFOCLIENTE490WC.Text = $"Ingrese el DNI, Nombre y Apellido para visualizar los datos del cliente";
+                
                 TBBENEFICIOCLIENTE490WC.Name = "TBBENEFICIOCLIENTEVACIO490WC";
-                //TBBENEFICIOCLIENTE490WC.Text = $"Ingrese el DNI, Nombre y Apellido para visualizar los beneficios del cliente";
+                
                 ActualizarLenguaje490WC();
             }
             HabilitarCanjeBeneficio490WC();
@@ -178,7 +174,7 @@ namespace GUI490WC
 
         private void FormAplicarBeneficios490WC_FormClosed(object sender, FormClosedEventArgs e)
         {
-            //ClienteCargado490WC = null;
+            
             BT_CANJEARBENEFICIO490WC.Enabled = false;
             CargarCliente490WC(null);
         }
@@ -186,7 +182,7 @@ namespace GUI490WC
         public void ActualizarLenguaje490WC()
         {
             RecorrerControles490WC(this);
-            //Personalizar Recorrer Controles Para Traducir los TextBox de info cliente y beneficio cliente
+            
         }
 
         public void RecorrerControles490WC(Control control490WC)
