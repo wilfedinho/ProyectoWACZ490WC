@@ -456,9 +456,9 @@ namespace GUI490WC
                 else if (c490WC.Name == "TBINFOBOLETOGENERARSINBENEFICIO490WC")
                 {
                     GestorBoleto490WC gestorBoleto490WC = new GestorBoleto490WC();
-                        boletoCargado490WC = gestorBoleto490WC.ObtenerBoletoConBeneficio490WC(boletoCargado490WC.IDBoleto490WC);
                     if (boletoCargado490WC != null)
                     {
+                        boletoCargado490WC = gestorBoleto490WC.ObtenerBoletoConBeneficio490WC(boletoCargado490WC.IDBoleto490WC);
 
 
                         if (ClienteCargado490WC != null)

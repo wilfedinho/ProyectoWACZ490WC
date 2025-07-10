@@ -15,3 +15,7 @@ C:\Users\William Càrdenas\Desktop\TESIS 2025\CampoWACZ490WC\ProyectoWACZ490WC\C
 C:\Users\William Càrdenas\Desktop\TESIS 2025\CampoWACZ490WC\ProyectoWACZ490WC\CampoWACZ490WC\BLL490WC\bin\Debug\SE490WC.pdb
 C:\Users\William Càrdenas\Desktop\TESIS 2025\CampoWACZ490WC\ProyectoWACZ490WC\CampoWACZ490WC\BLL490WC\bin\Debug\Newtonsoft.Json.dll
 C:\Users\William Càrdenas\Desktop\TESIS 2025\CampoWACZ490WC\ProyectoWACZ490WC\CampoWACZ490WC\BLL490WC\bin\Debug\Newtonsoft.Json.xml
+C:\Users\William Càrdenas\Desktop\TESIS 2025\CampoWACZ490WC\ProyectoWACZ490WC\CampoWACZ490WC\BLL490WC\bin\Debug\BouncyCastle.Cryptography.dll
+C:\Users\William Càrdenas\Desktop\TESIS 2025\CampoWACZ490WC\ProyectoWACZ490WC\CampoWACZ490WC\BLL490WC\bin\Debug\itextsharp.dll
+C:\Users\William Càrdenas\Desktop\TESIS 2025\CampoWACZ490WC\ProyectoWACZ490WC\CampoWACZ490WC\BLL490WC\bin\Debug\BouncyCastle.Cryptography.xml
+C:\Users\William Càrdenas\Desktop\TESIS 2025\CampoWACZ490WC\ProyectoWACZ490WC\CampoWACZ490WC\BLL490WC\bin\Debug\itextsharp.xml

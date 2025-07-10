@@ -60,7 +60,9 @@ namespace GUI490WC
                     c490WC.Text = Traductor490WC.TraductorSG490WC.Traducir490WC(c490WC.Name);
                     string a = c490WC.Text;
                     a = a.Replace("{clienteBuscado490WC.DNI490WC} {Environment.NewLine}",$"{clienteCobrar490WC.DNI490WC} {Environment.NewLine}");
+                    a = a.Replace("{clienteBuscado490WC.Nombre490WC} {Environment.NewLine}", $"{clienteCobrar490WC.Nombre490WC} {Environment.NewLine}");
                     a = a.Replace("{clienteBuscado490WC.Apellido490WC} {Environment.NewLine}", $"{clienteCobrar490WC.Apellido490WC} {Environment.NewLine}");
+                    c490WC.Text = a;
                 }
                 else if (c490WC.Name == "TBINFOCLIENTEVACIOGENERARFACTURA490WC")
                 {
@@ -142,6 +144,7 @@ namespace GUI490WC
                 CargarCliente490WC(null);
                 TB_DNI490WC.Clear();
             }
+            ActualizarLenguaje490WC();
         }
 
 
@@ -166,6 +169,7 @@ namespace GUI490WC
                     if (formCobrarFactura490WC.pagoAceptado490WC)
                     {
                         gestorBoleto490WC.CobrarBoleto490WC(boletoCobrar490WC);
+                        
                         string mensajeFacturaGenerada = Traductor490WC.TraductorSG490WC.Traducir490WC("FacturaGenerada490WC");
                         MessageBox.Show(mensajeFacturaGenerada);
                         CargarCliente490WC(null);

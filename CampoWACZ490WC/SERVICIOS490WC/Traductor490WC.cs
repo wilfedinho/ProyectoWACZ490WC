@@ -43,7 +43,11 @@ namespace SERVICIOS490WC
             List<string> ListaIdiomas490WC = new List<string>();
             //C:\\Users\\William Càrdenas\\Desktop\\TESIS 2025\\CampoWACZ490WC\\ProyectoWACZ490WC\\CampoWACZ490WC\\GUI490WC\\bin\\Debug\\Lenguajes
             //C:\\Users\\William Càrdenas\\Desktop\\TESIS 2025\\Campo-Cardenas-UAI\\gui\\bin\\Debug\\Lenguajes
-            string[] archivos490WC = Directory.GetFiles("C:\\Users\\William Càrdenas\\Desktop\\TESIS 2025\\CampoWACZ490WC\\ProyectoWACZ490WC\\CampoWACZ490WC\\GUI490WC\\bin\\Debug\\Lenguajes", "*.json");
+
+            //string[] archivos490WC = Directory.GetFiles("C:\\Users\\William Càrdenas\\Desktop\\TESIS 2025\\CampoWACZ490WC\\ProyectoWACZ490WC\\CampoWACZ490WC\\GUI490WC\\bin\\Debug\\Lenguajes", "*.json");
+            string rutaBase = AppDomain.CurrentDomain.BaseDirectory;
+            string rutaLenguajes = Path.Combine(rutaBase, "Lenguajes");
+            string[] archivos490WC = Directory.GetFiles(rutaLenguajes, "*.json");
 
 
             List<string> nombresDeIdiomas490WC = archivos490WC

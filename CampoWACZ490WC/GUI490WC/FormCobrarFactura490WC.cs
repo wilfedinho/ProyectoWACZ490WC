@@ -88,12 +88,27 @@ namespace GUI490WC
                                     datosTarjeta490WC = Cifrador490WC.GestorCifrador490WC.EncriptarReversible490WC(datosTarjeta490WC);
                                     if (gestorPagos490WC.ValidarPago490WC(datosTarjeta490WC, totalFactura490WC))
                                     {
-                                        Factura490WC facturaAlta490WC = new Factura490WC(gestorFactura490WC.ObtenerTodasLasFacturas490WC().Count + 1, clienteCargado490WC.Nombre490WC, clienteCargado490WC.Apellido490WC, clienteCargado490WC.DNI490WC, DateTime.Now.ToShortDateString(), DateTime.Now.ToShortTimeString(), boletoCargado490WC.IDBoleto490WC, boletoCargado490WC.Precio490WC, totalFactura490WC);
-                                        gestorFactura490WC.Alta490WC(facturaAlta490WC);
-                                        string mensajePago = Traductor490WC.TraductorSG490WC.Traducir490WC("MensajePago490WC");
-                                        MessageBox.Show(mensajePago);
-                                        pagoAceptado490WC = true;
-                                        this.Close();
+                                        if (boletoCargado490WC.BeneficioAplicado490WC != null)
+                                        {
+                                            Factura490WC facturaAlta490WC = new Factura490WC(gestorFactura490WC.ObtenerTodasLasFacturas490WC().Count + 1, clienteCargado490WC.Nombre490WC, clienteCargado490WC.Apellido490WC, clienteCargado490WC.DNI490WC, DateTime.Now.ToShortDateString(), DateTime.Now.ToShortTimeString(), boletoCargado490WC.IDBoleto490WC, boletoCargado490WC.Precio490WC, totalFactura490WC, boletoCargado490WC.BeneficioAplicado490WC);
+                                            gestorFactura490WC.Alta490WC(facturaAlta490WC);
+                                            gestorFactura490WC.GenerarFactura490WC(facturaAlta490WC);
+                                            string mensajePago = Traductor490WC.TraductorSG490WC.Traducir490WC("MensajePago490WC");
+                                            MessageBox.Show(mensajePago);
+                                            pagoAceptado490WC = true;
+                                            this.Close();
+
+                                        }
+                                        else
+                                        {
+                                            Factura490WC facturaAlta490WC = new Factura490WC(gestorFactura490WC.ObtenerTodasLasFacturas490WC().Count + 1, clienteCargado490WC.Nombre490WC, clienteCargado490WC.Apellido490WC, clienteCargado490WC.DNI490WC, DateTime.Now.ToShortDateString(), DateTime.Now.ToShortTimeString(), boletoCargado490WC.IDBoleto490WC, boletoCargado490WC.Precio490WC, totalFactura490WC);
+                                            gestorFactura490WC.Alta490WC(facturaAlta490WC);
+                                            gestorFactura490WC.GenerarFactura490WC(facturaAlta490WC);
+                                            string mensajePago = Traductor490WC.TraductorSG490WC.Traducir490WC("MensajePago490WC");
+                                            MessageBox.Show(mensajePago);
+                                            pagoAceptado490WC = true;
+                                            this.Close();
+                                        }
                                     }
                                     else
                                     {
@@ -196,7 +211,7 @@ namespace GUI490WC
                     totalFactura490WC = boletoCargado490WC.Precio490WC * 1.60f;
                     GestorFactura490WC gestorFactura490WC = new GestorFactura490WC();
                     TBVISTAPREVIAFACTURA490WC.Text += $"Numero Factura: {gestorFactura490WC.ObtenerTodasLasFacturas490WC().Count + 1} {Environment.NewLine} Nombre: {clienteCargado490WC.Nombre490WC} {Environment.NewLine} Apellido:  {clienteCargado490WC.Apellido490WC} {Environment.NewLine} Beneficio Aplicado: No se aplico ningun beneficio {Environment.NewLine} DNI: {clienteCargado490WC.DNI490WC} {Environment.NewLine} Fecha Emision: {DateTime.Now.ToShortDateString()} {Environment.NewLine} Hora Emision: {DateTime.Now.ToShortTimeString()} {Environment.NewLine} Numero Boleto: {boletoCargado490WC.IDBoleto490WC} {Environment.NewLine} Subtotal: {boletoCargado490WC.Precio490WC} {Environment.NewLine} Total: {totalFactura490WC} {Environment.NewLine}";
-                    
+
                     c490WC.Text = Traductor490WC.TraductorSG490WC.Traducir490WC(c490WC.Name);
                     string a = c490WC.Text;
                     a = a.Replace("{gestorFactura490WC.ObtenerTodasLasFacturas490WC().Count + 1} {Environment.NewLine}", $"{gestorFactura490WC.ObtenerTodasLasFacturas490WC().Count + 1} {Environment.NewLine}");
