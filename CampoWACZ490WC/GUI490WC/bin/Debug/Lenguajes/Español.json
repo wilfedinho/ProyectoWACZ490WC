@@ -89,7 +89,7 @@
     "MensajeErrorCamposVacios490WC": "El cambio de clave no se efectuo ya que se detecto que ingresaron campos vacios",
     "LabelClaveActual": "Clave Actual",
     "LabelClaveNueva490WC": "Clave Nueva",
-    "LabelClaveConfirmar": "LabelClaveConfirmar",
+    "LabelClaveConfirmar": "Clave Confirmar",
     "BT_CambiarClave490WC": "Cambiar Clave",
     "labelIdiomaActual": "El idioma actual es: {SesionManager.GestorSesion.UsuarioSesion.IdiomaUsuario}",
     "labelIdiomasDisponibles": "Idiomas Disponibles: ",
@@ -283,7 +283,7 @@
     "LabelRolUsuario490WC": "Puedo ver que Posees un Rol {SesionManager.GestorSesion.UsuarioSesion.Rol}, Así que podrás acceder a estas funciones!!",
     "TBINFOBOLETOGENERARSINCLIENTE490WC": "No se encuentra cargado ningun cliente {Environment.NewLine} ID Boleto: {boletoCargado490WC.IDBoleto490WC} {Environment.NewLine}",
     "TBINFOBOLETOGENERAR490WC": "DNI Cliente: {ClienteCargado490WC.DNI490WC} {Environment.NewLine} Nombre: {ClienteCargado490WC.Nombre490WC} Apellido: {ClienteCargado490WC.Apellido490WC} {Environment.NewLine} ID Boleto: {boletoCargado490WC.IDBoleto490WC} {Environment.NewLine}",
-    "TBINFOBOLETOGENERARSINBENEFICIO490WC": "DNI Cliente: {ClienteCargado490WC.DNI490WC} {Environment.NewLine} Nombre: {ClienteCargado490WC.Nombre490WC} Apellido: {ClienteCargado490WC.Apellido490WC} {Environment.NewLine} ID Boleto: {boletoCargado490WC.IDBoleto490WC} {Environment.NewLine} Beneficio Aplicado: Ninguno",
+    "TBINFOBOLETOGENERARSINBENEFICIO490WC": "DNI Cliente: {ClienteCargado490WC.DNI490WC} {Environment.NewLine} Nombre: {ClienteCargado490WC.Nombre490WC} Apellido: {ClienteCargado490WC.Apellido490WC} {Environment.NewLine} ID Boleto: {boletoCargado490WC.IDBoleto490WC} {Environment.NewLine} Beneficio Aplicado: Ninguno"
     
 
 

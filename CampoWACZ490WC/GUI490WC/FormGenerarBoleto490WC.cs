@@ -432,7 +432,7 @@ namespace GUI490WC
                             c490WC.Text = Traductor490WC.TraductorSG490WC.Traducir490WC(c490WC.Name);
                             string a = c490WC.Text;
                             a = a.Replace("{ClienteCargado490WC.DNI490WC} {Environment.NewLine}", $"{ClienteCargado490WC.DNI490WC} {Environment.NewLine}");
-                            a = a.Replace("{ClienteCargado490WC.Nombre490WC} {Environment.NewLine}", $"{ClienteCargado490WC.Nombre490WC} {Environment.NewLine}");
+                            a = a.Replace("{ClienteCargado490WC.Nombre490WC}", $"{ClienteCargado490WC.Nombre490WC}");
                             a = a.Replace("{ClienteCargado490WC.Apellido490WC} {Environment.NewLine}", $"{ClienteCargado490WC.Apellido490WC} {Environment.NewLine}");
                             a = a.Replace("{boletoCargado490WC.IDBoleto490WC} {Environment.NewLine}", $"{boletoCargado490WC.IDBoleto490WC} {Environment.NewLine}");
                             c490WC.Text = a;

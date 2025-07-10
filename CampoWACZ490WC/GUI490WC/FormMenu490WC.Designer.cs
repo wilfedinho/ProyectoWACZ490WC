@@ -497,7 +497,7 @@
             this.BT_DigitoVerificador490WC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BT_DigitoVerificador490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.BT_DigitoVerificador490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.BT_DigitoVerificador490WC.Location = new System.Drawing.Point(0, 220);
+            this.BT_DigitoVerificador490WC.Location = new System.Drawing.Point(0, 231);
             this.BT_DigitoVerificador490WC.Name = "BT_DigitoVerificador490WC";
             this.BT_DigitoVerificador490WC.Size = new System.Drawing.Size(183, 44);
             this.BT_DigitoVerificador490WC.TabIndex = 7;
@@ -513,7 +513,7 @@
             this.BT_Bitacora490WC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BT_Bitacora490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.BT_Bitacora490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.BT_Bitacora490WC.Location = new System.Drawing.Point(0, 176);
+            this.BT_Bitacora490WC.Location = new System.Drawing.Point(0, 187);
             this.BT_Bitacora490WC.Name = "BT_Bitacora490WC";
             this.BT_Bitacora490WC.Size = new System.Drawing.Size(183, 44);
             this.BT_Bitacora490WC.TabIndex = 6;
@@ -529,7 +529,7 @@
             this.BT_Restore490WC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BT_Restore490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.BT_Restore490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.BT_Restore490WC.Location = new System.Drawing.Point(0, 132);
+            this.BT_Restore490WC.Location = new System.Drawing.Point(0, 143);
             this.BT_Restore490WC.Name = "BT_Restore490WC";
             this.BT_Restore490WC.Size = new System.Drawing.Size(183, 44);
             this.BT_Restore490WC.TabIndex = 5;
@@ -545,7 +545,7 @@
             this.BT_BackUp490WC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BT_BackUp490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.BT_BackUp490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.BT_BackUp490WC.Location = new System.Drawing.Point(0, 88);
+            this.BT_BackUp490WC.Location = new System.Drawing.Point(0, 99);
             this.BT_BackUp490WC.Name = "BT_BackUp490WC";
             this.BT_BackUp490WC.Size = new System.Drawing.Size(183, 44);
             this.BT_BackUp490WC.TabIndex = 4;
@@ -563,7 +563,7 @@
             this.BT_GestionPermisos490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
             this.BT_GestionPermisos490WC.Location = new System.Drawing.Point(0, 44);
             this.BT_GestionPermisos490WC.Name = "BT_GestionPermisos490WC";
-            this.BT_GestionPermisos490WC.Size = new System.Drawing.Size(183, 44);
+            this.BT_GestionPermisos490WC.Size = new System.Drawing.Size(183, 55);
             this.BT_GestionPermisos490WC.TabIndex = 3;
             this.BT_GestionPermisos490WC.Tag = "Acceder a Gestion de Permisos";
             this.BT_GestionPermisos490WC.Text = "Gestion Permisos";

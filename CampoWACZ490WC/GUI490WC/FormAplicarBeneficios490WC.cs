@@ -217,10 +217,10 @@ namespace GUI490WC
                     {
                         c490WC.Text = Traductor490WC.TraductorSG490WC.Traducir490WC(c490WC.Name);
                         string a = c490WC.Text;
-                        a = a.Replace("{clienteBuscado490WC.DNI490WC} {Environment.NewLine} ", $"{ClienteCargado490WC.DNI490WC} {Environment.NewLine}");
-                        a = a.Replace("{clienteBuscado490WC.Nombre490WC} {Environment.NewLine}", $"{ClienteCargado490WC.Nombre490WC} {Environment.NewLine}");
-                        a = a.Replace("{clienteBuscado490WC.Apellido490WC} {Environment.NewLine}", $"Apellido: {ClienteCargado490WC.Apellido490WC} {Environment.NewLine}");
-                        a = a.Replace("{clienteBuscado490WC.EstrellasCliente490WC} {Environment.NewLine}", $"{ClienteCargado490WC.EstrellasCliente490WC} {Environment.NewLine}");
+                        a = a.Replace("{ClienteCargado490WC.DNI490WC} {Environment.NewLine} ", $"{ClienteCargado490WC.DNI490WC} {Environment.NewLine}");
+                        a = a.Replace("{ClienteCargado490WC.Nombre490WC} {Environment.NewLine}", $"{ClienteCargado490WC.Nombre490WC} {Environment.NewLine}");
+                        a = a.Replace("{ClienteCargado490WC.Apellido490WC} {Environment.NewLine}", $"{ClienteCargado490WC.Apellido490WC} {Environment.NewLine}");
+                        a = a.Replace("{ClienteCargado490WC.EstrellasCliente490WC} {Environment.NewLine}", $"{ClienteCargado490WC.EstrellasCliente490WC} {Environment.NewLine}");
                         c490WC.Text = a;
                     }
                 }
