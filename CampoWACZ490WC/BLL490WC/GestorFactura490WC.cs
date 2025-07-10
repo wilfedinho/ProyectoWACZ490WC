@@ -70,6 +70,7 @@ namespace BLL490WC
                 doc490WC.Add(new Paragraph(" "));
                 doc490WC.Close();
             }
+            System.Diagnostics.Process.Start(rutaFinal490WC);
         }
     }
 }

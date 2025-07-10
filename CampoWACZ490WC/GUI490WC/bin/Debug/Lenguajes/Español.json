@@ -285,69 +285,11 @@
     "TBINFOBOLETOGENERAR490WC": "DNI Cliente: {ClienteCargado490WC.DNI490WC} {Environment.NewLine} Nombre: {ClienteCargado490WC.Nombre490WC} Apellido: {ClienteCargado490WC.Apellido490WC} {Environment.NewLine} ID Boleto: {boletoCargado490WC.IDBoleto490WC} {Environment.NewLine}",
     "TBINFOBOLETOGENERARSINBENEFICIO490WC": "DNI Cliente: {ClienteCargado490WC.DNI490WC} {Environment.NewLine} Nombre: {ClienteCargado490WC.Nombre490WC} Apellido: {ClienteCargado490WC.Apellido490WC} {Environment.NewLine} ID Boleto: {boletoCargado490WC.IDBoleto490WC} {Environment.NewLine} Beneficio Aplicado: Ninguno",
     "LABEL_CODIGOBOLETOASIGNAR": "Codigo Boleto Asignar",
-    "BT_REGISTRARCLIENTE490WC": "Registrar Cliente"
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    "BT_REGISTRARCLIENTE490WC": "Registrar Cliente",
+    "ArchivoFacturaNOExiste": "El archivo de factura no fue encontrado.",
+    "ArchivoBoletoNOExiste": "El archivo de boleto no fue encontrado.",
+    "ColumnaNumeroFactura": "Numero Factura",
+    "ColumnaDNITitular": "DNI Del Titular",
+    "ColumnaIDBoleto": "Numero Boleto",
+    "BT_IMPRIMIRFACTURA490WC": "Imprimir Factura y Boleto"
 }

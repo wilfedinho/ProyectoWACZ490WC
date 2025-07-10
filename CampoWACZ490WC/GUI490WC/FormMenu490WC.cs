@@ -22,11 +22,12 @@ namespace GUI490WC
         FormGenerarFactura490WC formGenerarFactura490WC;
         FormPermisos490WC formPermisos490WC;
         FormCambiarIdioma490WC formCambiarIdioma490WC;
+        FormFactura490WC formFactura490WC;
 
         public FormMenu490WC()
         {
             InitializeComponent();
-            
+
 
             LabelNombreUsuarios490WC.AutoSize = false;
             LabelNombreUsuarios490WC.MaximumSize = new Size(panelPrincipal.Width, 0);
@@ -41,7 +42,7 @@ namespace GUI490WC
 
             Traductor490WC.TraductorSG490WC.Notificar490WC();
 
-           // LabelNombreUsuarios490WC.Text = $"Bienvenido {SesionManager490WC.GestorSesion490WC.Usuario490WC.Nombre490WC} {SesionManager490WC.GestorSesion490WC.Usuario490WC.Apellido490WC} a Fertech!!! \n\n\n";
+            // LabelNombreUsuarios490WC.Text = $"Bienvenido {SesionManager490WC.GestorSesion490WC.Usuario490WC.Nombre490WC} {SesionManager490WC.GestorSesion490WC.Usuario490WC.Apellido490WC} a Fertech!!! \n\n\n";
             //LabelRolUsuario490WC.Text = $"Puedo ver que Posees un Rol {SesionManager490WC.GestorSesion490WC.Usuario490WC.Rol490WC}, Así que podrás acceder a estas funciones!!";
 
             LabelNombreUsuarios490WC.Height = LabelNombreUsuarios490WC.PreferredHeight;
@@ -50,7 +51,7 @@ namespace GUI490WC
             VerificarAccesibilidadDeTodosLosControles490WC();
 
             Diseno490WC();
-            
+
         }
 
         public void SuscribirFormularios490WC()
@@ -64,6 +65,7 @@ namespace GUI490WC
             formGenerarFactura490WC = new FormGenerarFactura490WC();
             formPermisos490WC = new FormPermisos490WC();
             formCambiarIdioma490WC = new FormCambiarIdioma490WC();
+            formFactura490WC = new FormFactura490WC();
 
             Traductor490WC.TraductorSG490WC.Suscribir490WC(this);
             Traductor490WC.TraductorSG490WC.Suscribir490WC(formABMUSUARIO490WC);
@@ -75,6 +77,7 @@ namespace GUI490WC
             Traductor490WC.TraductorSG490WC.Suscribir490WC(formGenerarFactura490WC);
             Traductor490WC.TraductorSG490WC.Suscribir490WC(formPermisos490WC);
             Traductor490WC.TraductorSG490WC.Suscribir490WC(formCambiarIdioma490WC);
+            Traductor490WC.TraductorSG490WC.Suscribir490WC(formFactura490WC);
 
         }
 
@@ -325,9 +328,14 @@ namespace GUI490WC
 
         private void BT_ReporteFacturas490WC_Click(object sender, EventArgs e)
         {
+            try
+            {
+                formFactura490WC.ShowDialog();
+                hideSubmenu490WC();
+                this?.Show();
 
-
-            hideSubmenu490WC();
+            }
+            catch { }
         }
 
         private void BT_Reporte2490WC_Click(object sender, EventArgs e)
