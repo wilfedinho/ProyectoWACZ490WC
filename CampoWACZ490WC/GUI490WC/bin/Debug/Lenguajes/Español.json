@@ -62,7 +62,7 @@
     "BT_CANCELAR490WC": "Cancelar",
     "BT_APLICAR490WC": "Aplicar",
     "BT_SALIR490WC": "Salir",
-    "TBINFOCLIENTE490WC": "DNI: {clienteBuscado490WC.DNI490WC} {Environment.NewLine} Nombre: {clienteBuscado490WC.Nombre490WC} {Environment.NewLine} Apellido: {clienteBuscado490WC.Apellido490WC} {Environment.NewLine} Estrellas del Cliente: {clienteBuscado490WC.EstrellasCliente490WC} {Environment.NewLine}",
+    "TBINFOCLIENTE490WC": "DNI: {ClienteCargado490WC.DNI490WC} {Environment.NewLine} Nombre: {ClienteCargado490WC.Nombre490WC} {Environment.NewLine} Apellido: {ClienteCargado490WC.Apellido490WC} {Environment.NewLine} Estrellas del Cliente: {ClienteCargado490WC.EstrellasCliente490WC} {Environment.NewLine}",
     "TBBENEFICIOCLIENTECOUNT0": "El cliente no tiene beneficios aplicados",
     "TBINFOCLIENTEVACIO490WC": "Ingrese el DNI, Nombre y Apellido para visualizar los datos del cliente",
     "TBBENEFICIOCLIENTEVACIO490WC": "Ingrese el DNI, Nombre y Apellido para visualizar los beneficios del cliente",
@@ -280,7 +280,12 @@
     "ErrorCodigoNoExistente": "No existe un boleto con ese CodigoBoleto!!",
     "ErrorDNIYAREGISTRADO": "El DNI Ingresado Ya pertenece a un cliente registrado en el sistema!!!",
     "LabelNombreUsuarios490WC": "Bienvenido {SesionManager.GestorSesion.UsuarioSesion.Nombre} a Fertech!!! \n\n\n",
-    "LabelRolUsuario490WC": "Puedo ver que Posees un Rol {SesionManager.GestorSesion.UsuarioSesion.Rol}, Así que podrás acceder a estas funciones!!"
+    "LabelRolUsuario490WC": "Puedo ver que Posees un Rol {SesionManager.GestorSesion.UsuarioSesion.Rol}, Así que podrás acceder a estas funciones!!",
+    "TBINFOBOLETOGENERARSINCLIENTE490WC": "No se encuentra cargado ningun cliente {Environment.NewLine} ID Boleto: {boletoCargado490WC.IDBoleto490WC} {Environment.NewLine}",
+    "TBINFOBOLETOGENERAR490WC": "DNI Cliente: {ClienteCargado490WC.DNI490WC} {Environment.NewLine} Nombre: {ClienteCargado490WC.Nombre490WC} Apellido: {ClienteCargado490WC.Apellido490WC} {Environment.NewLine} ID Boleto: {boletoCargado490WC.IDBoleto490WC} {Environment.NewLine}",
+    "TBINFOBOLETOGENERARSINBENEFICIO490WC": "DNI Cliente: {ClienteCargado490WC.DNI490WC} {Environment.NewLine} Nombre: {ClienteCargado490WC.Nombre490WC} Apellido: {ClienteCargado490WC.Apellido490WC} {Environment.NewLine} ID Boleto: {boletoCargado490WC.IDBoleto490WC} {Environment.NewLine} Beneficio Aplicado: Ninguno",
+    
+
 
 
 

@@ -456,17 +456,22 @@ namespace GUI490WC
                 else if (c490WC.Name == "TBINFOBOLETOGENERARSINBENEFICIO490WC")
                 {
                     GestorBoleto490WC gestorBoleto490WC = new GestorBoleto490WC();
-                    boletoCargado490WC = gestorBoleto490WC.ObtenerBoletoConBeneficio490WC(boletoCargado490WC.IDBoleto490WC);
-                    if (ClienteCargado490WC != null)
+                        boletoCargado490WC = gestorBoleto490WC.ObtenerBoletoConBeneficio490WC(boletoCargado490WC.IDBoleto490WC);
+                    if (boletoCargado490WC != null)
                     {
-                        TBINFOBOLETOGENERAR490WC.Text += "DNI Cliente: {ClienteCargado490WC.DNI490WC} {Environment.NewLine} Nombre: {ClienteCargado490WC.Nombre490WC} Apellido: {ClienteCargado490WC.Apellido490WC} {Environment.NewLine} ID Boleto: {boletoCargado490WC.IDBoleto490WC} {Environment.NewLine} Beneficio Aplicado: Ninguno";
-                        c490WC.Text = Traductor490WC.TraductorSG490WC.Traducir490WC(c490WC.Name);
-                        string a = c490WC.Text;
-                        a = a.Replace("{ClienteCargado490WC.DNI490WC} {Environment.NewLine}", $"{ClienteCargado490WC.DNI490WC} {Environment.NewLine}");
-                        a = a.Replace("{ClienteCargado490WC.Nombre490WC} {Environment.NewLine}", $"{ClienteCargado490WC.Nombre490WC} {Environment.NewLine}");
-                        a = a.Replace("{ClienteCargado490WC.Apellido490WC} {Environment.NewLine}", $"{ClienteCargado490WC.Apellido490WC} {Environment.NewLine}");
-                        a = a.Replace("{boletoCargado490WC.IDBoleto490WC} {Environment.NewLine}", $"{boletoCargado490WC.IDBoleto490WC} {Environment.NewLine}");
-                        c490WC.Text = a;
+
+
+                        if (ClienteCargado490WC != null)
+                        {
+                            TBINFOBOLETOGENERAR490WC.Text += "DNI Cliente: {ClienteCargado490WC.DNI490WC} {Environment.NewLine} Nombre: {ClienteCargado490WC.Nombre490WC} Apellido: {ClienteCargado490WC.Apellido490WC} {Environment.NewLine} ID Boleto: {boletoCargado490WC.IDBoleto490WC} {Environment.NewLine} Beneficio Aplicado: Ninguno";
+                            c490WC.Text = Traductor490WC.TraductorSG490WC.Traducir490WC(c490WC.Name);
+                            string a = c490WC.Text;
+                            a = a.Replace("{ClienteCargado490WC.DNI490WC} {Environment.NewLine}", $"{ClienteCargado490WC.DNI490WC} {Environment.NewLine}");
+                            a = a.Replace("{ClienteCargado490WC.Nombre490WC}", $"{ClienteCargado490WC.Nombre490WC}");
+                            a = a.Replace("{ClienteCargado490WC.Apellido490WC} {Environment.NewLine}", $"{ClienteCargado490WC.Apellido490WC} {Environment.NewLine}");
+                            a = a.Replace("{boletoCargado490WC.IDBoleto490WC} {Environment.NewLine}", $"{boletoCargado490WC.IDBoleto490WC} {Environment.NewLine}");
+                            c490WC.Text = a;
+                        } 
                     }
                 }
             }
