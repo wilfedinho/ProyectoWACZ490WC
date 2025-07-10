@@ -37,7 +37,7 @@
             this.BT_REGISTRARCLIENTE490WC = new System.Windows.Forms.Button();
             this.TB_EMAIL490WC = new System.Windows.Forms.TextBox();
             this.TB_CELULAR490WC = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.LABEL_EMAILSDELCLIENTE490WC = new System.Windows.Forms.Label();
             this.BT_ELIMINAREMAIL490WC = new System.Windows.Forms.Button();
             this.BT_AGREGAREMAIL490WC = new System.Windows.Forms.Button();
             this.listboxEmailsCliente490WC = new System.Windows.Forms.ListBox();
@@ -45,9 +45,9 @@
             this.BT_ELIMINARCELULAR490WC = new System.Windows.Forms.Button();
             this.BT_AGREGARCELULAR490WC = new System.Windows.Forms.Button();
             this.listboxCelularesCliente490WC = new System.Windows.Forms.ListBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.LABEL_CODIGOBOLETOASIGNAR = new System.Windows.Forms.Label();
             this.TB_CodigoBoleto490WC = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.labelDireccion490WC = new System.Windows.Forms.Label();
             this.TB_DIRECCION490WC = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
@@ -153,16 +153,16 @@
             this.TB_CELULAR490WC.Size = new System.Drawing.Size(250, 27);
             this.TB_CELULAR490WC.TabIndex = 71;
             // 
-            // label1
+            // LABEL_EMAILSDELCLIENTE490WC
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.label1.Location = new System.Drawing.Point(543, 25);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(167, 20);
-            this.label1.TabIndex = 70;
-            this.label1.Text = "Emails  Del Cliente";
+            this.LABEL_EMAILSDELCLIENTE490WC.AutoSize = true;
+            this.LABEL_EMAILSDELCLIENTE490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.LABEL_EMAILSDELCLIENTE490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
+            this.LABEL_EMAILSDELCLIENTE490WC.Location = new System.Drawing.Point(543, 25);
+            this.LABEL_EMAILSDELCLIENTE490WC.Name = "LABEL_EMAILSDELCLIENTE490WC";
+            this.LABEL_EMAILSDELCLIENTE490WC.Size = new System.Drawing.Size(167, 20);
+            this.LABEL_EMAILSDELCLIENTE490WC.TabIndex = 70;
+            this.LABEL_EMAILSDELCLIENTE490WC.Text = "Emails  Del Cliente";
             // 
             // BT_ELIMINAREMAIL490WC
             // 
@@ -257,16 +257,16 @@
             this.listboxCelularesCliente490WC.Size = new System.Drawing.Size(250, 97);
             this.listboxCelularesCliente490WC.TabIndex = 63;
             // 
-            // label2
+            // LABEL_CODIGOBOLETOASIGNAR
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.label2.Location = new System.Drawing.Point(20, 237);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(201, 20);
-            this.label2.TabIndex = 74;
-            this.label2.Text = "Codigo Boleto Asignar";
+            this.LABEL_CODIGOBOLETOASIGNAR.AutoSize = true;
+            this.LABEL_CODIGOBOLETOASIGNAR.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.LABEL_CODIGOBOLETOASIGNAR.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
+            this.LABEL_CODIGOBOLETOASIGNAR.Location = new System.Drawing.Point(20, 237);
+            this.LABEL_CODIGOBOLETOASIGNAR.Name = "LABEL_CODIGOBOLETOASIGNAR";
+            this.LABEL_CODIGOBOLETOASIGNAR.Size = new System.Drawing.Size(201, 20);
+            this.LABEL_CODIGOBOLETOASIGNAR.TabIndex = 74;
+            this.LABEL_CODIGOBOLETOASIGNAR.Text = "Codigo Boleto Asignar";
             // 
             // TB_CodigoBoleto490WC
             // 
@@ -279,16 +279,16 @@
             this.TB_CodigoBoleto490WC.Size = new System.Drawing.Size(184, 27);
             this.TB_CodigoBoleto490WC.TabIndex = 73;
             // 
-            // label3
+            // labelDireccion490WC
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.label3.Location = new System.Drawing.Point(20, 184);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(89, 20);
-            this.label3.TabIndex = 76;
-            this.label3.Text = "Direccion";
+            this.labelDireccion490WC.AutoSize = true;
+            this.labelDireccion490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.labelDireccion490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
+            this.labelDireccion490WC.Location = new System.Drawing.Point(20, 184);
+            this.labelDireccion490WC.Name = "labelDireccion490WC";
+            this.labelDireccion490WC.Size = new System.Drawing.Size(89, 20);
+            this.labelDireccion490WC.TabIndex = 76;
+            this.labelDireccion490WC.Text = "Direccion";
             // 
             // TB_DIRECCION490WC
             // 
@@ -307,13 +307,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(27)))), ((int)(((byte)(38)))));
             this.ClientSize = new System.Drawing.Size(769, 299);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.labelDireccion490WC);
             this.Controls.Add(this.TB_DIRECCION490WC);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.LABEL_CODIGOBOLETOASIGNAR);
             this.Controls.Add(this.TB_CodigoBoleto490WC);
             this.Controls.Add(this.TB_EMAIL490WC);
             this.Controls.Add(this.TB_CELULAR490WC);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.LABEL_EMAILSDELCLIENTE490WC);
             this.Controls.Add(this.BT_ELIMINAREMAIL490WC);
             this.Controls.Add(this.BT_AGREGAREMAIL490WC);
             this.Controls.Add(this.listboxEmailsCliente490WC);
@@ -347,7 +347,7 @@
         private System.Windows.Forms.Button BT_REGISTRARCLIENTE490WC;
         private System.Windows.Forms.TextBox TB_EMAIL490WC;
         private System.Windows.Forms.TextBox TB_CELULAR490WC;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label LABEL_EMAILSDELCLIENTE490WC;
         private System.Windows.Forms.Button BT_ELIMINAREMAIL490WC;
         private System.Windows.Forms.Button BT_AGREGAREMAIL490WC;
         private System.Windows.Forms.ListBox listboxEmailsCliente490WC;
@@ -355,9 +355,9 @@
         private System.Windows.Forms.Button BT_ELIMINARCELULAR490WC;
         private System.Windows.Forms.Button BT_AGREGARCELULAR490WC;
         private System.Windows.Forms.ListBox listboxCelularesCliente490WC;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label LABEL_CODIGOBOLETOASIGNAR;
         private System.Windows.Forms.TextBox TB_CodigoBoleto490WC;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label labelDireccion490WC;
         private System.Windows.Forms.TextBox TB_DIRECCION490WC;
     }
 }

@@ -240,7 +240,7 @@ namespace GUI490WC
 
         private void BT_ELIMINAREMAIL490WC_Click(object sender, EventArgs e)
         {
-            if (listboxEmailsCliente490WC.SelectedIndex != 1)
+            if (listboxEmailsCliente490WC.SelectedIndex != -1)
             {
                 listboxEmailsCliente490WC.Items.RemoveAt(listboxEmailsCliente490WC.SelectedIndex);
             }

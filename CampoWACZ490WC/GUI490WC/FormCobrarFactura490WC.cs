@@ -189,6 +189,7 @@ namespace GUI490WC
                     a = a.Replace("{boletoCargado490WC.IDBoleto490WC} {Environment.NewLine}", $"{boletoCargado490WC.IDBoleto490WC} {Environment.NewLine}");
                     a = a.Replace("{boletoCargado490WC.Precio490WC} {Environment.NewLine}", $"{boletoCargado490WC.Precio490WC} {Environment.NewLine}");
                     a = a.Replace("{totalFactura490WC} {Environment.NewLine}", $"{totalFactura490WC} {Environment.NewLine}");
+                    c490WC.Text = a;
                 }
                 else if (c490WC.Name == "TBVISTAPREVIAFACTURASINBENEFICIO490WC")
                 {
@@ -208,6 +209,7 @@ namespace GUI490WC
                     a = a.Replace("{boletoCargado490WC.IDBoleto490WC} {Environment.NewLine}", $"{boletoCargado490WC.IDBoleto490WC} {Environment.NewLine}");
                     a = a.Replace("{boletoCargado490WC.Precio490WC} {Environment.NewLine}", $"{boletoCargado490WC.Precio490WC} {Environment.NewLine}");
                     a = a.Replace("{totalFactura490WC} {Environment.NewLine}", $"{totalFactura490WC} {Environment.NewLine}");
+                    c490WC.Text = a;
                 }
             }
         }
