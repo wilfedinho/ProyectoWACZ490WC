@@ -335,6 +335,7 @@ namespace GUI490WC
         {
             try
             {
+                formFactura490WC.MostrarFacturas490WC();
                 formFactura490WC.ShowDialog();
                 hideSubmenu490WC();
                 this?.Show();

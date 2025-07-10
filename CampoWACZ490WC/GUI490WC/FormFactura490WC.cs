@@ -69,46 +69,25 @@ namespace GUI490WC
         {
             if (dgvFactura490WC.SelectedRows.Count > 0)
             {
-                string carpeta490WC = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "Facturas490WC");
-
-                
-                if (!Directory.Exists(carpeta490WC))
+               GestorFactura490WC gestorFactura490WC = new GestorFactura490WC();
+                Factura490WC facturaGenerar490WC = gestorFactura490WC.ObtenerTodasLasFacturas490WC().Find(x => x.NumeroFactura490WC == int.Parse(dgvFactura490WC.SelectedRows[0].Cells["ColumnaNumeroFactura"].Value.ToString()));
+                if (facturaGenerar490WC != null)
                 {
-                    Directory.CreateDirectory(carpeta490WC);
+                    gestorFactura490WC.GenerarFactura490WC(facturaGenerar490WC);
                 }
-
-               
-                string nombreArchivoFactura = $"Factura_{dgvFactura490WC.SelectedRows[0].Cells["ColumnaDNITitular"].Value.ToString()}_Cod{dgvFactura490WC.SelectedRows[0].Cells["ColumnaNumeroFactura"].Value.ToString()}.pdf";
-                string rutaFactura = Path.Combine(carpeta490WC, nombreArchivoFactura);
-
-               
-                string nombreArchivoBoleto = $"Boleto_{dgvFactura490WC.SelectedRows[0].Cells["ColumnaDNITitular"].Value.ToString().Trim()}_Cod{dgvFactura490WC.SelectedRows[0].Cells["ColumnaIDBoleto"].Value.ToString().Trim()}.pdf";
-                string rutaBoleto = Path.Combine(carpeta490WC, nombreArchivoBoleto);
-
-               
-                if (File.Exists(rutaFactura))
+                GestorBoleto490WC gestorBoleto490WC = new GestorBoleto490WC();
+                Boleto490WC boletoGenerar490WC = gestorBoleto490WC.ObtenerTodosLosBoletos490WC().Find(x => x.IDBoleto490WC == dgvFactura490WC.SelectedRows[0].Cells["ColumnaIDBoleto"].Value.ToString().Trim());
+                if (boletoGenerar490WC != null)
                 {
-                    System.Diagnostics.Process.Start(rutaFactura);
+                    gestorBoleto490WC.GenerarBoleto490WC(boletoGenerar490WC);
                 }
-                else
-                {
-                    string mensajeError490WC = Traductor490WC.TraductorSG490WC.Traducir490WC("ArchivoFacturaNOExiste");
-                    MessageBox.Show(mensajeError490WC);
-                }
-
-                
-                if (File.Exists(rutaBoleto))
-                {
-                    System.Diagnostics.Process.Start(rutaBoleto);
-                }
-                else
-                {
-                    string mensajeError490WC = Traductor490WC.TraductorSG490WC.Traducir490WC("ArchivoBoletoNOExiste");
-                    MessageBox.Show(mensajeError490WC);
-                }
-
             }
 
+        }
+
+        private void FormFactura490WC_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            MostrarFacturas490WC();
         }
     }
 }

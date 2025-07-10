@@ -100,6 +100,7 @@
             this.Name = "FormFactura490WC";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormFactura490WC";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormFactura490WC_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.dgvFactura490WC)).EndInit();
             this.ResumeLayout(false);
 
