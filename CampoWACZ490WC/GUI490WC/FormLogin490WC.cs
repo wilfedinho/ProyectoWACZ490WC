@@ -49,7 +49,7 @@ namespace GUI490WC
                                 usuarioIniciarSesion490WC.HoraUltimaSesion490WC = DateTime.Now;
                                 usuarioIniciarSesion490WC.Intentos490WC = 0;
                                 UserManager490WC.UserManagerSG490WC.Modificar490WC(usuarioIniciarSesion490WC);
-                                GestorPermiso490WC GestorPermiso490WC = new GestorPermiso490WC();
+                                Rol490WC GestorPermiso490WC = new Rol490WC();
                                 GestorPermiso490WC.AsignarRolSesion490WC(SesionManager490WC.GestorSesion490WC.Usuario490WC.Rol490WC);
                                 GestorForm490WC.gestorFormSG490WC.DefinirEstado490WC(new EstadoMenu490WC());
                             }

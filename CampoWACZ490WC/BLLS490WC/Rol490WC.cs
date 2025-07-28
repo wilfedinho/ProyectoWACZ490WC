@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace SERVICIOS490WC
 {
-    public class GestorPermiso490WC
+    public class Rol490WC
     {
         public void AsignarRolSesion490WC(string nuevoRol490WC)
         {
@@ -23,11 +23,6 @@ namespace SERVICIOS490WC
                 SesionManager490WC.GestorSesion490WC.Usuario490WC.Rol490WC = nuevoRol490WC;
                 SesionManager490WC.GestorSesion490WC.permisosDeLaSesion490WC = LeerRolConEstructura490WC(SesionManager490WC.GestorSesion490WC.Usuario490WC.Rol490WC);
             }
-        }
-        public List<PermisoCompuesto490WC> LeerFamiliasConEstructuraRecursiva490WC()
-        {
-            PermisoDAL490WC gestorPermiso490WC = new PermisoDAL490WC();
-            return gestorPermiso490WC.LeerFamiliasConEstructuraRecursiva490WC();
         }
 
         public PermisoCompuesto490WC LeerRolConEstructura490WC(string nombrePerfil)
@@ -43,12 +38,6 @@ namespace SERVICIOS490WC
             return gestorPermiso490WC.LeerPermisoCompuesto490WC(nombreFamiliaRaiz490WC);
         }
 
-        public bool InsertarFamilia490WC(PermisoCompuesto490WC familiaNueva)
-        {
-            PermisoDAL490WC gestorPermiso490WC = new PermisoDAL490WC();
-            return gestorPermiso490WC.InsertarFamilia490WC(familiaNueva);
-        }
-
         public bool InsertarRol490WC(PermisoCompuesto490WC nuevoRol)
         {
             PermisoDAL490WC gestorPermiso490WC = new PermisoDAL490WC();
@@ -61,33 +50,11 @@ namespace SERVICIOS490WC
             return gestorPermiso490WC.InsertarRelacionDesdePerfil490WC(nombrePerfil, nombreIncluido);
         }
 
-        public bool InsertarRelacionDesdeFamilia490WC(string nombreFamilia, string nombreIncluido)
-        {
-            PermisoDAL490WC gestorPermiso490WC = new PermisoDAL490WC();
-            return gestorPermiso490WC.InsertarRelacionDesdeFamilia490WC(nombreFamilia, nombreIncluido);
-        }
-
         public bool BorrarRol490WC(string nombreRol)
         {
             PermisoDAL490WC gestorPermiso490WC = new PermisoDAL490WC();
             return gestorPermiso490WC.BorrarRol490WC(nombreRol);
         }
-
-        public bool BorrarFamilia490WC(string nombreFamilia)
-        {
-            PermisoDAL490WC gestorPermiso490WC = new PermisoDAL490WC();
-            return gestorPermiso490WC.BorrarFamilia490WC(nombreFamilia);
-        }
-
-        
-
-        public bool FamiliaQuedariaVaciaTrasEliminarElemento(string nombreFamilia, string nombreElemento)
-        {
-            PermisoDAL490WC gestorPermiso490WC = new PermisoDAL490WC();
-            return gestorPermiso490WC.FamiliaQuedariaVaciaTrasEliminarElemento(nombreFamilia, nombreElemento);
-        }
-
-       
 
         public bool PerfilQuedariaVacioTrasEliminarElemento(string nombrePerfil, string nombreElemento)
         {
@@ -116,39 +83,10 @@ namespace SERVICIOS490WC
             return null; 
         }
 
-
-
-        public bool EliminarRelacionPermisoSimple_Perfil(string nombrePerfil, string nombrePermisoSimple)
-        {
-            PermisoDAL490WC gestorPermiso490WC = new PermisoDAL490WC();
-            return gestorPermiso490WC.EliminarRelacionPermisoSimple_Perfil(nombrePerfil, nombrePermisoSimple);
-        }
-
-        public bool EliminarRelacionPermisoSimple_Familia(string nombreFamilia, string nombrePermisoSimple)
-        {
-            PermisoDAL490WC gestorPermiso490WC = new PermisoDAL490WC();
-            return gestorPermiso490WC.EliminarRelacionPermisoSimple_Familia(nombreFamilia, nombrePermisoSimple);
-        }
-
-        public bool EliminarRelacionFamilia_Familia(string familiaPadre, string familiaHija)
-        {
-            PermisoDAL490WC gestorPermiso490WC = new PermisoDAL490WC();
-            return gestorPermiso490WC.EliminarRelacionFamilia_Familia(familiaPadre, familiaHija);
-        }
-
         public bool EliminarRelacionPerfil_Familia(string nombrePerfil, string nombreFamilia)
         {
             PermisoDAL490WC gestorPermiso490WC = new PermisoDAL490WC();
             return gestorPermiso490WC.EliminarRelacionPerfil_Familia(nombrePerfil, nombreFamilia);
-        }
-
-
-
-
-        public bool FamiliaExiste490WC(string nombreFamilia)
-        {
-            PermisoDAL490WC gestorPermiso490WC = new PermisoDAL490WC();
-            return gestorPermiso490WC.FamiliaExiste490WC(nombreFamilia);
         }
 
         public bool PerfilExiste490WC(string nombrePerfil)
@@ -169,25 +107,6 @@ namespace SERVICIOS490WC
         {
             PermisoDAL490WC gestorPermiso490WC = new PermisoDAL490WC();
             return gestorPermiso490WC.FamiliaEstaAsignadaAPerfil490WC(nombreFamilia490WC);
-        }
-
-        public bool FamiliaEstaAnidadaEnOtra490WC(string nombreFamilia490WC)
-        {
-            PermisoDAL490WC gestorPermiso490WC = new PermisoDAL490WC();
-            return gestorPermiso490WC.FamiliaEstaAnidadaEnOtra490WC(nombreFamilia490WC);
-        }
-
-
-        public List<Permiso490WC> ObtenerPermisosSimples490WC()
-        {
-            PermisoDAL490WC gestorPermiso490WC = new PermisoDAL490WC();
-            return gestorPermiso490WC.ObtenerPermisosSimples490WC();
-        }
-
-        public List<Permiso490WC> ObtenerPermisosCompuestos490WC()
-        {
-            PermisoDAL490WC gestorPermiso490WC = new PermisoDAL490WC();
-            return gestorPermiso490WC.ObtenerPermisosCompuestos490WC();
         }
 
         public List<Permiso490WC> ObtenerRoles490WC()
@@ -239,11 +158,6 @@ namespace SERVICIOS490WC
 
             return false;
         }
-
-
-
-
-
 
         public bool ConfigurarControl490WC(string tag490WC, bool estadoSecundario490WC)
         {

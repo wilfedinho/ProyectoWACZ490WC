@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualBasic;
+﻿using BLLS490WC;
+using Microsoft.VisualBasic;
 using SE490WC;
 using SERVICIOS490WC;
 using System;
@@ -40,14 +41,14 @@ namespace GUI490WC
         public void CargarComboBoxRol490WC()
         {
             CB_ROL490WC.Items.Clear();
-            GestorPermiso490WC gestorPermiso = new GestorPermiso490WC();
+            Rol490WC gestorRol = new Rol490WC();
 
             string nombreRolSesion = SesionManager490WC.GestorSesion490WC.Usuario490WC.Rol490WC;
 
 
             if (nombreRolSesion == "AdminSistema")
             {
-                foreach (Permiso490WC rol in gestorPermiso.ObtenerRoles490WC())
+                foreach (Permiso490WC rol in gestorRol.ObtenerRoles490WC())
                 {
                     if (rol.obtenerPermisoNombre490WC() != "AdminSistema")
                     {
@@ -63,9 +64,9 @@ namespace GUI490WC
             );
 
 
-            foreach (PermisoCompuesto490WC rolVacio490WC in gestorPermiso.ObtenerRoles490WC())
+            foreach (PermisoCompuesto490WC rolVacio490WC in gestorRol.ObtenerRoles490WC())
             {
-                PermisoCompuesto490WC otroRol = gestorPermiso.LeerRolConEstructura490WC(rolVacio490WC.obtenerPermisoNombre490WC());
+                PermisoCompuesto490WC otroRol = gestorRol.LeerRolConEstructura490WC(rolVacio490WC.obtenerPermisoNombre490WC());
 
 
 
@@ -110,12 +111,12 @@ namespace GUI490WC
         public void CargarComboboxFamilia490WC()
         {
             CB_FAMILIA490WC.Items.Clear();
-            GestorPermiso490WC gestorPermiso = new GestorPermiso490WC();
-
+            //Rol490WC gestorPermiso = new Rol490WC();
+            Familia490WC gestorFamilia490WC = new Familia490WC();
 
             if (SesionManager490WC.GestorSesion490WC.Usuario490WC.Rol490WC == "AdminSistema")
             {
-                foreach (PermisoCompuesto490WC familia in gestorPermiso.ObtenerPermisosCompuestos490WC())
+                foreach (PermisoCompuesto490WC familia in gestorFamilia490WC.ObtenerPermisosCompuestos490WC())
                 {
                     CB_FAMILIA490WC.Items.Add(familia.obtenerPermisoNombre490WC());
                 }
@@ -127,7 +128,7 @@ namespace GUI490WC
                 ObtenerNombresDeFamiliasEnEstructura(SesionManager490WC.GestorSesion490WC.permisosDeLaSesion490WC)
             );
 
-            foreach (PermisoCompuesto490WC familia in gestorPermiso.ObtenerPermisosCompuestos490WC())
+            foreach (PermisoCompuesto490WC familia in gestorFamilia490WC.ObtenerPermisosCompuestos490WC())
             {
                 if (!familiasDelRolActual.Contains(familia.obtenerPermisoNombre490WC()))
                 {
@@ -142,8 +143,9 @@ namespace GUI490WC
         public void LlenarPermisosSimples490WC()
         {
             listboxPermisoSimple490WC.Items.Clear();
-            GestorPermiso490WC gestorPermiso490WC = new GestorPermiso490WC();
-            foreach (Permiso490WC permi490WC in gestorPermiso490WC.ObtenerPermisosSimples490WC())
+            //Rol490WC gestorPermiso490WC = new Rol490WC();
+            Simple490WC gestorSimple490WC = new Simple490WC();
+            foreach (Permiso490WC permi490WC in gestorSimple490WC.ObtenerPermisosSimples490WC())
             {
                 listboxPermisoSimple490WC.Items.Add(permi490WC.obtenerPermisoNombre490WC());
             }
@@ -152,8 +154,9 @@ namespace GUI490WC
         public void LlenarFamilias490WC()
         {
             listboxFamilia490WC.Items.Clear();
-            GestorPermiso490WC gestorPermiso490WC = new GestorPermiso490WC();
-            foreach (Permiso490WC permi490WC in gestorPermiso490WC.ObtenerPermisosCompuestos490WC())
+            //Rol490WC gestorPermiso490WC = new Rol490WC();
+            Familia490WC gestorFamilia490WC = new Familia490WC();
+            foreach (Permiso490WC permi490WC in gestorFamilia490WC.ObtenerPermisosCompuestos490WC())
             {
                 listboxFamilia490WC.Items.Add(permi490WC.obtenerPermisoNombre490WC());
             }
@@ -181,7 +184,7 @@ namespace GUI490WC
         public void CargarTodosLosPerfilesEnArbol490WC()
         {
             treeViewRoles490WC.Nodes.Clear();
-            GestorPermiso490WC gestorPermiso490WC = new GestorPermiso490WC();
+            Rol490WC gestorPermiso490WC = new Rol490WC();
             foreach (Permiso490WC permi490WC in gestorPermiso490WC.ObtenerRoles490WC())
             {
                 Permiso490WC rolEstructurar490WC = gestorPermiso490WC.LeerPermisoCompuesto490WC(permi490WC.obtenerPermisoNombre490WC());
@@ -193,8 +196,9 @@ namespace GUI490WC
         public void CargarTodasLasFamiliasEnArbol490WC()
         {
             treeViewFamilias490WC.Nodes.Clear();
-            GestorPermiso490WC gestorPermiso490WC = new GestorPermiso490WC();
-            foreach (Permiso490WC permi490WC in gestorPermiso490WC.LeerFamiliasConEstructuraRecursiva490WC())
+            //Rol490WC gestorPermiso490WC = new Rol490WC();
+            Familia490WC gestorFamilia490WC = new Familia490WC();
+            foreach (Permiso490WC permi490WC in gestorFamilia490WC.LeerFamiliasConEstructuraRecursiva490WC())
             {
                 var nodo490WC = new TreeNode(permi490WC.obtenerPermisoNombre490WC());
                 treeViewFamilias490WC.Nodes.Add(nodo490WC);
@@ -233,19 +237,21 @@ namespace GUI490WC
         private void BT_CrearRol490WC_Click(object sender, EventArgs e)
         {
             string nombreRol490WC = TB_ROL490WC.Text;
-            GestorPermiso490WC gestorPermiso490WC = new GestorPermiso490WC();
+            Rol490WC gestorRol490WC = new Rol490WC();
+            Simple490WC gestorSimple490WC = new Simple490WC();
+            Familia490WC gestorFamilia490WC = new Familia490WC();
             if (!string.IsNullOrEmpty(nombreRol490WC) && !string.IsNullOrWhiteSpace(nombreRol490WC))
             {
-                if (!gestorPermiso490WC.PerfilExiste490WC(nombreRol490WC))
+                if (!gestorRol490WC.PerfilExiste490WC(nombreRol490WC))
                 {
                     if (RB_SIMPLE490WC.Checked)
                     {
                         if (listboxPermisoSimple490WC.SelectedIndex > -1)
                         {
                             Permiso490WC rolCrear490WC = new PermisoCompuesto490WC(nombreRol490WC);
-                            Permiso490WC permisoHijo = gestorPermiso490WC.ObtenerPermisosSimples490WC().Find(x => x.obtenerPermisoNombre490WC() == listboxPermisoSimple490WC.SelectedItem.ToString());
+                            Permiso490WC permisoHijo = gestorSimple490WC.ObtenerPermisosSimples490WC().Find(x => x.obtenerPermisoNombre490WC() == listboxPermisoSimple490WC.SelectedItem.ToString());
                             rolCrear490WC.Agregar490WC(permisoHijo);
-                            if (gestorPermiso490WC.InsertarRol490WC((PermisoCompuesto490WC)rolCrear490WC))
+                            if (gestorRol490WC.InsertarRol490WC((PermisoCompuesto490WC)rolCrear490WC))
                             {
                                 CargarComboBoxRol490WC();
                                 CargarComboboxFamilia490WC();
@@ -272,9 +278,9 @@ namespace GUI490WC
                         if (listboxFamilia490WC.SelectedIndex > -1)
                         {
                             Permiso490WC rolCrear490WC = new PermisoCompuesto490WC(nombreRol490WC);
-                            Permiso490WC permisoHijo = gestorPermiso490WC.LeerPermisoCompuesto490WC(listboxFamilia490WC.SelectedItem.ToString());
+                            Permiso490WC permisoHijo = gestorFamilia490WC.LeerPermisoCompuesto490WC(listboxFamilia490WC.SelectedItem.ToString());
                             rolCrear490WC.Agregar490WC(permisoHijo);
-                            if (gestorPermiso490WC.InsertarRol490WC((PermisoCompuesto490WC)rolCrear490WC))
+                            if (gestorRol490WC.InsertarRol490WC((PermisoCompuesto490WC)rolCrear490WC))
                             {
                                 CargarComboBoxRol490WC();
                                 CargarComboboxFamilia490WC();
@@ -314,19 +320,21 @@ namespace GUI490WC
         private void BT_CrearFamilia490WC_Click(object sender, EventArgs e)
         {
             string nombreFamiliaCrear490WC = TB_FAMILIA490WC.Text;
-            GestorPermiso490WC gestorPermiso490WC = new GestorPermiso490WC();
+            Rol490WC gestorRol490WC = new Rol490WC();
+            Simple490WC gestorSimple490WC = new Simple490WC();
+            Familia490WC gestorFamilia490WC = new Familia490WC();
             if (!string.IsNullOrEmpty(nombreFamiliaCrear490WC) && !string.IsNullOrWhiteSpace(nombreFamiliaCrear490WC))
             {
-                if (!gestorPermiso490WC.FamiliaExiste490WC(nombreFamiliaCrear490WC))
+                if (!gestorFamilia490WC.FamiliaExiste490WC(nombreFamiliaCrear490WC))
                 {
                     if (RB_SIMPLE490WC.Checked)
                     {
                         if (listboxPermisoSimple490WC.SelectedIndex > -1)
                         {
                             Permiso490WC FamiliaCrear490WC = new PermisoCompuesto490WC(nombreFamiliaCrear490WC);
-                            Permiso490WC permisoHijo = gestorPermiso490WC.ObtenerPermisosSimples490WC().Find(x => x.obtenerPermisoNombre490WC() == listboxPermisoSimple490WC.SelectedItem.ToString());
+                            Permiso490WC permisoHijo = gestorSimple490WC.ObtenerPermisosSimples490WC().Find(x => x.obtenerPermisoNombre490WC() == listboxPermisoSimple490WC.SelectedItem.ToString());
                             FamiliaCrear490WC.Agregar490WC(permisoHijo);
-                            if (gestorPermiso490WC.InsertarFamilia490WC((PermisoCompuesto490WC)FamiliaCrear490WC))
+                            if (gestorFamilia490WC.InsertarFamilia490WC((PermisoCompuesto490WC)FamiliaCrear490WC))
                             {
                                 CargarComboBoxRol490WC();
                                 CargarComboboxFamilia490WC();
@@ -354,9 +362,9 @@ namespace GUI490WC
                         if (listboxFamilia490WC.SelectedIndex > -1)
                         {
                             Permiso490WC FamiliaCrear490WC = new PermisoCompuesto490WC(nombreFamiliaCrear490WC);
-                            Permiso490WC permisoHijo = gestorPermiso490WC.LeerPermisoCompuesto490WC(listboxFamilia490WC.SelectedItem.ToString());
+                            Permiso490WC permisoHijo = gestorFamilia490WC.LeerPermisoCompuesto490WC(listboxFamilia490WC.SelectedItem.ToString());
                             FamiliaCrear490WC.Agregar490WC(permisoHijo);
-                            if (gestorPermiso490WC.InsertarFamilia490WC((PermisoCompuesto490WC)FamiliaCrear490WC))
+                            if (gestorFamilia490WC.InsertarFamilia490WC((PermisoCompuesto490WC)FamiliaCrear490WC))
                             {
                                 CargarComboBoxRol490WC();
                                 CargarComboboxFamilia490WC();
@@ -460,12 +468,13 @@ namespace GUI490WC
 
         public void CargarPermisosSimplesParaModificacion490WC()
         {
-            GestorPermiso490WC gestorPermisos490WC = new GestorPermiso490WC();
+            Rol490WC gestorRol490WC = new Rol490WC();
+            Simple490WC gestorSimple490WC = new Simple490WC();
             if (elementoSeleccionado490WC != null)
             {
                 listboxPermisoSimple490WC.Items.Clear();
-                List<string> nombrePermisosNOagregar = gestorPermisos490WC.ObtenerNombresDePermisos490WC((PermisoCompuesto490WC)elementoSeleccionado490WC);
-                foreach (Permiso490WC permi490WC in gestorPermisos490WC.ObtenerPermisosSimples490WC())
+                List<string> nombrePermisosNOagregar = gestorRol490WC.ObtenerNombresDePermisos490WC((PermisoCompuesto490WC)elementoSeleccionado490WC);
+                foreach (Permiso490WC permi490WC in gestorSimple490WC.ObtenerPermisosSimples490WC())
                 {
                     if (!nombrePermisosNOagregar.Contains(permi490WC.obtenerPermisoNombre490WC()))
                     {
@@ -478,18 +487,19 @@ namespace GUI490WC
 
         public void CargarFamiliasParaModificacion490WC()
         {
-            GestorPermiso490WC gestorPermisos490WC = new GestorPermiso490WC();
+            Rol490WC gestorRol490WC = new Rol490WC();
+            Familia490WC gestorFamilia490WC = new Familia490WC();
             listboxFamilia490WC.Items.Clear();
 
             if (elementoSeleccionado490WC is PermisoCompuesto490WC compuestoSeleccionado)
             {
 
                 var nombresEnSeleccionado = new HashSet<string>(
-                    gestorPermisos490WC.ObtenerNombresDePermisos490WC(compuestoSeleccionado)
+                    gestorRol490WC.ObtenerNombresDePermisos490WC(compuestoSeleccionado)
                 );
 
 
-                foreach (PermisoCompuesto490WC familiaCandidata in gestorPermisos490WC.LeerFamiliasConEstructuraRecursiva490WC())
+                foreach (PermisoCompuesto490WC familiaCandidata in gestorFamilia490WC.LeerFamiliasConEstructuraRecursiva490WC())
                 {
                     string nombreCandidata = familiaCandidata.obtenerPermisoNombre490WC();
 
@@ -498,7 +508,7 @@ namespace GUI490WC
                         continue;
 
 
-                    var nombresDeLaCandidata = gestorPermisos490WC.ObtenerNombresDePermisos490WC(familiaCandidata);
+                    var nombresDeLaCandidata = gestorRol490WC.ObtenerNombresDePermisos490WC(familiaCandidata);
 
 
                     bool haySolapamiento = nombresDeLaCandidata.Any(nombre => nombresEnSeleccionado.Contains(nombre));
@@ -517,8 +527,8 @@ namespace GUI490WC
             if (queModificamos490WC == "Rol")
             {
                 treeViewPreviaModificacion490WC.Nodes.Clear();
-                GestorPermiso490WC gestorPermiso490WC = new GestorPermiso490WC();
-                elementoSeleccionado490WC = gestorPermiso490WC.LeerPermisoCompuesto490WC(CB_ROL490WC.SelectedItem.ToString());
+                Rol490WC gestorRol490WC = new Rol490WC();
+                elementoSeleccionado490WC = gestorRol490WC.LeerPermisoCompuesto490WC(CB_ROL490WC.SelectedItem.ToString());
                 var nodo490WC = new TreeNode(elementoSeleccionado490WC.obtenerPermisoNombre490WC());
                 nodo490WC.Tag = "Rol";
                 treeViewPreviaModificacion490WC.Nodes.Add(nodo490WC);
@@ -527,8 +537,9 @@ namespace GUI490WC
             else if (queModificamos490WC == "Familia")
             {
                 treeViewPreviaModificacion490WC.Nodes.Clear();
-                GestorPermiso490WC gestorPermiso490WC = new GestorPermiso490WC();
-                elementoSeleccionado490WC = gestorPermiso490WC.LeerFamiliasConEstructuraRecursiva490WC().Find(x => x.obtenerPermisoNombre490WC() == CB_FAMILIA490WC.SelectedItem.ToString());
+                //Rol490WC gestorPermiso490WC = new Rol490WC();
+                Familia490WC gestorFamilia490WC = new Familia490WC();
+                elementoSeleccionado490WC = gestorFamilia490WC.LeerFamiliasConEstructuraRecursiva490WC().Find(x => x.obtenerPermisoNombre490WC() == CB_FAMILIA490WC.SelectedItem.ToString());
                 var nodo490WC = new TreeNode(elementoSeleccionado490WC.obtenerPermisoNombre490WC());
                 nodo490WC.Tag = "Familia";
                 treeViewPreviaModificacion490WC.Nodes.Add(nodo490WC);
@@ -609,13 +620,13 @@ namespace GUI490WC
         {
             if (queEliminar490WC == "Rol")
             {
-                GestorPermiso490WC gestorPermiso490WC = new GestorPermiso490WC();
+                Rol490WC gestorRol490WC = new Rol490WC();
                 if (CB_ROL490WC.SelectedIndex > -1)
                 {
                     string nombreElementoSeleccionado490WC = CB_ROL490WC.SelectedItem.ToString();
-                    if (!gestorPermiso490WC.RolEstaAsignado490WC(nombreElementoSeleccionado490WC))
+                    if (!gestorRol490WC.RolEstaAsignado490WC(nombreElementoSeleccionado490WC))
                     {
-                        if (gestorPermiso490WC.BorrarRol490WC(nombreElementoSeleccionado490WC))
+                        if (gestorRol490WC.BorrarRol490WC(nombreElementoSeleccionado490WC))
                         {
                             string mensajeOperacion = Traductor490WC.TraductorSG490WC.Traducir490WC("EliminacionExitosa");
                             MessageBox.Show(mensajeOperacion);
@@ -649,16 +660,17 @@ namespace GUI490WC
             }
             else if (queEliminar490WC == "Familia")
             {
-                GestorPermiso490WC gestorPermiso490WC = new GestorPermiso490WC();
+                Rol490WC gestorPermiso490WC = new Rol490WC();
+                Familia490WC gestorFamilia490WC = new Familia490WC();
                 if (CB_FAMILIA490WC.SelectedIndex > -1)
                 {
                     string nombreElementoSeleccionado490WC = CB_FAMILIA490WC.SelectedItem.ToString();
 
                     if (!gestorPermiso490WC.FamiliaEstaAsignadaAPerfil490WC(nombreElementoSeleccionado490WC))
                     {
-                        if (!gestorPermiso490WC.FamiliaEstaAnidadaEnOtra490WC(nombreElementoSeleccionado490WC))
+                        if (!gestorFamilia490WC.FamiliaEstaAnidadaEnOtra490WC(nombreElementoSeleccionado490WC))
                         {
-                            if (gestorPermiso490WC.BorrarFamilia490WC(nombreElementoSeleccionado490WC))
+                            if (gestorFamilia490WC.BorrarFamilia490WC(nombreElementoSeleccionado490WC))
                             {
                                 string mensajeOperacion = Traductor490WC.TraductorSG490WC.Traducir490WC("EliminacionExitosa");
                                 MessageBox.Show(mensajeOperacion);
@@ -700,7 +712,7 @@ namespace GUI490WC
         }
         private void BT_ASIGNAR490WC_Click(object sender, EventArgs e)
         {
-            GestorPermiso490WC gestorPermiso490WC = new GestorPermiso490WC();
+            Rol490WC gestorRol490WC = new Rol490WC();
             if (RB_CBFAMILIA490WC.Checked)
             {
                 if (treeViewPreviaModificacion490WC.SelectedNode != null)
@@ -709,20 +721,20 @@ namespace GUI490WC
                     {
                         if (listboxPermisoSimple490WC.SelectedItem != null)
                         {
-
+                            Familia490WC gestorFamilia490WC = new Familia490WC();
                             Permiso490WC permisoSimpleAsignar490WC = new PermisoSimple490WC(listboxPermisoSimple490WC.SelectedItem.ToString());
 
                             if (treeViewPreviaModificacion490WC.SelectedNode.Tag.ToString() == "Familia" && treeViewPreviaModificacion490WC.SelectedNode.Text == CB_FAMILIA490WC.SelectedItem.ToString())
                             {
                                 string nombreFamiliaSeleccionado490WC = treeViewPreviaModificacion490WC.SelectedNode.Text;
-                                Permiso490WC PermisoDelNivelSeleccionado490WC = gestorPermiso490WC.LeerFamiliasConEstructuraRecursiva490WC().Find(x => x.obtenerPermisoNombre490WC() == nombreFamiliaSeleccionado490WC);
+                                Permiso490WC PermisoDelNivelSeleccionado490WC = gestorFamilia490WC.LeerFamiliasConEstructuraRecursiva490WC().Find(x => x.obtenerPermisoNombre490WC() == nombreFamiliaSeleccionado490WC);
                                 if (PermisoDelNivelSeleccionado490WC != null)
                                 {
                                     if ((PermisoDelNivelSeleccionado490WC as PermisoCompuesto490WC).VerificarPermisoIncluido490WC(PermisoDelNivelSeleccionado490WC, permisoSimpleAsignar490WC.obtenerPermisoNombre490WC()) == false)
                                     {
-                                        if (gestorPermiso490WC.InsertarRelacionDesdeFamilia490WC(PermisoDelNivelSeleccionado490WC.obtenerPermisoNombre490WC(), permisoSimpleAsignar490WC.obtenerPermisoNombre490WC()))
+                                        if (gestorFamilia490WC.InsertarRelacionDesdeFamilia490WC(PermisoDelNivelSeleccionado490WC.obtenerPermisoNombre490WC(), permisoSimpleAsignar490WC.obtenerPermisoNombre490WC()))
                                         {
-                                            elementoSeleccionado490WC = gestorPermiso490WC.LeerFamiliasConEstructuraRecursiva490WC().Find(x => x.obtenerPermisoNombre490WC() == elementoSeleccionado490WC.obtenerPermisoNombre490WC());
+                                            elementoSeleccionado490WC = gestorFamilia490WC.LeerFamiliasConEstructuraRecursiva490WC().Find(x => x.obtenerPermisoNombre490WC() == elementoSeleccionado490WC.obtenerPermisoNombre490WC());
                                             CargarTodasLasFamiliasEnArbol490WC();
                                             CargarTodosLosPerfilesEnArbol490WC();
                                             if (CB_ROL490WC.SelectedIndex > -1)
@@ -782,19 +794,20 @@ namespace GUI490WC
                     {
                         if (listboxFamilia490WC.SelectedItem != null)
                         {
-                            Permiso490WC FamiliaAsignar490WC = gestorPermiso490WC.LeerFamiliasConEstructuraRecursiva490WC().Find(x => x.obtenerPermisoNombre490WC() == listboxFamilia490WC.SelectedItem.ToString());
+                            Familia490WC gestorFamilia490WC = new Familia490WC();
+                            Permiso490WC FamiliaAsignar490WC = gestorFamilia490WC.LeerFamiliasConEstructuraRecursiva490WC().Find(x => x.obtenerPermisoNombre490WC() == listboxFamilia490WC.SelectedItem.ToString());
 
                             if (treeViewPreviaModificacion490WC.SelectedNode.Tag.ToString() == "Familia" && treeViewPreviaModificacion490WC.SelectedNode.Text == CB_FAMILIA490WC.SelectedItem.ToString())
                             {
                                 string nombreFamiliaSeleccionado490WC = treeViewPreviaModificacion490WC.SelectedNode.Text;
-                                Permiso490WC PermisoDelNivelSeleccionado490WC = gestorPermiso490WC.LeerFamiliasConEstructuraRecursiva490WC().Find(x => x.obtenerPermisoNombre490WC() == nombreFamiliaSeleccionado490WC);
+                                Permiso490WC PermisoDelNivelSeleccionado490WC = gestorFamilia490WC.LeerFamiliasConEstructuraRecursiva490WC().Find(x => x.obtenerPermisoNombre490WC() == nombreFamiliaSeleccionado490WC);
                                 if (PermisoDelNivelSeleccionado490WC != null)
                                 {
                                     if ((PermisoDelNivelSeleccionado490WC as PermisoCompuesto490WC).VerificarPermisoIncluido490WC(PermisoDelNivelSeleccionado490WC, FamiliaAsignar490WC.obtenerPermisoNombre490WC()) == false)
                                     {
-                                        if (gestorPermiso490WC.InsertarRelacionDesdeFamilia490WC(PermisoDelNivelSeleccionado490WC.obtenerPermisoNombre490WC(), FamiliaAsignar490WC.obtenerPermisoNombre490WC()))
+                                        if (gestorFamilia490WC.InsertarRelacionDesdeFamilia490WC(PermisoDelNivelSeleccionado490WC.obtenerPermisoNombre490WC(), FamiliaAsignar490WC.obtenerPermisoNombre490WC()))
                                         {
-                                            elementoSeleccionado490WC = gestorPermiso490WC.LeerFamiliasConEstructuraRecursiva490WC().Find(x => x.obtenerPermisoNombre490WC() == elementoSeleccionado490WC.obtenerPermisoNombre490WC());
+                                            elementoSeleccionado490WC = gestorFamilia490WC.LeerFamiliasConEstructuraRecursiva490WC().Find(x => x.obtenerPermisoNombre490WC() == elementoSeleccionado490WC.obtenerPermisoNombre490WC());
                                             CargarTodasLasFamiliasEnArbol490WC();
                                             CargarTodosLosPerfilesEnArbol490WC();
                                             if (CB_ROL490WC.SelectedIndex > -1)
@@ -867,14 +880,14 @@ namespace GUI490WC
                             if (treeViewPreviaModificacion490WC.SelectedNode.Tag.ToString() == "Rol")
                             {
                                 string nombrePerfilSeleccionado490WC = treeViewPreviaModificacion490WC.SelectedNode.Text;
-                                Permiso490WC PermisoDelNivelSeleccionado490WC = gestorPermiso490WC.LeerRolConEstructura490WC(nombrePerfilSeleccionado490WC);
+                                Permiso490WC PermisoDelNivelSeleccionado490WC = gestorRol490WC.LeerRolConEstructura490WC(nombrePerfilSeleccionado490WC);
                                 if (PermisoDelNivelSeleccionado490WC != null)
                                 {
                                     if ((PermisoDelNivelSeleccionado490WC as PermisoCompuesto490WC).VerificarPermisoIncluido490WC(PermisoDelNivelSeleccionado490WC, permisoSimpleAsignar490WC.obtenerPermisoNombre490WC()) == false)
                                     {
-                                        if (gestorPermiso490WC.InsertarRelacionDesdePerfil490WC(PermisoDelNivelSeleccionado490WC.obtenerPermisoNombre490WC(), permisoSimpleAsignar490WC.obtenerPermisoNombre490WC()))
+                                        if (gestorRol490WC.InsertarRelacionDesdePerfil490WC(PermisoDelNivelSeleccionado490WC.obtenerPermisoNombre490WC(), permisoSimpleAsignar490WC.obtenerPermisoNombre490WC()))
                                         {
-                                            elementoSeleccionado490WC = gestorPermiso490WC.LeerRolConEstructura490WC(elementoSeleccionado490WC.obtenerPermisoNombre490WC());
+                                            elementoSeleccionado490WC = gestorRol490WC.LeerRolConEstructura490WC(elementoSeleccionado490WC.obtenerPermisoNombre490WC());
                                             CargarTodasLasFamiliasEnArbol490WC();
                                             CargarTodosLosPerfilesEnArbol490WC();
                                             if (CB_ROL490WC.SelectedIndex > -1)
@@ -934,18 +947,19 @@ namespace GUI490WC
                     {
                         if (listboxFamilia490WC.SelectedItem != null)
                         {
-                            Permiso490WC FamiliaAsignar490WC = gestorPermiso490WC.LeerFamiliasConEstructuraRecursiva490WC().Find(x => x.obtenerPermisoNombre490WC() == listboxFamilia490WC.SelectedItem.ToString());
+                            Familia490WC gestorFamilia490WC = new Familia490WC();
+                            Permiso490WC FamiliaAsignar490WC = gestorFamilia490WC.LeerFamiliasConEstructuraRecursiva490WC().Find(x => x.obtenerPermisoNombre490WC() == listboxFamilia490WC.SelectedItem.ToString());
                             if (treeViewPreviaModificacion490WC.SelectedNode.Tag.ToString() == "Rol")
                             {
                                 string nombrePerfilSeleccionado490WC = treeViewPreviaModificacion490WC.SelectedNode.Text;
-                                Permiso490WC PermisoDelNivelSeleccionado490WC = gestorPermiso490WC.LeerRolConEstructura490WC(nombrePerfilSeleccionado490WC);
+                                Permiso490WC PermisoDelNivelSeleccionado490WC = gestorRol490WC.LeerRolConEstructura490WC(nombrePerfilSeleccionado490WC);
                                 if (PermisoDelNivelSeleccionado490WC != null)
                                 {
                                     if ((PermisoDelNivelSeleccionado490WC as PermisoCompuesto490WC).VerificarPermisoIncluido490WC(PermisoDelNivelSeleccionado490WC, FamiliaAsignar490WC.obtenerPermisoNombre490WC()) == false)
                                     {
-                                        if (gestorPermiso490WC.InsertarRelacionDesdePerfil490WC(PermisoDelNivelSeleccionado490WC.obtenerPermisoNombre490WC(), FamiliaAsignar490WC.obtenerPermisoNombre490WC()))
+                                        if (gestorRol490WC.InsertarRelacionDesdePerfil490WC(PermisoDelNivelSeleccionado490WC.obtenerPermisoNombre490WC(), FamiliaAsignar490WC.obtenerPermisoNombre490WC()))
                                         {
-                                            elementoSeleccionado490WC = gestorPermiso490WC.LeerRolConEstructura490WC(elementoSeleccionado490WC.obtenerPermisoNombre490WC());
+                                            elementoSeleccionado490WC = gestorRol490WC.LeerRolConEstructura490WC(elementoSeleccionado490WC.obtenerPermisoNombre490WC());
                                             CargarTodasLasFamiliasEnArbol490WC();
                                             CargarTodosLosPerfilesEnArbol490WC();
                                             if (CB_ROL490WC.SelectedIndex > -1)
@@ -1015,12 +1029,13 @@ namespace GUI490WC
 
         private void BT_DESASIGNAR490WC_Click(object sender, EventArgs e)
         {
-            GestorPermiso490WC gestorPermiso490WC = new GestorPermiso490WC();
+            Rol490WC gestorRol490WC = new Rol490WC();
+            Familia490WC gestorFamilia490WC = new Familia490WC();
             if (treeViewPreviaModificacion490WC.SelectedNode != null)
             {
                 if (RB_CBFAMILIA490WC.Checked)
                 {
-                    PermisoCompuesto490WC familiaModificar490WC = gestorPermiso490WC.LeerFamiliasConEstructuraRecursiva490WC().Find(x => x.obtenerPermisoNombre490WC() == CB_FAMILIA490WC.SelectedItem.ToString());
+                    PermisoCompuesto490WC familiaModificar490WC = gestorFamilia490WC.LeerFamiliasConEstructuraRecursiva490WC().Find(x => x.obtenerPermisoNombre490WC() == CB_FAMILIA490WC.SelectedItem.ToString());
                     if (treeViewPreviaModificacion490WC.SelectedNode.Tag.ToString() == "Rol")
                     {
                         string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("ErrorDesasignarRol");
@@ -1028,15 +1043,15 @@ namespace GUI490WC
                     }
                     else if (treeViewPreviaModificacion490WC.SelectedNode.Tag.ToString() == "Familia" && familiaModificar490WC.PermisosIncluidos490WC().Find(x => x.obtenerPermisoNombre490WC() == treeViewPreviaModificacion490WC.SelectedNode.Text) != null)
                     {
-                        Permiso490WC FamiliaDesasignar490WC = gestorPermiso490WC.LeerFamiliasConEstructuraRecursiva490WC().Find(x => x.obtenerPermisoNombre490WC() == treeViewPreviaModificacion490WC.SelectedNode.Text);
-                        Permiso490WC FamiliaPadreDesasignar490WC = gestorPermiso490WC.BuscarPadreDirecto490WC((PermisoCompuesto490WC)elementoSeleccionado490WC, FamiliaDesasignar490WC.obtenerPermisoNombre490WC());
+                        Permiso490WC FamiliaDesasignar490WC = gestorFamilia490WC.LeerFamiliasConEstructuraRecursiva490WC().Find(x => x.obtenerPermisoNombre490WC() == treeViewPreviaModificacion490WC.SelectedNode.Text);
+                        Permiso490WC FamiliaPadreDesasignar490WC = gestorRol490WC.BuscarPadreDirecto490WC((PermisoCompuesto490WC)elementoSeleccionado490WC, FamiliaDesasignar490WC.obtenerPermisoNombre490WC());
                         if (FamiliaPadreDesasignar490WC != null)
                         {
-                            if (gestorPermiso490WC.FamiliaQuedariaVaciaTrasEliminarElemento(FamiliaPadreDesasignar490WC.obtenerPermisoNombre490WC(), FamiliaDesasignar490WC.obtenerPermisoNombre490WC()) == false)
+                            if (gestorFamilia490WC.FamiliaQuedariaVaciaTrasEliminarElemento(FamiliaPadreDesasignar490WC.obtenerPermisoNombre490WC(), FamiliaDesasignar490WC.obtenerPermisoNombre490WC()) == false)
                             {
-                                if (gestorPermiso490WC.EliminarRelacionFamilia_Familia(FamiliaPadreDesasignar490WC.obtenerPermisoNombre490WC(), FamiliaDesasignar490WC.obtenerPermisoNombre490WC()))
+                                if (gestorFamilia490WC.EliminarRelacionFamilia_Familia(FamiliaPadreDesasignar490WC.obtenerPermisoNombre490WC(), FamiliaDesasignar490WC.obtenerPermisoNombre490WC()))
                                 {
-                                    elementoSeleccionado490WC = gestorPermiso490WC.LeerFamiliasConEstructuraRecursiva490WC().Find(x => x.obtenerPermisoNombre490WC() == elementoSeleccionado490WC.obtenerPermisoNombre490WC());
+                                    elementoSeleccionado490WC = gestorFamilia490WC.LeerFamiliasConEstructuraRecursiva490WC().Find(x => x.obtenerPermisoNombre490WC() == elementoSeleccionado490WC.obtenerPermisoNombre490WC());
                                     CargarTodasLasFamiliasEnArbol490WC();
                                     CargarTodosLosPerfilesEnArbol490WC();
                                     if (CB_ROL490WC.SelectedIndex > -1)
@@ -1089,13 +1104,14 @@ namespace GUI490WC
                     }
                     else if (treeViewPreviaModificacion490WC.SelectedNode.Tag.ToString() == "Simple" && familiaModificar490WC.PermisosIncluidos490WC().Find(x => x.obtenerPermisoNombre490WC() == treeViewPreviaModificacion490WC.SelectedNode.Text) != null)
                     {
-                        Permiso490WC permisoSimpleDesasignar490WC = gestorPermiso490WC.ObtenerPermisosSimples490WC().Find(x => x.obtenerPermisoNombre490WC() == treeViewPreviaModificacion490WC.SelectedNode.Text);
-                        Permiso490WC PermisoPadreDesasignar490WC = gestorPermiso490WC.BuscarPadreDirecto490WC((PermisoCompuesto490WC)elementoSeleccionado490WC, permisoSimpleDesasignar490WC.obtenerPermisoNombre490WC());
-                        if (gestorPermiso490WC.FamiliaQuedariaVaciaTrasEliminarElemento(PermisoPadreDesasignar490WC.obtenerPermisoNombre490WC(), permisoSimpleDesasignar490WC.obtenerPermisoNombre490WC()) == false)
+                        Simple490WC gestorSimple490WC = new Simple490WC();
+                        Permiso490WC permisoSimpleDesasignar490WC = gestorSimple490WC.ObtenerPermisosSimples490WC().Find(x => x.obtenerPermisoNombre490WC() == treeViewPreviaModificacion490WC.SelectedNode.Text);
+                        Permiso490WC PermisoPadreDesasignar490WC = gestorRol490WC.BuscarPadreDirecto490WC((PermisoCompuesto490WC)elementoSeleccionado490WC, permisoSimpleDesasignar490WC.obtenerPermisoNombre490WC());
+                        if (gestorFamilia490WC.FamiliaQuedariaVaciaTrasEliminarElemento(PermisoPadreDesasignar490WC.obtenerPermisoNombre490WC(), permisoSimpleDesasignar490WC.obtenerPermisoNombre490WC()) == false)
                         {
-                            if (gestorPermiso490WC.EliminarRelacionPermisoSimple_Familia(PermisoPadreDesasignar490WC.obtenerPermisoNombre490WC(), permisoSimpleDesasignar490WC.obtenerPermisoNombre490WC()))
+                            if (gestorSimple490WC.EliminarRelacionPermisoSimple_Familia(PermisoPadreDesasignar490WC.obtenerPermisoNombre490WC(), permisoSimpleDesasignar490WC.obtenerPermisoNombre490WC()))
                             {
-                                elementoSeleccionado490WC = gestorPermiso490WC.LeerFamiliasConEstructuraRecursiva490WC().Find(x => x.obtenerPermisoNombre490WC() == elementoSeleccionado490WC.obtenerPermisoNombre490WC());
+                                elementoSeleccionado490WC = gestorFamilia490WC.LeerFamiliasConEstructuraRecursiva490WC().Find(x => x.obtenerPermisoNombre490WC() == elementoSeleccionado490WC.obtenerPermisoNombre490WC());
                                 CargarTodasLasFamiliasEnArbol490WC();
                                 CargarTodosLosPerfilesEnArbol490WC();
                                 if (CB_ROL490WC.SelectedIndex > -1)
@@ -1154,7 +1170,7 @@ namespace GUI490WC
                 }
                 else
                 {
-                    PermisoCompuesto490WC rolModificar490WC = gestorPermiso490WC.LeerRolConEstructura490WC(CB_ROL490WC.SelectedItem.ToString());
+                    PermisoCompuesto490WC rolModificar490WC = gestorRol490WC.LeerRolConEstructura490WC(CB_ROL490WC.SelectedItem.ToString());
                     if (treeViewPreviaModificacion490WC.SelectedNode.Tag.ToString() == "Rol")
                     {
                         string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("ErrorDesasignarRol");
@@ -1162,15 +1178,15 @@ namespace GUI490WC
                     }
                     else if (treeViewPreviaModificacion490WC.SelectedNode.Tag.ToString() == "Familia" && rolModificar490WC.PermisosIncluidos490WC().Find(x => x.obtenerPermisoNombre490WC() == treeViewPreviaModificacion490WC.SelectedNode.Text) != null)
                     {
-                        Permiso490WC FamiliaDesasignar490WC = gestorPermiso490WC.LeerFamiliasConEstructuraRecursiva490WC().Find(x => x.obtenerPermisoNombre490WC() == treeViewPreviaModificacion490WC.SelectedNode.Text);
-                        Permiso490WC PermisoPadreDesasignar490WC = gestorPermiso490WC.BuscarPadreDirecto490WC((PermisoCompuesto490WC)elementoSeleccionado490WC, FamiliaDesasignar490WC.obtenerPermisoNombre490WC());
+                        Permiso490WC FamiliaDesasignar490WC = gestorFamilia490WC.LeerFamiliasConEstructuraRecursiva490WC().Find(x => x.obtenerPermisoNombre490WC() == treeViewPreviaModificacion490WC.SelectedNode.Text);
+                        Permiso490WC PermisoPadreDesasignar490WC = gestorRol490WC.BuscarPadreDirecto490WC((PermisoCompuesto490WC)elementoSeleccionado490WC, FamiliaDesasignar490WC.obtenerPermisoNombre490WC());
                         if (PermisoPadreDesasignar490WC != null || PermisoPadreDesasignar490WC.obtenerPermisoNombre490WC() != elementoSeleccionado490WC.obtenerPermisoNombre490WC())
                         {
-                            if (gestorPermiso490WC.PerfilQuedariaVacioTrasEliminarElemento(PermisoPadreDesasignar490WC.obtenerPermisoNombre490WC(), FamiliaDesasignar490WC.obtenerPermisoNombre490WC()) == false)
+                            if (gestorRol490WC.PerfilQuedariaVacioTrasEliminarElemento(PermisoPadreDesasignar490WC.obtenerPermisoNombre490WC(), FamiliaDesasignar490WC.obtenerPermisoNombre490WC()) == false)
                             {
-                                if (gestorPermiso490WC.EliminarRelacionPerfil_Familia(PermisoPadreDesasignar490WC.obtenerPermisoNombre490WC(), FamiliaDesasignar490WC.obtenerPermisoNombre490WC()))
+                                if (gestorRol490WC.EliminarRelacionPerfil_Familia(PermisoPadreDesasignar490WC.obtenerPermisoNombre490WC(), FamiliaDesasignar490WC.obtenerPermisoNombre490WC()))
                                 {
-                                    elementoSeleccionado490WC = gestorPermiso490WC.LeerRolConEstructura490WC(elementoSeleccionado490WC.obtenerPermisoNombre490WC());
+                                    elementoSeleccionado490WC = gestorRol490WC.LeerRolConEstructura490WC(elementoSeleccionado490WC.obtenerPermisoNombre490WC());
                                     CargarTodasLasFamiliasEnArbol490WC();
                                     CargarTodosLosPerfilesEnArbol490WC();
                                     if (CB_ROL490WC.SelectedIndex > -1)
@@ -1215,11 +1231,11 @@ namespace GUI490WC
                         }
                         else
                         {
-                            if (gestorPermiso490WC.PerfilQuedariaVacioTrasEliminarElemento(elementoSeleccionado490WC.obtenerPermisoNombre490WC(), FamiliaDesasignar490WC.obtenerPermisoNombre490WC()) == false)
+                            if (gestorRol490WC.PerfilQuedariaVacioTrasEliminarElemento(elementoSeleccionado490WC.obtenerPermisoNombre490WC(), FamiliaDesasignar490WC.obtenerPermisoNombre490WC()) == false)
                             {
-                                if (gestorPermiso490WC.EliminarRelacionPerfil_Familia(elementoSeleccionado490WC.obtenerPermisoNombre490WC(), FamiliaDesasignar490WC.obtenerPermisoNombre490WC()))
+                                if (gestorRol490WC.EliminarRelacionPerfil_Familia(elementoSeleccionado490WC.obtenerPermisoNombre490WC(), FamiliaDesasignar490WC.obtenerPermisoNombre490WC()))
                                 {
-                                    elementoSeleccionado490WC = gestorPermiso490WC.LeerRolConEstructura490WC(elementoSeleccionado490WC.obtenerPermisoNombre490WC());
+                                    elementoSeleccionado490WC = gestorRol490WC.LeerRolConEstructura490WC(elementoSeleccionado490WC.obtenerPermisoNombre490WC());
                                     CargarTodasLasFamiliasEnArbol490WC();
                                     CargarTodosLosPerfilesEnArbol490WC();
                                     if (CB_ROL490WC.SelectedIndex > -1)
@@ -1265,15 +1281,16 @@ namespace GUI490WC
                     }
                     else if (treeViewPreviaModificacion490WC.SelectedNode.Tag.ToString() == "Simple" && rolModificar490WC.PermisosIncluidos490WC().Find(x => x.obtenerPermisoNombre490WC() == treeViewPreviaModificacion490WC.SelectedNode.Text) != null)
                     {
-                        Permiso490WC permisoSimpleDesasignar490WC = gestorPermiso490WC.ObtenerPermisosSimples490WC().Find(x => x.obtenerPermisoNombre490WC() == treeViewPreviaModificacion490WC.SelectedNode.Text);
-                        Permiso490WC PermisoPadreDesasignar490WC = gestorPermiso490WC.BuscarPadreDirecto490WC((PermisoCompuesto490WC)elementoSeleccionado490WC, permisoSimpleDesasignar490WC.obtenerPermisoNombre490WC());
+                        Simple490WC gestorSimple490WC = new Simple490WC();
+                        Permiso490WC permisoSimpleDesasignar490WC = gestorSimple490WC.ObtenerPermisosSimples490WC().Find(x => x.obtenerPermisoNombre490WC() == treeViewPreviaModificacion490WC.SelectedNode.Text);
+                        Permiso490WC PermisoPadreDesasignar490WC = gestorRol490WC.BuscarPadreDirecto490WC((PermisoCompuesto490WC)elementoSeleccionado490WC, permisoSimpleDesasignar490WC.obtenerPermisoNombre490WC());
                         if (PermisoPadreDesasignar490WC != null)
                         {
-                            if (gestorPermiso490WC.PerfilQuedariaVacioTrasEliminarElemento(PermisoPadreDesasignar490WC.obtenerPermisoNombre490WC(), permisoSimpleDesasignar490WC.obtenerPermisoNombre490WC()) == false)
+                            if (gestorRol490WC.PerfilQuedariaVacioTrasEliminarElemento(PermisoPadreDesasignar490WC.obtenerPermisoNombre490WC(), permisoSimpleDesasignar490WC.obtenerPermisoNombre490WC()) == false)
                             {
-                                if (gestorPermiso490WC.EliminarRelacionPermisoSimple_Perfil(PermisoPadreDesasignar490WC.obtenerPermisoNombre490WC(), permisoSimpleDesasignar490WC.obtenerPermisoNombre490WC()))
+                                if (gestorSimple490WC.EliminarRelacionPermisoSimple_Perfil(PermisoPadreDesasignar490WC.obtenerPermisoNombre490WC(), permisoSimpleDesasignar490WC.obtenerPermisoNombre490WC()))
                                 {
-                                    elementoSeleccionado490WC = gestorPermiso490WC.LeerRolConEstructura490WC(elementoSeleccionado490WC.obtenerPermisoNombre490WC());
+                                    elementoSeleccionado490WC = gestorRol490WC.LeerRolConEstructura490WC(elementoSeleccionado490WC.obtenerPermisoNombre490WC());
                                     CargarTodasLasFamiliasEnArbol490WC();
                                     CargarTodosLosPerfilesEnArbol490WC();
                                     if (CB_ROL490WC.SelectedIndex > -1)
@@ -1318,11 +1335,12 @@ namespace GUI490WC
                         }
                         else
                         {
-                            if (gestorPermiso490WC.PerfilQuedariaVacioTrasEliminarElemento(elementoSeleccionado490WC.obtenerPermisoNombre490WC(), permisoSimpleDesasignar490WC.obtenerPermisoNombre490WC()) == false)
+                            
+                            if (gestorRol490WC.PerfilQuedariaVacioTrasEliminarElemento(elementoSeleccionado490WC.obtenerPermisoNombre490WC(), permisoSimpleDesasignar490WC.obtenerPermisoNombre490WC()) == false)
                             {
-                                if (gestorPermiso490WC.EliminarRelacionPermisoSimple_Perfil(elementoSeleccionado490WC.obtenerPermisoNombre490WC(), permisoSimpleDesasignar490WC.obtenerPermisoNombre490WC()))
+                                if (gestorSimple490WC.EliminarRelacionPermisoSimple_Perfil(elementoSeleccionado490WC.obtenerPermisoNombre490WC(), permisoSimpleDesasignar490WC.obtenerPermisoNombre490WC()))
                                 {
-                                    elementoSeleccionado490WC = gestorPermiso490WC.LeerRolConEstructura490WC(elementoSeleccionado490WC.obtenerPermisoNombre490WC());
+                                    elementoSeleccionado490WC = gestorRol490WC.LeerRolConEstructura490WC(elementoSeleccionado490WC.obtenerPermisoNombre490WC());
                                     CargarTodasLasFamiliasEnArbol490WC();
                                     CargarTodosLosPerfilesEnArbol490WC();
                                     if (CB_ROL490WC.SelectedIndex > -1)
