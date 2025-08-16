@@ -23,6 +23,7 @@ namespace GUI490WC
         FormPermisos490WC formPermisos490WC;
         FormCambiarIdioma490WC formCambiarIdioma490WC;
         FormFactura490WC formFactura490WC;
+        FormBitacoraDeEventos490WC formBitacoraDeEventos490WC;
 
         public FormMenu490WC()
         {
@@ -65,6 +66,7 @@ namespace GUI490WC
             formPermisos490WC = new FormPermisos490WC();
             formCambiarIdioma490WC = new FormCambiarIdioma490WC();
             formFactura490WC = new FormFactura490WC();
+            formBitacoraDeEventos490WC = new FormBitacoraDeEventos490WC();
 
             Traductor490WC.TraductorSG490WC.Suscribir490WC(this);
             Traductor490WC.TraductorSG490WC.Suscribir490WC(formABMUSUARIO490WC);
@@ -251,7 +253,15 @@ namespace GUI490WC
 
         private void BT_Bitacora490WC_Click(object sender, EventArgs e)
         {
-            hideSubmenu490WC();
+            try
+            {
+
+                formBitacoraDeEventos490WC.ShowDialog();
+                hideSubmenu490WC();
+                this?.Show();
+            }
+            catch {}
+          
         }
 
         private void BT_DigitoVerificador490WC_Click(object sender, EventArgs e)

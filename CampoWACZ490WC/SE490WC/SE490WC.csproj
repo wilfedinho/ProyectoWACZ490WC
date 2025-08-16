@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BitacoraSE490WC.cs" />
     <Compile Include="Permiso490WC.cs" />
     <Compile Include="PermisoCompuesto490WC.cs" />
     <Compile Include="PermisoSimple490WC.cs" />

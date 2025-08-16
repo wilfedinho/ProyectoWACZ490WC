@@ -44,3 +44,4 @@ C:\Users\William Càrdenas\Desktop\TESIS 2025\CampoWACZ490WC\ProyectoWACZ490WC\C
 C:\Users\William Càrdenas\Desktop\TESIS 2025\CampoWACZ490WC\ProyectoWACZ490WC\CampoWACZ490WC\GUI490WC\bin\Debug\BouncyCastle.Cryptography.xml
 C:\Users\William Càrdenas\Desktop\TESIS 2025\CampoWACZ490WC\ProyectoWACZ490WC\CampoWACZ490WC\GUI490WC\bin\Debug\itextsharp.xml
 C:\Users\William Càrdenas\Desktop\TESIS 2025\CampoWACZ490WC\ProyectoWACZ490WC\CampoWACZ490WC\GUI490WC\obj\Debug\GUI490WC.FormFactura490WC.resources
+C:\Users\William Càrdenas\Desktop\TESIS 2025\CampoWACZ490WC\ProyectoWACZ490WC\CampoWACZ490WC\GUI490WC\obj\Debug\GUI490WC.FormBitacoraDeEventos490WC.resources

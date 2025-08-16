@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bitacora490WC.cs" />
     <Compile Include="Familia490WC.cs" />
     <Compile Include="Rol490WC.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

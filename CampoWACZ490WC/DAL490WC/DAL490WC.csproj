@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BeneficioDAL490WC.cs" />
+    <Compile Include="BitacoraDAL490WC.cs" />
     <Compile Include="BoletoDAL490WC.cs" />
     <Compile Include="ClienteDAL490WC.cs" />
     <Compile Include="FacturaDAL490WC.cs" />
