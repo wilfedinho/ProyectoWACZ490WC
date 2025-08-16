@@ -43,11 +43,11 @@
             this.ColumnaImagen = new System.Windows.Forms.DataGridViewImageColumn();
             this.LABEL_NOMBRE_ABM_USUARIO490WC = new System.Windows.Forms.Label();
             this.TB_NOMBRE490WC = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.LABEL_PRECIO490WC = new System.Windows.Forms.Label();
             this.TB_PRECIO490WC = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.LABEL_VECESRECLAMADO490WC = new System.Windows.Forms.Label();
             this.TB_VECESRECLAMADO490WC = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.LABEL_DESCUENTOAPLICAR490WC = new System.Windows.Forms.Label();
             this.TB_DESCUENTOAPLICAR490WC = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBeneficio490WC)).BeginInit();
             this.SuspendLayout();
@@ -221,16 +221,16 @@
             this.TB_NOMBRE490WC.Size = new System.Drawing.Size(175, 27);
             this.TB_NOMBRE490WC.TabIndex = 43;
             // 
-            // label1
+            // LABEL_PRECIO490WC
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.label1.Location = new System.Drawing.Point(240, 278);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 20);
-            this.label1.TabIndex = 46;
-            this.label1.Text = "Precio";
+            this.LABEL_PRECIO490WC.AutoSize = true;
+            this.LABEL_PRECIO490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.LABEL_PRECIO490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
+            this.LABEL_PRECIO490WC.Location = new System.Drawing.Point(240, 278);
+            this.LABEL_PRECIO490WC.Name = "LABEL_PRECIO490WC";
+            this.LABEL_PRECIO490WC.Size = new System.Drawing.Size(64, 20);
+            this.LABEL_PRECIO490WC.TabIndex = 46;
+            this.LABEL_PRECIO490WC.Text = "Precio";
             // 
             // TB_PRECIO490WC
             // 
@@ -243,16 +243,16 @@
             this.TB_PRECIO490WC.Size = new System.Drawing.Size(175, 27);
             this.TB_PRECIO490WC.TabIndex = 45;
             // 
-            // label2
+            // LABEL_VECESRECLAMADO490WC
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.label2.Location = new System.Drawing.Point(492, 278);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(160, 20);
-            this.label2.TabIndex = 48;
-            this.label2.Text = "Veces Reclamado";
+            this.LABEL_VECESRECLAMADO490WC.AutoSize = true;
+            this.LABEL_VECESRECLAMADO490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.LABEL_VECESRECLAMADO490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
+            this.LABEL_VECESRECLAMADO490WC.Location = new System.Drawing.Point(492, 278);
+            this.LABEL_VECESRECLAMADO490WC.Name = "LABEL_VECESRECLAMADO490WC";
+            this.LABEL_VECESRECLAMADO490WC.Size = new System.Drawing.Size(160, 20);
+            this.LABEL_VECESRECLAMADO490WC.TabIndex = 48;
+            this.LABEL_VECESRECLAMADO490WC.Text = "Veces Reclamado";
             // 
             // TB_VECESRECLAMADO490WC
             // 
@@ -265,16 +265,16 @@
             this.TB_VECESRECLAMADO490WC.Size = new System.Drawing.Size(175, 27);
             this.TB_VECESRECLAMADO490WC.TabIndex = 47;
             // 
-            // label3
+            // LABEL_DESCUENTOAPLICAR490WC
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.label3.Location = new System.Drawing.Point(756, 278);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(164, 20);
-            this.label3.TabIndex = 50;
-            this.label3.Text = "Descuento Aplicar";
+            this.LABEL_DESCUENTOAPLICAR490WC.AutoSize = true;
+            this.LABEL_DESCUENTOAPLICAR490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.LABEL_DESCUENTOAPLICAR490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
+            this.LABEL_DESCUENTOAPLICAR490WC.Location = new System.Drawing.Point(756, 278);
+            this.LABEL_DESCUENTOAPLICAR490WC.Name = "LABEL_DESCUENTOAPLICAR490WC";
+            this.LABEL_DESCUENTOAPLICAR490WC.Size = new System.Drawing.Size(164, 20);
+            this.LABEL_DESCUENTOAPLICAR490WC.TabIndex = 50;
+            this.LABEL_DESCUENTOAPLICAR490WC.Text = "Descuento Aplicar";
             // 
             // TB_DESCUENTOAPLICAR490WC
             // 
@@ -293,11 +293,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(27)))), ((int)(((byte)(38)))));
             this.ClientSize = new System.Drawing.Size(1150, 348);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.LABEL_DESCUENTOAPLICAR490WC);
             this.Controls.Add(this.TB_DESCUENTOAPLICAR490WC);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.LABEL_VECESRECLAMADO490WC);
             this.Controls.Add(this.TB_VECESRECLAMADO490WC);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.LABEL_PRECIO490WC);
             this.Controls.Add(this.TB_PRECIO490WC);
             this.Controls.Add(this.LABEL_NOMBRE_ABM_USUARIO490WC);
             this.Controls.Add(this.TB_NOMBRE490WC);
@@ -329,11 +329,11 @@
         private System.Windows.Forms.DataGridView dgvBeneficio490WC;
         private System.Windows.Forms.Label LABEL_NOMBRE_ABM_USUARIO490WC;
         private System.Windows.Forms.TextBox TB_NOMBRE490WC;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label LABEL_PRECIO490WC;
         private System.Windows.Forms.TextBox TB_PRECIO490WC;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label LABEL_VECESRECLAMADO490WC;
         private System.Windows.Forms.TextBox TB_VECESRECLAMADO490WC;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label LABEL_DESCUENTOAPLICAR490WC;
         private System.Windows.Forms.TextBox TB_DESCUENTOAPLICAR490WC;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaCodigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaNombre;

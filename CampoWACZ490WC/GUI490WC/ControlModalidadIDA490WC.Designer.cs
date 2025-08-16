@@ -52,11 +52,11 @@
             this.CB_DESTINO490WC = new System.Windows.Forms.ComboBox();
             this.CB_ORIGEN490WC = new System.Windows.Forms.ComboBox();
             this.checkBoxINCLUIRFECHA490WC = new System.Windows.Forms.CheckBox();
-            this.LABEL_PRECIO490WC = new System.Windows.Forms.Label();
+            this.LABEL_PRECIODESDE490WC = new System.Windows.Forms.Label();
             this.TB_PRECIODESDE490WC = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.LABEL_PRECIOHASTA490WC = new System.Windows.Forms.Label();
             this.TB_PRECIOHASTA490WC = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.LABEL_PESOPERMITIDO490WC = new System.Windows.Forms.Label();
             this.TB_PESO490WC = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBoleto490WC)).BeginInit();
             this.SuspendLayout();
@@ -178,6 +178,7 @@
             this.calendarioFECHALLEGADA_IDA490WC.Location = new System.Drawing.Point(580, 364);
             this.calendarioFECHALLEGADA_IDA490WC.MaxSelectionCount = 1;
             this.calendarioFECHALLEGADA_IDA490WC.Name = "calendarioFECHALLEGADA_IDA490WC";
+            this.calendarioFECHALLEGADA_IDA490WC.ShowToday = false;
             this.calendarioFECHALLEGADA_IDA490WC.TabIndex = 58;
             // 
             // calendarioFECHAPARTIDA_IDA490WC
@@ -185,6 +186,7 @@
             this.calendarioFECHAPARTIDA_IDA490WC.Location = new System.Drawing.Point(345, 364);
             this.calendarioFECHAPARTIDA_IDA490WC.MaxSelectionCount = 1;
             this.calendarioFECHAPARTIDA_IDA490WC.Name = "calendarioFECHAPARTIDA_IDA490WC";
+            this.calendarioFECHAPARTIDA_IDA490WC.ShowToday = false;
             this.calendarioFECHAPARTIDA_IDA490WC.TabIndex = 57;
             // 
             // BT_LIMPIARFILTROS490WC
@@ -312,16 +314,16 @@
             this.checkBoxINCLUIRFECHA490WC.UseVisualStyleBackColor = true;
             this.checkBoxINCLUIRFECHA490WC.CheckedChanged += new System.EventHandler(this.checkBoxINCLUIRFECHA490WC_CheckedChanged);
             // 
-            // LABEL_PRECIO490WC
+            // LABEL_PRECIODESDE490WC
             // 
-            this.LABEL_PRECIO490WC.AutoSize = true;
-            this.LABEL_PRECIO490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
-            this.LABEL_PRECIO490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.LABEL_PRECIO490WC.Location = new System.Drawing.Point(176, 326);
-            this.LABEL_PRECIO490WC.Name = "LABEL_PRECIO490WC";
-            this.LABEL_PRECIO490WC.Size = new System.Drawing.Size(122, 20);
-            this.LABEL_PRECIO490WC.TabIndex = 72;
-            this.LABEL_PRECIO490WC.Text = "Precio Desde";
+            this.LABEL_PRECIODESDE490WC.AutoSize = true;
+            this.LABEL_PRECIODESDE490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.LABEL_PRECIODESDE490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
+            this.LABEL_PRECIODESDE490WC.Location = new System.Drawing.Point(176, 326);
+            this.LABEL_PRECIODESDE490WC.Name = "LABEL_PRECIODESDE490WC";
+            this.LABEL_PRECIODESDE490WC.Size = new System.Drawing.Size(122, 20);
+            this.LABEL_PRECIODESDE490WC.TabIndex = 72;
+            this.LABEL_PRECIODESDE490WC.Text = "Precio Desde";
             // 
             // TB_PRECIODESDE490WC
             // 
@@ -334,16 +336,16 @@
             this.TB_PRECIODESDE490WC.Size = new System.Drawing.Size(137, 27);
             this.TB_PRECIODESDE490WC.TabIndex = 71;
             // 
-            // label1
+            // LABEL_PRECIOHASTA490WC
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.label1.Location = new System.Drawing.Point(176, 394);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(119, 20);
-            this.label1.TabIndex = 74;
-            this.label1.Text = "Precio Hasta";
+            this.LABEL_PRECIOHASTA490WC.AutoSize = true;
+            this.LABEL_PRECIOHASTA490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.LABEL_PRECIOHASTA490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
+            this.LABEL_PRECIOHASTA490WC.Location = new System.Drawing.Point(176, 394);
+            this.LABEL_PRECIOHASTA490WC.Name = "LABEL_PRECIOHASTA490WC";
+            this.LABEL_PRECIOHASTA490WC.Size = new System.Drawing.Size(119, 20);
+            this.LABEL_PRECIOHASTA490WC.TabIndex = 74;
+            this.LABEL_PRECIOHASTA490WC.Text = "Precio Hasta";
             // 
             // TB_PRECIOHASTA490WC
             // 
@@ -356,16 +358,16 @@
             this.TB_PRECIOHASTA490WC.Size = new System.Drawing.Size(137, 27);
             this.TB_PRECIOHASTA490WC.TabIndex = 73;
             // 
-            // label2
+            // LABEL_PESOPERMITIDO490WC
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.label2.Location = new System.Drawing.Point(176, 469);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(141, 20);
-            this.label2.TabIndex = 76;
-            this.label2.Text = "Peso Permitido";
+            this.LABEL_PESOPERMITIDO490WC.AutoSize = true;
+            this.LABEL_PESOPERMITIDO490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.LABEL_PESOPERMITIDO490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
+            this.LABEL_PESOPERMITIDO490WC.Location = new System.Drawing.Point(176, 469);
+            this.LABEL_PESOPERMITIDO490WC.Name = "LABEL_PESOPERMITIDO490WC";
+            this.LABEL_PESOPERMITIDO490WC.Size = new System.Drawing.Size(141, 20);
+            this.LABEL_PESOPERMITIDO490WC.TabIndex = 76;
+            this.LABEL_PESOPERMITIDO490WC.Text = "Peso Permitido";
             // 
             // TB_PESO490WC
             // 
@@ -384,11 +386,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(27)))), ((int)(((byte)(45)))));
             this.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.LABEL_PESOPERMITIDO490WC);
             this.Controls.Add(this.TB_PESO490WC);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.LABEL_PRECIOHASTA490WC);
             this.Controls.Add(this.TB_PRECIOHASTA490WC);
-            this.Controls.Add(this.LABEL_PRECIO490WC);
+            this.Controls.Add(this.LABEL_PRECIODESDE490WC);
             this.Controls.Add(this.TB_PRECIODESDE490WC);
             this.Controls.Add(this.checkBoxINCLUIRFECHA490WC);
             this.Controls.Add(this.CB_ORIGEN490WC);
@@ -438,11 +440,11 @@
         private System.Windows.Forms.ComboBox CB_DESTINO490WC;
         private System.Windows.Forms.ComboBox CB_ORIGEN490WC;
         private System.Windows.Forms.CheckBox checkBoxINCLUIRFECHA490WC;
-        private System.Windows.Forms.Label LABEL_PRECIO490WC;
+        private System.Windows.Forms.Label LABEL_PRECIODESDE490WC;
         private System.Windows.Forms.TextBox TB_PRECIODESDE490WC;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label LABEL_PRECIOHASTA490WC;
         private System.Windows.Forms.TextBox TB_PRECIOHASTA490WC;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label LABEL_PESOPERMITIDO490WC;
         private System.Windows.Forms.TextBox TB_PESO490WC;
     }
 }

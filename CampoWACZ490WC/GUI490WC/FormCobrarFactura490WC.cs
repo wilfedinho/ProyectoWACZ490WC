@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace GUI490WC
 {
-    public partial class FormCobrarFactura490WC : Form
+    public partial class FormCobrarFactura490WC : Form, iObserverLenguaje490WC
     {
         Cliente490WC clienteCargado490WC;
         Boleto490WC boletoCargado490WC;
@@ -25,30 +25,27 @@ namespace GUI490WC
             clienteCargado490WC = clienteCobrar490WC;
             boletoCargado490WC = BoletoCobrar490WC;
             CargarDatosPreviosFactura490WC();
+            Traductor490WC.TraductorSG490WC.Suscribir490WC(this);
+            ActualizarLenguaje490WC();
         }
 
         public void CargarDatosPreviosFactura490WC()
         {
             GestorFactura490WC gestorFactura490WC = new GestorFactura490WC();
             TBVISTAPREVIAFACTURA490WC.Clear();
-            TBVISTAPREVIAFACTURA490WC.Text += $"Numero Factura: {gestorFactura490WC.ObtenerTodasLasFacturas490WC().Count + 1} {Environment.NewLine}";
-            TBVISTAPREVIAFACTURA490WC.Text += $"Nombre: {clienteCargado490WC.Nombre490WC} {Environment.NewLine}";
-            TBVISTAPREVIAFACTURA490WC.Text += $"Apellido:  {clienteCargado490WC.Apellido490WC} {Environment.NewLine}";
+            
             if (boletoCargado490WC.BeneficioAplicado490WC != null)
             {
-                TBVISTAPREVIAFACTURA490WC.Text += $"Beneficio Aplicado: {boletoCargado490WC.BeneficioAplicado490WC} {Environment.NewLine}";
+                
+                TBVISTAPREVIAFACTURA490WC.Name = "TBVISTAPREVIAFACTURA490WC";
             }
             else
             {
-                TBVISTAPREVIAFACTURA490WC.Text += $"Beneficio Aplicado: No se aplico ningun beneficio {Environment.NewLine}";
+                
+                TBVISTAPREVIAFACTURA490WC.Name = "TBVISTAPREVIAFACTURASINBENEFICIO490WC";
             }
-            TBVISTAPREVIAFACTURA490WC.Text += $"DNI: {clienteCargado490WC.DNI490WC} {Environment.NewLine}";
-            TBVISTAPREVIAFACTURA490WC.Text += $"Fecha Emision: {DateTime.Now.ToShortDateString()} {Environment.NewLine}";
-            TBVISTAPREVIAFACTURA490WC.Text += $"Hora Emision: {DateTime.Now.ToShortTimeString()} {Environment.NewLine}";
-            TBVISTAPREVIAFACTURA490WC.Text += $"Numero Boleto: {boletoCargado490WC.IDBoleto490WC} {Environment.NewLine}";
-            TBVISTAPREVIAFACTURA490WC.Text += $"Subtotal: {boletoCargado490WC.Precio490WC} {Environment.NewLine}";
-            totalFactura490WC = boletoCargado490WC.Precio490WC * 1.60f;
-            TBVISTAPREVIAFACTURA490WC.Text += $"Total: {totalFactura490WC} {Environment.NewLine}";
+            
+
         }
 
 
@@ -83,51 +80,145 @@ namespace GUI490WC
                                     datosTarjeta490WC = Cifrador490WC.GestorCifrador490WC.EncriptarReversible490WC(datosTarjeta490WC);
                                     if (gestorPagos490WC.ValidarPago490WC(datosTarjeta490WC, totalFactura490WC))
                                     {
-                                        Factura490WC facturaAlta490WC = new Factura490WC(gestorFactura490WC.ObtenerTodasLasFacturas490WC().Count + 1, clienteCargado490WC.Nombre490WC, clienteCargado490WC.Apellido490WC, clienteCargado490WC.DNI490WC, DateTime.Now.ToShortDateString(), DateTime.Now.ToShortTimeString(), boletoCargado490WC.IDBoleto490WC, boletoCargado490WC.Precio490WC, totalFactura490WC);
-                                        gestorFactura490WC.Alta490WC(facturaAlta490WC);
-                                        MessageBox.Show("Pago realizado con exito!!");
-                                        pagoAceptado490WC = true;
-                                        this.Close();
+                                        if (boletoCargado490WC.BeneficioAplicado490WC != null)
+                                        {
+                                            Factura490WC facturaAlta490WC = new Factura490WC(gestorFactura490WC.ObtenerTodasLasFacturas490WC().Count + 1, clienteCargado490WC.Nombre490WC, clienteCargado490WC.Apellido490WC, clienteCargado490WC.DNI490WC, DateTime.Now.ToShortDateString(), DateTime.Now.ToShortTimeString(), boletoCargado490WC.IDBoleto490WC, boletoCargado490WC.Precio490WC, totalFactura490WC, boletoCargado490WC.BeneficioAplicado490WC);
+                                            gestorFactura490WC.Alta490WC(facturaAlta490WC);
+                                            gestorFactura490WC.GenerarFactura490WC(facturaAlta490WC);
+                                            string mensajePago = Traductor490WC.TraductorSG490WC.Traducir490WC("MensajePago490WC");
+                                            MessageBox.Show(mensajePago);
+                                            pagoAceptado490WC = true;
+                                            this.Close();
+
+                                        }
+                                        else
+                                        {
+                                            Factura490WC facturaAlta490WC = new Factura490WC(gestorFactura490WC.ObtenerTodasLasFacturas490WC().Count + 1, clienteCargado490WC.Nombre490WC, clienteCargado490WC.Apellido490WC, clienteCargado490WC.DNI490WC, DateTime.Now.ToShortDateString(), DateTime.Now.ToShortTimeString(), boletoCargado490WC.IDBoleto490WC, boletoCargado490WC.Precio490WC, totalFactura490WC);
+                                            gestorFactura490WC.Alta490WC(facturaAlta490WC);
+                                            gestorFactura490WC.GenerarFactura490WC(facturaAlta490WC);
+                                            string mensajePago = Traductor490WC.TraductorSG490WC.Traducir490WC("MensajePago490WC");
+                                            MessageBox.Show(mensajePago);
+                                            pagoAceptado490WC = true;
+                                            this.Close();
+                                        }
                                     }
                                     else
                                     {
-                                        MessageBox.Show("El pago no fue aceptado por la entidad bancaria, intente nuevamente!!");
+                                        string mensajePagoRechazado = Traductor490WC.TraductorSG490WC.Traducir490WC("MensajePagoRechazado490WC");
+                                        MessageBox.Show(mensajePagoRechazado);
                                     }
                                 }
                                 else
                                 {
-                                    MessageBox.Show("Ingrese un codigo de seguridad valido!!");
+                                    string mensajeCodigoSeguridadInvalido = Traductor490WC.TraductorSG490WC.Traducir490WC("MensajeCodigoSeguridadInvalido490WC");
+                                    MessageBox.Show(mensajeCodigoSeguridadInvalido);
                                 }
                             }
                             else
                             {
-                                MessageBox.Show("Ingrese una fecha de vencimiento valida!!");
+                                string mensajeFechaVencimientoInvalida = Traductor490WC.TraductorSG490WC.Traducir490WC("MensajeFechaVencimientoInvalida490WC");
+                                MessageBox.Show(mensajeFechaVencimientoInvalida);
                             }
                         }
                         else
                         {
-                            MessageBox.Show("Ingrese una fecha de emision valida!!");
+                            string mensajeFechaEmisionInvalida = Traductor490WC.TraductorSG490WC.Traducir490WC("MensajeFechaEmisionInvalida490WC");
+                            MessageBox.Show(mensajeFechaEmisionInvalida);
                         }
                     }
                     else
                     {
-                        MessageBox.Show("Ingrese un apellido de titular valido!!");
+                        string mensajeApellidoTitularInvalido = Traductor490WC.TraductorSG490WC.Traducir490WC("MensajeApellidoTitularInvalido490WC");
+                        MessageBox.Show(mensajeApellidoTitularInvalido);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Ingrese un nombre de titular valido!!");
+                    string mensajeNombreTitularInvalido = Traductor490WC.TraductorSG490WC.Traducir490WC("MensajeNombreTitularInvalido490WC");
+                    MessageBox.Show(mensajeNombreTitularInvalido);
                 }
             }
             else
             {
-                MessageBox.Show("Ingrese un numero de tarjeta valido!!");
+                string mensajeNumeroTarjetaInvalido = Traductor490WC.TraductorSG490WC.Traducir490WC("MensajeNumeroTarjetaInvalido490WC");
+                MessageBox.Show(mensajeNumeroTarjetaInvalido);
             }
         }
 
         private void FormCobrarFactura490WC_FormClosed(object sender, FormClosedEventArgs e)
         {
 
+        }
+
+        public void ActualizarLenguaje490WC()
+        {
+            RecorrerControles490WC(this);
+            
+        }
+
+        public void RecorrerControles490WC(Control control490WC)
+        {
+            foreach (Control c490WC in control490WC.Controls)
+            {
+                if ((c490WC is TextBox tb490WC) == false)
+                {
+
+                    c490WC.Text = Traductor490WC.TraductorSG490WC.Traducir490WC(c490WC.Name);
+
+
+                    if (c490WC.HasChildren)
+                    {
+                        RecorrerControles490WC(c490WC);
+                    }
+                    if (c490WC is DataGridView dgv490WC)
+                    {
+                        foreach (DataGridViewColumn columna490WC in dgv490WC.Columns)
+                        {
+                            columna490WC.HeaderText = Traductor490WC.TraductorSG490WC.Traducir490WC(columna490WC.Name);
+                        }
+                    }
+
+                }
+                else if (c490WC.Name == "TBVISTAPREVIAFACTURA490WC")
+                {
+                    GestorFactura490WC gestorFactura490WC = new GestorFactura490WC();
+                    totalFactura490WC = boletoCargado490WC.Precio490WC * 1.60f;
+                    TBVISTAPREVIAFACTURA490WC.Text += "Numero Factura: {gestorFactura490WC.ObtenerTodasLasFacturas490WC().Count + 1} {Environment.NewLine} Nombre: {clienteCargado490WC.Nombre490WC} {Environment.NewLine} Apellido:  {clienteCargado490WC.Apellido490WC} {Environment.NewLine} Beneficio Aplicado: {boletoCargado490WC.BeneficioAplicado490WC} {Environment.NewLine} DNI: {clienteCargado490WC.DNI490WC} {Environment.NewLine} Fecha Emision: {DateTime.Now.ToShortDateString()} {Environment.NewLine} Hora Emision: {DateTime.Now.ToShortTimeString()} {Environment.NewLine} Numero Boleto: {boletoCargado490WC.IDBoleto490WC} {Environment.NewLine} Subtotal: {boletoCargado490WC.Precio490WC} {Environment.NewLine} Total: {totalFactura490WC} {Environment.NewLine}";
+                    c490WC.Text = Traductor490WC.TraductorSG490WC.Traducir490WC(c490WC.Name);
+                    string a = c490WC.Text;
+                    a = a.Replace("{gestorFactura490WC.ObtenerTodasLasFacturas490WC().Count + 1} {Environment.NewLine}", $"{gestorFactura490WC.ObtenerTodasLasFacturas490WC().Count + 1} {Environment.NewLine}");
+                    a = a.Replace("{clienteCargado490WC.Nombre490WC} {Environment.NewLine}", $"{clienteCargado490WC.Nombre490WC} {Environment.NewLine}");
+                    a = a.Replace("{clienteCargado490WC.Apellido490WC} {Environment.NewLine}", $"{clienteCargado490WC.Apellido490WC} {Environment.NewLine}");
+                    a = a.Replace("{boletoCargado490WC.BeneficioAplicado490WC} {Environment.NewLine}", $"{boletoCargado490WC.BeneficioAplicado490WC} {Environment.NewLine}");
+                    a = a.Replace("{clienteCargado490WC.DNI490WC} {Environment.NewLine}", $"{clienteCargado490WC.DNI490WC} {Environment.NewLine}");
+                    a = a.Replace("{DateTime.Now.ToShortDateString()} {Environment.NewLine}", $"{DateTime.Now.ToShortDateString()} {Environment.NewLine}");
+                    a = a.Replace("{DateTime.Now.ToShortTimeString()} {Environment.NewLine}", $"{DateTime.Now.ToShortTimeString()} {Environment.NewLine}");
+                    a = a.Replace("{boletoCargado490WC.IDBoleto490WC} {Environment.NewLine}", $"{boletoCargado490WC.IDBoleto490WC} {Environment.NewLine}");
+                    a = a.Replace("{boletoCargado490WC.Precio490WC} {Environment.NewLine}", $"{boletoCargado490WC.Precio490WC} {Environment.NewLine}");
+                    a = a.Replace("{totalFactura490WC} {Environment.NewLine}", $"{totalFactura490WC} {Environment.NewLine}");
+                    c490WC.Text = a;
+                }
+                else if (c490WC.Name == "TBVISTAPREVIAFACTURASINBENEFICIO490WC")
+                {
+                    totalFactura490WC = boletoCargado490WC.Precio490WC * 1.60f;
+                    GestorFactura490WC gestorFactura490WC = new GestorFactura490WC();
+                    TBVISTAPREVIAFACTURA490WC.Text += $"Numero Factura: {gestorFactura490WC.ObtenerTodasLasFacturas490WC().Count + 1} {Environment.NewLine} Nombre: {clienteCargado490WC.Nombre490WC} {Environment.NewLine} Apellido:  {clienteCargado490WC.Apellido490WC} {Environment.NewLine} Beneficio Aplicado: No se aplico ningun beneficio {Environment.NewLine} DNI: {clienteCargado490WC.DNI490WC} {Environment.NewLine} Fecha Emision: {DateTime.Now.ToShortDateString()} {Environment.NewLine} Hora Emision: {DateTime.Now.ToShortTimeString()} {Environment.NewLine} Numero Boleto: {boletoCargado490WC.IDBoleto490WC} {Environment.NewLine} Subtotal: {boletoCargado490WC.Precio490WC} {Environment.NewLine} Total: {totalFactura490WC} {Environment.NewLine}";
+
+                    c490WC.Text = Traductor490WC.TraductorSG490WC.Traducir490WC(c490WC.Name);
+                    string a = c490WC.Text;
+                    a = a.Replace("{gestorFactura490WC.ObtenerTodasLasFacturas490WC().Count + 1} {Environment.NewLine}", $"{gestorFactura490WC.ObtenerTodasLasFacturas490WC().Count + 1} {Environment.NewLine}");
+                    a = a.Replace("{clienteCargado490WC.Nombre490WC} {Environment.NewLine}", $"{clienteCargado490WC.Nombre490WC} {Environment.NewLine}");
+                    a = a.Replace("{clienteCargado490WC.Apellido490WC} {Environment.NewLine}", $"{clienteCargado490WC.Apellido490WC} {Environment.NewLine}");
+                    a = a.Replace("{Environment.NewLine}", $"{Environment.NewLine}");
+                    a = a.Replace("{clienteCargado490WC.DNI490WC} {Environment.NewLine}", $"{clienteCargado490WC.DNI490WC} {Environment.NewLine}");
+                    a = a.Replace("{DateTime.Now.ToShortDateString()} {Environment.NewLine}", $"{DateTime.Now.ToShortDateString()} {Environment.NewLine}");
+                    a = a.Replace("{DateTime.Now.ToShortTimeString()} {Environment.NewLine}", $"{DateTime.Now.ToShortTimeString()} {Environment.NewLine}");
+                    a = a.Replace("{boletoCargado490WC.IDBoleto490WC} {Environment.NewLine}", $"{boletoCargado490WC.IDBoleto490WC} {Environment.NewLine}");
+                    a = a.Replace("{boletoCargado490WC.Precio490WC} {Environment.NewLine}", $"{boletoCargado490WC.Precio490WC} {Environment.NewLine}");
+                    a = a.Replace("{totalFactura490WC} {Environment.NewLine}", $"{totalFactura490WC} {Environment.NewLine}");
+                    c490WC.Text = a;
+                }
+            }
         }
     }
 }

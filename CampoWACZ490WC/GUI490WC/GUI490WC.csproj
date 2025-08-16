@@ -33,6 +33,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
+      <HintPath>..\packages\BouncyCastle.Cryptography.2.4.0\lib\net461\BouncyCastle.Cryptography.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.4, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13.4\lib\net461\itextsharp.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -82,11 +88,23 @@
     <Compile Include="FormCambiarClave490WC.Designer.cs">
       <DependentUpon>FormCambiarClave490WC.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormCambiarIdioma490WC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCambiarIdioma490WC.Designer.cs">
+      <DependentUpon>FormCambiarIdioma490WC.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormCobrarFactura490WC.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormCobrarFactura490WC.Designer.cs">
       <DependentUpon>FormCobrarFactura490WC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormFactura490WC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormFactura490WC.Designer.cs">
+      <DependentUpon>FormFactura490WC.cs</DependentUpon>
     </Compile>
     <Compile Include="FormGenerarBoleto490WC.cs">
       <SubType>Form</SubType>
@@ -160,8 +178,14 @@
     <EmbeddedResource Include="FormCambiarClave490WC.resx">
       <DependentUpon>FormCambiarClave490WC.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormCambiarIdioma490WC.resx">
+      <DependentUpon>FormCambiarIdioma490WC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormCobrarFactura490WC.resx">
       <DependentUpon>FormCobrarFactura490WC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormFactura490WC.resx">
+      <DependentUpon>FormFactura490WC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormGenerarBoleto490WC.resx">
       <DependentUpon>FormGenerarBoleto490WC.cs</DependentUpon>
@@ -200,6 +224,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -221,6 +246,10 @@
     <ProjectReference Include="..\BLL490WC\BLL490WC.csproj">
       <Project>{18cb2207-87e5-4f1e-8b58-f70f52084651}</Project>
       <Name>BLL490WC</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BLLS490WC\BLLS490WC.csproj">
+      <Project>{a75ec413-7096-4591-bd0b-f7c4ba246f23}</Project>
+      <Name>BLLS490WC</Name>
     </ProjectReference>
     <ProjectReference Include="..\SE490WC\SE490WC.csproj">
       <Project>{fb9b0b3a-c570-46f7-89c6-ed0c84506f2f}</Project>

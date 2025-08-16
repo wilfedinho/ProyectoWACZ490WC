@@ -14,11 +14,22 @@ namespace DAL490WC
 
         public void Alta490WC(Beneficio490WC BeneficioAlta490WC)
         {
-            using(SqlConnection cone490WC = GestorConexion490WC.GestorCone490WC.DevolverConexion490WC())
+            using (SqlConnection cone490WC = GestorConexion490WC.GestorCone490WC.DevolverConexion490WC())
             {
                 cone490WC.Open();
-                string query490WC = "INSERT INTO Beneficio490WC (CodigoBeneficio490WC, Nombre490WC, PrecioEstrella490WC, CantidadBeneficioReclamado490WC, DescuentoAplicar490WC) VALUES (@CodigoBeneficio490WC, @Nombre490WC, @PrecioEstrella490WC, @CantidadBeneficioReclamado490WC, @DescuentoAplicar490WC)";
-                using (SqlCommand comando490WC = new SqlCommand(query490WC,cone490WC))
+
+                
+                string queryMaxId = "SELECT ISNULL(MAX(CodigoBeneficio490WC), 0) + 1 FROM Beneficio490WC";
+                using (SqlCommand cmdMaxId = new SqlCommand(queryMaxId, cone490WC))
+                {
+                    int nuevoId = Convert.ToInt32(cmdMaxId.ExecuteScalar());
+                    BeneficioAlta490WC.CodigoBeneficio490WC = nuevoId;
+                }
+
+                
+                string queryInsert = "INSERT INTO Beneficio490WC (CodigoBeneficio490WC, Nombre490WC, PrecioEstrella490WC, CantidadBeneficioReclamado490WC, DescuentoAplicar490WC) VALUES (@CodigoBeneficio490WC, @Nombre490WC, @PrecioEstrella490WC, @CantidadBeneficioReclamado490WC, @DescuentoAplicar490WC)";
+
+                using (SqlCommand comando490WC = new SqlCommand(queryInsert, cone490WC))
                 {
                     comando490WC.Parameters.AddWithValue("@CodigoBeneficio490WC", BeneficioAlta490WC.CodigoBeneficio490WC);
                     comando490WC.Parameters.AddWithValue("@Nombre490WC", BeneficioAlta490WC.Nombre490WC);
@@ -31,19 +42,6 @@ namespace DAL490WC
             }
         }
 
-        /* public void Baja490WC(int ID490WC)
-         {
-             using (SqlConnection cone490WC = GestorConexion490WC.GestorCone490WC.DevolverConexion490WC())
-             {
-                 cone490WC.Open();
-                 string query490WC = "DELETE FROM Beneficio490WC WHERE CodigoBeneficio490WC = @ID";
-                 using (SqlCommand comando490WC = new SqlCommand(query490WC, cone490WC))
-                 {
-                     comando490WC.Parameters.AddWithValue("@ID", ID490WC);
-                     comando490WC.ExecuteNonQuery();
-                 }
-             }
-         }*/
 
         public bool Baja490WC(int ID490WC)
         {

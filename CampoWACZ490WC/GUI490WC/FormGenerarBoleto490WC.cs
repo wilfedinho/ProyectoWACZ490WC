@@ -1,5 +1,6 @@
 ﻿using BE490WC;
 using BLL490WC;
+using SERVICIOS490WC;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,7 +14,7 @@ using System.Windows.Forms;
 
 namespace GUI490WC
 {
-    public partial class FormGenerarBoleto490WC : Form
+    public partial class FormGenerarBoleto490WC : Form, iObserverLenguaje490WC
     {
         private ControlModalidadIDA490WC controlIDA490WC;
         private ControlModalidadVUELTA490WC controlVUELTA490WC;
@@ -28,7 +29,6 @@ namespace GUI490WC
             InicializarControles490WC();
             HabilitarControl490WC();
             CargarCliente490WC(null);
-            formAplicarBeneficios490WC = new FormAplicarBeneficios490WC();
             controlIDA490WC.Mostrar490WC();
             controlVUELTA490WC.Mostrar490WC();
         }
@@ -75,6 +75,10 @@ namespace GUI490WC
                     }
                 }
             };
+            formAplicarBeneficios490WC = new FormAplicarBeneficios490WC();
+            Traductor490WC.TraductorSG490WC.Suscribir490WC(formAplicarBeneficios490WC);
+            Traductor490WC.TraductorSG490WC.Suscribir490WC(controlIDA490WC);
+            Traductor490WC.TraductorSG490WC.Suscribir490WC(controlVUELTA490WC);
         }
         public void LlenarInfoBoleto490WC()
         {
@@ -85,31 +89,35 @@ namespace GUI490WC
                 boletoCargado490WC = gestorBoleto490WC.ObtenerBoletoConBeneficio490WC(boletoCargado490WC.IDBoleto490WC);
                 if (ClienteCargado490WC != null)
                 {
-                    TBINFOBOLETOGENERAR490WC.Text += $"DNI Cliente: {ClienteCargado490WC.DNI490WC} {Environment.NewLine}";
-                    TBINFOBOLETOGENERAR490WC.Text += $"Nombre: {ClienteCargado490WC.Nombre490WC} Apellido: {ClienteCargado490WC.Apellido490WC} {Environment.NewLine}";
-                    TBINFOBOLETOGENERAR490WC.Text += $"ID Boleto: {boletoCargado490WC.IDBoleto490WC} {Environment.NewLine}";
+                    TBINFOBOLETOGENERAR490WC.Name = "TBINFOBOLETOGENERAR490WC";
+                    
                     if (boletoCargado490WC.BeneficioAplicado490WC == "")
                     {
-                        TBINFOBOLETOGENERAR490WC.Text += $"Beneficio Aplicado: Ninguno";
+                        
+                        TBINFOBOLETOGENERAR490WC.Name = "TBINFOBOLETOGENERARSINBENEFICIO490WC";
                     }
                     else
                     {
-                        TBINFOBOLETOGENERAR490WC.Text += $"Beneficio Aplicado: {boletoCargado490WC.BeneficioAplicado490WC}";
+                        
                     }
+                    
+                    ActualizarLenguaje490WC();
                 }
                 else
                 {
-                    TBINFOBOLETOGENERAR490WC.Text += $"No se encuentra cargado ningun cliente {Environment.NewLine}";
-                    TBINFOBOLETOGENERAR490WC.Text += $"ID Boleto: {boletoCargado490WC.IDBoleto490WC} {Environment.NewLine}";
+                   
                     if (boletoCargado490WC.BeneficioAplicado490WC == "")
                     {
-                        TBINFOBOLETOGENERAR490WC.Text += $"Beneficio Aplicado: Ninguno";
+                       
                     }
                     else
                     {
-                        TBINFOBOLETOGENERAR490WC.Text += $"Beneficio Aplicado: {boletoCargado490WC.BeneficioAplicado490WC}";
+                        
                     }
+                    TBINFOBOLETOGENERAR490WC.Name = "TBINFOBOLETOGENERARSINCLIENTE490WC";
+                    ActualizarLenguaje490WC();
                 }
+                
             }
         }
         public void HabilitarBeneficio490WC()
@@ -164,15 +172,15 @@ namespace GUI490WC
             TBINFOCLIENTE490WC.Clear();
             if (clienteBuscado490WC != null)
             {
-                TBINFOCLIENTE490WC.Text += $"DNI: {clienteBuscado490WC.DNI490WC} {Environment.NewLine}";
-                TBINFOCLIENTE490WC.Text += $"Nombre: {clienteBuscado490WC.Nombre490WC} {Environment.NewLine}";
-                TBINFOCLIENTE490WC.Text += $"Apellido: {clienteBuscado490WC.Apellido490WC} {Environment.NewLine}";
-                TBINFOCLIENTE490WC.Text += $"Estrellas del Cliente: {clienteBuscado490WC.EstrellasCliente490WC} {Environment.NewLine}";
+                
+                TBINFOCLIENTE490WC.Name = "TBINFOCLIENTE490WC";
             }
             else
             {
-                TBINFOCLIENTE490WC.Text = $"Ingrese el DNI, Nombre y Apellido para visualizar los datos del cliente";
+                
+                TBINFOCLIENTE490WC.Name = "TBINFOCLIENTEVACIO490WC";
             }
+            ActualizarLenguaje490WC();
         }
 
         private void BT_BUSCARCLIENTE490WC_Click(object sender, EventArgs e)
@@ -188,21 +196,27 @@ namespace GUI490WC
                 if (ClienteCargado490WC.Activo490WC == true)
                 {
 
-                CargarCliente490WC(ClienteCargado490WC);
-                if (ClienteCargado490WC.BeneficiosCliente490WC.Count > 0)
-                {
-                    foreach (Beneficio490WC bene490WC in ClienteCargado490WC.BeneficiosCliente490WC)
+                    CargarCliente490WC(ClienteCargado490WC);
+                    CB_BENEFICIOSCLIENTE490WC.Items.Clear();
+                    if (ClienteCargado490WC.BeneficiosCliente490WC.Count > 0)
                     {
-                        CB_BENEFICIOSCLIENTE490WC.Items.Add(bene490WC.Nombre490WC);
+                        foreach (Beneficio490WC bene490WC in ClienteCargado490WC.BeneficiosCliente490WC)
+                        {
+                            if (!CB_BENEFICIOSCLIENTE490WC.Items.Contains(bene490WC.Nombre490WC))
+                            {
+                                CB_BENEFICIOSCLIENTE490WC.Items.Add(bene490WC.Nombre490WC);
+
+                            }
+                        }
                     }
-                }
-                TB_DNI490WC.Clear();
-                HabilitarBeneficio490WC();
-                LlenarInfoBoleto490WC();
+                    TB_DNI490WC.Clear();
+                    HabilitarBeneficio490WC();
+                    LlenarInfoBoleto490WC();
                 }
                 else
                 {
-                    MessageBox.Show("El cliente buscado se encuentra desactivado!!!");
+                    string mensajeErrorClienteDesactivado = Traductor490WC.TraductorSG490WC.Traducir490WC("ClienteDesactivado490WC");
+                    MessageBox.Show(mensajeErrorClienteDesactivado);
                     ClienteCargado490WC = null;
                     CargarCliente490WC(null);
                     CB_BENEFICIOSCLIENTE490WC.Items.Clear();
@@ -213,7 +227,8 @@ namespace GUI490WC
             }
             else
             {
-                MessageBox.Show("Cliente no encontrado. Por favor, verifique el DNI.");
+                string mensajeErrorClienteNoEncontrado = Traductor490WC.TraductorSG490WC.Traducir490WC("ClienteNoEncontrado490WC");
+                MessageBox.Show(mensajeErrorClienteNoEncontrado);
                 ClienteCargado490WC = null;
                 CargarCliente490WC(null);
                 CB_BENEFICIOSCLIENTE490WC.Items.Clear();
@@ -225,6 +240,7 @@ namespace GUI490WC
 
         private void BT_CANJEARBENEFICIO490WC_Click(object sender, EventArgs e)
         {
+            //formAplicarBeneficios490WC = new FormAplicarBeneficios490WC();
             formAplicarBeneficios490WC.ShowDialog();
             ClienteCargado490WC = formAplicarBeneficios490WC.ClienteCargado490WC;
             if (ClienteCargado490WC != null)
@@ -244,35 +260,39 @@ namespace GUI490WC
             GestorBoleto490WC gestorBoleto490WC = new GestorBoleto490WC();
             if (boletoCargado490WC == null)
             {
-                MessageBox.Show("Debe seleccionar un boleto para aplicar un beneficio.");
-            }
-            else 
-            {
-            if (CB_BENEFICIOSCLIENTE490WC.SelectedItem != null)
-            {
-                Beneficio490WC beneficioAplicar490WC = ClienteCargado490WC.BeneficiosCliente490WC.Find(x => x.Nombre490WC == CB_BENEFICIOSCLIENTE490WC.SelectedItem.ToString());
-                if (beneficioAplicar490WC != null)
-                {
-                    gestorBeneficio490WC.AplicarBeneficio490WC(boletoCargado490WC.IDBoleto490WC, beneficioAplicar490WC.DescuentoAplicar490WC, beneficioAplicar490WC.Nombre490WC);
-                    boletoCargado490WC = gestorBoleto490WC.ObtenerBoletoConBeneficio490WC(boletoCargado490WC.IDBoleto490WC);
-                    gestorBeneficio490WC.EliminarBeneficioDeCliente490WC(ClienteCargado490WC.DNI490WC, beneficioAplicar490WC.CodigoBeneficio490WC);
-                    ClienteCargado490WC = gestorCliente490WC.BuscarClientePorDNI490WC(ClienteCargado490WC.DNI490WC);
-                    LlenarDatosCliente490WC(ClienteCargado490WC.DNI490WC);
-                        BT_CANCELAR490WC.Enabled = false;
-                    controlIDA490WC.Enabled = false;
-                    controlVUELTA490WC.Enabled = false;
-                    RB_IDA490WC.Enabled = false;
-                    RB_IDAVUELTA490WC.Enabled = false;
-                }
-                else
-                {
-                    MessageBox.Show("El beneficio seleccionado no pertenece al cliente");
-                }
+                string mensajeErrorSeleccionBoleto = Traductor490WC.TraductorSG490WC.Traducir490WC("DebeSeleccionarBoleto490WC");
+                MessageBox.Show(mensajeErrorSeleccionBoleto);
             }
             else
             {
-                MessageBox.Show("Por favor, seleccione un beneficio para aplicar.");
-            }
+                if (CB_BENEFICIOSCLIENTE490WC.SelectedItem != null)
+                {
+                    Beneficio490WC beneficioAplicar490WC = ClienteCargado490WC.BeneficiosCliente490WC.Find(x => x.Nombre490WC == CB_BENEFICIOSCLIENTE490WC.SelectedItem.ToString());
+                    if (beneficioAplicar490WC != null)
+                    {
+                        gestorBeneficio490WC.AplicarBeneficio490WC(boletoCargado490WC.IDBoleto490WC, beneficioAplicar490WC.DescuentoAplicar490WC, beneficioAplicar490WC.Nombre490WC);
+                        boletoCargado490WC = gestorBoleto490WC.ObtenerBoletoConBeneficio490WC(boletoCargado490WC.IDBoleto490WC);
+                        gestorBeneficio490WC.EliminarBeneficioDeCliente490WC(ClienteCargado490WC.DNI490WC, beneficioAplicar490WC.CodigoBeneficio490WC);
+                        ClienteCargado490WC = gestorCliente490WC.BuscarClientePorDNI490WC(ClienteCargado490WC.DNI490WC);
+                        LlenarDatosCliente490WC(ClienteCargado490WC.DNI490WC);
+                        BT_CANCELAR490WC.Enabled = false;
+                        controlIDA490WC.Enabled = false;
+                        controlVUELTA490WC.Enabled = false;
+                        RB_IDA490WC.Enabled = false;
+                        RB_IDAVUELTA490WC.Enabled = false;
+                        BT_GENERARBOLETO490WC.PerformClick();
+                    }
+                    else
+                    {
+                        string mensajeErrorBeneficioNoPertenece = Traductor490WC.TraductorSG490WC.Traducir490WC("ElBeneficioNoPerteneceAlCliente");
+                        MessageBox.Show(mensajeErrorBeneficioNoPertenece);
+                    }
+                }
+                else
+                {
+                    string mensajeErrorSeleccionBeneficio = Traductor490WC.TraductorSG490WC.Traducir490WC("DebeSeleccionarBeneficio490WC");
+                    MessageBox.Show(mensajeErrorSeleccionBeneficio);
+                }
 
             }
         }
@@ -282,15 +302,17 @@ namespace GUI490WC
             GestorBoleto490WC gestorBoleto490WC = new GestorBoleto490WC();
             if (boletoCargado490WC == null)
             {
-                MessageBox.Show("Debe seleccionar un boleto para generar.");
-                return;
+                string mensajeErrorSeleccionBoleto = Traductor490WC.TraductorSG490WC.Traducir490WC("DebeSeleccionarBoletoGenerar490WC");
+                MessageBox.Show(mensajeErrorSeleccionBoleto);
+                //return;
             }
             else
             {
                 if (ClienteCargado490WC != null)
                 {
                     gestorBoleto490WC.AsignarBoletoCliente490WC(boletoCargado490WC, ClienteCargado490WC);
-                    MessageBox.Show("El boleto fue generado Correctamente!!, tiene 8 horas para realizar el pago");
+                    string mensajeOperacion = Traductor490WC.TraductorSG490WC.Traducir490WC("BoletoGeneradoConCliente490WC");
+                    MessageBox.Show(mensajeOperacion);
                     LimpiarCampos490WC();
                     BT_CANCELAR490WC.Enabled = true;
                     controlIDA490WC.Enabled = true;
@@ -302,7 +324,12 @@ namespace GUI490WC
                 else
                 {
                     gestorBoleto490WC.GenerarBoletoCompra490WC(boletoCargado490WC);
-                    MessageBox.Show($"El boleto fue generado Correctamente!!, tiene 8 horas para realizar el pago. {Environment.NewLine} Indique al Cajero el siguiente codigo: {boletoCargado490WC.IDBoleto490WC} para que se le asigne el boleto generado cuando sea registrado");
+                    string mensajeOperacion = Traductor490WC.TraductorSG490WC.Traducir490WC("BoletoGeneradoSinCliente490WC");
+                    string a = mensajeOperacion;
+                    a = a.Replace("{boletoCargado490WC.IDBoleto490WC}", $"{boletoCargado490WC.IDBoleto490WC}");
+                    a = a.Replace("{Environment.NewLine}", $"{Environment.NewLine}");
+                    mensajeOperacion = a;
+                    MessageBox.Show(mensajeOperacion);
                     LimpiarCampos490WC();
                     BT_CANCELAR490WC.Enabled = true;
                     controlIDA490WC.Enabled = true;
@@ -336,5 +363,113 @@ namespace GUI490WC
             LimpiarCampos490WC();
             this.Close();
         }
+
+        public void ActualizarLenguaje490WC()
+        {
+            RecorrerControles490WC(this);
+
+        }
+
+        public void RecorrerControles490WC(Control control490WC)
+        {
+            foreach (Control c490WC in control490WC.Controls)
+            {
+                if ((c490WC is TextBox tb490WC) == false)
+                {
+
+                    c490WC.Text = Traductor490WC.TraductorSG490WC.Traducir490WC(c490WC.Name);
+
+
+                    if (c490WC.HasChildren)
+                    {
+                        RecorrerControles490WC(c490WC);
+                    }
+                    if (c490WC is DataGridView dgv490WC)
+                    {
+                        foreach (DataGridViewColumn columna490WC in dgv490WC.Columns)
+                        {
+                            columna490WC.HeaderText = Traductor490WC.TraductorSG490WC.Traducir490WC(columna490WC.Name);
+                        }
+                    }
+
+                }
+                else if (c490WC.Name == "TBINFOCLIENTE490WC")
+                {
+                    if (ClienteCargado490WC != null)
+                    {
+                        TBINFOCLIENTE490WC.Text = $"DNI: {ClienteCargado490WC.DNI490WC} {Environment.NewLine} Nombre: {ClienteCargado490WC.Nombre490WC} {Environment.NewLine} Apellido: {ClienteCargado490WC.Apellido490WC} {Environment.NewLine} Estrellas del Cliente: {ClienteCargado490WC.EstrellasCliente490WC} {Environment.NewLine}";
+                        c490WC.Text = Traductor490WC.TraductorSG490WC.Traducir490WC(c490WC.Name);
+                        string a = c490WC.Text;
+                        a = a.Replace("{ClienteCargado490WC.DNI490WC} {Environment.NewLine}", $"{ClienteCargado490WC.DNI490WC} {Environment.NewLine}");
+                        a = a.Replace("{ClienteCargado490WC.Nombre490WC} {Environment.NewLine}", $"{ClienteCargado490WC.Nombre490WC} {Environment.NewLine}");
+                        a = a.Replace("{ClienteCargado490WC.Apellido490WC} {Environment.NewLine}", $"{ClienteCargado490WC.Apellido490WC} {Environment.NewLine}");
+                        a = a.Replace("{ClienteCargado490WC.EstrellasCliente490WC} {Environment.NewLine}", $"{ClienteCargado490WC.EstrellasCliente490WC} {Environment.NewLine}");
+                        c490WC.Text = a;
+                    }
+
+                }
+                else if (c490WC.Name == "TBINFOCLIENTEVACIO490WC")
+                {
+                    TBINFOCLIENTE490WC.Text = $"Ingrese el DNI, Nombre y Apellido para visualizar los datos del cliente";
+                    c490WC.Text = Traductor490WC.TraductorSG490WC.Traducir490WC(c490WC.Name);
+
+                }
+                else if (c490WC.Name == "TBINFOBOLETOGENERAR490WC")
+                {
+                    if (boletoCargado490WC != null)
+                    {
+                        GestorBoleto490WC gestorBoleto490WC = new GestorBoleto490WC();
+                        boletoCargado490WC = gestorBoleto490WC.ObtenerBoletoConBeneficio490WC(boletoCargado490WC.IDBoleto490WC);
+                        if (ClienteCargado490WC != null)
+                        {
+                            TBINFOBOLETOGENERAR490WC.Text += "DNI Cliente: {ClienteCargado490WC.DNI490WC} {Environment.NewLine} Nombre: {ClienteCargado490WC.Nombre490WC} Apellido: {ClienteCargado490WC.Apellido490WC} {Environment.NewLine} ID Boleto: {boletoCargado490WC.IDBoleto490WC} {Environment.NewLine}";
+                            c490WC.Text = Traductor490WC.TraductorSG490WC.Traducir490WC(c490WC.Name);
+                            string a = c490WC.Text;
+                            a = a.Replace("{ClienteCargado490WC.DNI490WC} {Environment.NewLine}", $"{ClienteCargado490WC.DNI490WC} {Environment.NewLine}");
+                            a = a.Replace("{ClienteCargado490WC.Nombre490WC}", $"{ClienteCargado490WC.Nombre490WC}");
+                            a = a.Replace("{ClienteCargado490WC.Apellido490WC} {Environment.NewLine}", $"{ClienteCargado490WC.Apellido490WC} {Environment.NewLine}");
+                            a = a.Replace("{boletoCargado490WC.IDBoleto490WC} {Environment.NewLine}", $"{boletoCargado490WC.IDBoleto490WC} {Environment.NewLine}");
+                            c490WC.Text = a;
+                        }
+                    }
+                }
+                else if (c490WC.Name == "TBINFOBOLETOGENERARSINCLIENTE490WC")
+                {
+                    if (boletoCargado490WC != null)
+                    {
+                        GestorBoleto490WC gestorBoleto490WC = new GestorBoleto490WC();
+                        boletoCargado490WC = gestorBoleto490WC.ObtenerBoletoConBeneficio490WC(boletoCargado490WC.IDBoleto490WC);
+                        TBINFOBOLETOGENERAR490WC.Text = "No se encuentra cargado ningun cliente {Environment.NewLine} ID Boleto: {boletoCargado490WC.IDBoleto490WC} {Environment.NewLine}";
+                        c490WC.Text = Traductor490WC.TraductorSG490WC.Traducir490WC(c490WC.Name);
+                        string a = c490WC.Text;
+                        a = a.Replace("{boletoCargado490WC.IDBoleto490WC} {Environment.NewLine}", $"{boletoCargado490WC.IDBoleto490WC} {Environment.NewLine}");
+                        a = a.Replace("{Environment.NewLine}", $"{Environment.NewLine}");
+                        c490WC.Text = a;
+                    }
+                }
+                else if (c490WC.Name == "TBINFOBOLETOGENERARSINBENEFICIO490WC")
+                {
+                    GestorBoleto490WC gestorBoleto490WC = new GestorBoleto490WC();
+                    if (boletoCargado490WC != null)
+                    {
+                        boletoCargado490WC = gestorBoleto490WC.ObtenerBoletoConBeneficio490WC(boletoCargado490WC.IDBoleto490WC);
+
+
+                        if (ClienteCargado490WC != null)
+                        {
+                            TBINFOBOLETOGENERAR490WC.Text += "DNI Cliente: {ClienteCargado490WC.DNI490WC} {Environment.NewLine} Nombre: {ClienteCargado490WC.Nombre490WC} Apellido: {ClienteCargado490WC.Apellido490WC} {Environment.NewLine} ID Boleto: {boletoCargado490WC.IDBoleto490WC} {Environment.NewLine} Beneficio Aplicado: Ninguno";
+                            c490WC.Text = Traductor490WC.TraductorSG490WC.Traducir490WC(c490WC.Name);
+                            string a = c490WC.Text;
+                            a = a.Replace("{ClienteCargado490WC.DNI490WC} {Environment.NewLine}", $"{ClienteCargado490WC.DNI490WC} {Environment.NewLine}");
+                            a = a.Replace("{ClienteCargado490WC.Nombre490WC}", $"{ClienteCargado490WC.Nombre490WC}");
+                            a = a.Replace("{ClienteCargado490WC.Apellido490WC} {Environment.NewLine}", $"{ClienteCargado490WC.Apellido490WC} {Environment.NewLine}");
+                            a = a.Replace("{boletoCargado490WC.IDBoleto490WC} {Environment.NewLine}", $"{boletoCargado490WC.IDBoleto490WC} {Environment.NewLine}");
+                            c490WC.Text = a;
+                        } 
+                    }
+                }
+            }
+        }
     }
 }
+

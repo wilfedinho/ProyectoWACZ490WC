@@ -23,12 +23,6 @@ namespace SE490WC
         {
 
         }
-
-        public virtual bool esCompuesto490WC()
-        {
-            return false;
-        }
-
         public string obtenerPermisoNombre490WC()
         {
             return Nombre490WC;

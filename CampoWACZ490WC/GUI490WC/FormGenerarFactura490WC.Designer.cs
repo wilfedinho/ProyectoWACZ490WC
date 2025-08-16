@@ -47,7 +47,7 @@
             this.ColumnaNumeroAsiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnaBeneficio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BT_COBRARFACTURA490WC = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.LABEL_BOLETOSPORPAGAR490WC = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBoleto490WC)).BeginInit();
             this.SuspendLayout();
             // 
@@ -228,16 +228,16 @@
             this.BT_COBRARFACTURA490WC.UseVisualStyleBackColor = false;
             this.BT_COBRARFACTURA490WC.Click += new System.EventHandler(this.BT_COBRARFACTURA490WC_Click);
             // 
-            // label1
+            // LABEL_BOLETOSPORPAGAR490WC
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.label1.Location = new System.Drawing.Point(310, 16);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(165, 20);
-            this.label1.TabIndex = 57;
-            this.label1.Text = "Boletos Por Pagar";
+            this.LABEL_BOLETOSPORPAGAR490WC.AutoSize = true;
+            this.LABEL_BOLETOSPORPAGAR490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.LABEL_BOLETOSPORPAGAR490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
+            this.LABEL_BOLETOSPORPAGAR490WC.Location = new System.Drawing.Point(310, 16);
+            this.LABEL_BOLETOSPORPAGAR490WC.Name = "LABEL_BOLETOSPORPAGAR490WC";
+            this.LABEL_BOLETOSPORPAGAR490WC.Size = new System.Drawing.Size(165, 20);
+            this.LABEL_BOLETOSPORPAGAR490WC.TabIndex = 57;
+            this.LABEL_BOLETOSPORPAGAR490WC.Text = "Boletos Por Pagar";
             // 
             // FormGenerarFactura490WC
             // 
@@ -245,7 +245,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(27)))), ((int)(((byte)(38)))));
             this.ClientSize = new System.Drawing.Size(1190, 280);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.LABEL_BOLETOSPORPAGAR490WC);
             this.Controls.Add(this.BT_COBRARFACTURA490WC);
             this.Controls.Add(this.dgvBoleto490WC);
             this.Controls.Add(this.BT_BUSCARCLIENTE490WC);
@@ -272,7 +272,7 @@
         private System.Windows.Forms.TextBox TB_DNI490WC;
         private System.Windows.Forms.DataGridView dgvBoleto490WC;
         private System.Windows.Forms.Button BT_COBRARFACTURA490WC;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label LABEL_BOLETOSPORPAGAR490WC;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaID;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaOrigen;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaDestino;

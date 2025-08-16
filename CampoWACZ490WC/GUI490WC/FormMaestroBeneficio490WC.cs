@@ -15,7 +15,7 @@ using System.Windows.Forms;
 
 namespace GUI490WC
 {
-    public partial class FormMaestroBeneficio490WC : Form
+    public partial class FormMaestroBeneficio490WC : Form , iObserverLenguaje490WC
     {
         public FormMaestroBeneficio490WC()
         {
@@ -105,44 +105,51 @@ namespace GUI490WC
                                     }
                                     else
                                     {
-                                        MessageBox.Show("Solo se permiten hasta 2 decimales para el descuento.");
+                                        string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("Error2Decimales");
+                                        MessageBox.Show(mensajeError);
                                         LimpiarCampos490WC();
                                     }
                                 }
                                 else
                                 {
-                                    MessageBox.Show("El descuento debe estar entre 0,00 y 1,00.");
+                                    string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("ErrorDescuentoRango");
+                                    MessageBox.Show(mensajeError);
                                     LimpiarCampos490WC();
                                 }
                             }
                             else
                             {
-                                MessageBox.Show("Ingrese un valor decimal válido (por ejemplo: 0,25 o 0.25).");
+                                string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("ErrorValorDecimal");
+                                MessageBox.Show(mensajeError);
                                 LimpiarCampos490WC();
                             }
                         }
                         else
                         {
-                            MessageBox.Show("Ingrese un valor numérico entero para la cantidad de veces que fue reclamado el beneficio.");
+                            string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("ErrorValorEnteroCantidadReclamado");
+                            MessageBox.Show(mensajeError);
                             LimpiarCampos490WC();
                         }
                     }
                     else
                     {
-                        MessageBox.Show("Ingrese un valor numérico entero para el precio que tendrá el beneficio.");
+                        string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("ErrorValorEnteroPrecio");
+                        MessageBox.Show(mensajeError);
                         LimpiarCampos490WC();
                     }
 
                 }
                 else
                 {
-                    MessageBox.Show("El nombre ingresado es repetido, ingrese otro nombre!!!");
+                    string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("ErrorNombreRepetidoBeneficio");
+                    MessageBox.Show(mensajeError);
                     LimpiarCampos490WC();
                 }
             }
             else
             {
-                MessageBox.Show("No puede dejar el campo de nombre vacío.");
+                string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("ErrorCampoNombreVacio");
+                MessageBox.Show(mensajeError);
                 LimpiarCampos490WC();
             }
 
@@ -160,7 +167,8 @@ namespace GUI490WC
             }
             else
             {
-                MessageBox.Show("No se puede eliminar el beneficio seleccionado, ya que el mismo lo posee actualmente un cliente!!!");
+                string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("ErrorEliminarBeneficioConCliente");
+                MessageBox.Show(mensajeError);
             }
 
         }
@@ -174,7 +182,7 @@ namespace GUI490WC
         {
             GestorBeneficio490WC gestorBeneficio490WC = new GestorBeneficio490WC();
             int codigoBeneficio490WC = int.Parse(dgvBeneficio490WC.SelectedRows[0].Cells["ColumnaCodigo"].Value.ToString());
-            if (!string.IsNullOrEmpty(TB_NOMBRE490WC.Text)) // agregar lógica para ver si no se repite nombre del beneficio
+            if (!string.IsNullOrEmpty(TB_NOMBRE490WC.Text)) 
             {
                 if (!gestorBeneficio490WC.ExisteNombreBeneficioModificar490WC(TB_NOMBRE490WC.Text, codigoBeneficio490WC))
                 {
@@ -205,44 +213,51 @@ namespace GUI490WC
                                     }
                                     else
                                     {
-                                        MessageBox.Show("Solo se permiten hasta 2 decimales para el descuento.");
+                                        string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("Error2Decimales");
+                                        MessageBox.Show(mensajeError);
                                         ActivarModoModificar490WC(false);
                                     }
                                 }
                                 else
                                 {
-                                    MessageBox.Show("El descuento debe estar entre 0,00 y 1,00.");
+                                    string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("ErrorDescuentoRango");
+                                    MessageBox.Show(mensajeError);
                                     ActivarModoModificar490WC(false);
                                 }
                             }
                             else
                             {
-                                MessageBox.Show("Ingrese un valor decimal válido (por ejemplo: 0,25 o 0.25).");
+                                string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("ErrorValorDecimal");
+                                MessageBox.Show(mensajeError);
                                 ActivarModoModificar490WC(false);
                             }
                         }
                         else
                         {
-                            MessageBox.Show("Ingrese un valor numérico entero para la cantidad de veces que fue reclamado el beneficio.");
+                            string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("ErrorValorEnteroCantidadReclamado");
+                            MessageBox.Show(mensajeError);
                             ActivarModoModificar490WC(false);
                         }
                     }
                     else
                     {
-                        MessageBox.Show("Ingrese un valor numérico entero para el precio que tendrá el beneficio.");
+                        string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("ErrorValorEnteroPrecio");
+                        MessageBox.Show(mensajeError);
                         ActivarModoModificar490WC(false);
                     }
 
                 }
                 else
                 {
-                    MessageBox.Show("El nombre ingresado se encuentra repetido!!!");
+                    string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("ErrorNombreRepetidoBeneficio");
+                    MessageBox.Show(mensajeError);
                     ActivarModoModificar490WC(false);
                 }
             }
             else
             {
-                MessageBox.Show("No puede dejar el campo de nombre vacío.");
+                string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("ErrorCampoNombreVacio");
+                MessageBox.Show(mensajeError);
                 ActivarModoModificar490WC(false);
             }
 
@@ -263,6 +278,38 @@ namespace GUI490WC
         {
             ActivarModoModificar490WC(false);
             this.Close();
+        }
+
+        public void ActualizarLenguaje490WC()
+        {
+            RecorrerControles490WC(this);
+            
+        }
+
+        public void RecorrerControles490WC(Control control490WC)
+        {
+            foreach (Control c490WC in control490WC.Controls)
+            {
+                if ((c490WC is TextBox tb490WC) == false)
+                {
+
+                    c490WC.Text = Traductor490WC.TraductorSG490WC.Traducir490WC(c490WC.Name);
+
+
+                    if (c490WC.HasChildren)
+                    {
+                        RecorrerControles490WC(c490WC);
+                    }
+                    if (c490WC is DataGridView dgv490WC)
+                    {
+                        foreach (DataGridViewColumn columna490WC in dgv490WC.Columns)
+                        {
+                            columna490WC.HeaderText = Traductor490WC.TraductorSG490WC.Traducir490WC(columna490WC.Name);
+                        }
+                    }
+
+                }
+            }
         }
     }
 }

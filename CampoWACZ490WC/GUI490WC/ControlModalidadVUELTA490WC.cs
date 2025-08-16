@@ -9,10 +9,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SERVICIOS490WC;
 
 namespace GUI490WC
 {
-    public partial class ControlModalidadVUELTA490WC : UserControl
+    public partial class ControlModalidadVUELTA490WC : UserControl, iObserverLenguaje490WC
     {
         public Boleto490WC boleto490WCSeleccionado490WC = null;
         public Action NotificarSeleccion490WC { get; set; }
@@ -121,7 +122,8 @@ namespace GUI490WC
                 }
                 else
                 {
-                    MessageBox.Show("Ingrese un valor numérico válido para el precio desde.");
+                    string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("ErrorValorPrecioDESDE");
+                    MessageBox.Show(mensajeError);
                 }
             }
 
@@ -133,7 +135,8 @@ namespace GUI490WC
                 }
                 else
                 {
-                    MessageBox.Show("Ingrese un valor numérico válido para el precio hasta.");
+                    string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("ErrorValorPrecioHASTA");
+                    MessageBox.Show(mensajeError);
                 }
             }
 
@@ -145,7 +148,8 @@ namespace GUI490WC
                 }
                 else
                 {
-                    MessageBox.Show("Ingrese un valor numérico válido para el peso permitido.");
+                    string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("ErrorValorPesoPermitido");
+                    MessageBox.Show(mensajeError);
                 }
             }
             if (checkBoxINCLUIRFECHA490WC.Checked == false)
@@ -164,7 +168,8 @@ namespace GUI490WC
                 }
                 else
                 {
-                    MessageBox.Show("Las fechas de IDA no pueden ser posteriores a las fechas de VUELTA. Por favor, verifique las fechas.");
+                    string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("ErrorFechasIDAPOSTERIORFECHASVUELTA");
+                    MessageBox.Show(mensajeError);
                 }
             }
             LimpiarCampos490WC();
@@ -180,6 +185,37 @@ namespace GUI490WC
             GestorBoleto490WC gestorBoleto490WC = new GestorBoleto490WC();
             boleto490WCSeleccionado490WC = gestorBoleto490WC.ObtenerBoletoPorID490WC(dgvBoleto490WC.SelectedRows[0].Cells["ColumnaID"].Value.ToString());
             NotificarSeleccion490WC?.Invoke();
+        }
+
+        public void ActualizarLenguaje490WC()
+        {
+            RecorrerControles490WC(this);
+        }
+
+        public void RecorrerControles490WC(Control control490WC)
+        {
+            foreach (Control c490WC in control490WC.Controls)
+            {
+                if ((c490WC is TextBox tb490WC) == false)
+                {
+
+                    c490WC.Text = Traductor490WC.TraductorSG490WC.Traducir490WC(c490WC.Name);
+
+
+                    if (c490WC.HasChildren)
+                    {
+                        RecorrerControles490WC(c490WC);
+                    }
+                    if (c490WC is DataGridView dgv490WC)
+                    {
+                        foreach (DataGridViewColumn columna490WC in dgv490WC.Columns)
+                        {
+                            columna490WC.HeaderText = Traductor490WC.TraductorSG490WC.Traducir490WC(columna490WC.Name);
+                        }
+                    }
+
+                }
+            }
         }
     }
 }

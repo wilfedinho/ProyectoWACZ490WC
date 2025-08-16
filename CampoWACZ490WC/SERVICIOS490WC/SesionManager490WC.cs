@@ -11,6 +11,12 @@ namespace SERVICIOS490WC
     {
         private static SesionManager490WC Instancia490WC;
         public PermisoCompuesto490WC permisosDeLaSesion490WC;
+        public string IdiomaSesion490WC = "Español";
+
+        public void aplicarLenguaje490WC(string nuevoIdioma490WC)
+        {
+            Traductor490WC.TraductorSG490WC.Actualizar490WC(nuevoIdioma490WC);
+        }
 
         public static SesionManager490WC GestorSesion490WC
         {
@@ -27,34 +33,33 @@ namespace SERVICIOS490WC
 
         public bool Login490WC(Usuario490WC UsuarioLoguear)
         {
-            //Este if chequea si existe una sesion iniciada
+            
             if (GestorSesion490WC.Usuario490WC == null)
             {
                 GestorSesion490WC.Usuario490WC = UsuarioLoguear;
+                aplicarLenguaje490WC(Usuario490WC.IdiomaUsuario490WC);
                 return true;
-                //Devolvera True Si el proceso de Login se completo correctamente
-                //Se asignara el usuario a la sesion
+               
             }
             else
             {
                 return false;
-                //Devolvera False si el proceso de login no se logro completar, por ejemplo de que ya exista una sesion iniciada
+                
             }
         }
         public bool Logout490WC()
         {
-            //Este if chequea si existe una sesion iniciada
+          
             if (GestorSesion490WC.Usuario490WC != null)
             {
                 GestorSesion490WC.Usuario490WC = null;
                 return true;
-                //Devolvera True Si el proceso de Logout se completo correctamente
-                //Se limpiara el usuario de la sesion actual
+                
             }
             else
             {
                 return false;
-                //Devolvera False si el proceso de logout no se logro completar, por ejemplo de que no exista una sesion iniciada
+                
             }
         }
         public bool SesionTienePermisos490WC(string permisoSolicitado490WC)

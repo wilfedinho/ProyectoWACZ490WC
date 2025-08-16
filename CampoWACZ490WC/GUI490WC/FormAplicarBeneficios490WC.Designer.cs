@@ -48,8 +48,8 @@
             this.BT_BUSCARCLIENTE490WC = new System.Windows.Forms.Button();
             this.BT_CANCELAR490WC = new System.Windows.Forms.Button();
             this.BT_CANJEARBENEFICIO490WC = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.LABEL_DATOSCLIENTE490WC = new System.Windows.Forms.Label();
+            this.LABEL_BENEFICIOSCLIENTE490WC = new System.Windows.Forms.Label();
             this.TBINFOCLIENTE490WC = new System.Windows.Forms.TextBox();
             this.TBBENEFICIOCLIENTE490WC = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBeneficio490WC)).BeginInit();
@@ -243,27 +243,27 @@
             this.BT_CANJEARBENEFICIO490WC.UseVisualStyleBackColor = false;
             this.BT_CANJEARBENEFICIO490WC.Click += new System.EventHandler(this.BT_CANJEARBENEFICIO490WC_Click);
             // 
-            // label1
+            // LABEL_DATOSCLIENTE490WC
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.label1.Location = new System.Drawing.Point(93, 12);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(123, 20);
-            this.label1.TabIndex = 32;
-            this.label1.Text = "Datos Cliente";
+            this.LABEL_DATOSCLIENTE490WC.AutoSize = true;
+            this.LABEL_DATOSCLIENTE490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.LABEL_DATOSCLIENTE490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
+            this.LABEL_DATOSCLIENTE490WC.Location = new System.Drawing.Point(93, 12);
+            this.LABEL_DATOSCLIENTE490WC.Name = "LABEL_DATOSCLIENTE490WC";
+            this.LABEL_DATOSCLIENTE490WC.Size = new System.Drawing.Size(123, 20);
+            this.LABEL_DATOSCLIENTE490WC.TabIndex = 32;
+            this.LABEL_DATOSCLIENTE490WC.Text = "Datos Cliente";
             // 
-            // label2
+            // LABEL_BENEFICIOSCLIENTE490WC
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.label2.Location = new System.Drawing.Point(364, 12);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(192, 20);
-            this.label2.TabIndex = 33;
-            this.label2.Text = "Beneficios del Cliente";
+            this.LABEL_BENEFICIOSCLIENTE490WC.AutoSize = true;
+            this.LABEL_BENEFICIOSCLIENTE490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.LABEL_BENEFICIOSCLIENTE490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
+            this.LABEL_BENEFICIOSCLIENTE490WC.Location = new System.Drawing.Point(364, 12);
+            this.LABEL_BENEFICIOSCLIENTE490WC.Name = "LABEL_BENEFICIOSCLIENTE490WC";
+            this.LABEL_BENEFICIOSCLIENTE490WC.Size = new System.Drawing.Size(192, 20);
+            this.LABEL_BENEFICIOSCLIENTE490WC.TabIndex = 33;
+            this.LABEL_BENEFICIOSCLIENTE490WC.Text = "Beneficios del Cliente";
             // 
             // TBINFOCLIENTE490WC
             // 
@@ -299,8 +299,8 @@
             this.ClientSize = new System.Drawing.Size(1135, 377);
             this.Controls.Add(this.TBBENEFICIOCLIENTE490WC);
             this.Controls.Add(this.TBINFOCLIENTE490WC);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.LABEL_BENEFICIOSCLIENTE490WC);
+            this.Controls.Add(this.LABEL_DATOSCLIENTE490WC);
             this.Controls.Add(this.BT_CANJEARBENEFICIO490WC);
             this.Controls.Add(this.BT_CANCELAR490WC);
             this.Controls.Add(this.BT_BUSCARCLIENTE490WC);
@@ -314,6 +314,7 @@
             this.Name = "FormAplicarBeneficios490WC";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormAplicarBeneficios490WC";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormAplicarBeneficios490WC_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.dgvBeneficio490WC)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -339,8 +340,8 @@
         private System.Windows.Forms.Button BT_BUSCARCLIENTE490WC;
         private System.Windows.Forms.Button BT_CANCELAR490WC;
         private System.Windows.Forms.Button BT_CANJEARBENEFICIO490WC;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label LABEL_DATOSCLIENTE490WC;
+        private System.Windows.Forms.Label LABEL_BENEFICIOSCLIENTE490WC;
         private System.Windows.Forms.TextBox TBINFOCLIENTE490WC;
         private System.Windows.Forms.TextBox TBBENEFICIOCLIENTE490WC;
     }

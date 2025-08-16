@@ -1,8 +1,11 @@
 ﻿using BE490WC;
 using DAL490WC;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -38,6 +41,11 @@ namespace BLL490WC
             boletoDAL490WC.AsignarBoletoCliente490WC(boletoAsignar490WC, clienteAsignar490WC);
         }
 
+        public void AsignarBoletoClienteRegistrar490WC(Boleto490WC boletoAsignar490WC, Cliente490WC clienteAsignar490WC)
+        {
+            BoletoDAL490WC boletoDAL490WC = new BoletoDAL490WC();
+            boletoDAL490WC.AsignarBoletoClienteRegistrar490WC(boletoAsignar490WC, clienteAsignar490WC);
+        }
 
         public void GenerarBoletoCompra490WC(Boleto490WC boletoGenerar490WC)
         {
@@ -57,6 +65,11 @@ namespace BLL490WC
             gestorBoletoDAL490WC.CobrarBoleto490WC(BoletoCobrado490WC);
         }
 
+        public bool ExisteBoletoAsignar490WC(int idBoleto)
+        {
+            BoletoDAL490WC gestorBoleto490WC = new BoletoDAL490WC();
+            return gestorBoleto490WC.ExisteBoletoAsignar490WC(idBoleto);
+        }
         public bool ExisteBoletoEnAsiento490WC(Boleto490WC boletoVerificarExistencia490WC)
         {
             BoletoDAL490WC gestorBoleto490WC = new BoletoDAL490WC();
@@ -67,6 +80,83 @@ namespace BLL490WC
         {
             BoletoDAL490WC gestorBoleto490WC = new BoletoDAL490WC();
             return gestorBoleto490WC.ExisteBoletoEnAsientoParaModificar490WC(boletoVerificarExistencia490WC);
+        }
+        public void GenerarBoleto490WC(Boleto490WC boleto490WC)
+        {
+            string carpeta = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "Facturas490WC");
+            if (!Directory.Exists(carpeta)) Directory.CreateDirectory(carpeta);
+
+            string nombreArchivo = $"Boleto_{boleto490WC.Titular490WC.DNI490WC}_Cod{boleto490WC.IDBoleto490WC}.pdf";
+            string ruta = Path.Combine(carpeta, nombreArchivo);
+
+            float ancho = Utilities.MillimetersToPoints(80);
+            float alto = Utilities.MillimetersToPoints(150);
+            Document doc = new Document(new Rectangle(ancho, alto), 10f, 10f, 10f, 10f);
+
+            using (FileStream fs = new FileStream(ruta, FileMode.Create))
+            {
+                PdfWriter writer = PdfWriter.GetInstance(doc, fs);
+                doc.Open();
+
+                var fontTitulo = FontFactory.GetFont(FontFactory.COURIER_BOLD, 14);
+                var fontSeccion = FontFactory.GetFont(FontFactory.COURIER_BOLD, 10);
+                var fontNormal = FontFactory.GetFont(FontFactory.COURIER, 9);
+
+
+                Paragraph titulo = new Paragraph("BOLETO DE VIAJE", fontTitulo);
+                titulo.Alignment = Element.ALIGN_CENTER;
+                doc.Add(titulo);
+                doc.Add(new Paragraph(" ", fontNormal));
+
+
+                doc.Add(new Paragraph($"N° Boleto: {boleto490WC.IDBoleto490WC}", fontNormal));
+                doc.Add(new Paragraph($"Emitido: {DateTime.Now:dd/MM/yyyy HH:mm}", fontNormal));
+                doc.Add(new Paragraph("----------------------------------", fontNormal));
+
+
+                doc.Add(new Paragraph("ITINERARIO", fontSeccion));
+                doc.Add(new Paragraph($"Origen: {boleto490WC.Origen490WC}", fontNormal));
+                doc.Add(new Paragraph($"Destino: {boleto490WC.Destino490WC}", fontNormal));
+                doc.Add(new Paragraph($"Salida: {boleto490WC.FechaPartida490WC:dd/MM/yyyy HH:mm}", fontNormal));
+                doc.Add(new Paragraph($"Llegada: {boleto490WC.FechaLlegada490WC:dd/MM/yyyy HH:mm}", fontNormal));
+
+                if (boleto490WC is BoletoIDAVUELTA490WC boleIDAVUELTA)
+                {
+                    doc.Add(new Paragraph($"Regreso: {boleIDAVUELTA.FechaPartidaVUELTA490WC:dd/MM/yyyy HH:mm}", fontNormal));
+                    doc.Add(new Paragraph($"Llegada Regreso: {boleIDAVUELTA.FechaLlegadaVUELTA490WC:dd/MM/yyyy HH:mm}", fontNormal));
+                    doc.Add(new Paragraph($"Modalidad: IDA Y VUELTA", fontNormal));
+                }
+                else
+                {
+                    doc.Add(new Paragraph($"Modalidad: SOLO IDA", fontNormal));
+                }
+
+                doc.Add(new Paragraph("----------------------------------", fontNormal));
+
+
+                doc.Add(new Paragraph("PASAJERO", fontSeccion));
+                doc.Add(new Paragraph($"Nombre: {boleto490WC.Titular490WC.Nombre490WC}", fontNormal));
+                doc.Add(new Paragraph($"Apellido: {boleto490WC.Titular490WC.Apellido490WC}", fontNormal));
+                doc.Add(new Paragraph($"DNI: {boleto490WC.Titular490WC.DNI490WC}", fontNormal));
+
+                doc.Add(new Paragraph("----------------------------------", fontNormal));
+
+
+                doc.Add(new Paragraph("DETALLES", fontSeccion));
+                doc.Add(new Paragraph($"Asiento: {boleto490WC.NumeroAsiento490WC}", fontNormal));
+                doc.Add(new Paragraph($"Clase: {boleto490WC.ClaseBoleto490WC}", fontNormal));
+                doc.Add(new Paragraph($"Equipaje: {boleto490WC.EquipajePermitido490WC} kg", fontNormal));
+                doc.Add(new Paragraph($"Precio: ${boleto490WC.Precio490WC:F2}", fontNormal));
+
+                doc.Add(new Paragraph(" ", fontNormal));
+                doc.Add(new Paragraph("----------------------------------", fontNormal));
+                doc.Add(new Paragraph(" ", fontNormal));
+
+                doc.Close();
+            }
+
+
+            System.Diagnostics.Process.Start(ruta);
         }
 
         #endregion
@@ -133,7 +223,7 @@ namespace BLL490WC
             return boletoDAL490WC.ObtenerBoletoConBeneficio490WC(ID490WC);
         }
 
-            #endregion
+        #endregion
 
-        }
+    }
 }

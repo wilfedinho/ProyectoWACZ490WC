@@ -381,6 +381,7 @@
             this.calendarioFECHAPARTIDA_IDA490WC.Location = new System.Drawing.Point(356, 422);
             this.calendarioFECHAPARTIDA_IDA490WC.MaxSelectionCount = 1;
             this.calendarioFECHAPARTIDA_IDA490WC.Name = "calendarioFECHAPARTIDA_IDA490WC";
+            this.calendarioFECHAPARTIDA_IDA490WC.ShowToday = false;
             this.calendarioFECHAPARTIDA_IDA490WC.TabIndex = 48;
             // 
             // calendarioFECHALLEGADA_IDA490WC
@@ -388,6 +389,7 @@
             this.calendarioFECHALLEGADA_IDA490WC.Location = new System.Drawing.Point(601, 422);
             this.calendarioFECHALLEGADA_IDA490WC.MaxSelectionCount = 1;
             this.calendarioFECHALLEGADA_IDA490WC.Name = "calendarioFECHALLEGADA_IDA490WC";
+            this.calendarioFECHALLEGADA_IDA490WC.ShowToday = false;
             this.calendarioFECHALLEGADA_IDA490WC.TabIndex = 49;
             // 
             // calendarioFECHALLEGADA_VUELTA490WC
@@ -395,6 +397,7 @@
             this.calendarioFECHALLEGADA_VUELTA490WC.Location = new System.Drawing.Point(1091, 422);
             this.calendarioFECHALLEGADA_VUELTA490WC.MaxSelectionCount = 1;
             this.calendarioFECHALLEGADA_VUELTA490WC.Name = "calendarioFECHALLEGADA_VUELTA490WC";
+            this.calendarioFECHALLEGADA_VUELTA490WC.ShowToday = false;
             this.calendarioFECHALLEGADA_VUELTA490WC.TabIndex = 50;
             // 
             // calendarioFECHAPARTIDA_VUELTA490WC
@@ -402,6 +405,7 @@
             this.calendarioFECHAPARTIDA_VUELTA490WC.Location = new System.Drawing.Point(846, 422);
             this.calendarioFECHAPARTIDA_VUELTA490WC.MaxSelectionCount = 1;
             this.calendarioFECHAPARTIDA_VUELTA490WC.Name = "calendarioFECHAPARTIDA_VUELTA490WC";
+            this.calendarioFECHAPARTIDA_VUELTA490WC.ShowToday = false;
             this.calendarioFECHAPARTIDA_VUELTA490WC.TabIndex = 51;
             // 
             // LABEL_MODALIDAD490WC
