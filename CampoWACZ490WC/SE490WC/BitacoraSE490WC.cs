@@ -8,14 +8,14 @@ namespace SE490WC
 {
     public class BitacoraSE490WC
     {
-        public int IdBitacora490WC { get; set; }
+        public string IdBitacora490WC { get; set; }
         public string Username490WC { get; set; }
         public DateTime Fecha490WC { get; set; }
         public TimeSpan Hora490WC { get; set; }
         public string Modulo490WC { get; set; }
         public string Descripcion490WC { get; set; }
         public int Criticidad490WC { get; set; }
-        public BitacoraSE490WC(string nUsername490WC, DateTime nFecha490WC, TimeSpan nHora490WC, string nModulo490WC, string nDescripcion490WC, int nCriticidad490WC, int nIdBitacora490WC = 0)
+        public BitacoraSE490WC(string nUsername490WC, DateTime nFecha490WC, TimeSpan nHora490WC, string nModulo490WC, string nDescripcion490WC, int nCriticidad490WC, string nIdBitacora490WC = "")
         {
             IdBitacora490WC = nIdBitacora490WC;
             Username490WC = nUsername490WC;

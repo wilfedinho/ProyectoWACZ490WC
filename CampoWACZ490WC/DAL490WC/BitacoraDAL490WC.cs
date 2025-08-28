@@ -16,19 +16,15 @@ namespace DAL490WC
             using (SqlConnection con = GestorConexion490WC.GestorCone490WC.DevolverConexion490WC())
             {
                 con.Open();
-                string query = @"INSERT INTO Bitacora490WC
-                        (IdBitacora490WC, Username490WC, Fecha490WC, Hora490WC, Modulo490WC, Descripcion490WC, Criticidad490WC) 
-                         VALUES (@IdBitacora, @Username, @Fecha, @Hora, @Modulo, @Descripcion, @Criticidad)";
+                string query = @"INSERT INTO Bitacora490WC (Username490WC, Fecha490WC, Hora490WC, Modulo490WC, Descripcion490WC, Criticidad490WC) VALUES (@Username, @Fecha, @Hora, @Modulo, @Descripcion, @Criticidad)";
                 using (SqlCommand cmd = new SqlCommand(query, con))
                 {
-                    cmd.Parameters.AddWithValue("@IdBitacora", BitacoraAlta490WC.IdBitacora490WC);
                     cmd.Parameters.AddWithValue("@Username", BitacoraAlta490WC.Username490WC);
                     cmd.Parameters.AddWithValue("@Fecha", BitacoraAlta490WC.Fecha490WC);
                     cmd.Parameters.AddWithValue("@Hora", BitacoraAlta490WC.Hora490WC);
                     cmd.Parameters.AddWithValue("@Modulo", BitacoraAlta490WC.Modulo490WC);
                     cmd.Parameters.AddWithValue("@Descripcion", BitacoraAlta490WC.Descripcion490WC);
                     cmd.Parameters.AddWithValue("@Criticidad", BitacoraAlta490WC.Criticidad490WC);
-
                     cmd.ExecuteNonQuery();
                 }
             }
@@ -88,7 +84,7 @@ namespace DAL490WC
                     {
                         while (reader.Read())
                         {
-                            int idBitacora490WC = Convert.ToInt32(reader["IdBitacora490WC"]);
+                            string idBitacora490WC = reader["IdBitacora490WC"].ToString();
                             string username490WC = reader["Username490WC"].ToString();
                             DateTime fecha490WC = Convert.ToDateTime(reader["Fecha490WC"]);
                             TimeSpan hora490WC = (TimeSpan)reader["Hora490WC"];
@@ -96,9 +92,7 @@ namespace DAL490WC
                             string descripcion490WC = reader["Descripcion490WC"].ToString();
                             int criticidad490WC = Convert.ToInt32(reader["Criticidad490WC"]);
 
-                            listaBitacora490WC.Add(new BitacoraSE490WC(
-                                username490WC, fecha490WC, hora490WC, modulo490WC, descripcion490WC, criticidad490WC, idBitacora490WC
-                            ));
+                            listaBitacora490WC.Add(new BitacoraSE490WC(username490WC, fecha490WC, hora490WC, modulo490WC, descripcion490WC, criticidad490WC, idBitacora490WC));
                         }
                     }
                 }

@@ -1,4 +1,5 @@
-﻿using DAL490WC;
+﻿using BLLS490WC;
+using DAL490WC;
 using SE490WC;
 using System;
 using System.Collections.Generic;
@@ -17,6 +18,7 @@ namespace SERVICIOS490WC
             {
                 SesionManager490WC.GestorSesion490WC.Usuario490WC.Rol490WC = "AdminSistema";
                 SesionManager490WC.GestorSesion490WC.permisosDeLaSesion490WC = null;
+                
             }
             else
             {

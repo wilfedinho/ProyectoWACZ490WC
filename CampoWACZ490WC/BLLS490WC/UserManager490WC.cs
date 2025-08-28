@@ -1,4 +1,5 @@
-﻿using DAL490WC;
+﻿using BLLS490WC;
+using DAL490WC;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -22,6 +23,19 @@ namespace SERVICIOS490WC
                 }
                 return Instancia;
             }
+        }
+
+        public void Login490WC(Usuario490WC UsuarioLoguear490WC)
+        {
+            SesionManager490WC.GestorSesion490WC.Login490WC(UsuarioLoguear490WC);
+            Bitacora490WC GestorBitacora490WC = new Bitacora490WC();
+            GestorBitacora490WC.AltaEvento490WC("Gestión de Usuarios", "Inicio de Sesión", 5);
+        }
+        public void Logout490WC()
+        {
+            Bitacora490WC GestorBitacora490WC = new Bitacora490WC();
+            GestorBitacora490WC.AltaEvento490WC("Gestión de Usuarios", "Cierre de Sesión", 5);
+            SesionManager490WC.GestorSesion490WC.Logout490WC();
         }
 
         #region Operaciones Usuario 490WC

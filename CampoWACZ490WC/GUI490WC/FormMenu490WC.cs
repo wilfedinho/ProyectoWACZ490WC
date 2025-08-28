@@ -196,7 +196,7 @@ namespace GUI490WC
             {
                 UserManager490WC gestorUsuario490WC = new UserManager490WC();
                 gestorUsuario490WC.GuardarIdiomaUsuario490WC();
-                SesionManager490WC.GestorSesion490WC.Logout490WC();
+                UserManager490WC.UserManagerSG490WC.Logout490WC();
                 GestorForm490WC.gestorFormSG490WC.DefinirEstado490WC(new EstadoIniciarSesion490WC());
                 hideSubmenu490WC();
             }
@@ -219,9 +219,9 @@ namespace GUI490WC
         {
             try
             {
-                UserManager490WC gestorUsuario490WC = new UserManager490WC();
-                gestorUsuario490WC.GuardarIdiomaUsuario490WC();
-                SesionManager490WC.GestorSesion490WC.Logout490WC();
+                
+                UserManager490WC.UserManagerSG490WC.GuardarIdiomaUsuario490WC();
+                UserManager490WC.UserManagerSG490WC.Logout490WC();
                 GestorForm490WC.gestorFormSG490WC.DefinirEstado490WC(new EstadoCerrarAplicacion490WC());
                 hideSubmenu490WC();
             }
