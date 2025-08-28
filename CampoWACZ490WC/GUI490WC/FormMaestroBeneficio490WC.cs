@@ -20,6 +20,7 @@ namespace GUI490WC
         public FormMaestroBeneficio490WC()
         {
             InitializeComponent();
+            //Traductor490WC.TraductorSG490WC.Notificar490WC();
             Mostrar490WC();
             ActivarModoModificar490WC(false);
         }
@@ -310,6 +311,12 @@ namespace GUI490WC
 
                 }
             }
+        }
+
+        private void FormMaestroBeneficio490WC_Load(object sender, EventArgs e)
+        {
+            Traductor490WC.TraductorSG490WC.Suscribir490WC(this);
+            Traductor490WC.TraductorSG490WC.Notificar490WC();
         }
     }
 }

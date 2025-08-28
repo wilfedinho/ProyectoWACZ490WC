@@ -470,6 +470,7 @@
             this.Controls.Add(this.calendarioFECHAPARTIDA_IDA490WC);
             this.Name = "ControlModalidadVUELTA490WC";
             this.Size = new System.Drawing.Size(1006, 537);
+            this.Load += new System.EventHandler(this.ControlModalidadVUELTA490WC_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvBoleto490WC)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

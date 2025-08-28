@@ -16,8 +16,9 @@ namespace GUI490WC
         public FormCambiarIdioma490WC()
         {
             InitializeComponent();
+           // Traductor490WC.TraductorSG490WC.Notificar490WC();
             LlenarComboBox490WC();
-            ActualizarLenguaje490WC();
+            //ActualizarLenguaje490WC();
             
         }
 
@@ -83,6 +84,12 @@ namespace GUI490WC
                 }
             }
             catch { }
+        }
+
+        private void FormCambiarIdioma490WC_Load(object sender, EventArgs e)
+        {
+            Traductor490WC.TraductorSG490WC.Suscribir490WC(this);
+            Traductor490WC.TraductorSG490WC.Notificar490WC();
         }
     }
 }

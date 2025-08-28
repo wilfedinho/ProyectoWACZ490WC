@@ -21,6 +21,7 @@ namespace GUI490WC
         public FormBitacoraDeEventos490WC()
         {
             InitializeComponent();
+            //Traductor490WC.TraductorSG490WC.Notificar490WC();
             GestorBitacora490WC = new Bitacora490WC();
             GestorUsuario490WC = new UserManager490WC();
             ListaUsuario490WC = GestorUsuario490WC.DevolverTodosLosUsuarios490WC();
@@ -199,6 +200,12 @@ namespace GUI490WC
         private void CB_Usuario_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void FormBitacoraDeEventos490WC_Load(object sender, EventArgs e)
+        {
+            Traductor490WC.TraductorSG490WC.Suscribir490WC(this);
+            Traductor490WC.TraductorSG490WC.Notificar490WC();
         }
     }
 }

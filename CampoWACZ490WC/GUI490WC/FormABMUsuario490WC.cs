@@ -18,6 +18,7 @@ namespace GUI490WC
         public FormABMUsuario490WC(FormMenu490WC menuOrigen490WC)
         {
             InitializeComponent();
+            //Traductor490WC.TraductorSG490WC.Notificar490WC();
             MostrarUsuarioPorConsulta490WC();
             BT_CANCELAR490WC.Enabled = false;
             BT_APLICAR490WC.Enabled = false;
@@ -417,6 +418,12 @@ namespace GUI490WC
 
                 }
             }
+        }
+
+        private void FormABMUsuario490WC_Load(object sender, EventArgs e)
+        {
+            Traductor490WC.TraductorSG490WC.Suscribir490WC(this);
+            Traductor490WC.TraductorSG490WC.Notificar490WC();
         }
     }
 }

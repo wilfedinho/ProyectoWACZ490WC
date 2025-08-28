@@ -137,6 +137,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormCambiarClave490WC";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormCambiarClave490WC_FormClosed);
+            this.Load += new System.EventHandler(this.FormCambiarClave490WC_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -19,6 +19,7 @@ namespace GUI490WC
         public FormAplicarBeneficios490WC()
         {
             InitializeComponent();
+            //Traductor490WC.TraductorSG490WC.Notificar490WC();
             Mostrar490WC();
 
             CargarCliente490WC(null);
@@ -233,6 +234,12 @@ namespace GUI490WC
                     c490WC.Text = Traductor490WC.TraductorSG490WC.Traducir490WC(c490WC.Name);
                 }
             }
+        }
+
+        private void FormAplicarBeneficios490WC_Load(object sender, EventArgs e)
+        {
+            Traductor490WC.TraductorSG490WC.Suscribir490WC(this);
+            Traductor490WC.TraductorSG490WC.Notificar490WC();
         }
     }
 }

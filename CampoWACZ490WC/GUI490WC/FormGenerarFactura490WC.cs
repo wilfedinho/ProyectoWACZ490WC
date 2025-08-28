@@ -21,6 +21,7 @@ namespace GUI490WC
         public FormGenerarFactura490WC()
         {
             InitializeComponent();
+            //Traductor490WC.TraductorSG490WC.Notificar490WC();
             CargarCliente490WC(null);
             BT_COBRARFACTURA490WC.Enabled = false;
         }
@@ -207,6 +208,12 @@ namespace GUI490WC
             CargarCliente490WC(null);
             boletoCobrar490WC = null;
             BT_COBRARFACTURA490WC.Enabled = false;
+        }
+
+        private void FormGenerarFactura490WC_Load(object sender, EventArgs e)
+        {
+            Traductor490WC.TraductorSG490WC.Suscribir490WC(this);
+            Traductor490WC.TraductorSG490WC.Notificar490WC();
         }
     }
 }

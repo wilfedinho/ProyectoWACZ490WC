@@ -22,11 +22,12 @@ namespace GUI490WC
         public FormCobrarFactura490WC(Cliente490WC clienteCobrar490WC, Boleto490WC BoletoCobrar490WC)
         {
             InitializeComponent();
+          //  Traductor490WC.TraductorSG490WC.Notificar490WC();
             clienteCargado490WC = clienteCobrar490WC;
             boletoCargado490WC = BoletoCobrar490WC;
             CargarDatosPreviosFactura490WC();
-            Traductor490WC.TraductorSG490WC.Suscribir490WC(this);
-            ActualizarLenguaje490WC();
+          //  Traductor490WC.TraductorSG490WC.Suscribir490WC(this);
+          //  ActualizarLenguaje490WC();
         }
 
         public void CargarDatosPreviosFactura490WC()
@@ -219,6 +220,12 @@ namespace GUI490WC
                     c490WC.Text = a;
                 }
             }
+        }
+
+        private void FormCobrarFactura490WC_Load(object sender, EventArgs e)
+        {
+            Traductor490WC.TraductorSG490WC.Suscribir490WC(this);
+            Traductor490WC.TraductorSG490WC.Notificar490WC();
         }
     }
 }

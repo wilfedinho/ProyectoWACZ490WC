@@ -29,6 +29,12 @@
         private void InitializeComponent()
         {
             this.dgvBitacora = new System.Windows.Forms.DataGridView();
+            this.ColumnUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaHora = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaModulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaDescripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaCriticidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CB_Usuario = new System.Windows.Forms.ComboBox();
             this.CB_Modulo = new System.Windows.Forms.ComboBox();
             this.CB_Descripcion = new System.Windows.Forms.ComboBox();
@@ -48,12 +54,6 @@
             this.labelNombre = new System.Windows.Forms.Label();
             this.labelApellido = new System.Windows.Forms.Label();
             this.labelDNI = new System.Windows.Forms.Label();
-            this.ColumnUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnaHora = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnaModulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnaDescripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnaCriticidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBitacora)).BeginInit();
             this.SuspendLayout();
             // 
@@ -81,6 +81,42 @@
             this.dgvBitacora.Size = new System.Drawing.Size(950, 219);
             this.dgvBitacora.TabIndex = 1;
             this.dgvBitacora.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvBitacora_CellMouseClick);
+            // 
+            // ColumnUsuario
+            // 
+            this.ColumnUsuario.HeaderText = "Usuario";
+            this.ColumnUsuario.Name = "ColumnUsuario";
+            this.ColumnUsuario.ReadOnly = true;
+            // 
+            // ColumnFecha
+            // 
+            this.ColumnFecha.HeaderText = "Fecha";
+            this.ColumnFecha.Name = "ColumnFecha";
+            this.ColumnFecha.ReadOnly = true;
+            // 
+            // ColumnaHora
+            // 
+            this.ColumnaHora.HeaderText = "Hora";
+            this.ColumnaHora.Name = "ColumnaHora";
+            this.ColumnaHora.ReadOnly = true;
+            // 
+            // ColumnaModulo
+            // 
+            this.ColumnaModulo.HeaderText = "Modulo";
+            this.ColumnaModulo.Name = "ColumnaModulo";
+            this.ColumnaModulo.ReadOnly = true;
+            // 
+            // ColumnaDescripcion
+            // 
+            this.ColumnaDescripcion.HeaderText = "Descripcion";
+            this.ColumnaDescripcion.Name = "ColumnaDescripcion";
+            this.ColumnaDescripcion.ReadOnly = true;
+            // 
+            // ColumnaCriticidad
+            // 
+            this.ColumnaCriticidad.HeaderText = "Criticidad";
+            this.ColumnaCriticidad.Name = "ColumnaCriticidad";
+            this.ColumnaCriticidad.ReadOnly = true;
             // 
             // CB_Usuario
             // 
@@ -301,43 +337,7 @@
             this.labelDNI.TabIndex = 111;
             this.labelDNI.Text = "DNI";
             // 
-            // ColumnUsuario
-            // 
-            this.ColumnUsuario.HeaderText = "Usuario";
-            this.ColumnUsuario.Name = "ColumnUsuario";
-            this.ColumnUsuario.ReadOnly = true;
-            // 
-            // ColumnFecha
-            // 
-            this.ColumnFecha.HeaderText = "Fecha";
-            this.ColumnFecha.Name = "ColumnFecha";
-            this.ColumnFecha.ReadOnly = true;
-            // 
-            // ColumnaHora
-            // 
-            this.ColumnaHora.HeaderText = "Hora";
-            this.ColumnaHora.Name = "ColumnaHora";
-            this.ColumnaHora.ReadOnly = true;
-            // 
-            // ColumnaModulo
-            // 
-            this.ColumnaModulo.HeaderText = "Modulo";
-            this.ColumnaModulo.Name = "ColumnaModulo";
-            this.ColumnaModulo.ReadOnly = true;
-            // 
-            // ColumnaDescripcion
-            // 
-            this.ColumnaDescripcion.HeaderText = "Descripcion";
-            this.ColumnaDescripcion.Name = "ColumnaDescripcion";
-            this.ColumnaDescripcion.ReadOnly = true;
-            // 
-            // ColumnaCriticidad
-            // 
-            this.ColumnaCriticidad.HeaderText = "Criticidad";
-            this.ColumnaCriticidad.Name = "ColumnaCriticidad";
-            this.ColumnaCriticidad.ReadOnly = true;
-            // 
-            // FormBitacoraDeEventos
+            // FormBitacoraDeEventos490WC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -363,8 +363,9 @@
             this.Controls.Add(this.CB_Modulo);
             this.Controls.Add(this.CB_Usuario);
             this.Controls.Add(this.dgvBitacora);
-            this.Name = "FormBitacoraDeEventos";
+            this.Name = "FormBitacoraDeEventos490WC";
             this.Text = "FormBitacoraDeEventos";
+            this.Load += new System.EventHandler(this.FormBitacoraDeEventos490WC_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvBitacora)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

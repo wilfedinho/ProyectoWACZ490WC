@@ -648,6 +648,7 @@
             this.Name = "FormMenu490WC";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormMenu490WC";
+            this.Load += new System.EventHandler(this.FormMenu490WC_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMascotaCZWC490)).EndInit();
             this.panelBotones490WC.ResumeLayout(false);
             this.panelSubmenuReportes490WC.ResumeLayout(false);

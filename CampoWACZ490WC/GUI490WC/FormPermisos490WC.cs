@@ -25,6 +25,7 @@ namespace GUI490WC
         public FormPermisos490WC()
         {
             InitializeComponent();
+            //Traductor490WC.TraductorSG490WC.Notificar490WC();
             ActivarModificacion490WC(false);
             HabilitarCarga490WC();
             CargarComboboxFamilia490WC();
@@ -34,7 +35,7 @@ namespace GUI490WC
             LlenarFamilias490WC();
             LlenarPermisosSimples490WC();
             HabilitarCB490WC();
-            ActualizarLenguaje490WC();
+            //ActualizarLenguaje490WC();
         }
 
 
@@ -231,7 +232,8 @@ namespace GUI490WC
 
         private void FormPermisos490WC_Load(object sender, EventArgs e)
         {
-
+            Traductor490WC.TraductorSG490WC.Suscribir490WC(this);
+            Traductor490WC.TraductorSG490WC.Notificar490WC();
         }
 
         private void BT_CrearRol490WC_Click(object sender, EventArgs e)

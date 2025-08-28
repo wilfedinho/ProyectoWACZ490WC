@@ -312,6 +312,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormMaestroBeneficio490WC";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormMaestroBeneficio490WC_FormClosed);
+            this.Load += new System.EventHandler(this.FormMaestroBeneficio490WC_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvBeneficio490WC)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

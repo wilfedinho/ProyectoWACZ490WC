@@ -401,6 +401,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormABMUsuario490WC";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormABMUsuario490WC_FormClosed);
+            this.Load += new System.EventHandler(this.FormABMUsuario490WC_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuario490WC)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

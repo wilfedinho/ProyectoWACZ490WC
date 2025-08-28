@@ -408,6 +408,7 @@
             this.Controls.Add(this.dgvBoleto490WC);
             this.Name = "ControlModalidadIDA490WC";
             this.Size = new System.Drawing.Size(1010, 541);
+            this.Load += new System.EventHandler(this.ControlModalidadIDA490WC_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvBoleto490WC)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

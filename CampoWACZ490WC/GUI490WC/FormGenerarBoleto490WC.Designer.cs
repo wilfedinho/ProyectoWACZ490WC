@@ -274,6 +274,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormGenerarBoleto490WC";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormGenerarBoleto490WC_FormClosed);
+            this.Load += new System.EventHandler(this.FormGenerarBoleto490WC_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

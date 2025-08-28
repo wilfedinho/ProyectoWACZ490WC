@@ -20,8 +20,9 @@ namespace GUI490WC
         public FormFactura490WC()
         {
             InitializeComponent();
+           // Traductor490WC.TraductorSG490WC.Notificar490WC();
             MostrarFacturas490WC();
-            ActualizarLenguaje490WC();
+           // ActualizarLenguaje490WC();
         }
 
         public void ActualizarLenguaje490WC()
@@ -88,6 +89,12 @@ namespace GUI490WC
         private void FormFactura490WC_FormClosed(object sender, FormClosedEventArgs e)
         {
             MostrarFacturas490WC();
+        }
+
+        private void FormFactura490WC_Load(object sender, EventArgs e)
+        {
+            Traductor490WC.TraductorSG490WC.Suscribir490WC(this);
+            Traductor490WC.TraductorSG490WC.Notificar490WC();
         }
     }
 }

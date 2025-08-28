@@ -16,6 +16,7 @@ namespace GUI490WC
         public FormCambiarClave490WC()
         {
               InitializeComponent();
+           // Traductor490WC.TraductorSG490WC.Notificar490WC();
         }
 
         public void ActualizarLenguaje490WC()
@@ -102,6 +103,12 @@ namespace GUI490WC
         private void FormCambiarClave490WC_FormClosed(object sender, FormClosedEventArgs e)
         {
             LimpiarTB490WC();  
+        }
+
+        private void FormCambiarClave490WC_Load(object sender, EventArgs e)
+        {
+            Traductor490WC.TraductorSG490WC.Suscribir490WC(this);
+            Traductor490WC.TraductorSG490WC.Notificar490WC();
         }
     }
     

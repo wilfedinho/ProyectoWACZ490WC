@@ -492,6 +492,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormMaestroCliente490WC";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormMaestroCliente490WC_FormClosed);
+            this.Load += new System.EventHandler(this.FormMaestroCliente490WC_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCliente490WC)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
