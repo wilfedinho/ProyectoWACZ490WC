@@ -29,12 +29,12 @@ namespace SERVICIOS490WC
         {
             SesionManager490WC.GestorSesion490WC.Login490WC(UsuarioLoguear490WC);
             Bitacora490WC GestorBitacora490WC = new Bitacora490WC();
-            GestorBitacora490WC.AltaEvento490WC("Gestión de Usuarios", "Inicio de Sesión", 5);
+            GestorBitacora490WC.AltaEvento490WC("Gestión Usuarios", "Iniciar Sesión", 4);
         }
         public void Logout490WC()
         {
             Bitacora490WC GestorBitacora490WC = new Bitacora490WC();
-            GestorBitacora490WC.AltaEvento490WC("Gestión de Usuarios", "Cierre de Sesión", 5);
+            GestorBitacora490WC.AltaEvento490WC("Gestión Usuarios", "Cerrar Sesión", 4);
             SesionManager490WC.GestorSesion490WC.Logout490WC();
         }
 
@@ -42,31 +42,45 @@ namespace SERVICIOS490WC
         public void Alta490WC(Usuario490WC UsuarioAlta490WC)
         {
             UsuarioAccesoDatos490WC.UsuarioAccesoDatosSG490WC.Alta490WC(UsuarioAlta490WC);
+            Bitacora490WC GestorBitacora490WC = new Bitacora490WC();
+            GestorBitacora490WC.AltaEvento490WC("Gestión Usuarios", "Crear Usuario", 3);
         }
         public void Baja490WC(string username490WC)
         {
             UsuarioAccesoDatos490WC.UsuarioAccesoDatosSG490WC.Baja490WC(username490WC);
+            Bitacora490WC GestorBitacora490WC = new Bitacora490WC();
+            GestorBitacora490WC.AltaEvento490WC("Gestión Usuarios", "Eliminar Usuario", 5);
         }
         public void Modificar490WC(Usuario490WC UsuarioModificado)
         {
             UsuarioAccesoDatos490WC.UsuarioAccesoDatosSG490WC.Modificar490WC(UsuarioModificado);
+            Bitacora490WC GestorBitacora490WC = new Bitacora490WC();
+            GestorBitacora490WC.AltaEvento490WC("Gestión Usuarios", "Modificar Usuario", 3);
         }
         public void DesbloquearUsuario490WC(Usuario490WC UsuarioDesbloquear)
         {
             UsuarioDesbloquear.Contraseña490WC = Cifrador490WC.GestorCifrador490WC.EncriptarIrreversible490WC(UsuarioDesbloquear.DNI490WC + UsuarioDesbloquear.Apellido490WC);
             UsuarioAccesoDatos490WC.UsuarioAccesoDatosSG490WC.DesbloquearUsuario490WC(UsuarioDesbloquear);
+            Bitacora490WC GestorBitacora490WC = new Bitacora490WC();
+            GestorBitacora490WC.AltaEvento490WC("Gestión Usuarios", "Desbloquear Usuario", 5);
         }
         public void BloquearUsuario490WC(string username490WC)
         {
             UsuarioAccesoDatos490WC.UsuarioAccesoDatosSG490WC.BloquearUsuario490WC(username490WC);
+            Bitacora490WC GestorBitacora490WC = new Bitacora490WC();
+            GestorBitacora490WC.AltaEvento490WC("Gestión Usuarios", "Bloquear Usuario", 5);
         }
         public void DesactivarUsuario490WC(string username490WC)
         {
             UsuarioAccesoDatos490WC.UsuarioAccesoDatosSG490WC.DesactivarUsuario490WC(username490WC);
+            Bitacora490WC GestorBitacora490WC = new Bitacora490WC();
+            GestorBitacora490WC.AltaEvento490WC("Gestión Usuarios", "Desactivar Usuario", 5);
         }
         public void ActivarUsuario490WC(string username490WC)
         {
             UsuarioAccesoDatos490WC.UsuarioAccesoDatosSG490WC.ActivarUsuario490WC(username490WC);
+            Bitacora490WC GestorBitacora490WC = new Bitacora490WC();
+            GestorBitacora490WC.AltaEvento490WC("Gestión Usuarios", "Activar Usuario", 5);
         }
 
         public void ResetearIntentos490WC(Usuario490WC usuarioVerificar490WC)

@@ -25,19 +25,49 @@ namespace BLLS490WC
         public bool InsertarFamilia490WC(PermisoCompuesto490WC familiaNueva)
         {
             PermisoDAL490WC gestorPermiso490WC = new PermisoDAL490WC();
-            return gestorPermiso490WC.InsertarFamilia490WC(familiaNueva);
+            bool estadoOperacion490WC = gestorPermiso490WC.InsertarFamilia490WC(familiaNueva);
+            if (estadoOperacion490WC)
+            {
+                Bitacora490WC GestorBitacora490WC = new Bitacora490WC();
+                GestorBitacora490WC.AltaEvento490WC("Gestión Permisos", "Crear Familia", 4);
+                return estadoOperacion490WC;
+            }
+            else
+            {
+                return estadoOperacion490WC;
+            }
         }
 
         public bool InsertarRelacionDesdeFamilia490WC(string nombreFamilia, string nombreIncluido)
         {
             PermisoDAL490WC gestorPermiso490WC = new PermisoDAL490WC();
-            return gestorPermiso490WC.InsertarRelacionDesdeFamilia490WC(nombreFamilia, nombreIncluido);
+            bool estadoOperacion490WC = gestorPermiso490WC.InsertarRelacionDesdeFamilia490WC(nombreFamilia, nombreIncluido);
+            if (estadoOperacion490WC)
+            {
+                Bitacora490WC GestorBitacora490WC = new Bitacora490WC();
+                GestorBitacora490WC.AltaEvento490WC("Gestión Permisos", "Agregar Permiso a Familia", 4);
+                return estadoOperacion490WC;
+            }
+            else
+            {
+                return estadoOperacion490WC;
+            }
         }
 
         public bool BorrarFamilia490WC(string nombreFamilia)
         {
             PermisoDAL490WC gestorPermiso490WC = new PermisoDAL490WC();
-            return gestorPermiso490WC.BorrarFamilia490WC(nombreFamilia);
+            bool estadoOperacion490WC = gestorPermiso490WC.BorrarFamilia490WC(nombreFamilia);
+            if (estadoOperacion490WC)
+            {
+                Bitacora490WC GestorBitacora490WC = new Bitacora490WC();
+                GestorBitacora490WC.AltaEvento490WC("Gestión Permisos", "Eliminar Familia", 5);
+                return estadoOperacion490WC;
+            }
+            else
+            {
+                return estadoOperacion490WC;
+            }
         }
 
         public bool FamiliaQuedariaVaciaTrasEliminarElemento(string nombreFamilia, string nombreElemento)
@@ -49,7 +79,18 @@ namespace BLLS490WC
         public bool EliminarRelacionFamilia_Familia(string familiaPadre, string familiaHija)
         {
             PermisoDAL490WC gestorPermiso490WC = new PermisoDAL490WC();
-            return gestorPermiso490WC.EliminarRelacionFamilia_Familia(familiaPadre, familiaHija);
+            bool estadoOperacion490WC = gestorPermiso490WC.EliminarRelacionFamilia_Familia(familiaPadre, familiaHija);
+            if (estadoOperacion490WC)
+            {
+                Bitacora490WC GestorBitacora490WC = new Bitacora490WC();
+                GestorBitacora490WC.AltaEvento490WC("Gestión Permisos", "Eliminar Familia a Familia", 5);
+                return estadoOperacion490WC;
+            }
+            else
+            {
+                return estadoOperacion490WC;
+            }
+
         }
 
         public bool FamiliaExiste490WC(string nombreFamilia)

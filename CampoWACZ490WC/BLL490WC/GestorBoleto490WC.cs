@@ -1,4 +1,5 @@
 ﻿using BE490WC;
+using BLLS490WC;
 using DAL490WC;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
@@ -21,48 +22,64 @@ namespace BLL490WC
         {
             BoletoDAL490WC gestorBoletoDAL490WC = new BoletoDAL490WC();
             gestorBoletoDAL490WC.Alta490WC(BoletoAgregar490WC);
+            Bitacora490WC GestorBitacora490WC = new Bitacora490WC();
+            GestorBitacora490WC.AltaEvento490WC("Gestión Boleto", "Crear Boleto", 3);
         }
 
         public void Baja490WC(string IDBoleto490WC)
         {
             BoletoDAL490WC gestorBoletoDAL490WC = new BoletoDAL490WC();
             gestorBoletoDAL490WC.Baja490WC(IDBoleto490WC);
+            Bitacora490WC GestorBitacora490WC = new Bitacora490WC();
+            GestorBitacora490WC.AltaEvento490WC("Gestión Boleto", "Eliminar Boleto", 5);
         }
 
         public void Modificar490WC(Boleto490WC BoletoModificado490WC)
         {
             BoletoDAL490WC gestorBoletoDAL490WC = new BoletoDAL490WC();
             gestorBoletoDAL490WC.Modificar490WC(BoletoModificado490WC);
+            Bitacora490WC GestorBitacora490WC = new Bitacora490WC();
+            GestorBitacora490WC.AltaEvento490WC("Gestión Boleto", "Modificar Boleto", 3);
         }
 
         public void AsignarBoletoCliente490WC(Boleto490WC boletoAsignar490WC, Cliente490WC clienteAsignar490WC)
         {
             BoletoDAL490WC boletoDAL490WC = new BoletoDAL490WC();
             boletoDAL490WC.AsignarBoletoCliente490WC(boletoAsignar490WC, clienteAsignar490WC);
+            Bitacora490WC GestorBitacora490WC = new Bitacora490WC();
+            GestorBitacora490WC.AltaEvento490WC("Gestión Boleto", "Asignar Boleto A un Cliente", 2);
         }
 
         public void AsignarBoletoClienteRegistrar490WC(Boleto490WC boletoAsignar490WC, Cliente490WC clienteAsignar490WC)
         {
             BoletoDAL490WC boletoDAL490WC = new BoletoDAL490WC();
             boletoDAL490WC.AsignarBoletoClienteRegistrar490WC(boletoAsignar490WC, clienteAsignar490WC);
+            Bitacora490WC GestorBitacora490WC = new Bitacora490WC();
+            GestorBitacora490WC.AltaEvento490WC("Gestión Boleto", "Asignar Boleto A un Cliente", 2);
         }
 
         public void GenerarBoletoCompra490WC(Boleto490WC boletoGenerar490WC)
         {
             BoletoDAL490WC boletoDAL490WC = new BoletoDAL490WC();
             boletoDAL490WC.GenerarBoletoCompra490WC(boletoGenerar490WC);
+            Bitacora490WC GestorBitacora490WC = new Bitacora490WC();
+            GestorBitacora490WC.AltaEvento490WC("Gestión Boleto", "Generar Boleto", 5);
         }
 
         public void LiberarBoletosVencidos490WC()
         {
             BoletoDAL490WC boletoDAL490WC = new BoletoDAL490WC();
             boletoDAL490WC.LiberarBoletosVencidos490WC();
+            Bitacora490WC GestorBitacora490WC = new Bitacora490WC();
+            GestorBitacora490WC.AltaEvento490WC("Gestión Boleto", "Liberar Boletos Vencidos", 3);
         }
 
         public void CobrarBoleto490WC(Boleto490WC BoletoCobrado490WC)
         {
             BoletoDAL490WC gestorBoletoDAL490WC = new BoletoDAL490WC();
             gestorBoletoDAL490WC.CobrarBoleto490WC(BoletoCobrado490WC);
+            Bitacora490WC GestorBitacora490WC = new Bitacora490WC();
+            GestorBitacora490WC.AltaEvento490WC("Gestión Boleto", "Vender Boleto", 2);
         }
 
         public bool ExisteBoletoAsignar490WC(int idBoleto)
@@ -157,6 +174,8 @@ namespace BLL490WC
 
 
             System.Diagnostics.Process.Start(ruta);
+            Bitacora490WC GestorBitacora490WC = new Bitacora490WC();
+            GestorBitacora490WC.AltaEvento490WC("Gestión Boleto", "Generar Reporte Boleto", 2);
         }
 
         #endregion

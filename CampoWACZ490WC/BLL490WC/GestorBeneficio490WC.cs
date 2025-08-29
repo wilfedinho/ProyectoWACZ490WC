@@ -1,4 +1,5 @@
 ﻿using BE490WC;
+using BLLS490WC;
 using DAL490WC;
 using System;
 using System.Collections.Generic;
@@ -15,41 +16,55 @@ namespace BLL490WC
         {
             BeneficioDAL490WC beneficioDAL490WC = new BeneficioDAL490WC();
             beneficioDAL490WC.Alta490WC(BeneficioAlta490WC);
+            Bitacora490WC GestorBitacora490WC = new Bitacora490WC();
+            GestorBitacora490WC.AltaEvento490WC("Gestión Beneficio", "Crear Beneficio",3);
         }
 
         public bool Baja490WC(int ID490WC)
         {
+            Bitacora490WC GestorBitacora490WC = new Bitacora490WC();
+            GestorBitacora490WC.AltaEvento490WC("Gestión Beneficio", "Eliminar Beneficio", 5);
             BeneficioDAL490WC beneficioDAL490WC = new BeneficioDAL490WC();
-             return beneficioDAL490WC.Baja490WC(ID490WC);
+            return beneficioDAL490WC.Baja490WC(ID490WC);
         }
 
         public void Modificacion490WC(Beneficio490WC BeneficioModificado490WC)
         {
             BeneficioDAL490WC beneficioDAL490WC = new BeneficioDAL490WC();
             beneficioDAL490WC.Modificacion490WC(BeneficioModificado490WC);
+            Bitacora490WC GestorBitacora490WC = new Bitacora490WC();
+            GestorBitacora490WC.AltaEvento490WC("Gestión Beneficio", "Modificar Beneficio", 3);
         }
 
         public void ReducirSaldoEstrellas490WC(string DNICliente490WC, int cantidadEstrellas490WC)
         {
             BeneficioDAL490WC beneficioDAL490WC = new BeneficioDAL490WC();
             beneficioDAL490WC.ReducirSaldoEstrellas490WC(DNICliente490WC, cantidadEstrellas490WC);
+            Bitacora490WC GestorBitacora490WC = new Bitacora490WC();
+            GestorBitacora490WC.AltaEvento490WC("Gestión Beneficio", "Reducir Estrellas", 3);
         }
 
         public void AplicarBeneficio490WC(string IDBoleto490WC, float DescuentoAplicar490WC, string nombreBeneficio490WC)
         {
             BeneficioDAL490WC beneficioDAL490WC = new BeneficioDAL490WC();
             beneficioDAL490WC.AplicarBeneficio490WC(IDBoleto490WC, DescuentoAplicar490WC,nombreBeneficio490WC);
+            Bitacora490WC GestorBitacora490WC = new Bitacora490WC();
+            GestorBitacora490WC.AltaEvento490WC("Gestión Beneficio", "Aplicar Beneficio", 3);
         }
 
         public void AgregarBeneficioACliente490WC(string DNICliente490WC, int CodigoBeneficio490WC)
         {
            BeneficioDAL490WC gestorBeneficio490WC = new BeneficioDAL490WC();
            gestorBeneficio490WC.AgregarBeneficioACliente490WC(DNICliente490WC, CodigoBeneficio490WC);
+            Bitacora490WC GestorBitacora490WC = new Bitacora490WC();
+            GestorBitacora490WC.AltaEvento490WC("Gestión Beneficio", "Asignar Beneficio a Cliente", 2);
         }
         public void EliminarBeneficioDeCliente490WC(string DNICliente490WC, int CodigoBeneficio490WC)
         {
             BeneficioDAL490WC gestorBeneficio490WC = new BeneficioDAL490WC();
             gestorBeneficio490WC.EliminarBeneficioDeCliente490WC(DNICliente490WC, CodigoBeneficio490WC);
+            Bitacora490WC GestorBitacora490WC = new Bitacora490WC();
+            GestorBitacora490WC.AltaEvento490WC("Gestión Beneficio", "Eliminar Beneficio a un Cliente", 5);
         }
 
         public bool ExisteNombreBeneficioAlta490WC(string nombreBeneficio490WC)

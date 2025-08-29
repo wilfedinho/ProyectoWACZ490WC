@@ -1,4 +1,5 @@
 ﻿using BE490WC;
+using BLLS490WC;
 using DAL490WC;
 using System;
 using System.Collections.Generic;
@@ -18,23 +19,31 @@ namespace BLL490WC
         {
             ClienteDAL490WC clienteDAL490WC = new ClienteDAL490WC();
             clienteDAL490WC.Alta490WC(clienteAlta490WC);
+            Bitacora490WC GestorBitacora490WC = new Bitacora490WC();
+            GestorBitacora490WC.AltaEvento490WC("Gestión Cliente", "Crear Cliente", 3);
         }
         public void Baja490WC(string dni)
         {
             ClienteDAL490WC clienteDAL490WC = new ClienteDAL490WC();
             clienteDAL490WC.Baja490WC(dni);
+            Bitacora490WC GestorBitacora490WC = new Bitacora490WC();
+            GestorBitacora490WC.AltaEvento490WC("Gestión Cliente", "Eliminar Cliente", 5);
         }
 
         public void ActivarCliente490WC(string DNI490WC)
         {
             ClienteDAL490WC clienteDAL490WC = new ClienteDAL490WC();
             clienteDAL490WC.ActivarCliente490WC(DNI490WC);
+            Bitacora490WC GestorBitacora490WC = new Bitacora490WC();
+            GestorBitacora490WC.AltaEvento490WC("Gestión Cliente", "Activar Cliente", 5);
         }
 
         public void Modificar490WC(Cliente490WC clienteModificado490WC)
         {
             ClienteDAL490WC clienteDAL490WC = new ClienteDAL490WC();
             clienteDAL490WC.Modificar490WC(clienteModificado490WC);
+            Bitacora490WC GestorBitacora490WC = new Bitacora490WC();
+            GestorBitacora490WC.AltaEvento490WC("Gestión Cliente", "Modificar Cliente", 3);
         }
 
         public bool VerificarFormatoDNI490WC(string DNI490WC)
@@ -118,6 +127,8 @@ namespace BLL490WC
         {
             ClienteDAL490WC clienteDAL490WC = new ClienteDAL490WC();
             clienteDAL490WC.ModificarEstrellasCliente490WC(DNI490WC, EstrellasReducir490WC);
+            Bitacora490WC GestorBitacora490WC = new Bitacora490WC();
+            GestorBitacora490WC.AltaEvento490WC("Gestión Cliente", "Modificar Cliente", 3);
         }
 
        

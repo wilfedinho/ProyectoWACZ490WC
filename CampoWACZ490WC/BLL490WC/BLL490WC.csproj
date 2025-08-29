@@ -59,6 +59,10 @@
       <Project>{865dd08a-c4d3-4679-852f-1239493e0c7f}</Project>
       <Name>BE490WC</Name>
     </ProjectReference>
+    <ProjectReference Include="..\BLLS490WC\BLLS490WC.csproj">
+      <Project>{a75ec413-7096-4591-bd0b-f7c4ba246f23}</Project>
+      <Name>BLLS490WC</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DAL490WC\DAL490WC.csproj">
       <Project>{c80766e9-a7b3-441a-86a3-8ff65b5882ad}</Project>
       <Name>DAL490WC</Name>

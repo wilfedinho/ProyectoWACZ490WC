@@ -1,4 +1,5 @@
 ﻿using BE490WC;
+using BLLS490WC;
 using DAL490WC;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
@@ -18,6 +19,8 @@ namespace BLL490WC
         {
             FacturaDAL490WC gestorFactura490WC = new FacturaDAL490WC();
             gestorFactura490WC.Alta490WC(FacturaAlta490WC);
+            Bitacora490WC GestorBitacora490WC = new Bitacora490WC();
+            GestorBitacora490WC.AltaEvento490WC("Gestión Factura", "Crear Factura", 3);
         }
         public List<Factura490WC> ObtenerTodasLasFacturas490WC()
         {
@@ -71,6 +74,8 @@ namespace BLL490WC
                 doc490WC.Close();
             }
             System.Diagnostics.Process.Start(rutaFinal490WC);
+            Bitacora490WC GestorBitacora490WC = new Bitacora490WC();
+            GestorBitacora490WC.AltaEvento490WC("Gestión Factura", "Generar Reporte Factura", 2);
         }
     }
 }

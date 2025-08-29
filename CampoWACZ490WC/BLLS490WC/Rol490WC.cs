@@ -18,7 +18,7 @@ namespace SERVICIOS490WC
             {
                 SesionManager490WC.GestorSesion490WC.Usuario490WC.Rol490WC = "AdminSistema";
                 SesionManager490WC.GestorSesion490WC.permisosDeLaSesion490WC = null;
-                
+
             }
             else
             {
@@ -43,19 +43,50 @@ namespace SERVICIOS490WC
         public bool InsertarRol490WC(PermisoCompuesto490WC nuevoRol)
         {
             PermisoDAL490WC gestorPermiso490WC = new PermisoDAL490WC();
-            return gestorPermiso490WC.InsertarRol490WC(nuevoRol);
+            bool estadoOperacion490WC = gestorPermiso490WC.InsertarRol490WC(nuevoRol);
+            if (estadoOperacion490WC)
+            {
+                Bitacora490WC GestorBitacora490WC = new Bitacora490WC();
+                GestorBitacora490WC.AltaEvento490WC("Gestión Permisos", "Crear Rol", 4);
+                return estadoOperacion490WC;
+            }
+            else
+            {
+                return estadoOperacion490WC;
+            }
+
         }
 
         public bool InsertarRelacionDesdePerfil490WC(string nombrePerfil, string nombreIncluido)
         {
             PermisoDAL490WC gestorPermiso490WC = new PermisoDAL490WC();
-            return gestorPermiso490WC.InsertarRelacionDesdePerfil490WC(nombrePerfil, nombreIncluido);
+            bool estadoOperacion490WC = gestorPermiso490WC.InsertarRelacionDesdePerfil490WC(nombrePerfil, nombreIncluido);
+            if (estadoOperacion490WC)
+            {
+                Bitacora490WC GestorBitacora490WC = new Bitacora490WC();
+                GestorBitacora490WC.AltaEvento490WC("Gestión Permisos", "Agregar Permiso a un Rol", 4);
+                return estadoOperacion490WC;
+            }
+            else
+            {
+                return estadoOperacion490WC;
+            }
         }
 
         public bool BorrarRol490WC(string nombreRol)
         {
             PermisoDAL490WC gestorPermiso490WC = new PermisoDAL490WC();
-            return gestorPermiso490WC.BorrarRol490WC(nombreRol);
+            bool estadoOperacion490WC = gestorPermiso490WC.BorrarRol490WC(nombreRol);
+            if (estadoOperacion490WC)
+            {
+                Bitacora490WC GestorBitacora490WC = new Bitacora490WC();
+                GestorBitacora490WC.AltaEvento490WC("Gestión Permisos", "Eliminar Rol", 5);
+                return estadoOperacion490WC;
+            }
+            else
+            {
+                return estadoOperacion490WC;
+            }
         }
 
         public bool PerfilQuedariaVacioTrasEliminarElemento(string nombrePerfil, string nombreElemento)
@@ -71,7 +102,7 @@ namespace SERVICIOS490WC
             {
                 if (hijo.obtenerPermisoNombre490WC() == nombreBuscado)
                 {
-                    return raiz; 
+                    return raiz;
                 }
 
                 if (hijo is PermisoCompuesto490WC hijoCompuesto)
@@ -82,13 +113,23 @@ namespace SERVICIOS490WC
                 }
             }
 
-            return null; 
+            return null;
         }
 
         public bool EliminarRelacionPerfil_Familia(string nombrePerfil, string nombreFamilia)
         {
             PermisoDAL490WC gestorPermiso490WC = new PermisoDAL490WC();
-            return gestorPermiso490WC.EliminarRelacionPerfil_Familia(nombrePerfil, nombreFamilia);
+            bool estadoOperacion490WC = gestorPermiso490WC.EliminarRelacionPerfil_Familia(nombrePerfil, nombreFamilia);
+            if (estadoOperacion490WC)
+            {
+                Bitacora490WC GestorBitacora490WC = new Bitacora490WC();
+                GestorBitacora490WC.AltaEvento490WC("Gestión Permisos", "Eliminar Familia de un Rol", 5);
+                return estadoOperacion490WC;
+            }
+            else
+            {
+                return estadoOperacion490WC;
+            }
         }
 
         public bool PerfilExiste490WC(string nombrePerfil)
@@ -97,7 +138,7 @@ namespace SERVICIOS490WC
             return gestorPermiso490WC.PerfilExiste490WC(nombrePerfil);
         }
 
-        
+
 
         public bool RolEstaAsignado490WC(string nombreRol490WC)
         {
