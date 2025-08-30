@@ -364,6 +364,7 @@
             this.Controls.Add(this.CB_Usuario);
             this.Controls.Add(this.dgvBitacora);
             this.Name = "FormBitacoraDeEventos490WC";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormBitacoraDeEventos";
             this.Load += new System.EventHandler(this.FormBitacoraDeEventos490WC_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvBitacora)).EndInit();

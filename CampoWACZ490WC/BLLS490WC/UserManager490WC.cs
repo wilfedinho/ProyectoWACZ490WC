@@ -57,6 +57,10 @@ namespace SERVICIOS490WC
             Bitacora490WC GestorBitacora490WC = new Bitacora490WC();
             GestorBitacora490WC.AltaEvento490WC("Gestión Usuarios", "Modificar Usuario", 3);
         }
+        public void ModificarLogInLogOut490WC(Usuario490WC UsuarioModificado)
+        {
+            UsuarioAccesoDatos490WC.UsuarioAccesoDatosSG490WC.Modificar490WC(UsuarioModificado);
+        }
         public void DesbloquearUsuario490WC(Usuario490WC UsuarioDesbloquear)
         {
             UsuarioDesbloquear.Contraseña490WC = Cifrador490WC.GestorCifrador490WC.EncriptarIrreversible490WC(UsuarioDesbloquear.DNI490WC + UsuarioDesbloquear.Apellido490WC);
@@ -109,7 +113,7 @@ namespace SERVICIOS490WC
         public void GuardarIdiomaUsuario490WC()
         {
             Usuario490WC usuario = SesionManager490WC.GestorSesion490WC.Usuario490WC;
-            Modificar490WC(usuario);
+            UsuarioAccesoDatos490WC.UsuarioAccesoDatosSG490WC.Modificar490WC(usuario);
         }
         #endregion
 

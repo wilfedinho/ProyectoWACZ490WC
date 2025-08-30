@@ -1,4 +1,5 @@
-﻿using SERVICIOS490WC;
+﻿using BLLS490WC;
+using SERVICIOS490WC;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,7 +25,10 @@ namespace BLL490WC
 
             if (pagoAceptado490WC)
             {
+                Bitacora490WC gestorBitacora490WC = new Bitacora490WC();
+                gestorBitacora490WC.AltaEvento490WC("Gestión Factura","Cobrar Factura",3);
                 return true;
+
             }
             else
             {

@@ -82,11 +82,11 @@
     <Compile Include="FormAplicarBeneficios490WC.Designer.cs">
       <DependentUpon>FormAplicarBeneficios490WC.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormBitacoraDeEventos.cs">
+    <Compile Include="FormBitacoraDeEventos490WC.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormBitacoraDeEventos.Designer.cs">
-      <DependentUpon>FormBitacoraDeEventos.cs</DependentUpon>
+    <Compile Include="FormBitacoraDeEventos490WC.Designer.cs">
+      <DependentUpon>FormBitacoraDeEventos490WC.cs</DependentUpon>
     </Compile>
     <Compile Include="FormCambiarClave490WC.cs">
       <SubType>Form</SubType>
@@ -181,8 +181,8 @@
     <EmbeddedResource Include="FormAplicarBeneficios490WC.resx">
       <DependentUpon>FormAplicarBeneficios490WC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormBitacoraDeEventos.resx">
-      <DependentUpon>FormBitacoraDeEventos.cs</DependentUpon>
+    <EmbeddedResource Include="FormBitacoraDeEventos490WC.resx">
+      <DependentUpon>FormBitacoraDeEventos490WC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormCambiarClave490WC.resx">
       <DependentUpon>FormCambiarClave490WC.cs</DependentUpon>
