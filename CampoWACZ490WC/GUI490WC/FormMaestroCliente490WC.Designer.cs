@@ -61,6 +61,13 @@
             this.TB_CELULAR490WC = new System.Windows.Forms.TextBox();
             this.TB_EMAIL490WC = new System.Windows.Forms.TextBox();
             this.BT_Activar490WC = new System.Windows.Forms.Button();
+            this.PrevisualizadorXML490WC = new System.Windows.Forms.TextBox();
+            this.BT_MODOSERIALIZAR490WC = new System.Windows.Forms.Button();
+            this.BT_ACEPTARSERIALIZAR490WC = new System.Windows.Forms.Button();
+            this.BT_CANCELARSERIALIZAR490WC = new System.Windows.Forms.Button();
+            this.listBoxDesSerializar490WC = new System.Windows.Forms.ListBox();
+            this.BT_DesSerializar490WC = new System.Windows.Forms.Button();
+            this.BT_LIMPIARDESERIALIZAR490WC = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCliente490WC)).BeginInit();
             this.SuspendLayout();
             // 
@@ -87,6 +94,7 @@
             this.dgvCliente490WC.Size = new System.Drawing.Size(759, 316);
             this.dgvCliente490WC.TabIndex = 1;
             this.dgvCliente490WC.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvCliente490WC_CellMouseClick);
+            this.dgvCliente490WC.SelectionChanged += new System.EventHandler(this.dgvCliente490WC_SelectionChanged);
             // 
             // DNI_CLIENTE
             // 
@@ -454,12 +462,113 @@
             this.BT_Activar490WC.UseVisualStyleBackColor = false;
             this.BT_Activar490WC.Click += new System.EventHandler(this.BT_Activar490WC_Click);
             // 
+            // PrevisualizadorXML490WC
+            // 
+            this.PrevisualizadorXML490WC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(6)))), ((int)(((byte)(13)))));
+            this.PrevisualizadorXML490WC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PrevisualizadorXML490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.PrevisualizadorXML490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
+            this.PrevisualizadorXML490WC.Location = new System.Drawing.Point(12, 539);
+            this.PrevisualizadorXML490WC.Multiline = true;
+            this.PrevisualizadorXML490WC.Name = "PrevisualizadorXML490WC";
+            this.PrevisualizadorXML490WC.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.PrevisualizadorXML490WC.Size = new System.Drawing.Size(476, 135);
+            this.PrevisualizadorXML490WC.TabIndex = 64;
+            // 
+            // BT_MODOSERIALIZAR490WC
+            // 
+            this.BT_MODOSERIALIZAR490WC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(6)))), ((int)(((byte)(13)))));
+            this.BT_MODOSERIALIZAR490WC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BT_MODOSERIALIZAR490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.BT_MODOSERIALIZAR490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
+            this.BT_MODOSERIALIZAR490WC.Location = new System.Drawing.Point(12, 680);
+            this.BT_MODOSERIALIZAR490WC.Name = "BT_MODOSERIALIZAR490WC";
+            this.BT_MODOSERIALIZAR490WC.Size = new System.Drawing.Size(118, 47);
+            this.BT_MODOSERIALIZAR490WC.TabIndex = 65;
+            this.BT_MODOSERIALIZAR490WC.Text = "Serializar";
+            this.BT_MODOSERIALIZAR490WC.UseVisualStyleBackColor = false;
+            this.BT_MODOSERIALIZAR490WC.Click += new System.EventHandler(this.BT_MODOSERIALIZAR490WC_Click);
+            // 
+            // BT_ACEPTARSERIALIZAR490WC
+            // 
+            this.BT_ACEPTARSERIALIZAR490WC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(6)))), ((int)(((byte)(13)))));
+            this.BT_ACEPTARSERIALIZAR490WC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BT_ACEPTARSERIALIZAR490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.BT_ACEPTARSERIALIZAR490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
+            this.BT_ACEPTARSERIALIZAR490WC.Location = new System.Drawing.Point(153, 680);
+            this.BT_ACEPTARSERIALIZAR490WC.Name = "BT_ACEPTARSERIALIZAR490WC";
+            this.BT_ACEPTARSERIALIZAR490WC.Size = new System.Drawing.Size(118, 47);
+            this.BT_ACEPTARSERIALIZAR490WC.TabIndex = 66;
+            this.BT_ACEPTARSERIALIZAR490WC.Text = "Aceptar";
+            this.BT_ACEPTARSERIALIZAR490WC.UseVisualStyleBackColor = false;
+            this.BT_ACEPTARSERIALIZAR490WC.Click += new System.EventHandler(this.BT_ACEPTARSERIALIZAR490WC_Click);
+            // 
+            // BT_CANCELARSERIALIZAR490WC
+            // 
+            this.BT_CANCELARSERIALIZAR490WC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(6)))), ((int)(((byte)(13)))));
+            this.BT_CANCELARSERIALIZAR490WC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BT_CANCELARSERIALIZAR490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.BT_CANCELARSERIALIZAR490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
+            this.BT_CANCELARSERIALIZAR490WC.Location = new System.Drawing.Point(292, 680);
+            this.BT_CANCELARSERIALIZAR490WC.Name = "BT_CANCELARSERIALIZAR490WC";
+            this.BT_CANCELARSERIALIZAR490WC.Size = new System.Drawing.Size(118, 47);
+            this.BT_CANCELARSERIALIZAR490WC.TabIndex = 67;
+            this.BT_CANCELARSERIALIZAR490WC.Text = "Cancelar";
+            this.BT_CANCELARSERIALIZAR490WC.UseVisualStyleBackColor = false;
+            this.BT_CANCELARSERIALIZAR490WC.Click += new System.EventHandler(this.BT_CANCELARSERIALIZAR490WC_Click);
+            // 
+            // listBoxDesSerializar490WC
+            // 
+            this.listBoxDesSerializar490WC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(6)))), ((int)(((byte)(13)))));
+            this.listBoxDesSerializar490WC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.listBoxDesSerializar490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.listBoxDesSerializar490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
+            this.listBoxDesSerializar490WC.FormattingEnabled = true;
+            this.listBoxDesSerializar490WC.ItemHeight = 19;
+            this.listBoxDesSerializar490WC.Location = new System.Drawing.Point(569, 539);
+            this.listBoxDesSerializar490WC.Name = "listBoxDesSerializar490WC";
+            this.listBoxDesSerializar490WC.Size = new System.Drawing.Size(398, 135);
+            this.listBoxDesSerializar490WC.TabIndex = 68;
+            // 
+            // BT_DesSerializar490WC
+            // 
+            this.BT_DesSerializar490WC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(6)))), ((int)(((byte)(13)))));
+            this.BT_DesSerializar490WC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BT_DesSerializar490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.BT_DesSerializar490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
+            this.BT_DesSerializar490WC.Location = new System.Drawing.Point(717, 680);
+            this.BT_DesSerializar490WC.Name = "BT_DesSerializar490WC";
+            this.BT_DesSerializar490WC.Size = new System.Drawing.Size(118, 47);
+            this.BT_DesSerializar490WC.TabIndex = 69;
+            this.BT_DesSerializar490WC.Text = "Deserializar";
+            this.BT_DesSerializar490WC.UseVisualStyleBackColor = false;
+            // 
+            // BT_LIMPIARDESERIALIZAR490WC
+            // 
+            this.BT_LIMPIARDESERIALIZAR490WC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(6)))), ((int)(((byte)(13)))));
+            this.BT_LIMPIARDESERIALIZAR490WC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BT_LIMPIARDESERIALIZAR490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.BT_LIMPIARDESERIALIZAR490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
+            this.BT_LIMPIARDESERIALIZAR490WC.Location = new System.Drawing.Point(849, 680);
+            this.BT_LIMPIARDESERIALIZAR490WC.Name = "BT_LIMPIARDESERIALIZAR490WC";
+            this.BT_LIMPIARDESERIALIZAR490WC.Size = new System.Drawing.Size(118, 47);
+            this.BT_LIMPIARDESERIALIZAR490WC.TabIndex = 70;
+            this.BT_LIMPIARDESERIALIZAR490WC.Text = "Limpiar";
+            this.BT_LIMPIARDESERIALIZAR490WC.UseVisualStyleBackColor = false;
+            // 
             // FormMaestroCliente490WC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(27)))), ((int)(((byte)(38)))));
-            this.ClientSize = new System.Drawing.Size(983, 536);
+            this.ClientSize = new System.Drawing.Size(983, 747);
+            this.Controls.Add(this.BT_LIMPIARDESERIALIZAR490WC);
+            this.Controls.Add(this.BT_DesSerializar490WC);
+            this.Controls.Add(this.listBoxDesSerializar490WC);
+            this.Controls.Add(this.BT_CANCELARSERIALIZAR490WC);
+            this.Controls.Add(this.BT_ACEPTARSERIALIZAR490WC);
+            this.Controls.Add(this.BT_MODOSERIALIZAR490WC);
+            this.Controls.Add(this.PrevisualizadorXML490WC);
             this.Controls.Add(this.BT_Activar490WC);
             this.Controls.Add(this.TB_EMAIL490WC);
             this.Controls.Add(this.TB_CELULAR490WC);
@@ -534,5 +643,12 @@
         private System.Windows.Forms.TextBox TB_CELULAR490WC;
         private System.Windows.Forms.TextBox TB_EMAIL490WC;
         private System.Windows.Forms.Button BT_Activar490WC;
+        private System.Windows.Forms.TextBox PrevisualizadorXML490WC;
+        private System.Windows.Forms.Button BT_MODOSERIALIZAR490WC;
+        private System.Windows.Forms.Button BT_ACEPTARSERIALIZAR490WC;
+        private System.Windows.Forms.Button BT_CANCELARSERIALIZAR490WC;
+        private System.Windows.Forms.ListBox listBoxDesSerializar490WC;
+        private System.Windows.Forms.Button BT_DesSerializar490WC;
+        private System.Windows.Forms.Button BT_LIMPIARDESERIALIZAR490WC;
     }
 }

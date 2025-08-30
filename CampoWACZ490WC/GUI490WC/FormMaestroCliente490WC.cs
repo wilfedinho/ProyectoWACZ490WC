@@ -14,8 +14,9 @@ using System.Windows.Forms;
 
 namespace GUI490WC
 {
-    public partial class FormMaestroCliente490WC : Form , iObserverLenguaje490WC
+    public partial class FormMaestroCliente490WC : Form, iObserverLenguaje490WC
     {
+
         public FormMaestroCliente490WC()
         {
             InitializeComponent();
@@ -23,7 +24,12 @@ namespace GUI490WC
             Mostrar490WC();
             ActivarModoModificar490WC(false);
             BT_Activar490WC.Enabled = false;
+            GestorCliente490WC gestorCliente490WC = new GestorCliente490WC();
+            listaClientes490WC = gestorCliente490WC.ObtenerTodosLosCliente490WC();
         }
+        List<Cliente490WC> listaClientes490WC;
+        List<Cliente490WC> clientesSerializar490WC = new List<Cliente490WC>();
+        bool estadoSerializar490WC = false;
         public void Mostrar490WC()
         {
             dgvCliente490WC.Rows.Clear();
@@ -31,7 +37,8 @@ namespace GUI490WC
             dgvCliente490WC.RowTemplate.Height = 90;
             dgvCliente490WC.Columns["IMAGEN_ESTRELLA"].Width = 90;
             int indiceRow490WC = 0;
-            foreach (Cliente490WC clienteMostrar490WC in gestorCliente490WC.ObtenerTodosLosCliente490WC())
+            listaClientes490WC = gestorCliente490WC.ObtenerTodosLosCliente490WC();
+            foreach (Cliente490WC clienteMostrar490WC in listaClientes490WC)
             {
                 indiceRow490WC = dgvCliente490WC.Rows.Add(clienteMostrar490WC.DNI490WC, clienteMostrar490WC.Nombre490WC, clienteMostrar490WC.Apellido490WC, clienteMostrar490WC.EstrellasCliente490WC, null);
                 if (clienteMostrar490WC.Activo490WC == false && dgvCliente490WC.Rows.Count > 0)
@@ -39,7 +46,7 @@ namespace GUI490WC
                     dgvCliente490WC.Rows[indiceRow490WC].DefaultCellStyle.BackColor = Color.LightCoral;
                 }
             }
-           
+
         }
         public void LimpiarCampos490WC()
         {
@@ -56,6 +63,9 @@ namespace GUI490WC
         public void ActivarModoModificar490WC(bool IsActivo)
         {
             GestorCliente490WC gestorCliente490WC = new GestorCliente490WC();
+            BT_ACEPTARSERIALIZAR490WC.Enabled = false;
+            BT_CANCELARSERIALIZAR490WC.Enabled = false;
+            BT_LIMPIARDESERIALIZAR490WC.Enabled = false;
             if (IsActivo == true)
             {
                 BT_ALTA_USUARIO490WC.Enabled = false;
@@ -123,7 +133,7 @@ namespace GUI490WC
                                         {
                                             if (emails.Count > 0)
                                             {
-                                                Cliente490WC clienteAlta490WC = new Cliente490WC(dni490WC, nombre490WC, apellido490WC, estrellasCliente490WC, emails, celulares,Cifrador490WC.GestorCifrador490WC.EncriptarReversible490WC(direccion490WC), true);
+                                                Cliente490WC clienteAlta490WC = new Cliente490WC(dni490WC, nombre490WC, apellido490WC, estrellasCliente490WC, emails, celulares, Cifrador490WC.GestorCifrador490WC.EncriptarReversible490WC(direccion490WC), true);
                                                 gestorCliente490WC.Alta490WC(clienteAlta490WC);
                                                 Mostrar490WC();
                                                 LimpiarCampos490WC();
@@ -411,7 +421,7 @@ namespace GUI490WC
             }
             else
             {
-                BT_Activar490WC.Enabled=false;
+                BT_Activar490WC.Enabled = false;
             }
         }
 
@@ -425,7 +435,7 @@ namespace GUI490WC
         public void ActualizarLenguaje490WC()
         {
             RecorrerControles490WC(this);
-            
+
         }
 
         public void RecorrerControles490WC(Control control490WC)
@@ -458,6 +468,114 @@ namespace GUI490WC
         {
             Traductor490WC.TraductorSG490WC.Suscribir490WC(this);
             Traductor490WC.TraductorSG490WC.Notificar490WC();
+        }
+
+        public void ModoSerializar490WC(bool estado490WC)
+        {
+            if (estado490WC)
+            {
+                estadoSerializar490WC = true;
+                BT_ACEPTARSERIALIZAR490WC.Enabled = true;
+                BT_CANCELARSERIALIZAR490WC.Enabled = true;
+                BT_MODOSERIALIZAR490WC.Enabled = false;
+                BT_Activar490WC.Enabled = false;
+                BT_DesSerializar490WC.Enabled = false;
+                BT_LIMPIARDESERIALIZAR490WC.Enabled = false;
+                BT_AGREGARCELULAR490WC.Enabled = false;
+                BT_ELIMINARCELULAR490WC.Enabled = false;
+                BT_AGREGAREMAIL490WC.Enabled = false;
+                BT_ELIMINAREMAIL490WC.Enabled = false;
+                BT_SALIR490WC.Enabled = false;
+                BT_CANCELAR490WC.Enabled = false;
+                BT_APLICAR490WC.Enabled = false;
+                BT_MODIFICAR_USUARIO490WC.Enabled = false;
+                BT_BAJA_USUARIO490WC.Enabled = false;
+                BT_ALTA_USUARIO490WC.Enabled = false;
+                clientesSerializar490WC.Clear();
+            }
+            else
+            {
+                estadoSerializar490WC = false;
+                BT_ACEPTARSERIALIZAR490WC.Enabled = false;
+                BT_CANCELARSERIALIZAR490WC.Enabled = false;
+                BT_MODOSERIALIZAR490WC.Enabled = true;
+                BT_Activar490WC.Enabled = true;
+                BT_DesSerializar490WC.Enabled = true;
+                BT_LIMPIARDESERIALIZAR490WC.Enabled = true;
+                BT_AGREGARCELULAR490WC.Enabled = true;
+                BT_ELIMINARCELULAR490WC.Enabled = true;
+                BT_AGREGAREMAIL490WC.Enabled = true;
+                BT_ELIMINAREMAIL490WC.Enabled = true;
+                BT_SALIR490WC.Enabled = true;
+                BT_CANCELAR490WC.Enabled = true;
+                BT_APLICAR490WC.Enabled = true;
+                BT_MODIFICAR_USUARIO490WC.Enabled = true;
+                BT_BAJA_USUARIO490WC.Enabled = true;
+                BT_ALTA_USUARIO490WC.Enabled = true;
+                clientesSerializar490WC.Clear();
+                PrevisualizadorXML490WC.Clear();
+            }
+        }
+        private void BT_MODOSERIALIZAR490WC_Click(object sender, EventArgs e)
+        {
+            ModoSerializar490WC(true);
+        }
+
+        private void BT_ACEPTARSERIALIZAR490WC_Click(object sender, EventArgs e)
+        {
+            using (SaveFileDialog SFD490WC =new SaveFileDialog())
+            {
+                SFD490WC.Filter = "Archivo XML (*.xml)|*.xml";
+                SFD490WC.Title = "Guardar archivo XML";
+                SFD490WC.AddExtension = true;
+                SFD490WC.FileName = "Clientes490WC.xml";
+                DialogResult resultado490WC = SFD490WC.ShowDialog();
+                if (resultado490WC == DialogResult.OK && !string.IsNullOrWhiteSpace(SFD490WC.FileName))
+                {
+                    if (!SFD490WC.FileName.EndsWith(".xml",StringComparison.OrdinalIgnoreCase))
+                    {
+                        SFD490WC.FileName += ".xml";
+                    }
+
+                    GestorCliente490WC gestorCliente490WC = new GestorCliente490WC();
+
+                    gestorCliente490WC.GuardarXML490WC(GenerarTextoXML490WC(),SFD490WC.FileName);
+                    MessageBox.Show("Clientes Serializados Con Exito!");
+                    ModoSerializar490WC(false);
+                }
+            }
+        }
+
+        private void dgvCliente490WC_SelectionChanged(object sender, EventArgs e)
+        {
+            if (estadoSerializar490WC)
+            {
+                DataGridViewCellCollection celdaSerializar490WC = dgvCliente490WC.SelectedRows[0].Cells;
+                Cliente490WC ClienteSerializar490WC = listaClientes490WC.Find(c490WC => c490WC.DNI490WC == celdaSerializar490WC["DNI_CLIENTE"].Value.ToString());
+                var clienteSerializarRepetido490WC = clientesSerializar490WC.Find(c490WC => c490WC.DNI490WC == celdaSerializar490WC["DNI_CLIENTE"].Value.ToString());
+                if (clienteSerializarRepetido490WC != null)
+                {
+                    clientesSerializar490WC.Remove(clienteSerializarRepetido490WC);
+                }
+                else
+                {
+                    clientesSerializar490WC.Add(ClienteSerializar490WC);
+                }
+                GenerarTextoXML490WC();
+            }
+        }
+        public string GenerarTextoXML490WC()
+        {
+            PrevisualizadorXML490WC.Clear();
+            GestorCliente490WC gestorCliente490WC = new GestorCliente490WC();
+            string XML490WC = gestorCliente490WC.SerializarCliente490WC(clientesSerializar490WC);
+            PrevisualizadorXML490WC.Text = XML490WC;
+            return XML490WC;
+        }
+
+        private void BT_CANCELARSERIALIZAR490WC_Click(object sender, EventArgs e)
+        {
+            ModoSerializar490WC(false);
         }
     }
 }

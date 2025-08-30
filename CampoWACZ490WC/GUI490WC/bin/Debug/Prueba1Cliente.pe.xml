@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfCliente490WC xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Cliente490WC>
+    <DNI490WC>11.001.245</DNI490WC>
+    <Nombre490WC>Agustin</Nombre490WC>
+    <Apellido490WC>Marchesin</Apellido490WC>
+    <Emails490WC>
+      <string>porto@futbol                                                                                        </string>
+    </Emails490WC>
+    <Celulares490WC>
+      <string>1245697854</string>
+    </Celulares490WC>
+    <Direccion490WC>ZfEr7GVES/+wt5KRm3hTqA==</Direccion490WC>
+    <Activo490WC>true</Activo490WC>
+    <EstrellasCliente490WC>0</EstrellasCliente490WC>
+    <BeneficiosCliente490WC />
+  </Cliente490WC>
+  <Cliente490WC>
+    <DNI490WC>11.111.111</DNI490WC>
+    <Nombre490WC>Lionel</Nombre490WC>
+    <Apellido490WC>Messi</Apellido490WC>
+    <Emails490WC>
+      <string>Barcelona@Rosario.com                                                                               </string>
+    </Emails490WC>
+    <Celulares490WC>
+      <string>5432165467</string>
+    </Celulares490WC>
+    <Direccion490WC>d8hB7kGBvVWo+cKLH5O/Qg==</Direccion490WC>
+    <Activo490WC>true</Activo490WC>
+    <EstrellasCliente490WC>491</EstrellasCliente490WC>
+    <BeneficiosCliente490WC>
+      <Beneficio490WC>
+        <CodigoBeneficio490WC>2</CodigoBeneficio490WC>
+        <Nombre490WC>20%</Nombre490WC>
+        <PrecioEstrella490WC>2</PrecioEstrella490WC>
+        <CantidadBeneficioReclamo490WC>1</CantidadBeneficioReclamo490WC>
+        <DescuentoAplicar490WC>0.2</DescuentoAplicar490WC>
+      </Beneficio490WC>
+      <Beneficio490WC>
+        <CodigoBeneficio490WC>4</CodigoBeneficio490WC>
+        <Nombre490WC>40%</Nombre490WC>
+        <PrecioEstrella490WC>10</PrecioEstrella490WC>
+        <CantidadBeneficioReclamo490WC>4</CantidadBeneficioReclamo490WC>
+        <DescuentoAplicar490WC>0.4</DescuentoAplicar490WC>
+      </Beneficio490WC>
+      <Beneficio490WC>
+        <CodigoBeneficio490WC>10</CodigoBeneficio490WC>
+        <Nombre490WC>100%</Nombre490WC>
+        <PrecioEstrella490WC>125</PrecioEstrella490WC>
+        <CantidadBeneficioReclamo490WC>11</CantidadBeneficioReclamo490WC>
+        <DescuentoAplicar490WC>1</DescuentoAplicar490WC>
+      </Beneficio490WC>
+      <Beneficio490WC>
+        <CodigoBeneficio490WC>11</CodigoBeneficio490WC>
+        <Nombre490WC>PACK INVIERNO</Nombre490WC>
+        <PrecioEstrella490WC>100</PrecioEstrella490WC>
+        <CantidadBeneficioReclamo490WC>1</CantidadBeneficioReclamo490WC>
+        <DescuentoAplicar490WC>0.47</DescuentoAplicar490WC>
+      </Beneficio490WC>
+    </BeneficiosCliente490WC>
+  </Cliente490WC>
+</ArrayOfCliente490WC>

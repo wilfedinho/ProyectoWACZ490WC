@@ -54,19 +54,6 @@ namespace GUI490WC
 
         }
 
-       
-
-        private void FormMenu_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            try
-            {
-                UserManager490WC gestorUsuario490WC = new UserManager490WC();
-                gestorUsuario490WC.GuardarIdiomaUsuario490WC();
-                SesionManager490WC.GestorSesion490WC.Logout490WC();
-                GestorForm490WC.gestorFormSG490WC.DefinirEstado490WC(new EstadoCerrarAplicacion490WC());
-            }
-            catch { }
-        }
         #region Diseno
 
         private void Diseno490WC()
@@ -285,15 +272,15 @@ namespace GUI490WC
 
         private void BT_MaestroCliente490WC_Click(object sender, EventArgs e)
         {
-            try
-            {
+            //try
+            //{
                 formMaestroCliente490WC = new FormMaestroCliente490WC();
                 Traductor490WC.TraductorSG490WC.Suscribir490WC(formMaestroCliente490WC);
                 formMaestroCliente490WC.ShowDialog();
                 hideSubmenu490WC();
                 this?.Show();
-            }
-            catch { }
+            //}
+            //catch { }
         }
 
         private void BT_Compra490WC_Click(object sender, EventArgs e)
@@ -454,6 +441,18 @@ namespace GUI490WC
         {
             Traductor490WC.TraductorSG490WC.Suscribir490WC(this);
             Traductor490WC.TraductorSG490WC.Notificar490WC();
+        }
+
+        private void FormMenu490WC_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            try
+            {
+
+                UserManager490WC.UserManagerSG490WC.GuardarIdiomaUsuario490WC();
+                UserManager490WC.UserManagerSG490WC.Logout490WC();
+                GestorForm490WC.gestorFormSG490WC.DefinirEstado490WC(new EstadoCerrarAplicacion490WC());
+            }
+            catch { }
         }
     }
 }

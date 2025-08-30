@@ -13,6 +13,9 @@ namespace BE490WC
         public int PrecioEstrella490WC { get; set; }
         public int CantidadBeneficioReclamo490WC { get; set; }
         public float DescuentoAplicar490WC { get; set; }
+        public Beneficio490WC()
+        {
+        }
         public Beneficio490WC(int nCodigoBeneficio490WC, string nNombre490WC, int nPrecioEstrella490WC, int nCantidadBeneficioReclamo490WC, float nDescuentoAplicar490WC)
         {
             CodigoBeneficio490WC = nCodigoBeneficio490WC;

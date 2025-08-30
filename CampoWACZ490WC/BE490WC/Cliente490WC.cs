@@ -17,6 +17,10 @@ namespace BE490WC
         public bool Activo490WC { get; set; }
         public int EstrellasCliente490WC { get; set; }
         public List<Beneficio490WC> BeneficiosCliente490WC { get; set; }
+        public Cliente490WC()
+        {
+
+        }
         public Cliente490WC(string nDNI490WC, string nNombre490WC, string nApellido490WC, int nEstrellasCliente490WC, List<string> nEmail490WC, List<string> nCelular490WC, string nDireccion490WC, bool nActivo490WC, List<Beneficio490WC> nBeneficiosCliente490WC = null)
         {
             DNI490WC = nDNI490WC;
