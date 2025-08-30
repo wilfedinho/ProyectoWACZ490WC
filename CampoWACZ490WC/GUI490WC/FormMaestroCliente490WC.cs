@@ -11,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace GUI490WC
 {
@@ -115,7 +116,7 @@ namespace GUI490WC
             if (!string.IsNullOrEmpty(direccion490WC))
             {
 
-                if (int.TryParse(TB_ESTRELLASCLIENTE490WC.Text, out int estrellasCliente490WC))
+                if (int.TryParse(TB_ESTRELLASCLIENTE490WC.Text, out int estrellasCliente490WC) && estrellasCliente490WC >= 0)
                 {
                     if (gestorCliente490WC.BuscarClientePorDNI490WC(TB_DNI490WC.Text) == null)
                     {
@@ -413,15 +414,34 @@ namespace GUI490WC
 
         private void dgvCliente490WC_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            GestorCliente490WC gestorCliente490WC = new GestorCliente490WC();
-            Cliente490WC clienteSeleccionado490WC = gestorCliente490WC.BuscarClientePorDNI490WC(dgvCliente490WC.SelectedRows[0].Cells["DNI_CLIENTE"].Value.ToString());
-            if (clienteSeleccionado490WC.Activo490WC == false)
+            if (!estadoSerializar490WC)
             {
-                BT_Activar490WC.Enabled = true;
+                GestorCliente490WC gestorCliente490WC = new GestorCliente490WC();
+                Cliente490WC clienteSeleccionado490WC = gestorCliente490WC.BuscarClientePorDNI490WC(dgvCliente490WC.SelectedRows[0].Cells["DNI_CLIENTE"].Value.ToString());
+                if (clienteSeleccionado490WC.Activo490WC == false)
+                {
+                    BT_Activar490WC.Enabled = true;
+                }
+                else
+                {
+                    BT_Activar490WC.Enabled = false;
+                }
             }
             else
             {
-                BT_Activar490WC.Enabled = false;
+                DataGridViewCellCollection celdaSerializar490WC = dgvCliente490WC.SelectedRows[0].Cells;
+                Cliente490WC ClienteSerializar490WC = listaClientes490WC.Find(c490WC => c490WC.DNI490WC == celdaSerializar490WC["DNI_CLIENTE"].Value.ToString());
+                var clienteSerializarRepetido490WC = clientesSerializar490WC.Find(c490WC => c490WC.DNI490WC == celdaSerializar490WC["DNI_CLIENTE"].Value.ToString());
+                if (clienteSerializarRepetido490WC != null)
+                {
+                    clientesSerializar490WC.Remove(clienteSerializarRepetido490WC);
+                }
+                else
+                {
+
+                    clientesSerializar490WC.Add(ClienteSerializar490WC);
+                }
+                GenerarTextoXML490WC();
             }
         }
 
@@ -523,7 +543,7 @@ namespace GUI490WC
 
         private void BT_ACEPTARSERIALIZAR490WC_Click(object sender, EventArgs e)
         {
-            using (SaveFileDialog SFD490WC =new SaveFileDialog())
+            using (SaveFileDialog SFD490WC = new SaveFileDialog())
             {
                 SFD490WC.Filter = "Archivo XML (*.xml)|*.xml";
                 SFD490WC.Title = "Guardar archivo XML";
@@ -532,14 +552,14 @@ namespace GUI490WC
                 DialogResult resultado490WC = SFD490WC.ShowDialog();
                 if (resultado490WC == DialogResult.OK && !string.IsNullOrWhiteSpace(SFD490WC.FileName))
                 {
-                    if (!SFD490WC.FileName.EndsWith(".xml",StringComparison.OrdinalIgnoreCase))
+                    if (!SFD490WC.FileName.EndsWith(".xml", StringComparison.OrdinalIgnoreCase))
                     {
                         SFD490WC.FileName += ".xml";
                     }
 
                     GestorCliente490WC gestorCliente490WC = new GestorCliente490WC();
 
-                    gestorCliente490WC.GuardarXML490WC(GenerarTextoXML490WC(),SFD490WC.FileName);
+                    gestorCliente490WC.GuardarXML490WC(GenerarTextoXML490WC(), SFD490WC.FileName);
                     MessageBox.Show("Clientes Serializados Con Exito!");
                     ModoSerializar490WC(false);
                 }
@@ -550,18 +570,7 @@ namespace GUI490WC
         {
             if (estadoSerializar490WC)
             {
-                DataGridViewCellCollection celdaSerializar490WC = dgvCliente490WC.SelectedRows[0].Cells;
-                Cliente490WC ClienteSerializar490WC = listaClientes490WC.Find(c490WC => c490WC.DNI490WC == celdaSerializar490WC["DNI_CLIENTE"].Value.ToString());
-                var clienteSerializarRepetido490WC = clientesSerializar490WC.Find(c490WC => c490WC.DNI490WC == celdaSerializar490WC["DNI_CLIENTE"].Value.ToString());
-                if (clienteSerializarRepetido490WC != null)
-                {
-                    clientesSerializar490WC.Remove(clienteSerializarRepetido490WC);
-                }
-                else
-                {
-                    clientesSerializar490WC.Add(ClienteSerializar490WC);
-                }
-                GenerarTextoXML490WC();
+
             }
         }
         public string GenerarTextoXML490WC()
@@ -576,6 +585,37 @@ namespace GUI490WC
         private void BT_CANCELARSERIALIZAR490WC_Click(object sender, EventArgs e)
         {
             ModoSerializar490WC(false);
+        }
+
+        private void BT_DesSerializar490WC_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog OFD490WC = new OpenFileDialog())
+            {
+                OFD490WC.Filter = "Archivo XML (*.xml)|*.xml";
+                OFD490WC.Title = "Abrir archivo XML";
+                if (OFD490WC.ShowDialog() == DialogResult.OK)
+                {
+                    string rutaArchivo490WC = OFD490WC.FileName;
+                    var doc = XDocument.Load(rutaArchivo490WC);
+                    if (doc.Root.Name != "ArrayOfCliente490WC")
+                    {
+                        MessageBox.Show("El XML no tiene el formato correcto para deserializar!!");
+                    }
+                    else
+                    {
+                        listBoxDesSerializar490WC.Items.Clear();
+                        GestorCliente490WC gestorCliente490WC = new GestorCliente490WC();
+                        listBoxDesSerializar490WC.Items.AddRange(gestorCliente490WC.DeserializarCliente490WC(rutaArchivo490WC).ToArray());
+                        BT_LIMPIARDESERIALIZAR490WC.Enabled = true;
+                    }
+                }
+            }
+        }
+
+        private void BT_LIMPIARDESERIALIZAR490WC_Click(object sender, EventArgs e)
+        {
+            listBoxDesSerializar490WC.Items.Clear();
+            BT_LIMPIARDESERIALIZAR490WC.Enabled = false;
         }
     }
 }

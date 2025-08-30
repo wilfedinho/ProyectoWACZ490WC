@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace BE490WC
 {
@@ -11,15 +12,26 @@ namespace BE490WC
         public string DNI490WC { get; set; }
         public string Nombre490WC { get; set; }
         public string Apellido490WC { get; set; }
+
+        [XmlArray("Emails")]
+        [XmlArrayItem("Email")]
         public List<string> Emails490WC { get; set; }
+
+        [XmlArray("Celulares")]
+        [XmlArrayItem("Celular")]
         public List<string> Celulares490WC { get; set; }
         public string Direccion490WC { get; set; }
         public bool Activo490WC { get; set; }
         public int EstrellasCliente490WC { get; set; }
+
+        [XmlArray("Beneficios")]
+        [XmlArrayItem("Beneficio")]
         public List<Beneficio490WC> BeneficiosCliente490WC { get; set; }
         public Cliente490WC()
         {
-
+            Emails490WC = new List<string>();
+            Celulares490WC = new List<string>();
+            BeneficiosCliente490WC = new List<Beneficio490WC>();
         }
         public Cliente490WC(string nDNI490WC, string nNombre490WC, string nApellido490WC, int nEstrellasCliente490WC, List<string> nEmail490WC, List<string> nCelular490WC, string nDireccion490WC, bool nActivo490WC, List<Beneficio490WC> nBeneficiosCliente490WC = null)
         {

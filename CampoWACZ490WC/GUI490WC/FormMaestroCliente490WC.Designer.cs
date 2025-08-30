@@ -91,7 +91,7 @@
             this.dgvCliente490WC.ReadOnly = true;
             this.dgvCliente490WC.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvCliente490WC.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCliente490WC.Size = new System.Drawing.Size(759, 316);
+            this.dgvCliente490WC.Size = new System.Drawing.Size(812, 316);
             this.dgvCliente490WC.TabIndex = 1;
             this.dgvCliente490WC.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvCliente490WC_CellMouseClick);
             this.dgvCliente490WC.SelectionChanged += new System.EventHandler(this.dgvCliente490WC_SelectionChanged);
@@ -200,7 +200,7 @@
             this.BT_ALTA_USUARIO490WC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BT_ALTA_USUARIO490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.BT_ALTA_USUARIO490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.BT_ALTA_USUARIO490WC.Location = new System.Drawing.Point(783, 16);
+            this.BT_ALTA_USUARIO490WC.Location = new System.Drawing.Point(830, 16);
             this.BT_ALTA_USUARIO490WC.Name = "BT_ALTA_USUARIO490WC";
             this.BT_ALTA_USUARIO490WC.Size = new System.Drawing.Size(184, 47);
             this.BT_ALTA_USUARIO490WC.TabIndex = 30;
@@ -214,7 +214,7 @@
             this.BT_BAJA_USUARIO490WC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BT_BAJA_USUARIO490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.BT_BAJA_USUARIO490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.BT_BAJA_USUARIO490WC.Location = new System.Drawing.Point(783, 69);
+            this.BT_BAJA_USUARIO490WC.Location = new System.Drawing.Point(830, 69);
             this.BT_BAJA_USUARIO490WC.Name = "BT_BAJA_USUARIO490WC";
             this.BT_BAJA_USUARIO490WC.Size = new System.Drawing.Size(184, 47);
             this.BT_BAJA_USUARIO490WC.TabIndex = 31;
@@ -228,7 +228,7 @@
             this.BT_MODIFICAR_USUARIO490WC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BT_MODIFICAR_USUARIO490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.BT_MODIFICAR_USUARIO490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.BT_MODIFICAR_USUARIO490WC.Location = new System.Drawing.Point(783, 122);
+            this.BT_MODIFICAR_USUARIO490WC.Location = new System.Drawing.Point(830, 122);
             this.BT_MODIFICAR_USUARIO490WC.Name = "BT_MODIFICAR_USUARIO490WC";
             this.BT_MODIFICAR_USUARIO490WC.Size = new System.Drawing.Size(184, 47);
             this.BT_MODIFICAR_USUARIO490WC.TabIndex = 32;
@@ -242,7 +242,7 @@
             this.BT_CANCELAR490WC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BT_CANCELAR490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.BT_CANCELAR490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.BT_CANCELAR490WC.Location = new System.Drawing.Point(783, 228);
+            this.BT_CANCELAR490WC.Location = new System.Drawing.Point(830, 228);
             this.BT_CANCELAR490WC.Name = "BT_CANCELAR490WC";
             this.BT_CANCELAR490WC.Size = new System.Drawing.Size(184, 47);
             this.BT_CANCELAR490WC.TabIndex = 33;
@@ -256,7 +256,7 @@
             this.BT_APLICAR490WC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BT_APLICAR490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.BT_APLICAR490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.BT_APLICAR490WC.Location = new System.Drawing.Point(783, 175);
+            this.BT_APLICAR490WC.Location = new System.Drawing.Point(830, 175);
             this.BT_APLICAR490WC.Name = "BT_APLICAR490WC";
             this.BT_APLICAR490WC.Size = new System.Drawing.Size(184, 47);
             this.BT_APLICAR490WC.TabIndex = 34;
@@ -270,7 +270,7 @@
             this.BT_SALIR490WC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BT_SALIR490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.BT_SALIR490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.BT_SALIR490WC.Location = new System.Drawing.Point(783, 281);
+            this.BT_SALIR490WC.Location = new System.Drawing.Point(830, 281);
             this.BT_SALIR490WC.Name = "BT_SALIR490WC";
             this.BT_SALIR490WC.Size = new System.Drawing.Size(184, 47);
             this.BT_SALIR490WC.TabIndex = 35;
@@ -330,7 +330,7 @@
             this.listboxCelularesCliente490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
             this.listboxCelularesCliente490WC.FormattingEnabled = true;
             this.listboxCelularesCliente490WC.ItemHeight = 19;
-            this.listboxCelularesCliente490WC.Location = new System.Drawing.Point(432, 354);
+            this.listboxCelularesCliente490WC.Location = new System.Drawing.Point(479, 360);
             this.listboxCelularesCliente490WC.Name = "listboxCelularesCliente490WC";
             this.listboxCelularesCliente490WC.Size = new System.Drawing.Size(250, 97);
             this.listboxCelularesCliente490WC.TabIndex = 53;
@@ -341,7 +341,7 @@
             this.BT_ELIMINARCELULAR490WC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BT_ELIMINARCELULAR490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.BT_ELIMINARCELULAR490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.BT_ELIMINARCELULAR490WC.Location = new System.Drawing.Point(574, 486);
+            this.BT_ELIMINARCELULAR490WC.Location = new System.Drawing.Point(621, 492);
             this.BT_ELIMINARCELULAR490WC.Name = "BT_ELIMINARCELULAR490WC";
             this.BT_ELIMINARCELULAR490WC.Size = new System.Drawing.Size(108, 38);
             this.BT_ELIMINARCELULAR490WC.TabIndex = 55;
@@ -355,7 +355,7 @@
             this.BT_AGREGARCELULAR490WC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BT_AGREGARCELULAR490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.BT_AGREGARCELULAR490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.BT_AGREGARCELULAR490WC.Location = new System.Drawing.Point(432, 486);
+            this.BT_AGREGARCELULAR490WC.Location = new System.Drawing.Point(479, 492);
             this.BT_AGREGARCELULAR490WC.Name = "BT_AGREGARCELULAR490WC";
             this.BT_AGREGARCELULAR490WC.Size = new System.Drawing.Size(108, 38);
             this.BT_AGREGARCELULAR490WC.TabIndex = 54;
@@ -368,7 +368,7 @@
             this.labelCelularCliente490WC.AutoSize = true;
             this.labelCelularCliente490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.labelCelularCliente490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.labelCelularCliente490WC.Location = new System.Drawing.Point(462, 331);
+            this.labelCelularCliente490WC.Location = new System.Drawing.Point(509, 337);
             this.labelCelularCliente490WC.Name = "labelCelularCliente490WC";
             this.labelCelularCliente490WC.Size = new System.Drawing.Size(184, 20);
             this.labelCelularCliente490WC.TabIndex = 56;
@@ -379,7 +379,7 @@
             this.LABEL_EMAILSDELCLIENTE490WC.AutoSize = true;
             this.LABEL_EMAILSDELCLIENTE490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.LABEL_EMAILSDELCLIENTE490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.LABEL_EMAILSDELCLIENTE490WC.Location = new System.Drawing.Point(747, 331);
+            this.LABEL_EMAILSDELCLIENTE490WC.Location = new System.Drawing.Point(794, 337);
             this.LABEL_EMAILSDELCLIENTE490WC.Name = "LABEL_EMAILSDELCLIENTE490WC";
             this.LABEL_EMAILSDELCLIENTE490WC.Size = new System.Drawing.Size(167, 20);
             this.LABEL_EMAILSDELCLIENTE490WC.TabIndex = 60;
@@ -391,7 +391,7 @@
             this.BT_ELIMINAREMAIL490WC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BT_ELIMINAREMAIL490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.BT_ELIMINAREMAIL490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.BT_ELIMINAREMAIL490WC.Location = new System.Drawing.Point(859, 486);
+            this.BT_ELIMINAREMAIL490WC.Location = new System.Drawing.Point(906, 492);
             this.BT_ELIMINAREMAIL490WC.Name = "BT_ELIMINAREMAIL490WC";
             this.BT_ELIMINAREMAIL490WC.Size = new System.Drawing.Size(108, 38);
             this.BT_ELIMINAREMAIL490WC.TabIndex = 59;
@@ -405,7 +405,7 @@
             this.BT_AGREGAREMAIL490WC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BT_AGREGAREMAIL490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.BT_AGREGAREMAIL490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.BT_AGREGAREMAIL490WC.Location = new System.Drawing.Point(717, 486);
+            this.BT_AGREGAREMAIL490WC.Location = new System.Drawing.Point(764, 492);
             this.BT_AGREGAREMAIL490WC.Name = "BT_AGREGAREMAIL490WC";
             this.BT_AGREGAREMAIL490WC.Size = new System.Drawing.Size(108, 38);
             this.BT_AGREGAREMAIL490WC.TabIndex = 58;
@@ -421,7 +421,7 @@
             this.listboxEmailsCliente490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
             this.listboxEmailsCliente490WC.FormattingEnabled = true;
             this.listboxEmailsCliente490WC.ItemHeight = 19;
-            this.listboxEmailsCliente490WC.Location = new System.Drawing.Point(717, 354);
+            this.listboxEmailsCliente490WC.Location = new System.Drawing.Point(764, 360);
             this.listboxEmailsCliente490WC.Name = "listboxEmailsCliente490WC";
             this.listboxEmailsCliente490WC.Size = new System.Drawing.Size(250, 97);
             this.listboxEmailsCliente490WC.TabIndex = 57;
@@ -432,7 +432,7 @@
             this.TB_CELULAR490WC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TB_CELULAR490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.TB_CELULAR490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.TB_CELULAR490WC.Location = new System.Drawing.Point(432, 453);
+            this.TB_CELULAR490WC.Location = new System.Drawing.Point(479, 459);
             this.TB_CELULAR490WC.Name = "TB_CELULAR490WC";
             this.TB_CELULAR490WC.Size = new System.Drawing.Size(250, 27);
             this.TB_CELULAR490WC.TabIndex = 61;
@@ -443,7 +443,7 @@
             this.TB_EMAIL490WC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TB_EMAIL490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.TB_EMAIL490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.TB_EMAIL490WC.Location = new System.Drawing.Point(717, 453);
+            this.TB_EMAIL490WC.Location = new System.Drawing.Point(764, 459);
             this.TB_EMAIL490WC.Name = "TB_EMAIL490WC";
             this.TB_EMAIL490WC.Size = new System.Drawing.Size(250, 27);
             this.TB_EMAIL490WC.TabIndex = 62;
@@ -472,7 +472,7 @@
             this.PrevisualizadorXML490WC.Multiline = true;
             this.PrevisualizadorXML490WC.Name = "PrevisualizadorXML490WC";
             this.PrevisualizadorXML490WC.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.PrevisualizadorXML490WC.Size = new System.Drawing.Size(476, 135);
+            this.PrevisualizadorXML490WC.Size = new System.Drawing.Size(1002, 135);
             this.PrevisualizadorXML490WC.TabIndex = 64;
             // 
             // BT_MODOSERIALIZAR490WC
@@ -481,7 +481,7 @@
             this.BT_MODOSERIALIZAR490WC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BT_MODOSERIALIZAR490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.BT_MODOSERIALIZAR490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.BT_MODOSERIALIZAR490WC.Location = new System.Drawing.Point(12, 680);
+            this.BT_MODOSERIALIZAR490WC.Location = new System.Drawing.Point(268, 680);
             this.BT_MODOSERIALIZAR490WC.Name = "BT_MODOSERIALIZAR490WC";
             this.BT_MODOSERIALIZAR490WC.Size = new System.Drawing.Size(118, 47);
             this.BT_MODOSERIALIZAR490WC.TabIndex = 65;
@@ -495,7 +495,7 @@
             this.BT_ACEPTARSERIALIZAR490WC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BT_ACEPTARSERIALIZAR490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.BT_ACEPTARSERIALIZAR490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.BT_ACEPTARSERIALIZAR490WC.Location = new System.Drawing.Point(153, 680);
+            this.BT_ACEPTARSERIALIZAR490WC.Location = new System.Drawing.Point(409, 680);
             this.BT_ACEPTARSERIALIZAR490WC.Name = "BT_ACEPTARSERIALIZAR490WC";
             this.BT_ACEPTARSERIALIZAR490WC.Size = new System.Drawing.Size(118, 47);
             this.BT_ACEPTARSERIALIZAR490WC.TabIndex = 66;
@@ -509,7 +509,7 @@
             this.BT_CANCELARSERIALIZAR490WC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BT_CANCELARSERIALIZAR490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.BT_CANCELARSERIALIZAR490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.BT_CANCELARSERIALIZAR490WC.Location = new System.Drawing.Point(292, 680);
+            this.BT_CANCELARSERIALIZAR490WC.Location = new System.Drawing.Point(548, 680);
             this.BT_CANCELARSERIALIZAR490WC.Name = "BT_CANCELARSERIALIZAR490WC";
             this.BT_CANCELARSERIALIZAR490WC.Size = new System.Drawing.Size(118, 47);
             this.BT_CANCELARSERIALIZAR490WC.TabIndex = 67;
@@ -524,10 +524,11 @@
             this.listBoxDesSerializar490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.listBoxDesSerializar490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
             this.listBoxDesSerializar490WC.FormattingEnabled = true;
+            this.listBoxDesSerializar490WC.HorizontalScrollbar = true;
             this.listBoxDesSerializar490WC.ItemHeight = 19;
-            this.listBoxDesSerializar490WC.Location = new System.Drawing.Point(569, 539);
+            this.listBoxDesSerializar490WC.Location = new System.Drawing.Point(12, 733);
             this.listBoxDesSerializar490WC.Name = "listBoxDesSerializar490WC";
-            this.listBoxDesSerializar490WC.Size = new System.Drawing.Size(398, 135);
+            this.listBoxDesSerializar490WC.Size = new System.Drawing.Size(1002, 135);
             this.listBoxDesSerializar490WC.TabIndex = 68;
             // 
             // BT_DesSerializar490WC
@@ -536,12 +537,13 @@
             this.BT_DesSerializar490WC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BT_DesSerializar490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.BT_DesSerializar490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.BT_DesSerializar490WC.Location = new System.Drawing.Point(717, 680);
+            this.BT_DesSerializar490WC.Location = new System.Drawing.Point(344, 874);
             this.BT_DesSerializar490WC.Name = "BT_DesSerializar490WC";
             this.BT_DesSerializar490WC.Size = new System.Drawing.Size(118, 47);
             this.BT_DesSerializar490WC.TabIndex = 69;
             this.BT_DesSerializar490WC.Text = "Deserializar";
             this.BT_DesSerializar490WC.UseVisualStyleBackColor = false;
+            this.BT_DesSerializar490WC.Click += new System.EventHandler(this.BT_DesSerializar490WC_Click);
             // 
             // BT_LIMPIARDESERIALIZAR490WC
             // 
@@ -549,19 +551,20 @@
             this.BT_LIMPIARDESERIALIZAR490WC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BT_LIMPIARDESERIALIZAR490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.BT_LIMPIARDESERIALIZAR490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.BT_LIMPIARDESERIALIZAR490WC.Location = new System.Drawing.Point(849, 680);
+            this.BT_LIMPIARDESERIALIZAR490WC.Location = new System.Drawing.Point(476, 874);
             this.BT_LIMPIARDESERIALIZAR490WC.Name = "BT_LIMPIARDESERIALIZAR490WC";
             this.BT_LIMPIARDESERIALIZAR490WC.Size = new System.Drawing.Size(118, 47);
             this.BT_LIMPIARDESERIALIZAR490WC.TabIndex = 70;
             this.BT_LIMPIARDESERIALIZAR490WC.Text = "Limpiar";
             this.BT_LIMPIARDESERIALIZAR490WC.UseVisualStyleBackColor = false;
+            this.BT_LIMPIARDESERIALIZAR490WC.Click += new System.EventHandler(this.BT_LIMPIARDESERIALIZAR490WC_Click);
             // 
             // FormMaestroCliente490WC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(27)))), ((int)(((byte)(38)))));
-            this.ClientSize = new System.Drawing.Size(983, 747);
+            this.ClientSize = new System.Drawing.Size(1033, 939);
             this.Controls.Add(this.BT_LIMPIARDESERIALIZAR490WC);
             this.Controls.Add(this.BT_DesSerializar490WC);
             this.Controls.Add(this.listBoxDesSerializar490WC);

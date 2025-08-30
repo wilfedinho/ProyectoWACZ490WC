@@ -272,15 +272,15 @@ namespace GUI490WC
 
         private void BT_MaestroCliente490WC_Click(object sender, EventArgs e)
         {
-            //try
-            //{
+            try
+            {
                 formMaestroCliente490WC = new FormMaestroCliente490WC();
                 Traductor490WC.TraductorSG490WC.Suscribir490WC(formMaestroCliente490WC);
                 formMaestroCliente490WC.ShowDialog();
                 hideSubmenu490WC();
                 this?.Show();
-            //}
-            //catch { }
+            }
+            catch { }
         }
 
         private void BT_Compra490WC_Click(object sender, EventArgs e)

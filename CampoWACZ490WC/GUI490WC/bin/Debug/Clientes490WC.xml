@@ -1,6 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ArrayOfCliente490WC xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Cliente490WC>
+    <DNI490WC>11.001.245</DNI490WC>
+    <Nombre490WC>Agustin</Nombre490WC>
+    <Apellido490WC>Marchesin</Apellido490WC>
+    <Emails>
+      <Email>porto@futbol</Email>
+    </Emails>
+    <Celulares>
+      <Celular>1245697854</Celular>
+    </Celulares>
+    <Direccion490WC>ZfEr7GVES/+wt5KRm3hTqA==</Direccion490WC>
+    <Activo490WC>true</Activo490WC>
+    <EstrellasCliente490WC>0</EstrellasCliente490WC>
+    <Beneficios />
+  </Cliente490WC>
+  <Cliente490WC>
     <DNI490WC>11.111.111</DNI490WC>
     <Nombre490WC>Lionel</Nombre490WC>
     <Apellido490WC>Messi</Apellido490WC>
@@ -45,18 +60,49 @@
     </Beneficios>
   </Cliente490WC>
   <Cliente490WC>
-    <DNI490WC>11.001.245</DNI490WC>
-    <Nombre490WC>Agustin</Nombre490WC>
-    <Apellido490WC>Marchesin</Apellido490WC>
+    <DNI490WC>33.333.333</DNI490WC>
+    <Nombre490WC>Lautaro</Nombre490WC>
+    <Apellido490WC>Blanco</Apellido490WC>
     <Emails>
-      <Email>porto@futbol</Email>
+      <Email>rosario@gmail.com</Email>
     </Emails>
     <Celulares>
-      <Celular>1245697854</Celular>
+      <Celular>5633332222</Celular>
     </Celulares>
-    <Direccion490WC>ZfEr7GVES/+wt5KRm3hTqA==</Direccion490WC>
+    <Direccion490WC>fSJmDtfChqX0nvmwNzhsGg==</Direccion490WC>
     <Activo490WC>true</Activo490WC>
     <EstrellasCliente490WC>0</EstrellasCliente490WC>
+    <Beneficios />
+  </Cliente490WC>
+  <Cliente490WC>
+    <DNI490WC>56.258.032</DNI490WC>
+    <Nombre490WC>William</Nombre490WC>
+    <Apellido490WC>Cardenas</Apellido490WC>
+    <Emails>
+      <Email>sistema@uai.edu.ar</Email>
+    </Emails>
+    <Celulares>
+      <Celular>4523695874</Celular>
+    </Celulares>
+    <Direccion490WC>wEsHxkIzwcHebP/6fdf6KSmfgxEjgpmXuvmbuZDoGPk=</Direccion490WC>
+    <Activo490WC>true</Activo490WC>
+    <EstrellasCliente490WC>0</EstrellasCliente490WC>
+    <Beneficios />
+  </Cliente490WC>
+  <Cliente490WC>
+    <DNI490WC>33.222.798</DNI490WC>
+    <Nombre490WC>Santiago</Nombre490WC>
+    <Apellido490WC>Salinas</Apellido490WC>
+    <Emails>
+      <Email>Enano@gmail.com</Email>
+    </Emails>
+    <Celulares>
+      <Celular>2255544445</Celular>
+      <Celular>4422229999</Celular>
+    </Celulares>
+    <Direccion490WC>e+ux7scZy10XL9tUw04AsfLqEfmvv3D4JdM6uKyNXXo=</Direccion490WC>
+    <Activo490WC>true</Activo490WC>
+    <EstrellasCliente490WC>333</EstrellasCliente490WC>
     <Beneficios />
   </Cliente490WC>
 </ArrayOfCliente490WC>
