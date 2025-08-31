@@ -35,9 +35,16 @@ namespace GUI490WC
             if (!string.IsNullOrEmpty(TB_RESTORE490WC.Text) && !string.IsNullOrWhiteSpace(TB_RESTORE490WC.Text))
             {
                 GestorBackUpRestore490WC gestorBackUpRestore490WC = new GestorBackUpRestore490WC();
-                gestorBackUpRestore490WC.RealizarRestore490WC(TB_RESTORE490WC.Text);
-                MessageBox.Show("Restauración realizada con éxito");
-                TB_RESTORE490WC.Clear();
+                if (gestorBackUpRestore490WC.RealizarRestore490WC(TB_RESTORE490WC.Text))
+                {
+                    MessageBox.Show("Restauración realizada con éxito");
+                    TB_RESTORE490WC.Clear();
+                }
+                else
+                {
+                    MessageBox.Show("Archivo seleccionado para la Restauración Invalido!!");
+                    TB_RESTORE490WC.Clear();
+                }
             }
         }
 
@@ -54,7 +61,7 @@ namespace GUI490WC
 
         public void ActualizarLenguaje490WC()
         {
-            
+
         }
     }
 }

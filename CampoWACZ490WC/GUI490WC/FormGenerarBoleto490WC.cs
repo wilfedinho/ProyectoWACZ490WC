@@ -77,9 +77,9 @@ namespace GUI490WC
                 }
             };
             formAplicarBeneficios490WC = new FormAplicarBeneficios490WC();
-            Traductor490WC.TraductorSG490WC.Suscribir490WC(formAplicarBeneficios490WC);
-            Traductor490WC.TraductorSG490WC.Suscribir490WC(controlIDA490WC);
-            Traductor490WC.TraductorSG490WC.Suscribir490WC(controlVUELTA490WC);
+            //Traductor490WC.TraductorSG490WC.Suscribir490WC(formAplicarBeneficios490WC);
+            //Traductor490WC.TraductorSG490WC.Suscribir490WC(controlIDA490WC);
+            //Traductor490WC.TraductorSG490WC.Suscribir490WC(controlVUELTA490WC);
         }
         public void LlenarInfoBoleto490WC()
         {
@@ -363,6 +363,8 @@ namespace GUI490WC
             ClienteCargado490WC = null;
             LimpiarCampos490WC();
             Traductor490WC.TraductorSG490WC.Desuscribir490WC(this);
+            Traductor490WC.TraductorSG490WC.Desuscribir490WC(controlIDA490WC);
+            Traductor490WC.TraductorSG490WC.Desuscribir490WC(controlVUELTA490WC);
             this.Close();
         }
 

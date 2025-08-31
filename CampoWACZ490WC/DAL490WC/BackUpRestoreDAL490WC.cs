@@ -23,33 +23,63 @@ namespace DAL490WC
                 }
             }
         }
-
-        public void RealizarRestore490WC(string rutaRestore490WC)
+        public bool RealizarRestore490WC(string rutaRestore490WC)
         {
-            using (SqlConnection cone490WC = GestorConexion490WC.GestorCone490WC.DevolverConexion490WC())
+            try
             {
-                cone490WC.Open();
-                string query490WC = "USE master;";
-                using (SqlCommand cmd490WC = new SqlCommand(query490WC, cone490WC))
+                using (SqlConnection cone490WC = GestorConexion490WC.GestorCone490WC.DevolverConexion490WC())
                 {
-                    cmd490WC.ExecuteNonQuery();
+                    cone490WC.Open();
+                    string query490WC = $"RESTORE HEADERONLY FROM DISK = '{rutaRestore490WC}'";
+                    using (SqlCommand cmd490WC = new SqlCommand(query490WC, cone490WC))
+                    using (SqlDataReader reader490WC = cmd490WC.ExecuteReader())
+                    {
+                        if (reader490WC.Read())
+                        {
+                            string dbName = reader490WC["DatabaseName"].ToString();
+                            if (!dbName.Equals(nombreBaseDatos490WC, StringComparison.OrdinalIgnoreCase))
+                            {
+                                return false;
+                            }
+                        }
+                        else
+                        {
+                            return false; 
+                        }
+                    }
+                    query490WC = "USE master;";
+                    using (SqlCommand cmd490WC = new SqlCommand(query490WC, cone490WC))
+                    {
+                        cmd490WC.ExecuteNonQuery();
+                    }
+
+                    query490WC = $@"ALTER DATABASE [{nombreBaseDatos490WC}] SET SINGLE_USER WITH ROLLBACK IMMEDIATE;";
+                    using (SqlCommand cmd490WC = new SqlCommand(query490WC, cone490WC))
+                    {
+                        cmd490WC.ExecuteNonQuery();
+                    }
+
+                    query490WC = $@"RESTORE DATABASE [{nombreBaseDatos490WC}] FROM DISK = '{rutaRestore490WC}' WITH REPLACE;";
+                    using (SqlCommand cmd490WC = new SqlCommand(query490WC, cone490WC))
+                    {
+                        cmd490WC.ExecuteNonQuery();
+                    }
+
+                    query490WC = $@"ALTER DATABASE [{nombreBaseDatos490WC}] SET MULTI_USER;";
+                    using (SqlCommand cmd490WC = new SqlCommand(query490WC, cone490WC))
+                    {
+                        cmd490WC.ExecuteNonQuery();
+                    }
                 }
-                query490WC = $@"ALTER DATABASE [{nombreBaseDatos490WC}] SET SINGLE_USER WITH ROLLBACK IMMEDIATE;";
-                using (SqlCommand cmd490WC = new SqlCommand(query490WC, cone490WC))
-                {
-                    cmd490WC.ExecuteNonQuery();
-                }
-                query490WC = $@"RESTORE DATABASE [{nombreBaseDatos490WC}] FROM DISK = '{rutaRestore490WC}' WITH REPLACE;";
-                using (SqlCommand cmd490WC = new SqlCommand(query490WC, cone490WC))
-                {
-                    cmd490WC.ExecuteNonQuery();
-                }
-                query490WC = $@"ALTER DATABASE [{nombreBaseDatos490WC}] SET MULTI_USER;";
-                using (SqlCommand cmd490WC = new SqlCommand(query490WC, cone490WC))
-                {
-                    cmd490WC.ExecuteNonQuery();
-                }
+
+                return true;
+            }
+            catch
+            {
+                return false;
             }
         }
+
+
     }
 }
