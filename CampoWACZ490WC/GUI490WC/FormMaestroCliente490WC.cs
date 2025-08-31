@@ -507,8 +507,6 @@ namespace GUI490WC
                 BT_AGREGAREMAIL490WC.Enabled = false;
                 BT_ELIMINAREMAIL490WC.Enabled = false;
                 BT_SALIR490WC.Enabled = false;
-                BT_CANCELAR490WC.Enabled = false;
-                BT_APLICAR490WC.Enabled = false;
                 BT_MODIFICAR_USUARIO490WC.Enabled = false;
                 BT_BAJA_USUARIO490WC.Enabled = false;
                 BT_ALTA_USUARIO490WC.Enabled = false;
@@ -528,8 +526,6 @@ namespace GUI490WC
                 BT_AGREGAREMAIL490WC.Enabled = true;
                 BT_ELIMINAREMAIL490WC.Enabled = true;
                 BT_SALIR490WC.Enabled = true;
-                BT_CANCELAR490WC.Enabled = true;
-                BT_APLICAR490WC.Enabled = true;
                 BT_MODIFICAR_USUARIO490WC.Enabled = true;
                 BT_BAJA_USUARIO490WC.Enabled = true;
                 BT_ALTA_USUARIO490WC.Enabled = true;
