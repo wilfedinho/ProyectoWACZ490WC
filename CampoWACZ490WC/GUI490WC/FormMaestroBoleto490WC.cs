@@ -452,6 +452,7 @@ namespace GUI490WC
         {
             ActivarModoModificar490WC(false);
             Mostrar490WC();
+            Traductor490WC.TraductorSG490WC.Desuscribir490WC(this);
             this.Close();
         }
 

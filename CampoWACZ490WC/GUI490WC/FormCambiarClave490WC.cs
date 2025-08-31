@@ -102,6 +102,7 @@ namespace GUI490WC
 
         private void FormCambiarClave490WC_FormClosed(object sender, FormClosedEventArgs e)
         {
+            Traductor490WC.TraductorSG490WC.Desuscribir490WC(this);
             LimpiarTB490WC();  
         }
 

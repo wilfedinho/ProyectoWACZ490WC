@@ -208,6 +208,7 @@ namespace GUI490WC
             CargarCliente490WC(null);
             boletoCobrar490WC = null;
             BT_COBRARFACTURA490WC.Enabled = false;
+            Traductor490WC.TraductorSG490WC.Desuscribir490WC(this);
         }
 
         private void FormGenerarFactura490WC_Load(object sender, EventArgs e)

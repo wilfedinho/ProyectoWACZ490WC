@@ -24,6 +24,8 @@ namespace GUI490WC
         FormCambiarIdioma490WC formCambiarIdioma490WC;
         FormFactura490WC formFactura490WC;
         FormBitacoraDeEventos490WC formBitacoraDeEventos490WC;
+        FormBackUp490WC formBackUp490WC;
+        FormRestore490WC formRestore490WC;
 
         public FormMenu490WC()
         {
@@ -133,7 +135,6 @@ namespace GUI490WC
             try
             {
                 formABMUSUARIO490WC = new FormABMUsuario490WC(this);
-                Traductor490WC.TraductorSG490WC.Suscribir490WC(formABMUSUARIO490WC);
                 formABMUSUARIO490WC.RellenarCombobox490WC();
                 formABMUSUARIO490WC.ShowDialog();
                 hideSubmenu490WC();
@@ -147,7 +148,6 @@ namespace GUI490WC
             try
             {
                 formCambiarClave490WC = new FormCambiarClave490WC();
-                Traductor490WC.TraductorSG490WC.Suscribir490WC(formCambiarClave490WC);
                 formCambiarClave490WC.ShowDialog();
                 hideSubmenu490WC();
                 this?.Show();
@@ -198,7 +198,6 @@ namespace GUI490WC
             try
             {
                 formPermisos490WC = new FormPermisos490WC();
-                Traductor490WC.TraductorSG490WC.Suscribir490WC(formPermisos490WC);
                 formPermisos490WC.ShowDialog();
                 hideSubmenu490WC();
                 this?.Show();
@@ -210,12 +209,18 @@ namespace GUI490WC
 
         private void BT_BackUp490WC_Click(object sender, EventArgs e)
         {
+            formBackUp490WC = new FormBackUp490WC();
+            formBackUp490WC.ShowDialog();
             hideSubmenu490WC();
+            this?.Show();
         }
 
         private void BT_Restore490WC_Click(object sender, EventArgs e)
         {
+            formRestore490WC = new FormRestore490WC();
+            formRestore490WC.ShowDialog();
             hideSubmenu490WC();
+            this?.Show();
         }
 
         private void BT_Bitacora490WC_Click(object sender, EventArgs e)
@@ -223,7 +228,6 @@ namespace GUI490WC
             try
             {
                 formBitacoraDeEventos490WC = new FormBitacoraDeEventos490WC();
-                Traductor490WC.TraductorSG490WC.Suscribir490WC(formBitacoraDeEventos490WC);
                 formBitacoraDeEventos490WC.ShowDialog();
                 hideSubmenu490WC();
                 this?.Show();
@@ -242,7 +246,6 @@ namespace GUI490WC
             try
             {
                 formCambiarIdioma490WC = new FormCambiarIdioma490WC();
-                Traductor490WC.TraductorSG490WC.Suscribir490WC(formCambiarIdioma490WC);
                 formCambiarIdioma490WC.ShowDialog();
                 hideSubmenu490WC();
                 this?.Show();
@@ -262,7 +265,6 @@ namespace GUI490WC
             try
             {
                 formMaestroBoleto490WC = new FormMaestroBoleto490WC();
-                Traductor490WC.TraductorSG490WC.Suscribir490WC(formMaestroBoleto490WC);
                 formMaestroBoleto490WC.ShowDialog();
                 hideSubmenu490WC();
                 this?.Show();
@@ -275,7 +277,6 @@ namespace GUI490WC
             try
             {
                 formMaestroCliente490WC = new FormMaestroCliente490WC();
-                Traductor490WC.TraductorSG490WC.Suscribir490WC(formMaestroCliente490WC);
                 formMaestroCliente490WC.ShowDialog();
                 hideSubmenu490WC();
                 this?.Show();
@@ -293,7 +294,6 @@ namespace GUI490WC
             try
             {
                 formGenerarBoleto490WC = new FormGenerarBoleto490WC();
-                Traductor490WC.TraductorSG490WC.Suscribir490WC(formGenerarBoleto490WC);
                 formGenerarBoleto490WC.ShowDialog();
                 hideSubmenu490WC();
                 this?.Show();
@@ -306,7 +306,6 @@ namespace GUI490WC
             try
             {
                 formGenerarFactura490WC = new FormGenerarFactura490WC();
-                Traductor490WC.TraductorSG490WC.Suscribir490WC(formGenerarFactura490WC);
                 formGenerarFactura490WC.ShowDialog();
                 hideSubmenu490WC();
                 this?.Show();
@@ -324,7 +323,6 @@ namespace GUI490WC
             try
             {
                 formFactura490WC = new FormFactura490WC();
-                Traductor490WC.TraductorSG490WC.Suscribir490WC(formFactura490WC);
                 formFactura490WC.MostrarFacturas490WC();
                 formFactura490WC.ShowDialog();
                 hideSubmenu490WC();
@@ -361,7 +359,6 @@ namespace GUI490WC
             try
             {
                 formMaestroBeneficio490WC = new FormMaestroBeneficio490WC();
-                Traductor490WC.TraductorSG490WC.Suscribir490WC(formMaestroBeneficio490WC);
                 formMaestroBeneficio490WC.ShowDialog();
                 hideSubmenu490WC();
                 this?.Show();
@@ -447,7 +444,7 @@ namespace GUI490WC
         {
             try
             {
-
+                Traductor490WC.TraductorSG490WC.Desuscribir490WC(this);
                 UserManager490WC.UserManagerSG490WC.GuardarIdiomaUsuario490WC();
                 UserManager490WC.UserManagerSG490WC.Logout490WC();
                 GestorForm490WC.gestorFormSG490WC.DefinirEstado490WC(new EstadoCerrarAplicacion490WC());

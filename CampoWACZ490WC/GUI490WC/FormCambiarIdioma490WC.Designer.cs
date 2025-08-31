@@ -96,6 +96,7 @@
             this.Name = "FormCambiarIdioma490WC";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormCambiarIdioma490WC";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormCambiarIdioma490WC_FormClosed);
             this.Load += new System.EventHandler(this.FormCambiarIdioma490WC_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

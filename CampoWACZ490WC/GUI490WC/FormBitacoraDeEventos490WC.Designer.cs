@@ -366,6 +366,7 @@
             this.Name = "FormBitacoraDeEventos490WC";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormBitacoraDeEventos";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormBitacoraDeEventos490WC_FormClosed);
             this.Load += new System.EventHandler(this.FormBitacoraDeEventos490WC_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvBitacora)).EndInit();
             this.ResumeLayout(false);

@@ -278,6 +278,7 @@ namespace GUI490WC
         private void FormMaestroBeneficio490WC_FormClosed(object sender, FormClosedEventArgs e)
         {
             ActivarModoModificar490WC(false);
+            Traductor490WC.TraductorSG490WC.Desuscribir490WC(this);
             this.Close();
         }
 

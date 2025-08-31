@@ -175,7 +175,7 @@ namespace GUI490WC
 
         private void FormAplicarBeneficios490WC_FormClosed(object sender, FormClosedEventArgs e)
         {
-            
+            Traductor490WC.TraductorSG490WC.Desuscribir490WC(this);
             BT_CANJEARBENEFICIO490WC.Enabled = false;
             CargarCliente490WC(null);
         }

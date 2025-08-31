@@ -1456,6 +1456,7 @@ namespace GUI490WC
             ActivarModificacion490WC(false);
             LlenarFamilias490WC();
             LlenarPermisosSimples490WC();
+            Traductor490WC.TraductorSG490WC.Desuscribir490WC(this);
             HabilitarCB490WC();
         }
 

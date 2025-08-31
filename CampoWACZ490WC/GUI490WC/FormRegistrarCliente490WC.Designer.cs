@@ -331,6 +331,7 @@
             this.Name = "FormRegistrarCliente490WC";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormRegistrarCliente490WC";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormRegistrarCliente490WC_FormClosed);
             this.Load += new System.EventHandler(this.FormRegistrarCliente490WC_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

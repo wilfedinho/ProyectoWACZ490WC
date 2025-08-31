@@ -207,5 +207,10 @@ namespace GUI490WC
             Traductor490WC.TraductorSG490WC.Suscribir490WC(this);
             Traductor490WC.TraductorSG490WC.Notificar490WC();
         }
+
+        private void FormBitacoraDeEventos490WC_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Traductor490WC.TraductorSG490WC.Desuscribir490WC(this);
+        }
     }
 }

@@ -319,6 +319,7 @@ namespace GUI490WC
         private void FormMaestroCliente490WC_FormClosed(object sender, FormClosedEventArgs e)
         {
             ActivarModoModificar490WC(false);
+            Traductor490WC.TraductorSG490WC.Desuscribir490WC(this);
             this.Close();
         }
 
@@ -596,8 +597,8 @@ namespace GUI490WC
                 if (OFD490WC.ShowDialog() == DialogResult.OK)
                 {
                     string rutaArchivo490WC = OFD490WC.FileName;
-                    var doc = XDocument.Load(rutaArchivo490WC);
-                    if (doc.Root.Name != "ArrayOfCliente490WC")
+                    var doc490WC = XDocument.Load(rutaArchivo490WC);
+                    if (doc490WC.Root.Name != "ArrayOfCliente490WC")
                     {
                         MessageBox.Show("El XML no tiene el formato correcto para deserializar!!");
                     }

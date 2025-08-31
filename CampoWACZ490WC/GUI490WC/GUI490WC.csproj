@@ -36,12 +36,18 @@
     <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
       <HintPath>..\packages\BouncyCastle.Cryptography.2.4.0\lib\net461\BouncyCastle.Cryptography.dll</HintPath>
     </Reference>
+    <Reference Include="FontAwesome.Sharp, Version=6.6.0.0, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f, processorArchitecture=MSIL">
+      <HintPath>..\packages\FontAwesome.Sharp.6.6.0\lib\net48\FontAwesome.Sharp.dll</HintPath>
+    </Reference>
     <Reference Include="itextsharp, Version=5.5.13.4, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
       <HintPath>..\packages\iTextSharp.5.5.13.4\lib\net461\itextsharp.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -51,6 +57,7 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ControlModalidadIDA490WC.cs">
@@ -81,6 +88,12 @@
     </Compile>
     <Compile Include="FormAplicarBeneficios490WC.Designer.cs">
       <DependentUpon>FormAplicarBeneficios490WC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormBackUp490WC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBackUp490WC.Designer.cs">
+      <DependentUpon>FormBackUp490WC.cs</DependentUpon>
     </Compile>
     <Compile Include="FormBitacoraDeEventos490WC.cs">
       <SubType>Form</SubType>
@@ -166,6 +179,12 @@
     <Compile Include="FormRegistrarCliente490WC.Designer.cs">
       <DependentUpon>FormRegistrarCliente490WC.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormRestore490WC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRestore490WC.Designer.cs">
+      <DependentUpon>FormRestore490WC.cs</DependentUpon>
+    </Compile>
     <Compile Include="GestorForm490WC.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -180,6 +199,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormAplicarBeneficios490WC.resx">
       <DependentUpon>FormAplicarBeneficios490WC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBackUp490WC.resx">
+      <DependentUpon>FormBackUp490WC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormBitacoraDeEventos490WC.resx">
       <DependentUpon>FormBitacoraDeEventos490WC.cs</DependentUpon>
@@ -222,6 +244,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormRegistrarCliente490WC.resx">
       <DependentUpon>FormRegistrarCliente490WC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRestore490WC.resx">
+      <DependentUpon>FormRestore490WC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

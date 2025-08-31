@@ -362,6 +362,7 @@ namespace GUI490WC
             boletoCargado490WC = null;
             ClienteCargado490WC = null;
             LimpiarCampos490WC();
+            Traductor490WC.TraductorSG490WC.Desuscribir490WC(this);
             this.Close();
         }
 
