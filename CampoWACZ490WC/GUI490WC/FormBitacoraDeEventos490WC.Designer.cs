@@ -28,59 +28,60 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dgvBitacora = new System.Windows.Forms.DataGridView();
+            this.dgvBitacora490WC = new System.Windows.Forms.DataGridView();
             this.ColumnUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnaHora = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnaModulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnaDescripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnaCriticidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CB_Usuario = new System.Windows.Forms.ComboBox();
-            this.CB_Modulo = new System.Windows.Forms.ComboBox();
-            this.CB_Descripcion = new System.Windows.Forms.ComboBox();
-            this.CB_Criticidad = new System.Windows.Forms.ComboBox();
-            this.BT_Filtrar = new System.Windows.Forms.Button();
-            this.BT_LimpiarFiltros = new System.Windows.Forms.Button();
-            this.monthCalendarFechaInicio = new System.Windows.Forms.MonthCalendar();
-            this.monthCalendarFechaFin = new System.Windows.Forms.MonthCalendar();
-            this.checkBoxFecha = new System.Windows.Forms.CheckBox();
-            this.labelFechaFin = new System.Windows.Forms.Label();
-            this.labelFechaInicio = new System.Windows.Forms.Label();
-            this.labelCBUsuario = new System.Windows.Forms.Label();
-            this.labelCBModulo = new System.Windows.Forms.Label();
-            this.labelCBDescripcion = new System.Windows.Forms.Label();
-            this.labelCBCriticidad = new System.Windows.Forms.Label();
-            this.labelUsuario = new System.Windows.Forms.Label();
-            this.labelNombre = new System.Windows.Forms.Label();
-            this.labelApellido = new System.Windows.Forms.Label();
-            this.labelDNI = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvBitacora)).BeginInit();
+            this.CB_Usuario490WC = new System.Windows.Forms.ComboBox();
+            this.CB_Modulo490WC = new System.Windows.Forms.ComboBox();
+            this.CB_Descripcion490WC = new System.Windows.Forms.ComboBox();
+            this.CB_Criticidad490WC = new System.Windows.Forms.ComboBox();
+            this.BT_Filtrar490WC = new System.Windows.Forms.Button();
+            this.BT_LimpiarFiltros490WC = new System.Windows.Forms.Button();
+            this.monthCalendarFechaInicio490WC = new System.Windows.Forms.MonthCalendar();
+            this.monthCalendarFechaFin490WC = new System.Windows.Forms.MonthCalendar();
+            this.checkBoxFecha490WC = new System.Windows.Forms.CheckBox();
+            this.labelFechaFin490WC = new System.Windows.Forms.Label();
+            this.labelFechaInicio490WC = new System.Windows.Forms.Label();
+            this.labelCBUsuario490WC = new System.Windows.Forms.Label();
+            this.labelCBModulo490WC = new System.Windows.Forms.Label();
+            this.labelCBDescripcion490WC = new System.Windows.Forms.Label();
+            this.labelCBCriticidad490WC = new System.Windows.Forms.Label();
+            this.labelUsuario490WC = new System.Windows.Forms.Label();
+            this.labelNombre490WC = new System.Windows.Forms.Label();
+            this.labelApellido490WC = new System.Windows.Forms.Label();
+            this.labelDNI490WC = new System.Windows.Forms.Label();
+            this.BT_IMPRIMIR490WC = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBitacora490WC)).BeginInit();
             this.SuspendLayout();
             // 
-            // dgvBitacora
+            // dgvBitacora490WC
             // 
-            this.dgvBitacora.AllowUserToAddRows = false;
-            this.dgvBitacora.AllowUserToDeleteRows = false;
-            this.dgvBitacora.AllowUserToResizeColumns = false;
-            this.dgvBitacora.AllowUserToResizeRows = false;
-            this.dgvBitacora.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvBitacora.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvBitacora.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvBitacora490WC.AllowUserToAddRows = false;
+            this.dgvBitacora490WC.AllowUserToDeleteRows = false;
+            this.dgvBitacora490WC.AllowUserToResizeColumns = false;
+            this.dgvBitacora490WC.AllowUserToResizeRows = false;
+            this.dgvBitacora490WC.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvBitacora490WC.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvBitacora490WC.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnUsuario,
             this.ColumnFecha,
             this.ColumnaHora,
             this.ColumnaModulo,
             this.ColumnaDescripcion,
             this.ColumnaCriticidad});
-            this.dgvBitacora.Location = new System.Drawing.Point(12, 12);
-            this.dgvBitacora.MultiSelect = false;
-            this.dgvBitacora.Name = "dgvBitacora";
-            this.dgvBitacora.ReadOnly = true;
-            this.dgvBitacora.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dgvBitacora.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvBitacora.Size = new System.Drawing.Size(950, 219);
-            this.dgvBitacora.TabIndex = 1;
-            this.dgvBitacora.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvBitacora_CellMouseClick);
+            this.dgvBitacora490WC.Location = new System.Drawing.Point(12, 12);
+            this.dgvBitacora490WC.MultiSelect = false;
+            this.dgvBitacora490WC.Name = "dgvBitacora490WC";
+            this.dgvBitacora490WC.ReadOnly = true;
+            this.dgvBitacora490WC.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dgvBitacora490WC.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvBitacora490WC.Size = new System.Drawing.Size(950, 219);
+            this.dgvBitacora490WC.TabIndex = 1;
+            this.dgvBitacora490WC.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvBitacora_CellMouseClick);
             // 
             // ColumnUsuario
             // 
@@ -118,224 +119,238 @@
             this.ColumnaCriticidad.Name = "ColumnaCriticidad";
             this.ColumnaCriticidad.ReadOnly = true;
             // 
-            // CB_Usuario
+            // CB_Usuario490WC
             // 
-            this.CB_Usuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(6)))), ((int)(((byte)(13)))));
-            this.CB_Usuario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CB_Usuario.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.CB_Usuario.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
-            this.CB_Usuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.CB_Usuario.FormattingEnabled = true;
-            this.CB_Usuario.Location = new System.Drawing.Point(327, 267);
-            this.CB_Usuario.Name = "CB_Usuario";
-            this.CB_Usuario.Size = new System.Drawing.Size(165, 27);
-            this.CB_Usuario.TabIndex = 93;
+            this.CB_Usuario490WC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(6)))), ((int)(((byte)(13)))));
+            this.CB_Usuario490WC.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CB_Usuario490WC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.CB_Usuario490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.CB_Usuario490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
+            this.CB_Usuario490WC.FormattingEnabled = true;
+            this.CB_Usuario490WC.Location = new System.Drawing.Point(327, 267);
+            this.CB_Usuario490WC.Name = "CB_Usuario490WC";
+            this.CB_Usuario490WC.Size = new System.Drawing.Size(165, 27);
+            this.CB_Usuario490WC.TabIndex = 93;
             // 
-            // CB_Modulo
+            // CB_Modulo490WC
             // 
-            this.CB_Modulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(6)))), ((int)(((byte)(13)))));
-            this.CB_Modulo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CB_Modulo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.CB_Modulo.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
-            this.CB_Modulo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.CB_Modulo.FormattingEnabled = true;
-            this.CB_Modulo.Location = new System.Drawing.Point(327, 335);
-            this.CB_Modulo.Name = "CB_Modulo";
-            this.CB_Modulo.Size = new System.Drawing.Size(165, 27);
-            this.CB_Modulo.TabIndex = 94;
+            this.CB_Modulo490WC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(6)))), ((int)(((byte)(13)))));
+            this.CB_Modulo490WC.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CB_Modulo490WC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.CB_Modulo490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.CB_Modulo490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
+            this.CB_Modulo490WC.FormattingEnabled = true;
+            this.CB_Modulo490WC.Location = new System.Drawing.Point(327, 335);
+            this.CB_Modulo490WC.Name = "CB_Modulo490WC";
+            this.CB_Modulo490WC.Size = new System.Drawing.Size(165, 27);
+            this.CB_Modulo490WC.TabIndex = 94;
             // 
-            // CB_Descripcion
+            // CB_Descripcion490WC
             // 
-            this.CB_Descripcion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(6)))), ((int)(((byte)(13)))));
-            this.CB_Descripcion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CB_Descripcion.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.CB_Descripcion.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
-            this.CB_Descripcion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.CB_Descripcion.FormattingEnabled = true;
-            this.CB_Descripcion.Location = new System.Drawing.Point(327, 399);
-            this.CB_Descripcion.Name = "CB_Descripcion";
-            this.CB_Descripcion.Size = new System.Drawing.Size(165, 27);
-            this.CB_Descripcion.TabIndex = 95;
+            this.CB_Descripcion490WC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(6)))), ((int)(((byte)(13)))));
+            this.CB_Descripcion490WC.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CB_Descripcion490WC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.CB_Descripcion490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.CB_Descripcion490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
+            this.CB_Descripcion490WC.FormattingEnabled = true;
+            this.CB_Descripcion490WC.Location = new System.Drawing.Point(327, 399);
+            this.CB_Descripcion490WC.Name = "CB_Descripcion490WC";
+            this.CB_Descripcion490WC.Size = new System.Drawing.Size(165, 27);
+            this.CB_Descripcion490WC.TabIndex = 95;
             // 
-            // CB_Criticidad
+            // CB_Criticidad490WC
             // 
-            this.CB_Criticidad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(6)))), ((int)(((byte)(13)))));
-            this.CB_Criticidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CB_Criticidad.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.CB_Criticidad.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
-            this.CB_Criticidad.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.CB_Criticidad.FormattingEnabled = true;
-            this.CB_Criticidad.Location = new System.Drawing.Point(327, 461);
-            this.CB_Criticidad.Name = "CB_Criticidad";
-            this.CB_Criticidad.Size = new System.Drawing.Size(165, 27);
-            this.CB_Criticidad.TabIndex = 96;
+            this.CB_Criticidad490WC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(6)))), ((int)(((byte)(13)))));
+            this.CB_Criticidad490WC.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CB_Criticidad490WC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.CB_Criticidad490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.CB_Criticidad490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
+            this.CB_Criticidad490WC.FormattingEnabled = true;
+            this.CB_Criticidad490WC.Location = new System.Drawing.Point(327, 461);
+            this.CB_Criticidad490WC.Name = "CB_Criticidad490WC";
+            this.CB_Criticidad490WC.Size = new System.Drawing.Size(165, 27);
+            this.CB_Criticidad490WC.TabIndex = 96;
             // 
-            // BT_Filtrar
+            // BT_Filtrar490WC
             // 
-            this.BT_Filtrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(6)))), ((int)(((byte)(13)))));
-            this.BT_Filtrar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BT_Filtrar.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
-            this.BT_Filtrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.BT_Filtrar.Location = new System.Drawing.Point(560, 452);
-            this.BT_Filtrar.Name = "BT_Filtrar";
-            this.BT_Filtrar.Size = new System.Drawing.Size(192, 43);
-            this.BT_Filtrar.TabIndex = 97;
-            this.BT_Filtrar.Text = "Filtrar";
-            this.BT_Filtrar.UseVisualStyleBackColor = false;
-            this.BT_Filtrar.Click += new System.EventHandler(this.BT_Filtrar_Click);
+            this.BT_Filtrar490WC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(6)))), ((int)(((byte)(13)))));
+            this.BT_Filtrar490WC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BT_Filtrar490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.BT_Filtrar490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
+            this.BT_Filtrar490WC.Location = new System.Drawing.Point(529, 452);
+            this.BT_Filtrar490WC.Name = "BT_Filtrar490WC";
+            this.BT_Filtrar490WC.Size = new System.Drawing.Size(143, 43);
+            this.BT_Filtrar490WC.TabIndex = 97;
+            this.BT_Filtrar490WC.Text = "Filtrar";
+            this.BT_Filtrar490WC.UseVisualStyleBackColor = false;
+            this.BT_Filtrar490WC.Click += new System.EventHandler(this.BT_Filtrar_Click);
             // 
-            // BT_LimpiarFiltros
+            // BT_LimpiarFiltros490WC
             // 
-            this.BT_LimpiarFiltros.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(6)))), ((int)(((byte)(13)))));
-            this.BT_LimpiarFiltros.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BT_LimpiarFiltros.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
-            this.BT_LimpiarFiltros.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.BT_LimpiarFiltros.Location = new System.Drawing.Point(770, 454);
-            this.BT_LimpiarFiltros.Name = "BT_LimpiarFiltros";
-            this.BT_LimpiarFiltros.Size = new System.Drawing.Size(192, 39);
-            this.BT_LimpiarFiltros.TabIndex = 98;
-            this.BT_LimpiarFiltros.Text = "Limpiar Filtros";
-            this.BT_LimpiarFiltros.UseVisualStyleBackColor = false;
-            this.BT_LimpiarFiltros.Click += new System.EventHandler(this.BT_LimpiarFiltros_Click);
+            this.BT_LimpiarFiltros490WC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(6)))), ((int)(((byte)(13)))));
+            this.BT_LimpiarFiltros490WC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BT_LimpiarFiltros490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.BT_LimpiarFiltros490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
+            this.BT_LimpiarFiltros490WC.Location = new System.Drawing.Point(678, 452);
+            this.BT_LimpiarFiltros490WC.Name = "BT_LimpiarFiltros490WC";
+            this.BT_LimpiarFiltros490WC.Size = new System.Drawing.Size(143, 43);
+            this.BT_LimpiarFiltros490WC.TabIndex = 98;
+            this.BT_LimpiarFiltros490WC.Text = "Limpiar Filtros";
+            this.BT_LimpiarFiltros490WC.UseVisualStyleBackColor = false;
+            this.BT_LimpiarFiltros490WC.Click += new System.EventHandler(this.BT_LimpiarFiltros_Click);
             // 
-            // monthCalendarFechaInicio
+            // monthCalendarFechaInicio490WC
             // 
-            this.monthCalendarFechaInicio.Location = new System.Drawing.Point(560, 280);
-            this.monthCalendarFechaInicio.MaxSelectionCount = 1;
-            this.monthCalendarFechaInicio.Name = "monthCalendarFechaInicio";
-            this.monthCalendarFechaInicio.ShowToday = false;
-            this.monthCalendarFechaInicio.TabIndex = 99;
+            this.monthCalendarFechaInicio490WC.Location = new System.Drawing.Point(540, 280);
+            this.monthCalendarFechaInicio490WC.MaxSelectionCount = 1;
+            this.monthCalendarFechaInicio490WC.Name = "monthCalendarFechaInicio490WC";
+            this.monthCalendarFechaInicio490WC.ShowToday = false;
+            this.monthCalendarFechaInicio490WC.TabIndex = 99;
             // 
-            // monthCalendarFechaFin
+            // monthCalendarFechaFin490WC
             // 
-            this.monthCalendarFechaFin.Location = new System.Drawing.Point(770, 280);
-            this.monthCalendarFechaFin.MaxSelectionCount = 1;
-            this.monthCalendarFechaFin.Name = "monthCalendarFechaFin";
-            this.monthCalendarFechaFin.ShowToday = false;
-            this.monthCalendarFechaFin.TabIndex = 100;
+            this.monthCalendarFechaFin490WC.Location = new System.Drawing.Point(770, 280);
+            this.monthCalendarFechaFin490WC.MaxSelectionCount = 1;
+            this.monthCalendarFechaFin490WC.Name = "monthCalendarFechaFin490WC";
+            this.monthCalendarFechaFin490WC.ShowToday = false;
+            this.monthCalendarFechaFin490WC.TabIndex = 100;
             // 
-            // checkBoxFecha
+            // checkBoxFecha490WC
             // 
-            this.checkBoxFecha.AutoSize = true;
-            this.checkBoxFecha.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
-            this.checkBoxFecha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.checkBoxFecha.Location = new System.Drawing.Point(698, 237);
-            this.checkBoxFecha.Name = "checkBoxFecha";
-            this.checkBoxFecha.Size = new System.Drawing.Size(145, 24);
-            this.checkBoxFecha.TabIndex = 101;
-            this.checkBoxFecha.Text = "Incluir Fecha?";
-            this.checkBoxFecha.UseVisualStyleBackColor = true;
-            this.checkBoxFecha.CheckedChanged += new System.EventHandler(this.checkBoxFecha_CheckedChanged);
+            this.checkBoxFecha490WC.AutoSize = true;
+            this.checkBoxFecha490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.checkBoxFecha490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
+            this.checkBoxFecha490WC.Location = new System.Drawing.Point(698, 237);
+            this.checkBoxFecha490WC.Name = "checkBoxFecha490WC";
+            this.checkBoxFecha490WC.Size = new System.Drawing.Size(145, 24);
+            this.checkBoxFecha490WC.TabIndex = 101;
+            this.checkBoxFecha490WC.Text = "Incluir Fecha?";
+            this.checkBoxFecha490WC.UseVisualStyleBackColor = true;
+            this.checkBoxFecha490WC.CheckedChanged += new System.EventHandler(this.checkBoxFecha_CheckedChanged);
             // 
-            // labelFechaFin
+            // labelFechaFin490WC
             // 
-            this.labelFechaFin.AutoSize = true;
-            this.labelFechaFin.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
-            this.labelFechaFin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.labelFechaFin.Location = new System.Drawing.Point(823, 257);
-            this.labelFechaFin.Name = "labelFechaFin";
-            this.labelFechaFin.Size = new System.Drawing.Size(89, 20);
-            this.labelFechaFin.TabIndex = 102;
-            this.labelFechaFin.Text = "Fecha Fin";
+            this.labelFechaFin490WC.AutoSize = true;
+            this.labelFechaFin490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.labelFechaFin490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
+            this.labelFechaFin490WC.Location = new System.Drawing.Point(823, 257);
+            this.labelFechaFin490WC.Name = "labelFechaFin490WC";
+            this.labelFechaFin490WC.Size = new System.Drawing.Size(89, 20);
+            this.labelFechaFin490WC.TabIndex = 102;
+            this.labelFechaFin490WC.Text = "Fecha Fin";
             // 
-            // labelFechaInicio
+            // labelFechaInicio490WC
             // 
-            this.labelFechaInicio.AutoSize = true;
-            this.labelFechaInicio.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
-            this.labelFechaInicio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.labelFechaInicio.Location = new System.Drawing.Point(602, 257);
-            this.labelFechaInicio.Name = "labelFechaInicio";
-            this.labelFechaInicio.Size = new System.Drawing.Size(111, 20);
-            this.labelFechaInicio.TabIndex = 103;
-            this.labelFechaInicio.Text = "Fecha Inicio";
+            this.labelFechaInicio490WC.AutoSize = true;
+            this.labelFechaInicio490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.labelFechaInicio490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
+            this.labelFechaInicio490WC.Location = new System.Drawing.Point(582, 257);
+            this.labelFechaInicio490WC.Name = "labelFechaInicio490WC";
+            this.labelFechaInicio490WC.Size = new System.Drawing.Size(111, 20);
+            this.labelFechaInicio490WC.TabIndex = 103;
+            this.labelFechaInicio490WC.Text = "Fecha Inicio";
             // 
-            // labelCBUsuario
+            // labelCBUsuario490WC
             // 
-            this.labelCBUsuario.AutoSize = true;
-            this.labelCBUsuario.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
-            this.labelCBUsuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.labelCBUsuario.Location = new System.Drawing.Point(323, 244);
-            this.labelCBUsuario.Name = "labelCBUsuario";
-            this.labelCBUsuario.Size = new System.Drawing.Size(74, 20);
-            this.labelCBUsuario.TabIndex = 104;
-            this.labelCBUsuario.Text = "Usuario";
+            this.labelCBUsuario490WC.AutoSize = true;
+            this.labelCBUsuario490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.labelCBUsuario490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
+            this.labelCBUsuario490WC.Location = new System.Drawing.Point(323, 244);
+            this.labelCBUsuario490WC.Name = "labelCBUsuario490WC";
+            this.labelCBUsuario490WC.Size = new System.Drawing.Size(74, 20);
+            this.labelCBUsuario490WC.TabIndex = 104;
+            this.labelCBUsuario490WC.Text = "Usuario";
             // 
-            // labelCBModulo
+            // labelCBModulo490WC
             // 
-            this.labelCBModulo.AutoSize = true;
-            this.labelCBModulo.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
-            this.labelCBModulo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.labelCBModulo.Location = new System.Drawing.Point(323, 312);
-            this.labelCBModulo.Name = "labelCBModulo";
-            this.labelCBModulo.Size = new System.Drawing.Size(73, 20);
-            this.labelCBModulo.TabIndex = 105;
-            this.labelCBModulo.Text = "Módulo";
+            this.labelCBModulo490WC.AutoSize = true;
+            this.labelCBModulo490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.labelCBModulo490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
+            this.labelCBModulo490WC.Location = new System.Drawing.Point(323, 312);
+            this.labelCBModulo490WC.Name = "labelCBModulo490WC";
+            this.labelCBModulo490WC.Size = new System.Drawing.Size(73, 20);
+            this.labelCBModulo490WC.TabIndex = 105;
+            this.labelCBModulo490WC.Text = "Módulo";
             // 
-            // labelCBDescripcion
+            // labelCBDescripcion490WC
             // 
-            this.labelCBDescripcion.AutoSize = true;
-            this.labelCBDescripcion.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
-            this.labelCBDescripcion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.labelCBDescripcion.Location = new System.Drawing.Point(323, 374);
-            this.labelCBDescripcion.Name = "labelCBDescripcion";
-            this.labelCBDescripcion.Size = new System.Drawing.Size(110, 20);
-            this.labelCBDescripcion.TabIndex = 106;
-            this.labelCBDescripcion.Text = "Descripción";
+            this.labelCBDescripcion490WC.AutoSize = true;
+            this.labelCBDescripcion490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.labelCBDescripcion490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
+            this.labelCBDescripcion490WC.Location = new System.Drawing.Point(323, 374);
+            this.labelCBDescripcion490WC.Name = "labelCBDescripcion490WC";
+            this.labelCBDescripcion490WC.Size = new System.Drawing.Size(110, 20);
+            this.labelCBDescripcion490WC.TabIndex = 106;
+            this.labelCBDescripcion490WC.Text = "Descripción";
             // 
-            // labelCBCriticidad
+            // labelCBCriticidad490WC
             // 
-            this.labelCBCriticidad.AutoSize = true;
-            this.labelCBCriticidad.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
-            this.labelCBCriticidad.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.labelCBCriticidad.Location = new System.Drawing.Point(323, 438);
-            this.labelCBCriticidad.Name = "labelCBCriticidad";
-            this.labelCBCriticidad.Size = new System.Drawing.Size(92, 20);
-            this.labelCBCriticidad.TabIndex = 107;
-            this.labelCBCriticidad.Text = "Criticidad";
+            this.labelCBCriticidad490WC.AutoSize = true;
+            this.labelCBCriticidad490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.labelCBCriticidad490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
+            this.labelCBCriticidad490WC.Location = new System.Drawing.Point(323, 438);
+            this.labelCBCriticidad490WC.Name = "labelCBCriticidad490WC";
+            this.labelCBCriticidad490WC.Size = new System.Drawing.Size(92, 20);
+            this.labelCBCriticidad490WC.TabIndex = 107;
+            this.labelCBCriticidad490WC.Text = "Criticidad";
             // 
-            // labelUsuario
+            // labelUsuario490WC
             // 
-            this.labelUsuario.AutoSize = true;
-            this.labelUsuario.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
-            this.labelUsuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.labelUsuario.Location = new System.Drawing.Point(12, 267);
-            this.labelUsuario.Name = "labelUsuario";
-            this.labelUsuario.Size = new System.Drawing.Size(94, 20);
-            this.labelUsuario.TabIndex = 108;
-            this.labelUsuario.Text = "Username";
+            this.labelUsuario490WC.AutoSize = true;
+            this.labelUsuario490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.labelUsuario490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
+            this.labelUsuario490WC.Location = new System.Drawing.Point(12, 267);
+            this.labelUsuario490WC.Name = "labelUsuario490WC";
+            this.labelUsuario490WC.Size = new System.Drawing.Size(94, 20);
+            this.labelUsuario490WC.TabIndex = 108;
+            this.labelUsuario490WC.Text = "Username";
             // 
-            // labelNombre
+            // labelNombre490WC
             // 
-            this.labelNombre.AutoSize = true;
-            this.labelNombre.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
-            this.labelNombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.labelNombre.Location = new System.Drawing.Point(12, 312);
-            this.labelNombre.Name = "labelNombre";
-            this.labelNombre.Size = new System.Drawing.Size(77, 20);
-            this.labelNombre.TabIndex = 109;
-            this.labelNombre.Text = "Nombre";
+            this.labelNombre490WC.AutoSize = true;
+            this.labelNombre490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.labelNombre490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
+            this.labelNombre490WC.Location = new System.Drawing.Point(12, 312);
+            this.labelNombre490WC.Name = "labelNombre490WC";
+            this.labelNombre490WC.Size = new System.Drawing.Size(77, 20);
+            this.labelNombre490WC.TabIndex = 109;
+            this.labelNombre490WC.Text = "Nombre";
             // 
-            // labelApellido
+            // labelApellido490WC
             // 
-            this.labelApellido.AutoSize = true;
-            this.labelApellido.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
-            this.labelApellido.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.labelApellido.Location = new System.Drawing.Point(12, 359);
-            this.labelApellido.Name = "labelApellido";
-            this.labelApellido.Size = new System.Drawing.Size(79, 20);
-            this.labelApellido.TabIndex = 110;
-            this.labelApellido.Text = "Apellido";
+            this.labelApellido490WC.AutoSize = true;
+            this.labelApellido490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.labelApellido490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
+            this.labelApellido490WC.Location = new System.Drawing.Point(12, 359);
+            this.labelApellido490WC.Name = "labelApellido490WC";
+            this.labelApellido490WC.Size = new System.Drawing.Size(79, 20);
+            this.labelApellido490WC.TabIndex = 110;
+            this.labelApellido490WC.Text = "Apellido";
             // 
-            // labelDNI
+            // labelDNI490WC
             // 
-            this.labelDNI.AutoSize = true;
-            this.labelDNI.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
-            this.labelDNI.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.labelDNI.Location = new System.Drawing.Point(12, 406);
-            this.labelDNI.Name = "labelDNI";
-            this.labelDNI.Size = new System.Drawing.Size(40, 20);
-            this.labelDNI.TabIndex = 111;
-            this.labelDNI.Text = "DNI";
+            this.labelDNI490WC.AutoSize = true;
+            this.labelDNI490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.labelDNI490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
+            this.labelDNI490WC.Location = new System.Drawing.Point(12, 406);
+            this.labelDNI490WC.Name = "labelDNI490WC";
+            this.labelDNI490WC.Size = new System.Drawing.Size(40, 20);
+            this.labelDNI490WC.TabIndex = 111;
+            this.labelDNI490WC.Text = "DNI";
+            // 
+            // BT_IMPRIMIR490WC
+            // 
+            this.BT_IMPRIMIR490WC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(6)))), ((int)(((byte)(13)))));
+            this.BT_IMPRIMIR490WC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BT_IMPRIMIR490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.BT_IMPRIMIR490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
+            this.BT_IMPRIMIR490WC.Location = new System.Drawing.Point(827, 452);
+            this.BT_IMPRIMIR490WC.Name = "BT_IMPRIMIR490WC";
+            this.BT_IMPRIMIR490WC.Size = new System.Drawing.Size(143, 43);
+            this.BT_IMPRIMIR490WC.TabIndex = 112;
+            this.BT_IMPRIMIR490WC.Text = "Imprimir";
+            this.BT_IMPRIMIR490WC.UseVisualStyleBackColor = false;
+            this.BT_IMPRIMIR490WC.Click += new System.EventHandler(this.BT_IMPRIMIR490WC_Click);
             // 
             // FormBitacoraDeEventos490WC
             // 
@@ -343,32 +358,33 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(27)))), ((int)(((byte)(38)))));
             this.ClientSize = new System.Drawing.Size(980, 505);
-            this.Controls.Add(this.labelDNI);
-            this.Controls.Add(this.labelApellido);
-            this.Controls.Add(this.labelNombre);
-            this.Controls.Add(this.labelUsuario);
-            this.Controls.Add(this.labelCBCriticidad);
-            this.Controls.Add(this.labelCBDescripcion);
-            this.Controls.Add(this.labelCBModulo);
-            this.Controls.Add(this.labelCBUsuario);
-            this.Controls.Add(this.labelFechaInicio);
-            this.Controls.Add(this.labelFechaFin);
-            this.Controls.Add(this.checkBoxFecha);
-            this.Controls.Add(this.monthCalendarFechaFin);
-            this.Controls.Add(this.monthCalendarFechaInicio);
-            this.Controls.Add(this.BT_LimpiarFiltros);
-            this.Controls.Add(this.BT_Filtrar);
-            this.Controls.Add(this.CB_Criticidad);
-            this.Controls.Add(this.CB_Descripcion);
-            this.Controls.Add(this.CB_Modulo);
-            this.Controls.Add(this.CB_Usuario);
-            this.Controls.Add(this.dgvBitacora);
+            this.Controls.Add(this.BT_IMPRIMIR490WC);
+            this.Controls.Add(this.labelDNI490WC);
+            this.Controls.Add(this.labelApellido490WC);
+            this.Controls.Add(this.labelNombre490WC);
+            this.Controls.Add(this.labelUsuario490WC);
+            this.Controls.Add(this.labelCBCriticidad490WC);
+            this.Controls.Add(this.labelCBDescripcion490WC);
+            this.Controls.Add(this.labelCBModulo490WC);
+            this.Controls.Add(this.labelCBUsuario490WC);
+            this.Controls.Add(this.labelFechaInicio490WC);
+            this.Controls.Add(this.labelFechaFin490WC);
+            this.Controls.Add(this.checkBoxFecha490WC);
+            this.Controls.Add(this.monthCalendarFechaFin490WC);
+            this.Controls.Add(this.monthCalendarFechaInicio490WC);
+            this.Controls.Add(this.BT_LimpiarFiltros490WC);
+            this.Controls.Add(this.BT_Filtrar490WC);
+            this.Controls.Add(this.CB_Criticidad490WC);
+            this.Controls.Add(this.CB_Descripcion490WC);
+            this.Controls.Add(this.CB_Modulo490WC);
+            this.Controls.Add(this.CB_Usuario490WC);
+            this.Controls.Add(this.dgvBitacora490WC);
             this.Name = "FormBitacoraDeEventos490WC";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormBitacoraDeEventos";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormBitacoraDeEventos490WC_FormClosed);
             this.Load += new System.EventHandler(this.FormBitacoraDeEventos490WC_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvBitacora)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBitacora490WC)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -376,31 +392,32 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dgvBitacora;
-        private System.Windows.Forms.ComboBox CB_Usuario;
-        private System.Windows.Forms.ComboBox CB_Modulo;
-        private System.Windows.Forms.ComboBox CB_Descripcion;
-        private System.Windows.Forms.ComboBox CB_Criticidad;
-        private System.Windows.Forms.Button BT_Filtrar;
-        private System.Windows.Forms.Button BT_LimpiarFiltros;
-        private System.Windows.Forms.MonthCalendar monthCalendarFechaInicio;
-        private System.Windows.Forms.MonthCalendar monthCalendarFechaFin;
-        private System.Windows.Forms.CheckBox checkBoxFecha;
-        private System.Windows.Forms.Label labelFechaFin;
-        private System.Windows.Forms.Label labelFechaInicio;
-        private System.Windows.Forms.Label labelCBUsuario;
-        private System.Windows.Forms.Label labelCBModulo;
-        private System.Windows.Forms.Label labelCBDescripcion;
-        private System.Windows.Forms.Label labelCBCriticidad;
-        private System.Windows.Forms.Label labelUsuario;
-        private System.Windows.Forms.Label labelNombre;
-        private System.Windows.Forms.Label labelApellido;
-        private System.Windows.Forms.Label labelDNI;
+        private System.Windows.Forms.DataGridView dgvBitacora490WC;
+        private System.Windows.Forms.ComboBox CB_Usuario490WC;
+        private System.Windows.Forms.ComboBox CB_Modulo490WC;
+        private System.Windows.Forms.ComboBox CB_Descripcion490WC;
+        private System.Windows.Forms.ComboBox CB_Criticidad490WC;
+        private System.Windows.Forms.Button BT_Filtrar490WC;
+        private System.Windows.Forms.Button BT_LimpiarFiltros490WC;
+        private System.Windows.Forms.MonthCalendar monthCalendarFechaInicio490WC;
+        private System.Windows.Forms.MonthCalendar monthCalendarFechaFin490WC;
+        private System.Windows.Forms.CheckBox checkBoxFecha490WC;
+        private System.Windows.Forms.Label labelFechaFin490WC;
+        private System.Windows.Forms.Label labelFechaInicio490WC;
+        private System.Windows.Forms.Label labelCBUsuario490WC;
+        private System.Windows.Forms.Label labelCBModulo490WC;
+        private System.Windows.Forms.Label labelCBDescripcion490WC;
+        private System.Windows.Forms.Label labelCBCriticidad490WC;
+        private System.Windows.Forms.Label labelUsuario490WC;
+        private System.Windows.Forms.Label labelNombre490WC;
+        private System.Windows.Forms.Label labelApellido490WC;
+        private System.Windows.Forms.Label labelDNI490WC;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnUsuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnFecha;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaHora;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaModulo;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaDescripcion;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaCriticidad;
+        private System.Windows.Forms.Button BT_IMPRIMIR490WC;
     }
 }
