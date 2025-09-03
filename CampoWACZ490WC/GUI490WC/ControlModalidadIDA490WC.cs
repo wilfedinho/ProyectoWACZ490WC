@@ -209,8 +209,8 @@ namespace GUI490WC
 
         private void ControlModalidadIDA490WC_Load(object sender, EventArgs e)
         {
-            Traductor490WC.TraductorSG490WC.Suscribir490WC(this);
-            Traductor490WC.TraductorSG490WC.Notificar490WC();
+            //Traductor490WC.TraductorSG490WC.Suscribir490WC(this);
+            //Traductor490WC.TraductorSG490WC.Notificar490WC();
         }
     }
 }

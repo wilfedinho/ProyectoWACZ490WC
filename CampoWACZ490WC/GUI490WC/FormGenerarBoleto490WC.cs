@@ -478,6 +478,8 @@ namespace GUI490WC
         private void FormGenerarBoleto490WC_Load(object sender, EventArgs e)
         {
             Traductor490WC.TraductorSG490WC.Suscribir490WC(this);
+            Traductor490WC.TraductorSG490WC.Suscribir490WC(controlIDA490WC);
+            Traductor490WC.TraductorSG490WC.Suscribir490WC(controlVUELTA490WC);
             Traductor490WC.TraductorSG490WC.Notificar490WC();
         }
     }

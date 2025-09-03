@@ -71,7 +71,11 @@ namespace GUI490WC
         }
         public void LLenarCB490WC()
         {
-            foreach (BitacoraSE490WC bitacora490WC in GestorBitacora490WC.ObtenerBitacoraPorConsulta490WC())
+            CB_Usuario490WC.Items.Clear();
+            CB_Modulo490WC.Items.Clear();
+            CB_Descripcion490WC.Items.Clear();
+            CB_Criticidad490WC.Items.Clear();
+            foreach (BitacoraSE490WC bitacora490WC in ListaBitacora490WC)
             {
 
                 if (CB_Usuario490WC.Items.Count == 0 || !CB_Usuario490WC.Items.Contains(bitacora490WC.Username490WC))
@@ -134,6 +138,7 @@ namespace GUI490WC
                 }
             }
             LimpiarCB490WC();
+            LLenarCB490WC();
         }
 
 
@@ -164,6 +169,7 @@ namespace GUI490WC
         {
             LimpiarCB490WC();
             Mostrar490WC();
+            LLenarCB490WC();
             labelUsuario490WC.Text = $"Usuario: ";
             labelNombre490WC.Text = $"Nombre: ";
             labelApellido490WC.Text = $"Apellido: ";
