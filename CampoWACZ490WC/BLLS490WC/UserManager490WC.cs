@@ -100,7 +100,7 @@ namespace SERVICIOS490WC
                         usuarioVerificar490WC.HoraUltimaSesion490WC = DateTime.Now;
                         Modificar490WC(usuarioVerificar490WC);
                     }
-                } 
+                }
             }
         }
 
@@ -113,7 +113,11 @@ namespace SERVICIOS490WC
         public void GuardarIdiomaUsuario490WC()
         {
             Usuario490WC usuario = SesionManager490WC.GestorSesion490WC.Usuario490WC;
-            UsuarioAccesoDatos490WC.UsuarioAccesoDatosSG490WC.Modificar490WC(usuario);
+            if (usuario != null)
+            {
+                UsuarioAccesoDatos490WC.UsuarioAccesoDatosSG490WC.Modificar490WC(usuario);
+
+            }
         }
         #endregion
 
@@ -122,7 +126,7 @@ namespace SERVICIOS490WC
         {
             return UsuarioAccesoDatos490WC.UsuarioAccesoDatosSG490WC.DevolverTodosLosUsuarios490WC();
         }
-      
+
         public Usuario490WC BuscarUsuarioPorUsername490WC(string Username490WC)
         {
             if (Username490WC == "JRR")
@@ -203,13 +207,13 @@ namespace SERVICIOS490WC
         public bool VerificarEmailDuplicadoModificar490WC(string emailAntiguo, string emailNuevo)
         {
             Usuario490WC usuario = BuscarUsuarioPorEmail490WC(emailAntiguo);
-            if(usuario != null && emailAntiguo != emailNuevo)
+            if (usuario != null && emailAntiguo != emailNuevo)
             {
                 return true;
             }
             else
             {
-                return false; 
+                return false;
             }
         }
         public bool VerificarUsernameDuplicado490WC(string username490WC)

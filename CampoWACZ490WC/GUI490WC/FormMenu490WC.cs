@@ -350,8 +350,7 @@ namespace GUI490WC
 
         private void BT_ModificacionBoleto490WC_Click(object sender, EventArgs e)
         {
-
-            hideSubmenu490WC();
+            showSubmenu490WC(panelSubmenuModificacionBoleto490WC);
         }
 
         private void BT_MaestroBeneficio490WC_Click(object sender, EventArgs e)
