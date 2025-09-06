@@ -134,13 +134,13 @@ namespace BLL490WC
                 doc.Add(new Paragraph("ITINERARIO", fontSeccion));
                 doc.Add(new Paragraph($"Origen: {boleto490WC.Origen490WC}", fontNormal));
                 doc.Add(new Paragraph($"Destino: {boleto490WC.Destino490WC}", fontNormal));
-                doc.Add(new Paragraph($"Salida: {boleto490WC.FechaPartida490WC:dd/MM/yyyy HH:mm}", fontNormal));
-                doc.Add(new Paragraph($"Llegada: {boleto490WC.FechaLlegada490WC:dd/MM/yyyy HH:mm}", fontNormal));
+                doc.Add(new Paragraph($"Salida: {boleto490WC.FechaPartida490WC:dd/MM/yyyy}", fontNormal));
+                doc.Add(new Paragraph($"Llegada: {boleto490WC.FechaLlegada490WC:dd/MM/yyyy}", fontNormal));
 
                 if (boleto490WC is BoletoIDAVUELTA490WC boleIDAVUELTA)
                 {
-                    doc.Add(new Paragraph($"Regreso: {boleIDAVUELTA.FechaPartidaVUELTA490WC:dd/MM/yyyy HH:mm}", fontNormal));
-                    doc.Add(new Paragraph($"Llegada Regreso: {boleIDAVUELTA.FechaLlegadaVUELTA490WC:dd/MM/yyyy HH:mm}", fontNormal));
+                    doc.Add(new Paragraph($"Regreso: {boleIDAVUELTA.FechaPartidaVUELTA490WC:dd/MM/yyyy}", fontNormal));
+                    doc.Add(new Paragraph($"Llegada Regreso: {boleIDAVUELTA.FechaLlegadaVUELTA490WC:dd/MM/yyyy}", fontNormal));
                     doc.Add(new Paragraph($"Modalidad: IDA Y VUELTA", fontNormal));
                 }
                 else

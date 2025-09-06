@@ -18,6 +18,7 @@ namespace BE490WC
         public string NumeroBoleto490WC { get; set; }
         public float Subtotal490WC { get; set; }
         public float Total490WC { get; set; }
+        public string CambiosRealizados490WC { get; set; }
         public Factura490WC(int numeroFactura, string nombreCliente, string apellidoCliente, string dniCliente, string fechaEmision, string horaEmision, string numeroBoleto, float subtotal, float total, string beneficioAplicado490WC = null)
         {
             NumeroFactura490WC = numeroFactura;

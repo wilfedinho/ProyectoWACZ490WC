@@ -55,7 +55,7 @@ namespace BLL490WC
                 doc490WC.Add(new Paragraph("----------------------------------", FontFactory.GetFont(FontFactory.COURIER, 10)));
                 doc490WC.Add(new Paragraph(" "));
                 doc490WC.Add(new Paragraph($"Numero Boleto: {factura490WC.NumeroBoleto490WC}", FontFactory.GetFont(FontFactory.COURIER, 10)));
-                if (factura490WC.BeneficioAplicado490WC != null)
+                if (factura490WC.BeneficioAplicado490WC != null || factura490WC.BeneficioAplicado490WC != "")
                 {
                     doc490WC.Add(new Paragraph($"Beneficio Aplicado: {factura490WC.BeneficioAplicado490WC}", FontFactory.GetFont(FontFactory.COURIER, 10)));
                 }

@@ -16,7 +16,7 @@ namespace DAL490WC
             {
                 cone490WC.Open();
 
-                string query = "INSERT INTO Factura490WC (NumeroFactura490WC, Nombre490WC, Apellido490WC, DNI490WC, FechaEmision490WC, HoraEmision490WC, NumeroBoleto490WC, Subtotal490WC, Total490WC, BeneficioAplicado490WC) VALUES (@NumeroFactura, @Nombre, @Apellido, @DNI, @Fecha, @Hora, @NumeroBoleto, @Subtotal, @Total, @Beneficio)";
+                string query = "INSERT INTO Factura490WC (NumeroFactura490WC, Nombre490WC, Apellido490WC, DNI490WC, FechaEmision490WC, HoraEmision490WC, NumeroBoleto490WC, Subtotal490WC, Total490WC, BeneficioAplicado490WC, CambiosRealizados490WC) VALUES (@NumeroFactura, @Nombre, @Apellido, @DNI, @Fecha, @Hora, @NumeroBoleto, @Subtotal, @Total, @Beneficio, @CambiosRealizados)";
 
                 using (SqlCommand comando = new SqlCommand(query, cone490WC))
                 {
@@ -34,13 +34,17 @@ namespace DAL490WC
                         comando.Parameters.AddWithValue("@Beneficio", DBNull.Value);
                     else
                         comando.Parameters.AddWithValue("@Beneficio", FacturaAlta490WC.BeneficioAplicado490WC);
+                    if(string.IsNullOrEmpty(FacturaAlta490WC.CambiosRealizados490WC))
+                        comando.Parameters.AddWithValue("@CambiosRealizados", DBNull.Value);
+                    else
+                        comando.Parameters.AddWithValue("@CambiosRealizados", FacturaAlta490WC.CambiosRealizados490WC);
 
                     comando.ExecuteNonQuery();
                 }
             }
         }
 
-
+       
 
         public List<Factura490WC> ObtenerTodasLasFacturas490WC()
         {

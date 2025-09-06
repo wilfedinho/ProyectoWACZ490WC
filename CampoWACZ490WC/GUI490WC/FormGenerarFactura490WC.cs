@@ -138,9 +138,9 @@ namespace GUI490WC
                 string mensajeClienteRegistrar = Traductor490WC.TraductorSG490WC.Traducir490WC("ClienteRegistrar");
                 MessageBox.Show(mensajeClienteRegistrar);
                 
+                CargarCliente490WC(null);
                 formRegistrarCliente490WC = new FormRegistrarCliente490WC();
                 formRegistrarCliente490WC.ShowDialog();
-                CargarCliente490WC(null);
                 TB_DNI490WC.Clear();
             }
             ActualizarLenguaje490WC();
@@ -171,7 +171,8 @@ namespace GUI490WC
                         
                         string mensajeFacturaGenerada = Traductor490WC.TraductorSG490WC.Traducir490WC("FacturaGenerada490WC");
                         MessageBox.Show(mensajeFacturaGenerada);
-                        boletoCobrar490WC = gestorBoleto490WC.ObtenerBoletoPorID490WC(boletoCobrar490WC.IDBoleto490WC);
+                        //boletoCobrar490WC = gestorBoleto490WC.ObtenerBoletoPorID490WC(boletoCobrar490WC.IDBoleto490WC);
+                        boletoCobrar490WC = gestorBoleto490WC.ObtenerBoletoConBeneficio490WC(boletoCobrar490WC.IDBoleto490WC);
                         gestorBoleto490WC.GenerarBoleto490WC(boletoCobrar490WC);
                         CargarCliente490WC(null);
                         boletoCobrar490WC = null;
