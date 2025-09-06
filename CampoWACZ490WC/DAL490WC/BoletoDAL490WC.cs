@@ -640,6 +640,82 @@ namespace DAL490WC
             }
         }
 
+        public Boleto490WC ObtenerBoletoParaModificarPorID490WC(string ID490WC)
+        {
+            using (SqlConnection cone490WC = GestorConexion490WC.GestorCone490WC.DevolverConexion490WC())
+            {
+                List<Cliente490WC> Titulares490WC = new ClienteDAL490WC().ObtenerTodosLosCliente490WC();
+                cone490WC.Open();
+
+                string query490WC = "SELECT * FROM Boleto490WC WHERE ID490WC = @ID490WC";
+                using (SqlCommand comando490WC = new SqlCommand(query490WC, cone490WC))
+                {
+                    comando490WC.Parameters.AddWithValue("@ID490WC", ID490WC);
+
+                    using (SqlDataReader reader = comando490WC.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            // Si ya posee cambios, devolvemos null
+                            if (reader["CambiosRealizados490WC"] != DBNull.Value)
+                            {
+                                return null;
+                            }
+
+                            string dni490WC = reader["Titular490WC"].ToString();
+
+                            // Beneficio aplicado (puede ser null)
+                            string beneficioAplicado = null;
+                            if (reader["BeneficioAplicado490WC"] != DBNull.Value)
+                            {
+                                beneficioAplicado = reader["BeneficioAplicado490WC"].ToString();
+                            }
+
+                            // Chequeamos si es solo IDA o IDA/VUELTA
+                            if (reader["FechaPartidaVUELTA490WC"] == DBNull.Value || reader["FechaLlegadaVUELTA490WC"] == DBNull.Value)
+                            {
+                                return new BoletoIDA490WC(
+                                    reader["ID490WC"].ToString(),
+                                    reader["Origen490WC"].ToString(),
+                                    reader["Destino490WC"].ToString(),
+                                    Convert.ToDateTime(reader["FechaPartidaIDA490WC"]),
+                                    Convert.ToDateTime(reader["FechaLlegadaIDA490WC"]),
+                                    Convert.ToBoolean(reader["IsVendido490WC"]),
+                                    Convert.ToSingle(reader["PesoEquipajePermitido490WC"]),
+                                    reader["ClaseBoleto490WC"].ToString(),
+                                    Convert.ToSingle(reader["Precio490WC"]),
+                                    Titulares490WC.Find(x => x.DNI490WC == dni490WC),
+                                    reader["NumeroAsiento490WC"].ToString(),
+                                    beneficioAplicado // nuevo campo
+                                );
+                            }
+                            else
+                            {
+                                return new BoletoIDAVUELTA490WC(
+                                    reader["ID490WC"].ToString(),
+                                    reader["Origen490WC"].ToString(),
+                                    reader["Destino490WC"].ToString(),
+                                    Convert.ToDateTime(reader["FechaPartidaIDA490WC"]),
+                                    Convert.ToDateTime(reader["FechaLlegadaIDA490WC"]),
+                                    Convert.ToDateTime(reader["FechaPartidaVUELTA490WC"]),
+                                    Convert.ToDateTime(reader["FechaLlegadaVUELTA490WC"]),
+                                    Convert.ToBoolean(reader["IsVendido490WC"]),
+                                    Convert.ToSingle(reader["PesoEquipajePermitido490WC"]),
+                                    reader["ClaseBoleto490WC"].ToString(),
+                                    Convert.ToSingle(reader["Precio490WC"]),
+                                    Titulares490WC.Find(x => x.DNI490WC == dni490WC),
+                                    reader["NumeroAsiento490WC"].ToString(),
+                                    beneficioAplicado // nuevo campo
+                                );
+                            }
+                        }
+                    }
+                }
+                return null;
+            }
+        }
+
+
         public List<Boleto490WC> ObtenerBoletosModificadosPorPagarCliente490WC(Cliente490WC cliente490WC)
         {
             using (SqlConnection cone490WC = GestorConexion490WC.GestorCone490WC.DevolverConexion490WC())
@@ -1278,6 +1354,7 @@ namespace DAL490WC
                 return null;
             }
         }
+
 
 
         #endregion

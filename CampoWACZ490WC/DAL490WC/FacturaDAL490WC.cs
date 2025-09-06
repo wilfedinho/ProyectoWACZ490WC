@@ -89,6 +89,49 @@ namespace DAL490WC
             return facturas490WC;
         }
 
+        public List<Factura490WC> ObtenerTodasLasFacturasModificadas490WC()
+        {
+            List<Factura490WC> facturas490WC = new List<Factura490WC>();
+
+            using (SqlConnection cone490WC = GestorConexion490WC.GestorCone490WC.DevolverConexion490WC())
+            {
+                cone490WC.Open();
+                string query490WC = "SELECT * FROM Factura490WC WHERE CambiosRealizados490WC IS NOT NULL";
+
+                using (SqlCommand comando490WC = new SqlCommand(query490WC, cone490WC))
+                {
+                    using (SqlDataReader reader = comando490WC.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            string beneficioAplicado = null;
+                            if (reader["BeneficioAplicado490WC"] != DBNull.Value)
+                            {
+                                beneficioAplicado = reader["BeneficioAplicado490WC"].ToString();
+                            }
+
+                            Factura490WC factura = new Factura490WC(
+                                numeroFactura: Convert.ToInt32(reader["NumeroFactura490WC"]),
+                                nombreCliente: reader["Nombre490WC"].ToString(),
+                                apellidoCliente: reader["Apellido490WC"].ToString(),
+                                dniCliente: reader["DNI490WC"].ToString(),
+                                fechaEmision: reader["FechaEmision490WC"].ToString(),
+                                horaEmision: reader["HoraEmision490WC"].ToString(),
+                                numeroBoleto: reader["NumeroBoleto490WC"].ToString(),
+                                subtotal: Convert.ToSingle(reader["Subtotal490WC"]),
+                                total: Convert.ToSingle(reader["Total490WC"]),
+                                beneficioAplicado490WC: beneficioAplicado
+                            );
+                            factura.CambiosRealizados490WC = reader["CambiosRealizados490WC"].ToString();
+                            facturas490WC.Add(factura);
+                        }
+                    }
+                }
+            }
+
+            return facturas490WC;
+        }
+
 
 
     }
