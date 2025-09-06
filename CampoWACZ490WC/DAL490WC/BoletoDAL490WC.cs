@@ -16,7 +16,7 @@ namespace DAL490WC
 
         #region Operaciones Boleto
 
-        
+
 
         public void Alta490WC(Boleto490WC BoletoAgregar490WC)
         {
@@ -33,7 +33,7 @@ namespace DAL490WC
                     nuevoId = Convert.ToInt32(cmdId.ExecuteScalar());
                 }
 
-                
+
                 BoletoAgregar490WC.IDBoleto490WC = nuevoId.ToString();
 
                 string query490WC = "";
@@ -315,6 +315,164 @@ namespace DAL490WC
 
         #endregion
 
+        #region Operaciones Boleto RFN2
+
+        public void GenerarBoletoModificado490WC(Boleto490WC BoletoModificado490WC)
+        {
+            using (SqlConnection cone490WC = GestorConexion490WC.GestorCone490WC.DevolverConexion490WC())
+            {
+                cone490WC.Open();
+
+
+                string queryMaxId = "SELECT ISNULL(MAX(CAST(ID490WC AS INT)), 0) + 1 FROM Boleto490WC";
+
+                int nuevoId;
+                using (SqlCommand cmdId = new SqlCommand(queryMaxId, cone490WC))
+                {
+                    nuevoId = Convert.ToInt32(cmdId.ExecuteScalar());
+                }
+
+
+                BoletoModificado490WC.IDBoleto490WC = nuevoId.ToString();
+
+                string query490WC = "";
+
+                if (BoletoModificado490WC is BoletoIDA490WC boletoIDA490WC)
+                {
+                    query490WC = @"INSERT INTO Boleto490WC (ID490WC, Origen490WC, Destino490WC, FechaPartidaIDA490WC, FechaLlegadaIDA490WC, IsVendido490WC, PesoEquipajePermitido490WC, ClaseBoleto490WC, Precio490WC, Titular490WC, NumeroAsiento490WC, CambiosRealizados490WC) VALUES (@ID490WC, @Origen490WC, @Destino490WC, @FechaPartidaIDA490WC, @FechaLlegadaIDA490WC, @IsVendido490WC, @PesoEquipajePermitido490WC, @ClaseBoleto490WC, @Precio490WC, @Titular490WC, @NumeroAsiento490WC, @CambiosRealizados490WC)";
+
+                    using (SqlCommand comando490WC = new SqlCommand(query490WC, cone490WC))
+                    {
+                        comando490WC.Parameters.AddWithValue("@ID490WC", boletoIDA490WC.IDBoleto490WC);
+                        comando490WC.Parameters.AddWithValue("@Origen490WC", boletoIDA490WC.Origen490WC);
+                        comando490WC.Parameters.AddWithValue("@Destino490WC", boletoIDA490WC.Destino490WC);
+                        comando490WC.Parameters.AddWithValue("@FechaPartidaIDA490WC", boletoIDA490WC.FechaPartida490WC);
+                        comando490WC.Parameters.AddWithValue("@FechaLlegadaIDA490WC", boletoIDA490WC.FechaLlegada490WC);
+                        comando490WC.Parameters.AddWithValue("@IsVendido490WC", boletoIDA490WC.IsVendido490WC);
+                        comando490WC.Parameters.AddWithValue("@PesoEquipajePermitido490WC", boletoIDA490WC.EquipajePermitido490WC);
+                        comando490WC.Parameters.AddWithValue("@ClaseBoleto490WC", boletoIDA490WC.ClaseBoleto490WC);
+                        comando490WC.Parameters.AddWithValue("@Precio490WC", boletoIDA490WC.Precio490WC);
+                        comando490WC.Parameters.AddWithValue("@Titular490WC", boletoIDA490WC.Titular490WC.DNI490WC);
+                        comando490WC.Parameters.AddWithValue("@NumeroAsiento490WC", boletoIDA490WC.NumeroAsiento490WC);
+                        comando490WC.Parameters.AddWithValue("@CambiosRealizados490WC", boletoIDA490WC.CambiosRealizados490WC);
+
+                        comando490WC.ExecuteNonQuery();
+                    }
+                }
+                else if (BoletoModificado490WC is BoletoIDAVUELTA490WC boletoIDAVUELTA490WC)
+                {
+                    query490WC = @"INSERT INTO Boleto490WC (ID490WC, Origen490WC, Destino490WC, FechaPartidaIDA490WC, FechaLlegadaIDA490WC, FechaPartidaVUELTA490WC, FechaLlegadaVUELTA490WC, IsVendido490WC, PesoEquipajePermitido490WC, ClaseBoleto490WC, Precio490WC, Titular490WC, NumeroAsiento490WC, CambiosRealizados490WC) VALUES (@ID490WC, @Origen490WC, @Destino490WC, @FechaPartidaIDA490WC, @FechaLlegadaIDA490WC, @FechaPartidaVUELTA490WC, @FechaLlegadaVUELTA490WC, @IsVendido490WC, @PesoEquipajePermitido490WC, @ClaseBoleto490WC, @Precio490WC, @Titular490WC, @NumeroAsiento490WC, @CambiosRealizados490WC)";
+
+                    using (SqlCommand comando490WC = new SqlCommand(query490WC, cone490WC))
+                    {
+                        comando490WC.Parameters.AddWithValue("@ID490WC", boletoIDAVUELTA490WC.IDBoleto490WC);
+                        comando490WC.Parameters.AddWithValue("@Origen490WC", boletoIDAVUELTA490WC.Origen490WC);
+                        comando490WC.Parameters.AddWithValue("@Destino490WC", boletoIDAVUELTA490WC.Destino490WC);
+                        comando490WC.Parameters.AddWithValue("@FechaPartidaIDA490WC", boletoIDAVUELTA490WC.FechaPartida490WC);
+                        comando490WC.Parameters.AddWithValue("@FechaLlegadaIDA490WC", boletoIDAVUELTA490WC.FechaLlegada490WC);
+                        comando490WC.Parameters.AddWithValue("@FechaPartidaVUELTA490WC", boletoIDAVUELTA490WC.FechaPartidaVUELTA490WC);
+                        comando490WC.Parameters.AddWithValue("@FechaLlegadaVUELTA490WC", boletoIDAVUELTA490WC.FechaLlegadaVUELTA490WC);
+                        comando490WC.Parameters.AddWithValue("@IsVendido490WC", boletoIDAVUELTA490WC.IsVendido490WC);
+                        comando490WC.Parameters.AddWithValue("@PesoEquipajePermitido490WC", boletoIDAVUELTA490WC.EquipajePermitido490WC);
+                        comando490WC.Parameters.AddWithValue("@ClaseBoleto490WC", boletoIDAVUELTA490WC.ClaseBoleto490WC);
+                        comando490WC.Parameters.AddWithValue("@Precio490WC", boletoIDAVUELTA490WC.Precio490WC);
+                        comando490WC.Parameters.AddWithValue("@Titular490WC", boletoIDAVUELTA490WC.Titular490WC.DNI490WC);
+                        comando490WC.Parameters.AddWithValue("@NumeroAsiento490WC", boletoIDAVUELTA490WC.NumeroAsiento490WC);
+                        comando490WC.Parameters.AddWithValue("@CambiosRealizados490WC", boletoIDAVUELTA490WC.CambiosRealizados490WC);
+
+                        comando490WC.ExecuteNonQuery();
+                    }
+                }
+            }
+        }
+
+        public void CobrarBoletoModificado490WC(Boleto490WC boletoCopia490WC)
+        {
+            using (SqlConnection cone490WC = GestorConexion490WC.GestorCone490WC.DevolverConexion490WC())
+            {
+                cone490WC.Open();
+
+                // 1. Parsear la cadena de cambios
+                string[] cambios490WC = boletoCopia490WC.CambiosRealizados490WC.Split(';');
+
+                string idBoletoOriginal490WC = cambios490WC[0];
+
+                // 2. Armar dinámicamente el UPDATE solo con los campos que tengan datos
+                List<string> campos490WC = new List<string>();
+                SqlCommand comandoActulizar490WC = new SqlCommand();
+                comandoActulizar490WC.Connection = cone490WC;
+
+                if (!string.IsNullOrWhiteSpace(cambios490WC[1]))
+                {
+                    campos490WC.Add("FechaPartidaIDA490WC = @FechaPartidaIDA490WC");
+                    comandoActulizar490WC.Parameters.AddWithValue("@FechaPartidaIDA490WC", cambios490WC[1]);
+                }
+                if (!string.IsNullOrWhiteSpace(cambios490WC[2]))
+                {
+                    campos490WC.Add("FechaPartidaVUELTA490WC = @FechaPartidaVUELTA490WC");
+                    comandoActulizar490WC.Parameters.AddWithValue("@FechaPartidaVUELTA490WC", cambios490WC[2]);
+                }
+                if (!string.IsNullOrWhiteSpace(cambios490WC[3]))
+                {
+                    campos490WC.Add("FechaLlegadaIDA490WC = @FechaLlegadaIDA490WC");
+                    comandoActulizar490WC.Parameters.AddWithValue("@FechaLlegadaIDA490WC", cambios490WC[3]);
+                }
+                if (!string.IsNullOrWhiteSpace(cambios490WC[4]))
+                {
+                    campos490WC.Add("FechaLlegadaVUELTA490WC = @FechaLlegadaVUELTA490WC");
+                    comandoActulizar490WC.Parameters.AddWithValue("@FechaLlegadaVUELTA490WC", cambios490WC[4]);
+                }
+                if (!string.IsNullOrWhiteSpace(cambios490WC[5]))
+                {
+                    campos490WC.Add("BeneficioAplicado490WC = @BeneficioAplicado490WC");
+                    comandoActulizar490WC.Parameters.AddWithValue("@BeneficioAplicado490WC", cambios490WC[5]);
+                }
+                if (!string.IsNullOrWhiteSpace(cambios490WC[6]))
+                {
+                    campos490WC.Add("ClaseBoleto490WC = @ClaseBoleto490WC");
+                    comandoActulizar490WC.Parameters.AddWithValue("@ClaseBoleto490WC", cambios490WC[6]);
+                }
+                if (!string.IsNullOrWhiteSpace(cambios490WC[7]))
+                {
+                    campos490WC.Add("NumeroAsiento490WC = @NumeroAsiento490WC");
+                    comandoActulizar490WC.Parameters.AddWithValue("@NumeroAsiento490WC", cambios490WC[7]);
+                }
+                if (!string.IsNullOrWhiteSpace(cambios490WC[8]))
+                {
+                    campos490WC.Add("PesoEquipajePermitido490WC = @PesoEquipaje490WC");
+                    comandoActulizar490WC.Parameters.AddWithValue("@PesoEquipaje490WC", cambios490WC[8]);
+                }
+                if (!string.IsNullOrWhiteSpace(cambios490WC[9]))
+                {
+                    campos490WC.Add("Titular490WC = @Titular490WC");
+                    comandoActulizar490WC.Parameters.AddWithValue("@Titular490WC", cambios490WC[9]);
+                }
+
+                // Marcar como vendido siempre
+                campos490WC.Add("IsVendido490WC = 1");
+                campos490WC.Add($"CambiosRealizados490WC = {boletoCopia490WC.CambiosRealizados490WC}");
+
+                // 3. Construir el query final
+                string updateQuery = $@"UPDATE Boleto490WC SET {string.Join(", ", campos490WC)} WHERE ID490WC = @IDBoletoOriginal490WC";
+
+                comandoActulizar490WC.CommandText = updateQuery;
+                comandoActulizar490WC.Parameters.AddWithValue("@IDBoletoOriginal490WC", idBoletoOriginal490WC);
+
+                comandoActulizar490WC.ExecuteNonQuery();
+
+                // 4. Eliminar el boleto copia
+                string deleteQuery = "DELETE FROM Boleto490WC WHERE ID490WC = @IDCopia";
+                using (SqlCommand deleteCmd = new SqlCommand(deleteQuery, cone490WC))
+                {
+                    deleteCmd.Parameters.AddWithValue("@IDCopia", boletoCopia490WC.IDBoleto490WC);
+                    deleteCmd.ExecuteNonQuery();
+                }
+            }
+        }
+
+
+        #endregion
+
         #region Busqueda Boleto
 
         public List<Boleto490WC> ObtenerBoletosPorModalidad490WC(string Modalidad490WC)
@@ -443,6 +601,221 @@ namespace DAL490WC
             }
         }
 
+        public List<Boleto490WC> ObtenerBoletosModificadosPorPagarCliente490WC(Cliente490WC cliente490WC)
+        {
+            using (SqlConnection cone490WC = GestorConexion490WC.GestorCone490WC.DevolverConexion490WC())
+            {
+                List<Boleto490WC> boletos490WC = new List<Boleto490WC>();
+                List<Cliente490WC> Titulares490WC = new ClienteDAL490WC().ObtenerTodosLosCliente490WC();
+
+                cone490WC.Open();
+                string query490WC = @"SELECT * FROM Boleto490WC WHERE Titular490WC = @Titular490WC AND IsVendido490WC = 0 AND CambiosRealizados490WC IS NOT NULL AND CambiosRealizados490WC <> ''";
+
+                using (SqlCommand comando490WC = new SqlCommand(query490WC, cone490WC))
+                {
+                    comando490WC.Parameters.AddWithValue("@Titular490WC", cliente490WC.DNI490WC);
+
+                    using (SqlDataReader reader = comando490WC.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            // Si no tiene fechas de vuelta => es un boleto IDA
+                            if (reader["FechaPartidaVUELTA490WC"] == DBNull.Value || reader["FechaLlegadaVUELTA490WC"] == DBNull.Value)
+                            {
+                                if (reader["BeneficioAplicado490WC"] == DBNull.Value)
+                                {
+                                    Boleto490WC boletoModificado = new BoletoIDA490WC(
+                                       reader["ID490WC"].ToString(),
+                                       reader["Origen490WC"].ToString(),
+                                       reader["Destino490WC"].ToString(),
+                                       Convert.ToDateTime(reader["FechaPartidaIDA490WC"]),
+                                       Convert.ToDateTime(reader["FechaLlegadaIDA490WC"]),
+                                       Convert.ToBoolean(reader["IsVendido490WC"]),
+                                       Convert.ToSingle(reader["PesoEquipajePermitido490WC"]),
+                                       reader["ClaseBoleto490WC"].ToString(),
+                                       Convert.ToSingle(reader["Precio490WC"]),
+                                       Titulares490WC.Find(x => x.DNI490WC == cliente490WC.DNI490WC),
+                                       reader["NumeroAsiento490WC"].ToString()
+                                   );
+                                    // asignamos también los cambios
+                                    boletoModificado.CambiosRealizados490WC = reader["CambiosRealizados490WC"].ToString();
+                                    boletos490WC.Add(boletoModificado);
+                                }
+                                else
+                                {
+                                    Boleto490WC boletoModificado = new BoletoIDA490WC(
+                                       reader["ID490WC"].ToString(),
+                                       reader["Origen490WC"].ToString(),
+                                       reader["Destino490WC"].ToString(),
+                                       Convert.ToDateTime(reader["FechaPartidaIDA490WC"]),
+                                       Convert.ToDateTime(reader["FechaLlegadaIDA490WC"]),
+                                       Convert.ToBoolean(reader["IsVendido490WC"]),
+                                       Convert.ToSingle(reader["PesoEquipajePermitido490WC"]),
+                                       reader["ClaseBoleto490WC"].ToString(),
+                                       Convert.ToSingle(reader["Precio490WC"]),
+                                       Titulares490WC.Find(x => x.DNI490WC == cliente490WC.DNI490WC),
+                                       reader["NumeroAsiento490WC"].ToString(),
+                                       reader["BeneficioAplicado490WC"].ToString()
+                                   );
+                                    // asignamos también los cambios
+                                    boletoModificado.CambiosRealizados490WC = reader["CambiosRealizados490WC"].ToString();
+                                    boletos490WC.Add(boletoModificado);
+                                }
+                            }
+                            else // Es un boleto IDA+VUELTA
+                            {
+                                if (reader["BeneficioAplicado490WC"] == DBNull.Value)
+                                {
+                                    Boleto490WC boletoModificado = new BoletoIDAVUELTA490WC(
+                                        reader["ID490WC"].ToString(),
+                                        reader["Origen490WC"].ToString(),
+                                        reader["Destino490WC"].ToString(),
+                                        Convert.ToDateTime(reader["FechaPartidaIDA490WC"]),
+                                        Convert.ToDateTime(reader["FechaLlegadaIDA490WC"]),
+                                        Convert.ToDateTime(reader["FechaPartidaVUELTA490WC"]),
+                                        Convert.ToDateTime(reader["FechaLlegadaVUELTA490WC"]),
+                                        Convert.ToBoolean(reader["IsVendido490WC"]),
+                                        Convert.ToSingle(reader["PesoEquipajePermitido490WC"]),
+                                        reader["ClaseBoleto490WC"].ToString(),
+                                        Convert.ToSingle(reader["Precio490WC"]),
+                                        Titulares490WC.Find(x => x.DNI490WC == cliente490WC.DNI490WC),
+                                        reader["NumeroAsiento490WC"].ToString()
+                                    );
+                                    boletoModificado.CambiosRealizados490WC = reader["CambiosRealizados490WC"].ToString();
+                                    boletos490WC.Add(boletoModificado);
+                                }
+                                else
+                                {
+                                    Boleto490WC boletoModificado = new BoletoIDAVUELTA490WC(
+                                        reader["ID490WC"].ToString(),
+                                        reader["Origen490WC"].ToString(),
+                                        reader["Destino490WC"].ToString(),
+                                        Convert.ToDateTime(reader["FechaPartidaIDA490WC"]),
+                                        Convert.ToDateTime(reader["FechaLlegadaIDA490WC"]),
+                                        Convert.ToDateTime(reader["FechaPartidaVUELTA490WC"]),
+                                        Convert.ToDateTime(reader["FechaLlegadaVUELTA490WC"]),
+                                        Convert.ToBoolean(reader["IsVendido490WC"]),
+                                        Convert.ToSingle(reader["PesoEquipajePermitido490WC"]),
+                                        reader["ClaseBoleto490WC"].ToString(),
+                                        Convert.ToSingle(reader["Precio490WC"]),
+                                        Titulares490WC.Find(x => x.DNI490WC == cliente490WC.DNI490WC),
+                                        reader["NumeroAsiento490WC"].ToString(),
+                                        reader["BeneficioAplicado490WC"].ToString()
+                                    );
+                                    boletoModificado.CambiosRealizados490WC = reader["CambiosRealizados490WC"].ToString();
+                                    boletos490WC.Add(boletoModificado);
+                                }
+                            }
+                        }
+                    }
+                }
+                return boletos490WC;
+            }
+        }
+
+
+        public List<Boleto490WC> ObtenerBoletosPagadosCliente490WC(Cliente490WC cliente490WC)
+        {
+            using (SqlConnection cone490WC = GestorConexion490WC.GestorCone490WC.DevolverConexion490WC())
+            {
+                List<Boleto490WC> boletos490WC = new List<Boleto490WC>();
+                List<Cliente490WC> Titulares490WC = new ClienteDAL490WC().ObtenerTodosLosCliente490WC();
+                cone490WC.Open();
+                string query490WC = "SELECT * FROM Boleto490WC WHERE Titular490WC = @Titular490WC AND IsVendido490WC = 1";
+                using (SqlCommand comando490WC = new SqlCommand(query490WC, cone490WC))
+                {
+                    comando490WC.Parameters.AddWithValue("@Titular490WC", cliente490WC.DNI490WC);
+                    using (SqlDataReader reader = comando490WC.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            if (reader["FechaPartidaVUELTA490WC"] == DBNull.Value || reader["FechaLlegadaVUELTA490WC"] == DBNull.Value)
+                            {
+                                if (reader["BeneficioAplicado490WC"] == DBNull.Value)
+                                {
+                                    Boleto490WC boletoPagar490WC = new BoletoIDA490WC(
+                                       reader["ID490WC"].ToString(),
+                                       reader["Origen490WC"].ToString(),
+                                       reader["Destino490WC"].ToString(),
+                                       Convert.ToDateTime(reader["FechaPartidaIDA490WC"]),
+                                       Convert.ToDateTime(reader["FechaLlegadaIDA490WC"]),
+                                       Convert.ToBoolean(reader["IsVendido490WC"]),
+                                       Convert.ToSingle(reader["PesoEquipajePermitido490WC"]),
+                                       reader["ClaseBoleto490WC"].ToString(),
+                                       Convert.ToSingle(reader["Precio490WC"]),
+                                       Titulares490WC.Find(x => x.DNI490WC == cliente490WC.DNI490WC),
+                                       reader["NumeroAsiento490WC"].ToString()
+                                   );
+                                    boletos490WC.Add(boletoPagar490WC);
+                                }
+                                else
+                                {
+                                    Boleto490WC boletoPagar490WC = new BoletoIDA490WC(
+                                       reader["ID490WC"].ToString(),
+                                       reader["Origen490WC"].ToString(),
+                                       reader["Destino490WC"].ToString(),
+                                       Convert.ToDateTime(reader["FechaPartidaIDA490WC"]),
+                                       Convert.ToDateTime(reader["FechaLlegadaIDA490WC"]),
+                                       Convert.ToBoolean(reader["IsVendido490WC"]),
+                                       Convert.ToSingle(reader["PesoEquipajePermitido490WC"]),
+                                       reader["ClaseBoleto490WC"].ToString(),
+                                       Convert.ToSingle(reader["Precio490WC"]),
+                                       Titulares490WC.Find(x => x.DNI490WC == cliente490WC.DNI490WC),
+                                       reader["NumeroAsiento490WC"].ToString(),
+                                       reader["BeneficioAplicado490WC"].ToString()
+                                   );
+                                    boletos490WC.Add(boletoPagar490WC);
+                                }
+                            }
+                            else
+                            {
+                                if (reader["BeneficioAplicado490WC"] == DBNull.Value)
+                                {
+                                    Boleto490WC boletoPagar490WC = new BoletoIDAVUELTA490WC(
+                                        reader["ID490WC"].ToString(),
+                                        reader["Origen490WC"].ToString(),
+                                        reader["Destino490WC"].ToString(),
+                                        Convert.ToDateTime(reader["FechaPartidaIDA490WC"]),
+                                        Convert.ToDateTime(reader["FechaLlegadaIDA490WC"]),
+                                        Convert.ToDateTime(reader["FechaPartidaVUELTA490WC"]),
+                                        Convert.ToDateTime(reader["FechaLlegadaVUELTA490WC"]),
+                                        Convert.ToBoolean(reader["IsVendido490WC"]),
+                                        Convert.ToSingle(reader["PesoEquipajePermitido490WC"]),
+                                        reader["ClaseBoleto490WC"].ToString(),
+                                        Convert.ToSingle(reader["Precio490WC"]),
+                                        Titulares490WC.Find(x => x.DNI490WC == cliente490WC.DNI490WC),
+                                        reader["NumeroAsiento490WC"].ToString()
+                                    );
+                                    boletos490WC.Add(boletoPagar490WC);
+                                }
+                                else
+                                {
+                                    Boleto490WC boletoPagar490WC = new BoletoIDAVUELTA490WC(
+                                    reader["ID490WC"].ToString(),
+                                    reader["Origen490WC"].ToString(),
+                                    reader["Destino490WC"].ToString(),
+                                    Convert.ToDateTime(reader["FechaPartidaIDA490WC"]),
+                                    Convert.ToDateTime(reader["FechaLlegadaIDA490WC"]),
+                                    Convert.ToDateTime(reader["FechaPartidaVUELTA490WC"]),
+                                    Convert.ToDateTime(reader["FechaLlegadaVUELTA490WC"]),
+                                    Convert.ToBoolean(reader["IsVendido490WC"]),
+                                    Convert.ToSingle(reader["PesoEquipajePermitido490WC"]),
+                                    reader["ClaseBoleto490WC"].ToString(),
+                                    Convert.ToSingle(reader["Precio490WC"]),
+                                    Titulares490WC.Find(x => x.DNI490WC == cliente490WC.DNI490WC),
+                                    reader["NumeroAsiento490WC"].ToString(),
+                                    reader["BeneficioAplicado490WC"].ToString()
+                                );
+                                    boletos490WC.Add(boletoPagar490WC);
+                                }
+                            }
+                        }
+                    }
+                }
+                return boletos490WC;
+            }
+        }
+
         public List<Boleto490WC> ObtenerBoletosPorPagarCliente490WC(Cliente490WC cliente490WC)
         {
             using (SqlConnection cone490WC = GestorConexion490WC.GestorCone490WC.DevolverConexion490WC())
@@ -521,7 +894,7 @@ namespace DAL490WC
                                 if (reader["BeneficioAplicado490WC"] == DBNull.Value)
                                 {
 
-                                    Boleto490WC boletoAgregar490WC =  new BoletoIDA490WC(
+                                    Boleto490WC boletoAgregar490WC = new BoletoIDA490WC(
                                         reader["ID490WC"].ToString(),
                                         reader["Origen490WC"].ToString(),
                                         reader["Destino490WC"].ToString(),
@@ -578,7 +951,7 @@ namespace DAL490WC
                                 }
                                 else
                                 {
-                                    Boleto490WC boletoAgregar490WC = new  BoletoIDAVUELTA490WC(
+                                    Boleto490WC boletoAgregar490WC = new BoletoIDAVUELTA490WC(
                                     reader["ID490WC"].ToString(),
                                     reader["Origen490WC"].ToString(),
                                     reader["Destino490WC"].ToString(),
@@ -610,7 +983,7 @@ namespace DAL490WC
             {
                 List<Boleto490WC> boletos490WC = new List<Boleto490WC>();
                 List<Cliente490WC> Titulares490WC = new ClienteDAL490WC().ObtenerTodosLosCliente490WC();
-                    cone490WC.Open();
+                cone490WC.Open();
                 string query490WC = "SELECT * FROM Boleto490WC";
                 using (SqlCommand comando490WC = new SqlCommand(query490WC, cone490WC))
                 {
@@ -672,7 +1045,7 @@ namespace DAL490WC
             {
                 cone490WC.Open();
 
-                
+
                 string query = "SELECT * FROM Boleto490WC WHERE FechaBoletoGenerado490WC IS NULL";
 
                 if (!string.IsNullOrEmpty(origen490WC))

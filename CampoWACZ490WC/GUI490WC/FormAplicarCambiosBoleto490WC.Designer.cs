@@ -1,6 +1,6 @@
 ﻿namespace GUI490WC
 {
-    partial class AplicarCambiosBoleto490WC
+    partial class FormAplicarCambiosBoleto490WC
     {
         /// <summary>
         /// Required designer variable.

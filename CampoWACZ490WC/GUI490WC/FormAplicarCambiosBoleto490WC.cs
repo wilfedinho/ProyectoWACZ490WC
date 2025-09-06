@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace GUI490WC
 {
-    public partial class SeleccionarBeneficio490WC : Form
+    public partial class FormAplicarCambiosBoleto490WC : Form
     {
-        public SeleccionarBeneficio490WC()
+        public FormAplicarCambiosBoleto490WC()
         {
             InitializeComponent();
         }

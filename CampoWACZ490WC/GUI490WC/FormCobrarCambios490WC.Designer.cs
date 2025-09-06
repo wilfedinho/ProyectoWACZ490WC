@@ -1,6 +1,6 @@
 ﻿namespace GUI490WC
 {
-    partial class CobrarCambios490WC
+    partial class FormCobrarCambios490WC
     {
         /// <summary>
         /// Required designer variable.

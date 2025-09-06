@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace GUI490WC
 {
-    public partial class CobrarCambios490WC : Form
+    public partial class FormCobrarCambios490WC : Form
     {
-        public CobrarCambios490WC()
+        public FormCobrarCambios490WC()
         {
             InitializeComponent();
         }

@@ -1,6 +1,6 @@
 ﻿namespace GUI490WC
 {
-    partial class SeleccionarBeneficio490WC
+    partial class FormSeleccionarBeneficio490WC
     {
         /// <summary>
         /// Required designer variable.
