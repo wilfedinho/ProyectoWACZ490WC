@@ -25,8 +25,8 @@ namespace GUI490WC
         {
             InitializeComponent();
             //Traductor490WC.TraductorSG490WC.Notificar490WC();
-            GestorBoleto490WC gestorBoleto490WC = new GestorBoleto490WC();
-            gestorBoleto490WC.LiberarBoletosVencidos490WC();
+            //GestorBoleto490WC gestorBoleto490WC = new GestorBoleto490WC();
+            //gestorBoleto490WC.LiberarBoletosVencidos490WC();
             InicializarControles490WC();
             HabilitarControl490WC();
             CargarCliente490WC(null);

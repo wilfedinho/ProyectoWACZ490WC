@@ -70,8 +70,8 @@ namespace BLL490WC
         {
             BoletoDAL490WC boletoDAL490WC = new BoletoDAL490WC();
             boletoDAL490WC.LiberarBoletosVencidos490WC();
-            Bitacora490WC GestorBitacora490WC = new Bitacora490WC();
-            GestorBitacora490WC.AltaEvento490WC("Gestión Boleto", "Liberar Boletos Vencidos", 3);
+            //Bitacora490WC GestorBitacora490WC = new Bitacora490WC();
+            //GestorBitacora490WC.AltaEvento490WC("Gestión Boleto", "Liberar Boletos Vencidos", 3);
         }
 
         public void CobrarBoleto490WC(Boleto490WC BoletoCobrado490WC)
@@ -187,6 +187,11 @@ namespace BLL490WC
             BoletoDAL490WC gestorBoleto490WC = new BoletoDAL490WC();
             if (gestorBoleto490WC.GenerarBoletoModificado490WC(BoletoModificado490WC))
             {
+                //Revisar
+                BeneficioDAL490WC gestorBeneficio490WC = new BeneficioDAL490WC();
+                Beneficio490WC beneficioAplicado490WC = BoletoModificado490WC.Titular490WC.BeneficiosCliente490WC.Find(b => b.Nombre490WC == BoletoModificado490WC.BeneficioAplicado490WC);
+                gestorBeneficio490WC.EliminarBeneficioDeCliente490WC(BoletoModificado490WC.Titular490WC.DNI490WC, beneficioAplicado490WC.CodigoBeneficio490WC);
+                gestorBeneficio490WC.AplicarBeneficio490WC(BoletoModificado490WC.IDBoleto490WC, beneficioAplicado490WC.DescuentoAplicar490WC, beneficioAplicado490WC.Nombre490WC);
                 return true;
             }
             else

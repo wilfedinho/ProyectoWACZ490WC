@@ -1,4 +1,5 @@
-﻿using SERVICIOS490WC;
+﻿using BLL490WC;
+using SERVICIOS490WC;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -56,6 +57,8 @@ namespace GUI490WC
 
             Diseno490WC();
 
+            GestorBoleto490WC gestorBoleto490WC = new GestorBoleto490WC();
+            gestorBoleto490WC.LiberarBoletosVencidos490WC();
         }
 
         #region Diseno

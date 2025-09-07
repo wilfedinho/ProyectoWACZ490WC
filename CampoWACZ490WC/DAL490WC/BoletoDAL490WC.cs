@@ -1028,7 +1028,7 @@ namespace DAL490WC
                 List<Boleto490WC> boletos490WC = new List<Boleto490WC>();
                 List<Cliente490WC> Titulares490WC = new ClienteDAL490WC().ObtenerTodosLosCliente490WC();
                 cone490WC.Open();
-                string query490WC = "SELECT * FROM Boleto490WC WHERE Titular490WC = @Titular490WC";
+                string query490WC = "SELECT * FROM Boleto490WC WHERE Titular490WC = @Titular490WC AND CambiosRealizados490WC IS NULL";
                 using (SqlCommand comando490WC = new SqlCommand(query490WC, cone490WC))
                 {
                     comando490WC.Parameters.AddWithValue("@Titular490WC", cliente490WC.DNI490WC);

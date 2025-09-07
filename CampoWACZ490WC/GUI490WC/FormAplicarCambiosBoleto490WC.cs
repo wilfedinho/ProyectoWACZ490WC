@@ -100,6 +100,10 @@ namespace GUI490WC
                 calendarioFECHALLEGADA_IDA490WC.SelectionStart = DateTime.Now;
                 calendarioFECHAPARTIDA_VUELTA490WC.SelectionStart = DateTime.Now;
                 calendarioFECHALLEGADA_VUELTA490WC.SelectionStart = DateTime.Now;
+                TB_ASIENTO490WC.Clear();
+                TB_PESOEQUIPAJE490WC.Clear();
+                CB_BENEFICIOSCLIENTE490WC.Items.Clear();
+
             }
             else
             {
@@ -405,7 +409,7 @@ namespace GUI490WC
         }
         private void BT_CONSULTARCAMBIOS490WC_Click(object sender, EventArgs e)
         {
-
+            GestorCliente490WC gestorCLiente490WC = new GestorCliente490WC();
             GestorBoleto490WC gestorBoleto490WC = new GestorBoleto490WC();
             DateTime fechaPartidaIDA490WC = calendarioFECHAPARTIDA_IDA490WC.SelectionStart;
             DateTime fechaLlegadaIDA490WC = calendarioFECHALLEGADA_IDA490WC.SelectionStart;
@@ -447,6 +451,10 @@ namespace GUI490WC
                                     if (gestorBoleto490WC.GenerarBoletoModificado490WC(boletoModificarCopia490WC))
                                     {
                                         MessageBox.Show("La Modificacion Se ha logrado con Exito, tiene 8 Horas Habiles Para Efectuar el Pago!!!");
+                                        clienteOriginal490WC = null;
+                                        boletoOriginal490WC = null;
+                                        Mostrar();
+                                        HabilitarOpcionesModificar();
                                     }
                                     else
                                     {
@@ -478,9 +486,14 @@ namespace GUI490WC
                                     RecalcularPrecioBoleto490WC();
                                     BarraProgresoConsulta490WC.Value = 0;
                                     timer.Start();
+                                    
                                     if (gestorBoleto490WC.GenerarBoletoModificado490WC(boletoModificarCopia490WC))
                                     {
                                         MessageBox.Show("La Modificacion Se ha logrado con Exito, tiene 8 Horas Habiles Para Efectuar el Pago!!!");
+                                        clienteOriginal490WC = null;
+                                        boletoOriginal490WC = null;
+                                        Mostrar();
+                                        HabilitarOpcionesModificar();
                                     }
                                     else
                                     {
@@ -532,7 +545,7 @@ namespace GUI490WC
                 timer.Stop(); // detener animación
 
                 // Generar resultado booleano aleatorio
-                booleanoRandom = random.Next(0, 2) == 0;
+                booleanoRandom = true;
                 BarraProgresoConsulta490WC.Value = 0; // reiniciar barra para próxima vez
             }
         }
