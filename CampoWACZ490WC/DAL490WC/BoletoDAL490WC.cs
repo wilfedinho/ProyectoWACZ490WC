@@ -401,7 +401,7 @@ namespace DAL490WC
                 }
                 else if (BoletoModificado490WC is BoletoIDAVUELTA490WC boletoIDAVUELTA490WC)
                 {
-                    query490WC = @"INSERT INTO Boleto490WC (ID490WC, Origen490WC, Destino490WC, FechaPartidaIDA490WC, FechaLlegadaIDA490WC, FechaPartidaVUELTA490WC, FechaLlegadaVUELTA490WC, IsVendido490WC, PesoEquipajePermitido490WC, ClaseBoleto490WC, Precio490WC, Titular490WC, NumeroAsiento490WC, CambiosRealizados490WC, BeneficioAplicado490WC, FechaBoletoGenerado490WC) VALUES (@ID490WC, @Origen490WC, @Destino490WC, @FechaPartidaIDA490WC, @FechaLlegadaIDA490WC, @FechaPartidaVUELTA490WC, @FechaLlegadaVUELTA490WC, @IsVendido490WC, @PesoEquipajePermitido490WC, @ClaseBoleto490WC, @Precio490WC, @Titular490WC, @NumeroAsiento490WC, @CambiosRealizados490WC, @BeneficioAplicado490WC, FechaBoletoGenerado490WC)";
+                    query490WC = @"INSERT INTO Boleto490WC (ID490WC, Origen490WC, Destino490WC, FechaPartidaIDA490WC, FechaLlegadaIDA490WC, FechaPartidaVUELTA490WC, FechaLlegadaVUELTA490WC, IsVendido490WC, PesoEquipajePermitido490WC, ClaseBoleto490WC, Precio490WC, Titular490WC, NumeroAsiento490WC, CambiosRealizados490WC, BeneficioAplicado490WC, FechaBoletoGenerado490WC) VALUES (@ID490WC, @Origen490WC, @Destino490WC, @FechaPartidaIDA490WC, @FechaLlegadaIDA490WC, @FechaPartidaVUELTA490WC, @FechaLlegadaVUELTA490WC, @IsVendido490WC, @PesoEquipajePermitido490WC, @ClaseBoleto490WC, @Precio490WC, @Titular490WC, @NumeroAsiento490WC, @CambiosRealizados490WC, @BeneficioAplicado490WC, @FechaBoletoGenerado490WC)";
 
                     using (SqlCommand comando490WC = new SqlCommand(query490WC, cone490WC))
                     {

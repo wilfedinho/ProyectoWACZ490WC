@@ -75,7 +75,7 @@
             this.labelApellidoTitular490WC.AutoSize = true;
             this.labelApellidoTitular490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.labelApellidoTitular490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.labelApellidoTitular490WC.Location = new System.Drawing.Point(961, 468);
+            this.labelApellidoTitular490WC.Location = new System.Drawing.Point(941, 487);
             this.labelApellidoTitular490WC.Name = "labelApellidoTitular490WC";
             this.labelApellidoTitular490WC.Size = new System.Drawing.Size(139, 20);
             this.labelApellidoTitular490WC.TabIndex = 98;
@@ -87,7 +87,7 @@
             this.TB_APELLIDOTITULAR490WC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TB_APELLIDOTITULAR490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.TB_APELLIDOTITULAR490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.TB_APELLIDOTITULAR490WC.Location = new System.Drawing.Point(965, 491);
+            this.TB_APELLIDOTITULAR490WC.Location = new System.Drawing.Point(945, 510);
             this.TB_APELLIDOTITULAR490WC.Name = "TB_APELLIDOTITULAR490WC";
             this.TB_APELLIDOTITULAR490WC.Size = new System.Drawing.Size(219, 27);
             this.TB_APELLIDOTITULAR490WC.TabIndex = 97;
@@ -97,7 +97,7 @@
             this.labelNombreTitular490WC.AutoSize = true;
             this.labelNombreTitular490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.labelNombreTitular490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.labelNombreTitular490WC.Location = new System.Drawing.Point(725, 468);
+            this.labelNombreTitular490WC.Location = new System.Drawing.Point(660, 487);
             this.labelNombreTitular490WC.Name = "labelNombreTitular490WC";
             this.labelNombreTitular490WC.Size = new System.Drawing.Size(137, 20);
             this.labelNombreTitular490WC.TabIndex = 96;
@@ -109,7 +109,7 @@
             this.TB_NOMBRETITULAR490WC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TB_NOMBRETITULAR490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.TB_NOMBRETITULAR490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.TB_NOMBRETITULAR490WC.Location = new System.Drawing.Point(729, 491);
+            this.TB_NOMBRETITULAR490WC.Location = new System.Drawing.Point(664, 510);
             this.TB_NOMBRETITULAR490WC.Name = "TB_NOMBRETITULAR490WC";
             this.TB_NOMBRETITULAR490WC.Size = new System.Drawing.Size(219, 27);
             this.TB_NOMBRETITULAR490WC.TabIndex = 95;
@@ -119,7 +119,7 @@
             this.labelCodigoSeguridad490WC.AutoSize = true;
             this.labelCodigoSeguridad490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.labelCodigoSeguridad490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.labelCodigoSeguridad490WC.Location = new System.Drawing.Point(961, 403);
+            this.labelCodigoSeguridad490WC.Location = new System.Drawing.Point(941, 420);
             this.labelCodigoSeguridad490WC.Name = "labelCodigoSeguridad490WC";
             this.labelCodigoSeguridad490WC.Size = new System.Drawing.Size(187, 20);
             this.labelCodigoSeguridad490WC.TabIndex = 94;
@@ -131,7 +131,7 @@
             this.TB_CODIGOSEGURIDAD490WC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TB_CODIGOSEGURIDAD490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.TB_CODIGOSEGURIDAD490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.TB_CODIGOSEGURIDAD490WC.Location = new System.Drawing.Point(965, 426);
+            this.TB_CODIGOSEGURIDAD490WC.Location = new System.Drawing.Point(945, 443);
             this.TB_CODIGOSEGURIDAD490WC.Name = "TB_CODIGOSEGURIDAD490WC";
             this.TB_CODIGOSEGURIDAD490WC.Size = new System.Drawing.Size(219, 27);
             this.TB_CODIGOSEGURIDAD490WC.TabIndex = 93;
@@ -141,7 +141,7 @@
             this.labelFechaVencimiento490WC.AutoSize = true;
             this.labelFechaVencimiento490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.labelFechaVencimiento490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.labelFechaVencimiento490WC.Location = new System.Drawing.Point(725, 403);
+            this.labelFechaVencimiento490WC.Location = new System.Drawing.Point(660, 420);
             this.labelFechaVencimiento490WC.Name = "labelFechaVencimiento490WC";
             this.labelFechaVencimiento490WC.Size = new System.Drawing.Size(170, 20);
             this.labelFechaVencimiento490WC.TabIndex = 92;
@@ -153,7 +153,7 @@
             this.TB_FECHAVENCIMIENTO490WC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TB_FECHAVENCIMIENTO490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.TB_FECHAVENCIMIENTO490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.TB_FECHAVENCIMIENTO490WC.Location = new System.Drawing.Point(729, 426);
+            this.TB_FECHAVENCIMIENTO490WC.Location = new System.Drawing.Point(664, 443);
             this.TB_FECHAVENCIMIENTO490WC.Name = "TB_FECHAVENCIMIENTO490WC";
             this.TB_FECHAVENCIMIENTO490WC.Size = new System.Drawing.Size(219, 27);
             this.TB_FECHAVENCIMIENTO490WC.TabIndex = 91;
@@ -163,7 +163,7 @@
             this.labelFechaEmision490WC.AutoSize = true;
             this.labelFechaEmision490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.labelFechaEmision490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.labelFechaEmision490WC.Location = new System.Drawing.Point(961, 343);
+            this.labelFechaEmision490WC.Location = new System.Drawing.Point(941, 349);
             this.labelFechaEmision490WC.Name = "labelFechaEmision490WC";
             this.labelFechaEmision490WC.Size = new System.Drawing.Size(158, 20);
             this.labelFechaEmision490WC.TabIndex = 90;
@@ -175,7 +175,7 @@
             this.TB_FECHAEMISION490WC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TB_FECHAEMISION490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.TB_FECHAEMISION490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.TB_FECHAEMISION490WC.Location = new System.Drawing.Point(965, 366);
+            this.TB_FECHAEMISION490WC.Location = new System.Drawing.Point(945, 372);
             this.TB_FECHAEMISION490WC.Name = "TB_FECHAEMISION490WC";
             this.TB_FECHAEMISION490WC.Size = new System.Drawing.Size(219, 27);
             this.TB_FECHAEMISION490WC.TabIndex = 89;
@@ -185,7 +185,7 @@
             this.labelNumeroTarjeta490WC.AutoSize = true;
             this.labelNumeroTarjeta490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.labelNumeroTarjeta490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.labelNumeroTarjeta490WC.Location = new System.Drawing.Point(725, 343);
+            this.labelNumeroTarjeta490WC.Location = new System.Drawing.Point(660, 349);
             this.labelNumeroTarjeta490WC.Name = "labelNumeroTarjeta490WC";
             this.labelNumeroTarjeta490WC.Size = new System.Drawing.Size(166, 20);
             this.labelNumeroTarjeta490WC.TabIndex = 88;
@@ -197,7 +197,7 @@
             this.TB_NUMEROTARJETA490WC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TB_NUMEROTARJETA490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.TB_NUMEROTARJETA490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.TB_NUMEROTARJETA490WC.Location = new System.Drawing.Point(729, 366);
+            this.TB_NUMEROTARJETA490WC.Location = new System.Drawing.Point(664, 372);
             this.TB_NUMEROTARJETA490WC.Name = "TB_NUMEROTARJETA490WC";
             this.TB_NUMEROTARJETA490WC.Size = new System.Drawing.Size(219, 27);
             this.TB_NUMEROTARJETA490WC.TabIndex = 87;
@@ -207,7 +207,7 @@
             this.RB_DEBITO490WC.AutoSize = true;
             this.RB_DEBITO490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.RB_DEBITO490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.RB_DEBITO490WC.Location = new System.Drawing.Point(1036, 303);
+            this.RB_DEBITO490WC.Location = new System.Drawing.Point(971, 300);
             this.RB_DEBITO490WC.Name = "RB_DEBITO490WC";
             this.RB_DEBITO490WC.Size = new System.Drawing.Size(83, 24);
             this.RB_DEBITO490WC.TabIndex = 86;
@@ -220,7 +220,7 @@
             this.RB_CREDITO490WC.Checked = true;
             this.RB_CREDITO490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.RB_CREDITO490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.RB_CREDITO490WC.Location = new System.Drawing.Point(880, 304);
+            this.RB_CREDITO490WC.Location = new System.Drawing.Point(815, 301);
             this.RB_CREDITO490WC.Name = "RB_CREDITO490WC";
             this.RB_CREDITO490WC.Size = new System.Drawing.Size(90, 24);
             this.RB_CREDITO490WC.TabIndex = 85;
@@ -233,7 +233,7 @@
             this.LABEL_TIPOTARJETA490WC.AutoSize = true;
             this.LABEL_TIPOTARJETA490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.LABEL_TIPOTARJETA490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.LABEL_TIPOTARJETA490WC.Location = new System.Drawing.Point(725, 307);
+            this.LABEL_TIPOTARJETA490WC.Location = new System.Drawing.Point(660, 304);
             this.LABEL_TIPOTARJETA490WC.Name = "LABEL_TIPOTARJETA490WC";
             this.LABEL_TIPOTARJETA490WC.Size = new System.Drawing.Size(111, 20);
             this.LABEL_TIPOTARJETA490WC.TabIndex = 84;
@@ -244,7 +244,7 @@
             this.LABEL_VISTAPREVIAFACTURA490WC.AutoSize = true;
             this.LABEL_VISTAPREVIAFACTURA490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.LABEL_VISTAPREVIAFACTURA490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.LABEL_VISTAPREVIAFACTURA490WC.Location = new System.Drawing.Point(97, 263);
+            this.LABEL_VISTAPREVIAFACTURA490WC.Location = new System.Drawing.Point(63, 198);
             this.LABEL_VISTAPREVIAFACTURA490WC.Name = "LABEL_VISTAPREVIAFACTURA490WC";
             this.LABEL_VISTAPREVIAFACTURA490WC.Size = new System.Drawing.Size(180, 20);
             this.LABEL_VISTAPREVIAFACTURA490WC.TabIndex = 82;
@@ -256,11 +256,11 @@
             this.TBVISTAPREVIAFACTURA490WC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TBVISTAPREVIAFACTURA490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.TBVISTAPREVIAFACTURA490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.TBVISTAPREVIAFACTURA490WC.Location = new System.Drawing.Point(25, 291);
+            this.TBVISTAPREVIAFACTURA490WC.Location = new System.Drawing.Point(11, 221);
             this.TBVISTAPREVIAFACTURA490WC.Multiline = true;
             this.TBVISTAPREVIAFACTURA490WC.Name = "TBVISTAPREVIAFACTURA490WC";
             this.TBVISTAPREVIAFACTURA490WC.ReadOnly = true;
-            this.TBVISTAPREVIAFACTURA490WC.Size = new System.Drawing.Size(344, 231);
+            this.TBVISTAPREVIAFACTURA490WC.Size = new System.Drawing.Size(320, 371);
             this.TBVISTAPREVIAFACTURA490WC.TabIndex = 81;
             // 
             // LABEL_BOLETOSPORPAGAR490WC
@@ -280,12 +280,13 @@
             this.BT_COBRARFACTURA490WC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BT_COBRARFACTURA490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.BT_COBRARFACTURA490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.BT_COBRARFACTURA490WC.Location = new System.Drawing.Point(386, 482);
+            this.BT_COBRARFACTURA490WC.Location = new System.Drawing.Point(347, 501);
             this.BT_COBRARFACTURA490WC.Name = "BT_COBRARFACTURA490WC";
-            this.BT_COBRARFACTURA490WC.Size = new System.Drawing.Size(318, 40);
+            this.BT_COBRARFACTURA490WC.Size = new System.Drawing.Size(230, 41);
             this.BT_COBRARFACTURA490WC.TabIndex = 105;
             this.BT_COBRARFACTURA490WC.Text = "Cobrar ";
             this.BT_COBRARFACTURA490WC.UseVisualStyleBackColor = false;
+            this.BT_COBRARFACTURA490WC.Click += new System.EventHandler(this.BT_COBRARFACTURA490WC_Click);
             // 
             // dgvBoleto490WC
             // 
@@ -308,14 +309,16 @@
             this.ColumnaPrecio,
             this.ColumnaNumeroAsiento,
             this.ColumnaBeneficio});
-            this.dgvBoleto490WC.Location = new System.Drawing.Point(25, 31);
+            this.dgvBoleto490WC.Location = new System.Drawing.Point(12, 31);
             this.dgvBoleto490WC.MultiSelect = false;
             this.dgvBoleto490WC.Name = "dgvBoleto490WC";
             this.dgvBoleto490WC.ReadOnly = true;
             this.dgvBoleto490WC.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvBoleto490WC.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvBoleto490WC.Size = new System.Drawing.Size(1159, 221);
+            this.dgvBoleto490WC.Size = new System.Drawing.Size(1152, 164);
             this.dgvBoleto490WC.TabIndex = 104;
+            this.dgvBoleto490WC.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvBoleto490WC_CellMouseClick);
+            this.dgvBoleto490WC.SelectionChanged += new System.EventHandler(this.dgvBoleto490WC_SelectionChanged);
             // 
             // ColumnaID
             // 
@@ -396,12 +399,13 @@
             this.BT_BUSCARCLIENTE490WC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BT_BUSCARCLIENTE490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.BT_BUSCARCLIENTE490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.BT_BUSCARCLIENTE490WC.Location = new System.Drawing.Point(386, 426);
+            this.BT_BUSCARCLIENTE490WC.Location = new System.Drawing.Point(347, 410);
             this.BT_BUSCARCLIENTE490WC.Name = "BT_BUSCARCLIENTE490WC";
-            this.BT_BUSCARCLIENTE490WC.Size = new System.Drawing.Size(151, 50);
+            this.BT_BUSCARCLIENTE490WC.Size = new System.Drawing.Size(230, 41);
             this.BT_BUSCARCLIENTE490WC.TabIndex = 103;
             this.BT_BUSCARCLIENTE490WC.Text = "Buscar Cliente";
             this.BT_BUSCARCLIENTE490WC.UseVisualStyleBackColor = false;
+            this.BT_BUSCARCLIENTE490WC.Click += new System.EventHandler(this.BT_BUSCARCLIENTE490WC_Click);
             // 
             // TBINFOCLIENTE490WC
             // 
@@ -409,11 +413,11 @@
             this.TBINFOCLIENTE490WC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TBINFOCLIENTE490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.TBINFOCLIENTE490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.TBINFOCLIENTE490WC.Location = new System.Drawing.Point(386, 291);
+            this.TBINFOCLIENTE490WC.Location = new System.Drawing.Point(347, 331);
             this.TBINFOCLIENTE490WC.Multiline = true;
             this.TBINFOCLIENTE490WC.Name = "TBINFOCLIENTE490WC";
             this.TBINFOCLIENTE490WC.ReadOnly = true;
-            this.TBINFOCLIENTE490WC.Size = new System.Drawing.Size(318, 73);
+            this.TBINFOCLIENTE490WC.Size = new System.Drawing.Size(230, 73);
             this.TBINFOCLIENTE490WC.TabIndex = 102;
             // 
             // LABEL_DATOSCLIENTE490WC
@@ -421,7 +425,7 @@
             this.LABEL_DATOSCLIENTE490WC.AutoSize = true;
             this.LABEL_DATOSCLIENTE490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.LABEL_DATOSCLIENTE490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.LABEL_DATOSCLIENTE490WC.Location = new System.Drawing.Point(489, 268);
+            this.LABEL_DATOSCLIENTE490WC.Location = new System.Drawing.Point(397, 309);
             this.LABEL_DATOSCLIENTE490WC.Name = "LABEL_DATOSCLIENTE490WC";
             this.LABEL_DATOSCLIENTE490WC.Size = new System.Drawing.Size(123, 20);
             this.LABEL_DATOSCLIENTE490WC.TabIndex = 101;
@@ -432,7 +436,7 @@
             this.LABEL_DNI490WC.AutoSize = true;
             this.LABEL_DNI490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.LABEL_DNI490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.LABEL_DNI490WC.Location = new System.Drawing.Point(528, 366);
+            this.LABEL_DNI490WC.Location = new System.Drawing.Point(435, 256);
             this.LABEL_DNI490WC.Name = "LABEL_DNI490WC";
             this.LABEL_DNI490WC.Size = new System.Drawing.Size(40, 20);
             this.LABEL_DNI490WC.TabIndex = 100;
@@ -444,9 +448,9 @@
             this.TB_DNI490WC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TB_DNI490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.TB_DNI490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.TB_DNI490WC.Location = new System.Drawing.Point(386, 389);
+            this.TB_DNI490WC.Location = new System.Drawing.Point(347, 279);
             this.TB_DNI490WC.Name = "TB_DNI490WC";
-            this.TB_DNI490WC.Size = new System.Drawing.Size(318, 27);
+            this.TB_DNI490WC.Size = new System.Drawing.Size(230, 27);
             this.TB_DNI490WC.TabIndex = 99;
             // 
             // BT_CAMBIARTITULAR
@@ -455,9 +459,9 @@
             this.BT_CAMBIARTITULAR.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BT_CAMBIARTITULAR.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.BT_CAMBIARTITULAR.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.BT_CAMBIARTITULAR.Location = new System.Drawing.Point(555, 426);
+            this.BT_CAMBIARTITULAR.Location = new System.Drawing.Point(347, 455);
             this.BT_CAMBIARTITULAR.Name = "BT_CAMBIARTITULAR";
-            this.BT_CAMBIARTITULAR.Size = new System.Drawing.Size(149, 50);
+            this.BT_CAMBIARTITULAR.Size = new System.Drawing.Size(230, 40);
             this.BT_CAMBIARTITULAR.TabIndex = 107;
             this.BT_CAMBIARTITULAR.Text = "Cambiar Titular Boleto";
             this.BT_CAMBIARTITULAR.UseVisualStyleBackColor = false;
@@ -467,7 +471,7 @@
             this.LB_DATOSFACTURACION490WC.AutoSize = true;
             this.LB_DATOSFACTURACION490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.LB_DATOSFACTURACION490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.LB_DATOSFACTURACION490WC.Location = new System.Drawing.Point(876, 268);
+            this.LB_DATOSFACTURACION490WC.Location = new System.Drawing.Point(811, 267);
             this.LB_DATOSFACTURACION490WC.Name = "LB_DATOSFACTURACION490WC";
             this.LB_DATOSFACTURACION490WC.Size = new System.Drawing.Size(164, 20);
             this.LB_DATOSFACTURACION490WC.TabIndex = 108;
@@ -478,7 +482,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(27)))), ((int)(((byte)(38)))));
-            this.ClientSize = new System.Drawing.Size(1202, 556);
+            this.ClientSize = new System.Drawing.Size(1179, 601);
             this.Controls.Add(this.LB_DATOSFACTURACION490WC);
             this.Controls.Add(this.BT_CAMBIARTITULAR);
             this.Controls.Add(this.LABEL_BOLETOSPORPAGAR490WC);

@@ -217,5 +217,10 @@ namespace GUI490WC
             Traductor490WC.TraductorSG490WC.Suscribir490WC(this);
             Traductor490WC.TraductorSG490WC.Notificar490WC();
         }
+
+        private void dgvBoleto490WC_SelectionChanged(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

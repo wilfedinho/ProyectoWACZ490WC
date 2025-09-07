@@ -59,7 +59,7 @@ namespace GUI490WC
 
             GestorBoleto490WC gestorBoleto490WC = new GestorBoleto490WC();
             gestorBoleto490WC.LiberarBoletosVencidos490WC();
-
+            gestorBoleto490WC.LiberarModificacionesBoletoVencidas490WC();
         }
 
         #region Diseno

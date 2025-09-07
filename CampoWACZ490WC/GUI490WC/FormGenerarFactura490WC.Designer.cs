@@ -140,6 +140,7 @@
             this.dgvBoleto490WC.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvBoleto490WC.Size = new System.Drawing.Size(816, 221);
             this.dgvBoleto490WC.TabIndex = 55;
+            this.dgvBoleto490WC.SelectionChanged += new System.EventHandler(this.dgvBoleto490WC_SelectionChanged);
             // 
             // ColumnaID
             // 

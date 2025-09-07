@@ -339,9 +339,13 @@ namespace GUI490WC
                 {
                     cambios490WC.Add($"{boletoModificarCopia490WC.FechaPartida490WC.ToString("dd/MM/yyyy")}");
                     cambios490WC.Add($"{boletoModificarCopia490WC.FechaLlegada490WC.ToString("dd/MM/yyyy")}");
+                    cambios490WC.Add("");
+                    cambios490WC.Add("");
                 }
                 else
                 {
+                    cambios490WC.Add("");
+                    cambios490WC.Add("");
                     cambios490WC.Add("");
                     cambios490WC.Add("");
                 }
