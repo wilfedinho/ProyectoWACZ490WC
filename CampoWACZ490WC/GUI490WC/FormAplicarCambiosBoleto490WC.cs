@@ -448,18 +448,18 @@ namespace GUI490WC
                                     RecalcularPrecioBoleto490WC();
                                     BarraProgresoConsulta490WC.Value = 0;
                                     timer.Start();
-                                    if (gestorBoleto490WC.GenerarBoletoModificado490WC(boletoModificarCopia490WC))
-                                    {
-                                        MessageBox.Show("La Modificacion Se ha logrado con Exito, tiene 8 Horas Habiles Para Efectuar el Pago!!!");
-                                        clienteOriginal490WC = null;
-                                        boletoOriginal490WC = null;
-                                        Mostrar();
-                                        HabilitarOpcionesModificar();
-                                    }
-                                    else
-                                    {
-                                        MessageBox.Show("No Se Pudo Realizar La Modificacion, Intente Nuevamente Mas Tarde!!!");
-                                    }
+                                    //if (gestorBoleto490WC.GenerarBoletoModificado490WC(boletoModificarCopia490WC))
+                                    //{
+                                    //    MessageBox.Show("La Modificacion Se ha logrado con Exito, tiene 8 Horas Habiles Para Efectuar el Pago!!!");
+                                    //    clienteOriginal490WC = null;
+                                    //    boletoOriginal490WC = null;
+                                    //    Mostrar();
+                                    //    HabilitarOpcionesModificar();
+                                    //}
+                                    //else
+                                    //{
+                                    //    MessageBox.Show("No Se Pudo Realizar La Modificacion, Intente Nuevamente Mas Tarde!!!");
+                                    //}
 
                                 }
                             }
@@ -487,18 +487,18 @@ namespace GUI490WC
                                     BarraProgresoConsulta490WC.Value = 0;
                                     timer.Start();
                                     
-                                    if (gestorBoleto490WC.GenerarBoletoModificado490WC(boletoModificarCopia490WC))
-                                    {
-                                        MessageBox.Show("La Modificacion Se ha logrado con Exito, tiene 8 Horas Habiles Para Efectuar el Pago!!!");
-                                        clienteOriginal490WC = null;
-                                        boletoOriginal490WC = null;
-                                        Mostrar();
-                                        HabilitarOpcionesModificar();
-                                    }
-                                    else
-                                    {
-                                        MessageBox.Show("No Se Pudo Realizar La Modificacion, Intente Nuevamente Mas Tarde!!!");
-                                    }
+                                    //if (gestorBoleto490WC.GenerarBoletoModificado490WC(boletoModificarCopia490WC))
+                                    //{
+                                    //    MessageBox.Show("La Modificacion Se ha logrado con Exito, tiene 8 Horas Habiles Para Efectuar el Pago!!!");
+                                    //    clienteOriginal490WC = null;
+                                    //    boletoOriginal490WC = null;
+                                    //    Mostrar();
+                                    //    HabilitarOpcionesModificar();
+                                    //}
+                                    //else
+                                    //{
+                                    //    MessageBox.Show("No Se Pudo Realizar La Modificacion, Intente Nuevamente Mas Tarde!!!");
+                                    //}
 
                                 }
                             }
@@ -536,6 +536,7 @@ namespace GUI490WC
 
         private void Timer_Tick(object sender, EventArgs e)
         {
+            GestorBoleto490WC gestorBoleto490WC = new GestorBoleto490WC();
             if (BarraProgresoConsulta490WC.Value < BarraProgresoConsulta490WC.Maximum)
             {
                 BarraProgresoConsulta490WC.Value += 5; // incrementar barra
@@ -546,6 +547,18 @@ namespace GUI490WC
 
                 // Generar resultado booleano aleatorio
                 booleanoRandom = true;
+                if (gestorBoleto490WC.GenerarBoletoModificado490WC(boletoModificarCopia490WC))
+                {
+                    MessageBox.Show("La Modificacion Se ha logrado con Exito, tiene 8 Horas Habiles Para Efectuar el Pago!!!");
+                    clienteOriginal490WC = null;
+                    boletoOriginal490WC = null;
+                    Mostrar();
+                    HabilitarOpcionesModificar();
+                }
+                else
+                {
+                    MessageBox.Show("No Se Pudo Realizar La Modificacion, Intente Nuevamente Mas Tarde!!!");
+                }
                 BarraProgresoConsulta490WC.Value = 0; // reiniciar barra para próxima vez
             }
         }

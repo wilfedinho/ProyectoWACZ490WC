@@ -189,9 +189,12 @@ namespace BLL490WC
             {
                 //Revisar
                 BeneficioDAL490WC gestorBeneficio490WC = new BeneficioDAL490WC();
-                Beneficio490WC beneficioAplicado490WC = BoletoModificado490WC.Titular490WC.BeneficiosCliente490WC.Find(b => b.Nombre490WC == BoletoModificado490WC.BeneficioAplicado490WC);
-                gestorBeneficio490WC.EliminarBeneficioDeCliente490WC(BoletoModificado490WC.Titular490WC.DNI490WC, beneficioAplicado490WC.CodigoBeneficio490WC);
-                gestorBeneficio490WC.AplicarBeneficio490WC(BoletoModificado490WC.IDBoleto490WC, beneficioAplicado490WC.DescuentoAplicar490WC, beneficioAplicado490WC.Nombre490WC);
+                if (BoletoModificado490WC.BeneficioAplicado490WC != null)
+                {
+                    Beneficio490WC beneficioAplicado490WC = BoletoModificado490WC.Titular490WC.BeneficiosCliente490WC.Find(b => b.Nombre490WC == BoletoModificado490WC.BeneficioAplicado490WC);
+                    gestorBeneficio490WC.EliminarBeneficioDeCliente490WC(BoletoModificado490WC.Titular490WC.DNI490WC, beneficioAplicado490WC.CodigoBeneficio490WC);
+                    gestorBeneficio490WC.AplicarBeneficio490WC(BoletoModificado490WC.IDBoleto490WC, beneficioAplicado490WC.DescuentoAplicar490WC, beneficioAplicado490WC.Nombre490WC);
+                }
                 return true;
             }
             else
