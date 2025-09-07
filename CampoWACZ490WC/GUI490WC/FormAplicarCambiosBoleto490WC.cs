@@ -82,9 +82,9 @@ namespace GUI490WC
 
 
             if (string.IsNullOrWhiteSpace(boletoOriginal490WC.BeneficioAplicado490WC))
-                sb.Append("Beneficio Aplicado: Este Boleto No Posee Un Beneficio Aplicado");
+                sb.AppendLine("Beneficio Aplicado: Este Boleto No Posee Un Beneficio Aplicado");
             else
-                sb.Append($"Beneficio Aplicado: {boletoOriginal490WC.BeneficioAplicado490WC}");
+                sb.AppendLine($"Beneficio Aplicado: {boletoOriginal490WC.BeneficioAplicado490WC}");
 
             sb.AppendLine($"Precio: {boletoOriginal490WC.Precio490WC}");
             return sb.ToString();
@@ -427,7 +427,7 @@ namespace GUI490WC
                 if (gestorBoleto490WC.VerificarFormatoAsiento490WC(asiento490WC))
                 {
 
-                    if (float.TryParse(pesoEquipaje490WC, out float pesoParse490WC))
+                    if (float.TryParse(pesoEquipaje490WC, out float pesoParse490WC) && pesoParse490WC > 0)
                     {
                         if (boletoOriginal490WC is BoletoIDAVUELTA490WC)
                         {

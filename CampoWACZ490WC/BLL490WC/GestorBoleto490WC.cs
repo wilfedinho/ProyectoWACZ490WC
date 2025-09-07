@@ -66,6 +66,12 @@ namespace BLL490WC
             GestorBitacora490WC.AltaEvento490WC("Gestión Boleto", "Generar Boleto", 5);
         }
 
+        public void LiberarModificacionesBoletoVencidas490WC()
+        {
+            BoletoDAL490WC gestorBoleto490WC = new BoletoDAL490WC();
+            gestorBoleto490WC.LiberarModificacionesBoletoVencidas490WC();
+        }
+
         public void LiberarBoletosVencidos490WC()
         {
             BoletoDAL490WC boletoDAL490WC = new BoletoDAL490WC();

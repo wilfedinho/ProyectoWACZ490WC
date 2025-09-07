@@ -220,12 +220,14 @@ namespace DAL490WC
             }
         }
 
+        
+
         public void LiberarBoletosVencidos490WC()
         {
             using (SqlConnection cone490WC = GestorConexion490WC.GestorCone490WC.DevolverConexion490WC())
             {
                 cone490WC.Open();
-                string query490WC = "UPDATE Boleto490WC SET Titular490WC = 'Sistema', FechaBoletoGenerado490WC = NULL, BeneficioAplicado490WC = NULL WHERE IsVendido490WC = 0 AND FechaBoletoGenerado490WC IS NOT NULL AND DATEADD(hour, 8, FechaBoletoGenerado490WC) <= SYSDATETIME()";
+                string query490WC = "UPDATE Boleto490WC SET Titular490WC = 'Sistema', FechaBoletoGenerado490WC = NULL, BeneficioAplicado490WC = NULL WHERE IsVendido490WC = 0 AND CambiosRealizados490WC IS NULL AND FechaBoletoGenerado490WC IS NOT NULL AND DATEADD(hour, 8, FechaBoletoGenerado490WC) <= SYSDATETIME()";
                 using (SqlCommand comando490WC = new SqlCommand(query490WC, cone490WC))
                 {
                     comando490WC.ExecuteNonQuery();
@@ -317,6 +319,19 @@ namespace DAL490WC
 
         #region Operaciones Boleto RFN2
 
+        public void LiberarModificacionesBoletoVencidas490WC()
+        {
+            using (SqlConnection cone490WC = GestorConexion490WC.GestorCone490WC.DevolverConexion490WC())
+            {
+                cone490WC.Open();
+                string query490WC = "DELETE FROM Boleto490WC WHERE IsVendido490WC = 0 AND CambiosRealizados490WC IS NOT NULL AND FechaBoletoGenerado490WC IS NOT NULL AND DATEADD(hour, 8, FechaBoletoGenerado490WC) <= SYSDATETIME()";
+                using (SqlCommand comando490WC = new SqlCommand(query490WC, cone490WC))
+                {
+                    comando490WC.ExecuteNonQuery();
+                }
+            }
+        }
+
         public bool GenerarBoletoModificado490WC(Boleto490WC BoletoModificado490WC)
         {
             using (SqlConnection cone490WC = GestorConexion490WC.GestorCone490WC.DevolverConexion490WC())
@@ -362,7 +377,7 @@ namespace DAL490WC
 
                 if (BoletoModificado490WC is BoletoIDA490WC boletoIDA490WC)
                 {
-                    query490WC = @"INSERT INTO Boleto490WC (ID490WC, Origen490WC, Destino490WC, FechaPartidaIDA490WC, FechaLlegadaIDA490WC, IsVendido490WC, PesoEquipajePermitido490WC, ClaseBoleto490WC, Precio490WC, Titular490WC, NumeroAsiento490WC, CambiosRealizados490WC, BeneficioAplicado490WC) VALUES (@ID490WC, @Origen490WC, @Destino490WC, @FechaPartidaIDA490WC, @FechaLlegadaIDA490WC, @IsVendido490WC, @PesoEquipajePermitido490WC, @ClaseBoleto490WC, @Precio490WC, @Titular490WC, @NumeroAsiento490WC, @CambiosRealizados490WC, @BeneficioAplicado490WC)";
+                    query490WC = @"INSERT INTO Boleto490WC (ID490WC, Origen490WC, Destino490WC, FechaPartidaIDA490WC, FechaLlegadaIDA490WC, IsVendido490WC, PesoEquipajePermitido490WC, ClaseBoleto490WC, Precio490WC, Titular490WC, NumeroAsiento490WC, CambiosRealizados490WC, BeneficioAplicado490WC, FechaBoletoGenerado490WC) VALUES (@ID490WC, @Origen490WC, @Destino490WC, @FechaPartidaIDA490WC, @FechaLlegadaIDA490WC, @IsVendido490WC, @PesoEquipajePermitido490WC, @ClaseBoleto490WC, @Precio490WC, @Titular490WC, @NumeroAsiento490WC, @CambiosRealizados490WC, @BeneficioAplicado490WC, @FechaBoletoGenerado490WC)";
 
                     using (SqlCommand comando490WC = new SqlCommand(query490WC, cone490WC))
                     {
@@ -380,13 +395,13 @@ namespace DAL490WC
                         comando490WC.Parameters.AddWithValue("@CambiosRealizados490WC", boletoIDA490WC.CambiosRealizados490WC);
                         comando490WC.Parameters.AddWithValue("@BeneficioAplicado490WC",
                             string.IsNullOrEmpty(boletoIDA490WC.BeneficioAplicado490WC) ? (object)DBNull.Value : boletoIDA490WC.BeneficioAplicado490WC);
-                        
+                        comando490WC.Parameters.AddWithValue("@FechaBoletoGenerado490WC", DateTime.Now);
                         comando490WC.ExecuteNonQuery();
                     }
                 }
                 else if (BoletoModificado490WC is BoletoIDAVUELTA490WC boletoIDAVUELTA490WC)
                 {
-                    query490WC = @"INSERT INTO Boleto490WC (ID490WC, Origen490WC, Destino490WC, FechaPartidaIDA490WC, FechaLlegadaIDA490WC, FechaPartidaVUELTA490WC, FechaLlegadaVUELTA490WC, IsVendido490WC, PesoEquipajePermitido490WC, ClaseBoleto490WC, Precio490WC, Titular490WC, NumeroAsiento490WC, CambiosRealizados490WC, BeneficioAplicado490WC) VALUES (@ID490WC, @Origen490WC, @Destino490WC, @FechaPartidaIDA490WC, @FechaLlegadaIDA490WC, @FechaPartidaVUELTA490WC, @FechaLlegadaVUELTA490WC, @IsVendido490WC, @PesoEquipajePermitido490WC, @ClaseBoleto490WC, @Precio490WC, @Titular490WC, @NumeroAsiento490WC, @CambiosRealizados490WC, @BeneficioAplicado490WC)";
+                    query490WC = @"INSERT INTO Boleto490WC (ID490WC, Origen490WC, Destino490WC, FechaPartidaIDA490WC, FechaLlegadaIDA490WC, FechaPartidaVUELTA490WC, FechaLlegadaVUELTA490WC, IsVendido490WC, PesoEquipajePermitido490WC, ClaseBoleto490WC, Precio490WC, Titular490WC, NumeroAsiento490WC, CambiosRealizados490WC, BeneficioAplicado490WC, FechaBoletoGenerado490WC) VALUES (@ID490WC, @Origen490WC, @Destino490WC, @FechaPartidaIDA490WC, @FechaLlegadaIDA490WC, @FechaPartidaVUELTA490WC, @FechaLlegadaVUELTA490WC, @IsVendido490WC, @PesoEquipajePermitido490WC, @ClaseBoleto490WC, @Precio490WC, @Titular490WC, @NumeroAsiento490WC, @CambiosRealizados490WC, @BeneficioAplicado490WC, FechaBoletoGenerado490WC)";
 
                     using (SqlCommand comando490WC = new SqlCommand(query490WC, cone490WC))
                     {
@@ -406,7 +421,7 @@ namespace DAL490WC
                         comando490WC.Parameters.AddWithValue("@CambiosRealizados490WC", boletoIDAVUELTA490WC.CambiosRealizados490WC);
                         comando490WC.Parameters.AddWithValue("@BeneficioAplicado490WC",
                             string.IsNullOrEmpty(boletoIDAVUELTA490WC.BeneficioAplicado490WC) ? (object)DBNull.Value : boletoIDAVUELTA490WC.BeneficioAplicado490WC);
-                        
+                        comando490WC.Parameters.AddWithValue("@FechaBoletoGenerado490WC", DateTime.Now);
                         comando490WC.ExecuteNonQuery();
                     }
                 }
@@ -420,11 +435,7 @@ namespace DAL490WC
             {
                 con.Open();
 
-                string query = @"
-            SELECT COUNT(*) 
-            FROM Boleto490WC 
-            WHERE IsVendido490WC = 0 
-              AND CambiosRealizados490WC LIKE @IdOriginal + ';%'";
+                string query = @"SELECT COUNT(*) FROM Boleto490WC WHERE IsVendido490WC = 0 AND CambiosRealizados490WC LIKE @IdOriginal + ';%'";
 
                 using (SqlCommand cmd = new SqlCommand(query, con))
                 {
@@ -521,7 +532,9 @@ namespace DAL490WC
 
                 // Marcar como vendido siempre
                 campos490WC.Add("IsVendido490WC = 1");
-                campos490WC.Add($"CambiosRealizados490WC = {boletoCopia490WC.CambiosRealizados490WC}");
+                //campos490WC.Add($"CambiosRealizados490WC = {boletoCopia490WC.CambiosRealizados490WC}");
+                campos490WC.Add($"CambiosRealizados490WC = @CambiosRealizados490WC");
+                comandoActulizar490WC.Parameters.AddWithValue("@CambiosRealizados490WC", boletoCopia490WC.CambiosRealizados490WC);
 
                 // 3. Construir el query final
                 string updateQuery = $@"UPDATE Boleto490WC SET {string.Join(", ", campos490WC)} WHERE ID490WC = @IDBoletoOriginal490WC";
