@@ -473,7 +473,7 @@
             this.LB_DATOSFACTURACION490WC.TabIndex = 108;
             this.LB_DATOSFACTURACION490WC.Text = "Datos Facturacion";
             // 
-            // CobrarCambios490WC
+            // FormCobrarCambios490WC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -506,9 +506,11 @@
             this.Controls.Add(this.LABEL_TIPOTARJETA490WC);
             this.Controls.Add(this.LABEL_VISTAPREVIAFACTURA490WC);
             this.Controls.Add(this.TBVISTAPREVIAFACTURA490WC);
-            this.Name = "CobrarCambios490WC";
+            this.Name = "FormCobrarCambios490WC";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CobrarCambios490WC";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormCobrarCambios490WC_FormClosed);
+            this.Load += new System.EventHandler(this.FormCobrarCambios490WC_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvBoleto490WC)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

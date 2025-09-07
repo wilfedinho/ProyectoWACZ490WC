@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SERVICIOS490WC;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,11 +11,27 @@ using System.Windows.Forms;
 
 namespace GUI490WC
 {
-    public partial class FormCobrarCambios490WC : Form
+    public partial class FormCobrarCambios490WC : Form, iObserverLenguaje490WC
     {
         public FormCobrarCambios490WC()
         {
             InitializeComponent();
+        }
+
+        private void FormCobrarCambios490WC_Load(object sender, EventArgs e)
+        {
+            Traductor490WC.TraductorSG490WC.Suscribir490WC(this);
+            Traductor490WC.TraductorSG490WC.Notificar490WC();
+        }
+
+        private void FormCobrarCambios490WC_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Traductor490WC.TraductorSG490WC.Desuscribir490WC(this);
+        }
+
+        public void ActualizarLenguaje490WC()
+        {
+            
         }
     }
 }

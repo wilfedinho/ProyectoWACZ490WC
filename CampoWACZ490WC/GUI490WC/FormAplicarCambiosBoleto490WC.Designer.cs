@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.LABEL_INFOPARCIALBOLETO490WC = new System.Windows.Forms.Label();
-            this.TBINFOBOLETOGENERAR490WC = new System.Windows.Forms.TextBox();
+            this.TBINFOBOLETOINFOPREVIA490WC = new System.Windows.Forms.TextBox();
             this.BT_BUSCARBOLETO490WC = new System.Windows.Forms.Button();
-            this.TB_DNI490WC = new System.Windows.Forms.TextBox();
+            this.TB_NUMEROBOLETO490WC = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.LB_CARTELERACAMBIOS490WC = new System.Windows.Forms.Label();
+            this.TB_CARTELERACAMBIOS490WC = new System.Windows.Forms.TextBox();
             this.LABEL_FECHALLEGADA_VUELTA490WC = new System.Windows.Forms.Label();
             this.LABEL_FECHAPARTIDA_VUELTA490WC = new System.Windows.Forms.Label();
             this.calendarioFECHAPARTIDA_VUELTA490WC = new System.Windows.Forms.MonthCalendar();
@@ -49,13 +49,12 @@
             this.TB_PESOEQUIPAJE490WC = new System.Windows.Forms.TextBox();
             this.LABEL_ASIENTO490WC = new System.Windows.Forms.Label();
             this.TB_ASIENTO490WC = new System.Windows.Forms.TextBox();
-            this.BT_APLICARBENEFICIO490WC = new System.Windows.Forms.Button();
             this.LABEL_DATOSBENEFICIOSCLIENTE490WC = new System.Windows.Forms.Label();
             this.CB_BENEFICIOSCLIENTE490WC = new System.Windows.Forms.ComboBox();
-            this.BT_CANJEARBENEFICIO490WC = new System.Windows.Forms.Button();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.BT_SELECCIONARBENEFICIO490WC = new System.Windows.Forms.Button();
+            this.BarraProgresoConsulta490WC = new System.Windows.Forms.ProgressBar();
+            this.BT_APLICARCAMBIOS490WC = new System.Windows.Forms.Button();
+            this.BT_CONSULTARCAMBIOS490WC = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // LABEL_INFOPARCIALBOLETO490WC
@@ -69,18 +68,18 @@
             this.LABEL_INFOPARCIALBOLETO490WC.TabIndex = 56;
             this.LABEL_INFOPARCIALBOLETO490WC.Text = "Datos Previos Boleto";
             // 
-            // TBINFOBOLETOGENERAR490WC
+            // TBINFOBOLETOINFOPREVIA490WC
             // 
-            this.TBINFOBOLETOGENERAR490WC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(6)))), ((int)(((byte)(13)))));
-            this.TBINFOBOLETOGENERAR490WC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TBINFOBOLETOGENERAR490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
-            this.TBINFOBOLETOGENERAR490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.TBINFOBOLETOGENERAR490WC.Location = new System.Drawing.Point(25, 109);
-            this.TBINFOBOLETOGENERAR490WC.Multiline = true;
-            this.TBINFOBOLETOGENERAR490WC.Name = "TBINFOBOLETOGENERAR490WC";
-            this.TBINFOBOLETOGENERAR490WC.ReadOnly = true;
-            this.TBINFOBOLETOGENERAR490WC.Size = new System.Drawing.Size(344, 318);
-            this.TBINFOBOLETOGENERAR490WC.TabIndex = 55;
+            this.TBINFOBOLETOINFOPREVIA490WC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(6)))), ((int)(((byte)(13)))));
+            this.TBINFOBOLETOINFOPREVIA490WC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TBINFOBOLETOINFOPREVIA490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.TBINFOBOLETOINFOPREVIA490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
+            this.TBINFOBOLETOINFOPREVIA490WC.Location = new System.Drawing.Point(25, 109);
+            this.TBINFOBOLETOINFOPREVIA490WC.Multiline = true;
+            this.TBINFOBOLETOINFOPREVIA490WC.Name = "TBINFOBOLETOINFOPREVIA490WC";
+            this.TBINFOBOLETOINFOPREVIA490WC.ReadOnly = true;
+            this.TBINFOBOLETOINFOPREVIA490WC.Size = new System.Drawing.Size(344, 301);
+            this.TBINFOBOLETOINFOPREVIA490WC.TabIndex = 55;
             // 
             // BT_BUSCARBOLETO490WC
             // 
@@ -94,17 +93,18 @@
             this.BT_BUSCARBOLETO490WC.TabIndex = 58;
             this.BT_BUSCARBOLETO490WC.Text = "Buscar Boleto";
             this.BT_BUSCARBOLETO490WC.UseVisualStyleBackColor = false;
+            this.BT_BUSCARBOLETO490WC.Click += new System.EventHandler(this.BT_BUSCARBOLETO490WC_Click);
             // 
-            // TB_DNI490WC
+            // TB_NUMEROBOLETO490WC
             // 
-            this.TB_DNI490WC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(6)))), ((int)(((byte)(13)))));
-            this.TB_DNI490WC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TB_DNI490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
-            this.TB_DNI490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.TB_DNI490WC.Location = new System.Drawing.Point(25, 47);
-            this.TB_DNI490WC.Name = "TB_DNI490WC";
-            this.TB_DNI490WC.Size = new System.Drawing.Size(178, 27);
-            this.TB_DNI490WC.TabIndex = 57;
+            this.TB_NUMEROBOLETO490WC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(6)))), ((int)(((byte)(13)))));
+            this.TB_NUMEROBOLETO490WC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TB_NUMEROBOLETO490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.TB_NUMEROBOLETO490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
+            this.TB_NUMEROBOLETO490WC.Location = new System.Drawing.Point(25, 47);
+            this.TB_NUMEROBOLETO490WC.Name = "TB_NUMEROBOLETO490WC";
+            this.TB_NUMEROBOLETO490WC.Size = new System.Drawing.Size(178, 27);
+            this.TB_NUMEROBOLETO490WC.TabIndex = 57;
             // 
             // label1
             // 
@@ -117,29 +117,29 @@
             this.label1.TabIndex = 59;
             this.label1.Text = "Buscar Boleto Modificar";
             // 
-            // label2
+            // LB_CARTELERACAMBIOS490WC
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.label2.Location = new System.Drawing.Point(99, 434);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(193, 20);
-            this.label2.TabIndex = 61;
-            this.label2.Text = "Cartelera de Cambios";
+            this.LB_CARTELERACAMBIOS490WC.AutoSize = true;
+            this.LB_CARTELERACAMBIOS490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.LB_CARTELERACAMBIOS490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
+            this.LB_CARTELERACAMBIOS490WC.Location = new System.Drawing.Point(99, 413);
+            this.LB_CARTELERACAMBIOS490WC.Name = "LB_CARTELERACAMBIOS490WC";
+            this.LB_CARTELERACAMBIOS490WC.Size = new System.Drawing.Size(193, 20);
+            this.LB_CARTELERACAMBIOS490WC.TabIndex = 61;
+            this.LB_CARTELERACAMBIOS490WC.Text = "Cartelera de Cambios";
             // 
-            // textBox1
+            // TB_CARTELERACAMBIOS490WC
             // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(6)))), ((int)(((byte)(13)))));
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
-            this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.textBox1.Location = new System.Drawing.Point(25, 457);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(344, 268);
-            this.textBox1.TabIndex = 60;
+            this.TB_CARTELERACAMBIOS490WC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(6)))), ((int)(((byte)(13)))));
+            this.TB_CARTELERACAMBIOS490WC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TB_CARTELERACAMBIOS490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.TB_CARTELERACAMBIOS490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
+            this.TB_CARTELERACAMBIOS490WC.Location = new System.Drawing.Point(25, 436);
+            this.TB_CARTELERACAMBIOS490WC.Multiline = true;
+            this.TB_CARTELERACAMBIOS490WC.Name = "TB_CARTELERACAMBIOS490WC";
+            this.TB_CARTELERACAMBIOS490WC.ReadOnly = true;
+            this.TB_CARTELERACAMBIOS490WC.Size = new System.Drawing.Size(344, 224);
+            this.TB_CARTELERACAMBIOS490WC.TabIndex = 60;
             // 
             // LABEL_FECHALLEGADA_VUELTA490WC
             // 
@@ -229,7 +229,7 @@
             "Turista",
             "Ejecutiva",
             "Primera Clase"});
-            this.CB_CLASEBOLETO490WC.Location = new System.Drawing.Point(400, 511);
+            this.CB_CLASEBOLETO490WC.Location = new System.Drawing.Point(628, 447);
             this.CB_CLASEBOLETO490WC.Name = "CB_CLASEBOLETO490WC";
             this.CB_CLASEBOLETO490WC.Size = new System.Drawing.Size(174, 27);
             this.CB_CLASEBOLETO490WC.TabIndex = 110;
@@ -239,7 +239,7 @@
             this.LABEL_CLASEBOLETO490WC.AutoSize = true;
             this.LABEL_CLASEBOLETO490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.LABEL_CLASEBOLETO490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.LABEL_CLASEBOLETO490WC.Location = new System.Drawing.Point(425, 486);
+            this.LABEL_CLASEBOLETO490WC.Location = new System.Drawing.Point(653, 422);
             this.LABEL_CLASEBOLETO490WC.Name = "LABEL_CLASEBOLETO490WC";
             this.LABEL_CLASEBOLETO490WC.Size = new System.Drawing.Size(117, 20);
             this.LABEL_CLASEBOLETO490WC.TabIndex = 109;
@@ -250,7 +250,7 @@
             this.LABEL_PESOEQUIPAJE490WC.AutoSize = true;
             this.LABEL_PESOEQUIPAJE490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.LABEL_PESOEQUIPAJE490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.LABEL_PESOEQUIPAJE490WC.Location = new System.Drawing.Point(652, 554);
+            this.LABEL_PESOEQUIPAJE490WC.Location = new System.Drawing.Point(652, 488);
             this.LABEL_PESOEQUIPAJE490WC.Name = "LABEL_PESOEQUIPAJE490WC";
             this.LABEL_PESOEQUIPAJE490WC.Size = new System.Drawing.Size(130, 20);
             this.LABEL_PESOEQUIPAJE490WC.TabIndex = 112;
@@ -262,7 +262,7 @@
             this.TB_PESOEQUIPAJE490WC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TB_PESOEQUIPAJE490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.TB_PESOEQUIPAJE490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.TB_PESOEQUIPAJE490WC.Location = new System.Drawing.Point(628, 577);
+            this.TB_PESOEQUIPAJE490WC.Location = new System.Drawing.Point(628, 511);
             this.TB_PESOEQUIPAJE490WC.Name = "TB_PESOEQUIPAJE490WC";
             this.TB_PESOEQUIPAJE490WC.Size = new System.Drawing.Size(174, 27);
             this.TB_PESOEQUIPAJE490WC.TabIndex = 111;
@@ -272,7 +272,7 @@
             this.LABEL_ASIENTO490WC.AutoSize = true;
             this.LABEL_ASIENTO490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.LABEL_ASIENTO490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.LABEL_ASIENTO490WC.Location = new System.Drawing.Point(445, 554);
+            this.LABEL_ASIENTO490WC.Location = new System.Drawing.Point(445, 488);
             this.LABEL_ASIENTO490WC.Name = "LABEL_ASIENTO490WC";
             this.LABEL_ASIENTO490WC.Size = new System.Drawing.Size(74, 20);
             this.LABEL_ASIENTO490WC.TabIndex = 114;
@@ -284,23 +284,10 @@
             this.TB_ASIENTO490WC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TB_ASIENTO490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.TB_ASIENTO490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.TB_ASIENTO490WC.Location = new System.Drawing.Point(400, 577);
+            this.TB_ASIENTO490WC.Location = new System.Drawing.Point(400, 511);
             this.TB_ASIENTO490WC.Name = "TB_ASIENTO490WC";
             this.TB_ASIENTO490WC.Size = new System.Drawing.Size(174, 27);
             this.TB_ASIENTO490WC.TabIndex = 113;
-            // 
-            // BT_APLICARBENEFICIO490WC
-            // 
-            this.BT_APLICARBENEFICIO490WC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(6)))), ((int)(((byte)(13)))));
-            this.BT_APLICARBENEFICIO490WC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BT_APLICARBENEFICIO490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
-            this.BT_APLICARBENEFICIO490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.BT_APLICARBENEFICIO490WC.Location = new System.Drawing.Point(628, 422);
-            this.BT_APLICARBENEFICIO490WC.Name = "BT_APLICARBENEFICIO490WC";
-            this.BT_APLICARBENEFICIO490WC.Size = new System.Drawing.Size(174, 53);
-            this.BT_APLICARBENEFICIO490WC.TabIndex = 118;
-            this.BT_APLICARBENEFICIO490WC.Text = "Aplicar Beneficio";
-            this.BT_APLICARBENEFICIO490WC.UseVisualStyleBackColor = false;
             // 
             // LABEL_DATOSBENEFICIOSCLIENTE490WC
             // 
@@ -326,63 +313,65 @@
             this.CB_BENEFICIOSCLIENTE490WC.Size = new System.Drawing.Size(174, 27);
             this.CB_BENEFICIOSCLIENTE490WC.TabIndex = 116;
             // 
-            // BT_CANJEARBENEFICIO490WC
+            // BT_SELECCIONARBENEFICIO490WC
             // 
-            this.BT_CANJEARBENEFICIO490WC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(6)))), ((int)(((byte)(13)))));
-            this.BT_CANJEARBENEFICIO490WC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BT_CANJEARBENEFICIO490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
-            this.BT_CANJEARBENEFICIO490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.BT_CANJEARBENEFICIO490WC.Location = new System.Drawing.Point(628, 480);
-            this.BT_CANJEARBENEFICIO490WC.Name = "BT_CANJEARBENEFICIO490WC";
-            this.BT_CANJEARBENEFICIO490WC.Size = new System.Drawing.Size(174, 53);
-            this.BT_CANJEARBENEFICIO490WC.TabIndex = 119;
-            this.BT_CANJEARBENEFICIO490WC.Text = "Seleccionar Beneficio";
-            this.BT_CANJEARBENEFICIO490WC.UseVisualStyleBackColor = false;
+            this.BT_SELECCIONARBENEFICIO490WC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(6)))), ((int)(((byte)(13)))));
+            this.BT_SELECCIONARBENEFICIO490WC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BT_SELECCIONARBENEFICIO490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.BT_SELECCIONARBENEFICIO490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
+            this.BT_SELECCIONARBENEFICIO490WC.Location = new System.Drawing.Point(539, 606);
+            this.BT_SELECCIONARBENEFICIO490WC.Name = "BT_SELECCIONARBENEFICIO490WC";
+            this.BT_SELECCIONARBENEFICIO490WC.Size = new System.Drawing.Size(131, 53);
+            this.BT_SELECCIONARBENEFICIO490WC.TabIndex = 119;
+            this.BT_SELECCIONARBENEFICIO490WC.Text = "Seleccionar Beneficio";
+            this.BT_SELECCIONARBENEFICIO490WC.UseVisualStyleBackColor = false;
+            this.BT_SELECCIONARBENEFICIO490WC.Click += new System.EventHandler(this.BT_SELECCIONARBENEFICIO490WC_Click);
             // 
-            // progressBar1
+            // BarraProgresoConsulta490WC
             // 
-            this.progressBar1.Location = new System.Drawing.Point(400, 621);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(407, 35);
-            this.progressBar1.TabIndex = 120;
+            this.BarraProgresoConsulta490WC.Location = new System.Drawing.Point(400, 555);
+            this.BarraProgresoConsulta490WC.Name = "BarraProgresoConsulta490WC";
+            this.BarraProgresoConsulta490WC.Size = new System.Drawing.Size(407, 35);
+            this.BarraProgresoConsulta490WC.TabIndex = 120;
             // 
-            // button1
+            // BT_APLICARCAMBIOS490WC
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(6)))), ((int)(((byte)(13)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.button1.Location = new System.Drawing.Point(628, 672);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(174, 53);
-            this.button1.TabIndex = 121;
-            this.button1.Text = "Aplicar Cambios";
-            this.button1.UseVisualStyleBackColor = false;
+            this.BT_APLICARCAMBIOS490WC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(6)))), ((int)(((byte)(13)))));
+            this.BT_APLICARCAMBIOS490WC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BT_APLICARCAMBIOS490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.BT_APLICARCAMBIOS490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
+            this.BT_APLICARCAMBIOS490WC.Location = new System.Drawing.Point(676, 607);
+            this.BT_APLICARCAMBIOS490WC.Name = "BT_APLICARCAMBIOS490WC";
+            this.BT_APLICARCAMBIOS490WC.Size = new System.Drawing.Size(131, 53);
+            this.BT_APLICARCAMBIOS490WC.TabIndex = 121;
+            this.BT_APLICARCAMBIOS490WC.Text = "Aplicar Cambios";
+            this.BT_APLICARCAMBIOS490WC.UseVisualStyleBackColor = false;
+            this.BT_APLICARCAMBIOS490WC.Click += new System.EventHandler(this.BT_APLICARCAMBIOS490WC_Click);
             // 
-            // button2
+            // BT_CONSULTARCAMBIOS490WC
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(6)))), ((int)(((byte)(13)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button2.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
-            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.button2.Location = new System.Drawing.Point(400, 672);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(174, 53);
-            this.button2.TabIndex = 122;
-            this.button2.Text = "Consultar Cambios";
-            this.button2.UseVisualStyleBackColor = false;
+            this.BT_CONSULTARCAMBIOS490WC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(6)))), ((int)(((byte)(13)))));
+            this.BT_CONSULTARCAMBIOS490WC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BT_CONSULTARCAMBIOS490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.BT_CONSULTARCAMBIOS490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
+            this.BT_CONSULTARCAMBIOS490WC.Location = new System.Drawing.Point(400, 606);
+            this.BT_CONSULTARCAMBIOS490WC.Name = "BT_CONSULTARCAMBIOS490WC";
+            this.BT_CONSULTARCAMBIOS490WC.Size = new System.Drawing.Size(131, 53);
+            this.BT_CONSULTARCAMBIOS490WC.TabIndex = 122;
+            this.BT_CONSULTARCAMBIOS490WC.Text = "Consultar Cambios";
+            this.BT_CONSULTARCAMBIOS490WC.UseVisualStyleBackColor = false;
+            this.BT_CONSULTARCAMBIOS490WC.Click += new System.EventHandler(this.BT_CONSULTARCAMBIOS490WC_Click);
             // 
-            // AplicarCambiosBoleto490WC
+            // FormAplicarCambiosBoleto490WC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(27)))), ((int)(((byte)(38)))));
-            this.ClientSize = new System.Drawing.Size(838, 738);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.progressBar1);
-            this.Controls.Add(this.BT_CANJEARBENEFICIO490WC);
-            this.Controls.Add(this.BT_APLICARBENEFICIO490WC);
+            this.ClientSize = new System.Drawing.Size(838, 671);
+            this.Controls.Add(this.BT_CONSULTARCAMBIOS490WC);
+            this.Controls.Add(this.BT_APLICARCAMBIOS490WC);
+            this.Controls.Add(this.BarraProgresoConsulta490WC);
+            this.Controls.Add(this.BT_SELECCIONARBENEFICIO490WC);
             this.Controls.Add(this.LABEL_DATOSBENEFICIOSCLIENTE490WC);
             this.Controls.Add(this.CB_BENEFICIOSCLIENTE490WC);
             this.Controls.Add(this.LABEL_ASIENTO490WC);
@@ -399,16 +388,18 @@
             this.Controls.Add(this.LABEL_FECHAPARTIDA_IDA490WC);
             this.Controls.Add(this.calendarioFECHALLEGADA_IDA490WC);
             this.Controls.Add(this.calendarioFECHAPARTIDA_IDA490WC);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.LB_CARTELERACAMBIOS490WC);
+            this.Controls.Add(this.TB_CARTELERACAMBIOS490WC);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.BT_BUSCARBOLETO490WC);
-            this.Controls.Add(this.TB_DNI490WC);
+            this.Controls.Add(this.TB_NUMEROBOLETO490WC);
             this.Controls.Add(this.LABEL_INFOPARCIALBOLETO490WC);
-            this.Controls.Add(this.TBINFOBOLETOGENERAR490WC);
-            this.Name = "AplicarCambiosBoleto490WC";
+            this.Controls.Add(this.TBINFOBOLETOINFOPREVIA490WC);
+            this.Name = "FormAplicarCambiosBoleto490WC";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AplicarCambiosBoleto490WC";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormAplicarCambiosBoleto490WC_FormClosed);
+            this.Load += new System.EventHandler(this.FormAplicarCambiosBoleto490WC_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -417,12 +408,12 @@
         #endregion
 
         private System.Windows.Forms.Label LABEL_INFOPARCIALBOLETO490WC;
-        private System.Windows.Forms.TextBox TBINFOBOLETOGENERAR490WC;
+        private System.Windows.Forms.TextBox TBINFOBOLETOINFOPREVIA490WC;
         private System.Windows.Forms.Button BT_BUSCARBOLETO490WC;
-        private System.Windows.Forms.TextBox TB_DNI490WC;
+        private System.Windows.Forms.TextBox TB_NUMEROBOLETO490WC;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label LB_CARTELERACAMBIOS490WC;
+        private System.Windows.Forms.TextBox TB_CARTELERACAMBIOS490WC;
         private System.Windows.Forms.Label LABEL_FECHALLEGADA_VUELTA490WC;
         private System.Windows.Forms.Label LABEL_FECHAPARTIDA_VUELTA490WC;
         private System.Windows.Forms.MonthCalendar calendarioFECHAPARTIDA_VUELTA490WC;
@@ -437,12 +428,11 @@
         private System.Windows.Forms.TextBox TB_PESOEQUIPAJE490WC;
         private System.Windows.Forms.Label LABEL_ASIENTO490WC;
         private System.Windows.Forms.TextBox TB_ASIENTO490WC;
-        private System.Windows.Forms.Button BT_APLICARBENEFICIO490WC;
         private System.Windows.Forms.Label LABEL_DATOSBENEFICIOSCLIENTE490WC;
         private System.Windows.Forms.ComboBox CB_BENEFICIOSCLIENTE490WC;
-        private System.Windows.Forms.Button BT_CANJEARBENEFICIO490WC;
-        private System.Windows.Forms.ProgressBar progressBar1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button BT_SELECCIONARBENEFICIO490WC;
+        private System.Windows.Forms.ProgressBar BarraProgresoConsulta490WC;
+        private System.Windows.Forms.Button BT_APLICARCAMBIOS490WC;
+        private System.Windows.Forms.Button BT_CONSULTARCAMBIOS490WC;
     }
 }

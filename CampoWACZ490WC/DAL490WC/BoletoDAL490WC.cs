@@ -339,6 +339,15 @@ namespace DAL490WC
                     }
                 }
 
+                if (ExisteBoletoEnAsientoParaModificar490WC(BoletoModificado490WC))
+                {
+                    return false;
+                }
+
+                if (ExisteModificacionPendienteDelBoletoOriginal490WC(BoletoModificado490WC))
+                {
+                    return false;
+                }
 
                 // Generar nuevo ID
                 string queryMaxId = "SELECT ISNULL(MAX(CAST(ID490WC AS INT)), 0) + 1 FROM Boleto490WC";
@@ -371,7 +380,7 @@ namespace DAL490WC
                         comando490WC.Parameters.AddWithValue("@CambiosRealizados490WC", boletoIDA490WC.CambiosRealizados490WC);
                         comando490WC.Parameters.AddWithValue("@BeneficioAplicado490WC",
                             string.IsNullOrEmpty(boletoIDA490WC.BeneficioAplicado490WC) ? (object)DBNull.Value : boletoIDA490WC.BeneficioAplicado490WC);
-
+                        
                         comando490WC.ExecuteNonQuery();
                     }
                 }
@@ -397,13 +406,36 @@ namespace DAL490WC
                         comando490WC.Parameters.AddWithValue("@CambiosRealizados490WC", boletoIDAVUELTA490WC.CambiosRealizados490WC);
                         comando490WC.Parameters.AddWithValue("@BeneficioAplicado490WC",
                             string.IsNullOrEmpty(boletoIDAVUELTA490WC.BeneficioAplicado490WC) ? (object)DBNull.Value : boletoIDAVUELTA490WC.BeneficioAplicado490WC);
-
+                        
                         comando490WC.ExecuteNonQuery();
                     }
                 }
             }
             return true;
         }
+
+        public bool ExisteModificacionPendienteDelBoletoOriginal490WC(Boleto490WC boletoOriginal)
+        {
+            using (SqlConnection con = GestorConexion490WC.GestorCone490WC.DevolverConexion490WC())
+            {
+                con.Open();
+
+                string query = @"
+            SELECT COUNT(*) 
+            FROM Boleto490WC 
+            WHERE IsVendido490WC = 0 
+              AND CambiosRealizados490WC LIKE @IdOriginal + ';%'";
+
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("@IdOriginal", boletoOriginal.IDBoleto490WC);
+                    int count = (int)cmd.ExecuteScalar();
+                    return count > 0;
+                }
+            }
+        }
+
+
 
         public void CambiarTitularBoletoModificado490WC(Boleto490WC boletoModificado490WC)
         {
@@ -640,14 +672,14 @@ namespace DAL490WC
             }
         }
 
-        public Boleto490WC ObtenerBoletoParaModificarPorID490WC(string ID490WC)
+        public Boleto490WC  ObtenerBoletoParaModificarPorID490WC(string ID490WC)
         {
             using (SqlConnection cone490WC = GestorConexion490WC.GestorCone490WC.DevolverConexion490WC())
             {
                 List<Cliente490WC> Titulares490WC = new ClienteDAL490WC().ObtenerTodosLosCliente490WC();
                 cone490WC.Open();
 
-                string query490WC = "SELECT * FROM Boleto490WC WHERE ID490WC = @ID490WC";
+                string query490WC = "SELECT * FROM Boleto490WC WHERE ID490WC = @ID490WC AND IsVendido490WC = 1";
                 using (SqlCommand comando490WC = new SqlCommand(query490WC, cone490WC))
                 {
                     comando490WC.Parameters.AddWithValue("@ID490WC", ID490WC);

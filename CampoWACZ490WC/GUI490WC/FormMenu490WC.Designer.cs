@@ -39,6 +39,8 @@
             this.BT_ReporteFacturas490WC = new System.Windows.Forms.Button();
             this.BT_Reportes490WC = new System.Windows.Forms.Button();
             this.panelSubmenuModificacionBoleto490WC = new System.Windows.Forms.Panel();
+            this.BT_COBRARCAMBIOS490WC = new System.Windows.Forms.Button();
+            this.BT_APLICARCAMBIOS490WC = new System.Windows.Forms.Button();
             this.BT_ModificacionBoleto490WC = new System.Windows.Forms.Button();
             this.panelSubmenuCompra490WC = new System.Windows.Forms.Panel();
             this.BT_CompraFacturacion = new System.Windows.Forms.Button();
@@ -66,8 +68,6 @@
             this.panelPrincipal = new System.Windows.Forms.Panel();
             this.LabelRolUsuario490WC = new System.Windows.Forms.Label();
             this.LabelNombreUsuarios490WC = new System.Windows.Forms.Label();
-            this.BT_APLICARCAMBIOS490WC = new System.Windows.Forms.Button();
-            this.BT_COBRARCAMBIOS490WC = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMascotaCZWC490)).BeginInit();
             this.panelBotones490WC.SuspendLayout();
             this.panelSubmenuReportes490WC.SuspendLayout();
@@ -244,6 +244,38 @@
             this.panelSubmenuModificacionBoleto490WC.Name = "panelSubmenuModificacionBoleto490WC";
             this.panelSubmenuModificacionBoleto490WC.Size = new System.Drawing.Size(183, 88);
             this.panelSubmenuModificacionBoleto490WC.TabIndex = 9;
+            // 
+            // BT_COBRARCAMBIOS490WC
+            // 
+            this.BT_COBRARCAMBIOS490WC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(27)))), ((int)(((byte)(38)))));
+            this.BT_COBRARCAMBIOS490WC.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BT_COBRARCAMBIOS490WC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BT_COBRARCAMBIOS490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.BT_COBRARCAMBIOS490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
+            this.BT_COBRARCAMBIOS490WC.Location = new System.Drawing.Point(0, 44);
+            this.BT_COBRARCAMBIOS490WC.Name = "BT_COBRARCAMBIOS490WC";
+            this.BT_COBRARCAMBIOS490WC.Size = new System.Drawing.Size(183, 44);
+            this.BT_COBRARCAMBIOS490WC.TabIndex = 4;
+            this.BT_COBRARCAMBIOS490WC.Tag = "";
+            this.BT_COBRARCAMBIOS490WC.Text = "Cobrar Cambios";
+            this.BT_COBRARCAMBIOS490WC.UseVisualStyleBackColor = false;
+            this.BT_COBRARCAMBIOS490WC.Click += new System.EventHandler(this.BT_COBRARCAMBIOS490WC_Click);
+            // 
+            // BT_APLICARCAMBIOS490WC
+            // 
+            this.BT_APLICARCAMBIOS490WC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(27)))), ((int)(((byte)(38)))));
+            this.BT_APLICARCAMBIOS490WC.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BT_APLICARCAMBIOS490WC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BT_APLICARCAMBIOS490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.BT_APLICARCAMBIOS490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
+            this.BT_APLICARCAMBIOS490WC.Location = new System.Drawing.Point(0, 0);
+            this.BT_APLICARCAMBIOS490WC.Name = "BT_APLICARCAMBIOS490WC";
+            this.BT_APLICARCAMBIOS490WC.Size = new System.Drawing.Size(183, 44);
+            this.BT_APLICARCAMBIOS490WC.TabIndex = 3;
+            this.BT_APLICARCAMBIOS490WC.Tag = "";
+            this.BT_APLICARCAMBIOS490WC.Text = "Aplicar Cambios";
+            this.BT_APLICARCAMBIOS490WC.UseVisualStyleBackColor = false;
+            this.BT_APLICARCAMBIOS490WC.Click += new System.EventHandler(this.BT_APLICARCAMBIOS490WC_Click);
             // 
             // BT_ModificacionBoleto490WC
             // 
@@ -653,36 +685,6 @@
             this.LabelNombreUsuarios490WC.Size = new System.Drawing.Size(61, 20);
             this.LabelNombreUsuarios490WC.TabIndex = 0;
             this.LabelNombreUsuarios490WC.Text = "label1";
-            // 
-            // BT_APLICARCAMBIOS490WC
-            // 
-            this.BT_APLICARCAMBIOS490WC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(27)))), ((int)(((byte)(38)))));
-            this.BT_APLICARCAMBIOS490WC.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BT_APLICARCAMBIOS490WC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BT_APLICARCAMBIOS490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
-            this.BT_APLICARCAMBIOS490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.BT_APLICARCAMBIOS490WC.Location = new System.Drawing.Point(0, 0);
-            this.BT_APLICARCAMBIOS490WC.Name = "BT_APLICARCAMBIOS490WC";
-            this.BT_APLICARCAMBIOS490WC.Size = new System.Drawing.Size(183, 44);
-            this.BT_APLICARCAMBIOS490WC.TabIndex = 3;
-            this.BT_APLICARCAMBIOS490WC.Tag = "";
-            this.BT_APLICARCAMBIOS490WC.Text = "Aplicar Cambios";
-            this.BT_APLICARCAMBIOS490WC.UseVisualStyleBackColor = false;
-            // 
-            // BT_COBRARCAMBIOS490WC
-            // 
-            this.BT_COBRARCAMBIOS490WC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(27)))), ((int)(((byte)(38)))));
-            this.BT_COBRARCAMBIOS490WC.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BT_COBRARCAMBIOS490WC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BT_COBRARCAMBIOS490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
-            this.BT_COBRARCAMBIOS490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.BT_COBRARCAMBIOS490WC.Location = new System.Drawing.Point(0, 44);
-            this.BT_COBRARCAMBIOS490WC.Name = "BT_COBRARCAMBIOS490WC";
-            this.BT_COBRARCAMBIOS490WC.Size = new System.Drawing.Size(183, 44);
-            this.BT_COBRARCAMBIOS490WC.TabIndex = 4;
-            this.BT_COBRARCAMBIOS490WC.Tag = "";
-            this.BT_COBRARCAMBIOS490WC.Text = "Cobrar Cambios";
-            this.BT_COBRARCAMBIOS490WC.UseVisualStyleBackColor = false;
             // 
             // FormMenu490WC
             // 

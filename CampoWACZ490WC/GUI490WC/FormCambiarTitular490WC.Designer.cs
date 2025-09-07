@@ -378,6 +378,8 @@
             this.Name = "FormCambiarTitular490WC";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormCambiarTitular490WC";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormCambiarTitular490WC_FormClosed);
+            this.Load += new System.EventHandler(this.FormCambiarTitular490WC_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCliente490WC)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

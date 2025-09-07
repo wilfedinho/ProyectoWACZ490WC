@@ -26,6 +26,8 @@ namespace GUI490WC
         FormBitacoraDeEventos490WC formBitacoraDeEventos490WC;
         FormBackUp490WC formBackUp490WC;
         FormRestore490WC formRestore490WC;
+        FormAplicarCambiosBoleto490WC formAplicarCambiosBoleto490WC;
+        FormCobrarCambios490WC formCobrarCambios490WC;
 
         public FormMenu490WC()
         {
@@ -449,6 +451,20 @@ namespace GUI490WC
                 GestorForm490WC.gestorFormSG490WC.DefinirEstado490WC(new EstadoCerrarAplicacion490WC());
             }
             catch { }
+        }
+
+        private void BT_APLICARCAMBIOS490WC_Click(object sender, EventArgs e)
+        {
+            formAplicarCambiosBoleto490WC = new FormAplicarCambiosBoleto490WC();
+            formAplicarCambiosBoleto490WC.ShowDialog();
+            hideSubmenu490WC();
+        }
+
+        private void BT_COBRARCAMBIOS490WC_Click(object sender, EventArgs e)
+        {
+            formCobrarCambios490WC = new FormCobrarCambios490WC();
+            formCobrarCambios490WC.ShowDialog();
+            hideSubmenu490WC();
         }
     }
 }

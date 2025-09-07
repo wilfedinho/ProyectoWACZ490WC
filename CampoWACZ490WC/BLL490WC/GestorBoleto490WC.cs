@@ -180,6 +180,53 @@ namespace BLL490WC
 
         #endregion
 
+        #region Operaciones Boleto RFN2
+
+        public bool GenerarBoletoModificado490WC(Boleto490WC BoletoModificado490WC)
+        {
+            BoletoDAL490WC gestorBoleto490WC = new BoletoDAL490WC();
+            if (gestorBoleto490WC.GenerarBoletoModificado490WC(BoletoModificado490WC))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public Boleto490WC ObtenerBoletoParaModificarPorID490WC(string ID490WC)
+        {
+            BoletoDAL490WC gestorBoleto490WC = new BoletoDAL490WC();
+            return gestorBoleto490WC.ObtenerBoletoParaModificarPorID490WC(ID490WC);
+        }
+
+        public List<Boleto490WC> ObtenerBoletosModificadosPorPagarCliente490WC(Cliente490WC cliente490WC)
+        {
+            BoletoDAL490WC gestorBoleto490WC = new BoletoDAL490WC();
+            return gestorBoleto490WC.ObtenerBoletosModificadosPorPagarCliente490WC(cliente490WC);
+        }
+
+        public List<Boleto490WC> ObtenerBoletosPagadosCliente490WC(Cliente490WC cliente490WC)
+        {
+            BoletoDAL490WC gestorBoleto490WC = new BoletoDAL490WC();
+            return gestorBoleto490WC.ObtenerBoletosPagadosCliente490WC(cliente490WC);
+        }
+
+        public void CobrarBoletoModificado490WC(Boleto490WC boletoCopia490WC)
+        {
+            BoletoDAL490WC gestorBoleto490WC = new BoletoDAL490WC();
+            gestorBoleto490WC.CobrarBoletoModificado490WC(boletoCopia490WC);
+        }
+
+        public void CambiarTitularBoletoModificado490WC(Boleto490WC boletoModificado490WC)
+        {
+            BoletoDAL490WC gestorBoleto490WC = new BoletoDAL490WC();
+            gestorBoleto490WC.CambiarTitularBoletoModificado490WC(boletoModificado490WC);
+        }
+
+        #endregion
+
         #region Verificar Formatos
 
         public bool VerificarFormatoAsiento490WC(string FormatoAsiento490WC)
@@ -241,6 +288,8 @@ namespace BLL490WC
             BoletoDAL490WC boletoDAL490WC = new BoletoDAL490WC();
             return boletoDAL490WC.ObtenerBoletoConBeneficio490WC(ID490WC);
         }
+
+
 
         #endregion
 
