@@ -81,7 +81,7 @@ namespace GUI490WC
                                     datosTarjeta490WC = Cifrador490WC.GestorCifrador490WC.EncriptarReversible490WC(datosTarjeta490WC);
                                     if (gestorPagos490WC.ValidarPago490WC(datosTarjeta490WC, totalFactura490WC))
                                     {
-                                        if (boletoCargado490WC.BeneficioAplicado490WC != null)
+                                        if (boletoCargado490WC.BeneficioAplicado490WC != null || boletoCargado490WC.BeneficioAplicado490WC != "")
                                         {
                                             Factura490WC facturaAlta490WC = new Factura490WC(gestorFactura490WC.ObtenerTodasLasFacturas490WC().Count + 1, clienteCargado490WC.Nombre490WC, clienteCargado490WC.Apellido490WC, clienteCargado490WC.DNI490WC, DateTime.Now.ToShortDateString(), DateTime.Now.ToShortTimeString(), boletoCargado490WC.IDBoleto490WC, boletoCargado490WC.Precio490WC, totalFactura490WC, boletoCargado490WC.BeneficioAplicado490WC);
                                             gestorFactura490WC.Alta490WC(facturaAlta490WC);

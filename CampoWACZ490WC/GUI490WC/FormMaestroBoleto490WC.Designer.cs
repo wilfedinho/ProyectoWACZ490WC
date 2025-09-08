@@ -425,7 +425,7 @@
             this.RBIDA490WC.Checked = true;
             this.RBIDA490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.RBIDA490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.RBIDA490WC.Location = new System.Drawing.Point(491, 342);
+            this.RBIDA490WC.Location = new System.Drawing.Point(599, 342);
             this.RBIDA490WC.Name = "RBIDA490WC";
             this.RBIDA490WC.Size = new System.Drawing.Size(57, 24);
             this.RBIDA490WC.TabIndex = 53;
@@ -439,7 +439,7 @@
             this.RBIDAVUELTA490WC.AutoSize = true;
             this.RBIDAVUELTA490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.RBIDAVUELTA490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.RBIDAVUELTA490WC.Location = new System.Drawing.Point(569, 342);
+            this.RBIDAVUELTA490WC.Location = new System.Drawing.Point(677, 342);
             this.RBIDAVUELTA490WC.Name = "RBIDAVUELTA490WC";
             this.RBIDAVUELTA490WC.Size = new System.Drawing.Size(133, 24);
             this.RBIDAVUELTA490WC.TabIndex = 54;

@@ -309,14 +309,14 @@ namespace GUI490WC
 
         private void BT_CompraFacturacion_Click(object sender, EventArgs e)
         {
-            try
-            {
+           // try
+           // {
                 formGenerarFactura490WC = new FormGenerarFactura490WC();
                 formGenerarFactura490WC.ShowDialog();
                 hideSubmenu490WC();
                 this?.Show();
-            }
-            catch { }
+           // }
+           // catch { }
         }
 
         private void BT_Reportes490WC_Click(object sender, EventArgs e)
