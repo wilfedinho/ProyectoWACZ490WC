@@ -465,6 +465,7 @@
             this.BT_CAMBIARTITULAR.TabIndex = 107;
             this.BT_CAMBIARTITULAR.Text = "Cambiar Titular Boleto";
             this.BT_CAMBIARTITULAR.UseVisualStyleBackColor = false;
+            this.BT_CAMBIARTITULAR.Click += new System.EventHandler(this.BT_CAMBIARTITULAR_Click);
             // 
             // LB_DATOSFACTURACION490WC
             // 

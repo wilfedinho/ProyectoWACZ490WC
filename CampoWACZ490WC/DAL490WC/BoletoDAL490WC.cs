@@ -3,6 +3,7 @@ using SERVICIOS490WC;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -454,13 +455,15 @@ namespace DAL490WC
             {
                 cone490WC.Open();
                 string[] cambios490WC = boletoModificado490WC.CambiosRealizados490WC.Split(';');
-                string idBoletoOriginal490WC = cambios490WC[0];
+                //string idBoletoOriginal490WC = cambios490WC[0];
                 SqlCommand comandoActulizar490WC = new SqlCommand(); 
-                string updateQuery = $@"UPDATE Boleto490WC SET CambiosRealizados490WC = @CambiosRealizados490WC, Titular490WC = @Titular490WC WHERE ID490WC = @IDBoletoOriginal490WC";
+                string updateQuery = $@"UPDATE Boleto490WC SET CambiosRealizados490WC = @CambiosRealizados490WC, Titular490WC = @Titular490WC, Precio490WC = @Precio490WC WHERE ID490WC = @IDBoletoOriginal490WC";
 
                 comandoActulizar490WC.CommandText = updateQuery;
-                comandoActulizar490WC.Parameters.AddWithValue("@IDBoletoOriginal490WC", idBoletoOriginal490WC);
-                comandoActulizar490WC.Parameters.AddWithValue("@Titular490WC", cambios490WC[9]);
+                comandoActulizar490WC.Connection = cone490WC;
+                comandoActulizar490WC.Parameters.AddWithValue("@IDBoletoOriginal490WC", boletoModificado490WC.IDBoleto490WC);
+                comandoActulizar490WC.Parameters.AddWithValue("@Titular490WC", boletoModificado490WC.Titular490WC.DNI490WC);
+                comandoActulizar490WC.Parameters.AddWithValue("@Precio490WC", boletoModificado490WC.Precio490WC);
                 comandoActulizar490WC.Parameters.AddWithValue("@CambiosRealizados490WC", boletoModificado490WC.CambiosRealizados490WC);
 
                 comandoActulizar490WC.ExecuteNonQuery();
@@ -487,22 +490,26 @@ namespace DAL490WC
                 if (!string.IsNullOrWhiteSpace(cambios490WC[1]))
                 {
                     campos490WC.Add("FechaPartidaIDA490WC = @FechaPartidaIDA490WC");
-                    comandoActulizar490WC.Parameters.AddWithValue("@FechaPartidaIDA490WC", cambios490WC[1]);
+                    DateTime fecha490WC = DateTime.ParseExact(cambios490WC[1], "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                    comandoActulizar490WC.Parameters.AddWithValue("@FechaPartidaIDA490WC", fecha490WC);
                 }
                 if (!string.IsNullOrWhiteSpace(cambios490WC[2]))
                 {
                     campos490WC.Add("FechaPartidaVUELTA490WC = @FechaPartidaVUELTA490WC");
-                    comandoActulizar490WC.Parameters.AddWithValue("@FechaPartidaVUELTA490WC", cambios490WC[2]);
+                    DateTime fecha490WC = DateTime.ParseExact(cambios490WC[2], "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                    comandoActulizar490WC.Parameters.AddWithValue("@FechaPartidaVUELTA490WC", fecha490WC);
                 }
                 if (!string.IsNullOrWhiteSpace(cambios490WC[3]))
                 {
                     campos490WC.Add("FechaLlegadaIDA490WC = @FechaLlegadaIDA490WC");
-                    comandoActulizar490WC.Parameters.AddWithValue("@FechaLlegadaIDA490WC", cambios490WC[3]);
+                    DateTime fecha490WC = DateTime.ParseExact(cambios490WC[3], "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                    comandoActulizar490WC.Parameters.AddWithValue("@FechaLlegadaIDA490WC", fecha490WC);
                 }
                 if (!string.IsNullOrWhiteSpace(cambios490WC[4]))
                 {
                     campos490WC.Add("FechaLlegadaVUELTA490WC = @FechaLlegadaVUELTA490WC");
-                    comandoActulizar490WC.Parameters.AddWithValue("@FechaLlegadaVUELTA490WC", cambios490WC[4]);
+                    DateTime fecha490WC = DateTime.ParseExact(cambios490WC[4],"dd/MM/yyyy",CultureInfo.InvariantCulture);
+                    comandoActulizar490WC.Parameters.AddWithValue("@FechaLlegadaVUELTA490WC", fecha490WC);
                 }
                 if (!string.IsNullOrWhiteSpace(cambios490WC[5]))
                 {

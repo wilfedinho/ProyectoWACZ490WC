@@ -213,6 +213,7 @@
             this.BT_REGISTRARCLIENTE490WC.TabIndex = 83;
             this.BT_REGISTRARCLIENTE490WC.Text = "Registrar Cliente";
             this.BT_REGISTRARCLIENTE490WC.UseVisualStyleBackColor = false;
+            this.BT_REGISTRARCLIENTE490WC.Click += new System.EventHandler(this.BT_REGISTRARCLIENTE490WC_Click);
             // 
             // LABEL_NOMBRE_ABM_USUARIO490WC
             // 
@@ -292,6 +293,7 @@
             this.BT_CAMBIARTITULAR490WC.TabIndex = 98;
             this.BT_CAMBIARTITULAR490WC.Text = "Cambiar Titular";
             this.BT_CAMBIARTITULAR490WC.UseVisualStyleBackColor = false;
+            this.BT_CAMBIARTITULAR490WC.Click += new System.EventHandler(this.BT_CAMBIARTITULAR490WC_Click);
             // 
             // dgvCliente490WC
             // 
