@@ -23,6 +23,7 @@ namespace GUI490WC
 
         private void BT_BUSCARBACKUP490WC_Click(object sender, EventArgs e)
         {
+
             TB_RUTABACKUP490WC.Clear();
             using (FolderBrowserDialog FBD490WC = new FolderBrowserDialog())
             {
@@ -34,22 +35,28 @@ namespace GUI490WC
                     TB_RUTABACKUP490WC.Text = direccionBackup;
                 }
             }
+
+
         }
 
         private void BT_EJECUTARBACKUP490WC_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(TB_RUTABACKUP490WC.Text) && !string.IsNullOrWhiteSpace(TB_RUTABACKUP490WC.Text))
+            try
             {
-                GestorBackUpRestore490WC gestorBackUpRestore490WC = new GestorBackUpRestore490WC();
-                gestorBackUpRestore490WC.RealizarBackUp490WC(TB_RUTABACKUP490WC.Text);
-                MessageBox.Show("Respaldo realizado con éxito.");
-                TB_RUTABACKUP490WC.Clear();
+                if (!string.IsNullOrEmpty(TB_RUTABACKUP490WC.Text) && !string.IsNullOrWhiteSpace(TB_RUTABACKUP490WC.Text))
+                {
+                    GestorBackUpRestore490WC gestorBackUpRestore490WC = new GestorBackUpRestore490WC();
+                    gestorBackUpRestore490WC.RealizarBackUp490WC(TB_RUTABACKUP490WC.Text);
+                    MessageBox.Show("Respaldo realizado con éxito.");
+                    TB_RUTABACKUP490WC.Clear();
+                }
+                else
+                {
+                    MessageBox.Show("Debe seleccionar una ruta para guardar el archivo de respaldo.");
+                    TB_RUTABACKUP490WC.Clear();
+                }
             }
-            else
-            {
-                MessageBox.Show("Debe seleccionar una ruta para guardar el archivo de respaldo.");
-                TB_RUTABACKUP490WC.Clear();
-            }
+            catch { MessageBox.Show("Ruta Seleccionada Invalida Para Realizar  El Respaldo"); }
         }
 
         public void ActualizarLenguaje490WC()

@@ -256,7 +256,7 @@
             this.BT_COBRARCAMBIOS490WC.Name = "BT_COBRARCAMBIOS490WC";
             this.BT_COBRARCAMBIOS490WC.Size = new System.Drawing.Size(183, 44);
             this.BT_COBRARCAMBIOS490WC.TabIndex = 4;
-            this.BT_COBRARCAMBIOS490WC.Tag = "";
+            this.BT_COBRARCAMBIOS490WC.Tag = "Acceder a Cobrar Cambios";
             this.BT_COBRARCAMBIOS490WC.Text = "Cobrar Cambios";
             this.BT_COBRARCAMBIOS490WC.UseVisualStyleBackColor = false;
             this.BT_COBRARCAMBIOS490WC.Click += new System.EventHandler(this.BT_COBRARCAMBIOS490WC_Click);
@@ -272,7 +272,7 @@
             this.BT_APLICARCAMBIOS490WC.Name = "BT_APLICARCAMBIOS490WC";
             this.BT_APLICARCAMBIOS490WC.Size = new System.Drawing.Size(183, 44);
             this.BT_APLICARCAMBIOS490WC.TabIndex = 3;
-            this.BT_APLICARCAMBIOS490WC.Tag = "";
+            this.BT_APLICARCAMBIOS490WC.Tag = "Acceder a Aplicar Cambios";
             this.BT_APLICARCAMBIOS490WC.Text = "Aplicar Cambios";
             this.BT_APLICARCAMBIOS490WC.UseVisualStyleBackColor = false;
             this.BT_APLICARCAMBIOS490WC.Click += new System.EventHandler(this.BT_APLICARCAMBIOS490WC_Click);

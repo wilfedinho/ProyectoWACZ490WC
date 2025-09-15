@@ -206,10 +206,17 @@ namespace SERVICIOS490WC
         }
         public bool VerificarEmailDuplicadoModificar490WC(string emailAntiguo, string emailNuevo)
         {
-            Usuario490WC usuario = BuscarUsuarioPorEmail490WC(emailAntiguo);
-            if (usuario != null && emailAntiguo != emailNuevo)
+            Usuario490WC usuario = BuscarUsuarioPorEmail490WC(emailNuevo);
+            if (usuario != null)
             {
-                return true;
+                if (emailAntiguo == emailNuevo)
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
             }
             else
             {
