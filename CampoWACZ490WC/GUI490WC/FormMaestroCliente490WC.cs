@@ -8,6 +8,7 @@ using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -41,7 +42,9 @@ namespace GUI490WC
             listaClientes490WC = gestorCliente490WC.ObtenerTodosLosCliente490WC();
             foreach (Cliente490WC clienteMostrar490WC in listaClientes490WC)
             {
-                indiceRow490WC = dgvCliente490WC.Rows.Add(clienteMostrar490WC.DNI490WC, clienteMostrar490WC.Nombre490WC, clienteMostrar490WC.Apellido490WC, clienteMostrar490WC.EstrellasCliente490WC, null);
+                string emailsCliente490WC = string.Join(", ", clienteMostrar490WC.Emails490WC);
+                string celularesCliente490WC = string.Join(", ", clienteMostrar490WC.Celulares490WC);
+                indiceRow490WC = dgvCliente490WC.Rows.Add(clienteMostrar490WC.DNI490WC, clienteMostrar490WC.Nombre490WC, clienteMostrar490WC.Apellido490WC, clienteMostrar490WC.Direccion490WC,emailsCliente490WC,celularesCliente490WC,clienteMostrar490WC.EstrellasCliente490WC, null);
                 if (clienteMostrar490WC.Activo490WC == false && dgvCliente490WC.Rows.Count > 0)
                 {
                     dgvCliente490WC.Rows[indiceRow490WC].DefaultCellStyle.BackColor = Color.LightCoral;
@@ -600,9 +603,19 @@ namespace GUI490WC
                     }
                     else
                     {
-                        listBoxDesSerializar490WC.Items.Clear();
+                        dgvCliente490WC.Rows.Clear();
+                        int indiceRow490WC = 0;
                         GestorCliente490WC gestorCliente490WC = new GestorCliente490WC();
-                        listBoxDesSerializar490WC.Items.AddRange(gestorCliente490WC.DeserializarCliente490WC(rutaArchivo490WC).ToArray());
+                        foreach (Cliente490WC cliente490WC in gestorCliente490WC.DeserializarCliente490WC(rutaArchivo490WC))
+                        {
+                            string emailsCliente490WC = string.Join(", ", cliente490WC.Emails490WC);
+                            string celularesCliente490WC = string.Join(", ", cliente490WC.Celulares490WC);
+                            indiceRow490WC = dgvCliente490WC.Rows.Add(cliente490WC.DNI490WC, cliente490WC.Nombre490WC, cliente490WC.Apellido490WC, cliente490WC.Direccion490WC, emailsCliente490WC, celularesCliente490WC, cliente490WC.EstrellasCliente490WC, null);
+                            if (cliente490WC.Activo490WC == false && dgvCliente490WC.Rows.Count > 0)
+                            {
+                                dgvCliente490WC.Rows[indiceRow490WC].DefaultCellStyle.BackColor = Color.LightCoral;
+                            }
+                        }
                         BT_LIMPIARDESERIALIZAR490WC.Enabled = true;
                     }
                 }
@@ -611,8 +624,8 @@ namespace GUI490WC
 
         private void BT_LIMPIARDESERIALIZAR490WC_Click(object sender, EventArgs e)
         {
-            listBoxDesSerializar490WC.Items.Clear();
-            BT_LIMPIARDESERIALIZAR490WC.Enabled = false;
+            Mostrar490WC();
+            
         }
     }
 }

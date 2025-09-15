@@ -63,24 +63,21 @@ namespace BLL490WC
             }
         }
 
-        public List<string> DeserializarCliente490WC(string ruta490WC)
+        public List<Cliente490WC> DeserializarCliente490WC(string ruta490WC)
         {
             XmlSerializer serializador490WC = new XmlSerializer(typeof(List<Cliente490WC>), new XmlRootAttribute("ArrayOfCliente490WC"));
-            using(FileStream FS490WC = new FileStream(ruta490WC, FileMode.Open, FileAccess.Read))
+            using (FileStream FS490WC = new FileStream(ruta490WC, FileMode.Open, FileAccess.Read))
             {
                 Bitacora490WC GestorBitacora490WC = new Bitacora490WC();
                 GestorBitacora490WC.AltaEvento490WC("Gestión Cliente", "Deserializar Clientes", 1);
+
+                
                 var clientes = (List<Cliente490WC>)serializador490WC.Deserialize(FS490WC);
 
-                return clientes.Select(c =>
-                    $"{c.DNI490WC}; {c.Apellido490WC}; {c.Nombre490WC}; " +
-                    $"{string.Join(", ", c.Emails490WC)}; " +
-                    $"{string.Join(", ", c.Celulares490WC)}; " +
-                    $"{Cifrador490WC.GestorCifrador490WC.DesencriptarReversible490WC(c.Direccion490WC)}; {c.Activo490WC}; {c.EstrellasCliente490WC}; " +
-                    $"{string.Join(", ", c.BeneficiosCliente490WC.Select(b => b.Nombre490WC))}"
-                ).ToList();
+                return clientes;
             }
         }
+
 
         public void GuardarXML490WC(string datosXML490WC, string patron490WC)
         {

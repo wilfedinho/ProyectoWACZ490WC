@@ -29,11 +29,6 @@
         private void InitializeComponent()
         {
             this.dgvCliente490WC = new System.Windows.Forms.DataGridView();
-            this.DNI_CLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NOMBRE_CLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.APELLIDO_CLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ESTRELLAS_CLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IMAGEN_ESTRELLA = new System.Windows.Forms.DataGridViewImageColumn();
             this.LABEL_NOMBRE_ABM_USUARIO490WC = new System.Windows.Forms.Label();
             this.LABEL_APELLIDO_ABM_USUARIO490WC = new System.Windows.Forms.Label();
             this.LABEL_DNI_ABM_USUARIO490WC = new System.Windows.Forms.Label();
@@ -65,9 +60,16 @@
             this.BT_MODOSERIALIZAR490WC = new System.Windows.Forms.Button();
             this.BT_ACEPTARSERIALIZAR490WC = new System.Windows.Forms.Button();
             this.BT_CANCELARSERIALIZAR490WC = new System.Windows.Forms.Button();
-            this.listBoxDesSerializar490WC = new System.Windows.Forms.ListBox();
             this.BT_DesSerializar490WC = new System.Windows.Forms.Button();
             this.BT_LIMPIARDESERIALIZAR490WC = new System.Windows.Forms.Button();
+            this.DNI_CLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NOMBRE_CLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.APELLIDO_CLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnaDireccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnaEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnaCelulares = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ESTRELLAS_CLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IMAGEN_ESTRELLA = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCliente490WC)).BeginInit();
             this.SuspendLayout();
             // 
@@ -83,6 +85,9 @@
             this.DNI_CLIENTE,
             this.NOMBRE_CLIENTE,
             this.APELLIDO_CLIENTE,
+            this.columnaDireccion,
+            this.columnaEmail,
+            this.columnaCelulares,
             this.ESTRELLAS_CLIENTE,
             this.IMAGEN_ESTRELLA});
             this.dgvCliente490WC.Location = new System.Drawing.Point(12, 12);
@@ -91,42 +96,10 @@
             this.dgvCliente490WC.ReadOnly = true;
             this.dgvCliente490WC.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvCliente490WC.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCliente490WC.Size = new System.Drawing.Size(812, 316);
+            this.dgvCliente490WC.Size = new System.Drawing.Size(1394, 316);
             this.dgvCliente490WC.TabIndex = 1;
             this.dgvCliente490WC.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvCliente490WC_CellMouseClick);
             this.dgvCliente490WC.SelectionChanged += new System.EventHandler(this.dgvCliente490WC_SelectionChanged);
-            // 
-            // DNI_CLIENTE
-            // 
-            this.DNI_CLIENTE.HeaderText = "DNI";
-            this.DNI_CLIENTE.Name = "DNI_CLIENTE";
-            this.DNI_CLIENTE.ReadOnly = true;
-            // 
-            // NOMBRE_CLIENTE
-            // 
-            this.NOMBRE_CLIENTE.HeaderText = "Nombre";
-            this.NOMBRE_CLIENTE.Name = "NOMBRE_CLIENTE";
-            this.NOMBRE_CLIENTE.ReadOnly = true;
-            // 
-            // APELLIDO_CLIENTE
-            // 
-            this.APELLIDO_CLIENTE.HeaderText = "Apellido";
-            this.APELLIDO_CLIENTE.Name = "APELLIDO_CLIENTE";
-            this.APELLIDO_CLIENTE.ReadOnly = true;
-            // 
-            // ESTRELLAS_CLIENTE
-            // 
-            this.ESTRELLAS_CLIENTE.HeaderText = "Estrellas";
-            this.ESTRELLAS_CLIENTE.Name = "ESTRELLAS_CLIENTE";
-            this.ESTRELLAS_CLIENTE.ReadOnly = true;
-            // 
-            // IMAGEN_ESTRELLA
-            // 
-            this.IMAGEN_ESTRELLA.HeaderText = "";
-            this.IMAGEN_ESTRELLA.Image = global::GUI490WC.Properties.Resources.Estrella_Mario;
-            this.IMAGEN_ESTRELLA.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.IMAGEN_ESTRELLA.Name = "IMAGEN_ESTRELLA";
-            this.IMAGEN_ESTRELLA.ReadOnly = true;
             // 
             // LABEL_NOMBRE_ABM_USUARIO490WC
             // 
@@ -200,7 +173,7 @@
             this.BT_ALTA_USUARIO490WC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BT_ALTA_USUARIO490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.BT_ALTA_USUARIO490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.BT_ALTA_USUARIO490WC.Location = new System.Drawing.Point(830, 16);
+            this.BT_ALTA_USUARIO490WC.Location = new System.Drawing.Point(1032, 359);
             this.BT_ALTA_USUARIO490WC.Name = "BT_ALTA_USUARIO490WC";
             this.BT_ALTA_USUARIO490WC.Size = new System.Drawing.Size(184, 47);
             this.BT_ALTA_USUARIO490WC.TabIndex = 30;
@@ -214,7 +187,7 @@
             this.BT_BAJA_USUARIO490WC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BT_BAJA_USUARIO490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.BT_BAJA_USUARIO490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.BT_BAJA_USUARIO490WC.Location = new System.Drawing.Point(830, 69);
+            this.BT_BAJA_USUARIO490WC.Location = new System.Drawing.Point(1032, 412);
             this.BT_BAJA_USUARIO490WC.Name = "BT_BAJA_USUARIO490WC";
             this.BT_BAJA_USUARIO490WC.Size = new System.Drawing.Size(184, 47);
             this.BT_BAJA_USUARIO490WC.TabIndex = 31;
@@ -228,7 +201,7 @@
             this.BT_MODIFICAR_USUARIO490WC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BT_MODIFICAR_USUARIO490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.BT_MODIFICAR_USUARIO490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.BT_MODIFICAR_USUARIO490WC.Location = new System.Drawing.Point(830, 122);
+            this.BT_MODIFICAR_USUARIO490WC.Location = new System.Drawing.Point(1032, 465);
             this.BT_MODIFICAR_USUARIO490WC.Name = "BT_MODIFICAR_USUARIO490WC";
             this.BT_MODIFICAR_USUARIO490WC.Size = new System.Drawing.Size(184, 47);
             this.BT_MODIFICAR_USUARIO490WC.TabIndex = 32;
@@ -242,7 +215,7 @@
             this.BT_CANCELAR490WC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BT_CANCELAR490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.BT_CANCELAR490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.BT_CANCELAR490WC.Location = new System.Drawing.Point(830, 228);
+            this.BT_CANCELAR490WC.Location = new System.Drawing.Point(1222, 412);
             this.BT_CANCELAR490WC.Name = "BT_CANCELAR490WC";
             this.BT_CANCELAR490WC.Size = new System.Drawing.Size(184, 47);
             this.BT_CANCELAR490WC.TabIndex = 33;
@@ -256,7 +229,7 @@
             this.BT_APLICAR490WC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BT_APLICAR490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.BT_APLICAR490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.BT_APLICAR490WC.Location = new System.Drawing.Point(830, 175);
+            this.BT_APLICAR490WC.Location = new System.Drawing.Point(1222, 359);
             this.BT_APLICAR490WC.Name = "BT_APLICAR490WC";
             this.BT_APLICAR490WC.Size = new System.Drawing.Size(184, 47);
             this.BT_APLICAR490WC.TabIndex = 34;
@@ -270,7 +243,7 @@
             this.BT_SALIR490WC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BT_SALIR490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.BT_SALIR490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.BT_SALIR490WC.Location = new System.Drawing.Point(830, 281);
+            this.BT_SALIR490WC.Location = new System.Drawing.Point(1222, 465);
             this.BT_SALIR490WC.Name = "BT_SALIR490WC";
             this.BT_SALIR490WC.Size = new System.Drawing.Size(184, 47);
             this.BT_SALIR490WC.TabIndex = 35;
@@ -472,7 +445,7 @@
             this.PrevisualizadorXML490WC.Multiline = true;
             this.PrevisualizadorXML490WC.Name = "PrevisualizadorXML490WC";
             this.PrevisualizadorXML490WC.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.PrevisualizadorXML490WC.Size = new System.Drawing.Size(1002, 135);
+            this.PrevisualizadorXML490WC.Size = new System.Drawing.Size(1233, 259);
             this.PrevisualizadorXML490WC.TabIndex = 64;
             // 
             // BT_MODOSERIALIZAR490WC
@@ -481,9 +454,9 @@
             this.BT_MODOSERIALIZAR490WC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BT_MODOSERIALIZAR490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.BT_MODOSERIALIZAR490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.BT_MODOSERIALIZAR490WC.Location = new System.Drawing.Point(268, 680);
+            this.BT_MODOSERIALIZAR490WC.Location = new System.Drawing.Point(1270, 536);
             this.BT_MODOSERIALIZAR490WC.Name = "BT_MODOSERIALIZAR490WC";
-            this.BT_MODOSERIALIZAR490WC.Size = new System.Drawing.Size(118, 47);
+            this.BT_MODOSERIALIZAR490WC.Size = new System.Drawing.Size(136, 47);
             this.BT_MODOSERIALIZAR490WC.TabIndex = 65;
             this.BT_MODOSERIALIZAR490WC.Text = "Serializar";
             this.BT_MODOSERIALIZAR490WC.UseVisualStyleBackColor = false;
@@ -495,9 +468,9 @@
             this.BT_ACEPTARSERIALIZAR490WC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BT_ACEPTARSERIALIZAR490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.BT_ACEPTARSERIALIZAR490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.BT_ACEPTARSERIALIZAR490WC.Location = new System.Drawing.Point(409, 680);
+            this.BT_ACEPTARSERIALIZAR490WC.Location = new System.Drawing.Point(1270, 589);
             this.BT_ACEPTARSERIALIZAR490WC.Name = "BT_ACEPTARSERIALIZAR490WC";
-            this.BT_ACEPTARSERIALIZAR490WC.Size = new System.Drawing.Size(118, 47);
+            this.BT_ACEPTARSERIALIZAR490WC.Size = new System.Drawing.Size(136, 47);
             this.BT_ACEPTARSERIALIZAR490WC.TabIndex = 66;
             this.BT_ACEPTARSERIALIZAR490WC.Text = "Aceptar";
             this.BT_ACEPTARSERIALIZAR490WC.UseVisualStyleBackColor = false;
@@ -509,27 +482,13 @@
             this.BT_CANCELARSERIALIZAR490WC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BT_CANCELARSERIALIZAR490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.BT_CANCELARSERIALIZAR490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.BT_CANCELARSERIALIZAR490WC.Location = new System.Drawing.Point(548, 680);
+            this.BT_CANCELARSERIALIZAR490WC.Location = new System.Drawing.Point(1270, 642);
             this.BT_CANCELARSERIALIZAR490WC.Name = "BT_CANCELARSERIALIZAR490WC";
-            this.BT_CANCELARSERIALIZAR490WC.Size = new System.Drawing.Size(118, 47);
+            this.BT_CANCELARSERIALIZAR490WC.Size = new System.Drawing.Size(136, 47);
             this.BT_CANCELARSERIALIZAR490WC.TabIndex = 67;
             this.BT_CANCELARSERIALIZAR490WC.Text = "Cancelar";
             this.BT_CANCELARSERIALIZAR490WC.UseVisualStyleBackColor = false;
             this.BT_CANCELARSERIALIZAR490WC.Click += new System.EventHandler(this.BT_CANCELARSERIALIZAR490WC_Click);
-            // 
-            // listBoxDesSerializar490WC
-            // 
-            this.listBoxDesSerializar490WC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(6)))), ((int)(((byte)(13)))));
-            this.listBoxDesSerializar490WC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.listBoxDesSerializar490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
-            this.listBoxDesSerializar490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.listBoxDesSerializar490WC.FormattingEnabled = true;
-            this.listBoxDesSerializar490WC.HorizontalScrollbar = true;
-            this.listBoxDesSerializar490WC.ItemHeight = 19;
-            this.listBoxDesSerializar490WC.Location = new System.Drawing.Point(12, 733);
-            this.listBoxDesSerializar490WC.Name = "listBoxDesSerializar490WC";
-            this.listBoxDesSerializar490WC.Size = new System.Drawing.Size(1002, 135);
-            this.listBoxDesSerializar490WC.TabIndex = 68;
             // 
             // BT_DesSerializar490WC
             // 
@@ -537,9 +496,9 @@
             this.BT_DesSerializar490WC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BT_DesSerializar490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.BT_DesSerializar490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.BT_DesSerializar490WC.Location = new System.Drawing.Point(344, 874);
+            this.BT_DesSerializar490WC.Location = new System.Drawing.Point(1270, 695);
             this.BT_DesSerializar490WC.Name = "BT_DesSerializar490WC";
-            this.BT_DesSerializar490WC.Size = new System.Drawing.Size(118, 47);
+            this.BT_DesSerializar490WC.Size = new System.Drawing.Size(136, 47);
             this.BT_DesSerializar490WC.TabIndex = 69;
             this.BT_DesSerializar490WC.Text = "Deserializar";
             this.BT_DesSerializar490WC.UseVisualStyleBackColor = false;
@@ -551,23 +510,72 @@
             this.BT_LIMPIARDESERIALIZAR490WC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BT_LIMPIARDESERIALIZAR490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.BT_LIMPIARDESERIALIZAR490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.BT_LIMPIARDESERIALIZAR490WC.Location = new System.Drawing.Point(476, 874);
+            this.BT_LIMPIARDESERIALIZAR490WC.Location = new System.Drawing.Point(1270, 748);
             this.BT_LIMPIARDESERIALIZAR490WC.Name = "BT_LIMPIARDESERIALIZAR490WC";
-            this.BT_LIMPIARDESERIALIZAR490WC.Size = new System.Drawing.Size(118, 47);
+            this.BT_LIMPIARDESERIALIZAR490WC.Size = new System.Drawing.Size(136, 47);
             this.BT_LIMPIARDESERIALIZAR490WC.TabIndex = 70;
             this.BT_LIMPIARDESERIALIZAR490WC.Text = "Limpiar";
             this.BT_LIMPIARDESERIALIZAR490WC.UseVisualStyleBackColor = false;
             this.BT_LIMPIARDESERIALIZAR490WC.Click += new System.EventHandler(this.BT_LIMPIARDESERIALIZAR490WC_Click);
+            // 
+            // DNI_CLIENTE
+            // 
+            this.DNI_CLIENTE.HeaderText = "DNI";
+            this.DNI_CLIENTE.Name = "DNI_CLIENTE";
+            this.DNI_CLIENTE.ReadOnly = true;
+            // 
+            // NOMBRE_CLIENTE
+            // 
+            this.NOMBRE_CLIENTE.HeaderText = "Nombre";
+            this.NOMBRE_CLIENTE.Name = "NOMBRE_CLIENTE";
+            this.NOMBRE_CLIENTE.ReadOnly = true;
+            // 
+            // APELLIDO_CLIENTE
+            // 
+            this.APELLIDO_CLIENTE.HeaderText = "Apellido";
+            this.APELLIDO_CLIENTE.Name = "APELLIDO_CLIENTE";
+            this.APELLIDO_CLIENTE.ReadOnly = true;
+            // 
+            // columnaDireccion
+            // 
+            this.columnaDireccion.HeaderText = "Direccion";
+            this.columnaDireccion.Name = "columnaDireccion";
+            this.columnaDireccion.ReadOnly = true;
+            // 
+            // columnaEmail
+            // 
+            this.columnaEmail.HeaderText = "Emails";
+            this.columnaEmail.Name = "columnaEmail";
+            this.columnaEmail.ReadOnly = true;
+            // 
+            // columnaCelulares
+            // 
+            this.columnaCelulares.HeaderText = "Celurares";
+            this.columnaCelulares.Name = "columnaCelulares";
+            this.columnaCelulares.ReadOnly = true;
+            // 
+            // ESTRELLAS_CLIENTE
+            // 
+            this.ESTRELLAS_CLIENTE.HeaderText = "Estrellas";
+            this.ESTRELLAS_CLIENTE.Name = "ESTRELLAS_CLIENTE";
+            this.ESTRELLAS_CLIENTE.ReadOnly = true;
+            // 
+            // IMAGEN_ESTRELLA
+            // 
+            this.IMAGEN_ESTRELLA.HeaderText = "";
+            this.IMAGEN_ESTRELLA.Image = global::GUI490WC.Properties.Resources.Estrella_Mario;
+            this.IMAGEN_ESTRELLA.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.IMAGEN_ESTRELLA.Name = "IMAGEN_ESTRELLA";
+            this.IMAGEN_ESTRELLA.ReadOnly = true;
             // 
             // FormMaestroCliente490WC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(27)))), ((int)(((byte)(38)))));
-            this.ClientSize = new System.Drawing.Size(1033, 939);
+            this.ClientSize = new System.Drawing.Size(1426, 807);
             this.Controls.Add(this.BT_LIMPIARDESERIALIZAR490WC);
             this.Controls.Add(this.BT_DesSerializar490WC);
-            this.Controls.Add(this.listBoxDesSerializar490WC);
             this.Controls.Add(this.BT_CANCELARSERIALIZAR490WC);
             this.Controls.Add(this.BT_ACEPTARSERIALIZAR490WC);
             this.Controls.Add(this.BT_MODOSERIALIZAR490WC);
@@ -628,11 +636,6 @@
         private System.Windows.Forms.Button BT_SALIR490WC;
         private System.Windows.Forms.Label labelDireccion490WC;
         private System.Windows.Forms.TextBox TB_DIRECCION490WC;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DNI_CLIENTE;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NOMBRE_CLIENTE;
-        private System.Windows.Forms.DataGridViewTextBoxColumn APELLIDO_CLIENTE;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ESTRELLAS_CLIENTE;
-        private System.Windows.Forms.DataGridViewImageColumn IMAGEN_ESTRELLA;
         private System.Windows.Forms.TextBox TB_ESTRELLASCLIENTE490WC;
         private System.Windows.Forms.Label LABEL_ESTRELLASCLIENTE490WC;
         private System.Windows.Forms.ListBox listboxCelularesCliente490WC;
@@ -650,8 +653,15 @@
         private System.Windows.Forms.Button BT_MODOSERIALIZAR490WC;
         private System.Windows.Forms.Button BT_ACEPTARSERIALIZAR490WC;
         private System.Windows.Forms.Button BT_CANCELARSERIALIZAR490WC;
-        private System.Windows.Forms.ListBox listBoxDesSerializar490WC;
         private System.Windows.Forms.Button BT_DesSerializar490WC;
         private System.Windows.Forms.Button BT_LIMPIARDESERIALIZAR490WC;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DNI_CLIENTE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NOMBRE_CLIENTE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn APELLIDO_CLIENTE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnaDireccion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnaEmail;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnaCelulares;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ESTRELLAS_CLIENTE;
+        private System.Windows.Forms.DataGridViewImageColumn IMAGEN_ESTRELLA;
     }
 }
