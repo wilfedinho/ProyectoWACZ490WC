@@ -230,5 +230,17 @@ namespace GUI490WC
         {
 
         }
+
+        private void CB_Modulo490WC_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (CB_Modulo490WC.SelectedItem != null)
+            {
+                CB_Descripcion490WC.Items.Clear();
+                foreach (string Descripcion490WC in GestorBitacora490WC.ObtenerDescripcion490WC(CB_Modulo490WC.SelectedItem.ToString()))
+                {
+                    CB_Descripcion490WC.Items.Add(Descripcion490WC);
+                }
+            }
+        }
     }
 }

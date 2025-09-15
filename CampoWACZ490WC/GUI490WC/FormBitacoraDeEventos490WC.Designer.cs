@@ -144,6 +144,7 @@
             this.CB_Modulo490WC.Name = "CB_Modulo490WC";
             this.CB_Modulo490WC.Size = new System.Drawing.Size(165, 27);
             this.CB_Modulo490WC.TabIndex = 94;
+            this.CB_Modulo490WC.SelectedIndexChanged += new System.EventHandler(this.CB_Modulo490WC_SelectedIndexChanged);
             // 
             // CB_Descripcion490WC
             // 

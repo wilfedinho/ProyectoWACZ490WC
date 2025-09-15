@@ -29,6 +29,29 @@ namespace DAL490WC
                 }
             }
         }
+
+        public List<string> ObtenerDescripcion490WC(string Modulo490WC)
+        {
+            using (SqlConnection cone490WC = GestorConexion490WC.GestorCone490WC.DevolverConexion490WC())
+            {
+                List<string> listaDescripcion490WC = new List<string>();
+                string query490WC = @"SELECT DISTINCT Descripcion490WC FROM Bitacora490WC WHERE Modulo490WC = @Modulo490WC";
+                using (SqlCommand cmd490WC = new SqlCommand(query490WC, cone490WC))
+                {
+                    cmd490WC.Parameters.AddWithValue("@Modulo490WC", Modulo490WC);
+                    cone490WC.Open();
+                    using (SqlDataReader reader490WC = cmd490WC.ExecuteReader())
+                    {
+                        while (reader490WC.Read())
+                        {
+                            listaDescripcion490WC.Add(reader490WC["Descripcion490WC"].ToString());
+                        }
+                    }
+                }
+                return listaDescripcion490WC;
+            }
+        }
+
         public List<BitacoraSE490WC> ObtenerEventosPorConsulta490WC(string usuarioFiltrar490WC = "", string moduloFiltrar490WC = "", string descripcionFiltrar490WC = "", string criticidadFiltrar490WC = "", DateTime? fechaInicioFiltrar490WC = null, DateTime? fechaFinFiltrar490WC = null)
         {
             List<BitacoraSE490WC> listaBitacora490WC = new List<BitacoraSE490WC>();
@@ -80,7 +103,7 @@ namespace DAL490WC
                     hayFiltros490WC = true;
                 }
 
-                
+
                 if (!hayFiltros490WC)
                 {
                     query490WC += " AND Fecha490WC >= @FechaUltimos3Dias";
@@ -103,7 +126,7 @@ namespace DAL490WC
                             string descripcion490WC = reader490WC["Descripcion490WC"].ToString();
                             int criticidad490WC = Convert.ToInt32(reader490WC["Criticidad490WC"]);
 
-                            listaBitacora490WC.Add(new BitacoraSE490WC(username490WC, fecha490WC, hora490WC,modulo490WC, descripcion490WC, criticidad490WC, idBitacora490WC));
+                            listaBitacora490WC.Add(new BitacoraSE490WC(username490WC, fecha490WC, hora490WC, modulo490WC, descripcion490WC, criticidad490WC, idBitacora490WC));
                         }
                     }
                 }
