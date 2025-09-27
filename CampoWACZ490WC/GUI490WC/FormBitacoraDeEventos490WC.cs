@@ -33,10 +33,14 @@ namespace GUI490WC
             LLenarCB490WC();
             monthCalendarFechaInicio490WC.Enabled = false;
             monthCalendarFechaFin490WC.Enabled = false;
-            labelUsuario490WC.Text = $"Usuario: ";
-            labelNombre490WC.Text = $"Nombre: ";
-            labelApellido490WC.Text = $"Apellido: ";
-            labelDNI490WC.Text = $"DNI: ";
+            string textoUsuario490WC = Traductor490WC.TraductorSG490WC.Traducir490WC("UsuarioBitacoraVACIO");
+            labelUsuario490WC.Text = textoUsuario490WC;
+            string textoNombre490WC = Traductor490WC.TraductorSG490WC.Traducir490WC("NombreBitacoraVACIO");
+            labelNombre490WC.Text = textoNombre490WC;
+            string textoApellido490WC = Traductor490WC.TraductorSG490WC.Traducir490WC("ApellidoBitacoraVACIO");
+            labelApellido490WC.Text = textoApellido490WC;
+            string textoDNI490WC = Traductor490WC.TraductorSG490WC.Traducir490WC("DNIBitacoraVACIO");
+            labelDNI490WC.Text = textoDNI490WC;
         }
         public void Mostrar490WC(string usuarioFiltrar490WC = "", string moduloFiltrar490WC = "", string descripcionFiltrar490WC = "", string criticidadFiltrar490WC = "", DateTime? fechaInicioFiltrar490WC = null, DateTime? fechaFinFiltrar490WC = null)
         {
@@ -136,7 +140,8 @@ namespace GUI490WC
                 }
                 else
                 {
-                    MessageBox.Show("La fecha de inicio debe ser anterior a la fecha de fin.");
+                    string errorMensaje490WC = Traductor490WC.TraductorSG490WC.Traducir490WC("ErrorFechaBitacora");
+                    MessageBox.Show(errorMensaje490WC);
                 }
             }
             LimpiarCB490WC();
@@ -150,20 +155,29 @@ namespace GUI490WC
             Usuario490WC usuario490WC = UserManager490WC.UserManagerSG490WC.BuscarUsuarioPorUsername490WC(dgvBitacora490WC.SelectedRows[0].Cells[0].Value.ToString());
             if (usuario490WC != null)
             {
-
-                labelUsuario490WC.Text = $"Usuario: {usuario490WC.Username490WC}";
-                labelNombre490WC.Text = $"Nombre: {usuario490WC.Nombre490WC}";
-                labelApellido490WC.Text = $"Apellido: {usuario490WC.Apellido490WC}";
-                labelDNI490WC.Text = $"DNI: {usuario490WC.DNI490WC}";
-
-
+                string textoUsuario490WC = Traductor490WC.TraductorSG490WC.Traducir490WC("UsuarioBitacora");
+                textoUsuario490WC = textoUsuario490WC.Replace("{usuario490WC.Username490WC}", $"{usuario490WC.Username490WC}");
+                labelUsuario490WC.Text = textoUsuario490WC;
+                string textoNombre490WC = Traductor490WC.TraductorSG490WC.Traducir490WC("NombreBitacora");
+                textoNombre490WC = textoNombre490WC.Replace("{usuario490WC.Nombre490WC}", $"{usuario490WC.Nombre490WC}");
+                labelNombre490WC.Text = textoNombre490WC;
+                string textoApellido490WC = Traductor490WC.TraductorSG490WC.Traducir490WC("ApellidoBitacora");
+                textoApellido490WC = textoApellido490WC.Replace("{usuario490WC.Apellido490WC}", $"{usuario490WC.Apellido490WC}");
+                labelApellido490WC.Text = textoApellido490WC;
+                string textoDNI490WC = Traductor490WC.TraductorSG490WC.Traducir490WC("DNIBitacora");
+                textoDNI490WC = textoDNI490WC.Replace("{usuario490WC.DNI490WC}", $"{usuario490WC.DNI490WC}");
+                labelDNI490WC.Text = textoDNI490WC;
             }
             else
             {
-                labelUsuario490WC.Text = $"Usuario: Error";
-                labelNombre490WC.Text = $"Nombre: Error";
-                labelApellido490WC.Text = $"Apellido: Error";
-                labelDNI490WC.Text = $"DNI: Error";
+                string textoUsuario490WC = Traductor490WC.TraductorSG490WC.Traducir490WC("UsuarioBitacoraError");
+                labelUsuario490WC.Text = textoUsuario490WC;
+                string textoNombre490WC = Traductor490WC.TraductorSG490WC.Traducir490WC("NombreBitacoraError");
+                labelNombre490WC.Text = textoNombre490WC;
+                string textoApellido490WC = Traductor490WC.TraductorSG490WC.Traducir490WC("ApellidoBitacoraError");
+                labelApellido490WC.Text = textoApellido490WC;
+                string textoDNI490WC = Traductor490WC.TraductorSG490WC.Traducir490WC("DNIBitacoraError");
+                labelDNI490WC.Text = textoDNI490WC;
             }
         }
 
@@ -172,10 +186,14 @@ namespace GUI490WC
             LimpiarCB490WC();
             Mostrar490WC();
             LLenarCB490WC();
-            labelUsuario490WC.Text = $"Usuario: ";
-            labelNombre490WC.Text = $"Nombre: ";
-            labelApellido490WC.Text = $"Apellido: ";
-            labelDNI490WC.Text = $"DNI: ";
+            string textoUsuario490WC = Traductor490WC.TraductorSG490WC.Traducir490WC("UsuarioBitacoraVACIO");
+            labelUsuario490WC.Text = textoUsuario490WC;
+            string textoNombre490WC = Traductor490WC.TraductorSG490WC.Traducir490WC("NombreBitacoraVACIO");
+            labelNombre490WC.Text = textoNombre490WC;
+            string textoApellido490WC = Traductor490WC.TraductorSG490WC.Traducir490WC("ApellidoBitacoraVACIO");
+            labelApellido490WC.Text = textoApellido490WC;
+            string textoDNI490WC = Traductor490WC.TraductorSG490WC.Traducir490WC("DNIBitacoraVACIO");
+            labelDNI490WC.Text = textoDNI490WC;
         }
 
         private void checkBoxFecha_CheckedChanged(object sender, EventArgs e)
@@ -209,7 +227,33 @@ namespace GUI490WC
 
         public void ActualizarLenguaje490WC()
         {
+            RecorrerControles490WC(this);
+        }
 
+        public void RecorrerControles490WC(Control control490WC)
+        {
+            foreach (Control c490WC in control490WC.Controls)
+            {
+                if ((c490WC is TextBox tb490WC) == false)
+                {
+
+                    c490WC.Text = Traductor490WC.TraductorSG490WC.Traducir490WC(c490WC.Name);
+
+
+                    if (c490WC.HasChildren)
+                    {
+                        RecorrerControles490WC(c490WC);
+                    }
+                    if (c490WC is DataGridView dgv490WC)
+                    {
+                        foreach (DataGridViewColumn columna490WC in dgv490WC.Columns)
+                        {
+                            columna490WC.HeaderText = Traductor490WC.TraductorSG490WC.Traducir490WC(columna490WC.Name);
+                        }
+                    }
+
+                }
+            }
         }
 
         private void CB_Usuario_SelectedIndexChanged(object sender, EventArgs e)

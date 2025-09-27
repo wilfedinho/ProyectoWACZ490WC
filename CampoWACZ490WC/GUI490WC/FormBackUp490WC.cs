@@ -1,4 +1,6 @@
 ﻿using BLLS490WC;
+using FontAwesome.Sharp;
+using Org.BouncyCastle.Bcpg.OpenPgp;
 using SERVICIOS490WC;
 using System;
 using System.Collections.Generic;
@@ -47,21 +49,41 @@ namespace GUI490WC
                 {
                     GestorBackUpRestore490WC gestorBackUpRestore490WC = new GestorBackUpRestore490WC();
                     gestorBackUpRestore490WC.RealizarBackUp490WC(TB_RUTABACKUP490WC.Text);
-                    MessageBox.Show("Respaldo realizado con éxito.");
+                    string mensajeOperacion490WC = Traductor490WC.TraductorSG490WC.Traducir490WC("RespaldoExitoso490WC");
+                    MessageBox.Show(mensajeOperacion490WC);
                     TB_RUTABACKUP490WC.Clear();
                 }
                 else
                 {
-                    MessageBox.Show("Debe seleccionar una ruta para guardar el archivo de respaldo.");
+                    string mensajeOperacion490WC = Traductor490WC.TraductorSG490WC.Traducir490WC("SeleccionarRutaRespaldo490WC");
+                    MessageBox.Show(mensajeOperacion490WC);
                     TB_RUTABACKUP490WC.Clear();
                 }
             }
-            catch { MessageBox.Show("Ruta Seleccionada Invalida Para Realizar  El Respaldo"); }
+            catch { string mensajeOperacion490WC = Traductor490WC.TraductorSG490WC.Traducir490WC("ErrorRutaSeleccionada490WC"); MessageBox.Show(mensajeOperacion490WC); }
         }
 
         public void ActualizarLenguaje490WC()
         {
+            RecorrerControles490WC(this);
+        }
 
+        public void RecorrerControles490WC(Control control490WC)
+        {
+            foreach (Control c490WC in control490WC.Controls)
+            {
+                if ((c490WC is TextBox tb490WC) == false)
+                {
+                    if (c490WC is IconButton == true)
+                    {
+
+                    }
+                    else if (c490WC is Button)
+                    {
+                        c490WC.Text = Traductor490WC.TraductorSG490WC.Traducir490WC(c490WC.Name);
+                    }
+                }
+            }
         }
 
         private void FormBackUp490WC_FormClosed(object sender, FormClosedEventArgs e)
