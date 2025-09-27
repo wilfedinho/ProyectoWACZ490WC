@@ -58,7 +58,33 @@ namespace GUI490WC
 
         public void ActualizarLenguaje490WC()
         {
+            RecorrerControles490WC(this);
+        }
 
+        public void RecorrerControles490WC(Control control490WC)
+        {
+            foreach (Control c490WC in control490WC.Controls)
+            {
+                if ((c490WC is TextBox tb490WC) == false)
+                {
+
+                    c490WC.Text = Traductor490WC.TraductorSG490WC.Traducir490WC(c490WC.Name);
+
+
+                    if (c490WC.HasChildren)
+                    {
+                        RecorrerControles490WC(c490WC);
+                    }
+                    if (c490WC is DataGridView dgv490WC)
+                    {
+                        foreach (DataGridViewColumn columna490WC in dgv490WC.Columns)
+                        {
+                            columna490WC.HeaderText = Traductor490WC.TraductorSG490WC.Traducir490WC(columna490WC.Name);
+                        }
+                    }
+
+                }
+            }
         }
 
         public void LimpiarCampos490WC()
@@ -114,13 +140,9 @@ namespace GUI490WC
                                                 boletoCargado490WC.Precio490WC += (boletoCargado490WC.Precio490WC * 0.60f);
                                                 boletoCargado490WC.CambiosRealizados490WC = string.Join(";", cambios);
                                                 gestorBoleto490WC.CambiarTitularBoletoModificado490WC(boletoCargado490WC);
-                                                //string mensajeOperacion = Traductor490WC.TraductorSG490WC.Traducir490WC("AsignarBoletoClienteRegistrar");
-                                                //string a = mensajeOperacion;
-                                                //a = a.Replace("{boletoAsignar490WC.IDBoleto490WC}", boletoCargado490WC.IDBoleto490WC);
-                                                //a = a.Replace("{clienteAlta490WC.DNI490WC}", clienteAlta490WC.DNI490WC);
-                                                //mensajeOperacion = a;
-                                                //MessageBox.Show(mensajeOperacion);
-                                                MessageBox.Show($"Se Realizo el Registro y Cambio de Titularidad Para el Boleto Con Numero: {boletoCargado490WC.IDBoleto490WC}");
+                                                string mensajeOperacion490WC = Traductor490WC.TraductorSG490WC.Traducir490WC("RegistroYCambioTitularBoleto490WC");
+                                                mensajeOperacion490WC = mensajeOperacion490WC.Replace("{boletoCargado490WC.IDBoleto490WC}", boletoCargado490WC.IDBoleto490WC);
+                                                MessageBox.Show(mensajeOperacion490WC);
                                                 LimpiarCampos490WC();
                                                 this.Close();
                                             }
@@ -204,13 +226,9 @@ namespace GUI490WC
                     boletoCargado490WC.Precio490WC += (boletoCargado490WC.Precio490WC * 0.60f);
                     boletoCargado490WC.CambiosRealizados490WC = string.Join(";", cambios);
                     gestorBoleto490WC.CambiarTitularBoletoModificado490WC(boletoCargado490WC);
-                    //string mensajeOperacion = Traductor490WC.TraductorSG490WC.Traducir490WC("AsignarBoletoClienteRegistrar");
-                    //string a = mensajeOperacion;
-                    //a = a.Replace("{boletoAsignar490WC.IDBoleto490WC}", boletoCargado490WC.IDBoleto490WC);
-                    //a = a.Replace("{clienteAlta490WC.DNI490WC}", clienteAlta490WC.DNI490WC);
-                    //mensajeOperacion = a;
-                    //MessageBox.Show(mensajeOperacion);
-                    MessageBox.Show($"Se Realizo el Cambio de Titularidad Para el Boleto Con Numero: {boletoCargado490WC.IDBoleto490WC}");
+                    string mensajeOperacion490WC = Traductor490WC.TraductorSG490WC.Traducir490WC("CambioTitularBoleto490WC");
+                    mensajeOperacion490WC = mensajeOperacion490WC.Replace("{boletoCargado490WC.IDBoleto490WC}", boletoCargado490WC.IDBoleto490WC);
+                    MessageBox.Show(mensajeOperacion490WC);
                     LimpiarCampos490WC();
                     this.Close();
                 }

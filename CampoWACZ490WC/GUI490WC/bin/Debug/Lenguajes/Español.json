@@ -320,6 +320,14 @@
     "CambioPesoEquipajeVistaPreviaFactura490WC": "Cambio De Peso Equipaje 13% Recargo {Environment.NewLine}",
     "CambioTitularVistaPreviaFactura490WC": "Cambio De Titular 60% Recargo {Environment.NewLine}",
     "SubtotalVistaPreviaFactura490WC": "Subtotal: {boletoModificadoCobrar490WC.Precio490WC} {Environment.NewLine} Total: {totalFactura490WC}",
-    "BeneficioNOAplicadoVistaPreviaFactura490WC": "Numero Factura: {gestorFactura490WC.ObtenerTodasLasFacturas490WC().Count + 1} {Environment.NewLine} Nombre: {clienteCobrar490WC.Nombre490WC} {Environment.NewLine} Apellido: {clienteCobrar490WC.Apellido490WC} {Environment.NewLine} Beneficio Aplicado: No Posee Beneficio Aplicado {Environment.NewLine} DNI: {clienteCobrar490WC.DNI490WC} {Environment.NewLine} Fecha Emision: {DateTime.Now.ToShortDateString()} {Environment.NewLine} Hora Emision: {DateTime.Now.ToShortTimeString()} {Environment.NewLine} Numero Boleto: {boletoModificadoCobrar490WC.IDBoleto490WC} {Environment.NewLine} Cambios Realizados: {Environment.NewLine}"
+    "BeneficioNOAplicadoVistaPreviaFactura490WC": "Numero Factura: {gestorFactura490WC.ObtenerTodasLasFacturas490WC().Count + 1} {Environment.NewLine} Nombre: {clienteCobrar490WC.Nombre490WC} {Environment.NewLine} Apellido: {clienteCobrar490WC.Apellido490WC} {Environment.NewLine} Beneficio Aplicado: No Posee Beneficio Aplicado {Environment.NewLine} DNI: {clienteCobrar490WC.DNI490WC} {Environment.NewLine} Fecha Emision: {DateTime.Now.ToShortDateString()} {Environment.NewLine} Hora Emision: {DateTime.Now.ToShortTimeString()} {Environment.NewLine} Numero Boleto: {boletoModificadoCobrar490WC.IDBoleto490WC} {Environment.NewLine} Cambios Realizados: {Environment.NewLine}",
+    "ElegirBoletoCobrar490WC": "Debes Elegir Un Boleto Para Cobrarlo!!",
+    "ErrorCambioTitularYaEfectuado490WC": "El Boleto Seleccionado Ya Posee Un Cambio De Titular!!!",
+    "ElegirBoletoCambiarTitular490WC": "Debes Elegir Un Boleto Para Cambiar El Titular!!",
+    "BT_CAMBIARTITULAR": "Cambiar Titular Boleto",
+    "LB_DATOSFACTURACION490WC": "Datos Facturacion",
+    "RegistroYCambioTitularBoleto490WC": "Se Realizo el Registro y Cambio de Titularidad Para el Boleto Con Numero: {boletoCargado490WC.IDBoleto490WC}",
+    "CambioTitularBoleto490WC": "Se Realizo el Cambio de Titularidad Para el Boleto Con Numero: {boletoCargado490WC.IDBoleto490WC}",
+    "BT_CAMBIARTITULAR490WC": "Cambiar Titular"
 
 }

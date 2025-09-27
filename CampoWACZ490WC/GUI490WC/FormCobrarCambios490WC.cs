@@ -53,7 +53,7 @@ namespace GUI490WC
                     a = a.Replace("{clienteCobrar490WC.DNI490WC}", $"{clienteCobrar490WC.DNI490WC}");
                     a = a.Replace("{DateTime.Now.ToShortDateString()}", $"{DateTime.Now.ToShortDateString()}");
                     a = a.Replace("{DateTime.Now.ToShortTimeString()}", $"{DateTime.Now.ToShortTimeString()}");
-                    a = a.Replace("{boletoModificadoCobrar490WC.IDBoleto490WC}", $"{boletoModificadoCobrar490WC.IDBoleto490WC}");
+                    a = a.Replace("{boletoModificadoCobrar490WC.IDBoleto490WC}", $"{cambios490WC[0].ToString()}");
                     a = a.Replace("{Environment.NewLine}", $"{Environment.NewLine}");
                     TBVISTAPREVIAFACTURA490WC.Text = a;
 
@@ -66,37 +66,37 @@ namespace GUI490WC
                     //                                 $"Hora Emision: {DateTime.Now.ToShortTimeString()} {Environment.NewLine}" +
                     //                                 $"Numero Boleto: {boletoModificadoCobrar490WC.IDBoleto490WC} {Environment.NewLine}" +
                     //                                 $"Cambios Realizados: {Environment.NewLine}";
-                    if (cambios490WC[1] != null || cambios490WC[1] != "" || cambios490WC[2] != null || cambios490WC[2] != "" || cambios490WC[3] != null || cambios490WC[3] != "" || cambios490WC[4] != null || cambios490WC[4] != "")
+                    if ((!string.IsNullOrEmpty(cambios490WC[1])) || (!string.IsNullOrEmpty(cambios490WC[2])) || (!string.IsNullOrEmpty(cambios490WC[3])) || (!string.IsNullOrEmpty(cambios490WC[4])))
                     {
                         string mensajeCambioFecha490WC = Traductor490WC.TraductorSG490WC.Traducir490WC("CambioFechaVistaPreviaFactura490WC");
                         mensajeCambioFecha490WC = mensajeCambioFecha490WC.Replace("{Environment.NewLine}", $"{Environment.NewLine}");
                         TBVISTAPREVIAFACTURA490WC.Text += mensajeCambioFecha490WC;
                     }
-                    if (cambios490WC[5] != null || cambios490WC[2] != "")
+                    if (!string.IsNullOrEmpty(cambios490WC[5]))
                     {
                         string mensajeCambioBeneficio490WC = Traductor490WC.TraductorSG490WC.Traducir490WC("CambioBeneficioVistaPreviaFactura490WC");
                         mensajeCambioBeneficio490WC = mensajeCambioBeneficio490WC.Replace("{Environment.NewLine}", $"{Environment.NewLine}");
                         TBVISTAPREVIAFACTURA490WC.Text += mensajeCambioBeneficio490WC;
                     }
-                    if (cambios490WC[6] != null || cambios490WC[6] != "")
+                    if (!string.IsNullOrEmpty(cambios490WC[6]))
                     {
                         string mensajeCambioClase490WC = Traductor490WC.TraductorSG490WC.Traducir490WC("CambioClaseVistaPreviaFactura490WC");
                         mensajeCambioClase490WC = mensajeCambioClase490WC.Replace("{Environment.NewLine}", $"{Environment.NewLine}");
                         TBVISTAPREVIAFACTURA490WC.Text += mensajeCambioClase490WC;
                     }
-                    if (cambios490WC[7] != null || cambios490WC[7] != "")
+                    if (!string.IsNullOrEmpty(cambios490WC[7]))
                     {
                         string mensajeCambioAsiento490WC = Traductor490WC.TraductorSG490WC.Traducir490WC("CambioAsientoVistaPreviaFactura490WC");
                         mensajeCambioAsiento490WC = mensajeCambioAsiento490WC.Replace("{Environment.NewLine}", $"{Environment.NewLine}");
                         TBVISTAPREVIAFACTURA490WC.Text += mensajeCambioAsiento490WC;
                     }
-                    if (cambios490WC[8] != null || cambios490WC[8] != "")
+                    if (!string.IsNullOrEmpty(cambios490WC[8]))
                     {
-                        string mensajeCambioPesoEquipaje490WC = Traductor490WC.TraductorSG490WC.Traducir490WC("CambioPesoEquipajeVistaPreviaFactura490WC"); 
+                        string mensajeCambioPesoEquipaje490WC = Traductor490WC.TraductorSG490WC.Traducir490WC("CambioPesoEquipajeVistaPreviaFactura490WC");
                         mensajeCambioPesoEquipaje490WC = mensajeCambioPesoEquipaje490WC.Replace("{Environment.NewLine}", $"{Environment.NewLine}");
                         TBVISTAPREVIAFACTURA490WC.Text += mensajeCambioPesoEquipaje490WC;
                     }
-                    if (cambios490WC[9] != null || cambios490WC[9] != "")
+                    if (!string.IsNullOrEmpty(cambios490WC[9]))
                     {
                         string mensajeCambioTitular490WC = Traductor490WC.TraductorSG490WC.Traducir490WC("CambioTitularVistaPreviaFactura490WC");
                         mensajeCambioTitular490WC = mensajeCambioTitular490WC.Replace("{Environment.NewLine}", $"{Environment.NewLine}");
@@ -117,40 +117,40 @@ namespace GUI490WC
                     mensajeBeneficioNOAplicado490WC = mensajeBeneficioNOAplicado490WC.Replace("{clienteCobrar490WC.DNI490WC}", $"{clienteCobrar490WC.DNI490WC}");
                     mensajeBeneficioNOAplicado490WC = mensajeBeneficioNOAplicado490WC.Replace("{DateTime.Now.ToShortDateString()}", $"{DateTime.Now.ToShortDateString()}");
                     mensajeBeneficioNOAplicado490WC = mensajeBeneficioNOAplicado490WC.Replace("{DateTime.Now.ToShortTimeString()}", $"{DateTime.Now.ToShortTimeString()}");
-                    mensajeBeneficioNOAplicado490WC = mensajeBeneficioNOAplicado490WC.Replace("{boletoModificadoCobrar490WC.IDBoleto490WC}", $"{boletoModificadoCobrar490WC.IDBoleto490WC}");
+                    mensajeBeneficioNOAplicado490WC = mensajeBeneficioNOAplicado490WC.Replace("{boletoModificadoCobrar490WC.IDBoleto490WC}", $"{cambios490WC[0].ToString()}");
                     mensajeBeneficioNOAplicado490WC = mensajeBeneficioNOAplicado490WC.Replace("{Environment.NewLine}", $"{Environment.NewLine}");
                     TBVISTAPREVIAFACTURA490WC.Text = mensajeBeneficioNOAplicado490WC;
-                    if (cambios490WC[1] != null || cambios490WC[1] != "" || cambios490WC[2] != null || cambios490WC[2] != "" || cambios490WC[3] != null || cambios490WC[3] != "" || cambios490WC[4] != null || cambios490WC[4] != "")
+                    if ((!string.IsNullOrEmpty(cambios490WC[1])) || (!string.IsNullOrEmpty(cambios490WC[2])) || (!string.IsNullOrEmpty(cambios490WC[3])) || (!string.IsNullOrEmpty(cambios490WC[4])))
                     {
                         string mensajeCambioFecha490WC = Traductor490WC.TraductorSG490WC.Traducir490WC("CambioFechaVistaPreviaFactura490WC");
                         mensajeCambioFecha490WC = mensajeCambioFecha490WC.Replace("{Environment.NewLine}", $"{Environment.NewLine}");
                         TBVISTAPREVIAFACTURA490WC.Text += mensajeCambioFecha490WC;
                     }
-                    if (cambios490WC[5] != null || cambios490WC[2] != "")
+                    if (!string.IsNullOrEmpty(cambios490WC[5]))
                     {
                         string mensajeCambioBeneficio490WC = Traductor490WC.TraductorSG490WC.Traducir490WC("CambioBeneficioVistaPreviaFactura490WC");
                         mensajeCambioBeneficio490WC = mensajeCambioBeneficio490WC.Replace("{Environment.NewLine}", $"{Environment.NewLine}");
                         TBVISTAPREVIAFACTURA490WC.Text += mensajeCambioBeneficio490WC;
                     }
-                    if (cambios490WC[6] != null || cambios490WC[6] != "")
+                    if (!string.IsNullOrEmpty(cambios490WC[6]))
                     {
                         string mensajeCambioClase490WC = Traductor490WC.TraductorSG490WC.Traducir490WC("CambioClaseVistaPreviaFactura490WC");
                         mensajeCambioClase490WC = mensajeCambioClase490WC.Replace("{Environment.NewLine}", $"{Environment.NewLine}");
                         TBVISTAPREVIAFACTURA490WC.Text += mensajeCambioClase490WC;
                     }
-                    if (cambios490WC[7] != null || cambios490WC[7] != "")
+                    if (!string.IsNullOrEmpty(cambios490WC[7]))
                     {
                         string mensajeCambioAsiento490WC = Traductor490WC.TraductorSG490WC.Traducir490WC("CambioAsientoVistaPreviaFactura490WC");
                         mensajeCambioAsiento490WC = mensajeCambioAsiento490WC.Replace("{Environment.NewLine}", $"{Environment.NewLine}");
                         TBVISTAPREVIAFACTURA490WC.Text += mensajeCambioAsiento490WC;
                     }
-                    if (cambios490WC[8] != null || cambios490WC[8] != "")
+                    if (!string.IsNullOrEmpty(cambios490WC[8]))
                     {
                         string mensajeCambioPesoEquipaje490WC = Traductor490WC.TraductorSG490WC.Traducir490WC("CambioPesoEquipajeVistaPreviaFactura490WC");
                         mensajeCambioPesoEquipaje490WC = mensajeCambioPesoEquipaje490WC.Replace("{Environment.NewLine}", $"{Environment.NewLine}");
                         TBVISTAPREVIAFACTURA490WC.Text += mensajeCambioPesoEquipaje490WC;
                     }
-                    if (cambios490WC[9] != null || cambios490WC[9] != "")
+                    if (!string.IsNullOrEmpty(cambios490WC[9]))
                     {
                         string mensajeCambioTitular490WC = Traductor490WC.TraductorSG490WC.Traducir490WC("CambioTitularVistaPreviaFactura490WC");
                         mensajeCambioTitular490WC = mensajeCambioTitular490WC.Replace("{Environment.NewLine}", $"{Environment.NewLine}");
@@ -180,41 +180,41 @@ namespace GUI490WC
                     a = a.Replace("{clienteCobrar490WC.DNI490WC}", $"{clienteCobrar490WC.DNI490WC}");
                     a = a.Replace("{DateTime.Now.ToShortDateString()}", $"{DateTime.Now.ToShortDateString()}");
                     a = a.Replace("{DateTime.Now.ToShortTimeString()}", $"{DateTime.Now.ToShortTimeString()}");
-                    a = a.Replace("{boletoModificadoCobrar490WC.IDBoleto490WC}", $"{boletoModificadoCobrar490WC.IDBoleto490WC}");
+                    a = a.Replace("{boletoModificadoCobrar490WC.IDBoleto490WC}", $"{cambios490WC[0].ToString()}");
                     a = a.Replace("{Environment.NewLine}", $"{Environment.NewLine}");
                     TBVISTAPREVIAFACTURA490WC.Text = a;
 
-                    if (cambios490WC[1] != null || cambios490WC[1] != "" || cambios490WC[2] != null || cambios490WC[2] != "")
+                    if ((!string.IsNullOrEmpty(cambios490WC[1])) || (!string.IsNullOrEmpty(cambios490WC[2])))
                     {
                         string mensajeCambioFecha490WC = Traductor490WC.TraductorSG490WC.Traducir490WC("CambioFechaVistaPreviaFactura490WC");
                         mensajeCambioFecha490WC = mensajeCambioFecha490WC.Replace("{Environment.NewLine}", $"{Environment.NewLine}");
                         TBVISTAPREVIAFACTURA490WC.Text += mensajeCambioFecha490WC;
                     }
-                    if (cambios490WC[5] != null || cambios490WC[2] != "")
+                    if (!string.IsNullOrEmpty(cambios490WC[5]))
                     {
                         string mensajeCambioBeneficio490WC = Traductor490WC.TraductorSG490WC.Traducir490WC("CambioBeneficioVistaPreviaFactura490WC");
                         mensajeCambioBeneficio490WC = mensajeCambioBeneficio490WC.Replace("{Environment.NewLine}", $"{Environment.NewLine}");
                         TBVISTAPREVIAFACTURA490WC.Text += mensajeCambioBeneficio490WC;
                     }
-                    if (cambios490WC[6] != null || cambios490WC[6] != "")
+                    if (!string.IsNullOrEmpty(cambios490WC[6]))
                     {
                         string mensajeCambioClase490WC = Traductor490WC.TraductorSG490WC.Traducir490WC("CambioClaseVistaPreviaFactura490WC");
                         mensajeCambioClase490WC = mensajeCambioClase490WC.Replace("{Environment.NewLine}", $"{Environment.NewLine}");
                         TBVISTAPREVIAFACTURA490WC.Text += mensajeCambioClase490WC;
                     }
-                    if (cambios490WC[7] != null || cambios490WC[7] != "")
+                    if (!string.IsNullOrEmpty(cambios490WC[7]))
                     {
                         string mensajeCambioAsiento490WC = Traductor490WC.TraductorSG490WC.Traducir490WC("CambioAsientoVistaPreviaFactura490WC");
                         mensajeCambioAsiento490WC = mensajeCambioAsiento490WC.Replace("{Environment.NewLine}", $"{Environment.NewLine}");
                         TBVISTAPREVIAFACTURA490WC.Text += mensajeCambioAsiento490WC;
                     }
-                    if (cambios490WC[8] != null || cambios490WC[8] != "")
+                    if (!string.IsNullOrEmpty(cambios490WC[8]))
                     {
                         string mensajeCambioPesoEquipaje490WC = Traductor490WC.TraductorSG490WC.Traducir490WC("CambioPesoEquipajeVistaPreviaFactura490WC");
                         mensajeCambioPesoEquipaje490WC = mensajeCambioPesoEquipaje490WC.Replace("{Environment.NewLine}", $"{Environment.NewLine}");
                         TBVISTAPREVIAFACTURA490WC.Text += mensajeCambioPesoEquipaje490WC;
                     }
-                    if (cambios490WC[9] != null || cambios490WC[9] != "")
+                    if (!string.IsNullOrEmpty(cambios490WC[9]))
                     {
                         string mensajeCambioTitular490WC = Traductor490WC.TraductorSG490WC.Traducir490WC("CambioTitularVistaPreviaFactura490WC");
                         mensajeCambioTitular490WC = mensajeCambioTitular490WC.Replace("{Environment.NewLine}", $"{Environment.NewLine}");
@@ -235,40 +235,40 @@ namespace GUI490WC
                     mensajeBeneficioNOAplicado490WC = mensajeBeneficioNOAplicado490WC.Replace("{clienteCobrar490WC.DNI490WC}", $"{clienteCobrar490WC.DNI490WC}");
                     mensajeBeneficioNOAplicado490WC = mensajeBeneficioNOAplicado490WC.Replace("{DateTime.Now.ToShortDateString()}", $"{DateTime.Now.ToShortDateString()}");
                     mensajeBeneficioNOAplicado490WC = mensajeBeneficioNOAplicado490WC.Replace("{DateTime.Now.ToShortTimeString()}", $"{DateTime.Now.ToShortTimeString()}");
-                    mensajeBeneficioNOAplicado490WC = mensajeBeneficioNOAplicado490WC.Replace("{boletoModificadoCobrar490WC.IDBoleto490WC}", $"{boletoModificadoCobrar490WC.IDBoleto490WC}");
+                    mensajeBeneficioNOAplicado490WC = mensajeBeneficioNOAplicado490WC.Replace("{boletoModificadoCobrar490WC.IDBoleto490WC}", $"{cambios490WC[0].ToString()}");
                     mensajeBeneficioNOAplicado490WC = mensajeBeneficioNOAplicado490WC.Replace("{Environment.NewLine}", $"{Environment.NewLine}");
                     TBVISTAPREVIAFACTURA490WC.Text = mensajeBeneficioNOAplicado490WC;
-                    if (cambios490WC[1] != null || cambios490WC[1] != "" || cambios490WC[2] != null || cambios490WC[2] != "")
+                    if ((!string.IsNullOrEmpty(cambios490WC[1])) || (!string.IsNullOrEmpty(cambios490WC[2])))
                     {
                         string mensajeCambioFecha490WC = Traductor490WC.TraductorSG490WC.Traducir490WC("CambioFechaVistaPreviaFactura490WC");
                         mensajeCambioFecha490WC = mensajeCambioFecha490WC.Replace("{Environment.NewLine}", $"{Environment.NewLine}");
                         TBVISTAPREVIAFACTURA490WC.Text += mensajeCambioFecha490WC;
                     }
-                    if (cambios490WC[5] != null || cambios490WC[2] != "")
+                    if (!string.IsNullOrEmpty(cambios490WC[5]))
                     {
                         string mensajeCambioBeneficio490WC = Traductor490WC.TraductorSG490WC.Traducir490WC("CambioBeneficioVistaPreviaFactura490WC");
                         mensajeCambioBeneficio490WC = mensajeCambioBeneficio490WC.Replace("{Environment.NewLine}", $"{Environment.NewLine}");
                         TBVISTAPREVIAFACTURA490WC.Text += mensajeCambioBeneficio490WC;
                     }
-                    if (cambios490WC[6] != null || cambios490WC[6] != "")
+                    if (!string.IsNullOrEmpty(cambios490WC[6]))
                     {
                         string mensajeCambioClase490WC = Traductor490WC.TraductorSG490WC.Traducir490WC("CambioClaseVistaPreviaFactura490WC");
                         mensajeCambioClase490WC = mensajeCambioClase490WC.Replace("{Environment.NewLine}", $"{Environment.NewLine}");
                         TBVISTAPREVIAFACTURA490WC.Text += mensajeCambioClase490WC;
                     }
-                    if (cambios490WC[7] != null || cambios490WC[7] != "")
+                    if (!string.IsNullOrEmpty(cambios490WC[7]))
                     {
                         string mensajeCambioAsiento490WC = Traductor490WC.TraductorSG490WC.Traducir490WC("CambioAsientoVistaPreviaFactura490WC");
                         mensajeCambioAsiento490WC = mensajeCambioAsiento490WC.Replace("{Environment.NewLine}", $"{Environment.NewLine}");
                         TBVISTAPREVIAFACTURA490WC.Text += mensajeCambioAsiento490WC;
                     }
-                    if (cambios490WC[8] != null || cambios490WC[8] != "")
+                    if (!string.IsNullOrEmpty(cambios490WC[8]))
                     {
                         string mensajeCambioPesoEquipaje490WC = Traductor490WC.TraductorSG490WC.Traducir490WC("CambioPesoEquipajeVistaPreviaFactura490WC");
                         mensajeCambioPesoEquipaje490WC = mensajeCambioPesoEquipaje490WC.Replace("{Environment.NewLine}", $"{Environment.NewLine}");
                         TBVISTAPREVIAFACTURA490WC.Text += mensajeCambioPesoEquipaje490WC;
                     }
-                    if (cambios490WC[9] != null || cambios490WC[9] != "")
+                    if (!string.IsNullOrEmpty(cambios490WC[9]))
                     {
                         string mensajeCambioTitular490WC = Traductor490WC.TraductorSG490WC.Traducir490WC("CambioTitularVistaPreviaFactura490WC");
                         mensajeCambioTitular490WC = mensajeCambioTitular490WC.Replace("{Environment.NewLine}", $"{Environment.NewLine}");
@@ -401,9 +401,8 @@ namespace GUI490WC
             }
             else
             {
-                //string mensajeClienteRegistrar = Traductor490WC.TraductorSG490WC.Traducir490WC("ClienteRegistrar");
-                //MessageBox.Show(mensajeClienteRegistrar);
-                MessageBox.Show($"Ingrese Un DNI Valido!!");
+                string mensajeError490WC = Traductor490WC.TraductorSG490WC.Traducir490WC("ClienteNoEncontrado490WC");
+                MessageBox.Show(mensajeError490WC);
                 CargarInfoFactura490WC();
                 CargarCliente490WC(null);
                 TB_DNI490WC.Clear();
@@ -534,7 +533,8 @@ namespace GUI490WC
             }
             else
             {
-                MessageBox.Show("Debes Elegir Un Boleto Para Cobrarlo!!");
+                string mensajeError490WC = Traductor490WC.TraductorSG490WC.Traducir490WC("ElegirBoletoCobrar490WC");
+                MessageBox.Show(mensajeError490WC);
             }
         }
 
@@ -554,12 +554,14 @@ namespace GUI490WC
                 }
                 else
                 {
-                    MessageBox.Show("El Boleto Seleccionado Ya Posee Un Cambio De Titular!!!");
+                    string errorCambioTitular490WC = Traductor490WC.TraductorSG490WC.Traducir490WC("ErrorCambioTitularYaEfectuado490WC");
+                    MessageBox.Show(errorCambioTitular490WC);
                 }
             }
             else
             {
-                MessageBox.Show("Debes Elegir Un Boleto Para Cambiar El Titular!!");
+                string mensajeError490WC = Traductor490WC.TraductorSG490WC.Traducir490WC("ElegirBoletoCambiarTitular490WC");
+                MessageBox.Show(mensajeError490WC);
             }
         }
     }
