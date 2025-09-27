@@ -231,7 +231,7 @@ namespace GUI490WC
                 string nombre490WC = TB_NOMBRE490WC.Text;
                 string apellido490WC = TB_APELLIDO490WC.Text;
                 string direccion490WC = TB_DIRECCION490WC.Text;
-                if (int.TryParse(TB_ESTRELLASCLIENTE490WC.Text, out int estrellasCliente490WC))
+                if (int.TryParse(TB_ESTRELLASCLIENTE490WC.Text, out int estrellasCliente490WC) && estrellasCliente490WC >= 0)
                 {
                     if (!string.IsNullOrEmpty(nombre490WC))
                     {
@@ -545,8 +545,10 @@ namespace GUI490WC
         {
             using (SaveFileDialog SFD490WC = new SaveFileDialog())
             {
-                SFD490WC.Filter = "Archivo XML (*.xml)|*.xml";
-                SFD490WC.Title = "Guardar archivo XML";
+                string filtro490WC = Traductor490WC.TraductorSG490WC.Traducir490WC("FiltroArchivoXML490WC");
+                SFD490WC.Filter = filtro490WC;
+                string titulo490WC = Traductor490WC.TraductorSG490WC.Traducir490WC("GuardarArchivoXML490WC");
+                SFD490WC.Title = titulo490WC;
                 SFD490WC.AddExtension = true;
                 SFD490WC.FileName = "Clientes490WC.xml";
                 DialogResult resultado490WC = SFD490WC.ShowDialog();
@@ -560,7 +562,8 @@ namespace GUI490WC
                     GestorCliente490WC gestorCliente490WC = new GestorCliente490WC();
 
                     gestorCliente490WC.GuardarXML490WC(GenerarTextoXML490WC(), SFD490WC.FileName);
-                    MessageBox.Show("Clientes Serializados Con Exito!");
+                    string mensajeExito490WC = Traductor490WC.TraductorSG490WC.Traducir490WC("ClientesSerializadosConExito490WC");
+                    MessageBox.Show(mensajeExito490WC);
                     ModoSerializar490WC(false);
                 }
             }
@@ -591,15 +594,18 @@ namespace GUI490WC
         {
             using (OpenFileDialog OFD490WC = new OpenFileDialog())
             {
-                OFD490WC.Filter = "Archivo XML (*.xml)|*.xml";
-                OFD490WC.Title = "Abrir archivo XML";
+                string filtro490WC = Traductor490WC.TraductorSG490WC.Traducir490WC("FiltroArchivoXML490WC");
+                OFD490WC.Filter = filtro490WC;
+                string titulo490WC = Traductor490WC.TraductorSG490WC.Traducir490WC("AbrirArchivoXML490WC");
+                OFD490WC.Title = titulo490WC;
                 if (OFD490WC.ShowDialog() == DialogResult.OK)
                 {
                     string rutaArchivo490WC = OFD490WC.FileName;
                     var doc490WC = XDocument.Load(rutaArchivo490WC);
                     if (doc490WC.Root.Name != "ArrayOfCliente490WC")
                     {
-                        MessageBox.Show("El XML no tiene el formato correcto para deserializar!!");
+                        string mensajeError490WC = Traductor490WC.TraductorSG490WC.Traducir490WC("XMLFormatoIncorrectoParaDeserializar490WC");
+                        MessageBox.Show(mensajeError490WC);
                     }
                     else
                     {

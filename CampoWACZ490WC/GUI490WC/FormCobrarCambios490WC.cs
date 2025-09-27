@@ -35,7 +35,8 @@ namespace GUI490WC
 
             if (boletoModificadoCobrar490WC == null && clienteCobrar490WC == null)
             {
-                TBVISTAPREVIAFACTURA490WC.Text = "Debe Seleccionar un Boleto Modificado Por Pagar Para Previsualizar Su Factura Correspondiente";
+                string mensajeSeleccionarBoleto490WC = Traductor490WC.TraductorSG490WC.Traducir490WC("SeleccionarBoleto490WC");
+                TBVISTAPREVIAFACTURA490WC.Text = mensajeSeleccionarBoleto490WC;
             }
             else if (boletoModificadoCobrar490WC is BoletoIDAVUELTA490WC && clienteCobrar490WC != null)
             {
@@ -43,6 +44,7 @@ namespace GUI490WC
                 totalFactura490WC = boletoModificadoCobrar490WC.Precio490WC * 1.60f;
                 if (boletoModificadoCobrar490WC.BeneficioAplicado490WC != null)
                 {
+                    string mensajeBeneficioAplicado490WC = Traductor490WC.TraductorSG490WC.Traducir490WC("BeneficioAplicadoVistaPreviaFactura490WC");
                     TBVISTAPREVIAFACTURA490WC.Text = $"Numero Factura: {gestorFactura490WC.ObtenerTodasLasFacturas490WC().Count + 1} {Environment.NewLine}" +
                                                      $"Nombre: {clienteCobrar490WC.Nombre490WC} {Environment.NewLine}" +
                                                      $"Apellido: {clienteCobrar490WC.Apellido490WC} {Environment.NewLine}" +

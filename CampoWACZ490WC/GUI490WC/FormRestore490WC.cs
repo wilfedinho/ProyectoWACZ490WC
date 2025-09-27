@@ -1,4 +1,5 @@
 ﻿using BLLS490WC;
+using FontAwesome.Sharp;
 using SERVICIOS490WC;
 using System;
 using System.Collections.Generic;
@@ -22,7 +23,8 @@ namespace GUI490WC
         {
             using (OpenFileDialog OFD490WC = new OpenFileDialog())
             {
-                OFD490WC.Filter = "Archivos de Respaldo (*.bak)|*.bak";
+                string mensajeOperacion490WC = Traductor490WC.TraductorSG490WC.Traducir490WC("BuscarArchivoRespaldo490WC");
+                OFD490WC.Filter = mensajeOperacion490WC;
                 if (OFD490WC.ShowDialog() == DialogResult.OK)
                 {
                     TB_RESTORE490WC.Text = OFD490WC.FileName;
@@ -37,12 +39,14 @@ namespace GUI490WC
                 GestorBackUpRestore490WC gestorBackUpRestore490WC = new GestorBackUpRestore490WC();
                 if (gestorBackUpRestore490WC.RealizarRestore490WC(TB_RESTORE490WC.Text))
                 {
-                    MessageBox.Show("Restauración realizada con éxito");
+                    string mensajeOperacion490WC = Traductor490WC.TraductorSG490WC.Traducir490WC("RestauracionExitosa490WC");
+                    MessageBox.Show(mensajeOperacion490WC);
                     TB_RESTORE490WC.Clear();
                 }
                 else
                 {
-                    MessageBox.Show("Archivo seleccionado para la Restauración Invalido!!");
+                    string mensajeOperacion490WC = Traductor490WC.TraductorSG490WC.Traducir490WC("RestauracionFallida490WC");
+                    MessageBox.Show(mensajeOperacion490WC);
                     TB_RESTORE490WC.Clear();
                 }
             }
@@ -61,7 +65,25 @@ namespace GUI490WC
 
         public void ActualizarLenguaje490WC()
         {
+            RecorrerControles490WC(this);
+        }
 
+        public void RecorrerControles490WC(Control control490WC)
+        {
+            foreach (Control c490WC in control490WC.Controls)
+            {
+                if ((c490WC is TextBox tb490WC) == false)
+                {
+                    if (c490WC is IconButton == true)
+                    {
+
+                    }
+                    else if (c490WC is Button)
+                    {
+                        c490WC.Text = Traductor490WC.TraductorSG490WC.Traducir490WC(c490WC.Name);
+                    }
+                }
+            }
         }
     }
 }
