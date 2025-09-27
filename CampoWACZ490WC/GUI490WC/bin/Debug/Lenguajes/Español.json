@@ -312,5 +312,14 @@
     "AbrirArchivoXML490WC": "Abrir archivo XML",
     "XMLFormatoIncorrectoParaDeserializar490WC": "El XML no tiene el formato correcto para deserializar!!",
     "SeleccionarBoleto490WC": "Debe Seleccionar un Boleto Modificado Por Pagar Para Previsualizar Su Factura Correspondiente",
-    "BeneficioAplicadoVistaPreviaFactura490WC" : "",
+    "BeneficioAplicadoVistaPreviaFactura490WC": "Numero Factura: {gestorFactura490WC.ObtenerTodasLasFacturas490WC().Count + 1} {Environment.NewLine} Nombre: {clienteCobrar490WC.Nombre490WC} {Environment.NewLine} Apellido: {clienteCobrar490WC.Apellido490WC} {Environment.NewLine} Beneficio Aplicado: {boletoModificadoCobrar490WC.BeneficioAplicado490WC} {Environment.NewLine} DNI: {clienteCobrar490WC.DNI490WC} {Environment.NewLine} Fecha Emision: {DateTime.Now.ToShortDateString()} {Environment.NewLine} Hora Emision: {DateTime.Now.ToShortTimeString()} {Environment.NewLine} Numero Boleto: {boletoModificadoCobrar490WC.IDBoleto490WC} {Environment.NewLine} Cambios Realizados: {Environment.NewLine}",
+    "CambioFechaVistaPreviaFactura490WC": "Cambio De Fecha 30% Recargo {Environment.NewLine}",
+    "CambioBeneficioVistaPreviaFactura490WC": "Cambio De Beneficio 20% Recargo {Environment.NewLine}",
+    "CambioClaseVistaPreviaFactura490WC": "Cambio De Clase 40% Recargo {Environment.NewLine}",
+    "CambioAsientoVistaPreviaFactura490WC": "Cambio De Asiento 20% Recargo {Environment.NewLine}",
+    "CambioPesoEquipajeVistaPreviaFactura490WC": "Cambio De Peso Equipaje 13% Recargo {Environment.NewLine}",
+    "CambioTitularVistaPreviaFactura490WC": "Cambio De Titular 60% Recargo {Environment.NewLine}",
+    "SubtotalVistaPreviaFactura490WC": "Subtotal: {boletoModificadoCobrar490WC.Precio490WC} {Environment.NewLine} Total: {totalFactura490WC}",
+    "BeneficioNOAplicadoVistaPreviaFactura490WC": "Numero Factura: {gestorFactura490WC.ObtenerTodasLasFacturas490WC().Count + 1} {Environment.NewLine} Nombre: {clienteCobrar490WC.Nombre490WC} {Environment.NewLine} Apellido: {clienteCobrar490WC.Apellido490WC} {Environment.NewLine} Beneficio Aplicado: No Posee Beneficio Aplicado {Environment.NewLine} DNI: {clienteCobrar490WC.DNI490WC} {Environment.NewLine} Fecha Emision: {DateTime.Now.ToShortDateString()} {Environment.NewLine} Hora Emision: {DateTime.Now.ToShortTimeString()} {Environment.NewLine} Numero Boleto: {boletoModificadoCobrar490WC.IDBoleto490WC} {Environment.NewLine} Cambios Realizados: {Environment.NewLine}"
+
 }
