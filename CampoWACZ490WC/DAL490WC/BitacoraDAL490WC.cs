@@ -133,5 +133,40 @@ namespace DAL490WC
             }
             return listaBitacora490WC;
         }
+
+        public List<BitacoraSE490WC> ObtenerEventosSINFiltro()
+        {
+            List<BitacoraSE490WC> listaBitacora490WC = new List<BitacoraSE490WC>();
+
+            using (SqlConnection cone490WC = GestorConexion490WC.GestorCone490WC.DevolverConexion490WC())
+            {
+                cone490WC.Open();
+
+                string query490WC = @"SELECT IdBitacora490WC, Username490WC, Fecha490WC, Hora490WC, Modulo490WC, Descripcion490WC, Criticidad490WC FROM Bitacora490WC";
+
+                using (SqlCommand cmd490WC = new SqlCommand(query490WC, cone490WC))
+                {
+                   
+
+                    using (SqlDataReader reader490WC = cmd490WC.ExecuteReader())
+                    {
+                        while (reader490WC.Read())
+                        {
+                            string idBitacora490WC = reader490WC["IdBitacora490WC"].ToString();
+                            string username490WC = reader490WC["Username490WC"].ToString();
+                            DateTime fecha490WC = Convert.ToDateTime(reader490WC["Fecha490WC"]);
+                            TimeSpan hora490WC = (TimeSpan)reader490WC["Hora490WC"];
+                            string modulo490WC = reader490WC["Modulo490WC"].ToString();
+                            string descripcion490WC = reader490WC["Descripcion490WC"].ToString();
+                            int criticidad490WC = Convert.ToInt32(reader490WC["Criticidad490WC"]);
+
+                            listaBitacora490WC.Add(new BitacoraSE490WC(username490WC, fecha490WC, hora490WC, modulo490WC, descripcion490WC, criticidad490WC, idBitacora490WC));
+                        }
+                    }
+                }
+            }
+            return listaBitacora490WC;
+        }
+
     }
 }

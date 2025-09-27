@@ -28,6 +28,12 @@ namespace BLLS490WC
             return GestorBitacora490WC.ObtenerEventosPorConsulta490WC(usuarioFiltrar490WC, moduloFiltrar490WC, descripcionFiltrar490WC, criticidadFiltrar490WC, fechaInicioFiltrar490WC, fechaFinFiltrar490WC);
         }
 
+        public List<BitacoraSE490WC> ObtenerEventosSINFiltro()
+        {
+            BitacoraDAL490WC GestorBitacora490WC = new BitacoraDAL490WC();
+            return GestorBitacora490WC.ObtenerEventosSINFiltro();
+        }
+
         public List<string> ObtenerDescripcion490WC(string Modulo490WC)
         {
             BitacoraDAL490WC GestorBitacora490WC = new BitacoraDAL490WC();

@@ -19,6 +19,7 @@ namespace GUI490WC
         UserManager490WC GestorUsuario490WC;
         List<Usuario490WC> ListaUsuario490WC;
         List<BitacoraSE490WC> ListaBitacora490WC;
+        List<BitacoraSE490WC> ListaBitacoraSINFiltros;
         public FormBitacoraDeEventos490WC()
         {
             InitializeComponent();
@@ -27,6 +28,7 @@ namespace GUI490WC
             GestorUsuario490WC = new UserManager490WC();
             //ListaUsuario490WC = GestorUsuario490WC.DevolverTodosLosUsuarios490WC();
             ListaBitacora490WC = new List<BitacoraSE490WC>();
+            ListaBitacoraSINFiltros = GestorBitacora490WC.ObtenerEventosSINFiltro();
             Mostrar490WC();
             LLenarCB490WC();
             monthCalendarFechaInicio490WC.Enabled = false;
@@ -75,7 +77,7 @@ namespace GUI490WC
             CB_Modulo490WC.Items.Clear();
             CB_Descripcion490WC.Items.Clear();
             CB_Criticidad490WC.Items.Clear();
-            foreach (BitacoraSE490WC bitacora490WC in ListaBitacora490WC)
+            foreach (BitacoraSE490WC bitacora490WC in ListaBitacoraSINFiltros)
             {
 
                 if (CB_Usuario490WC.Items.Count == 0 || !CB_Usuario490WC.Items.Contains(bitacora490WC.Username490WC))
