@@ -32,7 +32,7 @@
             this.TBINFOBOLETOINFOPREVIA490WC = new System.Windows.Forms.TextBox();
             this.BT_BUSCARBOLETO490WC = new System.Windows.Forms.Button();
             this.TB_NUMEROBOLETO490WC = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.LB_BuscarBoletoModificar490WC = new System.Windows.Forms.Label();
             this.LB_CARTELERACAMBIOS490WC = new System.Windows.Forms.Label();
             this.TB_CARTELERACAMBIOS490WC = new System.Windows.Forms.TextBox();
             this.LABEL_FECHALLEGADA_VUELTA490WC = new System.Windows.Forms.Label();
@@ -106,16 +106,16 @@
             this.TB_NUMEROBOLETO490WC.Size = new System.Drawing.Size(178, 27);
             this.TB_NUMEROBOLETO490WC.TabIndex = 57;
             // 
-            // label1
+            // LB_BuscarBoletoModificar490WC
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.label1.Location = new System.Drawing.Point(78, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(214, 20);
-            this.label1.TabIndex = 59;
-            this.label1.Text = "Buscar Boleto Modificar";
+            this.LB_BuscarBoletoModificar490WC.AutoSize = true;
+            this.LB_BuscarBoletoModificar490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.LB_BuscarBoletoModificar490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
+            this.LB_BuscarBoletoModificar490WC.Location = new System.Drawing.Point(78, 9);
+            this.LB_BuscarBoletoModificar490WC.Name = "LB_BuscarBoletoModificar490WC";
+            this.LB_BuscarBoletoModificar490WC.Size = new System.Drawing.Size(214, 20);
+            this.LB_BuscarBoletoModificar490WC.TabIndex = 59;
+            this.LB_BuscarBoletoModificar490WC.Text = "Buscar Boleto Modificar";
             // 
             // LB_CARTELERACAMBIOS490WC
             // 
@@ -390,7 +390,7 @@
             this.Controls.Add(this.calendarioFECHAPARTIDA_IDA490WC);
             this.Controls.Add(this.LB_CARTELERACAMBIOS490WC);
             this.Controls.Add(this.TB_CARTELERACAMBIOS490WC);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.LB_BuscarBoletoModificar490WC);
             this.Controls.Add(this.BT_BUSCARBOLETO490WC);
             this.Controls.Add(this.TB_NUMEROBOLETO490WC);
             this.Controls.Add(this.LABEL_INFOPARCIALBOLETO490WC);
@@ -411,7 +411,7 @@
         private System.Windows.Forms.TextBox TBINFOBOLETOINFOPREVIA490WC;
         private System.Windows.Forms.Button BT_BUSCARBOLETO490WC;
         private System.Windows.Forms.TextBox TB_NUMEROBOLETO490WC;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label LB_BuscarBoletoModificar490WC;
         private System.Windows.Forms.Label LB_CARTELERACAMBIOS490WC;
         private System.Windows.Forms.TextBox TB_CARTELERACAMBIOS490WC;
         private System.Windows.Forms.Label LABEL_FECHALLEGADA_VUELTA490WC;

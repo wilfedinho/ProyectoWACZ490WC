@@ -27,17 +27,11 @@ namespace GUI490WC
             InitializeComponent();
             Mostrar();
             HabilitarOpcionesModificar();
-            TB_CARTELERACAMBIOS490WC.Text = $"Recargos En Base Al Precio Del Boleto {Environment.NewLine}" +
-                                            $"Modificar Fechas ===> 30% {Environment.NewLine}" +
-                                            $"Modificar Beneficio ===> 20% {Environment.NewLine}" +
-                                            $"Modificar Clase Boleto ===> 40% {Environment.NewLine}" +
-                                            $"Modificar Asiento ===> 20% {Environment.NewLine}" +
-                                            $"Modificar Peso del Equipaje ===> 13% {Environment.NewLine}" +
-                                            $"Modificar Titular ===> 60%";
+            //TB_CARTELERACAMBIOS490WC.Text = $"Recargos En Base Al Precio Del Boleto {Environment.NewLine} Modificar Fechas ===> 30% {Environment.NewLine} Modificar Beneficio ===> 20% {Environment.NewLine} Modificar Clase Boleto ===> 40% {Environment.NewLine} Modificar Asiento ===> 20% {Environment.NewLine} Modificar Peso del Equipaje ===> 13% {Environment.NewLine} Modificar Titular ===> 60%";
             random = new Random();
             timer = new Timer();
             booleanoRandom = false;
-            timer.Interval = 50; // velocidad de carga (ms)
+            timer.Interval = 50;
             timer.Tick += Timer_Tick;
         }
 
@@ -54,39 +48,101 @@ namespace GUI490WC
 
         public void ActualizarLenguaje490WC()
         {
-
+            RecorrerControles490WC(this);
         }
 
+        public void RecorrerControles490WC(Control control490WC)
+        {
+            foreach (Control c490WC in control490WC.Controls)
+            {
+                if ((c490WC is TextBox tb490WC) == false)
+                {
 
+                    c490WC.Text = Traductor490WC.TraductorSG490WC.Traducir490WC(c490WC.Name);
+
+
+                    if (c490WC.HasChildren)
+                    {
+                        RecorrerControles490WC(c490WC);
+                    }
+                    if (c490WC is DataGridView dgv490WC)
+                    {
+                        foreach (DataGridViewColumn columna490WC in dgv490WC.Columns)
+                        {
+                            columna490WC.HeaderText = Traductor490WC.TraductorSG490WC.Traducir490WC(columna490WC.Name);
+                        }
+                    }
+                }
+                else if (c490WC is TextBox)
+                {
+                    if (c490WC.Name == "TB_CARTELERACAMBIOS490WC")
+                    {
+                        string texto490WC = Traductor490WC.TraductorSG490WC.Traducir490WC(c490WC.Name);
+                        texto490WC = texto490WC.Replace("{Environment.NewLine}", $"{Environment.NewLine}");
+                        TB_CARTELERACAMBIOS490WC.Text = texto490WC;
+                    }
+                }
+            }
+        }
 
         private string ConstruirTextoBoleto490WC()
         {
             var sb = new StringBuilder();
-
-            sb.AppendLine($"Numero Boleto: {boletoOriginal490WC.IDBoleto490WC}");
-            sb.AppendLine($"Origen: {boletoOriginal490WC.Origen490WC}");
-            sb.AppendLine($"Destino: {boletoOriginal490WC.Destino490WC}");
-            sb.AppendLine($"Fecha Partida: {boletoOriginal490WC.FechaPartida490WC.ToString("dd/MM/yyyy")}");
-            sb.AppendLine($"Fecha Llegada: {boletoOriginal490WC.FechaLlegada490WC.ToString("dd/MM/yyyy")}");
+            string textoNumeroBoleto490WC = Traductor490WC.TraductorSG490WC.Traducir490WC("NumeroBoleto490WC");
+            textoNumeroBoleto490WC = textoNumeroBoleto490WC.Replace("{boletoOriginal490WC.IDBoleto490WC}", $"{boletoOriginal490WC.IDBoleto490WC}");
+            sb.AppendLine(textoNumeroBoleto490WC);
+            string textoOrigen490WC = Traductor490WC.TraductorSG490WC.Traducir490WC("Origen490WC");
+            textoOrigen490WC = textoOrigen490WC.Replace("{boletoOriginal490WC.Origen490WC}", $"{boletoOriginal490WC.Origen490WC}");
+            sb.AppendLine(textoOrigen490WC);
+            string textoDestino490WC = Traductor490WC.TraductorSG490WC.Traducir490WC("Destino490WC");
+            textoDestino490WC = textoDestino490WC.Replace("{boletoOriginal490WC.Destino490WC}", $"{boletoOriginal490WC.Destino490WC}");
+            sb.AppendLine(textoDestino490WC);
+            string textoFechaPartida490WC = Traductor490WC.TraductorSG490WC.Traducir490WC("FechaPartida490WC");
+            textoFechaPartida490WC = textoFechaPartida490WC.Replace("{boletoOriginal490WC.FechaPartida490WC}", $"{boletoOriginal490WC.FechaPartida490WC.ToString("dd/MM/yyyy")}");
+            sb.AppendLine(textoFechaPartida490WC);
+            string textoFechaLlegada490WC = Traductor490WC.TraductorSG490WC.Traducir490WC("FechaLlegada490WC");
+            textoFechaLlegada490WC = textoFechaLlegada490WC.Replace("{boletoOriginal490WC.FechaLlegada490WC}", $"{boletoOriginal490WC.FechaLlegada490WC.ToString("dd/MM/yyyy")}");
+            sb.AppendLine(textoFechaLlegada490WC);
 
             if (boletoOriginal490WC is BoletoIDAVUELTA490WC idaVuelta)
             {
-                sb.AppendLine($"Fecha Partida Vuelta: {idaVuelta.FechaPartidaVUELTA490WC.ToString("dd/MM/yyyy")}");
-                sb.AppendLine($"Fecha Llegada Vuelta: {idaVuelta.FechaLlegadaVUELTA490WC.ToString("dd/MM/yyyy")}");
+                string textoFechaPartidaVUELTA490WC = Traductor490WC.TraductorSG490WC.Traducir490WC("FechaPartidaVUELTA490WC");
+                textoFechaPartidaVUELTA490WC = textoFechaPartidaVUELTA490WC.Replace("{idaVuelta.FechaPartidaVUELTA490WC}", $"{idaVuelta.FechaPartidaVUELTA490WC.ToString("dd/MM/yyyy")}");
+                sb.AppendLine(textoFechaPartidaVUELTA490WC);
+                string textoFechaLlegadaVUELTA490WC = Traductor490WC.TraductorSG490WC.Traducir490WC("FechaLlegadaVUELTA490WC");
+                textoFechaLlegadaVUELTA490WC = textoFechaLlegadaVUELTA490WC.Replace("{idaVuelta.FechaLlegadaVUELTA490WC}", $"{idaVuelta.FechaLlegadaVUELTA490WC.ToString("dd/MM/yyyy")}");
+                sb.AppendLine(textoFechaLlegadaVUELTA490WC);
             }
-
-            sb.AppendLine($"Clase Del Boleto: {boletoOriginal490WC.ClaseBoleto490WC}");
-            sb.AppendLine($"Equipaje Permitido: {boletoOriginal490WC.EquipajePermitido490WC} kg");
-            sb.AppendLine($"Titular: {boletoOriginal490WC.Titular490WC.DNI490WC} {boletoOriginal490WC.Titular490WC.Nombre490WC} {boletoOriginal490WC.Titular490WC.Apellido490WC}");
-            sb.AppendLine($"Asiento: {boletoOriginal490WC.NumeroAsiento490WC}");
+            string textoClaseBoleto490WC = Traductor490WC.TraductorSG490WC.Traducir490WC("ClaseBoleto490WC");
+            textoClaseBoleto490WC = textoClaseBoleto490WC.Replace("{boletoOriginal490WC.ClaseBoleto490WC}", $"{boletoOriginal490WC.ClaseBoleto490WC}");
+            sb.AppendLine(textoClaseBoleto490WC);
+            string textoEquipajePermitido490WC = Traductor490WC.TraductorSG490WC.Traducir490WC("EquipajePermitido490WC");
+            textoEquipajePermitido490WC = textoEquipajePermitido490WC.Replace("{boletoOriginal490WC.EquipajePermitido490WC}", $"{boletoOriginal490WC.EquipajePermitido490WC}");
+            sb.AppendLine(textoEquipajePermitido490WC);
+            string textoTitular490WC = Traductor490WC.TraductorSG490WC.Traducir490WC("Titular490WC");
+            textoTitular490WC = textoTitular490WC.Replace("{boletoOriginal490WC.Titular490WC.DNI490WC}", $"{boletoOriginal490WC.Titular490WC.DNI490WC}");
+            textoTitular490WC = textoTitular490WC.Replace("{boletoOriginal490WC.Titular490WC.Nombre490WC}", $"{boletoOriginal490WC.Titular490WC.Nombre490WC}");
+            textoTitular490WC = textoTitular490WC.Replace("{boletoOriginal490WC.Titular490WC.Apellido490WC}", $"{boletoOriginal490WC.Titular490WC.Apellido490WC}");
+            sb.AppendLine(textoTitular490WC);
+            string textoAsiento490WC = Traductor490WC.TraductorSG490WC.Traducir490WC("NumeroAsiento490WC");
+            textoAsiento490WC = textoAsiento490WC.Replace("{boletoOriginal490WC.NumeroAsiento490WC}", $"{boletoOriginal490WC.NumeroAsiento490WC}");
+            sb.AppendLine(textoAsiento490WC);
 
 
             if (string.IsNullOrWhiteSpace(boletoOriginal490WC.BeneficioAplicado490WC))
-                sb.AppendLine("Beneficio Aplicado: Este Boleto No Posee Un Beneficio Aplicado");
+            {
+                string textoBeneficioAplicado490WC = Traductor490WC.TraductorSG490WC.Traducir490WC("BeneficioNoPosee490WC");
+                sb.AppendLine(textoBeneficioAplicado490WC);
+            }
             else
-                sb.AppendLine($"Beneficio Aplicado: {boletoOriginal490WC.BeneficioAplicado490WC}");
-
-            sb.AppendLine($"Precio: {boletoOriginal490WC.Precio490WC}");
+            {
+                string textoBeneficioAplicado490WC = Traductor490WC.TraductorSG490WC.Traducir490WC("BeneficioAplicado490WC");
+                textoBeneficioAplicado490WC = textoBeneficioAplicado490WC.Replace("{boletoOriginal490WC.BeneficioAplicado490WC}", $"{boletoOriginal490WC.BeneficioAplicado490WC}");
+                sb.AppendLine(textoBeneficioAplicado490WC);
+            }
+            string textoPrecio490WC = Traductor490WC.TraductorSG490WC.Traducir490WC("Precio490WC");
+            textoPrecio490WC = textoPrecio490WC.Replace("{boletoOriginal490WC.Precio490WC}", $"{boletoOriginal490WC.Precio490WC}");
+            sb.AppendLine(textoPrecio490WC);
             return sb.ToString();
         }
 
@@ -95,7 +151,8 @@ namespace GUI490WC
             TBINFOBOLETOINFOPREVIA490WC.Clear();
             if (boletoOriginal490WC == null)
             {
-                TBINFOBOLETOINFOPREVIA490WC.Text = "Ingrese el Numero del Boleto Que Desea Modificar";
+                string textoIngreseNumeroBoleto490WC = Traductor490WC.TraductorSG490WC.Traducir490WC("IngreseNumeroBoleto490WC");
+                TBINFOBOLETOINFOPREVIA490WC.Text = textoIngreseNumeroBoleto490WC;
                 calendarioFECHAPARTIDA_IDA490WC.SelectionStart = DateTime.Now;
                 calendarioFECHALLEGADA_IDA490WC.SelectionStart = DateTime.Now;
                 calendarioFECHAPARTIDA_VUELTA490WC.SelectionStart = DateTime.Now;
@@ -212,7 +269,8 @@ namespace GUI490WC
                     clienteOriginal490WC = null;
                     Mostrar();
                     HabilitarOpcionesModificar();
-                    MessageBox.Show($"El Boleto No Se Encuentra Disponible Para Ser Modificado");
+                    string textoBoletoNoDisponible490WC = Traductor490WC.TraductorSG490WC.Traducir490WC("BoletoNoDisponible490WC");
+                    MessageBox.Show(textoBoletoNoDisponible490WC);
                 }
             }
             else
@@ -220,7 +278,8 @@ namespace GUI490WC
                 clienteOriginal490WC = null;
                 Mostrar();
                 HabilitarOpcionesModificar();
-                MessageBox.Show($"Ingrese un Numero de Boleto valido!!!");
+                string textoError490WC = Traductor490WC.TraductorSG490WC.Traducir490WC("IngreseNumeroBoleto490WC");
+                MessageBox.Show(textoError490WC);
             }
             TB_NUMEROBOLETO490WC.Clear();
         }
@@ -444,7 +503,8 @@ namespace GUI490WC
                                 VerificarCambios490WC();
                                 if (IsCambioFecha490WC == false && IsCambioBeneficio490WC == false && IsCambioClaseBoleto490WC == false && IsCambioAsiento490WC == false && IsCambioPesoEquipaje490WC == false)
                                 {
-                                    MessageBox.Show("Debe realizar Algun Cambio En el Boleto Para Consultar Dichos Cambios!!");
+                                    string errorMensaje490WC = Traductor490WC.TraductorSG490WC.Traducir490WC("DebeRealizarAlgunCambioBoleto490WC");
+                                    MessageBox.Show(errorMensaje490WC);
                                 }
                                 else
                                 {
@@ -452,19 +512,6 @@ namespace GUI490WC
                                     RecalcularPrecioBoleto490WC();
                                     BarraProgresoConsulta490WC.Value = 0;
                                     timer.Start();
-                                    //if (gestorBoleto490WC.GenerarBoletoModificado490WC(boletoModificarCopia490WC))
-                                    //{
-                                    //    MessageBox.Show("La Modificacion Se ha logrado con Exito, tiene 8 Horas Habiles Para Efectuar el Pago!!!");
-                                    //    clienteOriginal490WC = null;
-                                    //    boletoOriginal490WC = null;
-                                    //    Mostrar();
-                                    //    HabilitarOpcionesModificar();
-                                    //}
-                                    //else
-                                    //{
-                                    //    MessageBox.Show("No Se Pudo Realizar La Modificacion, Intente Nuevamente Mas Tarde!!!");
-                                    //}
-
                                 }
                             }
                             else
@@ -478,11 +525,12 @@ namespace GUI490WC
                         {
                             if (fechaPartidaIDA490WC <= fechaLlegadaIDA490WC)
                             {
-                                boletoModificarCopia490WC = new BoletoIDA490WC(boletoOriginal490WC.IDBoleto490WC, boletoOriginal490WC.Origen490WC, boletoOriginal490WC.Destino490WC, fechaPartidaIDA490WC, fechaLlegadaIDA490WC,false, pesoParse490WC, claseBoleto490WC, boletoOriginal490WC.Precio490WC, clienteOriginal490WC, asiento490WC, beneficio490WC);
+                                boletoModificarCopia490WC = new BoletoIDA490WC(boletoOriginal490WC.IDBoleto490WC, boletoOriginal490WC.Origen490WC, boletoOriginal490WC.Destino490WC, fechaPartidaIDA490WC, fechaLlegadaIDA490WC, false, pesoParse490WC, claseBoleto490WC, boletoOriginal490WC.Precio490WC, clienteOriginal490WC, asiento490WC, beneficio490WC);
                                 VerificarCambios490WC();
                                 if (IsCambioFecha490WC == false && IsCambioBeneficio490WC == false && IsCambioClaseBoleto490WC == false && IsCambioAsiento490WC == false && IsCambioPesoEquipaje490WC == false)
                                 {
-                                    MessageBox.Show("Debe realizar Algun Cambio Para Consultarlo!!");
+                                    string errorMensaje490WC = Traductor490WC.TraductorSG490WC.Traducir490WC("DebeRealizarAlgunCambioBoleto490WC");
+                                    MessageBox.Show(errorMensaje490WC);
                                 }
                                 else
                                 {
@@ -490,20 +538,6 @@ namespace GUI490WC
                                     RecalcularPrecioBoleto490WC();
                                     BarraProgresoConsulta490WC.Value = 0;
                                     timer.Start();
-                                    
-                                    //if (gestorBoleto490WC.GenerarBoletoModificado490WC(boletoModificarCopia490WC))
-                                    //{
-                                    //    MessageBox.Show("La Modificacion Se ha logrado con Exito, tiene 8 Horas Habiles Para Efectuar el Pago!!!");
-                                    //    clienteOriginal490WC = null;
-                                    //    boletoOriginal490WC = null;
-                                    //    Mostrar();
-                                    //    HabilitarOpcionesModificar();
-                                    //}
-                                    //else
-                                    //{
-                                    //    MessageBox.Show("No Se Pudo Realizar La Modificacion, Intente Nuevamente Mas Tarde!!!");
-                                    //}
-
                                 }
                             }
                             else
@@ -515,7 +549,8 @@ namespace GUI490WC
                     }
                     else
                     {
-                        MessageBox.Show("Ingrese Un Peso Valido!!");
+                        string errorPeso490WC = Traductor490WC.TraductorSG490WC.Traducir490WC("FormatoPesoIncorrecto");
+                        MessageBox.Show(errorPeso490WC);
                     }
                 }
                 else
@@ -523,19 +558,12 @@ namespace GUI490WC
                     string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("FormatoAsientoIncorrecto");
                     MessageBox.Show(mensajeError);
                 }
-
-
-
-
             }
             else
             {
-                MessageBox.Show("Debe seleccionar Algun Beneficio!!");
+                string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("SeleccionarBeneficioBoleto490WC");
+                MessageBox.Show(mensajeError);
             }
-
-
-
-
         }
 
         private void Timer_Tick(object sender, EventArgs e)
@@ -543,17 +571,18 @@ namespace GUI490WC
             GestorBoleto490WC gestorBoleto490WC = new GestorBoleto490WC();
             if (BarraProgresoConsulta490WC.Value < BarraProgresoConsulta490WC.Maximum)
             {
-                BarraProgresoConsulta490WC.Value += 5; // incrementar barra
+                BarraProgresoConsulta490WC.Value += 5; 
             }
             else
             {
-                timer.Stop(); // detener animación
+                timer.Stop(); 
 
-                // Generar resultado booleano aleatorio
+                
                 booleanoRandom = true;
                 if (gestorBoleto490WC.GenerarBoletoModificado490WC(boletoModificarCopia490WC))
                 {
-                    MessageBox.Show("La Modificacion Se ha logrado con Exito, tiene 8 Horas Habiles Para Efectuar el Pago!!!");
+                    string textoModificacionExitosa490WC = Traductor490WC.TraductorSG490WC.Traducir490WC("ModificacionExitosa490WC");
+                    MessageBox.Show(textoModificacionExitosa490WC);
                     clienteOriginal490WC = null;
                     boletoOriginal490WC = null;
                     Mostrar();
@@ -561,9 +590,10 @@ namespace GUI490WC
                 }
                 else
                 {
-                    MessageBox.Show("No Se Pudo Realizar La Modificacion, Intente Nuevamente Mas Tarde!!!");
+                    string textoErrorModificacion490WC = Traductor490WC.TraductorSG490WC.Traducir490WC("ErrorModificacionBoleto490WC");
+                    MessageBox.Show(textoErrorModificacion490WC);
                 }
-                BarraProgresoConsulta490WC.Value = 0; // reiniciar barra para próxima vez
+                BarraProgresoConsulta490WC.Value = 0; 
             }
         }
 
