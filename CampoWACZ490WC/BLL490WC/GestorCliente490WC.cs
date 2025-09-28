@@ -105,16 +105,31 @@ namespace BLL490WC
 
         public bool VerificarFormatoFechaTarjeta490WC(string FechaTarjeta490WC)
         {
-            Regex rgx490WC = new Regex("^[0-9]{2}[/]{1}[0-9]{2}$");
-            if (rgx490WC.IsMatch(FechaTarjeta490WC))
-            {
-                return true;
-            }
-            else
-            {
-                return false;   
-            }
+            Regex rgx490WC = new Regex(@"^(0[1-9]|1[0-2])\/\d{2}$");
+
+            return rgx490WC.IsMatch(FechaTarjeta490WC);
         }
+
+        public bool VerificarFormatoFechaVencimientoTarjeta490WC(string FechaTarjeta490WC)
+        {
+            
+            Regex rgx490WC = new Regex(@"^(0[1-9]|1[0-2])\/\d{2}$");
+            if (!rgx490WC.IsMatch(FechaTarjeta490WC))
+                return false;
+            string[] partes = FechaTarjeta490WC.Split('/');
+            int mes = int.Parse(partes[0]);
+            int anio = int.Parse(partes[1]);
+            int anioActual = DateTime.Now.Year % 100; 
+            int mesActual = DateTime.Now.Month;
+
+            
+            if (anio > anioActual || (anio == anioActual && mes >= mesActual))
+                return true;
+
+            return false;
+        }
+
+
         public bool VerificarFormatoNumeroTarjeta490WC(string NumeroTarjeta490WC)
         {
             Regex rgx490WC = new Regex("^[0-9]{16}$");

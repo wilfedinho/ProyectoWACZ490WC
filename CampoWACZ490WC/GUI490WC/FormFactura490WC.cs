@@ -77,7 +77,6 @@ namespace GUI490WC
                     gestorFactura490WC.GenerarFactura490WC(facturaGenerar490WC);
                 }
                 GestorBoleto490WC gestorBoleto490WC = new GestorBoleto490WC();
-                //Boleto490WC boletoGenerar490WC = gestorBoleto490WC.ObtenerTodosLosBoletos490WC().Find(x => x.IDBoleto490WC == dgvFactura490WC.SelectedRows[0].Cells["ColumnaIDBoleto"].Value.ToString().Trim());
                 Boleto490WC boletoGenerar490WC = gestorBoleto490WC.ObtenerBoletoConBeneficio490WC(dgvFactura490WC.SelectedRows[0].Cells["ColumnaIDBoleto"].Value.ToString().Trim());
                 if (boletoGenerar490WC != null)
                 {

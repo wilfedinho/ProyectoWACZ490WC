@@ -215,22 +215,27 @@ namespace GUI490WC
         {
             if (dgvCliente490WC.SelectedRows.Count > 0)
             {
+                string[] cambios = boletoCargado490WC.CambiosRealizados490WC.Split(';');
                 GestorBoleto490WC gestorBoleto490WC = new GestorBoleto490WC();
                 GestorCliente490WC gestorCliente490WC = new GestorCliente490WC();
                 clienteCambiarTitularidad490WC = gestorCliente490WC.BuscarClientePorDNI490WC(dgvCliente490WC.SelectedRows[0].Cells["DNI_CLIENTE"].Value.ToString());
-                if (clienteCambiarTitularidad490WC != null)
+                if (clienteCambiarTitularidad490WC != null && clienteCambiarTitularidad490WC.DNI490WC != boletoCargado490WC.Titular490WC.DNI490WC)
                 {
                     boletoCargado490WC.Titular490WC = clienteCambiarTitularidad490WC;
-                    string[] cambios = boletoCargado490WC.CambiosRealizados490WC.Split(';');
                     cambios[9] = $"{boletoCargado490WC.Titular490WC.DNI490WC}";
                     boletoCargado490WC.Precio490WC += (boletoCargado490WC.Precio490WC * 0.60f);
                     boletoCargado490WC.CambiosRealizados490WC = string.Join(";", cambios);
                     gestorBoleto490WC.CambiarTitularBoletoModificado490WC(boletoCargado490WC);
                     string mensajeOperacion490WC = Traductor490WC.TraductorSG490WC.Traducir490WC("CambioTitularBoleto490WC");
-                    mensajeOperacion490WC = mensajeOperacion490WC.Replace("{boletoCargado490WC.IDBoleto490WC}", boletoCargado490WC.IDBoleto490WC);
+                    mensajeOperacion490WC = mensajeOperacion490WC.Replace("{boletoCargado490WC.IDBoleto490WC}", cambios[0]);
                     MessageBox.Show(mensajeOperacion490WC);
                     LimpiarCampos490WC();
                     this.Close();
+                }
+                else
+                {
+                    string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("ErrorMismoTitular490WC");
+                    MessageBox.Show(mensajeError);
                 }
             }
         }

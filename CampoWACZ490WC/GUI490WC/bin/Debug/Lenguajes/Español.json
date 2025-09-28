@@ -396,7 +396,8 @@
     "NombreBitacoraVACIO": "Nombre: ",
     "ApellidoBitacoraVACIO": "Apellido: ",
     "DNIBitacoraVACIO": "DNI: ",
-    "ErrorImprimirBitacora490WC": "Debe Haber Eventos Para Imprimirlos!!!"
+    "ErrorImprimirBitacora490WC": "Debe Haber Eventos Para Imprimirlos!!!",
+    "ErrorMismoTitular490WC": "El Cliente Seleccionado Para La Modificacion Del Titular Es El Mismo Que El Actual!!!"
 
 
 }

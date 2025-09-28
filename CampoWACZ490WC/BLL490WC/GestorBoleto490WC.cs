@@ -193,7 +193,7 @@ namespace BLL490WC
             BoletoDAL490WC gestorBoleto490WC = new BoletoDAL490WC();
             if (gestorBoleto490WC.GenerarBoletoModificado490WC(BoletoModificado490WC))
             {
-                //Revisar
+                
                 BeneficioDAL490WC gestorBeneficio490WC = new BeneficioDAL490WC();
                 if (BoletoModificado490WC.BeneficioAplicado490WC != null)
                 {
@@ -208,6 +208,9 @@ namespace BLL490WC
                 return false;
             }
         }
+
+
+
 
         public Boleto490WC ObtenerBoletoParaModificarPorID490WC(string ID490WC)
         {
