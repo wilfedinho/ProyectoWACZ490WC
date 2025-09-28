@@ -391,8 +391,12 @@
     "ModificacionExitosa490WC": "La Modificacion Se ha logrado con Exito, tiene 8 Horas Habiles Para Efectuar el Pago!!!",
     "ErrorModificacionBoleto490WC": "No Se Pudo Realizar La Modificacion, Intente Nuevamente Mas Tarde!!!",
     "ColumnaCodigoBeneficio490WC": "Codigo Beneficio",
-    "ColumnImagenEstrella": ""
-    
+    "ColumnImagenEstrella": "",
+    "UsuarioBitacoraVACIO": "Usuario: ",
+    "NombreBitacoraVACIO": "Nombre: ",
+    "ApellidoBitacoraVACIO": "Apellido: ",
+    "DNIBitacoraVACIO": "DNI: ",
+    "ErrorImprimirBitacora490WC": "Debe Haber Eventos Para Imprimirlos!!!"
 
 
 }

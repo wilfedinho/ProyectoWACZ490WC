@@ -274,7 +274,15 @@ namespace GUI490WC
 
         private void BT_IMPRIMIR490WC_Click(object sender, EventArgs e)
         {
-
+            if (dgvBitacora490WC.Rows.Count > 0)
+            {
+                GestorBitacora490WC.ImprimirBitacora490WC(ListaBitacora490WC);
+            }
+            else
+            {
+                string errorMensaje490WC = Traductor490WC.TraductorSG490WC.Traducir490WC("ErrorImprimirBitacora490WC");
+                MessageBox.Show("Debe Haber Eventos Para Imprimirlos!!!");
+            }
         }
 
         private void CB_Modulo490WC_SelectedIndexChanged(object sender, EventArgs e)
