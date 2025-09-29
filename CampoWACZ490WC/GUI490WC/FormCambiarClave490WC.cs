@@ -16,7 +16,7 @@ namespace GUI490WC
         public FormCambiarClave490WC()
         {
               InitializeComponent();
-           // Traductor490WC.TraductorSG490WC.Notificar490WC();
+           
         }
 
         public void ActualizarLenguaje490WC()

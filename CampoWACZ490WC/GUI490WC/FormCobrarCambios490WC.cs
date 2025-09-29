@@ -57,15 +57,7 @@ namespace GUI490WC
                     a = a.Replace("{Environment.NewLine}", $"{Environment.NewLine}");
                     TBVISTAPREVIAFACTURA490WC.Text = a;
 
-                    //TBVISTAPREVIAFACTURA490WC.Text = $"Numero Factura: {gestorFactura490WC.ObtenerTodasLasFacturas490WC().Count + 1} {Environment.NewLine}" +
-                    //                                 $"Nombre: {clienteCobrar490WC.Nombre490WC} {Environment.NewLine}" +
-                    //                                 $"Apellido: {clienteCobrar490WC.Apellido490WC} {Environment.NewLine}" +
-                    //                                 $"Beneficio Aplicado: {boletoModificadoCobrar490WC.BeneficioAplicado490WC} {Environment.NewLine}" +
-                    //                                 $"DNI: {clienteCobrar490WC.DNI490WC} {Environment.NewLine}" +
-                    //                                 $"Fecha Emision: {DateTime.Now.ToShortDateString()} {Environment.NewLine}" +
-                    //                                 $"Hora Emision: {DateTime.Now.ToShortTimeString()} {Environment.NewLine}" +
-                    //                                 $"Numero Boleto: {boletoModificadoCobrar490WC.IDBoleto490WC} {Environment.NewLine}" +
-                    //                                 $"Cambios Realizados: {Environment.NewLine}";
+             
                     if ((!string.IsNullOrEmpty(cambios490WC[1])) || (!string.IsNullOrEmpty(cambios490WC[2])) || (!string.IsNullOrEmpty(cambios490WC[3])) || (!string.IsNullOrEmpty(cambios490WC[4])))
                     {
                         string mensajeCambioFecha490WC = Traductor490WC.TraductorSG490WC.Traducir490WC("CambioFechaVistaPreviaFactura490WC");

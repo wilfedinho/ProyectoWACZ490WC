@@ -27,7 +27,7 @@ namespace GUI490WC
             InitializeComponent();
             Mostrar();
             HabilitarOpcionesModificar();
-            //TB_CARTELERACAMBIOS490WC.Text = $"Recargos En Base Al Precio Del Boleto {Environment.NewLine} Modificar Fechas ===> 30% {Environment.NewLine} Modificar Beneficio ===> 20% {Environment.NewLine} Modificar Clase Boleto ===> 40% {Environment.NewLine} Modificar Asiento ===> 20% {Environment.NewLine} Modificar Peso del Equipaje ===> 13% {Environment.NewLine} Modificar Titular ===> 60%";
+           
             random = new Random();
             timer = new Timer();
             booleanoRandom = false;

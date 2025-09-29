@@ -20,9 +20,9 @@ namespace GUI490WC
         public FormFactura490WC()
         {
             InitializeComponent();
-           // Traductor490WC.TraductorSG490WC.Notificar490WC();
+           
             MostrarFacturas490WC();
-           // ActualizarLenguaje490WC();
+           
         }
 
         public void ActualizarLenguaje490WC()

@@ -20,7 +20,7 @@ namespace GUI490WC
         public FormMaestroBeneficio490WC()
         {
             InitializeComponent();
-            //Traductor490WC.TraductorSG490WC.Notificar490WC();
+            
             Mostrar490WC();
             ActivarModoModificar490WC(false);
         }

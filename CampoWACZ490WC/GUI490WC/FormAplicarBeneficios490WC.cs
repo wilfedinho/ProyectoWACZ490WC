@@ -19,7 +19,7 @@ namespace GUI490WC
         public FormAplicarBeneficios490WC()
         {
             InitializeComponent();
-            //Traductor490WC.TraductorSG490WC.Notificar490WC();
+           
             Mostrar490WC();
 
             CargarCliente490WC(null);

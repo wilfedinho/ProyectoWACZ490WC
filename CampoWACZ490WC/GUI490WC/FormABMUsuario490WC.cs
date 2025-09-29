@@ -18,7 +18,7 @@ namespace GUI490WC
         public FormABMUsuario490WC(FormMenu490WC menuOrigen490WC)
         {
             InitializeComponent();
-            //Traductor490WC.TraductorSG490WC.Notificar490WC();
+           
             MostrarUsuarioPorConsulta490WC();
             BT_CANCELAR490WC.Enabled = false;
             BT_APLICAR490WC.Enabled = false;

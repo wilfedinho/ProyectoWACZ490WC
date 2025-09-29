@@ -24,9 +24,7 @@ namespace GUI490WC
         public FormGenerarBoleto490WC()
         {
             InitializeComponent();
-            //Traductor490WC.TraductorSG490WC.Notificar490WC();
-            //GestorBoleto490WC gestorBoleto490WC = new GestorBoleto490WC();
-            //gestorBoleto490WC.LiberarBoletosVencidos490WC();
+       
             InicializarControles490WC();
             HabilitarControl490WC();
             CargarCliente490WC(null);
@@ -77,9 +75,7 @@ namespace GUI490WC
                 }
             };
             formAplicarBeneficios490WC = new FormAplicarBeneficios490WC();
-            //Traductor490WC.TraductorSG490WC.Suscribir490WC(formAplicarBeneficios490WC);
-            //Traductor490WC.TraductorSG490WC.Suscribir490WC(controlIDA490WC);
-            //Traductor490WC.TraductorSG490WC.Suscribir490WC(controlVUELTA490WC);
+          
         }
         public void LlenarInfoBoleto490WC()
         {
@@ -241,7 +237,7 @@ namespace GUI490WC
 
         private void BT_CANJEARBENEFICIO490WC_Click(object sender, EventArgs e)
         {
-            //formAplicarBeneficios490WC = new FormAplicarBeneficios490WC();
+            
             formAplicarBeneficios490WC.ShowDialog();
             ClienteCargado490WC = formAplicarBeneficios490WC.ClienteCargado490WC;
             if (ClienteCargado490WC != null)
@@ -305,7 +301,7 @@ namespace GUI490WC
             {
                 string mensajeErrorSeleccionBoleto = Traductor490WC.TraductorSG490WC.Traducir490WC("DebeSeleccionarBoletoGenerar490WC");
                 MessageBox.Show(mensajeErrorSeleccionBoleto);
-                //return;
+                
             }
             else
             {

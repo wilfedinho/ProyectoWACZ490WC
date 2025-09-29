@@ -76,8 +76,6 @@ namespace BLL490WC
         {
             BoletoDAL490WC boletoDAL490WC = new BoletoDAL490WC();
             boletoDAL490WC.LiberarBoletosVencidos490WC();
-            //Bitacora490WC GestorBitacora490WC = new Bitacora490WC();
-            //GestorBitacora490WC.AltaEvento490WC("Gestión Boleto", "Liberar Boletos Vencidos", 3);
         }
 
         public void CobrarBoleto490WC(Boleto490WC BoletoCobrado490WC)

@@ -25,7 +25,7 @@ namespace GUI490WC
         public FormPermisos490WC()
         {
             InitializeComponent();
-            //Traductor490WC.TraductorSG490WC.Notificar490WC();
+           
             ActivarModificacion490WC(false);
             HabilitarCarga490WC();
             CargarComboboxFamilia490WC();
@@ -35,7 +35,7 @@ namespace GUI490WC
             LlenarFamilias490WC();
             LlenarPermisosSimples490WC();
             HabilitarCB490WC();
-            //ActualizarLenguaje490WC();
+            
         }
 
 
@@ -112,7 +112,7 @@ namespace GUI490WC
         public void CargarComboboxFamilia490WC()
         {
             CB_FAMILIA490WC.Items.Clear();
-            //Rol490WC gestorPermiso = new Rol490WC();
+            
             Familia490WC gestorFamilia490WC = new Familia490WC();
 
             if (SesionManager490WC.GestorSesion490WC.Usuario490WC.Rol490WC == "AdminSistema")
@@ -155,7 +155,7 @@ namespace GUI490WC
         public void LlenarFamilias490WC()
         {
             listboxFamilia490WC.Items.Clear();
-            //Rol490WC gestorPermiso490WC = new Rol490WC();
+           
             Familia490WC gestorFamilia490WC = new Familia490WC();
             foreach (Permiso490WC permi490WC in gestorFamilia490WC.ObtenerPermisosCompuestos490WC())
             {
@@ -197,7 +197,7 @@ namespace GUI490WC
         public void CargarTodasLasFamiliasEnArbol490WC()
         {
             treeViewFamilias490WC.Nodes.Clear();
-            //Rol490WC gestorPermiso490WC = new Rol490WC();
+            
             Familia490WC gestorFamilia490WC = new Familia490WC();
             foreach (Permiso490WC permi490WC in gestorFamilia490WC.LeerFamiliasConEstructuraRecursiva490WC())
             {
@@ -539,7 +539,7 @@ namespace GUI490WC
             else if (queModificamos490WC == "Familia")
             {
                 treeViewPreviaModificacion490WC.Nodes.Clear();
-                //Rol490WC gestorPermiso490WC = new Rol490WC();
+                
                 Familia490WC gestorFamilia490WC = new Familia490WC();
                 elementoSeleccionado490WC = gestorFamilia490WC.LeerFamiliasConEstructuraRecursiva490WC().Find(x => x.obtenerPermisoNombre490WC() == CB_FAMILIA490WC.SelectedItem.ToString());
                 var nodo490WC = new TreeNode(elementoSeleccionado490WC.obtenerPermisoNombre490WC());

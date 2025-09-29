@@ -23,10 +23,10 @@ namespace GUI490WC
         public FormBitacoraDeEventos490WC()
         {
             InitializeComponent();
-            //Traductor490WC.TraductorSG490WC.Notificar490WC();
+            
             GestorBitacora490WC = new Bitacora490WC();
             GestorUsuario490WC = new UserManager490WC();
-            //ListaUsuario490WC = GestorUsuario490WC.DevolverTodosLosUsuarios490WC();
+            
             ListaBitacora490WC = new List<BitacoraSE490WC>();
             ListaBitacoraSINFiltros = GestorBitacora490WC.ObtenerEventosSINFiltro();
             Mostrar490WC();

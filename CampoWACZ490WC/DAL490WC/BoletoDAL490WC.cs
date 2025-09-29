@@ -365,7 +365,7 @@ namespace DAL490WC
                     return false;
                 }
 
-                // Generar nuevo ID
+               
                 string queryMaxId = "SELECT ISNULL(MAX(CAST(ID490WC AS INT)), 0) + 1 FROM Boleto490WC";
                 int nuevoId;
                 using (SqlCommand cmdId = new SqlCommand(queryMaxId, cone490WC))
@@ -455,7 +455,7 @@ namespace DAL490WC
             {
                 cone490WC.Open();
                 string[] cambios490WC = boletoModificado490WC.CambiosRealizados490WC.Split(';');
-                //string idBoletoOriginal490WC = cambios490WC[0];
+               
                 SqlCommand comandoActulizar490WC = new SqlCommand(); 
                 string updateQuery = $@"UPDATE Boleto490WC SET CambiosRealizados490WC = @CambiosRealizados490WC, Titular490WC = @Titular490WC, Precio490WC = @Precio490WC WHERE ID490WC = @IDBoletoOriginal490WC";
 
@@ -477,12 +477,12 @@ namespace DAL490WC
             {
                 cone490WC.Open();
 
-                // 1. Parsear la cadena de cambios
+               
                 string[] cambios490WC = boletoCopia490WC.CambiosRealizados490WC.Split(';');
 
                 string idBoletoOriginal490WC = cambios490WC[0];
 
-                // 2. Armar dinámicamente el UPDATE solo con los campos que tengan datos
+                
                 List<string> campos490WC = new List<string>();
                 SqlCommand comandoActulizar490WC = new SqlCommand();
                 comandoActulizar490WC.Connection = cone490WC;
@@ -537,13 +537,13 @@ namespace DAL490WC
                     comandoActulizar490WC.Parameters.AddWithValue("@Titular490WC", cambios490WC[9]);
                 }
 
-                // Marcar como vendido siempre
+                
                 campos490WC.Add("IsVendido490WC = 1");
-                //campos490WC.Add($"CambiosRealizados490WC = {boletoCopia490WC.CambiosRealizados490WC}");
+             
                 campos490WC.Add($"CambiosRealizados490WC = @CambiosRealizados490WC");
                 comandoActulizar490WC.Parameters.AddWithValue("@CambiosRealizados490WC", boletoCopia490WC.CambiosRealizados490WC);
 
-                // 3. Construir el query final
+            
                 string updateQuery = $@"UPDATE Boleto490WC SET {string.Join(", ", campos490WC)} WHERE ID490WC = @IDBoletoOriginal490WC";
 
                 comandoActulizar490WC.CommandText = updateQuery;
@@ -551,7 +551,7 @@ namespace DAL490WC
 
                 comandoActulizar490WC.ExecuteNonQuery();
 
-                // 4. Eliminar el boleto copia
+             
                 string deleteQuery = "DELETE FROM Boleto490WC WHERE ID490WC = @IDCopia";
                 using (SqlCommand deleteCmd = new SqlCommand(deleteQuery, cone490WC))
                 {
@@ -708,7 +708,7 @@ namespace DAL490WC
                     {
                         if (reader.Read())
                         {
-                            // Si ya posee cambios, devolvemos null
+                           
                             if (reader["CambiosRealizados490WC"] != DBNull.Value)
                             {
                                 return null;
@@ -716,14 +716,13 @@ namespace DAL490WC
 
                             string dni490WC = reader["Titular490WC"].ToString();
 
-                            // Beneficio aplicado (puede ser null)
+                           
                             string beneficioAplicado = null;
                             if (reader["BeneficioAplicado490WC"] != DBNull.Value)
                             {
                                 beneficioAplicado = reader["BeneficioAplicado490WC"].ToString();
                             }
 
-                            // Chequeamos si es solo IDA o IDA/VUELTA
                             if (reader["FechaPartidaVUELTA490WC"] == DBNull.Value || reader["FechaLlegadaVUELTA490WC"] == DBNull.Value)
                             {
                                 return new BoletoIDA490WC(
@@ -738,7 +737,7 @@ namespace DAL490WC
                                     Convert.ToSingle(reader["Precio490WC"]),
                                     Titulares490WC.Find(x => x.DNI490WC == dni490WC),
                                     reader["NumeroAsiento490WC"].ToString(),
-                                    beneficioAplicado // nuevo campo
+                                    beneficioAplicado 
                                 );
                             }
                             else
@@ -757,7 +756,7 @@ namespace DAL490WC
                                     Convert.ToSingle(reader["Precio490WC"]),
                                     Titulares490WC.Find(x => x.DNI490WC == dni490WC),
                                     reader["NumeroAsiento490WC"].ToString(),
-                                    beneficioAplicado // nuevo campo
+                                    beneficioAplicado 
                                 );
                             }
                         }

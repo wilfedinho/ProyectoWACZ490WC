@@ -44,9 +44,7 @@ namespace GUI490WC
             LabelRolUsuario490WC.AutoSize = false;
             LabelRolUsuario490WC.MaximumSize = new Size(panelPrincipal.Width, 0);
             LabelRolUsuario490WC.Height = LabelRolUsuario490WC.PreferredHeight;
-            //Traductor490WC.TraductorSG490WC.Suscribir490WC(this);
-
-            //Traductor490WC.TraductorSG490WC.Notificar490WC();
+       
 
             
 
@@ -309,14 +307,14 @@ namespace GUI490WC
 
         private void BT_CompraFacturacion_Click(object sender, EventArgs e)
         {
-           // try
-           // {
+            try
+            {
                 formGenerarFactura490WC = new FormGenerarFactura490WC();
                 formGenerarFactura490WC.ShowDialog();
                 hideSubmenu490WC();
                 this?.Show();
-           // }
-           // catch { }
+            }
+            catch { }
         }
 
         private void BT_Reportes490WC_Click(object sender, EventArgs e)
