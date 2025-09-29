@@ -281,7 +281,7 @@ namespace GUI490WC
             else
             {
                 string errorMensaje490WC = Traductor490WC.TraductorSG490WC.Traducir490WC("ErrorImprimirBitacora490WC");
-                MessageBox.Show("Debe Haber Eventos Para Imprimirlos!!!");
+                MessageBox.Show(errorMensaje490WC);
             }
         }
 
