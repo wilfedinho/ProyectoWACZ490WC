@@ -144,7 +144,7 @@ namespace GUI490WC
         public void LlenarPermisosSimples490WC()
         {
             listboxPermisoSimple490WC.Items.Clear();
-            //Rol490WC gestorPermiso490WC = new Rol490WC();
+            
             Simple490WC gestorSimple490WC = new Simple490WC();
             foreach (Permiso490WC permi490WC in gestorSimple490WC.ObtenerPermisosSimples490WC())
             {
