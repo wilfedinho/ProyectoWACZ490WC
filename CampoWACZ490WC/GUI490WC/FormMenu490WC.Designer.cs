@@ -68,6 +68,7 @@
             this.panelPrincipal = new System.Windows.Forms.Panel();
             this.LabelRolUsuario490WC = new System.Windows.Forms.Label();
             this.LabelNombreUsuarios490WC = new System.Windows.Forms.Label();
+            this.BT_BitacoraCambios490WC = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMascotaCZWC490)).BeginInit();
             this.panelBotones490WC.SuspendLayout();
             this.panelSubmenuReportes490WC.SuspendLayout();
@@ -122,7 +123,7 @@
             this.BT_Salir490WC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BT_Salir490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.BT_Salir490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.BT_Salir490WC.Location = new System.Drawing.Point(0, 1204);
+            this.BT_Salir490WC.Location = new System.Drawing.Point(0, 1248);
             this.BT_Salir490WC.Name = "BT_Salir490WC";
             this.BT_Salir490WC.Size = new System.Drawing.Size(183, 44);
             this.BT_Salir490WC.TabIndex = 14;
@@ -136,7 +137,7 @@
             this.panelSubmenuAyuda490WC.AutoSize = true;
             this.panelSubmenuAyuda490WC.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panelSubmenuAyuda490WC.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSubmenuAyuda490WC.Location = new System.Drawing.Point(0, 1204);
+            this.panelSubmenuAyuda490WC.Location = new System.Drawing.Point(0, 1248);
             this.panelSubmenuAyuda490WC.Name = "panelSubmenuAyuda490WC";
             this.panelSubmenuAyuda490WC.Size = new System.Drawing.Size(183, 0);
             this.panelSubmenuAyuda490WC.TabIndex = 13;
@@ -148,7 +149,7 @@
             this.BT_Ayuda490WC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BT_Ayuda490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.BT_Ayuda490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.BT_Ayuda490WC.Location = new System.Drawing.Point(0, 1160);
+            this.BT_Ayuda490WC.Location = new System.Drawing.Point(0, 1204);
             this.BT_Ayuda490WC.Name = "BT_Ayuda490WC";
             this.BT_Ayuda490WC.Size = new System.Drawing.Size(183, 44);
             this.BT_Ayuda490WC.TabIndex = 12;
@@ -165,7 +166,7 @@
             this.panelSubmenuReportes490WC.Controls.Add(this.BT_ReporteBoletos490WC);
             this.panelSubmenuReportes490WC.Controls.Add(this.BT_ReporteFacturas490WC);
             this.panelSubmenuReportes490WC.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSubmenuReportes490WC.Location = new System.Drawing.Point(0, 1028);
+            this.panelSubmenuReportes490WC.Location = new System.Drawing.Point(0, 1072);
             this.panelSubmenuReportes490WC.Name = "panelSubmenuReportes490WC";
             this.panelSubmenuReportes490WC.Size = new System.Drawing.Size(183, 132);
             this.panelSubmenuReportes490WC.TabIndex = 11;
@@ -225,7 +226,7 @@
             this.BT_Reportes490WC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BT_Reportes490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.BT_Reportes490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.BT_Reportes490WC.Location = new System.Drawing.Point(0, 984);
+            this.BT_Reportes490WC.Location = new System.Drawing.Point(0, 1028);
             this.BT_Reportes490WC.Name = "BT_Reportes490WC";
             this.BT_Reportes490WC.Size = new System.Drawing.Size(183, 44);
             this.BT_Reportes490WC.TabIndex = 10;
@@ -240,7 +241,7 @@
             this.panelSubmenuModificacionBoleto490WC.Controls.Add(this.BT_COBRARCAMBIOS490WC);
             this.panelSubmenuModificacionBoleto490WC.Controls.Add(this.BT_APLICARCAMBIOS490WC);
             this.panelSubmenuModificacionBoleto490WC.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSubmenuModificacionBoleto490WC.Location = new System.Drawing.Point(0, 896);
+            this.panelSubmenuModificacionBoleto490WC.Location = new System.Drawing.Point(0, 940);
             this.panelSubmenuModificacionBoleto490WC.Name = "panelSubmenuModificacionBoleto490WC";
             this.panelSubmenuModificacionBoleto490WC.Size = new System.Drawing.Size(183, 88);
             this.panelSubmenuModificacionBoleto490WC.TabIndex = 9;
@@ -284,7 +285,7 @@
             this.BT_ModificacionBoleto490WC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BT_ModificacionBoleto490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.BT_ModificacionBoleto490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.BT_ModificacionBoleto490WC.Location = new System.Drawing.Point(0, 838);
+            this.BT_ModificacionBoleto490WC.Location = new System.Drawing.Point(0, 882);
             this.BT_ModificacionBoleto490WC.Name = "BT_ModificacionBoleto490WC";
             this.BT_ModificacionBoleto490WC.Size = new System.Drawing.Size(183, 58);
             this.BT_ModificacionBoleto490WC.TabIndex = 8;
@@ -300,7 +301,7 @@
             this.panelSubmenuCompra490WC.Controls.Add(this.BT_CompraFacturacion);
             this.panelSubmenuCompra490WC.Controls.Add(this.BT_CompraBoleteria490WC);
             this.panelSubmenuCompra490WC.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSubmenuCompra490WC.Location = new System.Drawing.Point(0, 750);
+            this.panelSubmenuCompra490WC.Location = new System.Drawing.Point(0, 794);
             this.panelSubmenuCompra490WC.Name = "panelSubmenuCompra490WC";
             this.panelSubmenuCompra490WC.Size = new System.Drawing.Size(183, 88);
             this.panelSubmenuCompra490WC.TabIndex = 7;
@@ -344,7 +345,7 @@
             this.BT_Compra490WC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BT_Compra490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.BT_Compra490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.BT_Compra490WC.Location = new System.Drawing.Point(0, 706);
+            this.BT_Compra490WC.Location = new System.Drawing.Point(0, 750);
             this.BT_Compra490WC.Name = "BT_Compra490WC";
             this.BT_Compra490WC.Size = new System.Drawing.Size(183, 44);
             this.BT_Compra490WC.TabIndex = 6;
@@ -357,13 +358,14 @@
             // 
             this.panelSubmenuMaestros490WC.AutoSize = true;
             this.panelSubmenuMaestros490WC.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.panelSubmenuMaestros490WC.Controls.Add(this.BT_BitacoraCambios490WC);
             this.panelSubmenuMaestros490WC.Controls.Add(this.BT_MaestroBeneficio490WC);
             this.panelSubmenuMaestros490WC.Controls.Add(this.BT_MaestroCliente490WC);
             this.panelSubmenuMaestros490WC.Controls.Add(this.BT_MaestroBoleto490WC);
             this.panelSubmenuMaestros490WC.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelSubmenuMaestros490WC.Location = new System.Drawing.Point(0, 574);
             this.panelSubmenuMaestros490WC.Name = "panelSubmenuMaestros490WC";
-            this.panelSubmenuMaestros490WC.Size = new System.Drawing.Size(183, 132);
+            this.panelSubmenuMaestros490WC.Size = new System.Drawing.Size(183, 176);
             this.panelSubmenuMaestros490WC.TabIndex = 5;
             // 
             // BT_MaestroBeneficio490WC
@@ -686,6 +688,22 @@
             this.LabelNombreUsuarios490WC.TabIndex = 0;
             this.LabelNombreUsuarios490WC.Text = "label1";
             // 
+            // BT_BitacoraCambios490WC
+            // 
+            this.BT_BitacoraCambios490WC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(27)))), ((int)(((byte)(38)))));
+            this.BT_BitacoraCambios490WC.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BT_BitacoraCambios490WC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BT_BitacoraCambios490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.BT_BitacoraCambios490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
+            this.BT_BitacoraCambios490WC.Location = new System.Drawing.Point(0, 132);
+            this.BT_BitacoraCambios490WC.Name = "BT_BitacoraCambios490WC";
+            this.BT_BitacoraCambios490WC.Size = new System.Drawing.Size(183, 44);
+            this.BT_BitacoraCambios490WC.TabIndex = 5;
+            this.BT_BitacoraCambios490WC.Tag = "Acceder a Bitacora Cambios";
+            this.BT_BitacoraCambios490WC.Text = "Bitacora Cambios";
+            this.BT_BitacoraCambios490WC.UseVisualStyleBackColor = false;
+            this.BT_BitacoraCambios490WC.Click += new System.EventHandler(this.BT_BitacoraCambios490WC_Click);
+            // 
             // FormMenu490WC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -757,5 +775,6 @@
         private System.Windows.Forms.Button BT_MaestroBeneficio490WC;
         private System.Windows.Forms.Button BT_COBRARCAMBIOS490WC;
         private System.Windows.Forms.Button BT_APLICARCAMBIOS490WC;
+        private System.Windows.Forms.Button BT_BitacoraCambios490WC;
     }
 }

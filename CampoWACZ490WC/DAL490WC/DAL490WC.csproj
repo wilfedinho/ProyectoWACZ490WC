@@ -57,6 +57,7 @@
   <ItemGroup>
     <Compile Include="BackUpRestoreDAL490WC.cs" />
     <Compile Include="BeneficioDAL490WC.cs" />
+    <Compile Include="BitacoraCambiosDAL490WC.cs" />
     <Compile Include="BitacoraDAL490WC.cs" />
     <Compile Include="BoletoDAL490WC.cs" />
     <Compile Include="ClienteDAL490WC.cs" />

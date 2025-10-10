@@ -468,5 +468,10 @@ namespace GUI490WC
             formCobrarCambios490WC.ShowDialog();
             hideSubmenu490WC();
         }
+
+        private void BT_BitacoraCambios490WC_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
