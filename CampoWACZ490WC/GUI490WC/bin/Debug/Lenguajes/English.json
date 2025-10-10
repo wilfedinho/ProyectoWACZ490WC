@@ -398,7 +398,8 @@
     "DNIBitacoraVACIO": "ID: ",
     "ErrorImprimirBitacora490WC": "There must be events to print them!!!",
     "ErrorMismoTitular490WC": "The selected client for holder modification is the same as the current one!!!",
-    "ColumnaImagen": ""
+    "ColumnaImagen": "",
+    "BT_BitacoraCambios490WC": "Change Log"
 
 
 }
