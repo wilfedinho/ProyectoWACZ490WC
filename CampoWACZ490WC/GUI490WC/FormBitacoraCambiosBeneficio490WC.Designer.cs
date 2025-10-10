@@ -41,6 +41,7 @@
             this.CB_CodigoBeneficio490WC = new System.Windows.Forms.ComboBox();
             this.CB_NombreBeneficio490WC = new System.Windows.Forms.ComboBox();
             this.dgvBeneficio490WC = new System.Windows.Forms.DataGridView();
+            this.ColumaNumeroCambio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnaCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnaFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnaHora = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -64,6 +65,7 @@
             this.BT_Activar490WC.TabIndex = 128;
             this.BT_Activar490WC.Text = "Activar";
             this.BT_Activar490WC.UseVisualStyleBackColor = false;
+            this.BT_Activar490WC.Click += new System.EventHandler(this.BT_Activar490WC_Click);
             // 
             // labelCBDescripcion490WC
             // 
@@ -120,6 +122,7 @@
             this.checkBoxFecha490WC.TabIndex = 121;
             this.checkBoxFecha490WC.Text = "Incluir Fecha?";
             this.checkBoxFecha490WC.UseVisualStyleBackColor = true;
+            this.checkBoxFecha490WC.CheckedChanged += new System.EventHandler(this.checkBoxFecha490WC_CheckedChanged);
             // 
             // monthCalendarFechaFin490WC
             // 
@@ -149,6 +152,7 @@
             this.BT_LimpiarFiltros490WC.TabIndex = 118;
             this.BT_LimpiarFiltros490WC.Text = "Limpiar Filtros";
             this.BT_LimpiarFiltros490WC.UseVisualStyleBackColor = false;
+            this.BT_LimpiarFiltros490WC.Click += new System.EventHandler(this.BT_LimpiarFiltros490WC_Click);
             // 
             // BT_Filtrar490WC
             // 
@@ -162,6 +166,7 @@
             this.BT_Filtrar490WC.TabIndex = 117;
             this.BT_Filtrar490WC.Text = "Filtrar";
             this.BT_Filtrar490WC.UseVisualStyleBackColor = false;
+            this.BT_Filtrar490WC.Click += new System.EventHandler(this.BT_Filtrar490WC_Click);
             // 
             // CB_CodigoBeneficio490WC
             // 
@@ -198,6 +203,7 @@
             this.dgvBeneficio490WC.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvBeneficio490WC.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBeneficio490WC.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ColumaNumeroCambio,
             this.ColumnaCodigo,
             this.ColumnaFecha,
             this.ColumnaHora,
@@ -214,6 +220,13 @@
             this.dgvBeneficio490WC.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvBeneficio490WC.Size = new System.Drawing.Size(944, 272);
             this.dgvBeneficio490WC.TabIndex = 129;
+            // 
+            // ColumaNumeroCambio
+            // 
+            this.ColumaNumeroCambio.HeaderText = "Column1";
+            this.ColumaNumeroCambio.Name = "ColumaNumeroCambio";
+            this.ColumaNumeroCambio.ReadOnly = true;
+            this.ColumaNumeroCambio.Visible = false;
             // 
             // ColumnaCodigo
             // 
@@ -306,6 +319,7 @@
         private System.Windows.Forms.ComboBox CB_CodigoBeneficio490WC;
         private System.Windows.Forms.ComboBox CB_NombreBeneficio490WC;
         private System.Windows.Forms.DataGridView dgvBeneficio490WC;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumaNumeroCambio;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaCodigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaFecha;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaHora;

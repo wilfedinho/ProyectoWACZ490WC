@@ -47,6 +47,7 @@
             this.BT_CompraBoleteria490WC = new System.Windows.Forms.Button();
             this.BT_Compra490WC = new System.Windows.Forms.Button();
             this.panelSubmenuMaestros490WC = new System.Windows.Forms.Panel();
+            this.BT_BitacoraCambios490WC = new System.Windows.Forms.Button();
             this.BT_MaestroBeneficio490WC = new System.Windows.Forms.Button();
             this.BT_MaestroCliente490WC = new System.Windows.Forms.Button();
             this.BT_MaestroBoleto490WC = new System.Windows.Forms.Button();
@@ -68,7 +69,6 @@
             this.panelPrincipal = new System.Windows.Forms.Panel();
             this.LabelRolUsuario490WC = new System.Windows.Forms.Label();
             this.LabelNombreUsuarios490WC = new System.Windows.Forms.Label();
-            this.BT_BitacoraCambios490WC = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMascotaCZWC490)).BeginInit();
             this.panelBotones490WC.SuspendLayout();
             this.panelSubmenuReportes490WC.SuspendLayout();
@@ -367,6 +367,22 @@
             this.panelSubmenuMaestros490WC.Name = "panelSubmenuMaestros490WC";
             this.panelSubmenuMaestros490WC.Size = new System.Drawing.Size(183, 176);
             this.panelSubmenuMaestros490WC.TabIndex = 5;
+            // 
+            // BT_BitacoraCambios490WC
+            // 
+            this.BT_BitacoraCambios490WC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(27)))), ((int)(((byte)(38)))));
+            this.BT_BitacoraCambios490WC.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BT_BitacoraCambios490WC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BT_BitacoraCambios490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.BT_BitacoraCambios490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
+            this.BT_BitacoraCambios490WC.Location = new System.Drawing.Point(0, 132);
+            this.BT_BitacoraCambios490WC.Name = "BT_BitacoraCambios490WC";
+            this.BT_BitacoraCambios490WC.Size = new System.Drawing.Size(183, 44);
+            this.BT_BitacoraCambios490WC.TabIndex = 5;
+            this.BT_BitacoraCambios490WC.Tag = "Acceder a Bitacora Cambios";
+            this.BT_BitacoraCambios490WC.Text = "Bitacora Cambios";
+            this.BT_BitacoraCambios490WC.UseVisualStyleBackColor = false;
+            this.BT_BitacoraCambios490WC.Click += new System.EventHandler(this.BT_BitacoraCambios490WC_Click);
             // 
             // BT_MaestroBeneficio490WC
             // 
@@ -687,22 +703,6 @@
             this.LabelNombreUsuarios490WC.Size = new System.Drawing.Size(61, 20);
             this.LabelNombreUsuarios490WC.TabIndex = 0;
             this.LabelNombreUsuarios490WC.Text = "label1";
-            // 
-            // BT_BitacoraCambios490WC
-            // 
-            this.BT_BitacoraCambios490WC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(27)))), ((int)(((byte)(38)))));
-            this.BT_BitacoraCambios490WC.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BT_BitacoraCambios490WC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BT_BitacoraCambios490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
-            this.BT_BitacoraCambios490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.BT_BitacoraCambios490WC.Location = new System.Drawing.Point(0, 132);
-            this.BT_BitacoraCambios490WC.Name = "BT_BitacoraCambios490WC";
-            this.BT_BitacoraCambios490WC.Size = new System.Drawing.Size(183, 44);
-            this.BT_BitacoraCambios490WC.TabIndex = 5;
-            this.BT_BitacoraCambios490WC.Tag = "Acceder a Bitacora Cambios";
-            this.BT_BitacoraCambios490WC.Text = "Bitacora Cambios";
-            this.BT_BitacoraCambios490WC.UseVisualStyleBackColor = false;
-            this.BT_BitacoraCambios490WC.Click += new System.EventHandler(this.BT_BitacoraCambios490WC_Click);
             // 
             // FormMenu490WC
             // 

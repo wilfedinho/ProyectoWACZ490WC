@@ -29,6 +29,7 @@ namespace GUI490WC
         FormRestore490WC formRestore490WC;
         FormAplicarCambiosBoleto490WC formAplicarCambiosBoleto490WC;
         FormCobrarCambios490WC formCobrarCambios490WC;
+        FormBitacoraCambiosBeneficio490WC formBitacoraCambiosBeneficio490WC;
 
         public FormMenu490WC()
         {
@@ -471,7 +472,9 @@ namespace GUI490WC
 
         private void BT_BitacoraCambios490WC_Click(object sender, EventArgs e)
         {
-
+            formBitacoraCambiosBeneficio490WC = new FormBitacoraCambiosBeneficio490WC();
+            formBitacoraCambiosBeneficio490WC.ShowDialog();
+            hideSubmenu490WC();
         }
     }
 }
