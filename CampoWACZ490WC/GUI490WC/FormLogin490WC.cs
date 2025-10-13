@@ -14,10 +14,21 @@ namespace GUI490WC
 {
     public partial class FormLogin490WC : Form
     {
+        bool integridadSustema;
         public FormLogin490WC()
         {
             InitializeComponent();
             Habilitar();
+            DigitoVerificador490WC gestorDigitoVerificador490WC = new DigitoVerificador490WC();
+            integridadSustema = gestorDigitoVerificador490WC.VerificarIntegridadSistema();
+            if (integridadSustema)
+            {
+                MessageBox.Show("Todo Bien");
+            }
+            else
+            {
+                MessageBox.Show("Algo Mal");
+            }
         }
         public void Habilitar()
         {
