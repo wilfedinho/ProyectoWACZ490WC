@@ -20,7 +20,7 @@ namespace GUI490WC
             InitializeComponent();
             Habilitar();
             DigitoVerificador490WC gestorDigitoVerificador490WC = new DigitoVerificador490WC();
-            integridadSustema = gestorDigitoVerificador490WC.VerificarIntegridadSistema();
+            integridadSustema = gestorDigitoVerificador490WC.VerificarIntegridadSistema490WC();
             if (integridadSustema)
             {
                 MessageBox.Show("Todo Bien");
