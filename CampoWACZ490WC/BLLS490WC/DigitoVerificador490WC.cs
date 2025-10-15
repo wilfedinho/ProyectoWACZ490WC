@@ -16,7 +16,7 @@ namespace BLLS490WC
         {
             try
             {
-                var todosLosDigitosCrudos490WC = gestorDigitoVerificador490WC.CalcularTodosLosDigitosCrudos490WC();   
+                var todosLosDigitosCrudos490WC = gestorDigitoVerificador490WC.CalcularTodosLosDigitosCrudos490WC();
                 foreach (var parTablaDigitos490WC in todosLosDigitosCrudos490WC)
                 {
                     string nombreTabla490WC = parTablaDigitos490WC.Key;
@@ -26,15 +26,33 @@ namespace BLLS490WC
 
                     if (!gestorDigitoVerificador490WC.GuardarDigitos490WC(nombreTabla490WC, dvhHasheado490WC, dvvHasheado490WC))
                     {
-                        return false; 
+                        return false;
                     }
                 }
 
-                
+
                 return true;
             }
             catch { return false; }
         }
+
+        public bool ActualizarIntegridadPorTabla490WC(string nombreTabla490WC)
+        {
+            try
+            {
+                var DigitosCrudosTabla490WC = gestorDigitoVerificador490WC.DigitoPorTabla490WC(nombreTabla490WC);
+                string dvhHasheado490WC = Cifrador490WC.GestorCifrador490WC.EncriptarIrreversible490WC(DigitosCrudosTabla490WC.DVH490WC.ToString());
+                string dvvHasheado490WC = Cifrador490WC.GestorCifrador490WC.EncriptarIrreversible490WC(DigitosCrudosTabla490WC.DVV490WC.ToString());
+
+                if (!gestorDigitoVerificador490WC.GuardarDigitos490WC(nombreTabla490WC, dvhHasheado490WC, dvvHasheado490WC))
+                {
+                    return false;
+                }
+                return true;
+            }
+            catch { return false; }
+        }
+
         public bool VerificarIntegridadSistema490WC()
         {
             try

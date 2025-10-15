@@ -24,6 +24,10 @@ namespace BLL490WC
             clienteDAL490WC.Alta490WC(clienteAlta490WC);
             Bitacora490WC GestorBitacora490WC = new Bitacora490WC();
             GestorBitacora490WC.AltaEvento490WC("Gestión Cliente", "Crear Cliente", 3);
+            DigitoVerificador490WC gestorDigitoVerificador490WC = new DigitoVerificador490WC();
+            gestorDigitoVerificador490WC.ActualizarIntegridadPorTabla490WC("Cliente490WC");
+            gestorDigitoVerificador490WC.ActualizarIntegridadPorTabla490WC("CelularCliente490WC");
+            gestorDigitoVerificador490WC.ActualizarIntegridadPorTabla490WC("EmailCliente490WC");
         }
         public void Baja490WC(string dni)
         {
@@ -31,6 +35,8 @@ namespace BLL490WC
             clienteDAL490WC.Baja490WC(dni);
             Bitacora490WC GestorBitacora490WC = new Bitacora490WC();
             GestorBitacora490WC.AltaEvento490WC("Gestión Cliente", "Eliminar Cliente", 5);
+            DigitoVerificador490WC gestorDigitoVerificador490WC = new DigitoVerificador490WC();
+            gestorDigitoVerificador490WC.ActualizarIntegridadPorTabla490WC("Cliente490WC");
         }
 
         public void ActivarCliente490WC(string DNI490WC)
@@ -39,6 +45,8 @@ namespace BLL490WC
             clienteDAL490WC.ActivarCliente490WC(DNI490WC);
             Bitacora490WC GestorBitacora490WC = new Bitacora490WC();
             GestorBitacora490WC.AltaEvento490WC("Gestión Cliente", "Activar Cliente", 5);
+            DigitoVerificador490WC gestorDigitoVerificador490WC = new DigitoVerificador490WC();
+            gestorDigitoVerificador490WC.ActualizarIntegridadPorTabla490WC("Cliente490WC");
         }
 
         public void Modificar490WC(Cliente490WC clienteModificado490WC)
@@ -47,6 +55,10 @@ namespace BLL490WC
             clienteDAL490WC.Modificar490WC(clienteModificado490WC);
             Bitacora490WC GestorBitacora490WC = new Bitacora490WC();
             GestorBitacora490WC.AltaEvento490WC("Gestión Cliente", "Modificar Cliente", 3);
+            DigitoVerificador490WC gestorDigitoVerificador490WC = new DigitoVerificador490WC();
+            gestorDigitoVerificador490WC.ActualizarIntegridadPorTabla490WC("Cliente490WC");
+            gestorDigitoVerificador490WC.ActualizarIntegridadPorTabla490WC("CelularCliente490WC");
+            gestorDigitoVerificador490WC.ActualizarIntegridadPorTabla490WC("EmailCliente490WC");
         }
 
         public string SerializarCliente490WC(List<Cliente490WC> datosSerializar490WC)
@@ -187,6 +199,8 @@ namespace BLL490WC
             clienteDAL490WC.ModificarEstrellasCliente490WC(DNI490WC, EstrellasReducir490WC);
             Bitacora490WC GestorBitacora490WC = new Bitacora490WC();
             GestorBitacora490WC.AltaEvento490WC("Gestión Cliente", "Modificar Cliente", 3);
+            DigitoVerificador490WC gestorDigitoVerificador490WC = new DigitoVerificador490WC();
+            gestorDigitoVerificador490WC.ActualizarIntegridadPorTabla490WC("Cliente490WC");
         }
 
        

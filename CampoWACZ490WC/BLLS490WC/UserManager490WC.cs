@@ -44,22 +44,30 @@ namespace SERVICIOS490WC
             UsuarioAccesoDatos490WC.UsuarioAccesoDatosSG490WC.Alta490WC(UsuarioAlta490WC);
             Bitacora490WC GestorBitacora490WC = new Bitacora490WC();
             GestorBitacora490WC.AltaEvento490WC("Gestión Usuarios", "Crear Usuario", 3);
+            DigitoVerificador490WC gestorDigitoVerificador490WC = new DigitoVerificador490WC();
+            gestorDigitoVerificador490WC.ActualizarIntegridadPorTabla490WC("Usuario490WC");
         }
         public void Baja490WC(string username490WC)
         {
             UsuarioAccesoDatos490WC.UsuarioAccesoDatosSG490WC.Baja490WC(username490WC);
             Bitacora490WC GestorBitacora490WC = new Bitacora490WC();
             GestorBitacora490WC.AltaEvento490WC("Gestión Usuarios", "Eliminar Usuario", 5);
+            DigitoVerificador490WC gestorDigitoVerificador490WC = new DigitoVerificador490WC();
+            gestorDigitoVerificador490WC.ActualizarIntegridadPorTabla490WC("Usuario490WC");
         }
         public void Modificar490WC(Usuario490WC UsuarioModificado)
         {
             UsuarioAccesoDatos490WC.UsuarioAccesoDatosSG490WC.Modificar490WC(UsuarioModificado);
             Bitacora490WC GestorBitacora490WC = new Bitacora490WC();
             GestorBitacora490WC.AltaEvento490WC("Gestión Usuarios", "Modificar Usuario", 3);
+            DigitoVerificador490WC gestorDigitoVerificador490WC = new DigitoVerificador490WC();
+            gestorDigitoVerificador490WC.ActualizarIntegridadPorTabla490WC("Usuario490WC");
         }
         public void ModificarLogInLogOut490WC(Usuario490WC UsuarioModificado)
         {
             UsuarioAccesoDatos490WC.UsuarioAccesoDatosSG490WC.Modificar490WC(UsuarioModificado);
+            DigitoVerificador490WC gestorDigitoVerificador490WC = new DigitoVerificador490WC();
+            gestorDigitoVerificador490WC.ActualizarIntegridadPorTabla490WC("Usuario490WC");
         }
         public void DesbloquearUsuario490WC(Usuario490WC UsuarioDesbloquear)
         {
@@ -67,24 +75,32 @@ namespace SERVICIOS490WC
             UsuarioAccesoDatos490WC.UsuarioAccesoDatosSG490WC.DesbloquearUsuario490WC(UsuarioDesbloquear);
             Bitacora490WC GestorBitacora490WC = new Bitacora490WC();
             GestorBitacora490WC.AltaEvento490WC("Gestión Usuarios", "Desbloquear Usuario", 5);
+            DigitoVerificador490WC gestorDigitoVerificador490WC = new DigitoVerificador490WC();
+            gestorDigitoVerificador490WC.ActualizarIntegridadPorTabla490WC("Usuario490WC");
         }
         public void BloquearUsuario490WC(string username490WC)
         {
             UsuarioAccesoDatos490WC.UsuarioAccesoDatosSG490WC.BloquearUsuario490WC(username490WC);
             Bitacora490WC GestorBitacora490WC = new Bitacora490WC();
             GestorBitacora490WC.AltaEvento490WC("Gestión Usuarios", "Bloquear Usuario", 5);
+            DigitoVerificador490WC gestorDigitoVerificador490WC = new DigitoVerificador490WC();
+            gestorDigitoVerificador490WC.ActualizarIntegridadPorTabla490WC("Usuario490WC");
         }
         public void DesactivarUsuario490WC(string username490WC)
         {
             UsuarioAccesoDatos490WC.UsuarioAccesoDatosSG490WC.DesactivarUsuario490WC(username490WC);
             Bitacora490WC GestorBitacora490WC = new Bitacora490WC();
             GestorBitacora490WC.AltaEvento490WC("Gestión Usuarios", "Desactivar Usuario", 5);
+            DigitoVerificador490WC gestorDigitoVerificador490WC = new DigitoVerificador490WC();
+            gestorDigitoVerificador490WC.ActualizarIntegridadPorTabla490WC("Usuario490WC");
         }
         public void ActivarUsuario490WC(string username490WC)
         {
             UsuarioAccesoDatos490WC.UsuarioAccesoDatosSG490WC.ActivarUsuario490WC(username490WC);
             Bitacora490WC GestorBitacora490WC = new Bitacora490WC();
             GestorBitacora490WC.AltaEvento490WC("Gestión Usuarios", "Activar Usuario", 5);
+            DigitoVerificador490WC gestorDigitoVerificador490WC = new DigitoVerificador490WC();
+            gestorDigitoVerificador490WC.ActualizarIntegridadPorTabla490WC("Usuario490WC");
         }
 
         public void ResetearIntentos490WC(Usuario490WC usuarioVerificar490WC)
@@ -116,7 +132,8 @@ namespace SERVICIOS490WC
             if (usuario != null)
             {
                 UsuarioAccesoDatos490WC.UsuarioAccesoDatosSG490WC.Modificar490WC(usuario);
-
+                DigitoVerificador490WC gestorDigitoVerificador490WC = new DigitoVerificador490WC();
+                gestorDigitoVerificador490WC.ActualizarIntegridadPorTabla490WC("Usuario490WC");
             }
         }
         #endregion

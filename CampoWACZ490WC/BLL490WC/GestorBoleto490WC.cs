@@ -24,6 +24,8 @@ namespace BLL490WC
             gestorBoletoDAL490WC.Alta490WC(BoletoAgregar490WC);
             Bitacora490WC GestorBitacora490WC = new Bitacora490WC();
             GestorBitacora490WC.AltaEvento490WC("Gestión Boleto", "Crear Boleto", 3);
+            DigitoVerificador490WC gestorDigitoVerificador490WC = new DigitoVerificador490WC();
+            gestorDigitoVerificador490WC.ActualizarIntegridadPorTabla490WC("Boleto490WC");
         }
 
         public void Baja490WC(string IDBoleto490WC)
@@ -32,6 +34,8 @@ namespace BLL490WC
             gestorBoletoDAL490WC.Baja490WC(IDBoleto490WC);
             Bitacora490WC GestorBitacora490WC = new Bitacora490WC();
             GestorBitacora490WC.AltaEvento490WC("Gestión Boleto", "Eliminar Boleto", 5);
+            DigitoVerificador490WC gestorDigitoVerificador490WC = new DigitoVerificador490WC();
+            gestorDigitoVerificador490WC.ActualizarIntegridadPorTabla490WC("Boleto490WC");
         }
 
         public void Modificar490WC(Boleto490WC BoletoModificado490WC)
@@ -40,6 +44,8 @@ namespace BLL490WC
             gestorBoletoDAL490WC.Modificar490WC(BoletoModificado490WC);
             Bitacora490WC GestorBitacora490WC = new Bitacora490WC();
             GestorBitacora490WC.AltaEvento490WC("Gestión Boleto", "Modificar Boleto", 3);
+            DigitoVerificador490WC gestorDigitoVerificador490WC = new DigitoVerificador490WC();
+            gestorDigitoVerificador490WC.ActualizarIntegridadPorTabla490WC("Boleto490WC");
         }
 
         public void AsignarBoletoCliente490WC(Boleto490WC boletoAsignar490WC, Cliente490WC clienteAsignar490WC)
@@ -48,6 +54,8 @@ namespace BLL490WC
             boletoDAL490WC.AsignarBoletoCliente490WC(boletoAsignar490WC, clienteAsignar490WC);
             Bitacora490WC GestorBitacora490WC = new Bitacora490WC();
             GestorBitacora490WC.AltaEvento490WC("Gestión Boleto", "Asignar Boleto A un Cliente", 2);
+            DigitoVerificador490WC gestorDigitoVerificador490WC = new DigitoVerificador490WC();
+            gestorDigitoVerificador490WC.ActualizarIntegridadPorTabla490WC("Boleto490WC");
         }
 
         public void AsignarBoletoClienteRegistrar490WC(Boleto490WC boletoAsignar490WC, Cliente490WC clienteAsignar490WC)
@@ -56,6 +64,8 @@ namespace BLL490WC
             boletoDAL490WC.AsignarBoletoClienteRegistrar490WC(boletoAsignar490WC, clienteAsignar490WC);
             Bitacora490WC GestorBitacora490WC = new Bitacora490WC();
             GestorBitacora490WC.AltaEvento490WC("Gestión Boleto", "Asignar Boleto A un Cliente", 2);
+            DigitoVerificador490WC gestorDigitoVerificador490WC = new DigitoVerificador490WC();
+            gestorDigitoVerificador490WC.ActualizarIntegridadPorTabla490WC("Boleto490WC");
         }
 
         public void GenerarBoletoCompra490WC(Boleto490WC boletoGenerar490WC)
@@ -64,18 +74,24 @@ namespace BLL490WC
             boletoDAL490WC.GenerarBoletoCompra490WC(boletoGenerar490WC);
             Bitacora490WC GestorBitacora490WC = new Bitacora490WC();
             GestorBitacora490WC.AltaEvento490WC("Gestión Boleto", "Generar Boleto", 5);
+            DigitoVerificador490WC gestorDigitoVerificador490WC = new DigitoVerificador490WC();
+            gestorDigitoVerificador490WC.ActualizarIntegridadPorTabla490WC("Boleto490WC");
         }
 
         public void LiberarModificacionesBoletoVencidas490WC()
         {
             BoletoDAL490WC gestorBoleto490WC = new BoletoDAL490WC();
             gestorBoleto490WC.LiberarModificacionesBoletoVencidas490WC();
+            DigitoVerificador490WC gestorDigitoVerificador490WC = new DigitoVerificador490WC();
+            gestorDigitoVerificador490WC.ActualizarIntegridadPorTabla490WC("Boleto490WC");
         }
 
         public void LiberarBoletosVencidos490WC()
         {
             BoletoDAL490WC boletoDAL490WC = new BoletoDAL490WC();
             boletoDAL490WC.LiberarBoletosVencidos490WC();
+            DigitoVerificador490WC gestorDigitoVerificador490WC = new DigitoVerificador490WC();
+            gestorDigitoVerificador490WC.ActualizarIntegridadPorTabla490WC("Boleto490WC");
         }
 
         public void CobrarBoleto490WC(Boleto490WC BoletoCobrado490WC)
@@ -84,6 +100,8 @@ namespace BLL490WC
             gestorBoletoDAL490WC.CobrarBoleto490WC(BoletoCobrado490WC);
             Bitacora490WC GestorBitacora490WC = new Bitacora490WC();
             GestorBitacora490WC.AltaEvento490WC("Gestión Boleto", "Vender Boleto", 2);
+            DigitoVerificador490WC gestorDigitoVerificador490WC = new DigitoVerificador490WC();
+            gestorDigitoVerificador490WC.ActualizarIntegridadPorTabla490WC("Boleto490WC");
         }
 
         public bool ExisteBoletoAsignar490WC(int idBoleto)
@@ -191,13 +209,16 @@ namespace BLL490WC
             BoletoDAL490WC gestorBoleto490WC = new BoletoDAL490WC();
             if (gestorBoleto490WC.GenerarBoletoModificado490WC(BoletoModificado490WC))
             {
-                
+                DigitoVerificador490WC gestorDigitoVerificador490WC = new DigitoVerificador490WC();
+                gestorDigitoVerificador490WC.ActualizarIntegridadPorTabla490WC("Boleto490WC");
                 BeneficioDAL490WC gestorBeneficio490WC = new BeneficioDAL490WC();
                 if (BoletoModificado490WC.BeneficioAplicado490WC != null)
                 {
                     Beneficio490WC beneficioAplicado490WC = BoletoModificado490WC.Titular490WC.BeneficiosCliente490WC.Find(b => b.Nombre490WC == BoletoModificado490WC.BeneficioAplicado490WC);
                     gestorBeneficio490WC.EliminarBeneficioDeCliente490WC(BoletoModificado490WC.Titular490WC.DNI490WC, beneficioAplicado490WC.CodigoBeneficio490WC);
+                    gestorDigitoVerificador490WC.ActualizarIntegridadPorTabla490WC("Cliente_Beneficio490WC");
                     gestorBeneficio490WC.AplicarBeneficio490WC(BoletoModificado490WC.IDBoleto490WC, beneficioAplicado490WC.DescuentoAplicar490WC, beneficioAplicado490WC.Nombre490WC);
+                    gestorDigitoVerificador490WC.ActualizarIntegridadPorTabla490WC("Boleto490WC");
                 }
                 return true;
             }
@@ -232,12 +253,16 @@ namespace BLL490WC
         {
             BoletoDAL490WC gestorBoleto490WC = new BoletoDAL490WC();
             gestorBoleto490WC.CobrarBoletoModificado490WC(boletoCopia490WC);
+            DigitoVerificador490WC gestorDigitoVerificador490WC = new DigitoVerificador490WC();
+            gestorDigitoVerificador490WC.ActualizarIntegridadPorTabla490WC("Boleto490WC");
         }
 
         public void CambiarTitularBoletoModificado490WC(Boleto490WC boletoModificado490WC)
         {
             BoletoDAL490WC gestorBoleto490WC = new BoletoDAL490WC();
             gestorBoleto490WC.CambiarTitularBoletoModificado490WC(boletoModificado490WC);
+            DigitoVerificador490WC gestorDigitoVerificador490WC = new DigitoVerificador490WC();
+            gestorDigitoVerificador490WC.ActualizarIntegridadPorTabla490WC("Boleto490WC");
         }
 
         #endregion

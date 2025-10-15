@@ -21,6 +21,8 @@ namespace BLL490WC
             gestorFactura490WC.Alta490WC(FacturaAlta490WC);
             Bitacora490WC GestorBitacora490WC = new Bitacora490WC();
             GestorBitacora490WC.AltaEvento490WC("Gestión Factura", "Crear Factura", 3);
+            DigitoVerificador490WC gestorDigitoVerificador490WC = new DigitoVerificador490WC();
+            gestorDigitoVerificador490WC.ActualizarIntegridadPorTabla490WC("Factura490WC");
         }
         public List<Factura490WC> ObtenerTodasLasFacturas490WC()
         {

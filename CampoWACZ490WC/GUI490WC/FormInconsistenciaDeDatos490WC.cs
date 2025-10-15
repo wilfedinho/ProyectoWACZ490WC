@@ -23,7 +23,7 @@ namespace GUI490WC
         {
             DigitoVerificador490WC gestorDigitoVerificador = new DigitoVerificador490WC();
             gestorDigitoVerificador.ActualizarIntegridadSistema490WC();
-            MessageBox.Show("Recalculazicion De Los Digitos Verificadores Ha Sido Exitoso!!!");
+            MessageBox.Show("Recalculo De Los Digitos Verificadores Ha Sido Exitoso!!!");
             GestorForm490WC.gestorFormSG490WC.DefinirEstado490WC(new EstadoIniciarSesion490WC());
         }
 
@@ -32,7 +32,7 @@ namespace GUI490WC
             string nombreArchivo490WC = "";
             using (OpenFileDialog OFD490WC = new OpenFileDialog())
             {
-                string mensajeOperacion490WC = Traductor490WC.TraductorSG490WC.Traducir490WC("BuscarArchivoRespaldo490WC");
+                string mensajeOperacion490WC = "Archivos de Respaldo (*.bak)|*.bak";
                 OFD490WC.Filter = mensajeOperacion490WC;
                 if (OFD490WC.ShowDialog() == DialogResult.OK)
                 {
@@ -45,14 +45,14 @@ namespace GUI490WC
                 GestorBackUpRestore490WC gestorBackUpRestore490WC = new GestorBackUpRestore490WC();
                 if (gestorBackUpRestore490WC.RealizarRestore490WC(nombreArchivo490WC))
                 {
-                    string mensajeOperacion490WC = Traductor490WC.TraductorSG490WC.Traducir490WC("RestauracionExitosa490WC");
+                    string mensajeOperacion490WC = "Restauración realizada con éxito";
                     MessageBox.Show(mensajeOperacion490WC);
                     nombreArchivo490WC = "";
                     GestorForm490WC.gestorFormSG490WC.DefinirEstado490WC(new EstadoIniciarSesion490WC());
                 }
                 else
                 {
-                    string mensajeOperacion490WC = Traductor490WC.TraductorSG490WC.Traducir490WC("RestauracionFallida490WC");
+                    string mensajeOperacion490WC = "Archivo seleccionado para la Restauración Invalido!!";
                     MessageBox.Show(mensajeOperacion490WC);
                     nombreArchivo490WC = "";
                 }

@@ -82,6 +82,22 @@ namespace DAL490WC
             return resultado490WC;
         }
 
+        public (BigInteger DVH490WC, BigInteger DVV490WC) DigitoPorTabla490WC(string nombreTabla490WC)
+        {
+            try
+            {
+                if (!mapaDeTablasSistema490WC.ContainsKey(nombreTabla490WC))
+                {
+                    return (0, 0);
+                }
+                string[] columnasPK = mapaDeTablasSistema490WC[nombreTabla490WC];
+                return CalcularDigitosDeTabla490WC(nombreTabla490WC, columnasPK);
+            }
+            catch
+            {
+                return (0, 0);
+            }
+        }
         private (BigInteger DVH, BigInteger DVV) CalcularDigitosDeTabla490WC(string nombreTabla, string[] columnasPK)
         {
             using (SqlConnection con = GestorConexion490WC.GestorCone490WC.DevolverConexion490WC())
