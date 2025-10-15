@@ -15,20 +15,13 @@ namespace GUI490WC
     public partial class FormLogin490WC : Form
     {
         bool integridadSustema;
+        DigitoVerificador490WC gestorDigitoVerificador490WC;
         public FormLogin490WC()
         {
             InitializeComponent();
             Habilitar();
-            DigitoVerificador490WC gestorDigitoVerificador490WC = new DigitoVerificador490WC();
-            integridadSustema = gestorDigitoVerificador490WC.VerificarIntegridadSistema490WC();
-            if (integridadSustema)
-            {
-                MessageBox.Show("Todo Bien");
-            }
-            else
-            {
-                MessageBox.Show("Algo Mal");
-            }
+            gestorDigitoVerificador490WC = new DigitoVerificador490WC();
+
         }
         public void Habilitar()
         {
@@ -50,43 +43,57 @@ namespace GUI490WC
             {
                 if (usuarioIniciarSesion490WC != null)
                 {
-                    if (usuarioIniciarSesion490WC.IsBloqueado490WC == false)
+                    if (integridadSustema = gestorDigitoVerificador490WC.VerificarIntegridadSistema490WC())
                     {
-                        if (usuarioIniciarSesion490WC.IsHabilitado490WC == true)
+                        if (usuarioIniciarSesion490WC.IsBloqueado490WC == false)
                         {
-                            UserManager490WC.UserManagerSG490WC.ResetearIntentos490WC(usuarioIniciarSesion490WC);
-                            if (usuarioIniciarSesion490WC.Contraseña490WC == Cifrador490WC.GestorCifrador490WC.EncriptarIrreversible490WC(TB_Contrasena490WC.Text))
+                            if (usuarioIniciarSesion490WC.IsHabilitado490WC == true)
                             {
-                                UserManager490WC.UserManagerSG490WC.Login490WC(usuarioIniciarSesion490WC);
-                                usuarioIniciarSesion490WC.HoraUltimaSesion490WC = DateTime.Now;
-                                usuarioIniciarSesion490WC.Intentos490WC = 0;
-                                UserManager490WC.UserManagerSG490WC.ModificarLogInLogOut490WC(usuarioIniciarSesion490WC);
-                                Rol490WC GestorPermiso490WC = new Rol490WC();
-                                GestorPermiso490WC.AsignarRolSesion490WC(SesionManager490WC.GestorSesion490WC.Usuario490WC.Rol490WC);
-                                GestorForm490WC.gestorFormSG490WC.DefinirEstado490WC(new EstadoMenu490WC());
-                            }
-                            else
-                            {
-                                usuarioIniciarSesion490WC.Intentos490WC += 1;
-                                if (usuarioIniciarSesion490WC.Intentos490WC >= 3 && usuarioIniciarSesion490WC.Rol490WC != "AdminSistema")
+                                UserManager490WC.UserManagerSG490WC.ResetearIntentos490WC(usuarioIniciarSesion490WC);
+                                if (usuarioIniciarSesion490WC.Contraseña490WC == Cifrador490WC.GestorCifrador490WC.EncriptarIrreversible490WC(TB_Contrasena490WC.Text))
                                 {
-                                    UserManager490WC.UserManagerSG490WC.BloquearUsuario490WC(usuarioIniciarSesion490WC.Username490WC);
+                                    UserManager490WC.UserManagerSG490WC.Login490WC(usuarioIniciarSesion490WC);
+                                    usuarioIniciarSesion490WC.HoraUltimaSesion490WC = DateTime.Now;
+                                    usuarioIniciarSesion490WC.Intentos490WC = 0;
+                                    UserManager490WC.UserManagerSG490WC.ModificarLogInLogOut490WC(usuarioIniciarSesion490WC);
+                                    Rol490WC GestorPermiso490WC = new Rol490WC();
+                                    GestorPermiso490WC.AsignarRolSesion490WC(SesionManager490WC.GestorSesion490WC.Usuario490WC.Rol490WC);
+                                    GestorForm490WC.gestorFormSG490WC.DefinirEstado490WC(new EstadoMenu490WC());
                                 }
                                 else
                                 {
-                                   UserManager490WC.UserManagerSG490WC.ModificarLogInLogOut490WC(usuarioIniciarSesion490WC);
+                                    usuarioIniciarSesion490WC.Intentos490WC += 1;
+                                    if (usuarioIniciarSesion490WC.Intentos490WC >= 3 && usuarioIniciarSesion490WC.Rol490WC != "AdminSistema")
+                                    {
+                                        UserManager490WC.UserManagerSG490WC.BloquearUsuario490WC(usuarioIniciarSesion490WC.Username490WC);
+                                    }
+                                    else
+                                    {
+                                        UserManager490WC.UserManagerSG490WC.ModificarLogInLogOut490WC(usuarioIniciarSesion490WC);
+                                    }
+                                    MessageBox.Show($"Datos Ingresados Incorrectos!!!");
                                 }
-                                MessageBox.Show($"Datos Ingresados Incorrectos!!!");
+                            }
+                            else
+                            {
+                                MessageBox.Show($"El Usuario {usuarioIniciarSesion490WC.Nombre490WC} está Desactivado!!!");
                             }
                         }
-                        else 
+                        else
                         {
-                            MessageBox.Show($"El Usuario {usuarioIniciarSesion490WC.Nombre490WC} está Desactivado!!!");
+                            MessageBox.Show($"El Usuario {usuarioIniciarSesion490WC.Nombre490WC} está Bloqueado!!!");
                         }
                     }
                     else
                     {
-                        MessageBox.Show($"El Usuario {usuarioIniciarSesion490WC.Nombre490WC} está Bloqueado!!!");
+                        if (usuarioIniciarSesion490WC.Rol490WC == "AdminSistema")
+                        {
+                            GestorForm490WC.gestorFormSG490WC.DefinirEstado490WC(new EstadoError490WC());
+                        }
+                        else
+                        {
+                            MessageBox.Show("El Sistema Se Encuentra Actualmente Fuera De Servicio, Comuniquese Con Soporte");
+                        }
                     }
                 }
                 else

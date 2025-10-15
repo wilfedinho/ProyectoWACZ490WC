@@ -9,16 +9,16 @@ namespace GUI490WC
     public class EstadoError490WC : Estado490WC
     {
 
-       // FormError490WC Error490WC;
+        FormInconsistenciaDeDatos490WC Error490WC;
         public override void CerrarEstado490WC()
         {
-           // Error490WC?.Dispose();
+           Error490WC?.Dispose();
         }
 
         public override void EjecutarEstado490WC()
         {
-          //  Error490WC = new FormError490WC();
-           // Error490WC.ShowDialog();
+           Error490WC = new FormInconsistenciaDeDatos490WC();
+           Error490WC.ShowDialog();
         }
     }
 }

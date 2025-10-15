@@ -21,8 +21,8 @@ namespace BLLS490WC
                 {
                     string nombreTabla490WC = parTablaDigitos490WC.Key;
                     var digitosCrudos490WC = parTablaDigitos490WC.Value;
-                    string dvhHasheado490WC = Cifrador490WC.GestorCifrador490WC.EncriptarIrreversible490WC(digitosCrudos490WC.DVH.ToString());
-                    string dvvHasheado490WC = Cifrador490WC.GestorCifrador490WC.EncriptarIrreversible490WC(digitosCrudos490WC.DVV.ToString());
+                    string dvhHasheado490WC = Cifrador490WC.GestorCifrador490WC.EncriptarIrreversible490WC(digitosCrudos490WC.DVH490WC.ToString());
+                    string dvvHasheado490WC = Cifrador490WC.GestorCifrador490WC.EncriptarIrreversible490WC(digitosCrudos490WC.DVV490WC.ToString());
 
                     if (!gestorDigitoVerificador490WC.GuardarDigitos490WC(nombreTabla490WC, dvhHasheado490WC, dvvHasheado490WC))
                     {
@@ -46,9 +46,9 @@ namespace BLLS490WC
                 {
                     string nombreTabla490WC = par490WC.Key;
                     var digitosCrudos490WC = par490WC.Value;
-                    string dvhCalculadoYHasheado490WC = Cifrador490WC.GestorCifrador490WC.EncriptarIrreversible490WC(digitosCrudos490WC.DVH.ToString());
-                    string dvvCalculadoYHasheado490WC = Cifrador490WC.GestorCifrador490WC.EncriptarIrreversible490WC(digitosCrudos490WC.DVV.ToString());
-                    if (!digitosGuardados490WC.ContainsKey(nombreTabla490WC) || digitosGuardados490WC[nombreTabla490WC].DVH != dvhCalculadoYHasheado490WC || digitosGuardados490WC[nombreTabla490WC].DVV != dvvCalculadoYHasheado490WC)
+                    string dvhCalculadoYHasheado490WC = Cifrador490WC.GestorCifrador490WC.EncriptarIrreversible490WC(digitosCrudos490WC.DVH490WC.ToString());
+                    string dvvCalculadoYHasheado490WC = Cifrador490WC.GestorCifrador490WC.EncriptarIrreversible490WC(digitosCrudos490WC.DVV490WC.ToString());
+                    if (!digitosGuardados490WC.ContainsKey(nombreTabla490WC) || digitosGuardados490WC[nombreTabla490WC].DVH490WC != dvhCalculadoYHasheado490WC || digitosGuardados490WC[nombreTabla490WC].DVV490WC != dvvCalculadoYHasheado490WC)
                     {
                         return false;
                     }
