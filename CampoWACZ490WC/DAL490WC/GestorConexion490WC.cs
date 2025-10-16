@@ -4,6 +4,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Configuration;
 
 namespace DAL490WC
 {
@@ -21,21 +22,24 @@ namespace DAL490WC
             }
         }
 
-        private SqlConnection Conexion490WC = new SqlConnection("Data Source =.; Initial Catalog = BD_PROYECTO_2025490WC; Integrated Security = True;");
         
+        private SqlConnection Conexion490WC = new SqlConnection(ConfigurationManager.ConnectionStrings["ConexionBD490WC"].ConnectionString);
         private GestorConexion490WC()
         {
-            Conexion490WC = new SqlConnection("Data Source =.; Initial Catalog = BD_PROYECTO_2025490WC; Integrated Security = True;");
+            
+            Conexion490WC = new SqlConnection(ConfigurationManager.ConnectionStrings["ConexionBD490WC"].ConnectionString);
         }
         public SqlConnection DevolverConexion490WC()
         {
-            Conexion490WC = new SqlConnection("Data Source =.; Initial Catalog = BD_PROYECTO_2025490WC; Integrated Security = True;");
+            
+            Conexion490WC = new SqlConnection(ConfigurationManager.ConnectionStrings["ConexionBD490WC"].ConnectionString);
             return Conexion490WC;
         }
 
         public void AbrirConexion490WC()
         {
-            if (Conexion490WC.ConnectionString == string.Empty) Conexion490WC = new SqlConnection("Data Source =.; Initial Catalog = BD_PROYECTO_2025490WC; Integrated Security = True;");
+            
+            if (Conexion490WC.ConnectionString == string.Empty) Conexion490WC = new SqlConnection(ConfigurationManager.ConnectionStrings["ConexionBD490WC"].ConnectionString);
             Conexion490WC.Open();
         }
 
