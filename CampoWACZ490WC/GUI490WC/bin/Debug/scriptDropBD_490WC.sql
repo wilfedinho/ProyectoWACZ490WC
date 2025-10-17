@@ -1,0 +1,10 @@
+-- scriptDropBD_490WC.sql
+USE [master]
+GO
+IF EXISTS (SELECT name FROM sys.databases WHERE name = N'BD_PROYECTO_2025490WC')
+BEGIN
+    -- Cierra las conexiones para asegurar que se pueda borrar la BD
+    ALTER DATABASE [BD_PROYECTO_2025490WC] SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
+    DROP DATABASE [BD_PROYECTO_2025490WC];
+END
+GO
