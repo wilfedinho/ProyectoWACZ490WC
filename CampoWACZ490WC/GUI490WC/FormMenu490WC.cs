@@ -339,6 +339,10 @@ namespace GUI490WC
 
         private void BT_Reporte2490WC_Click(object sender, EventArgs e)
         {
+            //Reporte Inteligente
+
+
+
             hideSubmenu490WC();
         }
 

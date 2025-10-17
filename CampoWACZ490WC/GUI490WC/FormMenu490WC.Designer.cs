@@ -34,8 +34,7 @@
             this.panelSubmenuAyuda490WC = new System.Windows.Forms.Panel();
             this.BT_Ayuda490WC = new System.Windows.Forms.Button();
             this.panelSubmenuReportes490WC = new System.Windows.Forms.Panel();
-            this.BT_Reporte3490WC = new System.Windows.Forms.Button();
-            this.BT_ReporteBoletos490WC = new System.Windows.Forms.Button();
+            this.BT_ReporteInteligente490WC = new System.Windows.Forms.Button();
             this.BT_ReporteFacturas490WC = new System.Windows.Forms.Button();
             this.BT_Reportes490WC = new System.Windows.Forms.Button();
             this.panelSubmenuModificacionBoleto490WC = new System.Windows.Forms.Panel();
@@ -123,7 +122,7 @@
             this.BT_Salir490WC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BT_Salir490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.BT_Salir490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.BT_Salir490WC.Location = new System.Drawing.Point(0, 1248);
+            this.BT_Salir490WC.Location = new System.Drawing.Point(0, 1204);
             this.BT_Salir490WC.Name = "BT_Salir490WC";
             this.BT_Salir490WC.Size = new System.Drawing.Size(183, 44);
             this.BT_Salir490WC.TabIndex = 14;
@@ -137,7 +136,7 @@
             this.panelSubmenuAyuda490WC.AutoSize = true;
             this.panelSubmenuAyuda490WC.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panelSubmenuAyuda490WC.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSubmenuAyuda490WC.Location = new System.Drawing.Point(0, 1248);
+            this.panelSubmenuAyuda490WC.Location = new System.Drawing.Point(0, 1204);
             this.panelSubmenuAyuda490WC.Name = "panelSubmenuAyuda490WC";
             this.panelSubmenuAyuda490WC.Size = new System.Drawing.Size(183, 0);
             this.panelSubmenuAyuda490WC.TabIndex = 13;
@@ -149,7 +148,7 @@
             this.BT_Ayuda490WC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BT_Ayuda490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.BT_Ayuda490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.BT_Ayuda490WC.Location = new System.Drawing.Point(0, 1204);
+            this.BT_Ayuda490WC.Location = new System.Drawing.Point(0, 1160);
             this.BT_Ayuda490WC.Name = "BT_Ayuda490WC";
             this.BT_Ayuda490WC.Size = new System.Drawing.Size(183, 44);
             this.BT_Ayuda490WC.TabIndex = 12;
@@ -162,46 +161,29 @@
             // 
             this.panelSubmenuReportes490WC.AutoSize = true;
             this.panelSubmenuReportes490WC.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.panelSubmenuReportes490WC.Controls.Add(this.BT_Reporte3490WC);
-            this.panelSubmenuReportes490WC.Controls.Add(this.BT_ReporteBoletos490WC);
+            this.panelSubmenuReportes490WC.Controls.Add(this.BT_ReporteInteligente490WC);
             this.panelSubmenuReportes490WC.Controls.Add(this.BT_ReporteFacturas490WC);
             this.panelSubmenuReportes490WC.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelSubmenuReportes490WC.Location = new System.Drawing.Point(0, 1072);
             this.panelSubmenuReportes490WC.Name = "panelSubmenuReportes490WC";
-            this.panelSubmenuReportes490WC.Size = new System.Drawing.Size(183, 132);
+            this.panelSubmenuReportes490WC.Size = new System.Drawing.Size(183, 88);
             this.panelSubmenuReportes490WC.TabIndex = 11;
             // 
-            // BT_Reporte3490WC
+            // BT_ReporteInteligente490WC
             // 
-            this.BT_Reporte3490WC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(27)))), ((int)(((byte)(38)))));
-            this.BT_Reporte3490WC.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BT_Reporte3490WC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BT_Reporte3490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
-            this.BT_Reporte3490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.BT_Reporte3490WC.Location = new System.Drawing.Point(0, 88);
-            this.BT_Reporte3490WC.Name = "BT_Reporte3490WC";
-            this.BT_Reporte3490WC.Size = new System.Drawing.Size(183, 44);
-            this.BT_Reporte3490WC.TabIndex = 4;
-            this.BT_Reporte3490WC.Tag = "Acceder a Reporte 3";
-            this.BT_Reporte3490WC.Text = "Reporte 3";
-            this.BT_Reporte3490WC.UseVisualStyleBackColor = false;
-            this.BT_Reporte3490WC.Click += new System.EventHandler(this.BT_Reporte3490WC_Click);
-            // 
-            // BT_ReporteBoletos490WC
-            // 
-            this.BT_ReporteBoletos490WC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(27)))), ((int)(((byte)(38)))));
-            this.BT_ReporteBoletos490WC.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BT_ReporteBoletos490WC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BT_ReporteBoletos490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
-            this.BT_ReporteBoletos490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.BT_ReporteBoletos490WC.Location = new System.Drawing.Point(0, 44);
-            this.BT_ReporteBoletos490WC.Name = "BT_ReporteBoletos490WC";
-            this.BT_ReporteBoletos490WC.Size = new System.Drawing.Size(183, 44);
-            this.BT_ReporteBoletos490WC.TabIndex = 3;
-            this.BT_ReporteBoletos490WC.Tag = "Acceder a Reporte 2";
-            this.BT_ReporteBoletos490WC.Text = "Reporte 2";
-            this.BT_ReporteBoletos490WC.UseVisualStyleBackColor = false;
-            this.BT_ReporteBoletos490WC.Click += new System.EventHandler(this.BT_Reporte2490WC_Click);
+            this.BT_ReporteInteligente490WC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(27)))), ((int)(((byte)(38)))));
+            this.BT_ReporteInteligente490WC.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BT_ReporteInteligente490WC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BT_ReporteInteligente490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.BT_ReporteInteligente490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
+            this.BT_ReporteInteligente490WC.Location = new System.Drawing.Point(0, 44);
+            this.BT_ReporteInteligente490WC.Name = "BT_ReporteInteligente490WC";
+            this.BT_ReporteInteligente490WC.Size = new System.Drawing.Size(183, 44);
+            this.BT_ReporteInteligente490WC.TabIndex = 3;
+            this.BT_ReporteInteligente490WC.Tag = "Acceder a Reporte Inteligente";
+            this.BT_ReporteInteligente490WC.Text = "Metricas";
+            this.BT_ReporteInteligente490WC.UseVisualStyleBackColor = false;
+            this.BT_ReporteInteligente490WC.Click += new System.EventHandler(this.BT_Reporte2490WC_Click);
             // 
             // BT_ReporteFacturas490WC
             // 
@@ -768,8 +750,7 @@
         private System.Windows.Forms.Button BT_Restore490WC;
         private System.Windows.Forms.Button BT_BackUp490WC;
         private System.Windows.Forms.Button BT_GestionPermisos490WC;
-        private System.Windows.Forms.Button BT_Reporte3490WC;
-        private System.Windows.Forms.Button BT_ReporteBoletos490WC;
+        private System.Windows.Forms.Button BT_ReporteInteligente490WC;
         private System.Windows.Forms.Button BT_CompraFacturacion;
         private System.Windows.Forms.Button BT_MaestroCliente490WC;
         private System.Windows.Forms.Button BT_MaestroBeneficio490WC;

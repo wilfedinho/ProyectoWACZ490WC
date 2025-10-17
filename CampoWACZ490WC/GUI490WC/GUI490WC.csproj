@@ -212,6 +212,12 @@
     <Compile Include="FormRegistrarCliente490WC.Designer.cs">
       <DependentUpon>FormRegistrarCliente490WC.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormReportesInteligentes490WC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormReportesInteligentes490WC.Designer.cs">
+      <DependentUpon>FormReportesInteligentes490WC.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormRestore490WC.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -298,6 +304,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormRegistrarCliente490WC.resx">
       <DependentUpon>FormRegistrarCliente490WC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormReportesInteligentes490WC.resx">
+      <DependentUpon>FormReportesInteligentes490WC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormRestore490WC.resx">
       <DependentUpon>FormRestore490WC.cs</DependentUpon>
