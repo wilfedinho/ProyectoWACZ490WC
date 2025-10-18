@@ -14,19 +14,3 @@ C:\Users\William Càrdenas\Desktop\TESIS 2025\CampoWACZ490WC\ProyectoWACZ490WC\C
 C:\Users\William Càrdenas\Desktop\TESIS 2025\CampoWACZ490WC\ProyectoWACZ490WC\CampoWACZ490WC\SERVICIOS490WC\bin\Debug\BouncyCastle.Cryptography.xml
 C:\Users\William Càrdenas\Desktop\TESIS 2025\CampoWACZ490WC\ProyectoWACZ490WC\CampoWACZ490WC\SERVICIOS490WC\bin\Debug\itextsharp.xml
 C:\Users\William Càrdenas\Desktop\TESIS 2025\CampoWACZ490WC\ProyectoWACZ490WC\CampoWACZ490WC\SERVICIOS490WC\bin\Debug\FontAwesome.Sharp.dll
-C:\GitHubCarpetaDiploma\ProyectoWACZ490WC\CampoWACZ490WC\SERVICIOS490WC\bin\Debug\SERVICIOS490WC.dll
-C:\GitHubCarpetaDiploma\ProyectoWACZ490WC\CampoWACZ490WC\SERVICIOS490WC\bin\Debug\SERVICIOS490WC.pdb
-C:\GitHubCarpetaDiploma\ProyectoWACZ490WC\CampoWACZ490WC\SERVICIOS490WC\bin\Debug\BouncyCastle.Cryptography.dll
-C:\GitHubCarpetaDiploma\ProyectoWACZ490WC\CampoWACZ490WC\SERVICIOS490WC\bin\Debug\FontAwesome.Sharp.dll
-C:\GitHubCarpetaDiploma\ProyectoWACZ490WC\CampoWACZ490WC\SERVICIOS490WC\bin\Debug\itextsharp.dll
-C:\GitHubCarpetaDiploma\ProyectoWACZ490WC\CampoWACZ490WC\SERVICIOS490WC\bin\Debug\Newtonsoft.Json.dll
-C:\GitHubCarpetaDiploma\ProyectoWACZ490WC\CampoWACZ490WC\SERVICIOS490WC\bin\Debug\SE490WC.dll
-C:\GitHubCarpetaDiploma\ProyectoWACZ490WC\CampoWACZ490WC\SERVICIOS490WC\bin\Debug\SE490WC.pdb
-C:\GitHubCarpetaDiploma\ProyectoWACZ490WC\CampoWACZ490WC\SERVICIOS490WC\bin\Debug\BouncyCastle.Cryptography.xml
-C:\GitHubCarpetaDiploma\ProyectoWACZ490WC\CampoWACZ490WC\SERVICIOS490WC\bin\Debug\itextsharp.xml
-C:\GitHubCarpetaDiploma\ProyectoWACZ490WC\CampoWACZ490WC\SERVICIOS490WC\bin\Debug\Newtonsoft.Json.xml
-C:\GitHubCarpetaDiploma\ProyectoWACZ490WC\CampoWACZ490WC\SERVICIOS490WC\obj\Debug\SERVICIOS490WC.csproj.AssemblyReference.cache
-C:\GitHubCarpetaDiploma\ProyectoWACZ490WC\CampoWACZ490WC\SERVICIOS490WC\obj\Debug\SERVICIOS490WC.csproj.CoreCompileInputs.cache
-C:\GitHubCarpetaDiploma\ProyectoWACZ490WC\CampoWACZ490WC\SERVICIOS490WC\obj\Debug\SERVICIO.5E8A4BE5.Up2Date
-C:\GitHubCarpetaDiploma\ProyectoWACZ490WC\CampoWACZ490WC\SERVICIOS490WC\obj\Debug\SERVICIOS490WC.dll
-C:\GitHubCarpetaDiploma\ProyectoWACZ490WC\CampoWACZ490WC\SERVICIOS490WC\obj\Debug\SERVICIOS490WC.pdb
