@@ -49,6 +49,7 @@
             this.BT_Reporte1_490WC.TabIndex = 5;
             this.BT_Reporte1_490WC.Text = "Beneficios Con Mayor Canjes";
             this.BT_Reporte1_490WC.UseVisualStyleBackColor = false;
+            this.BT_Reporte1_490WC.Click += new System.EventHandler(this.BT_Reporte1_490WC_Click);
             // 
             // BT_Reporte3_490WC
             // 

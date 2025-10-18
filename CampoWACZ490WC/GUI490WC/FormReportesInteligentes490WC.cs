@@ -16,5 +16,10 @@ namespace GUI490WC
         {
             InitializeComponent();
         }
+
+        private void BT_Reporte1_490WC_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
