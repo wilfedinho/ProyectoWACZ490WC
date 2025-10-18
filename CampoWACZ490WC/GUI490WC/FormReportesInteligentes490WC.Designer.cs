@@ -49,6 +49,7 @@
             this.BT_Reporte1_490WC.TabIndex = 5;
             this.BT_Reporte1_490WC.Text = "Beneficios Con Mayor Canjes";
             this.BT_Reporte1_490WC.UseVisualStyleBackColor = false;
+            this.BT_Reporte1_490WC.Click += new System.EventHandler(this.BT_Reporte1_490WC_Click);
             // 
             // BT_Reporte3_490WC
             // 
@@ -62,6 +63,7 @@
             this.BT_Reporte3_490WC.TabIndex = 6;
             this.BT_Reporte3_490WC.Text = "Clase De Boletos Mas Populares";
             this.BT_Reporte3_490WC.UseVisualStyleBackColor = false;
+            this.BT_Reporte3_490WC.Click += new System.EventHandler(this.BT_Reporte3_490WC_Click);
             // 
             // BT_Reporte5_490WC
             // 
@@ -75,6 +77,7 @@
             this.BT_Reporte5_490WC.TabIndex = 7;
             this.BT_Reporte5_490WC.Text = "Modalidad De Boleto Mas Solicitadas PorTemporada";
             this.BT_Reporte5_490WC.UseVisualStyleBackColor = false;
+            this.BT_Reporte5_490WC.Click += new System.EventHandler(this.BT_Reporte5_490WC_Click);
             // 
             // BT_Reporte2_490WC
             // 
@@ -88,6 +91,7 @@
             this.BT_Reporte2_490WC.TabIndex = 8;
             this.BT_Reporte2_490WC.Text = "Destinos Mas Solicitados  Por Temporada";
             this.BT_Reporte2_490WC.UseVisualStyleBackColor = false;
+            this.BT_Reporte2_490WC.Click += new System.EventHandler(this.BT_Reporte2_490WC_Click);
             // 
             // BT_Reporte4_490WC
             // 
@@ -101,6 +105,7 @@
             this.BT_Reporte4_490WC.TabIndex = 9;
             this.BT_Reporte4_490WC.Text = "Tendencia En Los Canjes De Los Beneficios";
             this.BT_Reporte4_490WC.UseVisualStyleBackColor = false;
+            this.BT_Reporte4_490WC.Click += new System.EventHandler(this.BT_Reporte4_490WC_Click);
             // 
             // BT_Reporte6_490WC
             // 
@@ -114,6 +119,7 @@
             this.BT_Reporte6_490WC.TabIndex = 10;
             this.BT_Reporte6_490WC.Text = "Tendencia Por Campo A Generar Un Cambio";
             this.BT_Reporte6_490WC.UseVisualStyleBackColor = false;
+            this.BT_Reporte6_490WC.Click += new System.EventHandler(this.BT_Reporte6_490WC_Click);
             // 
             // LABEL_NOMBRE_ABM_USUARIO490WC
             // 
@@ -140,6 +146,7 @@
             this.Controls.Add(this.BT_Reporte3_490WC);
             this.Controls.Add(this.BT_Reporte1_490WC);
             this.Name = "FormReportesInteligentes490WC";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormReportesInteligentes490WC";
             this.ResumeLayout(false);
             this.PerformLayout();

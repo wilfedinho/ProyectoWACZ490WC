@@ -30,7 +30,7 @@ namespace GUI490WC
         FormAplicarCambiosBoleto490WC formAplicarCambiosBoleto490WC;
         FormCobrarCambios490WC formCobrarCambios490WC;
         FormBitacoraCambiosBeneficio490WC formBitacoraCambiosBeneficio490WC;
-
+        FormReportesInteligentes490WC formReportesInteligentes490WC;
         public FormMenu490WC()
         {
             InitializeComponent();
@@ -45,9 +45,9 @@ namespace GUI490WC
             LabelRolUsuario490WC.AutoSize = false;
             LabelRolUsuario490WC.MaximumSize = new Size(panelPrincipal.Width, 0);
             LabelRolUsuario490WC.Height = LabelRolUsuario490WC.PreferredHeight;
-       
 
-            
+
+
 
             LabelNombreUsuarios490WC.Height = LabelNombreUsuarios490WC.PreferredHeight;
             LabelRolUsuario490WC.Height = LabelRolUsuario490WC.PreferredHeight;
@@ -189,7 +189,7 @@ namespace GUI490WC
         {
             try
             {
-                
+
                 UserManager490WC.UserManagerSG490WC.GuardarIdiomaUsuario490WC();
                 UserManager490WC.UserManagerSG490WC.Logout490WC();
                 GestorForm490WC.gestorFormSG490WC.DefinirEstado490WC(new EstadoCerrarAplicacion490WC());
@@ -237,8 +237,8 @@ namespace GUI490WC
                 hideSubmenu490WC();
                 this?.Show();
             }
-            catch {}
-          
+            catch { }
+
         }
 
         private void BT_DigitoVerificador490WC_Click(object sender, EventArgs e)
@@ -340,10 +340,13 @@ namespace GUI490WC
         private void BT_Reporte2490WC_Click(object sender, EventArgs e)
         {
             //Reporte Inteligente
-
-
-
-            hideSubmenu490WC();
+            //try
+            //{
+                formReportesInteligentes490WC = new FormReportesInteligentes490WC();
+                formReportesInteligentes490WC.ShowDialog();
+                hideSubmenu490WC();
+            //}
+            //catch { }
         }
 
         private void BT_Reporte3490WC_Click(object sender, EventArgs e)
