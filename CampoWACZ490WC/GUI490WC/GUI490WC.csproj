@@ -69,6 +69,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DestinosMasVendidosPorTemporada.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DestinosMasVendidosPorTemporada.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="FormAplicarCambiosBoleto490WC.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -151,6 +157,12 @@
     </Compile>
     <Compile Include="FormCobrarFactura490WC.Designer.cs">
       <DependentUpon>FormCobrarFactura490WC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDestinosPorTemporada490WC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDestinosPorTemporada490WC.Designer.cs">
+      <DependentUpon>FormDestinosPorTemporada490WC.cs</DependentUpon>
     </Compile>
     <Compile Include="FormFactura490WC.cs">
       <SubType>Form</SubType>
@@ -251,6 +263,10 @@
       <DependentUpon>ReporteBeneficioMayorCanje.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <EmbeddedResource Include="DestinosMasVendidosPorTemporada.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>DestinosMasVendidosPorTemporada.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormAplicarCambiosBoleto490WC.resx">
       <DependentUpon>FormAplicarCambiosBoleto490WC.cs</DependentUpon>
     </EmbeddedResource>
@@ -289,6 +305,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormCobrarFactura490WC.resx">
       <DependentUpon>FormCobrarFactura490WC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDestinosPorTemporada490WC.resx">
+      <DependentUpon>FormDestinosPorTemporada490WC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormFactura490WC.resx">
       <DependentUpon>FormFactura490WC.cs</DependentUpon>
