@@ -39,10 +39,6 @@
     <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
       <HintPath>..\packages\BouncyCastle.Cryptography.2.4.0\lib\net461\BouncyCastle.Cryptography.dll</HintPath>
     </Reference>
-    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
-    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
-    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="FontAwesome.Sharp, Version=6.6.0.0, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f, processorArchitecture=MSIL">
       <HintPath>..\packages\FontAwesome.Sharp.6.6.0\lib\net48\FontAwesome.Sharp.dll</HintPath>
     </Reference>
@@ -54,8 +50,6 @@
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Web" />
-    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -69,12 +63,6 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DestinosMasVendidosPorTemporada.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DestinosMasVendidosPorTemporada.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="FormAplicarCambiosBoleto490WC.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -158,12 +146,6 @@
     <Compile Include="FormCobrarFactura490WC.Designer.cs">
       <DependentUpon>FormCobrarFactura490WC.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormDestinosPorTemporada490WC.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormDestinosPorTemporada490WC.Designer.cs">
-      <DependentUpon>FormDestinosPorTemporada490WC.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormFactura490WC.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -230,12 +212,6 @@
     <Compile Include="FormRegistrarCliente490WC.Designer.cs">
       <DependentUpon>FormRegistrarCliente490WC.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormReporteBeneficioMayorCanje490WC.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormReporteBeneficioMayorCanje490WC.Designer.cs">
-      <DependentUpon>FormReporteBeneficioMayorCanje490WC.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormReportesInteligentes490WC.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -257,16 +233,6 @@
     <Compile Include="FormSeleccionarBeneficio490WC.Designer.cs">
       <DependentUpon>FormSeleccionarBeneficio490WC.cs</DependentUpon>
     </Compile>
-    <Compile Include="ReporteBeneficioMayorCanje.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ReporteBeneficioMayorCanje.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <EmbeddedResource Include="DestinosMasVendidosPorTemporada.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>DestinosMasVendidosPorTemporada.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="FormAplicarCambiosBoleto490WC.resx">
       <DependentUpon>FormAplicarCambiosBoleto490WC.cs</DependentUpon>
     </EmbeddedResource>
@@ -306,9 +272,6 @@
     <EmbeddedResource Include="FormCobrarFactura490WC.resx">
       <DependentUpon>FormCobrarFactura490WC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormDestinosPorTemporada490WC.resx">
-      <DependentUpon>FormDestinosPorTemporada490WC.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FormFactura490WC.resx">
       <DependentUpon>FormFactura490WC.cs</DependentUpon>
     </EmbeddedResource>
@@ -342,9 +305,6 @@
     <EmbeddedResource Include="FormRegistrarCliente490WC.resx">
       <DependentUpon>FormRegistrarCliente490WC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormReporteBeneficioMayorCanje490WC.resx">
-      <DependentUpon>FormReporteBeneficioMayorCanje490WC.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FormReportesInteligentes490WC.resx">
       <DependentUpon>FormReportesInteligentes490WC.cs</DependentUpon>
     </EmbeddedResource>
@@ -363,10 +323,6 @@
     </Compile>
     <EmbeddedResource Include="FormSeleccionarBeneficio490WC.resx">
       <DependentUpon>FormSeleccionarBeneficio490WC.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ReporteBeneficioMayorCanje.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>ReporteBeneficioMayorCanje.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -412,9 +368,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Logo-Proyecto-2025.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

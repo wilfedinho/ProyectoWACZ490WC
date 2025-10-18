@@ -35,8 +35,8 @@ Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{
 [CustomMessages]
 english.DbSetupPageTitle=Database Setup
 spanish.DbSetupPageTitle=Configuración de Base de Datos
-english.DbSetupPageDesc=Restore DataBase?
-spanish.DbSetupPageDesc=¿Reinstalar Base de Datos?
+english.DbSetupPageDesc=Perform database setup?
+spanish.DbSetupPageDesc=¿Desea realizar la configuración de la base de datos?
 
 [Files]
 ; Archivos de tu proyecto (La línea corregida del error anterior)

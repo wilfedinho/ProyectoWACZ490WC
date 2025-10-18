@@ -16,36 +16,5 @@ namespace GUI490WC
         {
             InitializeComponent();
         }
-
-        private void BT_Reporte1_490WC_Click(object sender, EventArgs e)
-        {
-            FormReporteBeneficioMayorCanje490WC formReporteBeneficioMayorCanje490WC = new FormReporteBeneficioMayorCanje490WC();
-            formReporteBeneficioMayorCanje490WC.ShowDialog();
-        }
-
-        private void BT_Reporte3_490WC_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void BT_Reporte5_490WC_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void BT_Reporte2_490WC_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void BT_Reporte4_490WC_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void BT_Reporte6_490WC_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
