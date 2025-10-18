@@ -47,7 +47,7 @@
             this.BT_Reporte1_490WC.Name = "BT_Reporte1_490WC";
             this.BT_Reporte1_490WC.Size = new System.Drawing.Size(231, 79);
             this.BT_Reporte1_490WC.TabIndex = 5;
-            this.BT_Reporte1_490WC.Text = "Cambiar Clave";
+            this.BT_Reporte1_490WC.Text = "Beneficios Con Mayor Canjes";
             this.BT_Reporte1_490WC.UseVisualStyleBackColor = false;
             // 
             // BT_Reporte3_490WC
@@ -60,7 +60,7 @@
             this.BT_Reporte3_490WC.Name = "BT_Reporte3_490WC";
             this.BT_Reporte3_490WC.Size = new System.Drawing.Size(231, 79);
             this.BT_Reporte3_490WC.TabIndex = 6;
-            this.BT_Reporte3_490WC.Text = "Cambiar Clave";
+            this.BT_Reporte3_490WC.Text = "Clase De Boletos Mas Populares";
             this.BT_Reporte3_490WC.UseVisualStyleBackColor = false;
             // 
             // BT_Reporte5_490WC
@@ -73,7 +73,7 @@
             this.BT_Reporte5_490WC.Name = "BT_Reporte5_490WC";
             this.BT_Reporte5_490WC.Size = new System.Drawing.Size(231, 79);
             this.BT_Reporte5_490WC.TabIndex = 7;
-            this.BT_Reporte5_490WC.Text = "Cambiar Clave";
+            this.BT_Reporte5_490WC.Text = "Modalidad De Boleto Mas Solicitadas PorTemporada";
             this.BT_Reporte5_490WC.UseVisualStyleBackColor = false;
             // 
             // BT_Reporte2_490WC
@@ -86,7 +86,7 @@
             this.BT_Reporte2_490WC.Name = "BT_Reporte2_490WC";
             this.BT_Reporte2_490WC.Size = new System.Drawing.Size(231, 79);
             this.BT_Reporte2_490WC.TabIndex = 8;
-            this.BT_Reporte2_490WC.Text = "Cambiar Clave";
+            this.BT_Reporte2_490WC.Text = "Destinos Mas Solicitados  Por Temporada";
             this.BT_Reporte2_490WC.UseVisualStyleBackColor = false;
             // 
             // BT_Reporte4_490WC
@@ -99,7 +99,7 @@
             this.BT_Reporte4_490WC.Name = "BT_Reporte4_490WC";
             this.BT_Reporte4_490WC.Size = new System.Drawing.Size(231, 79);
             this.BT_Reporte4_490WC.TabIndex = 9;
-            this.BT_Reporte4_490WC.Text = "Cambiar Clave";
+            this.BT_Reporte4_490WC.Text = "Tendencia En Los Canjes De Los Beneficios";
             this.BT_Reporte4_490WC.UseVisualStyleBackColor = false;
             // 
             // BT_Reporte6_490WC
@@ -112,7 +112,7 @@
             this.BT_Reporte6_490WC.Name = "BT_Reporte6_490WC";
             this.BT_Reporte6_490WC.Size = new System.Drawing.Size(231, 79);
             this.BT_Reporte6_490WC.TabIndex = 10;
-            this.BT_Reporte6_490WC.Text = "Cambiar Clave";
+            this.BT_Reporte6_490WC.Text = "Tendencia Por Campo A Generar Un Cambio";
             this.BT_Reporte6_490WC.UseVisualStyleBackColor = false;
             // 
             // LABEL_NOMBRE_ABM_USUARIO490WC
@@ -122,7 +122,7 @@
             this.LABEL_NOMBRE_ABM_USUARIO490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
             this.LABEL_NOMBRE_ABM_USUARIO490WC.Location = new System.Drawing.Point(29, 48);
             this.LABEL_NOMBRE_ABM_USUARIO490WC.Name = "LABEL_NOMBRE_ABM_USUARIO490WC";
-            this.LABEL_NOMBRE_ABM_USUARIO490WC.Size = new System.Drawing.Size(530, 38);
+            this.LABEL_NOMBRE_ABM_USUARIO490WC.Size = new System.Drawing.Size(540, 39);
             this.LABEL_NOMBRE_ABM_USUARIO490WC.TabIndex = 25;
             this.LABEL_NOMBRE_ABM_USUARIO490WC.Text = "Reportes Inteligentes Disponibles";
             // 
@@ -131,7 +131,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(27)))), ((int)(((byte)(38)))));
-            this.ClientSize = new System.Drawing.Size(584, 450);
+            this.ClientSize = new System.Drawing.Size(584, 409);
             this.Controls.Add(this.LABEL_NOMBRE_ABM_USUARIO490WC);
             this.Controls.Add(this.BT_Reporte6_490WC);
             this.Controls.Add(this.BT_Reporte4_490WC);

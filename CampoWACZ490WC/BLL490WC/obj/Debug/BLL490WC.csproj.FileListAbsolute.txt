@@ -22,3 +22,27 @@ C:\Users\William Càrdenas\Desktop\TESIS 2025\CampoWACZ490WC\ProyectoWACZ490WC\C
 C:\Users\William Càrdenas\Desktop\TESIS 2025\CampoWACZ490WC\ProyectoWACZ490WC\CampoWACZ490WC\BLL490WC\bin\Debug\BLLS490WC.dll
 C:\Users\William Càrdenas\Desktop\TESIS 2025\CampoWACZ490WC\ProyectoWACZ490WC\CampoWACZ490WC\BLL490WC\bin\Debug\BLLS490WC.pdb
 C:\Users\William Càrdenas\Desktop\TESIS 2025\CampoWACZ490WC\ProyectoWACZ490WC\CampoWACZ490WC\BLL490WC\bin\Debug\FontAwesome.Sharp.dll
+C:\GitHubCarpetaDiploma\ProyectoWACZ490WC\CampoWACZ490WC\BLL490WC\bin\Debug\BLL490WC.dll
+C:\GitHubCarpetaDiploma\ProyectoWACZ490WC\CampoWACZ490WC\BLL490WC\bin\Debug\BLL490WC.pdb
+C:\GitHubCarpetaDiploma\ProyectoWACZ490WC\CampoWACZ490WC\BLL490WC\bin\Debug\BE490WC.dll
+C:\GitHubCarpetaDiploma\ProyectoWACZ490WC\CampoWACZ490WC\BLL490WC\bin\Debug\BLLS490WC.dll
+C:\GitHubCarpetaDiploma\ProyectoWACZ490WC\CampoWACZ490WC\BLL490WC\bin\Debug\BouncyCastle.Cryptography.dll
+C:\GitHubCarpetaDiploma\ProyectoWACZ490WC\CampoWACZ490WC\BLL490WC\bin\Debug\DAL490WC.dll
+C:\GitHubCarpetaDiploma\ProyectoWACZ490WC\CampoWACZ490WC\BLL490WC\bin\Debug\FontAwesome.Sharp.dll
+C:\GitHubCarpetaDiploma\ProyectoWACZ490WC\CampoWACZ490WC\BLL490WC\bin\Debug\itextsharp.dll
+C:\GitHubCarpetaDiploma\ProyectoWACZ490WC\CampoWACZ490WC\BLL490WC\bin\Debug\SERVICIOS490WC.dll
+C:\GitHubCarpetaDiploma\ProyectoWACZ490WC\CampoWACZ490WC\BLL490WC\bin\Debug\SE490WC.dll
+C:\GitHubCarpetaDiploma\ProyectoWACZ490WC\CampoWACZ490WC\BLL490WC\bin\Debug\Newtonsoft.Json.dll
+C:\GitHubCarpetaDiploma\ProyectoWACZ490WC\CampoWACZ490WC\BLL490WC\bin\Debug\BE490WC.pdb
+C:\GitHubCarpetaDiploma\ProyectoWACZ490WC\CampoWACZ490WC\BLL490WC\bin\Debug\BLLS490WC.pdb
+C:\GitHubCarpetaDiploma\ProyectoWACZ490WC\CampoWACZ490WC\BLL490WC\bin\Debug\DAL490WC.pdb
+C:\GitHubCarpetaDiploma\ProyectoWACZ490WC\CampoWACZ490WC\BLL490WC\bin\Debug\SERVICIOS490WC.pdb
+C:\GitHubCarpetaDiploma\ProyectoWACZ490WC\CampoWACZ490WC\BLL490WC\bin\Debug\BouncyCastle.Cryptography.xml
+C:\GitHubCarpetaDiploma\ProyectoWACZ490WC\CampoWACZ490WC\BLL490WC\bin\Debug\itextsharp.xml
+C:\GitHubCarpetaDiploma\ProyectoWACZ490WC\CampoWACZ490WC\BLL490WC\bin\Debug\SE490WC.pdb
+C:\GitHubCarpetaDiploma\ProyectoWACZ490WC\CampoWACZ490WC\BLL490WC\bin\Debug\Newtonsoft.Json.xml
+C:\GitHubCarpetaDiploma\ProyectoWACZ490WC\CampoWACZ490WC\BLL490WC\obj\Debug\BLL490WC.csproj.AssemblyReference.cache
+C:\GitHubCarpetaDiploma\ProyectoWACZ490WC\CampoWACZ490WC\BLL490WC\obj\Debug\BLL490WC.csproj.CoreCompileInputs.cache
+C:\GitHubCarpetaDiploma\ProyectoWACZ490WC\CampoWACZ490WC\BLL490WC\obj\Debug\BLL490WC.csproj.Up2Date
+C:\GitHubCarpetaDiploma\ProyectoWACZ490WC\CampoWACZ490WC\BLL490WC\obj\Debug\BLL490WC.dll
+C:\GitHubCarpetaDiploma\ProyectoWACZ490WC\CampoWACZ490WC\BLL490WC\obj\Debug\BLL490WC.pdb
