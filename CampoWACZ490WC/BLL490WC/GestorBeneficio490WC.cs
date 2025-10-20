@@ -3,6 +3,7 @@ using BLLS490WC;
 using DAL490WC;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -117,6 +118,12 @@ namespace BLL490WC
         {
             BeneficioDAL490WC beneficioDAL490WC = new BeneficioDAL490WC();
             return beneficioDAL490WC.ObtenerBeneficiosPorCantidadDeReclamados490WC(cantidadReclamados);
+        }
+
+        public DataTable ObtenerReporteBeneficiosMayorCanje490WC()
+        {
+            BeneficioDAL490WC beneficioDAL490WC = new BeneficioDAL490WC();
+            return beneficioDAL490WC.ObtenerReporteBeneficiosMayorCanje490WC();
         }
 
     }

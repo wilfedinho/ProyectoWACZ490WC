@@ -30,7 +30,7 @@ namespace GUI490WC
         FormAplicarCambiosBoleto490WC formAplicarCambiosBoleto490WC;
         FormCobrarCambios490WC formCobrarCambios490WC;
         FormBitacoraCambiosBeneficio490WC formBitacoraCambiosBeneficio490WC;
-
+        FormReportesInteligentes490WC formReportesInteligentes490WC;
         public FormMenu490WC()
         {
             InitializeComponent();
@@ -340,8 +340,8 @@ namespace GUI490WC
         private void BT_Reporte2490WC_Click(object sender, EventArgs e)
         {
             //Reporte Inteligente
-
-
+            formReportesInteligentes490WC = new FormReportesInteligentes490WC();
+            formReportesInteligentes490WC.ShowDialog();
 
             hideSubmenu490WC();
         }

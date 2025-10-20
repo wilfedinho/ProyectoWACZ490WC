@@ -1,6 +1,7 @@
 ﻿using BE490WC;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -281,6 +282,35 @@ namespace DAL490WC
         }
 
         #endregion
+
+        public DataTable ObtenerReporteBeneficiosMayorCanje490WC()
+        {
+            DataTable dtReporte490WC = new DataTable();
+            
+            dtReporte490WC.Columns.Add("Nombre", typeof(string));
+            dtReporte490WC.Columns.Add("Cantidad", typeof(int));
+
+            
+            string query490WC = "SELECT Nombre490WC, CantidadBeneficioReclamado490WC FROM Beneficio490WC ORDER BY CantidadBeneficioReclamado490WC DESC;";
+
+            using (SqlConnection cone490WC = GestorConexion490WC.GestorCone490WC.DevolverConexion490WC())
+            {
+                cone490WC.Open();
+                using (SqlCommand comando490WC = new SqlCommand(query490WC, cone490WC))
+                {
+                    using (SqlDataReader reader490WC = comando490WC.ExecuteReader())
+                    {
+                        while (reader490WC.Read())
+                        {
+                            
+                            dtReporte490WC.Rows.Add(reader490WC["Nombre490WC"].ToString(), int.Parse(reader490WC["CantidadBeneficioReclamado490WC"].ToString()));
+                        }
+                    }
+                }
+            }
+            return dtReporte490WC; 
+        }
+
 
     }
 }
