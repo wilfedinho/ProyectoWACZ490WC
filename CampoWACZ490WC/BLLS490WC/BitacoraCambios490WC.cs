@@ -26,7 +26,10 @@ namespace BLLS490WC
         public bool RestaurarVersionBeneficio490WC(int numeroCambioRestaurar)
         {
             BitacoraCambiosDAL490WC gestorBitacoraCambios490WC = new BitacoraCambiosDAL490WC();
-            return gestorBitacoraCambios490WC.RestaurarVersionBeneficio490WC(numeroCambioRestaurar);
+            bool operacion490WC = gestorBitacoraCambios490WC.RestaurarVersionBeneficio490WC(numeroCambioRestaurar);
+            DigitoVerificadorDAL490WC gestorDigitoVerificador490WC = new DigitoVerificadorDAL490WC();
+            gestorDigitoVerificador490WC.DigitoPorTabla490WC("Beneficios490WC");
+            return operacion490WC;
         }
 
     }
