@@ -329,7 +329,29 @@ namespace BLL490WC
             return boletoDAL490WC.ObtenerBoletoConBeneficio490WC(ID490WC);
         }
 
+        public List<Boleto490WC> ObtenerBoletosPrimavera490WC()
+        {
+            BoletoDAL490WC gestorBoleto490WC = new BoletoDAL490WC();
+            return gestorBoleto490WC.ObtenerBoletosPrimavera490WC();
+        }
 
+        public List<Boleto490WC> ObtenerBoletosVerano490WC()
+        {
+            BoletoDAL490WC gestorBoleto490WC = new BoletoDAL490WC();
+            return gestorBoleto490WC.ObtenerBoletosVerano490WC();
+        }
+
+        public List<Boleto490WC> ObtenerBoletosOtono490WC()
+        {
+            BoletoDAL490WC gestorBoleto490WC = new BoletoDAL490WC();
+            return gestorBoleto490WC.ObtenerBoletosOtono490WC();
+        }
+
+        public List<Boleto490WC> ObtenerBoletosInvierno490WC()
+        {
+            BoletoDAL490WC gestorBoleto490WC = new BoletoDAL490WC();
+            return gestorBoleto490WC.ObtenerBoletosInvierno490WC();
+        }
 
         #endregion
 

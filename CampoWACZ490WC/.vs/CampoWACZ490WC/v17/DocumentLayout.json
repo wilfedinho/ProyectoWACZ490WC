@@ -3,16 +3,28 @@
   "WorkspaceRootPath": "C:\\GitHubCarpetaDiploma\\ProyectoWACZ490WC\\CampoWACZ490WC\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{C80766E9-A7B3-441A-86A3-8FF65B5882AD}|DAL490WC\\DAL490WC.csproj|c:\\githubcarpetadiploma\\proyectowacz490wc\\campowacz490wc\\dal490wc\\bitacoracambiosdal490wc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C80766E9-A7B3-441A-86A3-8FF65B5882AD}|DAL490WC\\DAL490WC.csproj|solutionrelative:dal490wc\\bitacoracambiosdal490wc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{17406551-94B2-43D3-9D55-7009E09240A3}|GUI490WC\\GUI490WC.csproj|c:\\githubcarpetadiploma\\proyectowacz490wc\\campowacz490wc\\gui490wc\\formreportesinteligentes490wc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{17406551-94B2-43D3-9D55-7009E09240A3}|GUI490WC\\GUI490WC.csproj|solutionrelative:gui490wc\\formreportesinteligentes490wc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A75EC413-7096-4591-BD0B-F7C4BA246F23}|BLLS490WC\\BLLS490WC.csproj|c:\\githubcarpetadiploma\\proyectowacz490wc\\campowacz490wc\\blls490wc\\bitacoracambios490wc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A75EC413-7096-4591-BD0B-F7C4BA246F23}|BLLS490WC\\BLLS490WC.csproj|solutionrelative:blls490wc\\bitacoracambios490wc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{17406551-94B2-43D3-9D55-7009E09240A3}|GUI490WC\\GUI490WC.csproj|C:\\GitHubCarpetaDiploma\\ProyectoWACZ490WC\\CampoWACZ490WC\\gui490wc\\formreportesinteligentes490wc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{17406551-94B2-43D3-9D55-7009E09240A3}|GUI490WC\\GUI490WC.csproj|solutionrelative:gui490wc\\formreportesinteligentes490wc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C80766E9-A7B3-441A-86A3-8FF65B5882AD}|DAL490WC\\DAL490WC.csproj|c:\\githubcarpetadiploma\\proyectowacz490wc\\campowacz490wc\\dal490wc\\boletodal490wc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C80766E9-A7B3-441A-86A3-8FF65B5882AD}|DAL490WC\\DAL490WC.csproj|solutionrelative:dal490wc\\boletodal490wc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18CB2207-87E5-4F1E-8B58-F70F52084651}|BLL490WC\\BLL490WC.csproj|c:\\githubcarpetadiploma\\proyectowacz490wc\\campowacz490wc\\bll490wc\\gestorboleto490wc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18CB2207-87E5-4F1E-8B58-F70F52084651}|BLL490WC\\BLL490WC.csproj|solutionrelative:bll490wc\\gestorboleto490wc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A75EC413-7096-4591-BD0B-F7C4BA246F23}|BLLS490WC\\BLLS490WC.csproj|C:\\GitHubCarpetaDiploma\\ProyectoWACZ490WC\\CampoWACZ490WC\\blls490wc\\bitacoracambios490wc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A75EC413-7096-4591-BD0B-F7C4BA246F23}|BLLS490WC\\BLLS490WC.csproj|solutionrelative:blls490wc\\bitacoracambios490wc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{865DD08A-C4D3-4679-852F-1239493E0C7F}|BE490WC\\BE490WC.csproj|C:\\GitHubCarpetaDiploma\\ProyectoWACZ490WC\\CampoWACZ490WC\\be490wc\\beneficio490wc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -23,16 +35,8 @@
       "RelativeMoniker": "D:0:0:{18CB2207-87E5-4F1E-8B58-F70F52084651}|BLL490WC\\BLL490WC.csproj|solutionrelative:bll490wc\\gestorbeneficio490wc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C80766E9-A7B3-441A-86A3-8FF65B5882AD}|DAL490WC\\DAL490WC.csproj|C:\\GitHubCarpetaDiploma\\ProyectoWACZ490WC\\CampoWACZ490WC\\dal490wc\\beneficiodal490wc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C80766E9-A7B3-441A-86A3-8FF65B5882AD}|DAL490WC\\DAL490WC.csproj|solutionrelative:dal490wc\\beneficiodal490wc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{17406551-94B2-43D3-9D55-7009E09240A3}|GUI490WC\\GUI490WC.csproj|C:\\GitHubCarpetaDiploma\\ProyectoWACZ490WC\\CampoWACZ490WC\\gui490wc\\formmenu490wc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{17406551-94B2-43D3-9D55-7009E09240A3}|GUI490WC\\GUI490WC.csproj|solutionrelative:gui490wc\\formmenu490wc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C80766E9-A7B3-441A-86A3-8FF65B5882AD}|DAL490WC\\DAL490WC.csproj|C:\\GitHubCarpetaDiploma\\ProyectoWACZ490WC\\CampoWACZ490WC\\dal490wc\\gestorconexion490wc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C80766E9-A7B3-441A-86A3-8FF65B5882AD}|DAL490WC\\DAL490WC.csproj|solutionrelative:dal490wc\\gestorconexion490wc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,11 +46,50 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
+              "Title": "BitacoraCambiosDAL490WC.cs",
+              "DocumentMoniker": "C:\\GitHubCarpetaDiploma\\ProyectoWACZ490WC\\CampoWACZ490WC\\DAL490WC\\BitacoraCambiosDAL490WC.cs",
+              "RelativeDocumentMoniker": "DAL490WC\\BitacoraCambiosDAL490WC.cs",
+              "ToolTip": "C:\\GitHubCarpetaDiploma\\ProyectoWACZ490WC\\CampoWACZ490WC\\DAL490WC\\BitacoraCambiosDAL490WC.cs",
+              "RelativeToolTip": "DAL490WC\\BitacoraCambiosDAL490WC.cs",
+              "ViewState": "AgIAAK0AAAAAAAAAAAAwwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-21T03:19:20.005Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "GestorBoleto490WC.cs",
+              "DocumentMoniker": "C:\\GitHubCarpetaDiploma\\ProyectoWACZ490WC\\CampoWACZ490WC\\BLL490WC\\GestorBoleto490WC.cs",
+              "RelativeDocumentMoniker": "BLL490WC\\GestorBoleto490WC.cs",
+              "ToolTip": "C:\\GitHubCarpetaDiploma\\ProyectoWACZ490WC\\CampoWACZ490WC\\BLL490WC\\GestorBoleto490WC.cs",
+              "RelativeToolTip": "BLL490WC\\GestorBoleto490WC.cs",
+              "ViewState": "AgIAADEBAAAAAAAAAAAkwGABAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-21T02:57:39.127Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "BoletoDAL490WC.cs",
+              "DocumentMoniker": "C:\\GitHubCarpetaDiploma\\ProyectoWACZ490WC\\CampoWACZ490WC\\DAL490WC\\BoletoDAL490WC.cs",
+              "RelativeDocumentMoniker": "DAL490WC\\BoletoDAL490WC.cs",
+              "ToolTip": "C:\\GitHubCarpetaDiploma\\ProyectoWACZ490WC\\CampoWACZ490WC\\DAL490WC\\BoletoDAL490WC.cs",
+              "RelativeToolTip": "DAL490WC\\BoletoDAL490WC.cs",
+              "ViewState": "AgIAACkGAAAAAAAAAAAQwIkFAACPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-21T02:37:08.731Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "BitacoraCambios490WC.cs",
               "DocumentMoniker": "C:\\GitHubCarpetaDiploma\\ProyectoWACZ490WC\\CampoWACZ490WC\\BLLS490WC\\BitacoraCambios490WC.cs",
               "RelativeDocumentMoniker": "BLLS490WC\\BitacoraCambios490WC.cs",
@@ -54,12 +97,11 @@
               "RelativeToolTip": "BLLS490WC\\BitacoraCambios490WC.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAAB8AAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-20T22:55:43.036Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-20T22:55:43.036Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "Beneficio490WC.cs",
               "DocumentMoniker": "C:\\GitHubCarpetaDiploma\\ProyectoWACZ490WC\\CampoWACZ490WC\\BE490WC\\Beneficio490WC.cs",
               "RelativeDocumentMoniker": "BE490WC\\Beneficio490WC.cs",
@@ -71,7 +113,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "GestorBeneficio490WC.cs",
               "DocumentMoniker": "C:\\GitHubCarpetaDiploma\\ProyectoWACZ490WC\\CampoWACZ490WC\\BLL490WC\\GestorBeneficio490WC.cs",
               "RelativeDocumentMoniker": "BLL490WC\\GestorBeneficio490WC.cs",
@@ -83,25 +125,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "BeneficioDAL490WC.cs",
-              "DocumentMoniker": "C:\\GitHubCarpetaDiploma\\ProyectoWACZ490WC\\CampoWACZ490WC\\DAL490WC\\BeneficioDAL490WC.cs",
-              "RelativeDocumentMoniker": "DAL490WC\\BeneficioDAL490WC.cs",
-              "ToolTip": "C:\\GitHubCarpetaDiploma\\ProyectoWACZ490WC\\CampoWACZ490WC\\DAL490WC\\BeneficioDAL490WC.cs",
-              "RelativeToolTip": "DAL490WC\\BeneficioDAL490WC.cs",
-              "ViewState": "AgIAABkBAAAAAAAAAAAAAB0BAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-20T20:36:18.845Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "FormReportesInteligentes490WC.cs",
               "DocumentMoniker": "C:\\GitHubCarpetaDiploma\\ProyectoWACZ490WC\\CampoWACZ490WC\\GUI490WC\\FormReportesInteligentes490WC.cs",
               "RelativeDocumentMoniker": "GUI490WC\\FormReportesInteligentes490WC.cs",
               "ToolTip": "C:\\GitHubCarpetaDiploma\\ProyectoWACZ490WC\\CampoWACZ490WC\\GUI490WC\\FormReportesInteligentes490WC.cs",
               "RelativeToolTip": "GUI490WC\\FormReportesInteligentes490WC.cs",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAjwDwAAAA8AAAAAAAAAA==",
+              "ViewState": "AgIAAJUAAAAAAAAAAAAiwEMAAABYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-20T20:03:36.113Z",
               "EditorCaption": ""
@@ -120,7 +150,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "FormMenu490WC.cs",
               "DocumentMoniker": "C:\\GitHubCarpetaDiploma\\ProyectoWACZ490WC\\CampoWACZ490WC\\GUI490WC\\FormMenu490WC.cs",
               "RelativeDocumentMoniker": "GUI490WC\\FormMenu490WC.cs",
@@ -129,18 +159,6 @@
               "ViewState": "AgIAAEMBAAAAAAAAAADgv1cBAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-17T23:21:56.146Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "GestorConexion490WC.cs",
-              "DocumentMoniker": "C:\\GitHubCarpetaDiploma\\ProyectoWACZ490WC\\CampoWACZ490WC\\DAL490WC\\GestorConexion490WC.cs",
-              "RelativeDocumentMoniker": "DAL490WC\\GestorConexion490WC.cs",
-              "ToolTip": "C:\\GitHubCarpetaDiploma\\ProyectoWACZ490WC\\CampoWACZ490WC\\DAL490WC\\GestorConexion490WC.cs",
-              "RelativeToolTip": "DAL490WC\\GestorConexion490WC.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABgAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-16T01:34:38.591Z"
             }
           ]
         }

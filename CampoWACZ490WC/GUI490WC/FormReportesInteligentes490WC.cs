@@ -22,7 +22,7 @@ namespace GUI490WC
 
         private void GenerarReporteBeneficiosMasCanjeados490WC()
         {
-            
+
             GestorBeneficio490WC gestorBeneficio490WC = new GestorBeneficio490WC();
             List<Beneficio490WC> listaBeneficio490WC = gestorBeneficio490WC.ObtenerTodosLosBeneficios490WC();
 
@@ -63,29 +63,22 @@ namespace GUI490WC
 
         private void GenerarReporteClasesBoletosMasPopulares490WC()
         {
-            // 1. Obtener los datos
+
             GestorBoleto490WC gestorBoleto = new GestorBoleto490WC();
             List<Boleto490WC> listaBoletos = gestorBoleto.ObtenerTodosLosBoletos490WC();
-
-            // 2. Filtrar solo los boletos vendidos
             var boletosVendidos = listaBoletos.Where(b => b.IsVendido490WC == true).ToList();
-
-            // 3. Agrupar por clase y contar cantidad
             var clasesAgrupadas = boletosVendidos.GroupBy(b => b.ClaseBoleto490WC).Select(g => new
-                {
-                    Clase = g.Key,
-                    Cantidad = g.Count()
-                })
-                .OrderByDescending(x => x.Cantidad)
-                .ToList();
+            {
+                Clase = g.Key,
+                Cantidad = g.Count()
+            }).OrderByDescending(x => x.Cantidad).ToList();
 
-            // 4. Limpiar gráfico
             VisualizadorReporte490WC.Series.Clear();
             VisualizadorReporte490WC.ChartAreas.Clear();
             VisualizadorReporte490WC.Titles.Clear();
             VisualizadorReporte490WC.Legends.Clear();
 
-            // 5. Crear área y serie
+
             ChartArea area = new ChartArea("AreaClases");
             VisualizadorReporte490WC.ChartAreas.Add(area);
 
@@ -97,22 +90,177 @@ namespace GUI490WC
             };
             serie.IsValueShownAsLabel = false;
             VisualizadorReporte490WC.Series.Add(serie);
-
-            // 6. Enlazar datos
             serie.Points.DataBindXY(
                 clasesAgrupadas.Select(x => x.Clase).ToList(),
                 clasesAgrupadas.Select(x => x.Cantidad).ToList()
             );
-
-            // 7. Mostrar porcentaje y nombre en las etiquetas
-            serie.Label = "#VALX: #PERCENT{P1}"; // Ejemplo: "Económica: 45.3%"
-
-            // 8. Agregar título
+            serie.Label = "#VALX: #PERCENT{P1}";
             VisualizadorReporte490WC.Titles.Add("Clases de Boletos Más Populares");
             VisualizadorReporte490WC.Titles[0].Font = new Font("Segoe UI", 14, FontStyle.Bold);
             VisualizadorReporte490WC.Titles[0].ForeColor = Color.White;
             area.BackColor = Color.Transparent;
             VisualizadorReporte490WC.BackColor = Color.Transparent;
+        }
+        private void GenerarReporteModalidadPorTemporada490WC()
+        {
+            VisualizadorReporte490WC.Series.Clear();
+            VisualizadorReporte490WC.Titles.Clear();
+            VisualizadorReporte490WC.ChartAreas.Clear();
+            VisualizadorReporte490WC.Legends.Clear();
+
+            GestorBoleto490WC gestorBoleto490WC = new GestorBoleto490WC();
+
+            List<Boleto490WC> boletosVerano = gestorBoleto490WC.ObtenerBoletosVerano490WC();
+            List<Boleto490WC> boletosOtono = gestorBoleto490WC.ObtenerBoletosOtono490WC();
+            List<Boleto490WC> boletosInvierno = gestorBoleto490WC.ObtenerBoletosInvierno490WC();
+            List<Boleto490WC> boletosPrimavera = gestorBoleto490WC.ObtenerBoletosPrimavera490WC();
+
+            var temporadas = new Dictionary<string, List<Boleto490WC>>()
+            {
+                 { "Verano", boletosVerano },
+                 { "Otoño", boletosOtono },
+                 { "Invierno", boletosInvierno },
+                 { "Primavera", boletosPrimavera }
+            };
+
+            int areaIndex = 0;
+
+            foreach (var temporada in temporadas)
+            {
+                var boletosTemporada = temporada.Value.Where(b => b.IsVendido490WC).ToList();
+                var datosAgrupados = boletosTemporada.GroupBy(b => b.ClaseBoleto490WC).Select(g => new { Clase = g.Key, Cantidad = g.Count() }).ToList();
+
+                ChartArea area = new ChartArea(temporada.Key);
+                VisualizadorReporte490WC.ChartAreas.Add(area);
+
+                switch (areaIndex)
+                {
+                    case 0: area.Position = new ElementPosition(0, 5, 50, 45); break;
+                    case 1: area.Position = new ElementPosition(50, 5, 50, 45); break;
+                    case 2: area.Position = new ElementPosition(0, 55, 50, 45); break;
+                    case 3: area.Position = new ElementPosition(50, 55, 50, 45); break;
+                }
+
+
+                Series serie = new Series(temporada.Key)
+                {
+                    ChartType = SeriesChartType.Pie,
+                    ChartArea = temporada.Key,
+                    IsValueShownAsLabel = true
+                };
+
+                serie["PieLabelStyle"] = "Outside";
+                serie.Label = "#VALX: #PERCENT{P1}";
+                serie.Font = new Font("Segoe UI", 8, FontStyle.Bold);
+                serie.LegendText = "#VALX";
+
+                if (datosAgrupados.Count > 0)
+                {
+                    serie.Points.DataBindXY(
+                        datosAgrupados.Select(x => x.Clase).ToList(),
+                        datosAgrupados.Select(x => x.Cantidad).ToList()
+                    );
+                }
+                else
+                {
+                    serie.Points.AddXY("Sin datos", 1);
+                    serie.Points[0].Color = Color.LightGray;
+                }
+
+                VisualizadorReporte490WC.Series.Add(serie);
+
+                Title titulo = new Title($"{temporada.Key} - Modalidades más populares")
+                {
+                    Font = new Font("Segoe UI", 11, FontStyle.Bold),
+                    ForeColor = Color.Black,
+                    DockedToChartArea = temporada.Key,
+                    IsDockedInsideChartArea = false,
+                    Alignment = ContentAlignment.MiddleCenter
+                };
+                VisualizadorReporte490WC.Titles.Add(titulo);
+
+                areaIndex++;
+            }
+            VisualizadorReporte490WC.BackColor = Color.WhiteSmoke;
+        }
+
+        private void GenerarReporteDestinosPorTemporada490WC()
+        {
+            VisualizadorReporte490WC.Series.Clear();
+            VisualizadorReporte490WC.Titles.Clear();
+            VisualizadorReporte490WC.ChartAreas.Clear();
+            VisualizadorReporte490WC.Legends.Clear();
+
+            GestorBoleto490WC gestorBoleto490WC = new GestorBoleto490WC();
+
+            List<Boleto490WC> boletosVerano = gestorBoleto490WC.ObtenerBoletosVerano490WC();
+            List<Boleto490WC> boletosOtono = gestorBoleto490WC.ObtenerBoletosOtono490WC();
+            List<Boleto490WC> boletosInvierno = gestorBoleto490WC.ObtenerBoletosInvierno490WC();
+            List<Boleto490WC> boletosPrimavera = gestorBoleto490WC.ObtenerBoletosPrimavera490WC();
+
+            var temporadas = new Dictionary<string, List<Boleto490WC>>()
+            {
+                { "Verano", boletosVerano },
+                { "Otoño", boletosOtono },
+                { "Invierno", boletosInvierno },
+                { "Primavera", boletosPrimavera }
+            };
+
+            int areaIndex = 0;
+
+            foreach (var temporada in temporadas)
+            {
+                var boletosTemporada = temporada.Value.Where(b => b.IsVendido490WC).ToList();
+                var datosAgrupados = boletosTemporada.GroupBy(b => b.Destino490WC).Select(g => new { Destino = g.Key, Cantidad = g.Count() }).OrderByDescending(x => x.Cantidad).Take(5) .ToList();
+                ChartArea area = new ChartArea(temporada.Key);
+                VisualizadorReporte490WC.ChartAreas.Add(area);
+                switch (areaIndex)
+                {
+                    case 0: area.Position = new ElementPosition(0, 5, 50, 45); break;      
+                    case 1: area.Position = new ElementPosition(50, 5, 50, 45); break;   
+                    case 2: area.Position = new ElementPosition(0, 55, 50, 45); break;     
+                    case 3: area.Position = new ElementPosition(50, 55, 50, 45); break;  
+                }
+                Series serie = new Series(temporada.Key)
+                {
+                    ChartType = SeriesChartType.Pie,
+                    ChartArea = temporada.Key,
+                    IsValueShownAsLabel = true
+                };
+
+                serie["PieLabelStyle"] = "Outside";
+                serie.Label = "#VALX: #PERCENT{P1}";
+                serie.Font = new Font("Segoe UI", 8, FontStyle.Bold);
+                serie.LegendText = "#VALX";
+
+                if (datosAgrupados.Count > 0)
+                {
+                    serie.Points.DataBindXY(
+                        datosAgrupados.Select(x => x.Destino).ToList(),
+                        datosAgrupados.Select(x => x.Cantidad).ToList()
+                    );
+                }
+                else
+                {
+                    serie.Points.AddXY("Sin datos", 1);
+                    serie.Points[0].Color = Color.LightGray;
+                }
+
+                VisualizadorReporte490WC.Series.Add(serie);
+                Title titulo = new Title($"{temporada.Key} - Destinos Más Populares")
+                {
+                    Font = new Font("Segoe UI", 11, FontStyle.Bold),
+                    ForeColor = Color.Black,
+                    DockedToChartArea = temporada.Key,
+                    IsDockedInsideChartArea = false,
+                    Alignment = ContentAlignment.MiddleCenter
+                };
+                VisualizadorReporte490WC.Titles.Add(titulo);
+
+                areaIndex++;
+            }
+
+            VisualizadorReporte490WC.BackColor = Color.WhiteSmoke;
         }
 
 
@@ -123,7 +271,7 @@ namespace GUI490WC
 
         private void BT_ReporteDestinosMasSolicitadosTemporada_490WC_Click(object sender, EventArgs e)
         {
-
+            GenerarReporteDestinosPorTemporada490WC();
         }
 
         private void BT_ReporteClaseBoletoPopularidad_490WC_Click(object sender, EventArgs e)
@@ -133,7 +281,7 @@ namespace GUI490WC
 
         private void BT_ReporteModalidadMasSolicitadaTemporada_490WC_Click(object sender, EventArgs e)
         {
-
+            GenerarReporteModalidadPorTemporada490WC();
         }
 
         private void BT_ReporteCamposQueSuelenGenerarCambios_490WC_Click(object sender, EventArgs e)
