@@ -64,13 +64,16 @@ Filename: "{commonpf64}\Microsoft SQL Server\160\Tools\Binn\sqllocaldb.exe"; Par
 
 ; Configurar base de datos según elección
 Filename: "{#SqlCmdPath}\sqlcmd.exe"; Parameters: "-S {code:GetSqlCmdServer} -Q ""IF EXISTS (SELECT name FROM sys.databases WHERE name = '{#MyDbName}') BEGIN ALTER DATABASE {#MyDbName} SET SINGLE_USER WITH ROLLBACK IMMEDIATE; DROP DATABASE {#MyDbName}; END"" -E"; Flags: runhidden; StatusMsg: "Eliminando base de datos anterior..."; Check: ShouldPerformDbSetup()
+Filename: "powershell.exe"; \
+  Parameters: "-ExecutionPolicy Bypass -File ""{tmp}\create_db.ps1"" -Server ""{code:GetSelectedInstance}"" -DbName ""proyecto_is"" -AppCfg ""{app}\GUI.exe.config"" -ConnStr ""Data Source={code:GetSelectedInstance};Initial Catalog=proyecto_is;Integrated Security=True;Encrypt=False"" -JsonPath ""{app}\config.json"""; \
+  StatusMsg: "Creando base de datos y configurando conexión..."; \
+  Flags: runhidden waituntilterminated
 Filename: "{#SqlCmdPath}\sqlcmd.exe"; Parameters: "-S {code:GetSqlCmdServer} -i ""{app}\01_Create_DB.sql"" -E"; Flags: runhidden; StatusMsg: "Creando base de datos..."; Check: ShouldPerformDbSetup()
 Filename: "{#SqlCmdPath}\sqlcmd.exe"; Parameters: "-S {code:GetSqlCmdServer} -d {#MyDbName} -i ""{app}\02_Schema_Data_Permisos.sql"" -E"; Flags: runhidden; StatusMsg: "Cargando estructura y datos..."; Check: ShouldPerformDbSetup()
 Filename: "{#SqlCmdPath}\sqlcmd.exe"; Parameters: "-S {code:GetSqlCmdServer} -d {#MyDbName} -Q ""IF NOT EXISTS (SELECT name FROM sys.server_principals WHERE name = N'BUILTIN\Users') CREATE LOGIN [BUILTIN\Users] FROM WINDOWS; IF NOT EXISTS (SELECT name FROM sys.database_principals WHERE name = N'BUILTIN\Users') CREATE USER [BUILTIN\Users] FOR LOGIN [BUILTIN\Users]; EXEC sp_addrolemember 'db_owner', N'BUILTIN\Users'"" -E"; Flags: runhidden; StatusMsg: "Asignando permisos..."; Check: ShouldPerformDbSetup()
 
 ; Lanzar aplicación
 Filename: "{app}\{#MyAppExeName}"; Flags: nowait postinstall skipifsilent
-
 [Code]
 var
   PageInstances: TWizardPage;
@@ -78,13 +81,19 @@ var
   UseInstanceCB: TNewCheckBox;
   DbSetupPage: TNewCheckBox;
   SelectedInstance: string;
-  GHasInstances: Boolean;
+  GHasInstances: Boolean;  // ← variable correcta
 
+// ---------------------------
+// Verifica si falta el VC++
+// ---------------------------
 function IsVCRedistNeeded(): Boolean;
 begin
   Result := not RegKeyExists(HKLM64, 'SOFTWARE\Microsoft\VisualStudio\14.0\VC\Runtimes\x64');
 end;
 
+// ---------------------------
+// Agrega líneas al ComboBox
+// ---------------------------
 procedure AddLinesToCombo(const FilePath: string);
 var
   Lines: TArrayOfString;
@@ -98,6 +107,9 @@ begin
   end;
 end;
 
+// ---------------------------
+// Ejecuta el PS1 y carga instancias detectadas
+// ---------------------------
 function PopulateInstancesFromPS(): Boolean;
 var
   PSPath, OutPath, PSExe: string;
@@ -116,6 +128,9 @@ begin
   Result := GHasInstances;
 end;
 
+// ---------------------------
+// Página de selección de instancia SQL
+// ---------------------------
 procedure CreateInstancePage;
 var
   Lbl: TNewStaticText;
@@ -126,20 +141,26 @@ begin
   Lbl.Caption := 'Instancias detectadas:';
   Lbl.Top := 4;
   Lbl.Left := 0;
+
   CboInstances := TNewComboBox.Create(PageInstances);
   CboInstances.Parent := PageInstances.Surface;
   CboInstances.Style := csDropDownList;
   CboInstances.Top := 20;
   CboInstances.Left := 0;
   CboInstances.Width := ScaleX(400);
+
   UseInstanceCB := TNewCheckBox.Create(PageInstances);
   UseInstanceCB.Parent := PageInstances.Surface;
   UseInstanceCB.Caption := 'Usar la instancia seleccionada (en lugar de LocalDB)';
   UseInstanceCB.Top := 60;
   UseInstanceCB.Left := 0;
+
   PopulateInstancesFromPS();
 end;
 
+// ---------------------------
+// Página para decidir reinstalación BD
+// ---------------------------
 procedure CreateDbSetupPage;
 begin
   DbSetupPage := TNewCheckBox.Create(WizardForm);
@@ -149,12 +170,18 @@ begin
   DbSetupPage.Visible := False;
 end;
 
+// ---------------------------
+// Inicializa las páginas del wizard
+// ---------------------------
 procedure InitializeWizard;
 begin
   CreateInstancePage();
   CreateDbSetupPage();
 end;
 
+// ---------------------------
+// Mostrar/ocultar checkbox de BD
+// ---------------------------
 procedure CurPageChanged(CurPageID: Integer);
 begin
   if CurPageID = wpSelectTasks then
@@ -162,14 +189,22 @@ begin
     DbSetupPage.Top := WizardForm.ClientHeight - DbSetupPage.Height - ScaleY(10);
     DbSetupPage.Left := ScaleX(20);
     DbSetupPage.Visible := True;
-  end else DbSetupPage.Visible := False;
+  end
+  else
+    DbSetupPage.Visible := False;
 end;
 
+// ---------------------------
+// Lógica de instalación BD
+// ---------------------------
 function ShouldPerformDbSetup(): Boolean;
 begin
   Result := DbSetupPage.Checked;
 end;
 
+// ---------------------------
+// Uso de instancia o LocalDB
+// ---------------------------
 function UseInstanceSelected(Param: string): Boolean;
 begin
   Result := Assigned(UseInstanceCB) and UseInstanceCB.Checked;
@@ -180,6 +215,9 @@ begin
   Result := not UseInstanceSelected('');
 end;
 
+// ---------------------------
+// Devuelve servidor para SQLCMD
+// ---------------------------
 function GetSqlCmdServer(Param: string): string;
 begin
   if UseLocalDb() then
@@ -188,4 +226,38 @@ begin
     Result := CboInstances.Text
   else
     Result := '.\SQLEXPRESS';
+end;
+
+// ---------------------------
+// Verifica si SQL Express está instalado
+// ---------------------------
+function SqlExpressInstalled: Boolean;
+begin
+  Result :=
+    RegValueExists(HKLM,  'SOFTWARE\Microsoft\Microsoft SQL Server\Instance Names\SQL', 'SQLEXPRESS') or
+    RegValueExists(HKLM64,'SOFTWARE\Microsoft\Microsoft SQL Server\Instance Names\SQL', 'SQLEXPRESS') or
+    RegKeyExists(HKLM, 'SYSTEM\CurrentControlSet\Services\MSSQL$SQLEXPRESS') or
+    RegKeyExists(HKLM, 'SYSTEM\CurrentControlSet\Services\MSSQLSERVER');
+end;
+
+// ---------------------------
+// Devuelve instancia seleccionada
+// ---------------------------
+function GetSelectedInstance(Param: string): string;
+begin
+  if Assigned(CboInstances) then
+    SelectedInstance := Trim(CboInstances.Text);
+
+  if (SelectedInstance = '') or (CboInstances.Items.Count = 0) then
+    SelectedInstance := '.\SQLEXPRESS';
+
+  Result := SelectedInstance;
+end;
+
+// ---------------------------
+// Devuelve si se detectaron instancias reales
+// ---------------------------
+function HaveRealInstancesDetected: Boolean;
+begin
+  Result := GHasInstances;  // ← corregido
 end;
