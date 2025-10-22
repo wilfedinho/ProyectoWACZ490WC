@@ -67,12 +67,13 @@ Filename: "{commonpf64}\Microsoft SQL Server\160\Tools\Binn\sqllocaldb.exe"; Par
 ; Configurar base de datos según elección
 Filename: "{#SqlCmdPath}\sqlcmd.exe"; Parameters: "-S {code:GetSqlCmdServer} -Q ""IF EXISTS (SELECT name FROM sys.databases WHERE name = '{#MyDbName}') BEGIN ALTER DATABASE {#MyDbName} SET SINGLE_USER WITH ROLLBACK IMMEDIATE; DROP DATABASE {#MyDbName}; END"" -E"; Flags: runhidden; StatusMsg: "Eliminando base de datos anterior..."; Check: ShouldPerformDbSetup()
 ;Filename: "powershell.exe";Parameters: "-ExecutionPolicy Bypass -File ""{tmp}\create_db.ps1"" -Server ""{code:GetSelectedInstance}"" -DbName ""BD_PROYECTO_2025490WC"" -AppCfg ""{app}\Fertech.exe.config"" -ConnStr ""Data Source={code:GetSelectedInstance};Initial Catalog=BD_PROYECTO_2025490WC;Integrated Security=True;Encrypt=False"" -JsonPath ""{app}\config.json"""; StatusMsg: "Creando base de datos y configurando conexión..."; Flags: runhidden waituntilterminated
+Filename: "powershell.exe";Parameters: "-ExecutionPolicy Bypass -File ""{app}\create_db.ps1"" -Server ""{code:GetSelectedInstance}"" -DbName ""BD_PROYECTO_2025490WC"" -AppCfg ""{app}\Fertech.exe.config"" -ConnStr ""Data Source={code:GetSelectedInstance};Initial Catalog=BD_PROYECTO_2025490WC;Integrated Security=True;Encrypt=False"" -JsonPath ""{app}\config.json"""; StatusMsg: "Creando base de datos y configurando conexión..."; Flags: runhidden waituntilterminated
+
 
 Filename: "{sysnative}\WindowsPowerShell\v1.0\powershell.exe"; \
 Parameters: "-NoProfile -ExecutionPolicy Bypass -File '{tmp}\create_db.ps1' -Server '{code:GetSelectedInstance}' -DbName 'BD_PROYECTO_2025490WC' -AppCfg '{app}\Fertech.exe.config' -ConnStr 'Data Source={code:GetSelectedInstance};Initial Catalog=BD_PROYECTO_2025490WC;Integrated Security=True;Encrypt=False' -JsonPath '{app}\config.json'"; \
 StatusMsg: "Creando base de datos y configurando conexión..."; \
 Flags: runhidden waituntilterminated
-
 
 Filename: "{#SqlCmdPath}\sqlcmd.exe"; Parameters: "-S {code:GetSqlCmdServer} -i ""{app}\01_Create_DB.sql"" -E"; Flags: runhidden; StatusMsg: "Creando base de datos..."; Check: ShouldPerformDbSetup()
 Filename: "{#SqlCmdPath}\sqlcmd.exe"; Parameters: "-S {code:GetSqlCmdServer} -d {#MyDbName} -i ""{app}\02_Schema_Data_Permisos.sql"" -E"; Flags: runhidden; StatusMsg: "Cargando estructura y datos..."; Check: ShouldPerformDbSetup()
@@ -162,7 +163,6 @@ begin
   UseInstanceCB.Caption := 'Usar la instancia seleccionada (en lugar de LocalDB)';
   UseInstanceCB.Top := 60;
   UseInstanceCB.Left := 0;
-
   PopulateInstancesFromPS();
 end;
 
@@ -188,9 +188,7 @@ ExtractTemporaryFile('create_db.ps1');
   CreateDbSetupPage();
 end;
 
-// ---------------------------
-// Mostrar/ocultar checkbox de BD
-// ---------------------------
+
 procedure CurPageChanged(CurPageID: Integer);
 begin
   if CurPageID = wpSelectTasks then
@@ -202,6 +200,8 @@ begin
   else
     DbSetupPage.Visible := False;
 end;
+
+
 
 // ---------------------------
 // Lógica de instalación BD
