@@ -32,6 +32,9 @@ Name: "spanish"; MessagesFile: "compiler:Languages\Spanish.isl"
 ; Se copian todos los archivos necesarios al directorio de instalación
 Source: "C:\GitHubCarpetaDiploma\ProyectoWACZ490WC\CampoWACZ490WC\GUI490WC\bin\Debug\*"; \
   DestDir: "{app}"; Flags: recursesubdirs ignoreversion
+  
+  
+  Source: "C:\GitHubCarpetaDiploma\ProyectoWACZ490WC\CampoWACZ490WC\GUI490WC\bin\Debug\Check_DB_Exist.sql"; DestDir: "{tmp}"; Flags: dontcopy
 
 [Icons]
 Name: "{group}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"
@@ -60,10 +63,10 @@ var
   ReinstallPage: TWizardPage;
   ReinstallDBCheckBox: TNewCheckBox;
 
-procedure InitializeWizard;
+{procedure InitializeWizard;
 begin
   { Página para preguntar si reinstalar la base de datos }
-  ReinstallPage := CreateCustomPage(wpReady, 'Configuración de base de datos', '¿Desea reinstalar la base de datos existente?');
+{  ReinstallPage := CreateCustomPage(wpReady, 'Configuración de base de datos', '¿Desea reinstalar la base de datos existente?');
 
   ReinstallDBCheckBox := TNewCheckBox.Create(WizardForm);
   ReinstallDBCheckBox.Parent := ReinstallPage.Surface;
@@ -71,10 +74,89 @@ begin
   ReinstallDBCheckBox.Checked := False;
 end;
 
+
+{
+function UseLocalDb(): Boolean;
+begin
+  Result := ReinstallDBCheckBox.Checked;
+end;
+}
+
 function IsVCRedistNeeded(): Boolean;
 begin
   Result := not RegKeyExists(HKLM64, 'SOFTWARE\Microsoft\VisualStudio\14.0\VC\Runtimes\x64');
 end;
+
+
+function DoesDatabaseExist(): Boolean;
+var
+  ResultCode: Integer;
+  PowerShellCmd: string;
+begin
+  Result := False;
+
+  // Construimos el comando PowerShell que verifica existencia de la BD
+  PowerShellCmd :=
+    'powershell -NoProfile -Command "' +
+    '$ErrorActionPreference = ''Stop''; ' +
+    '$DatabaseName = ''BD_PROYECTO_2025490WC''; ' +
+    '$serverInstance = ''.''; ' +
+    '$connectionString = ''Server='' + $serverInstance + '';Database=master;Integrated Security=True;''; ' +
+    '$connection = New-Object System.Data.SqlClient.SqlConnection($connectionString); ' +
+    '$connection.Open(); ' +
+    '$cmd = $connection.CreateCommand(); ' +
+    '$cmd.CommandText = ''SELECT COUNT(*) FROM sys.databases WHERE name = @dbName''; ' +
+    '$param = $cmd.Parameters.Add(''@dbName'', [System.Data.SqlDbType]::NVarChar, 128); ' +
+    '$param.Value = $DatabaseName; ' +
+    '$result = [int]$cmd.ExecuteScalar(); ' +
+    '$connection.Close(); ' +
+    'if ($result -gt 0) { exit 1 } else { exit 0 }"';
+
+  // Ejecutamos PowerShell a través de cmd.exe y capturamos el código de salida
+  if Exec('cmd.exe', '/C ' + PowerShellCmd, '', SW_HIDE, ewWaitUntilTerminated, ResultCode) then
+  begin
+    if ResultCode = 1 then
+      Result := True   // ✅ La base de datos existe
+    else
+      Result := False; // ❌ No existe
+  end
+  else
+    Result := False;   // Error al ejecutar PowerShell
+end;
+
+
+
+
+
+
+
+
+
+
+procedure InitializeWizard;
+begin
+  if DoesDatabaseExist() = False then
+  begin
+    // Si no existe, forzamos la instalación automática
+    ReinstallPage := nil;
+    ReinstallDBCheckBox := TNewCheckBox.Create(nil);
+    ReinstallDBCheckBox.Checked := True;
+  end
+  else
+  begin
+    
+    { Página para preguntar si reinstalar la base de datos }
+    ReinstallPage := CreateCustomPage(wpReady, 'Configuración de base de datos', 'Se detectó que ya existe la base de datos. ¿Desea conservar la existente o instalar la del instalador?');
+
+    ReinstallDBCheckBox := TNewCheckBox.Create(WizardForm);
+    ReinstallDBCheckBox.Parent := ReinstallPage.Surface;
+    ReinstallDBCheckBox.Caption := 'Sí, deseo reinstalar la base de datos.';
+    ReinstallDBCheckBox.Checked := False;
+  end;
+end;
+
+
+
 
 function UseLocalDb(): Boolean;
 begin
@@ -88,7 +170,12 @@ begin
 end;
 
 
-
+{
+function ShouldReinstallDB: Boolean;
+begin
+  Result := ReinstallDBCheckBox.Checked;
+end;
+}
 function ShouldReinstallDB: Boolean;
 begin
   Result := ReinstallDBCheckBox.Checked;
