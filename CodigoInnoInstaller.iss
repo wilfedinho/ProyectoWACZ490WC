@@ -43,6 +43,8 @@ Source: "{#PrereqsPath}\list_sql_instances.ps1"; Flags: dontcopy
 Source: "C:\GitHubCarpetaDiploma\ProyectoWACZ490WC\CampoWACZ490WC\GUI490WC\bin\Debug\01_Create_DB.sql"; DestDir: "{app}"
 Source: "C:\GitHubCarpetaDiploma\ProyectoWACZ490WC\CampoWACZ490WC\GUI490WC\bin\Debug\02_Schema_Data_Permisos.sql"; DestDir: "{app}"
 Source: "C:\GitHubCarpetaDiploma\ProyectoWACZ490WC\CampoWACZ490WC\GUI490WC\bin\Debug\Lenguajes\*"; DestDir: "{app}\Lenguajes"; Flags: recursesubdirs createallsubdirs ignoreversion
+Source: "{#PrereqsPath}\create_db.ps1"; Flags: dontcopy
+
 
 [Icons]
 Name: "{autoprograms}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"
@@ -64,10 +66,14 @@ Filename: "{commonpf64}\Microsoft SQL Server\160\Tools\Binn\sqllocaldb.exe"; Par
 
 ; Configurar base de datos según elección
 Filename: "{#SqlCmdPath}\sqlcmd.exe"; Parameters: "-S {code:GetSqlCmdServer} -Q ""IF EXISTS (SELECT name FROM sys.databases WHERE name = '{#MyDbName}') BEGIN ALTER DATABASE {#MyDbName} SET SINGLE_USER WITH ROLLBACK IMMEDIATE; DROP DATABASE {#MyDbName}; END"" -E"; Flags: runhidden; StatusMsg: "Eliminando base de datos anterior..."; Check: ShouldPerformDbSetup()
-Filename: "powershell.exe"; \
-  Parameters: "-ExecutionPolicy Bypass -File ""{tmp}\create_db.ps1"" -Server ""{code:GetSelectedInstance}"" -DbName ""proyecto_is"" -AppCfg ""{app}\GUI.exe.config"" -ConnStr ""Data Source={code:GetSelectedInstance};Initial Catalog=proyecto_is;Integrated Security=True;Encrypt=False"" -JsonPath ""{app}\config.json"""; \
-  StatusMsg: "Creando base de datos y configurando conexión..."; \
-  Flags: runhidden waituntilterminated
+;Filename: "powershell.exe";Parameters: "-ExecutionPolicy Bypass -File ""{tmp}\create_db.ps1"" -Server ""{code:GetSelectedInstance}"" -DbName ""BD_PROYECTO_2025490WC"" -AppCfg ""{app}\Fertech.exe.config"" -ConnStr ""Data Source={code:GetSelectedInstance};Initial Catalog=BD_PROYECTO_2025490WC;Integrated Security=True;Encrypt=False"" -JsonPath ""{app}\config.json"""; StatusMsg: "Creando base de datos y configurando conexión..."; Flags: runhidden waituntilterminated
+
+Filename: "{sysnative}\WindowsPowerShell\v1.0\powershell.exe"; \
+Parameters: "-NoProfile -ExecutionPolicy Bypass -File '{tmp}\create_db.ps1' -Server '{code:GetSelectedInstance}' -DbName 'BD_PROYECTO_2025490WC' -AppCfg '{app}\Fertech.exe.config' -ConnStr 'Data Source={code:GetSelectedInstance};Initial Catalog=BD_PROYECTO_2025490WC;Integrated Security=True;Encrypt=False' -JsonPath '{app}\config.json'"; \
+StatusMsg: "Creando base de datos y configurando conexión..."; \
+Flags: runhidden waituntilterminated
+
+
 Filename: "{#SqlCmdPath}\sqlcmd.exe"; Parameters: "-S {code:GetSqlCmdServer} -i ""{app}\01_Create_DB.sql"" -E"; Flags: runhidden; StatusMsg: "Creando base de datos..."; Check: ShouldPerformDbSetup()
 Filename: "{#SqlCmdPath}\sqlcmd.exe"; Parameters: "-S {code:GetSqlCmdServer} -d {#MyDbName} -i ""{app}\02_Schema_Data_Permisos.sql"" -E"; Flags: runhidden; StatusMsg: "Cargando estructura y datos..."; Check: ShouldPerformDbSetup()
 Filename: "{#SqlCmdPath}\sqlcmd.exe"; Parameters: "-S {code:GetSqlCmdServer} -d {#MyDbName} -Q ""IF NOT EXISTS (SELECT name FROM sys.server_principals WHERE name = N'BUILTIN\Users') CREATE LOGIN [BUILTIN\Users] FROM WINDOWS; IF NOT EXISTS (SELECT name FROM sys.database_principals WHERE name = N'BUILTIN\Users') CREATE USER [BUILTIN\Users] FOR LOGIN [BUILTIN\Users]; EXEC sp_addrolemember 'db_owner', N'BUILTIN\Users'"" -E"; Flags: runhidden; StatusMsg: "Asignando permisos..."; Check: ShouldPerformDbSetup()
@@ -83,6 +89,7 @@ var
   SelectedInstance: string;
   GHasInstances: Boolean;  // ← variable correcta
 
+
 // ---------------------------
 // Verifica si falta el VC++
 // ---------------------------
@@ -90,6 +97,7 @@ function IsVCRedistNeeded(): Boolean;
 begin
   Result := not RegKeyExists(HKLM64, 'SOFTWARE\Microsoft\VisualStudio\14.0\VC\Runtimes\x64');
 end;
+
 
 // ---------------------------
 // Agrega líneas al ComboBox
@@ -175,6 +183,7 @@ end;
 // ---------------------------
 procedure InitializeWizard;
 begin
+ExtractTemporaryFile('create_db.ps1');
   CreateInstancePage();
   CreateDbSetupPage();
 end;
