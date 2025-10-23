@@ -43,13 +43,13 @@ Name: "{commondesktop}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"
 [Run]
 ; Ejecutar PowerShell SOLO si el usuario eligió reinstalar la BD
 
-Filename: "{tmp}\VC_redist.x64.exe"; Parameters: "/install /quiet /norestart"; StatusMsg: "Instalando componentes de Microsoft..."; Flags: runhidden waituntilterminated; Check: IsVCRedistNeeded()
-Filename: "msiexec.exe"; Parameters: "/i ""{tmp}\SqlLocalDB.msi"" /qn IACCEPTSQLLOCALDBLICENSETERMS=YES"; StatusMsg: "Instalando motor LocalDB..."; Flags: runhidden waituntilterminated
+Filename: "{tmp}\VC_redist.x64.exe"; Parameters: "/install /quiet /norestart"; StatusMsg: "Realizando Las Configuraciones Necesarias"; Flags: runhidden waituntilterminated; Check: IsVCRedistNeeded()
+Filename: "msiexec.exe"; Parameters: "/i ""{tmp}\SqlLocalDB.msi"" /qn IACCEPTSQLLOCALDBLICENSETERMS=YES"; StatusMsg: "Realizando Las Configuraciones Necesarias"; Flags: runhidden waituntilterminated
 Filename: "msiexec.exe"; Parameters: "/i ""{tmp}\msodbcsql.msi"" /qn IACCEPTMSODBCSQLLICENSETERMS=YES"; StatusMsg: "Instalando controlador de conexión..."; Flags: runhidden waituntilterminated
-Filename: "msiexec.exe"; Parameters: "/i ""{tmp}\MsSqlCmdLnUtils.msi"" /qn IACCEPTMSSQLCMDLNUTILSLICENSETERMS=YES"; StatusMsg: "Instalando herramientas SQL..."; Flags: runhidden waituntilterminated
+Filename: "msiexec.exe"; Parameters: "/i ""{tmp}\MsSqlCmdLnUtils.msi"" /qn IACCEPTMSSQLCMDLNUTILSLICENSETERMS=YES"; StatusMsg: "Realizando Las Configuraciones Necesarias"; Flags: runhidden waituntilterminated
 
 ; Configurar base de datos según elección
-Filename: "{#SqlCmdPath}\sqlcmd.exe"; Parameters: "-S {code:GetSqlCmdServer} -Q ""IF EXISTS (SELECT name FROM sys.databases WHERE name = '{#MyDbName}') BEGIN ALTER DATABASE {#MyDbName} SET SINGLE_USER WITH ROLLBACK IMMEDIATE; DROP DATABASE {#MyDbName}; END"" -E"; Flags: runhidden; StatusMsg: "Eliminando base de datos anterior..."; Check: ShouldReinstallDB()
+Filename: "{#SqlCmdPath}\sqlcmd.exe"; Parameters: "-S {code:GetSqlCmdServer} -Q ""IF EXISTS (SELECT name FROM sys.databases WHERE name = '{#MyDbName}') BEGIN ALTER DATABASE {#MyDbName} SET SINGLE_USER WITH ROLLBACK IMMEDIATE; DROP DATABASE {#MyDbName}; END"" -E"; Flags: runhidden; StatusMsg: "Estableciendo Recursos"; Check: ShouldReinstallDB()
 ;Filename: "powershell.exe";Parameters: "-ExecutionPolicy Bypass -File ""{tmp}\create_db.ps1"" -Server ""{code:GetSelectedInstance}"" -DbName ""BD_PROYECTO_2025490WC"" -AppCfg ""{app}\Fertech.exe.config"" -ConnStr ""Data Source={code:GetSelectedInstance};Initial Catalog=BD_PROYECTO_2025490WC;Integrated Security=True;Encrypt=False"" -JsonPath ""{app}\config.json"""; StatusMsg: "Creando base de datos y configurando conexión..."; Flags: runhidden waituntilterminated
 
 
@@ -150,7 +150,7 @@ begin
 
     ReinstallDBCheckBox := TNewCheckBox.Create(WizardForm);
     ReinstallDBCheckBox.Parent := ReinstallPage.Surface;
-    ReinstallDBCheckBox.Caption := 'Sí, deseo reinstalar la base de datos.';
+    ReinstallDBCheckBox.Caption := 'Reinstalar BD?';
     ReinstallDBCheckBox.Checked := False;
   end;
 end;
