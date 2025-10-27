@@ -457,8 +457,7 @@ namespace GUI490WC
                                             if (boletoModificadoCobrar490WC.BeneficioAplicado490WC != null)
                                             {
                                                 string[] cambios490WC = boletoModificadoCobrar490WC.CambiosRealizados490WC.Split(';');
-                                                boletoModificadoCobrar490WC.IDBoleto490WC = cambios490WC[0];
-                                                Factura490WC facturaAlta490WC = new Factura490WC(gestorFactura490WC.ObtenerTodasLasFacturas490WC().Count + 1, clienteCobrar490WC.Nombre490WC, clienteCobrar490WC.Apellido490WC, clienteCobrar490WC.DNI490WC, DateTime.Now.ToShortDateString(), DateTime.Now.ToShortTimeString(), boletoModificadoCobrar490WC.IDBoleto490WC, boletoModificadoCobrar490WC.Precio490WC, totalFactura490WC, boletoModificadoCobrar490WC.BeneficioAplicado490WC);
+                                                Factura490WC facturaAlta490WC = new Factura490WC(gestorFactura490WC.ObtenerTodasLasFacturas490WC().Count + 1, clienteCobrar490WC.Nombre490WC, clienteCobrar490WC.Apellido490WC, clienteCobrar490WC.DNI490WC, DateTime.Now.ToShortDateString(), DateTime.Now.ToShortTimeString(), cambios490WC[0], boletoModificadoCobrar490WC.Precio490WC, totalFactura490WC, boletoModificadoCobrar490WC.BeneficioAplicado490WC);
                                                 facturaAlta490WC.CambiosRealizados490WC = boletoModificadoCobrar490WC.CambiosRealizados490WC;
                                                 gestorFactura490WC.Alta490WC(facturaAlta490WC);
                                                 gestorBoleto490WC.CobrarBoletoModificado490WC(boletoModificadoCobrar490WC);
@@ -473,8 +472,7 @@ namespace GUI490WC
                                             else
                                             {
                                                 string[] cambios490WC = boletoModificadoCobrar490WC.CambiosRealizados490WC.Split(';');
-                                                boletoModificadoCobrar490WC.IDBoleto490WC = cambios490WC[0];
-                                                Factura490WC facturaAlta490WC = new Factura490WC(gestorFactura490WC.ObtenerTodasLasFacturas490WC().Count + 1, clienteCobrar490WC.Nombre490WC, clienteCobrar490WC.Apellido490WC, clienteCobrar490WC.DNI490WC, DateTime.Now.ToShortDateString(), DateTime.Now.ToShortTimeString(), boletoModificadoCobrar490WC.IDBoleto490WC, boletoModificadoCobrar490WC.Precio490WC, totalFactura490WC);
+                                                Factura490WC facturaAlta490WC = new Factura490WC(gestorFactura490WC.ObtenerTodasLasFacturas490WC().Count + 1, clienteCobrar490WC.Nombre490WC, clienteCobrar490WC.Apellido490WC, clienteCobrar490WC.DNI490WC, DateTime.Now.ToShortDateString(), DateTime.Now.ToShortTimeString(), cambios490WC[0], boletoModificadoCobrar490WC.Precio490WC, totalFactura490WC);
                                                 facturaAlta490WC.CambiosRealizados490WC = boletoModificadoCobrar490WC.CambiosRealizados490WC;
                                                 gestorFactura490WC.Alta490WC(facturaAlta490WC);
                                                 gestorBoleto490WC.CobrarBoletoModificado490WC(boletoModificadoCobrar490WC);

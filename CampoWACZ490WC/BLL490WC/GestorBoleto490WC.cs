@@ -182,6 +182,14 @@ namespace BLL490WC
 
 
                 doc.Add(new Paragraph("DETALLES", fontSeccion));
+                if (string.IsNullOrEmpty(boleto490WC.BeneficioAplicado490WC))
+                {
+                    doc.Add(new Paragraph($"Beneficio: No Se Aplico Ningun Beneficio", fontNormal));
+                }
+                else
+                {
+                    doc.Add(new Paragraph($"Beneficio Aplicado: {boleto490WC.BeneficioAplicado490WC}", fontNormal));
+                }
                 doc.Add(new Paragraph($"Asiento: {boleto490WC.NumeroAsiento490WC}", fontNormal));
                 doc.Add(new Paragraph($"Clase: {boleto490WC.ClaseBoleto490WC}", fontNormal));
                 doc.Add(new Paragraph($"Equipaje: {boleto490WC.EquipajePermitido490WC} kg", fontNormal));
@@ -329,31 +337,15 @@ namespace BLL490WC
             return boletoDAL490WC.ObtenerBoletoConBeneficio490WC(ID490WC);
         }
 
-        public List<Boleto490WC> ObtenerBoletosPrimavera490WC()
-        {
-            BoletoDAL490WC gestorBoleto490WC = new BoletoDAL490WC();
-            return gestorBoleto490WC.ObtenerBoletosPrimavera490WC();
-        }
-
-        public List<Boleto490WC> ObtenerBoletosVerano490WC()
-        {
-            BoletoDAL490WC gestorBoleto490WC = new BoletoDAL490WC();
-            return gestorBoleto490WC.ObtenerBoletosVerano490WC();
-        }
-
-        public List<Boleto490WC> ObtenerBoletosOtono490WC()
-        {
-            BoletoDAL490WC gestorBoleto490WC = new BoletoDAL490WC();
-            return gestorBoleto490WC.ObtenerBoletosOtono490WC();
-        }
-
-        public List<Boleto490WC> ObtenerBoletosInvierno490WC()
-        {
-            BoletoDAL490WC gestorBoleto490WC = new BoletoDAL490WC();
-            return gestorBoleto490WC.ObtenerBoletosInvierno490WC();
-        }
-
         #endregion
+        public List<KeyValuePair<string, int>> GenerarReporteBeneficiosPorTemporada(string temporada)
+        {
+            BoletoDAL490WC gestorBoleto490WC = new BoletoDAL490WC();
+            string nombreTemporada = temporada.ToString(); 
+            List<string> nombresBeneficios = gestorBoleto490WC.ObtenerNombresBeneficiosPorTemporada490WC(nombreTemporada);
+            var resultadoAgregado = nombresBeneficios.GroupBy(nombre => nombre).Select(g => new KeyValuePair<string, int>(g.Key, g.Count())).OrderByDescending(x => x.Value).ToList();
+            return resultadoAgregado;
+        }
 
     }
 }

@@ -25,7 +25,7 @@ namespace DAL490WC
             }
         }
 
-        public string ObtenerStringConexion()
+        public string ObtenerStringConexion490WC()
         {
             try
             {
@@ -62,20 +62,20 @@ namespace DAL490WC
         private GestorConexion490WC()
         {
             //Conexion490WC = new SqlConnection(ConfigurationManager.ConnectionStrings["ConexionBD490WC"].ConnectionString);
-            Conexion490WC = new SqlConnection(ObtenerStringConexion());
+            Conexion490WC = new SqlConnection(ObtenerStringConexion490WC());
         }
         public SqlConnection DevolverConexion490WC()
         {
             
             //Conexion490WC = new SqlConnection(ConfigurationManager.ConnectionStrings["ConexionBD490WC"].ConnectionString);
-            Conexion490WC = new SqlConnection(ObtenerStringConexion());
+            Conexion490WC = new SqlConnection(ObtenerStringConexion490WC());
             return Conexion490WC;
         }
 
         public void AbrirConexion490WC()
         {
             
-            if (Conexion490WC.ConnectionString == string.Empty) Conexion490WC = new SqlConnection(ObtenerStringConexion());
+            if (Conexion490WC.ConnectionString == string.Empty) Conexion490WC = new SqlConnection(ObtenerStringConexion490WC());
             Conexion490WC.Open();
         }
 
