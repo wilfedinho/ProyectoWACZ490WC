@@ -11,7 +11,19 @@ namespace BLLS490WC
 {
     public class DigitoVerificador490WC
     {
+        private static DigitoVerificador490WC Instancia490WC;
+
+        public static DigitoVerificador490WC GestorDigito490WC
+        {
+            get
+            {
+                if (Instancia490WC == null) { Instancia490WC = new DigitoVerificador490WC(); }
+                return Instancia490WC;
+            }
+        }
+       
         private readonly DigitoVerificadorDAL490WC gestorDigitoVerificador490WC = new DigitoVerificadorDAL490WC();
+        private string TablasComprometidas490WC;
         public bool ActualizarIntegridadSistema490WC()
         {
             try
@@ -55,6 +67,8 @@ namespace BLLS490WC
 
         public bool VerificarIntegridadSistema490WC()
         {
+            TablasComprometidas490WC = "Las Tablas Que Presentan Inconsistencias De Datos Son Las Siguientes: ";
+            bool integridad490WC = true;
             try
             {
                 var digitosGuardados490WC = gestorDigitoVerificador490WC.ObtenerDigitosGuardados490WC();
@@ -68,12 +82,18 @@ namespace BLLS490WC
                     string dvvCalculadoYHasheado490WC = Cifrador490WC.GestorCifrador490WC.EncriptarIrreversible490WC(digitosCrudos490WC.DVV490WC.ToString());
                     if (!digitosGuardados490WC.ContainsKey(nombreTabla490WC) || digitosGuardados490WC[nombreTabla490WC].DVH490WC != dvhCalculadoYHasheado490WC || digitosGuardados490WC[nombreTabla490WC].DVV490WC != dvvCalculadoYHasheado490WC)
                     {
-                        return false;
+                        TablasComprometidas490WC += nombreTabla490WC + " ";
+                        integridad490WC = false;
                     }
                 }
-                return true;
+                return integridad490WC;
             }
-            catch { return false; }
+            catch { return integridad490WC; }
+        }
+        public string ObtenerTablasComprometidas490WC()
+        {
+
+            return TablasComprometidas490WC;
         }
     }
 }

@@ -20,7 +20,7 @@ namespace GUI490WC
         {
             InitializeComponent();
             Habilitar();
-            gestorDigitoVerificador490WC = new DigitoVerificador490WC();
+            gestorDigitoVerificador490WC = DigitoVerificador490WC.GestorDigito490WC;
 
         }
         public void Habilitar()

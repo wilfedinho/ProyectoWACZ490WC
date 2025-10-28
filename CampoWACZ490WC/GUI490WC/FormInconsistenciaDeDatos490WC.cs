@@ -17,6 +17,7 @@ namespace GUI490WC
         public FormInconsistenciaDeDatos490WC()
         {
             InitializeComponent();
+            labelTablasComprometidas490WC.Text = DigitoVerificador490WC.GestorDigito490WC.ObtenerTablasComprometidas490WC();
         }
 
         private void BT_ACTIVAR_USUARIO490WC_Click(object sender, EventArgs e)
