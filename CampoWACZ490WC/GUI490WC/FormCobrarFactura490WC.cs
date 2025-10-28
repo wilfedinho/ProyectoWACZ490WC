@@ -73,7 +73,7 @@ namespace GUI490WC
                     {
                         if (gestorCliente490WC.VerificarFormatoFechaTarjeta490WC(TB_FECHAEMISION490WC.Text))
                         {
-                            if (gestorCliente490WC.VerificarFormatoFechaVencimientoTarjeta490WC(TB_FECHAVENCIMIENTO490WC.Text))
+                            if (gestorCliente490WC.VerificarFormatoFechaVencimientoTarjeta490WC(TB_FECHAVENCIMIENTO490WC.Text) && gestorCliente490WC.VerificarRangoFechasTarjeta490WC(TB_FECHAEMISION490WC.Text,TB_FECHAVENCIMIENTO490WC.Text))
                             {
                                 if (gestorCliente490WC.VerificarFormatoCVVTarjeta490WC(TB_CODIGOSEGURIDAD490WC.Text))
                                 {

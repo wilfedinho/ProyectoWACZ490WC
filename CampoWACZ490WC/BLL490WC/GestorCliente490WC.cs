@@ -141,6 +141,34 @@ namespace BLL490WC
             return false;
         }
 
+        public bool VerificarRangoFechasTarjeta490WC(string FechaEmision490WC, string FechaVencimiento490WC)
+        {
+            try
+            {
+                string[] partesEmision490WC = FechaEmision490WC.Split('/');
+                string[] partesVencimiento490WC = FechaVencimiento490WC.Split('/');
+
+                int mesEmision490WC = int.Parse(partesEmision490WC[0]);
+                int anioEmision490WC = int.Parse(partesEmision490WC[1]);
+
+                int mesVencimiento490WC = int.Parse(partesVencimiento490WC[0]);
+                int anioVencimiento490WC = int.Parse(partesVencimiento490WC[1]);
+
+               
+                if (anioEmision490WC > anioVencimiento490WC)
+                    return false;
+
+                if (anioEmision490WC == anioVencimiento490WC && mesEmision490WC > mesVencimiento490WC)
+                    return false;
+
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
 
         public bool VerificarFormatoNumeroTarjeta490WC(string NumeroTarjeta490WC)
         {
