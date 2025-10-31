@@ -98,7 +98,14 @@ namespace GUI490WC
                 DateTime fechaFinFiltrar490WC = monthCalendarFechaFin490WC.SelectionStart;
                 if (fechaInicioFiltrar490WC <= fechaFinFiltrar490WC)
                 {
-                    Mostrar490WC(codigoBeneficioFiltrar490WC, nombreFiltrar490WC, fechaInicioFiltrar490WC, fechaFinFiltrar490WC);
+                    if (fechaFinFiltrar490WC <= DateTime.Now.Date)
+                    {
+                        Mostrar490WC(codigoBeneficioFiltrar490WC, nombreFiltrar490WC, fechaInicioFiltrar490WC, fechaFinFiltrar490WC);
+                    }
+                    else
+                    {
+                        MessageBox.Show("La Fecha FIN No Puede Ser Mayor Al Dia Actual");
+                    }
                 }
                 else
                 {

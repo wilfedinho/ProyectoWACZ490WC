@@ -7,15 +7,15 @@
       "RelativeMoniker": "D:0:0:{17406551-94B2-43D3-9D55-7009E09240A3}|GUI490WC\\GUI490WC.csproj|solutionrelative:gui490wc\\formbitacoracambiosbeneficio490wc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{17406551-94B2-43D3-9D55-7009E09240A3}|GUI490WC\\GUI490WC.csproj|c:\\githubcarpetadiploma\\proyectowacz490wc\\campowacz490wc\\gui490wc\\formbitacoracambiosbeneficio490wc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{17406551-94B2-43D3-9D55-7009E09240A3}|GUI490WC\\GUI490WC.csproj|C:\\GitHubCarpetaDiploma\\ProyectoWACZ490WC\\CampoWACZ490WC\\gui490wc\\formbitacoracambiosbeneficio490wc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{17406551-94B2-43D3-9D55-7009E09240A3}|GUI490WC\\GUI490WC.csproj|solutionrelative:gui490wc\\formbitacoracambiosbeneficio490wc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C80766E9-A7B3-441A-86A3-8FF65B5882AD}|DAL490WC\\DAL490WC.csproj|c:\\githubcarpetadiploma\\proyectowacz490wc\\campowacz490wc\\dal490wc\\bitacoracambiosdal490wc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C80766E9-A7B3-441A-86A3-8FF65B5882AD}|DAL490WC\\DAL490WC.csproj|C:\\GitHubCarpetaDiploma\\ProyectoWACZ490WC\\CampoWACZ490WC\\dal490wc\\bitacoracambiosdal490wc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C80766E9-A7B3-441A-86A3-8FF65B5882AD}|DAL490WC\\DAL490WC.csproj|solutionrelative:dal490wc\\bitacoracambiosdal490wc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{18CB2207-87E5-4F1E-8B58-F70F52084651}|BLL490WC\\BLL490WC.csproj|c:\\githubcarpetadiploma\\proyectowacz490wc\\campowacz490wc\\bll490wc\\gestorcliente490wc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{18CB2207-87E5-4F1E-8B58-F70F52084651}|BLL490WC\\BLL490WC.csproj|C:\\GitHubCarpetaDiploma\\ProyectoWACZ490WC\\CampoWACZ490WC\\bll490wc\\gestorcliente490wc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{18CB2207-87E5-4F1E-8B58-F70F52084651}|BLL490WC\\BLL490WC.csproj|solutionrelative:bll490wc\\gestorcliente490wc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -54,8 +54,7 @@
               "RelativeToolTip": "DAL490WC\\BitacoraCambiosDAL490WC.cs",
               "ViewState": "AgIAAMgAAAAAAAAAAAAwwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-31T21:51:45.503Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-31T21:51:45.503Z"
             },
             {
               "$type": "Document",
@@ -65,7 +64,7 @@
               "RelativeDocumentMoniker": "GUI490WC\\FormBitacoraCambiosBeneficio490WC.cs",
               "ToolTip": "C:\\GitHubCarpetaDiploma\\ProyectoWACZ490WC\\CampoWACZ490WC\\GUI490WC\\FormBitacoraCambiosBeneficio490WC.cs",
               "RelativeToolTip": "GUI490WC\\FormBitacoraCambiosBeneficio490WC.cs",
-              "ViewState": "AgIAAH0AAAAAAAAAAAAkwJ8AAABdAAAAAAAAAA==",
+              "ViewState": "AgIAAEwAAAAAAAAAAAAuwGQAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-31T21:50:57.406Z",
               "EditorCaption": ""
@@ -79,8 +78,7 @@
               "ToolTip": "C:\\GitHubCarpetaDiploma\\ProyectoWACZ490WC\\CampoWACZ490WC\\GUI490WC\\FormBitacoraCambiosBeneficio490WC.cs [Dise\u00F1o]",
               "RelativeToolTip": "GUI490WC\\FormBitacoraCambiosBeneficio490WC.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-31T21:50:50.252Z",
-              "EditorCaption": " [Dise\u00F1o]"
+              "WhenOpened": "2025-10-31T21:50:50.252Z"
             },
             {
               "$type": "Document",
@@ -138,8 +136,7 @@
               "RelativeToolTip": "BLL490WC\\GestorCliente490WC.cs",
               "ViewState": "AgIAAG4AAAAAAAAAAAAmwI8AAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-28T15:49:54.775Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-28T15:49:54.775Z"
             }
           ]
         }
