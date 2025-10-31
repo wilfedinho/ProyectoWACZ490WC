@@ -147,5 +147,19 @@ namespace GUI490WC
                 monthCalendarFechaFin490WC.Enabled = false;
             }
         }
+
+        private void CB_CodigoBeneficio490WC_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (CB_CodigoBeneficio490WC.SelectedItem != null)
+            {
+                List<BitacoraCambioSE490WC> ListaCambiosPorCodigo490WC = ListaBitacoraSINFiltros.Where(bc => bc.CodigoBeneficio490WC.ToString() == CB_CodigoBeneficio490WC.SelectedItem.ToString()).ToList();
+                CB_NombreBeneficio490WC.Items.Clear();
+                foreach (BitacoraCambioSE490WC cambiosFiltrados490WC in ListaCambiosPorCodigo490WC)
+                {
+                    if (CB_NombreBeneficio490WC.Items.Count == 0 || !CB_NombreBeneficio490WC.Items.Contains(cambiosFiltrados490WC.Nombre490WC))
+                        CB_NombreBeneficio490WC.Items.Add(cambiosFiltrados490WC.Nombre490WC);
+                }
+            }
+        }
     }
 }

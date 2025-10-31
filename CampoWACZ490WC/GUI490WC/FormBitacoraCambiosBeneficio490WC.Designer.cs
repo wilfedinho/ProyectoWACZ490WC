@@ -180,6 +180,7 @@
             this.CB_CodigoBeneficio490WC.Name = "CB_CodigoBeneficio490WC";
             this.CB_CodigoBeneficio490WC.Size = new System.Drawing.Size(165, 27);
             this.CB_CodigoBeneficio490WC.TabIndex = 115;
+            this.CB_CodigoBeneficio490WC.SelectedIndexChanged += new System.EventHandler(this.CB_CodigoBeneficio490WC_SelectedIndexChanged);
             // 
             // CB_NombreBeneficio490WC
             // 
