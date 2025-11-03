@@ -124,6 +124,7 @@
             this.BT_ELIMINAREMAIL490WC.TabIndex = 90;
             this.BT_ELIMINAREMAIL490WC.Text = "Eliminar";
             this.BT_ELIMINAREMAIL490WC.UseVisualStyleBackColor = false;
+            this.BT_ELIMINAREMAIL490WC.Click += new System.EventHandler(this.BT_ELIMINAREMAIL490WC_Click);
             // 
             // BT_AGREGAREMAIL490WC
             // 
@@ -137,6 +138,7 @@
             this.BT_AGREGAREMAIL490WC.TabIndex = 89;
             this.BT_AGREGAREMAIL490WC.Text = "Agregar";
             this.BT_AGREGAREMAIL490WC.UseVisualStyleBackColor = false;
+            this.BT_AGREGAREMAIL490WC.Click += new System.EventHandler(this.BT_AGREGAREMAIL490WC_Click);
             // 
             // listboxEmailsCliente490WC
             // 
@@ -174,6 +176,7 @@
             this.BT_ELIMINARCELULAR490WC.TabIndex = 86;
             this.BT_ELIMINARCELULAR490WC.Text = "Eliminar";
             this.BT_ELIMINARCELULAR490WC.UseVisualStyleBackColor = false;
+            this.BT_ELIMINARCELULAR490WC.Click += new System.EventHandler(this.BT_ELIMINARCELULAR490WC_Click);
             // 
             // BT_AGREGARCELULAR490WC
             // 
@@ -187,6 +190,7 @@
             this.BT_AGREGARCELULAR490WC.TabIndex = 85;
             this.BT_AGREGARCELULAR490WC.Text = "Agregar";
             this.BT_AGREGARCELULAR490WC.UseVisualStyleBackColor = false;
+            this.BT_AGREGARCELULAR490WC.Click += new System.EventHandler(this.BT_AGREGARCELULAR490WC_Click);
             // 
             // listboxCelularesCliente490WC
             // 

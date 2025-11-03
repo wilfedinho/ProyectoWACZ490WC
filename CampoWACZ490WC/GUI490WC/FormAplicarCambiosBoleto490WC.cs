@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -218,7 +219,12 @@ namespace GUI490WC
                 CB_BENEFICIOSCLIENTE490WC.Enabled = true;
                 CB_BENEFICIOSCLIENTE490WC.Items.Clear();
                 LlenarCB();
-                CB_BENEFICIOSCLIENTE490WC.Text = boletoOriginal490WC.BeneficioAplicado490WC;
+                string beneficio = boletoOriginal490WC.BeneficioAplicado490WC;
+                if (!string.IsNullOrEmpty(beneficio) && !CB_BENEFICIOSCLIENTE490WC.Items.Contains(beneficio))
+                {
+                    CB_BENEFICIOSCLIENTE490WC.Items.Add(beneficio);
+                }
+                CB_BENEFICIOSCLIENTE490WC.Text = beneficio;
                 CB_CLASEBOLETO490WC.Text = boletoOriginal490WC.ClaseBoleto490WC;
                 BT_SELECCIONARBENEFICIO490WC.Enabled = true;
                 CB_CLASEBOLETO490WC.Enabled = true;
@@ -489,8 +495,10 @@ namespace GUI490WC
                 string claseBoleto490WC = CB_CLASEBOLETO490WC.Text;
                 if (gestorBoleto490WC.VerificarFormatoAsiento490WC(asiento490WC))
                 {
+                    string textoPeso = TB_PESOEQUIPAJE490WC.Text.Replace('.', ',');
+                    CultureInfo cultura = new CultureInfo("es-AR");
 
-                    if (float.TryParse(pesoEquipaje490WC, out float pesoParse490WC) && pesoParse490WC > 0)
+                    if (float.TryParse(textoPeso,NumberStyles.Number, cultura,out float pesoParse490WC) && pesoParse490WC > 0)
                     {
                         if (boletoOriginal490WC is BoletoIDAVUELTA490WC)
                         {

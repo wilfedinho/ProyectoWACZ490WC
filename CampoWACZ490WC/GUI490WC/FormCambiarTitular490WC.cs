@@ -36,10 +36,14 @@ namespace GUI490WC
             listaClientes490WC = gestorCliente490WC.ObtenerTodosLosCliente490WC();
             foreach (Cliente490WC clienteMostrar490WC in listaClientes490WC)
             {
-                indiceRow490WC = dgvCliente490WC.Rows.Add(clienteMostrar490WC.DNI490WC, clienteMostrar490WC.Nombre490WC, clienteMostrar490WC.Apellido490WC, clienteMostrar490WC.EstrellasCliente490WC, null);
-                if (clienteMostrar490WC.Activo490WC == false && dgvCliente490WC.Rows.Count > 0)
+                if (clienteMostrar490WC.Activo490WC = true)
                 {
-                    dgvCliente490WC.Rows[indiceRow490WC].DefaultCellStyle.BackColor = Color.LightCoral;
+                    indiceRow490WC = dgvCliente490WC.Rows.Add(clienteMostrar490WC.DNI490WC, clienteMostrar490WC.Nombre490WC, clienteMostrar490WC.Apellido490WC, clienteMostrar490WC.EstrellasCliente490WC, null);
+                    if (clienteMostrar490WC.Activo490WC == false && dgvCliente490WC.Rows.Count > 0)
+                    {
+                        dgvCliente490WC.Rows[indiceRow490WC].DefaultCellStyle.BackColor = Color.LightCoral;
+                    }
+
                 }
             }
 
@@ -221,6 +225,7 @@ namespace GUI490WC
                 clienteCambiarTitularidad490WC = gestorCliente490WC.BuscarClientePorDNI490WC(dgvCliente490WC.SelectedRows[0].Cells["DNI_CLIENTE"].Value.ToString());
                 if (clienteCambiarTitularidad490WC != null && clienteCambiarTitularidad490WC.DNI490WC != boletoCargado490WC.Titular490WC.DNI490WC)
                 {
+
                     boletoCargado490WC.Titular490WC = clienteCambiarTitularidad490WC;
                     cambios[9] = $"{boletoCargado490WC.Titular490WC.DNI490WC}";
                     boletoCargado490WC.Precio490WC += (boletoCargado490WC.Precio490WC * 0.60f);
@@ -237,6 +242,96 @@ namespace GUI490WC
                     string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("ErrorMismoTitular490WC");
                     MessageBox.Show(mensajeError);
                 }
+            }
+        }
+
+        private void BT_AGREGARCELULAR490WC_Click(object sender, EventArgs e)
+        {
+            string celular490WC = TB_CELULAR490WC.Text;
+            GestorCliente490WC gestorCliente490WC = new GestorCliente490WC();
+            if (!string.IsNullOrEmpty(celular490WC))
+            {
+                if (!listboxCelularesCliente490WC.Items.Contains(celular490WC))
+                {
+                    if (gestorCliente490WC.VerificarCelular490WC(celular490WC))
+                    {
+                        listboxCelularesCliente490WC.Items.Add(celular490WC);
+                        TB_CELULAR490WC.Clear();
+                    }
+                    else
+                    {
+                        string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("CelularFormatoInvalido490WC");
+                        MessageBox.Show(mensajeError);
+                    }
+                }
+                else
+                {
+                    string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("NoPuedesAgregarCelularDuplicado490WC");
+                    MessageBox.Show(mensajeError);
+                }
+            }
+            else
+            {
+                string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("DebeIngresarCelular490WC");
+                MessageBox.Show(mensajeError);
+            }
+        }
+
+        private void BT_ELIMINARCELULAR490WC_Click(object sender, EventArgs e)
+        {
+            if (listboxCelularesCliente490WC.SelectedIndex != -1)
+            {
+                listboxCelularesCliente490WC.Items.RemoveAt(listboxCelularesCliente490WC.SelectedIndex);
+            }
+            else
+            {
+                string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("DebesSeleccionarCelularParaEliminarlo490WC");
+                MessageBox.Show(mensajeError);
+            }
+        }
+
+        private void BT_AGREGAREMAIL490WC_Click(object sender, EventArgs e)
+        {
+            string email490WC = TB_EMAIL490WC.Text;
+            GestorCliente490WC gestorCliente490WC = new GestorCliente490WC();
+            if (!string.IsNullOrEmpty(email490WC))
+            {
+                if (!listboxEmailsCliente490WC.Items.Contains(email490WC))
+                {
+                    if (gestorCliente490WC.VerificarEmail490WC(email490WC))
+                    {
+                        listboxEmailsCliente490WC.Items.Add(email490WC);
+                        TB_EMAIL490WC.Clear();
+                    }
+                    else
+                    {
+                        string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("EmailFormatoInvalido490WC");
+                        MessageBox.Show(mensajeError);
+                    }
+                }
+                else
+                {
+                    string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("NoPuedesAgregarEmailDuplicado490WC");
+                    MessageBox.Show(mensajeError);
+                }
+            }
+            else
+            {
+                string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("DebeIngresarEmail490WC");
+                MessageBox.Show(mensajeError);
+            }
+        }
+
+        private void BT_ELIMINAREMAIL490WC_Click(object sender, EventArgs e)
+        {
+            if (listboxEmailsCliente490WC.SelectedIndex != 1)
+            {
+                listboxEmailsCliente490WC.Items.RemoveAt(listboxEmailsCliente490WC.SelectedIndex);
+            }
+            else
+            {
+                string mensajeError = Traductor490WC.TraductorSG490WC.Traducir490WC("DebesSeleccionarEmailParaEliminarlo490WC");
+                MessageBox.Show(mensajeError);
             }
         }
     }
