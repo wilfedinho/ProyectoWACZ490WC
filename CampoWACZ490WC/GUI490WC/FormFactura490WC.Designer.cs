@@ -33,6 +33,8 @@
             this.ColumnaNumeroFactura = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnaDNITitular = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnaIDBoleto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RD_FacturaNormal490WC = new System.Windows.Forms.RadioButton();
+            this.RD_FacturaModificada490WC = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFactura490WC)).BeginInit();
             this.SuspendLayout();
             // 
@@ -42,7 +44,7 @@
             this.BT_IMPRIMIRFACTURA490WC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BT_IMPRIMIRFACTURA490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.BT_IMPRIMIRFACTURA490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.BT_IMPRIMIRFACTURA490WC.Location = new System.Drawing.Point(78, 325);
+            this.BT_IMPRIMIRFACTURA490WC.Location = new System.Drawing.Point(78, 375);
             this.BT_IMPRIMIRFACTURA490WC.Name = "BT_IMPRIMIRFACTURA490WC";
             this.BT_IMPRIMIRFACTURA490WC.Size = new System.Drawing.Size(371, 40);
             this.BT_IMPRIMIRFACTURA490WC.TabIndex = 55;
@@ -62,7 +64,7 @@
             this.ColumnaNumeroFactura,
             this.ColumnaDNITitular,
             this.ColumnaIDBoleto});
-            this.dgvFactura490WC.Location = new System.Drawing.Point(78, 12);
+            this.dgvFactura490WC.Location = new System.Drawing.Point(78, 62);
             this.dgvFactura490WC.MultiSelect = false;
             this.dgvFactura490WC.Name = "dgvFactura490WC";
             this.dgvFactura490WC.ReadOnly = true;
@@ -89,12 +91,42 @@
             this.ColumnaIDBoleto.Name = "ColumnaIDBoleto";
             this.ColumnaIDBoleto.ReadOnly = true;
             // 
+            // RD_FacturaNormal490WC
+            // 
+            this.RD_FacturaNormal490WC.AutoSize = true;
+            this.RD_FacturaNormal490WC.Checked = true;
+            this.RD_FacturaNormal490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.RD_FacturaNormal490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
+            this.RD_FacturaNormal490WC.Location = new System.Drawing.Point(78, 25);
+            this.RD_FacturaNormal490WC.Name = "RD_FacturaNormal490WC";
+            this.RD_FacturaNormal490WC.Size = new System.Drawing.Size(139, 24);
+            this.RD_FacturaNormal490WC.TabIndex = 59;
+            this.RD_FacturaNormal490WC.TabStop = true;
+            this.RD_FacturaNormal490WC.Text = "radioButton1";
+            this.RD_FacturaNormal490WC.UseVisualStyleBackColor = true;
+            this.RD_FacturaNormal490WC.CheckedChanged += new System.EventHandler(this.RD_FacturaNormal490WC_CheckedChanged);
+            // 
+            // RD_FacturaModificada490WC
+            // 
+            this.RD_FacturaModificada490WC.AutoSize = true;
+            this.RD_FacturaModificada490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.RD_FacturaModificada490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
+            this.RD_FacturaModificada490WC.Location = new System.Drawing.Point(293, 25);
+            this.RD_FacturaModificada490WC.Name = "RD_FacturaModificada490WC";
+            this.RD_FacturaModificada490WC.Size = new System.Drawing.Size(139, 24);
+            this.RD_FacturaModificada490WC.TabIndex = 60;
+            this.RD_FacturaModificada490WC.TabStop = true;
+            this.RD_FacturaModificada490WC.Text = "radioButton1";
+            this.RD_FacturaModificada490WC.UseVisualStyleBackColor = true;
+            // 
             // FormFactura490WC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(27)))), ((int)(((byte)(38)))));
             this.ClientSize = new System.Drawing.Size(545, 450);
+            this.Controls.Add(this.RD_FacturaModificada490WC);
+            this.Controls.Add(this.RD_FacturaNormal490WC);
             this.Controls.Add(this.dgvFactura490WC);
             this.Controls.Add(this.BT_IMPRIMIRFACTURA490WC);
             this.Name = "FormFactura490WC";
@@ -104,6 +136,7 @@
             this.Load += new System.EventHandler(this.FormFactura490WC_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvFactura490WC)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -114,5 +147,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaNumeroFactura;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaDNITitular;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaIDBoleto;
+        private System.Windows.Forms.RadioButton RD_FacturaNormal490WC;
+        private System.Windows.Forms.RadioButton RD_FacturaModificada490WC;
     }
 }

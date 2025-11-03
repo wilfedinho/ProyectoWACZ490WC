@@ -79,7 +79,7 @@ namespace DAL490WC
                                 total: Convert.ToSingle(reader["Total490WC"]),
                                 beneficioAplicado490WC: beneficioAplicado
                             );
-
+                            factura.CambiosRealizados490WC = reader["CambiosRealizados490WC"].ToString();
                             facturas490WC.Add(factura);
                         }
                     }

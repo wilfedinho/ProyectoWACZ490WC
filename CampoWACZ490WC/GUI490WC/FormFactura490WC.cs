@@ -20,9 +20,9 @@ namespace GUI490WC
         public FormFactura490WC()
         {
             InitializeComponent();
-           
+
             MostrarFacturas490WC();
-           
+
         }
 
         public void ActualizarLenguaje490WC()
@@ -34,9 +34,22 @@ namespace GUI490WC
         {
             dgvFactura490WC.Rows.Clear();
             GestorFactura490WC gestorFacturas490WC = new GestorFactura490WC();
-            foreach (Factura490WC factu490WC in gestorFacturas490WC.ObtenerTodasLasFacturas490WC())
+            if (RD_FacturaNormal490WC.Checked)
             {
-                dgvFactura490WC.Rows.Add(factu490WC.NumeroFactura490WC, factu490WC.DNIC490WC, factu490WC.NumeroBoleto490WC);
+                foreach (Factura490WC factu490WC in gestorFacturas490WC.ObtenerTodasLasFacturas490WC())
+                {
+                    if (string.IsNullOrEmpty(factu490WC.CambiosRealizados490WC))
+                    {
+                        dgvFactura490WC.Rows.Add(factu490WC.NumeroFactura490WC, factu490WC.DNIC490WC, factu490WC.NumeroBoleto490WC);
+                    }
+                }
+            }
+            else
+            {
+                foreach (Factura490WC factu490WC in gestorFacturas490WC.ObtenerTodasLasFacturasModificadas490WC())
+                {
+                    dgvFactura490WC.Rows.Add(factu490WC.NumeroFactura490WC, factu490WC.DNIC490WC, factu490WC.NumeroBoleto490WC);
+                }
             }
         }
 
@@ -68,19 +81,40 @@ namespace GUI490WC
 
         private void BT_IMPRIMIRFACTURA490WC_Click(object sender, EventArgs e)
         {
-            if (dgvFactura490WC.SelectedRows.Count > 0)
+            if (RD_FacturaNormal490WC.Checked)
             {
-               GestorFactura490WC gestorFactura490WC = new GestorFactura490WC();
-                Factura490WC facturaGenerar490WC = gestorFactura490WC.ObtenerTodasLasFacturas490WC().Find(x => x.NumeroFactura490WC == int.Parse(dgvFactura490WC.SelectedRows[0].Cells["ColumnaNumeroFactura"].Value.ToString()));
-                if (facturaGenerar490WC != null)
+                if (dgvFactura490WC.SelectedRows.Count > 0)
                 {
-                    gestorFactura490WC.GenerarFactura490WC(facturaGenerar490WC);
+                    GestorFactura490WC gestorFactura490WC = new GestorFactura490WC();
+                    Factura490WC facturaGenerar490WC = gestorFactura490WC.ObtenerTodasLasFacturas490WC().Find(x => x.NumeroFactura490WC == int.Parse(dgvFactura490WC.SelectedRows[0].Cells["ColumnaNumeroFactura"].Value.ToString()));
+                    if (facturaGenerar490WC != null)
+                    {
+                        gestorFactura490WC.GenerarFactura490WC(facturaGenerar490WC);
+                    }
+                    GestorBoleto490WC gestorBoleto490WC = new GestorBoleto490WC();
+                    Boleto490WC boletoGenerar490WC = gestorBoleto490WC.ObtenerBoletoConBeneficio490WC(dgvFactura490WC.SelectedRows[0].Cells["ColumnaIDBoleto"].Value.ToString().Trim());
+                    if (boletoGenerar490WC != null)
+                    {
+                        gestorBoleto490WC.GenerarBoleto490WC(boletoGenerar490WC);
+                    }
                 }
-                GestorBoleto490WC gestorBoleto490WC = new GestorBoleto490WC();
-                Boleto490WC boletoGenerar490WC = gestorBoleto490WC.ObtenerBoletoConBeneficio490WC(dgvFactura490WC.SelectedRows[0].Cells["ColumnaIDBoleto"].Value.ToString().Trim());
-                if (boletoGenerar490WC != null)
+            }
+            else
+            {
+                if (dgvFactura490WC.SelectedRows.Count > 0)
                 {
-                    gestorBoleto490WC.GenerarBoleto490WC(boletoGenerar490WC);
+                    GestorFactura490WC gestorFactura490WC = new GestorFactura490WC();
+                    Factura490WC facturaGenerar490WC = gestorFactura490WC.ObtenerTodasLasFacturas490WC().Find(x => x.NumeroFactura490WC == int.Parse(dgvFactura490WC.SelectedRows[0].Cells["ColumnaNumeroFactura"].Value.ToString()));
+                    if (facturaGenerar490WC != null)
+                    {
+                        gestorFactura490WC.GenerarFacturaBoletoModificado490WC(facturaGenerar490WC);
+                    }
+                    GestorBoleto490WC gestorBoleto490WC = new GestorBoleto490WC();
+                    Boleto490WC boletoGenerar490WC = gestorBoleto490WC.ObtenerBoletoConBeneficio490WC(dgvFactura490WC.SelectedRows[0].Cells["ColumnaIDBoleto"].Value.ToString().Trim());
+                    if (boletoGenerar490WC != null)
+                    {
+                        gestorBoleto490WC.GenerarBoleto490WC(boletoGenerar490WC);
+                    }
                 }
             }
 
@@ -96,6 +130,11 @@ namespace GUI490WC
         {
             Traductor490WC.TraductorSG490WC.Suscribir490WC(this);
             Traductor490WC.TraductorSG490WC.Notificar490WC();
+        }
+
+        private void RD_FacturaNormal490WC_CheckedChanged(object sender, EventArgs e)
+        {
+            MostrarFacturas490WC();
         }
     }
 }

@@ -400,7 +400,9 @@
     "ErrorMismoTitular490WC": "The selected client for holder modification is the same as the current one!!!",
     "ColumnaImagen": "",
     "BT_BitacoraCambios490WC": "Change Log",
-    "BT_ReporteInteligente490WC": "Metrics"
+    "BT_ReporteInteligente490WC": "Metrics",
+    "RD_FacturaNormal490WC": "Normal Invoice",
+    "RD_FacturaModificada490WC": "Modified invoice"
 
 
 }

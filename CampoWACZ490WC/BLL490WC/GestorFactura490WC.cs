@@ -24,6 +24,13 @@ namespace BLL490WC
             DigitoVerificador490WC gestorDigitoVerificador490WC = new DigitoVerificador490WC();
             gestorDigitoVerificador490WC.ActualizarIntegridadPorTabla490WC("Factura490WC");
         }
+
+        public List<Factura490WC> ObtenerTodasLasFacturasModificadas490WC()
+        {
+            FacturaDAL490WC gestorFactura490WC = new FacturaDAL490WC();
+            return gestorFactura490WC.ObtenerTodasLasFacturasModificadas490WC();
+        }
+
         public List<Factura490WC> ObtenerTodasLasFacturas490WC()
         {
             FacturaDAL490WC gestorFactura490WC = new FacturaDAL490WC();

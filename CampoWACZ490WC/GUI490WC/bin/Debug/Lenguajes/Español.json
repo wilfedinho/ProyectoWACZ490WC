@@ -400,7 +400,9 @@
     "ErrorMismoTitular490WC": "El Cliente Seleccionado Para La Modificacion Del Titular Es El Mismo Que El Actual!!!",
     "ColumnaImagen": "",
     "BT_BitacoraCambios490WC": "Bitacora Cambios",
-    "BT_ReporteInteligente490WC": "Metricas"
+    "BT_ReporteInteligente490WC": "Metricas",
+    "RD_FacturaNormal490WC": "Factura Normal",
+    "RD_FacturaModificada490WC":  "Factura Modificada"
 
 
 }
