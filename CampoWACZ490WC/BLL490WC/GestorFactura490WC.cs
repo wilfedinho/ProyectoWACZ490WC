@@ -149,6 +149,10 @@ namespace BLL490WC
                     }
                     if (!string.IsNullOrEmpty(cambios490WC[8]))
                     {
+                        doc490WC.Add(new Paragraph("Cambio De Peso ===> 13% Recargo", FontFactory.GetFont(FontFactory.COURIER, 10)));
+                    }
+                    if (!string.IsNullOrEmpty(cambios490WC[9]))
+                    {
                         doc490WC.Add(new Paragraph("Cambio De Titular ===> 60% Recargo", FontFactory.GetFont(FontFactory.COURIER, 10)));
                     }
                 }

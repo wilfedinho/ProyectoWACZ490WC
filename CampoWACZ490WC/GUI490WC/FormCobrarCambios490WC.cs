@@ -462,6 +462,7 @@ namespace GUI490WC
                                                 gestorFactura490WC.Alta490WC(facturaAlta490WC);
                                                 gestorBoleto490WC.CobrarBoletoModificado490WC(boletoModificadoCobrar490WC);
                                                 gestorFactura490WC.GenerarFacturaBoletoModificado490WC(facturaAlta490WC);
+                                                boletoModificadoCobrar490WC.IDBoleto490WC = cambios490WC[0];
                                                 gestorBoleto490WC.GenerarBoleto490WC(boletoModificadoCobrar490WC);
                                                 string mensajePago = Traductor490WC.TraductorSG490WC.Traducir490WC("MensajePago490WC");
                                                 MessageBox.Show(mensajePago);
@@ -477,6 +478,7 @@ namespace GUI490WC
                                                 gestorFactura490WC.Alta490WC(facturaAlta490WC);
                                                 gestorBoleto490WC.CobrarBoletoModificado490WC(boletoModificadoCobrar490WC);
                                                 gestorFactura490WC.GenerarFacturaBoletoModificado490WC(facturaAlta490WC);
+                                                boletoModificadoCobrar490WC.IDBoleto490WC = cambios490WC[0];
                                                 gestorBoleto490WC.GenerarBoleto490WC(boletoModificadoCobrar490WC);
                                                 string mensajePago = Traductor490WC.TraductorSG490WC.Traducir490WC("MensajePago490WC");
                                                 MessageBox.Show(mensajePago);
