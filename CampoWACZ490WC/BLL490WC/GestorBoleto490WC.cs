@@ -223,10 +223,13 @@ namespace BLL490WC
                 if (BoletoModificado490WC.BeneficioAplicado490WC != null)
                 {
                     Beneficio490WC beneficioAplicado490WC = BoletoModificado490WC.Titular490WC.BeneficiosCliente490WC.Find(b => b.Nombre490WC == BoletoModificado490WC.BeneficioAplicado490WC);
-                    gestorBeneficio490WC.EliminarBeneficioDeCliente490WC(BoletoModificado490WC.Titular490WC.DNI490WC, beneficioAplicado490WC.CodigoBeneficio490WC);
-                    gestorDigitoVerificador490WC.ActualizarIntegridadPorTabla490WC("Cliente_Beneficio490WC");
-                    gestorBeneficio490WC.AplicarBeneficio490WC(BoletoModificado490WC.IDBoleto490WC, beneficioAplicado490WC.DescuentoAplicar490WC, beneficioAplicado490WC.Nombre490WC);
-                    gestorDigitoVerificador490WC.ActualizarIntegridadPorTabla490WC("Boleto490WC");
+                    if (beneficioAplicado490WC != null)
+                    {
+                        gestorBeneficio490WC.EliminarBeneficioDeCliente490WC(BoletoModificado490WC.Titular490WC.DNI490WC, beneficioAplicado490WC.CodigoBeneficio490WC);
+                        gestorDigitoVerificador490WC.ActualizarIntegridadPorTabla490WC("Cliente_Beneficio490WC");
+                        gestorBeneficio490WC.AplicarBeneficio490WC(BoletoModificado490WC.IDBoleto490WC, beneficioAplicado490WC.DescuentoAplicar490WC, beneficioAplicado490WC.Nombre490WC);
+                        gestorDigitoVerificador490WC.ActualizarIntegridadPorTabla490WC("Boleto490WC");
+                    }
                 }
                 return true;
             }
@@ -341,7 +344,7 @@ namespace BLL490WC
         public List<KeyValuePair<string, int>> GenerarReporteBeneficiosPorTemporada(string temporada)
         {
             BoletoDAL490WC gestorBoleto490WC = new BoletoDAL490WC();
-            string nombreTemporada = temporada.ToString(); 
+            string nombreTemporada = temporada.ToString();
             List<string> nombresBeneficios = gestorBoleto490WC.ObtenerNombresBeneficiosPorTemporada490WC(nombreTemporada);
             var resultadoAgregado = nombresBeneficios.GroupBy(nombre => nombre).Select(g => new KeyValuePair<string, int>(g.Key, g.Count())).OrderByDescending(x => x.Value).ToList();
             return resultadoAgregado;
