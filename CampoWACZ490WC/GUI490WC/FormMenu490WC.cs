@@ -354,13 +354,13 @@ namespace GUI490WC
 
         private void BT_Ayuda490WC_Click(object sender, EventArgs e)
         {
-            string url = "https://docs.google.com/document/d/1t_JRHT2qTTKtLFoMya_crxzjGGV8YCpOtCnVOV4gSw0/edit?usp=sharing";
+            string url490WC = "https://docs.google.com/document/d/1t_JRHT2qTTKtLFoMya_crxzjGGV8YCpOtCnVOV4gSw0/edit?usp=sharing";
 
             try
             {
                 System.Diagnostics.Process.Start(new ProcessStartInfo
                 {
-                    FileName = url,
+                    FileName = url490WC,
                     UseShellExecute = true 
                 });
                 hideSubmenu490WC();

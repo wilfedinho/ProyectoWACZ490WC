@@ -1428,7 +1428,8 @@ namespace DAL490WC
             {
                 mesesSql490WC = "9, 10, 11"; 
             }
-            string query490WC = $@"SELECT BeneficioAplicado490WC FROM Boleto490WC WHERE IsVendido490WC = 1 AND MONTH(FechaBoletoGenerado490WC) IN ({mesesSql490WC});";
+            
+            string query490WC = $@"SELECT BeneficioAplicado490WC FROM Boleto490WC WHERE IsVendido490WC = 1 AND MONTH(FechaPartidaIDA490WC) IN ({mesesSql490WC});";
             using (SqlConnection cone490WC = GestorConexion490WC.GestorCone490WC.DevolverConexion490WC())
             {
                 cone490WC.Open();
