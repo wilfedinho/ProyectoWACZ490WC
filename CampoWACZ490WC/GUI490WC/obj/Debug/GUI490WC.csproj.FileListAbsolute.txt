@@ -77,7 +77,6 @@ C:\GitHubCarpetaDiploma\ProyectoWACZ490WC\CampoWACZ490WC\GUI490WC\bin\Debug\itex
 C:\GitHubCarpetaDiploma\ProyectoWACZ490WC\CampoWACZ490WC\GUI490WC\bin\Debug\DAL490WC.pdb
 C:\GitHubCarpetaDiploma\ProyectoWACZ490WC\CampoWACZ490WC\GUI490WC\bin\Debug\Newtonsoft.Json.xml
 C:\GitHubCarpetaDiploma\ProyectoWACZ490WC\CampoWACZ490WC\GUI490WC\obj\Debug\GUI490WC.csproj.AssemblyReference.cache
-C:\GitHubCarpetaDiploma\ProyectoWACZ490WC\CampoWACZ490WC\GUI490WC\obj\Debug\Fertech.exe.config
 C:\GitHubCarpetaDiploma\ProyectoWACZ490WC\CampoWACZ490WC\GUI490WC\obj\Debug\GUI490WC.FormAplicarCambiosBoleto490WC.resources
 C:\GitHubCarpetaDiploma\ProyectoWACZ490WC\CampoWACZ490WC\GUI490WC\obj\Debug\GUI490WC.FormBitacoraCambiosBeneficio490WC.resources
 C:\GitHubCarpetaDiploma\ProyectoWACZ490WC\CampoWACZ490WC\GUI490WC\obj\Debug\GUI490WC.FormCobrarCambios490WC.resources
@@ -111,3 +110,4 @@ C:\GitHubCarpetaDiploma\ProyectoWACZ490WC\CampoWACZ490WC\GUI490WC\obj\Debug\GUI4
 C:\GitHubCarpetaDiploma\ProyectoWACZ490WC\CampoWACZ490WC\GUI490WC\obj\Debug\GUI490WC.csproj.Up2Date
 C:\GitHubCarpetaDiploma\ProyectoWACZ490WC\CampoWACZ490WC\GUI490WC\obj\Debug\Fertech.exe
 C:\GitHubCarpetaDiploma\ProyectoWACZ490WC\CampoWACZ490WC\GUI490WC\obj\Debug\Fertech.pdb
+C:\GitHubCarpetaDiploma\ProyectoWACZ490WC\CampoWACZ490WC\GUI490WC\obj\Debug\Fertech.exe.config

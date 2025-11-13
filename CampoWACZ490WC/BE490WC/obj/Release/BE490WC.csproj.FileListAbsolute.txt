@@ -1,0 +1,12 @@
+C:\GitHubCarpetaDiploma\ProyectoWACZ490WC\CampoWACZ490WC\BE490WC\bin\Release\BE490WC.dll
+C:\GitHubCarpetaDiploma\ProyectoWACZ490WC\CampoWACZ490WC\BE490WC\bin\Release\BE490WC.pdb
+C:\GitHubCarpetaDiploma\ProyectoWACZ490WC\CampoWACZ490WC\BE490WC\bin\Release\BouncyCastle.Cryptography.dll
+C:\GitHubCarpetaDiploma\ProyectoWACZ490WC\CampoWACZ490WC\BE490WC\bin\Release\FontAwesome.Sharp.dll
+C:\GitHubCarpetaDiploma\ProyectoWACZ490WC\CampoWACZ490WC\BE490WC\bin\Release\itextsharp.dll
+C:\GitHubCarpetaDiploma\ProyectoWACZ490WC\CampoWACZ490WC\BE490WC\bin\Release\BouncyCastle.Cryptography.xml
+C:\GitHubCarpetaDiploma\ProyectoWACZ490WC\CampoWACZ490WC\BE490WC\bin\Release\itextsharp.xml
+C:\GitHubCarpetaDiploma\ProyectoWACZ490WC\CampoWACZ490WC\BE490WC\obj\Release\BE490WC.csproj.AssemblyReference.cache
+C:\GitHubCarpetaDiploma\ProyectoWACZ490WC\CampoWACZ490WC\BE490WC\obj\Release\BE490WC.csproj.CoreCompileInputs.cache
+C:\GitHubCarpetaDiploma\ProyectoWACZ490WC\CampoWACZ490WC\BE490WC\obj\Release\BE490WC.csproj.Up2Date
+C:\GitHubCarpetaDiploma\ProyectoWACZ490WC\CampoWACZ490WC\BE490WC\obj\Release\BE490WC.dll
+C:\GitHubCarpetaDiploma\ProyectoWACZ490WC\CampoWACZ490WC\BE490WC\obj\Release\BE490WC.pdb

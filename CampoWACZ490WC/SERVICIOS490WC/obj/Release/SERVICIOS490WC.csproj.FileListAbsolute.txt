@@ -1,0 +1,16 @@
+C:\GitHubCarpetaDiploma\ProyectoWACZ490WC\CampoWACZ490WC\SERVICIOS490WC\bin\Release\SERVICIOS490WC.dll
+C:\GitHubCarpetaDiploma\ProyectoWACZ490WC\CampoWACZ490WC\SERVICIOS490WC\bin\Release\SERVICIOS490WC.pdb
+C:\GitHubCarpetaDiploma\ProyectoWACZ490WC\CampoWACZ490WC\SERVICIOS490WC\bin\Release\BouncyCastle.Cryptography.dll
+C:\GitHubCarpetaDiploma\ProyectoWACZ490WC\CampoWACZ490WC\SERVICIOS490WC\bin\Release\FontAwesome.Sharp.dll
+C:\GitHubCarpetaDiploma\ProyectoWACZ490WC\CampoWACZ490WC\SERVICIOS490WC\bin\Release\itextsharp.dll
+C:\GitHubCarpetaDiploma\ProyectoWACZ490WC\CampoWACZ490WC\SERVICIOS490WC\bin\Release\Newtonsoft.Json.dll
+C:\GitHubCarpetaDiploma\ProyectoWACZ490WC\CampoWACZ490WC\SERVICIOS490WC\bin\Release\SE490WC.dll
+C:\GitHubCarpetaDiploma\ProyectoWACZ490WC\CampoWACZ490WC\SERVICIOS490WC\bin\Release\SE490WC.pdb
+C:\GitHubCarpetaDiploma\ProyectoWACZ490WC\CampoWACZ490WC\SERVICIOS490WC\bin\Release\BouncyCastle.Cryptography.xml
+C:\GitHubCarpetaDiploma\ProyectoWACZ490WC\CampoWACZ490WC\SERVICIOS490WC\bin\Release\itextsharp.xml
+C:\GitHubCarpetaDiploma\ProyectoWACZ490WC\CampoWACZ490WC\SERVICIOS490WC\bin\Release\Newtonsoft.Json.xml
+C:\GitHubCarpetaDiploma\ProyectoWACZ490WC\CampoWACZ490WC\SERVICIOS490WC\obj\Release\SERVICIOS490WC.csproj.AssemblyReference.cache
+C:\GitHubCarpetaDiploma\ProyectoWACZ490WC\CampoWACZ490WC\SERVICIOS490WC\obj\Release\SERVICIOS490WC.csproj.CoreCompileInputs.cache
+C:\GitHubCarpetaDiploma\ProyectoWACZ490WC\CampoWACZ490WC\SERVICIOS490WC\obj\Release\SERVICIO.5E8A4BE5.Up2Date
+C:\GitHubCarpetaDiploma\ProyectoWACZ490WC\CampoWACZ490WC\SERVICIOS490WC\obj\Release\SERVICIOS490WC.dll
+C:\GitHubCarpetaDiploma\ProyectoWACZ490WC\CampoWACZ490WC\SERVICIOS490WC\obj\Release\SERVICIOS490WC.pdb
