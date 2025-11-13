@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -45,9 +46,9 @@ namespace GUI490WC
             LabelRolUsuario490WC.AutoSize = false;
             LabelRolUsuario490WC.MaximumSize = new Size(panelPrincipal.Width, 0);
             LabelRolUsuario490WC.Height = LabelRolUsuario490WC.PreferredHeight;
-       
 
-            
+
+
 
             LabelNombreUsuarios490WC.Height = LabelNombreUsuarios490WC.PreferredHeight;
             LabelRolUsuario490WC.Height = LabelRolUsuario490WC.PreferredHeight;
@@ -189,7 +190,7 @@ namespace GUI490WC
         {
             try
             {
-                
+
                 UserManager490WC.UserManagerSG490WC.GuardarIdiomaUsuario490WC();
                 UserManager490WC.UserManagerSG490WC.Logout490WC();
                 GestorForm490WC.gestorFormSG490WC.DefinirEstado490WC(new EstadoCerrarAplicacion490WC());
@@ -237,8 +238,8 @@ namespace GUI490WC
                 hideSubmenu490WC();
                 this?.Show();
             }
-            catch {}
-          
+            catch { }
+
         }
 
         private void BT_DigitoVerificador490WC_Click(object sender, EventArgs e)
@@ -353,8 +354,22 @@ namespace GUI490WC
 
         private void BT_Ayuda490WC_Click(object sender, EventArgs e)
         {
+            string url = "https://docs.google.com/document/d/1t_JRHT2qTTKtLFoMya_crxzjGGV8YCpOtCnVOV4gSw0/edit?usp=sharing";
 
-            hideSubmenu490WC();
+            try
+            {
+                System.Diagnostics.Process.Start(new ProcessStartInfo
+                {
+                    FileName = url,
+                    UseShellExecute = true 
+                });
+                hideSubmenu490WC();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se pudo abrir el manual de ayuda. " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                hideSubmenu490WC();
+            }
         }
 
         private void BT_ModificacionBoleto490WC_Click(object sender, EventArgs e)
