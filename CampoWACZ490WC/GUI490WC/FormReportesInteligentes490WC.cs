@@ -123,6 +123,19 @@ namespace GUI490WC
                     doc490WC.Add(titulo490WC);
                     doc490WC.Add(new Paragraph(" "));
                     doc490WC.Add(pdfImage);
+                    var fontExplicacion490WC = FontFactory.GetFont(FontFactory.HELVETICA, 12);
+
+                    string textoExplicativo490WC =
+                        "Este reporte analiza los beneficios más populares utilizados por los pasajeros " +
+                        "según la temporada del año. Cada gráfico circular representa la distribución " +
+                        "de los beneficios seleccionados en esa estación, permitiendo identificar " +
+                        "tendencias estacionales y comportamientos recurrentes en la elección de beneficios.";
+
+                    Paragraph explicacion490WC = new Paragraph(textoExplicativo490WC, fontExplicacion490WC);
+                    explicacion490WC.Alignment = Element.ALIGN_JUSTIFIED;
+                    explicacion490WC.SpacingAfter = 10f;
+
+                    doc490WC.Add(explicacion490WC);
                     doc490WC.Close();
                 }
                 System.Diagnostics.Process.Start(new ProcessStartInfo(ruta490WC) { UseShellExecute = true });
