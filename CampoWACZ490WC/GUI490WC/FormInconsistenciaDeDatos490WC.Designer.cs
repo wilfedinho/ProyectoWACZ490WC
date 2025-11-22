@@ -33,6 +33,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.labelTablasComprometidas490WC = new System.Windows.Forms.Label();
+            this.BT_AyudaEspecifico490WC = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // LABEL_NOMBRE_ABM_USUARIO490WC
@@ -42,7 +43,7 @@
             this.LABEL_NOMBRE_ABM_USUARIO490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
             this.LABEL_NOMBRE_ABM_USUARIO490WC.Location = new System.Drawing.Point(35, 64);
             this.LABEL_NOMBRE_ABM_USUARIO490WC.Name = "LABEL_NOMBRE_ABM_USUARIO490WC";
-            this.LABEL_NOMBRE_ABM_USUARIO490WC.Size = new System.Drawing.Size(451, 38);
+            this.LABEL_NOMBRE_ABM_USUARIO490WC.Size = new System.Drawing.Size(467, 39);
             this.LABEL_NOMBRE_ABM_USUARIO490WC.TabIndex = 24;
             this.LABEL_NOMBRE_ABM_USUARIO490WC.Text = "INCONSISTENCIA DE DATOS";
             // 
@@ -99,12 +100,28 @@
             this.labelTablasComprometidas490WC.Text = "Tablas Comprometidas";
             this.labelTablasComprometidas490WC.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // BT_AyudaEspecifico490WC
+            // 
+            this.BT_AyudaEspecifico490WC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(6)))), ((int)(((byte)(13)))));
+            this.BT_AyudaEspecifico490WC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BT_AyudaEspecifico490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.BT_AyudaEspecifico490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
+            this.BT_AyudaEspecifico490WC.Location = new System.Drawing.Point(12, 378);
+            this.BT_AyudaEspecifico490WC.Name = "BT_AyudaEspecifico490WC";
+            this.BT_AyudaEspecifico490WC.Size = new System.Drawing.Size(40, 36);
+            this.BT_AyudaEspecifico490WC.TabIndex = 140;
+            this.BT_AyudaEspecifico490WC.Tag = "";
+            this.BT_AyudaEspecifico490WC.Text = "?";
+            this.BT_AyudaEspecifico490WC.UseVisualStyleBackColor = false;
+            this.BT_AyudaEspecifico490WC.Click += new System.EventHandler(this.BT_AyudaEspecifico490WC_Click);
+            // 
             // FormInconsistenciaDeDatos490WC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(27)))), ((int)(((byte)(38)))));
             this.ClientSize = new System.Drawing.Size(858, 450);
+            this.Controls.Add(this.BT_AyudaEspecifico490WC);
             this.Controls.Add(this.labelTablasComprometidas490WC);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -125,5 +142,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label labelTablasComprometidas490WC;
+        private System.Windows.Forms.Button BT_AyudaEspecifico490WC;
     }
 }

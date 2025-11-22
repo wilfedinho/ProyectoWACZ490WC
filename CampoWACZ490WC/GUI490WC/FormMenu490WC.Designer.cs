@@ -68,6 +68,7 @@
             this.panelPrincipal = new System.Windows.Forms.Panel();
             this.LabelRolUsuario490WC = new System.Windows.Forms.Label();
             this.LabelNombreUsuarios490WC = new System.Windows.Forms.Label();
+            this.BT_AyudaEspecifico490WC = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMascotaCZWC490)).BeginInit();
             this.panelBotones490WC.SuspendLayout();
             this.panelSubmenuReportes490WC.SuspendLayout();
@@ -654,6 +655,7 @@
             // 
             // panelPrincipal
             // 
+            this.panelPrincipal.Controls.Add(this.BT_AyudaEspecifico490WC);
             this.panelPrincipal.Controls.Add(this.LabelRolUsuario490WC);
             this.panelPrincipal.Controls.Add(this.LabelNombreUsuarios490WC);
             this.panelPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -685,6 +687,21 @@
             this.LabelNombreUsuarios490WC.Size = new System.Drawing.Size(61, 20);
             this.LabelNombreUsuarios490WC.TabIndex = 0;
             this.LabelNombreUsuarios490WC.Text = "label1";
+            // 
+            // BT_AyudaEspecifico490WC
+            // 
+            this.BT_AyudaEspecifico490WC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(6)))), ((int)(((byte)(13)))));
+            this.BT_AyudaEspecifico490WC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BT_AyudaEspecifico490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.BT_AyudaEspecifico490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
+            this.BT_AyudaEspecifico490WC.Location = new System.Drawing.Point(225, 402);
+            this.BT_AyudaEspecifico490WC.Name = "BT_AyudaEspecifico490WC";
+            this.BT_AyudaEspecifico490WC.Size = new System.Drawing.Size(40, 36);
+            this.BT_AyudaEspecifico490WC.TabIndex = 145;
+            this.BT_AyudaEspecifico490WC.Tag = "";
+            this.BT_AyudaEspecifico490WC.Text = "?";
+            this.BT_AyudaEspecifico490WC.UseVisualStyleBackColor = false;
+            this.BT_AyudaEspecifico490WC.Click += new System.EventHandler(this.BT_AyudaEspecifico490WC_Click);
             // 
             // FormMenu490WC
             // 
@@ -757,5 +774,6 @@
         private System.Windows.Forms.Button BT_COBRARCAMBIOS490WC;
         private System.Windows.Forms.Button BT_APLICARCAMBIOS490WC;
         private System.Windows.Forms.Button BT_BitacoraCambios490WC;
+        private System.Windows.Forms.Button BT_AyudaEspecifico490WC;
     }
 }

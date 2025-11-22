@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvBeneficio490WC = new System.Windows.Forms.DataGridView();
             this.ColumnaCodigoBeneficio490WC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnaNombre490WC = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,6 +52,7 @@
             this.LABEL_BENEFICIOSCLIENTE490WC = new System.Windows.Forms.Label();
             this.TBINFOCLIENTE490WC = new System.Windows.Forms.TextBox();
             this.TBBENEFICIOCLIENTE490WC = new System.Windows.Forms.TextBox();
+            this.BT_AyudaEspecifico490WC = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBeneficio490WC)).BeginInit();
             this.SuspendLayout();
             // 
@@ -76,7 +77,7 @@
             this.dgvBeneficio490WC.ReadOnly = true;
             this.dgvBeneficio490WC.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvBeneficio490WC.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvBeneficio490WC.Size = new System.Drawing.Size(528, 341);
+            this.dgvBeneficio490WC.Size = new System.Drawing.Size(528, 362);
             this.dgvBeneficio490WC.TabIndex = 1;
             // 
             // ColumnaCodigoBeneficio490WC
@@ -88,27 +89,27 @@
             // 
             // ColumnaNombre490WC
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 23.75258F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ColumnaNombre490WC.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 23.75258F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ColumnaNombre490WC.DefaultCellStyle = dataGridViewCellStyle7;
             this.ColumnaNombre490WC.HeaderText = "Nombre";
             this.ColumnaNombre490WC.Name = "ColumnaNombre490WC";
             this.ColumnaNombre490WC.ReadOnly = true;
             // 
             // ColumnaCantidadBeneficioReclamado490WC
             // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 23.75258F, System.Drawing.FontStyle.Bold);
-            this.ColumnaCantidadBeneficioReclamado490WC.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 23.75258F, System.Drawing.FontStyle.Bold);
+            this.ColumnaCantidadBeneficioReclamado490WC.DefaultCellStyle = dataGridViewCellStyle8;
             this.ColumnaCantidadBeneficioReclamado490WC.HeaderText = "Cantidad de Reclamados";
             this.ColumnaCantidadBeneficioReclamado490WC.Name = "ColumnaCantidadBeneficioReclamado490WC";
             this.ColumnaCantidadBeneficioReclamado490WC.ReadOnly = true;
             // 
             // ColumnaPrecioEstrella490WC
             // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 23.75258F, System.Drawing.FontStyle.Bold);
-            this.ColumnaPrecioEstrella490WC.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 23.75258F, System.Drawing.FontStyle.Bold);
+            this.ColumnaPrecioEstrella490WC.DefaultCellStyle = dataGridViewCellStyle9;
             this.ColumnaPrecioEstrella490WC.HeaderText = "Precio";
             this.ColumnaPrecioEstrella490WC.Name = "ColumnaPrecioEstrella490WC";
             this.ColumnaPrecioEstrella490WC.ReadOnly = true;
@@ -141,7 +142,7 @@
             this.TB_NOMBRE490WC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TB_NOMBRE490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.TB_NOMBRE490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.TB_NOMBRE490WC.Location = new System.Drawing.Point(12, 260);
+            this.TB_NOMBRE490WC.Location = new System.Drawing.Point(12, 276);
             this.TB_NOMBRE490WC.Name = "TB_NOMBRE490WC";
             this.TB_NOMBRE490WC.Size = new System.Drawing.Size(169, 27);
             this.TB_NOMBRE490WC.TabIndex = 15;
@@ -152,7 +153,7 @@
             this.TB_APELLIDO490WC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TB_APELLIDO490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.TB_APELLIDO490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.TB_APELLIDO490WC.Location = new System.Drawing.Point(212, 260);
+            this.TB_APELLIDO490WC.Location = new System.Drawing.Point(212, 276);
             this.TB_APELLIDO490WC.Name = "TB_APELLIDO490WC";
             this.TB_APELLIDO490WC.Size = new System.Drawing.Size(169, 27);
             this.TB_APELLIDO490WC.TabIndex = 16;
@@ -163,7 +164,7 @@
             this.TB_DNI490WC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TB_DNI490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.TB_DNI490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.TB_DNI490WC.Location = new System.Drawing.Point(405, 260);
+            this.TB_DNI490WC.Location = new System.Drawing.Point(405, 276);
             this.TB_DNI490WC.Name = "TB_DNI490WC";
             this.TB_DNI490WC.Size = new System.Drawing.Size(169, 27);
             this.TB_DNI490WC.TabIndex = 17;
@@ -173,7 +174,7 @@
             this.LABEL_NOMBRE490WC.AutoSize = true;
             this.LABEL_NOMBRE490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.LABEL_NOMBRE490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.LABEL_NOMBRE490WC.Location = new System.Drawing.Point(61, 237);
+            this.LABEL_NOMBRE490WC.Location = new System.Drawing.Point(61, 253);
             this.LABEL_NOMBRE490WC.Name = "LABEL_NOMBRE490WC";
             this.LABEL_NOMBRE490WC.Size = new System.Drawing.Size(77, 20);
             this.LABEL_NOMBRE490WC.TabIndex = 24;
@@ -184,7 +185,7 @@
             this.LABEL_APELLIDO490WC.AutoSize = true;
             this.LABEL_APELLIDO490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.LABEL_APELLIDO490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.LABEL_APELLIDO490WC.Location = new System.Drawing.Point(259, 237);
+            this.LABEL_APELLIDO490WC.Location = new System.Drawing.Point(259, 253);
             this.LABEL_APELLIDO490WC.Name = "LABEL_APELLIDO490WC";
             this.LABEL_APELLIDO490WC.Size = new System.Drawing.Size(79, 20);
             this.LABEL_APELLIDO490WC.TabIndex = 25;
@@ -195,7 +196,7 @@
             this.LABEL_DNI490WC.AutoSize = true;
             this.LABEL_DNI490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.LABEL_DNI490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.LABEL_DNI490WC.Location = new System.Drawing.Point(473, 237);
+            this.LABEL_DNI490WC.Location = new System.Drawing.Point(473, 253);
             this.LABEL_DNI490WC.Name = "LABEL_DNI490WC";
             this.LABEL_DNI490WC.Size = new System.Drawing.Size(40, 20);
             this.LABEL_DNI490WC.TabIndex = 26;
@@ -207,7 +208,7 @@
             this.BT_BUSCARCLIENTE490WC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BT_BUSCARCLIENTE490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.BT_BUSCARCLIENTE490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.BT_BUSCARCLIENTE490WC.Location = new System.Drawing.Point(12, 306);
+            this.BT_BUSCARCLIENTE490WC.Location = new System.Drawing.Point(12, 322);
             this.BT_BUSCARCLIENTE490WC.Name = "BT_BUSCARCLIENTE490WC";
             this.BT_BUSCARCLIENTE490WC.Size = new System.Drawing.Size(169, 47);
             this.BT_BUSCARCLIENTE490WC.TabIndex = 27;
@@ -221,7 +222,7 @@
             this.BT_CANCELAR490WC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BT_CANCELAR490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.BT_CANCELAR490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.BT_CANCELAR490WC.Location = new System.Drawing.Point(405, 306);
+            this.BT_CANCELAR490WC.Location = new System.Drawing.Point(405, 322);
             this.BT_CANCELAR490WC.Name = "BT_CANCELAR490WC";
             this.BT_CANCELAR490WC.Size = new System.Drawing.Size(169, 47);
             this.BT_CANCELAR490WC.TabIndex = 28;
@@ -235,7 +236,7 @@
             this.BT_CANJEARBENEFICIO490WC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BT_CANJEARBENEFICIO490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.BT_CANJEARBENEFICIO490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.BT_CANJEARBENEFICIO490WC.Location = new System.Drawing.Point(212, 306);
+            this.BT_CANJEARBENEFICIO490WC.Location = new System.Drawing.Point(212, 322);
             this.BT_CANJEARBENEFICIO490WC.Name = "BT_CANJEARBENEFICIO490WC";
             this.BT_CANJEARBENEFICIO490WC.Size = new System.Drawing.Size(169, 47);
             this.BT_CANJEARBENEFICIO490WC.TabIndex = 29;
@@ -291,12 +292,28 @@
             this.TBBENEFICIOCLIENTE490WC.Size = new System.Drawing.Size(206, 173);
             this.TBBENEFICIOCLIENTE490WC.TabIndex = 35;
             // 
+            // BT_AyudaEspecifico490WC
+            // 
+            this.BT_AyudaEspecifico490WC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(6)))), ((int)(((byte)(13)))));
+            this.BT_AyudaEspecifico490WC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BT_AyudaEspecifico490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.BT_AyudaEspecifico490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
+            this.BT_AyudaEspecifico490WC.Location = new System.Drawing.Point(12, 214);
+            this.BT_AyudaEspecifico490WC.Name = "BT_AyudaEspecifico490WC";
+            this.BT_AyudaEspecifico490WC.Size = new System.Drawing.Size(40, 36);
+            this.BT_AyudaEspecifico490WC.TabIndex = 36;
+            this.BT_AyudaEspecifico490WC.Tag = "";
+            this.BT_AyudaEspecifico490WC.Text = "?";
+            this.BT_AyudaEspecifico490WC.UseVisualStyleBackColor = false;
+            this.BT_AyudaEspecifico490WC.Click += new System.EventHandler(this.BT_AyudaEspecifico490WC_Click);
+            // 
             // FormAplicarBeneficios490WC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(27)))), ((int)(((byte)(38)))));
-            this.ClientSize = new System.Drawing.Size(1135, 377);
+            this.ClientSize = new System.Drawing.Size(1135, 386);
+            this.Controls.Add(this.BT_AyudaEspecifico490WC);
             this.Controls.Add(this.TBBENEFICIOCLIENTE490WC);
             this.Controls.Add(this.TBINFOCLIENTE490WC);
             this.Controls.Add(this.LABEL_BENEFICIOSCLIENTE490WC);
@@ -345,5 +362,6 @@
         private System.Windows.Forms.Label LABEL_BENEFICIOSCLIENTE490WC;
         private System.Windows.Forms.TextBox TBINFOCLIENTE490WC;
         private System.Windows.Forms.TextBox TBBENEFICIOCLIENTE490WC;
+        private System.Windows.Forms.Button BT_AyudaEspecifico490WC;
     }
 }

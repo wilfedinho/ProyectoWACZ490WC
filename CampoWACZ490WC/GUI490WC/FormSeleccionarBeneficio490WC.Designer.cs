@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.TBBENEFICIOCLIENTE490WC = new System.Windows.Forms.TextBox();
             this.TBINFOCLIENTE490WC = new System.Windows.Forms.TextBox();
             this.LABEL_BENEFICIOSCLIENTE490WC = new System.Windows.Forms.Label();
@@ -44,6 +44,7 @@
             this.ColumnaDescuentoAplicar490WC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BT_CANJEARBENEFICIO490WC = new System.Windows.Forms.Button();
             this.BT_CANCELAR490WC = new System.Windows.Forms.Button();
+            this.BT_AyudaEspecifico490WC = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBeneficio490WC)).BeginInit();
             this.SuspendLayout();
             // 
@@ -128,27 +129,27 @@
             // 
             // ColumnaNombre490WC
             // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 23.75258F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ColumnaNombre490WC.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 23.75258F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ColumnaNombre490WC.DefaultCellStyle = dataGridViewCellStyle1;
             this.ColumnaNombre490WC.HeaderText = "Nombre";
             this.ColumnaNombre490WC.Name = "ColumnaNombre490WC";
             this.ColumnaNombre490WC.ReadOnly = true;
             // 
             // ColumnaCantidadBeneficioReclamado490WC
             // 
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 23.75258F, System.Drawing.FontStyle.Bold);
-            this.ColumnaCantidadBeneficioReclamado490WC.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 23.75258F, System.Drawing.FontStyle.Bold);
+            this.ColumnaCantidadBeneficioReclamado490WC.DefaultCellStyle = dataGridViewCellStyle2;
             this.ColumnaCantidadBeneficioReclamado490WC.HeaderText = "Cantidad de Reclamados";
             this.ColumnaCantidadBeneficioReclamado490WC.Name = "ColumnaCantidadBeneficioReclamado490WC";
             this.ColumnaCantidadBeneficioReclamado490WC.ReadOnly = true;
             // 
             // ColumnaPrecioEstrella490WC
             // 
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 23.75258F, System.Drawing.FontStyle.Bold);
-            this.ColumnaPrecioEstrella490WC.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 23.75258F, System.Drawing.FontStyle.Bold);
+            this.ColumnaPrecioEstrella490WC.DefaultCellStyle = dataGridViewCellStyle3;
             this.ColumnaPrecioEstrella490WC.HeaderText = "Precio";
             this.ColumnaPrecioEstrella490WC.Name = "ColumnaPrecioEstrella490WC";
             this.ColumnaPrecioEstrella490WC.ReadOnly = true;
@@ -196,12 +197,28 @@
             this.BT_CANCELAR490WC.UseVisualStyleBackColor = false;
             this.BT_CANCELAR490WC.Click += new System.EventHandler(this.BT_CANCELAR490WC_Click);
             // 
+            // BT_AyudaEspecifico490WC
+            // 
+            this.BT_AyudaEspecifico490WC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(6)))), ((int)(((byte)(13)))));
+            this.BT_AyudaEspecifico490WC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BT_AyudaEspecifico490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.BT_AyudaEspecifico490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
+            this.BT_AyudaEspecifico490WC.Location = new System.Drawing.Point(864, 390);
+            this.BT_AyudaEspecifico490WC.Name = "BT_AyudaEspecifico490WC";
+            this.BT_AyudaEspecifico490WC.Size = new System.Drawing.Size(40, 36);
+            this.BT_AyudaEspecifico490WC.TabIndex = 149;
+            this.BT_AyudaEspecifico490WC.Tag = "";
+            this.BT_AyudaEspecifico490WC.Text = "?";
+            this.BT_AyudaEspecifico490WC.UseVisualStyleBackColor = false;
+            this.BT_AyudaEspecifico490WC.Click += new System.EventHandler(this.BT_AyudaEspecifico490WC_Click);
+            // 
             // FormSeleccionarBeneficio490WC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(27)))), ((int)(((byte)(38)))));
             this.ClientSize = new System.Drawing.Size(925, 443);
+            this.Controls.Add(this.BT_AyudaEspecifico490WC);
             this.Controls.Add(this.BT_CANJEARBENEFICIO490WC);
             this.Controls.Add(this.BT_CANCELAR490WC);
             this.Controls.Add(this.TBBENEFICIOCLIENTE490WC);
@@ -235,5 +252,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaDescuentoAplicar490WC;
         private System.Windows.Forms.Button BT_CANJEARBENEFICIO490WC;
         private System.Windows.Forms.Button BT_CANCELAR490WC;
+        private System.Windows.Forms.Button BT_AyudaEspecifico490WC;
     }
 }

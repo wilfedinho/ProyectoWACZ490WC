@@ -292,5 +292,24 @@ namespace GUI490WC
         {
             Traductor490WC.TraductorSG490WC.Desuscribir490WC(this);
         }
+
+        private void BT_AyudaEspecifico490WC_Click(object sender, EventArgs e)
+        {
+            string url490WC = "https://docs.google.com/document/d/1t_JRHT2qTTKtLFoMya_crxzjGGV8YCpOtCnVOV4gSw0/edit?tab=t.0#heading=h.sbvbdxlclu7r";
+
+            try
+            {
+                System.Diagnostics.Process.Start(new ProcessStartInfo
+                {
+                    FileName = url490WC,
+                    UseShellExecute = true
+                });
+
+            }
+            catch
+            {
+
+            }
+        }
     }
 }

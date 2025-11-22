@@ -136,5 +136,24 @@ namespace GUI490WC
         {
             GenerarReporteBeneficiosCuatrimestralPDF(VisualizadorReporte490WC);
         }
+
+        private void BT_AyudaEspecifico490WC_Click(object sender, EventArgs e)
+        {
+            string url490WC = "https://docs.google.com/document/d/1t_JRHT2qTTKtLFoMya_crxzjGGV8YCpOtCnVOV4gSw0/edit?tab=t.0#heading=h.2onqj86n0czc";
+
+            try
+            {
+                System.Diagnostics.Process.Start(new ProcessStartInfo
+                {
+                    FileName = url490WC,
+                    UseShellExecute = true
+                });
+
+            }
+            catch
+            {
+
+            }
+        }
     }
 }

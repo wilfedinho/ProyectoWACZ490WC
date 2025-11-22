@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -135,6 +136,25 @@ namespace GUI490WC
         private void RD_FacturaNormal490WC_CheckedChanged(object sender, EventArgs e)
         {
             MostrarFacturas490WC();
+        }
+
+        private void BT_AyudaEspecifico490WC_Click(object sender, EventArgs e)
+        {
+            string url490WC = "https://docs.google.com/document/d/1t_JRHT2qTTKtLFoMya_crxzjGGV8YCpOtCnVOV4gSw0/edit?tab=t.0#heading=h.7l5nccclz4yi";
+
+            try
+            {
+                System.Diagnostics.Process.Start(new ProcessStartInfo
+                {
+                    FileName = url490WC,
+                    UseShellExecute = true
+                });
+
+            }
+            catch
+            {
+
+            }
         }
     }
 }

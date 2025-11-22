@@ -29,6 +29,14 @@
         private void InitializeComponent()
         {
             this.dgvCliente490WC = new System.Windows.Forms.DataGridView();
+            this.DNI_CLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NOMBRE_CLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.APELLIDO_CLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnaDireccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnaEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnaCelulares = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ESTRELLAS_CLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IMAGEN_ESTRELLA = new System.Windows.Forms.DataGridViewImageColumn();
             this.LABEL_NOMBRE_ABM_USUARIO490WC = new System.Windows.Forms.Label();
             this.LABEL_APELLIDO_ABM_USUARIO490WC = new System.Windows.Forms.Label();
             this.LABEL_DNI_ABM_USUARIO490WC = new System.Windows.Forms.Label();
@@ -62,14 +70,7 @@
             this.BT_CANCELARSERIALIZAR490WC = new System.Windows.Forms.Button();
             this.BT_DesSerializar490WC = new System.Windows.Forms.Button();
             this.BT_LIMPIARDESERIALIZAR490WC = new System.Windows.Forms.Button();
-            this.DNI_CLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NOMBRE_CLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.APELLIDO_CLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnaDireccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnaEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnaCelulares = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ESTRELLAS_CLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IMAGEN_ESTRELLA = new System.Windows.Forms.DataGridViewImageColumn();
+            this.BT_AyudaEspecifico490WC = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCliente490WC)).BeginInit();
             this.SuspendLayout();
             // 
@@ -100,6 +101,56 @@
             this.dgvCliente490WC.TabIndex = 1;
             this.dgvCliente490WC.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvCliente490WC_CellMouseClick);
             this.dgvCliente490WC.SelectionChanged += new System.EventHandler(this.dgvCliente490WC_SelectionChanged);
+            // 
+            // DNI_CLIENTE
+            // 
+            this.DNI_CLIENTE.HeaderText = "DNI";
+            this.DNI_CLIENTE.Name = "DNI_CLIENTE";
+            this.DNI_CLIENTE.ReadOnly = true;
+            // 
+            // NOMBRE_CLIENTE
+            // 
+            this.NOMBRE_CLIENTE.HeaderText = "Nombre";
+            this.NOMBRE_CLIENTE.Name = "NOMBRE_CLIENTE";
+            this.NOMBRE_CLIENTE.ReadOnly = true;
+            // 
+            // APELLIDO_CLIENTE
+            // 
+            this.APELLIDO_CLIENTE.HeaderText = "Apellido";
+            this.APELLIDO_CLIENTE.Name = "APELLIDO_CLIENTE";
+            this.APELLIDO_CLIENTE.ReadOnly = true;
+            // 
+            // columnaDireccion
+            // 
+            this.columnaDireccion.HeaderText = "Direccion";
+            this.columnaDireccion.Name = "columnaDireccion";
+            this.columnaDireccion.ReadOnly = true;
+            // 
+            // columnaEmail
+            // 
+            this.columnaEmail.HeaderText = "Emails";
+            this.columnaEmail.Name = "columnaEmail";
+            this.columnaEmail.ReadOnly = true;
+            // 
+            // columnaCelulares
+            // 
+            this.columnaCelulares.HeaderText = "Celurares";
+            this.columnaCelulares.Name = "columnaCelulares";
+            this.columnaCelulares.ReadOnly = true;
+            // 
+            // ESTRELLAS_CLIENTE
+            // 
+            this.ESTRELLAS_CLIENTE.HeaderText = "Estrellas";
+            this.ESTRELLAS_CLIENTE.Name = "ESTRELLAS_CLIENTE";
+            this.ESTRELLAS_CLIENTE.ReadOnly = true;
+            // 
+            // IMAGEN_ESTRELLA
+            // 
+            this.IMAGEN_ESTRELLA.HeaderText = "";
+            this.IMAGEN_ESTRELLA.Image = global::GUI490WC.Properties.Resources.Estrella_Mario;
+            this.IMAGEN_ESTRELLA.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.IMAGEN_ESTRELLA.Name = "IMAGEN_ESTRELLA";
+            this.IMAGEN_ESTRELLA.ReadOnly = true;
             // 
             // LABEL_NOMBRE_ABM_USUARIO490WC
             // 
@@ -245,7 +296,7 @@
             this.BT_SALIR490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
             this.BT_SALIR490WC.Location = new System.Drawing.Point(1222, 465);
             this.BT_SALIR490WC.Name = "BT_SALIR490WC";
-            this.BT_SALIR490WC.Size = new System.Drawing.Size(184, 47);
+            this.BT_SALIR490WC.Size = new System.Drawing.Size(124, 47);
             this.BT_SALIR490WC.TabIndex = 35;
             this.BT_SALIR490WC.Text = "Salir";
             this.BT_SALIR490WC.UseVisualStyleBackColor = false;
@@ -518,55 +569,20 @@
             this.BT_LIMPIARDESERIALIZAR490WC.UseVisualStyleBackColor = false;
             this.BT_LIMPIARDESERIALIZAR490WC.Click += new System.EventHandler(this.BT_LIMPIARDESERIALIZAR490WC_Click);
             // 
-            // DNI_CLIENTE
+            // BT_AyudaEspecifico490WC
             // 
-            this.DNI_CLIENTE.HeaderText = "DNI";
-            this.DNI_CLIENTE.Name = "DNI_CLIENTE";
-            this.DNI_CLIENTE.ReadOnly = true;
-            // 
-            // NOMBRE_CLIENTE
-            // 
-            this.NOMBRE_CLIENTE.HeaderText = "Nombre";
-            this.NOMBRE_CLIENTE.Name = "NOMBRE_CLIENTE";
-            this.NOMBRE_CLIENTE.ReadOnly = true;
-            // 
-            // APELLIDO_CLIENTE
-            // 
-            this.APELLIDO_CLIENTE.HeaderText = "Apellido";
-            this.APELLIDO_CLIENTE.Name = "APELLIDO_CLIENTE";
-            this.APELLIDO_CLIENTE.ReadOnly = true;
-            // 
-            // columnaDireccion
-            // 
-            this.columnaDireccion.HeaderText = "Direccion";
-            this.columnaDireccion.Name = "columnaDireccion";
-            this.columnaDireccion.ReadOnly = true;
-            // 
-            // columnaEmail
-            // 
-            this.columnaEmail.HeaderText = "Emails";
-            this.columnaEmail.Name = "columnaEmail";
-            this.columnaEmail.ReadOnly = true;
-            // 
-            // columnaCelulares
-            // 
-            this.columnaCelulares.HeaderText = "Celurares";
-            this.columnaCelulares.Name = "columnaCelulares";
-            this.columnaCelulares.ReadOnly = true;
-            // 
-            // ESTRELLAS_CLIENTE
-            // 
-            this.ESTRELLAS_CLIENTE.HeaderText = "Estrellas";
-            this.ESTRELLAS_CLIENTE.Name = "ESTRELLAS_CLIENTE";
-            this.ESTRELLAS_CLIENTE.ReadOnly = true;
-            // 
-            // IMAGEN_ESTRELLA
-            // 
-            this.IMAGEN_ESTRELLA.HeaderText = "";
-            this.IMAGEN_ESTRELLA.Image = global::GUI490WC.Properties.Resources.Estrella_Mario;
-            this.IMAGEN_ESTRELLA.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.IMAGEN_ESTRELLA.Name = "IMAGEN_ESTRELLA";
-            this.IMAGEN_ESTRELLA.ReadOnly = true;
+            this.BT_AyudaEspecifico490WC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(6)))), ((int)(((byte)(13)))));
+            this.BT_AyudaEspecifico490WC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BT_AyudaEspecifico490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.BT_AyudaEspecifico490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
+            this.BT_AyudaEspecifico490WC.Location = new System.Drawing.Point(1366, 476);
+            this.BT_AyudaEspecifico490WC.Name = "BT_AyudaEspecifico490WC";
+            this.BT_AyudaEspecifico490WC.Size = new System.Drawing.Size(40, 36);
+            this.BT_AyudaEspecifico490WC.TabIndex = 144;
+            this.BT_AyudaEspecifico490WC.Tag = "";
+            this.BT_AyudaEspecifico490WC.Text = "?";
+            this.BT_AyudaEspecifico490WC.UseVisualStyleBackColor = false;
+            this.BT_AyudaEspecifico490WC.Click += new System.EventHandler(this.BT_AyudaEspecifico490WC_Click);
             // 
             // FormMaestroCliente490WC
             // 
@@ -574,6 +590,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(27)))), ((int)(((byte)(38)))));
             this.ClientSize = new System.Drawing.Size(1426, 807);
+            this.Controls.Add(this.BT_AyudaEspecifico490WC);
             this.Controls.Add(this.BT_LIMPIARDESERIALIZAR490WC);
             this.Controls.Add(this.BT_DesSerializar490WC);
             this.Controls.Add(this.BT_CANCELARSERIALIZAR490WC);
@@ -663,5 +680,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn columnaCelulares;
         private System.Windows.Forms.DataGridViewTextBoxColumn ESTRELLAS_CLIENTE;
         private System.Windows.Forms.DataGridViewImageColumn IMAGEN_ESTRELLA;
+        private System.Windows.Forms.Button BT_AyudaEspecifico490WC;
     }
 }

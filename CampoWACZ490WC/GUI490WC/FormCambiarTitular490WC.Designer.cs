@@ -54,6 +54,7 @@
             this.APELLIDO_CLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ESTRELLAS_CLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IMAGEN_ESTRELLA = new System.Windows.Forms.DataGridViewImageColumn();
+            this.BT_AyudaEspecifico490WC = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCliente490WC)).BeginInit();
             this.SuspendLayout();
             // 
@@ -291,9 +292,9 @@
             this.BT_CAMBIARTITULAR490WC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BT_CAMBIARTITULAR490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.BT_CAMBIARTITULAR490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.BT_CAMBIARTITULAR490WC.Location = new System.Drawing.Point(517, 502);
+            this.BT_CAMBIARTITULAR490WC.Location = new System.Drawing.Point(566, 502);
             this.BT_CAMBIARTITULAR490WC.Name = "BT_CAMBIARTITULAR490WC";
-            this.BT_CAMBIARTITULAR490WC.Size = new System.Drawing.Size(250, 41);
+            this.BT_CAMBIARTITULAR490WC.Size = new System.Drawing.Size(201, 41);
             this.BT_CAMBIARTITULAR490WC.TabIndex = 98;
             this.BT_CAMBIARTITULAR490WC.Text = "Cambiar Titular";
             this.BT_CAMBIARTITULAR490WC.UseVisualStyleBackColor = false;
@@ -354,12 +355,28 @@
             this.IMAGEN_ESTRELLA.Name = "IMAGEN_ESTRELLA";
             this.IMAGEN_ESTRELLA.ReadOnly = true;
             // 
+            // BT_AyudaEspecifico490WC
+            // 
+            this.BT_AyudaEspecifico490WC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(6)))), ((int)(((byte)(13)))));
+            this.BT_AyudaEspecifico490WC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BT_AyudaEspecifico490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.BT_AyudaEspecifico490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
+            this.BT_AyudaEspecifico490WC.Location = new System.Drawing.Point(517, 507);
+            this.BT_AyudaEspecifico490WC.Name = "BT_AyudaEspecifico490WC";
+            this.BT_AyudaEspecifico490WC.Size = new System.Drawing.Size(40, 36);
+            this.BT_AyudaEspecifico490WC.TabIndex = 134;
+            this.BT_AyudaEspecifico490WC.Tag = "";
+            this.BT_AyudaEspecifico490WC.Text = "?";
+            this.BT_AyudaEspecifico490WC.UseVisualStyleBackColor = false;
+            this.BT_AyudaEspecifico490WC.Click += new System.EventHandler(this.BT_AyudaEspecifico490WC_Click);
+            // 
             // FormCambiarTitular490WC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(27)))), ((int)(((byte)(38)))));
             this.ClientSize = new System.Drawing.Size(786, 564);
+            this.Controls.Add(this.BT_AyudaEspecifico490WC);
             this.Controls.Add(this.dgvCliente490WC);
             this.Controls.Add(this.BT_CAMBIARTITULAR490WC);
             this.Controls.Add(this.labelDireccion490WC);
@@ -420,5 +437,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn APELLIDO_CLIENTE;
         private System.Windows.Forms.DataGridViewTextBoxColumn ESTRELLAS_CLIENTE;
         private System.Windows.Forms.DataGridViewImageColumn IMAGEN_ESTRELLA;
+        private System.Windows.Forms.Button BT_AyudaEspecifico490WC;
     }
 }

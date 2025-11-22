@@ -35,6 +35,7 @@
             this.BT_CambiarClave490WC = new System.Windows.Forms.Button();
             this.TB_ClaveActual490WC = new System.Windows.Forms.TextBox();
             this.LabelClaveActual = new System.Windows.Forms.Label();
+            this.BT_AyudaEspecifico490WC = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // LabelClaveNueva490WC
@@ -120,12 +121,28 @@
             this.LabelClaveActual.TabIndex = 5;
             this.LabelClaveActual.Text = "Clave Actual";
             // 
+            // BT_AyudaEspecifico490WC
+            // 
+            this.BT_AyudaEspecifico490WC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(6)))), ((int)(((byte)(13)))));
+            this.BT_AyudaEspecifico490WC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BT_AyudaEspecifico490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.BT_AyudaEspecifico490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
+            this.BT_AyudaEspecifico490WC.Location = new System.Drawing.Point(12, 337);
+            this.BT_AyudaEspecifico490WC.Name = "BT_AyudaEspecifico490WC";
+            this.BT_AyudaEspecifico490WC.Size = new System.Drawing.Size(40, 36);
+            this.BT_AyudaEspecifico490WC.TabIndex = 132;
+            this.BT_AyudaEspecifico490WC.Tag = "";
+            this.BT_AyudaEspecifico490WC.Text = "?";
+            this.BT_AyudaEspecifico490WC.UseVisualStyleBackColor = false;
+            this.BT_AyudaEspecifico490WC.Click += new System.EventHandler(this.BT_AyudaEspecifico490WC_Click);
+            // 
             // FormCambiarClave490WC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(27)))), ((int)(((byte)(38)))));
             this.ClientSize = new System.Drawing.Size(484, 385);
+            this.Controls.Add(this.BT_AyudaEspecifico490WC);
             this.Controls.Add(this.TB_ClaveActual490WC);
             this.Controls.Add(this.LabelClaveActual);
             this.Controls.Add(this.BT_CambiarClave490WC);
@@ -152,5 +169,6 @@
         private System.Windows.Forms.Button BT_CambiarClave490WC;
         private System.Windows.Forms.TextBox TB_ClaveActual490WC;
         private System.Windows.Forms.Label LabelClaveActual;
+        private System.Windows.Forms.Button BT_AyudaEspecifico490WC;
     }
 }

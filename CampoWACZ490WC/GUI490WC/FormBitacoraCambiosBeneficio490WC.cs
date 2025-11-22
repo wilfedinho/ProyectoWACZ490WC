@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -166,6 +167,25 @@ namespace GUI490WC
                     if (CB_NombreBeneficio490WC.Items.Count == 0 || !CB_NombreBeneficio490WC.Items.Contains(cambiosFiltrados490WC.Nombre490WC))
                         CB_NombreBeneficio490WC.Items.Add(cambiosFiltrados490WC.Nombre490WC);
                 }
+            }
+        }
+
+        private void BT_AyudaEspecifico490WC_Click(object sender, EventArgs e)
+        {
+            string url490WC = "https://docs.google.com/document/d/1t_JRHT2qTTKtLFoMya_crxzjGGV8YCpOtCnVOV4gSw0/edit?tab=t.0#heading=h.1pyg02irhhv";
+
+            try
+            {
+                System.Diagnostics.Process.Start(new ProcessStartInfo
+                {
+                    FileName = url490WC,
+                    UseShellExecute = true
+                });
+
+            }
+            catch
+            {
+
             }
         }
     }

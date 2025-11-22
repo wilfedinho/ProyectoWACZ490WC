@@ -49,6 +49,7 @@
             this.TB_VECESRECLAMADO490WC = new System.Windows.Forms.TextBox();
             this.LABEL_DESCUENTOAPLICAR490WC = new System.Windows.Forms.Label();
             this.TB_DESCUENTOAPLICAR490WC = new System.Windows.Forms.TextBox();
+            this.BT_AyudaEspecifico490WC = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBeneficio490WC)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,7 +61,7 @@
             this.BT_SALIR490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
             this.BT_SALIR490WC.Location = new System.Drawing.Point(954, 281);
             this.BT_SALIR490WC.Name = "BT_SALIR490WC";
-            this.BT_SALIR490WC.Size = new System.Drawing.Size(184, 47);
+            this.BT_SALIR490WC.Size = new System.Drawing.Size(120, 47);
             this.BT_SALIR490WC.TabIndex = 41;
             this.BT_SALIR490WC.Text = "Salir";
             this.BT_SALIR490WC.UseVisualStyleBackColor = false;
@@ -287,12 +288,28 @@
             this.TB_DESCUENTOAPLICAR490WC.Size = new System.Drawing.Size(175, 27);
             this.TB_DESCUENTOAPLICAR490WC.TabIndex = 49;
             // 
+            // BT_AyudaEspecifico490WC
+            // 
+            this.BT_AyudaEspecifico490WC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(6)))), ((int)(((byte)(13)))));
+            this.BT_AyudaEspecifico490WC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BT_AyudaEspecifico490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.BT_AyudaEspecifico490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
+            this.BT_AyudaEspecifico490WC.Location = new System.Drawing.Point(1098, 281);
+            this.BT_AyudaEspecifico490WC.Name = "BT_AyudaEspecifico490WC";
+            this.BT_AyudaEspecifico490WC.Size = new System.Drawing.Size(40, 47);
+            this.BT_AyudaEspecifico490WC.TabIndex = 142;
+            this.BT_AyudaEspecifico490WC.Tag = "";
+            this.BT_AyudaEspecifico490WC.Text = "?";
+            this.BT_AyudaEspecifico490WC.UseVisualStyleBackColor = false;
+            this.BT_AyudaEspecifico490WC.Click += new System.EventHandler(this.BT_AyudaEspecifico490WC_Click);
+            // 
             // FormMaestroBeneficio490WC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(27)))), ((int)(((byte)(38)))));
             this.ClientSize = new System.Drawing.Size(1150, 348);
+            this.Controls.Add(this.BT_AyudaEspecifico490WC);
             this.Controls.Add(this.LABEL_DESCUENTOAPLICAR490WC);
             this.Controls.Add(this.TB_DESCUENTOAPLICAR490WC);
             this.Controls.Add(this.LABEL_VECESRECLAMADO490WC);
@@ -342,5 +359,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaDescuentoAplicar;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaPrecio;
         private System.Windows.Forms.DataGridViewImageColumn ColumnaImagen;
+        private System.Windows.Forms.Button BT_AyudaEspecifico490WC;
     }
 }

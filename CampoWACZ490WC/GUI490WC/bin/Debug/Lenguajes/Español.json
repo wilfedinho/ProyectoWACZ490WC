@@ -402,7 +402,8 @@
     "BT_BitacoraCambios490WC": "Bitacora Cambios",
     "BT_ReporteInteligente490WC": "Metricas",
     "RD_FacturaNormal490WC": "Factura Normal",
-    "RD_FacturaModificada490WC":  "Factura Modificada"
+    "RD_FacturaModificada490WC": "Factura Modificada",
+    "BT_AyudaEspecifico490WC": "?"
 
 
 }
